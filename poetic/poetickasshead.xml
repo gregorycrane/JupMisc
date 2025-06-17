@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader xml:lang="eng">
+      <fileDesc>
+         <titleStmt>
+           <title xml:lang="grc">Περὶ ποιητικῆς</title>
+            <author>Aristotle</author>
+            <editor>Immanuel Bekker</editor>
+            <funder>Annenberg CPB Project</funder>
+         </titleStmt>
+        
+        <publicationStmt>
+          <publisher>Trustees of Tufts University</publisher>
+          <pubPlace>Medford, MA</pubPlace>
+          <authority>Perseus Digital Library Project</authority>
+          <publisher>Harvard University</publisher>
+          <pubPlace>Cambridge, MA</pubPlace>
+          <authority>Perseus</authority>
+          <date type="release" when="2015" cert="low">Digital Corpus for Graeco-Arabic Studies</date>
+          <idno type="filename">tlg0086.tlg034.digicorpus-grc2.xml</idno>
+          <availability>
+            <licence target="https://creativecommons.org/licenses/by-sa/4.0/">Available under a Creative Commons Attribution-ShareAlike 4.0 International License</licence>
+          </availability>
+        </publicationStmt>
+        
+         <sourceDesc>
+            <biblStruct>
+               <monogr>
+                  <title xml:lang="lat">Aristotelis Opera</title>
+                  <author>Aristotle</author>
+                  <editor>Rudolf Kassel</editor>
+                  <imprint>
+                     <publisher>Oxford University Press</publisher>
+                     <pubPlace>Oxford</pubPlace>
+                     <biblScope unit="volume">11</biblScope>
+              
+                     <date>1966</date>
+                  </imprint>
+               </monogr>
+               <note>Text was scanned at St. Olaf Spring, 1992.</note>
+              <ref target="https://babel.hathitrust.org/cgi/pt?id=uc1.31158006467772&amp;seq=248">HathiTrust</ref>
+            </biblStruct>
+         </sourceDesc>
+      </fileDesc>
+    
+      <encodingDesc>
+        <refsDecl n="CTS">
+          <!--<cRefPattern n="section" matchPattern="(\w+).(\w+).(\w+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div[@n='$1']/tei:div[@n='$2']/tei:div[@n='$3'])">
+            <p>This pointer pattern extracts book and chapter and section.</p>
+          </cRefPattern>            -->
+          <cRefPattern n="subchapter" matchPattern="(\w+).(\w+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div[@n='$1']/tei:div[@n='$2'])">
+            <p>This pointer pattern extracts chapter and subchapter.</p>
+          </cRefPattern>
+          <cRefPattern n="chapter" matchPattern="(\w+)" replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div[@n='$1'])">
+            <p>This pointer pattern extracts chapter.</p>
+          </cRefPattern>
+        </refsDecl>
+         <refsDecl n="text=1">
+            <refState unit="text"/>
+            <refState unit="chapter" n="chunk"/>
+            <refState unit="subchapter"/>
+         </refsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="lat">Latin</language>
+            <language ident="grc">Greek</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+        <change>
+            <date>4/93</date> <name>WPM</name> Tagged in conformance with Prose.g dtd.
+        </change>
+        <change><date>5/27/09</date> <name>RS</name> (n/a)
+                $Log: aristot.poet_gk.xml,v $
+                Revision 1.3  2009/05/27 15:55:14  rsingh04
+                added cvs log keyword
+
+         
+        </change>
+        <change><date>10/11/2024</date><name>GRC</name> updates to unicode and to TEI XML</change>
+    </revisionDesc>		
+ </teiHeader> 
+<text>
+<body>
+<div type="edition" xml:lang="grc" n="urn:cts:greekLit:tlg0086.tlg034.perseus-grc2"> 
+    <p>

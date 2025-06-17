@@ -1,0 +1,11 @@
+digraph {
+	A [label=Grandmother1]
+	F [label=Grandmother2]
+	B [label="Parent 1"]
+	C [label="Parent 2"]
+	D [label=Child]
+	A -> B
+	F -> C
+	B -> D
+	C -> D
+}
