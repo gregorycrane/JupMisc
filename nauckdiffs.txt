@@ -2428,7 +2428,7 @@
 11	5,	equal	5,
 11	21:	equal	21:
 11	῾ἀνθρωποειδὲς	replace	ἀνθρωποειδές
-11	συζῶν’	replace	–
+11	συζῶν’	replace	 
 11		replace	συζῶν
 11	ἐπὶ	equal	ἐπὶ
 11	τοῦ	equal	τοῦ
@@ -2800,7 +2800,7 @@
 12	αὐτὴν	equal	αὐτὴν
 12	CDhis.	equal	CDhis.
 12	31	equal	31
-12	κἄπειτ'	replace	κάπειτ
+12	κἄπειτ’	replace	κάπειτ
 12	Ἀθήνας	equal	Ἀθήνας
 12	Διάδας	equal	Διάδας
 12	παρεκπερῶν	equal	παρεκπερῶν
@@ -3415,7 +3415,7 @@
 14	Γλαύκῳ	equal	Γλαύκῳ
 14	Ποτνιεῖ	equal	Ποτνιεῖ
 14	῾ἐφ’	replace	‘ἐφ’
-14	ἐκπεφυγμένοι’.	replace	–
+14	ἐκπεφυγμένοι’.	replace	 
 14		replace	ἐκπεφυγμένοι.
 14	v.	equal	v.
 14	1	equal	1
@@ -4085,7 +4085,7 @@
 16	τὸ	equal	τὸ
 16	‘χρυσώπιδες	equal	‘χρυσώπιδες
 16	ἑλλοὶ	equal	ἑλλοὶ
-16	νήχοντο',	replace	νήχοντο,
+16	νήχοντο’,	replace	νήχοντο,
 16	quem	equal	quem
 16	locum	equal	locum
 16	qui	equal	qui
@@ -5191,7 +5191,7 @@
 20	κύμβαλα	equal	κύμβαλα
 20	‘ὃ	replace	ὃ
 20	δὲ	equal	δὲ
-20	στοβεῖ’	replace	–
+20	στοβεῖ’	replace	 
 20		replace	στοβεί
 20	(v.	equal	(v.
 20	6).	equal	6).
@@ -5469,7 +5469,7 @@
 21	Ἠδωνοῖς	replace	Ηδωνοῖς
 21	‘	replace	
 21	ὅστις	equal	ὅστις
-21	ποδήρεις’.	replace	–
+21	ποδήρεις’.	replace	 
 21		replace	που
 21		replace	δήρεις‘.
 21	verba	equal	verba
@@ -5614,7 +5614,7 @@
 22	ἐρέσθαι	equal	ἐρέσθαι
 22	βούλομαι	equal	βούλομαι
 22	‘ποδαπὸς	replace	ποδαπός
-22	στολή’;	replace	–
+22	στολή’;	replace	 
 22		replace	στολή';
 22	ubi	equal	ubi
 22	Schol.:	equal	Schol.:
@@ -6168,7 +6168,7 @@
 24	μὲν	equal	μὲν
 24	οὕτως	equal	οὕτως
 24	φησὶν	equal	φησὶν
-24		insert	–
+24		insert	 
 24	καὶ	equal	καὶ
 24	Αἰσχύλος	equal	Αἰσχύλος
 24	ἐν	equal	ἐν
@@ -7002,7 +7002,7 @@
 26	ἐν	equal	ἐν
 26	Θεωροῖς	equal	Θεωροῖς
 26	‘καὶ	replace	καὶ
-26		replace	–
+26		replace	 
 26	σκωπευμάτων’.	equal	σκωπευμάτων’.
 26	cf.	equal	cf.
 26	Hesych.	equal	Hesych.
@@ -8144,7 +8144,7 @@
 30	φησί	equal	φησί
 30	‘τὸν	equal	‘τὸν
 30	δ’	equal	δ’
-30	καταπίνει’.	replace	–
+30	καταπίνει’.	replace	 
 30		replace	καταπίνει.
 30	Pollux	equal	Pollux
 30	6,	equal	6,
@@ -8318,7 +8318,7 @@
 31	κυδάζεται,	equal	κυδάζεται,
 31	λοιδορεῖται,	equal	λοιδορεῖται,
 31	ὑβρίζεται	equal	ὑβρίζεται
-31	Αἱσχύλος	replace	–
+31	Αἱσχύλος	replace	 
 31		replace	Αἰσχύ
 31		replace	λος
 31	ἐν	equal	ἐν
@@ -8502,7 +8502,7 @@
 31	θεράπων	equal	θεράπων
 31	παρὰ	equal	παρὰ
 31	Ἀνακρέοντι	equal	Ἀνακρέοντι
-31		insert	–
+31		insert	 
 31	καὶ	equal	καὶ
 31	Αἰσχύλος	equal	Αἰσχύλος
 31	‘	delete	
@@ -8580,7 +8580,7 @@
 32	μέμψις	equal	μέμψις
 32	ἐμφαίνουσα	equal	ἐμφαίνουσα
 32	χάριν	equal	χάριν
-32	εἰ	replace	–
+32	εἰ	replace	 
 32		replace	εἴ
 32	τις	equal	τις
 32	ἀντιστρέψας	equal	ἀντιστρέψας
@@ -9948,7 +9948,7 @@
 36	παρὰ	equal	παρὰ
 36	Μενάνδρῳ	equal	Μενάνδρῳ
 36	ἐν	equal	ἐν
-36	β'	replace	β΄
+36	β’	replace	β΄
 36	Ἐπικλήρῳ	equal	Ἐπικλήρῳ
 36	σημαίνει	equal	σημαίνει
 36	ξύλον	equal	ξύλον
@@ -10302,7 +10302,7 @@
 38	ἐν	equal	ἐν
 38	τῷ	equal	τῷ
 38	‘λευκοῖς	replace	λευκοῖς
-38		replace	–
+38		replace	 
 38	μελαγχίμοις’,	equal	μελαγχίμοις’,
 38	ὅ	equal	ὅ
 38	πέρ	equal	πέρ
@@ -11844,7 +11844,7 @@
 43	‘ἀπὸ	equal	‘ἀπὸ
 43	δ’	equal	δ’
 43	αὖτε	equal	αὖτε
-43	πόνος’.	replace	–
+43	πόνος’.	replace	 
 43	Ar.	replace	πόνος‘.
 43	Av.	replace	Ar.
 43		replace	Ἀν.
@@ -13355,7 +13355,7 @@
 47	Καΐκου	equal	Καΐκου
 47	προσαγορεύων	equal	προσαγορεύων
 47	‘ποταμοῦ	replace	ποταμοῦ
-47	παιωνίαις’.	replace	–
+47	παιωνίαις’.	replace	 
 47		replace	παιωνίας‘.
 47	Harpocr.	equal	Harpocr.
 47	v.	equal	v.
@@ -13694,12 +13694,12 @@
 49	τὴν	equal	τὴν
 49	θάλασσαν	equal	θάλασσαν
 49	φησίν	equal	φησίν
-49		insert	–
+49		insert	 
 49	καὶ	equal	καὶ
 49	Αἰσχύλος	equal	Αἰσχύλος
 49	Νηρεΐσι	equal	Νηρεΐσι
 49	‘δελφίνορον	replace	δελφίνορον
-49	διαμειψάμεναι’.	replace	–
+49	διαμειψάμεναι’.	replace	 
 49		replace	διαμειψάμεναι.
 49	v.	equal	v.
 49	1	equal	1
@@ -14669,7 +14669,7 @@
 52	νέους	equal	νέους
 52	ὅτι’.θεὸς	replace	ὅτι
 52	θέλῃ’.	replace	θεὸς
-52		replace	–
+52		replace	 
 52		replace	θέλῃ,
 52	ἀλλ’	equal	ἀλλ’
 52	ἐάν	equal	ἐάν
@@ -15035,7 +15035,7 @@
 53	Ar.	equal	Ar.
 53	Av.	equal	Av.
 53	1247:	equal	1247:
-53	ἆρ'	replace	ἆρ’
+53	ἆρ’	equal	ἆρ’
 53	οἶσθ’	equal	οἶσθ’
 53	ὅτι	equal	ὅτι
 53	Ζεὺς	equal	Ζεὺς
@@ -15142,7 +15142,7 @@
 53	φησίν	equal	φησίν
 53	φησίν	replace	‘
 53	μόνος	replace	μόνος
-53	παρωνίζεται’	replace	–
+53	παρωνίζεται’	replace	 
 53		replace	παιωνίζεται
 53	(v.	equal	(v.
 53	1-3).	equal	1-3).
@@ -16893,7 +16893,7 @@
 59	γοῦν	equal	γοῦν
 59	‘ὅδ’	replace	ὅδ’
 59	ἐστὶν	equal	ἐστὶν
-59		insert	–
+59		insert	 
 59	πνέουσ’	equal	πνέουσ’
 59	ἐμοί’.	replace	ἐμοί.
 59	Schol.	equal	Schol.
@@ -17002,7 +17002,7 @@
 59	verba	equal	verba
 59	τὴν	equal	τὴν
 59	κάκοσμον	equal	κάκοσμον
-59	κάρᾳ	replace	–
+59	κάρᾳ	replace	 
 59		replace	κάρα
 59	(v.	equal	(v.
 59	2	equal	2
@@ -17149,7 +17149,7 @@
 60	Δ	equal	Δ
 60	319:	equal	319:
 60	ἔκταν	equal	ἔκταν
-60		insert	–
+60		insert	 
 60	ἐν	equal	ἐν
 60	χρήσει	equal	χρήσει
 60	ὁρᾶται	equal	ὁρᾶται
@@ -17424,7 +17424,7 @@
 61	φησὶν	equal	φησὶν
 61	ἐν	equal	ἐν
 61	Προμηθεῖ	equal	Προμηθεῖ
-61		insert	–
+61		insert	 
 61	καὶ	equal	καὶ
 61	ἐν	equal	ἐν
 61	Πενθεῖ	equal	Πενθεῖ
@@ -17586,7 +17586,7 @@
 61	v.	equal	v.
 61	1	equal	1
 61	χρῶνται	equal	χρῶνται
-61	δ'	replace	δ’
+61	δ’	equal	δ’
 61	ὑποξύλοισιν	replace	ὑποξύλοισιν)
 61	ἀργυρηλάτοις	equal	ἀργυρηλάτοις
 61	scribendum	equal	scribendum
@@ -18711,7 +18711,7 @@
 65	λογισμός,	equal	λογισμός,
 65	αἴτιος	equal	αἴτιος
 65	‘ἵππων	replace	ἵππων
-65	ἐκδέκτορα’	replace	–
+65	ἐκδέκτορα’	replace	 
 65		replace	ἐκδέκτορα
 65	κατ’	equal	κατ’
 65	Αἰσχύλον.	equal	Αἰσχύλον.
@@ -19046,7 +19046,7 @@
 66	περὶ	equal	περὶ
 66	τῶν	equal	τῶν
 66	Σκυθῶν	equal	Σκυθῶν
-66	‘ἀλλ'	replace	ἀλλ’
+66	‘ἀλλ’	replace	ἀλλ’
 66	Σκύθαι’.	replace	Σκύθαι.
 66	cf.	equal	cf.
 66	Hesych.	equal	Hesych.
@@ -20166,7 +20166,7 @@
 69	com.	equal	com.
 69	Ar.	equal	Ar.
 69	p.	equal	p.
-69	96-101.	replace	96–101.
+69	96-101.	replace	96 101.
 70	70"/>	replace	70
 70		replace	AESCHYLI
 70	208	equal	208
@@ -20548,7 +20548,7 @@
 71	cod.)	equal	cod.)
 71	σατυρικῷ	equal	σατυρικῷ
 71	‘καὶ	replace	καὶ
-71	γάρον’.	replace	–
+71	γάρον’.	replace	 
 71		replace	γάρον.
 71	Ath.	equal	Ath.
 71	II	replace	I
@@ -21599,7 +21599,7 @@
 75	δύναμις.	equal	δύναμις.
 75	Ἀπολλόδωρος	equal	Ἀπολλόδωρος
 75	ἐκμά	equal	ἐκμά
-75	–	equal	–
+75	–	replace	 
 75	καὶ	equal	καὶ
 75	Αἰσχύλος	equal	Αἰσχύλος
 75	ἐν	equal	ἐν
@@ -21729,7 +21729,7 @@
 75	ἡ	equal	ἡ
 75	λέξις	equal	λέξις
 75	κειμένη	equal	κειμένη
-75	παρ'	replace	παρ’
+75	παρ’	equal	παρ’
 75	Αἰσχύλῳ	equal	Αἰσχύλῳ
 75	ἐν	equal	ἐν
 75	Σισύφῳ	equal	Σισύφῳ
@@ -21866,7 +21866,7 @@
 76	τῇ	equal	τῇ
 76	κεφαλῇ	replace	κε
 76	,	replace	φαλῇ
-76		replace	–,
+76		replace	 ,
 76	καίτοι	equal	καίτοι
 76	ἐν	equal	ἐν
 76	τῇ	equal	τῇ
@@ -24044,7 +24044,7 @@
 83	Bekker)	equal	Bekker)
 83	Αἰσχύλος	equal	Αἰσχύλος
 83	‘πέλλυτρ’	replace	πέλλυτο
-83	ἀρβύλαις’.	replace	–
+83	ἀρβύλαις’.	replace	 
 83		replace	ἀρβύλαις.
 83	cf.	equal	cf.
 83	Pollux	equal	Pollux
@@ -24205,7 +24205,7 @@
 84	συὶ	equal	συὶ
 84	φησίν	equal	φησίν
 84	‘ἔδυ	replace	ἔδυ
-84	ὥς’.	replace	–
+84	ὥς’.	replace	 
 84		replace	ὥς.
 84	similiter	equal	similiter
 84	Eust.	equal	Eust.
@@ -24978,7 +24978,7 @@
 86	Αἰσχύλος	replace	Αἰ
 86		replace	Aiσχύλος
 86	Φρυξίν	equal	Φρυξίν
-86	(φραζ'	replace	(φραξ
+86	(φραζ’	replace	(φραξ
 86	codex).	equal	codex).
 86	Alberti	equal	Alberti
 86	ἀγατά	equal	ἀγατά
@@ -25990,7 +25990,7 @@
 89	ἀκριβέστερον	equal	ἀκριβέστερον
 89	ἐν	equal	ἐν
 89	τῷ	equal	τῷ
-89	κα'	replace	και
+89	κα’	replace	και
 89	τῶν	equal	τῶν
 89	Φιλολόγων.	equal	Φιλολόγων.
 90	90"/>	replace	90
@@ -27047,7 +27047,7 @@
 94	λέγοντος	equal	λέγοντος
 94	δύνανται	equal	δύνανται
 94	μαθεῖν	equal	μαθεῖν
-94		insert	–
+94		insert	 
 94	οἱ	equal	οἱ
 94	δ’	equal	δ’
 94	ἐπὶ	equal	ἐπὶ
@@ -27083,7 +27083,7 @@
 94	ὁ	equal	ὁ
 94	Νεῖλος	equal	Νεῖλος
 94	ὁρμᾶται	equal	ὁρμᾶται
-94		insert	–
+94		insert	 
 94	οὔθ’	equal	οὔθ’
 94	ὑπὲρ	equal	ὑπὲρ
 94	τοὺς	equal	τοὺς
@@ -27594,7 +27594,7 @@
 95	ὅθεν	equal	ὅθεν
 95	εἴρηται	equal	εἴρηται
 95	‘τὸ	replace	τὸ
-95	ἐπίσταται’.	replace	–
+95	ἐπίσταται’.	replace	 
 95	ubri	replace	ἐπίσταται.
 95		replace	ubi
 95	Schol.	equal	Schol.
@@ -27852,7 +27852,7 @@
 96	(fr.	equal	(fr.
 96	310)	equal	310)
 96	‘λευκός	replace	λευκός
-96	πυρί’	replace	–
+96	πυρί’	replace	 
 96		replace	πυρί”
 96	καὶ	equal	καὶ
 96	ἔτι	equal	ἔτι
@@ -27860,7 +27860,7 @@
 96	311)	equal	311)
 96	‘	replace	‘θύσας
 96	θύσας	replace	δὲ
-96	δὲ	replace	–
+96	δὲ	replace	 
 96	κάτω’.	replace	κάτω.
 96	ταῦτα	equal	ταῦτα
 96	δὲ	equal	δὲ
@@ -29574,7 +29574,7 @@
 102	ἄχναι,	equal	ἄχναι,
 102	λεπτὰ	equal	λεπτὰ
 102	ἄχυρα	equal	ἄχυρα
-102	καὶ	replace	–
+102	καὶ	replace	 
 102	‘ἄχνη	replace	καὶ
 102	πυρός’,	replace	ἄχνη
 102		replace	πυρός,
@@ -29786,7 +29786,7 @@
 103	Aeschylus	equal	Aeschylus
 103	‘ὁ	replace	ὁ
 103	κισσεὺς	equal	κισσεὺς
-103		insert	–
+103		insert	 
 103	μάντις’.	equal	μάντις’.
 103	καβαιος	equal	καβαιος
 103	vel	equal	vel
@@ -29826,7 +29826,7 @@
 103	θηλυκῶν.	equal	θηλυκῶν.
 103	Αἰσχύλος	equal	Αἰσχύλος
 103	‘δέσποινα·	replace	δέσποινα
-103	ἄναξ’.	replace	–
+103	ἄναξ’.	replace	 
 103		replace	ἄναξ‘.
 103	δυσχίμων	equal	δυσχίμων
 103	ὁρῶν]	equal	ὁρῶν]
@@ -31082,7 +31082,7 @@
 107	ἡγεμονίαν,	equal	ἡγεμονίαν,
 107	‘σύ	replace	σύ
 107	τοί	equal	τοί
-107	δοκεῖς’.	replace	–
+107	δοκεῖς’.	replace	 
 107		replace	δοκεῖς‘.
 107	Plut.	equal	Plut.
 107	V.	equal	V.
@@ -31238,7 +31238,7 @@
 108	κατ’	equal	κατ’
 108	Αἰσχύλον	equal	Αἰσχύλον
 108	‘ἐξ	equal	‘ἐξ
-108		insert	–
+108		insert	 
 108	γέροντος’	equal	γέροντος’
 108	εὐπρεπής,	replace	εὐπρε
 108		replace	πής,
@@ -32366,7 +32366,7 @@
 112	καὶ	equal	καὶ
 112	Ἴστρος	equal	Ἴστρος
 112	ἐν	equal	ἐν
-112	α'	replace	α’
+112	α’	equal	α’
 112	Συναγωγῶν.	equal	Συναγωγῶν.
 112	Hesych.	equal	Hesych.
 112	2	equal	2
@@ -34680,7 +34680,7 @@
 121	editur	equal	editur
 121	πάλαμυς	equal	πάλαμυς
 121	παλάμυος	equal	παλάμυος
-121		insert	–
+121		insert	 
 121	παλάμυδος:	equal	παλάμυδος:
 121	veram	equal	veram
 121	scripturam	equal	scripturam
@@ -35380,7 +35380,7 @@
 124	43:	equal	43:
 124	παχεῖαν	replace	παχείαν
 124	χλαῖναν	equal	χλαῖναν
-124		insert	–
+124		insert	 
 124	ὁποία	equal	ὁποία
 124	τις	equal	τις
 124	ἡ	equal	ἡ
@@ -35494,7 +35494,7 @@
 124	Κουρής	equal	Κουρής
 124	Κουρῆτος	replace	Κου
 124		replace	ρῆτος
-124		replace	–
+124		replace	 
 124	καὶ	equal	καὶ
 124	τὸ	equal	τὸ
 124	ψιλής	equal	ψιλής
@@ -35758,7 +35758,7 @@
 126	παθεῖν	equal	παθεῖν
 126	ὀφείλεται.	equal	ὀφείλεται.
 126		insert	δράσαντι
-126		insert	–
+126		insert	 
 126		insert	ὀφείλε
 126	Stob.	equal	Stob.
 126	Ecl.	replace	Eel.
@@ -36821,7 +36821,7 @@
 132	ἀρσενικοῦ	equal	ἀρσενικοῦ
 132	γένους	equal	γένους
 132	εἶναι	equal	εἶναι
-132		insert	–
+132		insert	 
 132	ἐν	equal	ἐν
 132	δὲ	equal	δὲ
 132	τῇ	equal	τῇ
@@ -37901,7 +37901,7 @@
 135	αὐτοὺς	equal	αὐτοὺς
 135	λέγουσιν	equal	λέγουσιν
 135	Εὐριπίδης	equal	Εὐριπίδης
-135		insert	–
+135		insert	 
 135	καὶ	equal	καὶ
 135	Σοφοκλῆς	equal	Σοφοκλῆς
 135	ἐν	equal	ἐν
@@ -38275,7 +38275,7 @@
 137	τῇ	equal	τῇ
 137	σαρκώσει·	replace	σαρκώσει
 137	‘τετράπτεροι	replace	τετράπτεροι
-137	κελαινόρινες	replace	–
+137	κελαινόρινες	replace	 
 137	λαινόρινες’.	replace	κε
 137		replace	λαινόρινες‘.
 137	eadem	equal	eadem
@@ -38362,7 +38362,7 @@
 137	in	equal	in
 137	illa	equal	illa
 137	fabula	equal	fabula
-137	attigisse'.	replace	attigisse.
+137	attigisse’.	replace	attigisse.
 137	optime	equal	optime
 137	haec	equal	haec
 137	disputata	equal	disputata
@@ -38590,7 +38590,7 @@
 138	ἐν	equal	ἐν
 138	Αἰχμαλώτοις	equal	Αἰχμαλώτοις
 138	ἀσπὶς	replace	‘ἀσπὶς
-138	πυκνώματι’.	replace	–
+138	πυκνώματι’.	replace	 
 138		replace	πυκνώματι.
 138	ἡμίλιγδος	equal	ἡμίλιγδος
 138	libri,	replace	1bri,
@@ -38805,7 +38805,7 @@
 139	191,	equal	191,
 139	8:	equal	8:
 139	Βωμοί	equal	Βωμοί
-139		insert	–
+139		insert	 
 139	καὶ	equal	καὶ
 139	βωμός	equal	βωμός
 139	ὁ	equal	ὁ
@@ -39117,7 +39117,7 @@
 140	ποιητὴς	equal	ποιητὴς
 140	περιττοσυλλάβως	equal	περιττοσυλλάβως
 140	ἔκλινεν	equal	ἔκλινεν
-140	,	replace	–,
+140	,	replace	 ,
 140	ὁ	equal	ὁ
 140	δὲ	equal	δὲ
 140	Σοφοκλῆς	equal	Σοφοκλῆς
@@ -39188,7 +39188,7 @@
 140	Σοφοκλῆς	equal	Σοφοκλῆς
 140	Αἰχμαλώτησι	equal	Αἰχμαλώτησι
 140	῾πατὴρ	replace	πατὴρ
-140	κρούπαλα’.	replace	–
+140	κρούπαλα’.	replace	 
 140		replace	κρούπαλα.
 140	ita	equal	ita
 140	codex,	equal	codex,
@@ -41014,7 +41014,7 @@
 147	τὸν	equal	τὸν
 147	ἀδόλεσχον	equal	ἀδόλεσχον
 147	῾ὦ	replace	ὦ
-147	καλά’.	replace	–
+147	καλά’.	replace	 
 147		replace	καλά.
 147	σιγὴ	equal	σιγὴ
 147	M	equal	M
@@ -41061,7 +41061,7 @@
 147	Σοφοκλέους	equal	Σοφοκλέους
 147	Ἀλεάδαις.	equal	Ἀλεάδαις.
 147	῾τί	replace	‘τί
-147	ἔπη.’.	replace	–
+147	ἔπη.’.	replace	 
 147		replace	ἔπη..
 147	v.	equal	v.
 147	1	equal	1
@@ -41321,7 +41321,7 @@
 148	Ἀλεάδαις.	equal	Ἀλεάδαις.
 148	῾ὁ	replace	ὁ
 148	δ’	replace	δ’
-148	φύσιν.’.v.	replace	–
+148	φύσιν.’.v.	replace	 
 148		replace	φύσιν.
 148		replace	v.
 148	1	equal	1
@@ -41989,7 +41989,7 @@
 150	Ἀλεξάνδρῳ	equal	Ἀλεξάνδρῳ
 150	῾οὐ	replace	οὐ
 150	γάρ	equal	γάρ
-150	πρέπει’	replace	–
+150	πρέπει’	replace	 
 150		replace	πρέπει”
 150	καὶ	equal	καὶ
 150	(fr.	equal	(fr.
@@ -42404,7 +42404,7 @@
 152	Soph.	equal	Soph.
 152	Phil.	equal	Phil.
 152	98.	equal	98.
-152		insert	–
+152		insert	 
 152	102	equal	102
 152	τίς	equal	τίς
 152	δή	equal	δή
@@ -44030,7 +44030,7 @@
 158	τιθεὶς	equal	τιθεὶς
 158	οὕτω	equal	οὕτω
 158	῾μηδὲν	replace	μηδὲν
-158	ἐπιστολάς’.	replace	–
+158	ἐπιστολάς’.	replace	 
 158		replace	ἐπιστολάς.
 158	lacerum	equal	lacerum
 158	esse	equal	esse
@@ -44530,7 +44530,7 @@
 160	προσαγορεύονται	equal	προσαγορεύονται
 160	δὲ	equal	δὲ
 160	Οὐένετοι	equal	Οὐένετοι
-160		insert	–
+160		insert	 
 160	περὶ	equal	περὶ
 160	ὧν	equal	ὧν
 160	οἱ	equal	οἱ
@@ -45060,7 +45060,7 @@
 162	σοι	equal	σοι
 162	παραπλησίοις	equal	παραπλησίοις
 162	‘οὔτοι	replace	ούτοι
-162		replace	–
+162		replace	 
 162	παρόν’.	equal	παρόν’.
 162	v.	equal	v.
 162	1	equal	1
@@ -45385,7 +45385,7 @@
 163	Συνδείπνῳ	equal	Συνδείπνῳ
 163	῾ὦ	replace	ὦ
 163	πάντα	equal	πάντα
-163	πατήρ’.	replace	–
+163	πατήρ’.	replace	 
 163		replace	πατήρ,
 163	v.	equal	v.
 163	2	equal	2
@@ -45951,7 +45951,7 @@
 165	ἐρασταῖς.	equal	ἐρασταῖς.
 165	‘ἔρωτος	equal	‘ἔρωτος
 165	γὰρ	equal	γὰρ
-165	προΐεται’.	replace	–
+165	προΐεται’.	replace	 
 165		replace	προΐεται‘.
 165	v.	equal	v.
 165	1	equal	1
@@ -46210,7 +46210,7 @@
 166	φησὶν	equal	φησὶν
 166	ἐν	equal	ἐν
 166	Τρωίλῳ	equal	Τρωίλῳ
-166	καὶ	replace	–
+166	καὶ	replace	 
 166	ἐν	replace	καὶ
 166	Ἀχιλλέως	replace	ἐν
 166	ἐρασταῖς	replace	Ἀχιλλέως
@@ -48602,7 +48602,7 @@
 174	γινόμενον.	equal	γινόμενον.
 174	μνημονεύει	equal	μνημονεύει
 174	αὐτοῦ	equal	αὐτοῦ
-174		insert	–
+174		insert	 
 174	Σοφοκλῆς	equal	Σοφοκλῆς
 174	Ἔριδι	replace	Ἐριδι
 174	ἐγὼ	replace	‘ἐγὼ
@@ -50159,7 +50159,7 @@
 180	θήλειαν,	equal	θήλειαν,
 180	ὡς	equal	ὡς
 180	Ἱππῶναξ	equal	Ἱππῶναξ
-180		insert	–
+180		insert	 
 180	καὶ	equal	καὶ
 180	Σοφοκλῆς	equal	Σοφοκλῆς
 180	Ἐπιταιναρίοις	equal	Ἐπιταιναρίοις
@@ -51284,7 +51284,7 @@
 183	Θάμυρις	equal	Θάμυρις
 183	῾ῥηγνὺς	replace	ρηγνύς
 183	χρ.	equal	χρ.
-183	λύρας’.	replace	–
+183	λύρας’.	replace	 
 183	Sophocli	equal	Sophocli
 183	locum	equal	locum
 183	vindicavit	equal	vindicavit
@@ -51541,7 +51541,7 @@
 184	Κλυταιμήστρας	equal	Κλυταιμήστρας
 184	τὸν	equal	τὸν
 184	Ἀγαμέμνονα	equal	Ἀγαμέμνονα
-184		insert	–
+184		insert	 
 184	τούτοις	equal	τούτοις
 184	δὲ	equal	δὲ
 184	οὐκ	equal	οὐκ
@@ -51622,7 +51622,7 @@
 184	τιμᾷ	replace	τιμᾶ
 184	legitur.	equal	legitur.
 184	ὃν	equal	ὃν
-184		insert	–
+184		insert	 
 184	θεός]	equal	θεός]
 184	ὃς	equal	ὃς
 184	θεούς	equal	θεούς
@@ -52247,7 +52247,7 @@
 187	Σοφοκλέους	equal	Σοφοκλέους
 187	Θυέστῃ.	replace	Θυέστη.
 187	‘ὡς	replace	ὡς
-187	ποτε’.	replace	–
+187	ποτε’.	replace	 
 187		replace	ποτε.
 187	v.	equal	v.
 187	1	equal	1
@@ -52918,7 +52918,7 @@
 189	καὶ	equal	καὶ
 189	ὑποβάς	equal	ὑποβάς
 189	῾ἔνθεν	replace	ἔνθεν
-189	Λυρκείου’,	replace	–
+189	Λυρκείου’,	replace	 
 189		replace	Λυρκείου.
 189	βελτίων	equal	βελτίων
 189	δ’	equal	δ’
@@ -53367,7 +53367,7 @@
 191	τῆς	equal	τῆς
 191	εὐδαιμονίας·	equal	εὐδαιμονίας·
 191	῾εὐδαίμονες	replace	εὐδαίμονες
-191	θείου’.	replace	–
+191	θείου’.	replace	 
 191	v.	replace	θείου.
 191		replace	Θείου.
 191		replace	τ.
@@ -53498,7 +53498,7 @@
 191	81,	equal	81,
 191	16:	equal	16:
 191	κερχνώδη	equal	κερχνώδη
-191		insert	–
+191		insert	 
 191	τὰ	equal	τὰ
 191	τραχείας	equal	τραχείας
 191	ἀνωμαλίας	equal	ἀνωμαλίας
@@ -54790,7 +54790,7 @@
 196	vel	equal	vel
 196	ἱππῶνι)	equal	ἱππῶνι)
 196	῾ἐξ	replace	‘ἐξ
-196	κομίζομαι;.	replace	–
+196	κομίζομαι;.	replace	 
 196		replace	κομίζομαι.
 196	280	equal	280
 196	πρὸς	equal	πρὸς
@@ -55030,7 +55030,7 @@
 197	Ἀχιλλέως	equal	Ἀχιλλέως
 197	῾σὺ	replace	σὺ
 197	δ’	equal	δ’
-197	πενθερῶν’.	replace	–
+197	πενθερῶν’.	replace	 
 197		replace	πενθερῶν.
 197	ἀντὶ	equal	ἀντὶ
 197	τοῦ	equal	τοῦ
@@ -56119,7 +56119,7 @@
 201	Καμικοῖς	equal	Καμικοῖς
 201	οὕτως	equal	οὕτως
 201	῾ἁλίας	replace	ἁλίας
-201	εὑρεῖν’.	replace	–
+201	εὑρεῖν’.	replace	 
 201		replace	εὑρεῖν.
 201	quo	equal	quo
 201	spectarit	equal	spectarit
@@ -56846,7 +56846,7 @@
 203	753,	equal	753,
 203	7:	equal	7:
 203	τερθρεία	equal	τερθρεία
-203		insert	–
+203		insert	 
 203	παρὰ	equal	παρὰ
 203	τὸ	equal	τὸ
 203	τερθρεύειν.	equal	τερθρεύειν.
@@ -57462,7 +57462,7 @@
 205	Κολχίσιν	equal	Κολχίσιν
 205	῾ἢ	replace	ἢ
 205	φὴς	equal	φὴς
-205	χάριν’.	replace	–
+205	χάριν’.	replace	 
 205		replace	χάριν.
 205	316	equal	316
 205	ὑμεῖς	equal	ὑμεῖς
@@ -57560,7 +57560,7 @@
 206	τῶν	equal	τῶν
 206	προειρημένων	equal	προειρημένων
 206	῾ἦ	replace	ἦ
-206	οὑπιχώριος;’.(v.	replace	–
+206	οὑπιχώριος;’.(v.	replace	 
 206		replace	οὑπιχώριος;”
 206		replace	(v.
 206	1)	equal	1)
@@ -57894,7 +57894,7 @@
 207	A).	delete	
 207	‘	delete	
 207	ὅστις	equal	ὅστις
-207	νοῦς’.	replace	–
+207	νοῦς’.	replace	 
 207		replace	νοῦς‘.
 207	v.	equal	v.
 207	1	equal	1
@@ -58865,7 +58865,7 @@
 210	ὑπὸ	equal	ὑπὸ
 210	τῶν	equal	τῶν
 210	ἀδελφῶν	equal	ἀδελφῶν
-210		insert	–
+210		insert	 
 210	σίδηρος	equal	σίδηρος
 210	corrupta	equal	corrupta
 210	sunt	equal	sunt
@@ -59145,7 +59145,7 @@
 211	Sophocles	equal	Sophocles
 211	Λακαίναις	equal	Λακαίναις
 211	‘θεοί	replace	θεοί
-211	βίᾳ’.	replace	–
+211	βίᾳ’.	replace	 
 211		replace	βία’.
 211	v.	equal	v.
 211	2	equal	2
@@ -60413,13 +60413,13 @@
 215	Δωτιεύς.	equal	Δωτιεύς.
 215	Σοφοκλῆς	equal	Σοφοκλῆς
 215	Λαρισαίοις	equal	Λαρισαίοις
-215		insert	–
+215		insert	 
 215	καὶ	equal	καὶ
 215	ἐν	equal	ἐν
 215	Λημνίαις	equal	Λημνίαις
 215	προτέραις	equal	προτέραις
 215	῾Φερητίδης	replace	Φερητίδης
-215	Κόρωνος’.	replace	–
+215	Κόρωνος’.	replace	 
 215		replace	Κόρωνος‘.
 215	verba	equal	verba
 215	petita	equal	petita
@@ -61417,7 +61417,7 @@
 218	δὲ	equal	δὲ
 218	τοῖς	equal	τοῖς
 218	ἔργοις,	equal	ἔργοις,
-218	καὶ	replace	–
+218	καὶ	replace	 
 218	(l.	replace	καὶ
 218		replace	(1.
 218	ὡς)	equal	ὡς)
@@ -62821,7 +62821,7 @@
 224	Σοφοκλῆς	equal	Σοφοκλῆς
 224	Ναυπλίῳ	replace	Ναυπλίω
 224	‘Ζεῦ	replace	Ζεν
-224	κρατῆρος’.	replace	–
+224	κρατῆρος’.	replace	 
 224		replace	κρατῆρος‘.
 224	cf.	equal	cf.
 224	Schol.	equal	Schol.
@@ -62919,7 +62919,7 @@
 224		replace	Ναυπλίω
 224	καταπλέοντι	equal	καταπλέοντι
 224	‘ἀλλ’	replace	ἀλλ’
-224	πεφραγμένον’.	replace	–
+224	πεφραγμένον’.	replace	 
 224	καὶ	replace	πεφραγμένον.
 224	῾ὡς	replace	(καὶ)
 224	τοξεύμασι’	replace	ὡς
@@ -63625,7 +63625,7 @@
 227	(κατουλάξ	replace	(κατουλάς
 227	L)	equal	L)
 227	καλεῖται	equal	καλεῖται
-227		insert	–
+227		insert	 
 227	παρὰ	equal	παρὰ
 227	Σοφοκλεῖ	replace	Σου
 227		replace	φοκλεῖ
@@ -63959,7 +63959,7 @@
 228	7,	equal	7,
 228	45:	equal	45:
 228	ἐπενδύτης	equal	ἐπενδύτης
-228		insert	–
+228		insert	 
 228	ληπτέον	equal	ληπτέον
 228	αὐτὸ	equal	αὐτὸ
 228	ἐκ	equal	ἐκ
@@ -64891,12 +64891,12 @@
 231	248,	equal	248,
 231	21:	equal	21:
 231	Δωδώνη	equal	Δωδώνη
-231		insert	–
+231		insert	 
 231	τῆς	equal	τῆς
 231	μέντοι	equal	μέντοι
 231	Δωδώνης	equal	Δωδώνης
 231	Δωδωναῖος	equal	Δωδωναῖος
-231		insert	–
+231		insert	 
 231	τὸ	equal	τὸ
 231	θηλυκὸν	equal	θηλυκὸν
 231	Δωδωνὶς	replace	Δωδωνίς
@@ -65081,7 +65081,7 @@
 232	et	equal	et
 232	Suidas:	equal	Suidas:
 232	παρουσία	equal	παρουσία
-232		insert	–
+232		insert	 
 232	καὶ	equal	καὶ
 232	ἐπὶ	equal	ἐπὶ
 232	τοῦ	equal	τοῦ
@@ -65193,7 +65193,7 @@
 232	ἀκανθοπλῆγι’.αὶ	replace	ἀκανθοπλῆγι
 232		replace	καὶ
 232	τὸν	equal	τὸν
-232		insert	–
+232		insert	 
 232	δαῖμον	equal	δαῖμον
 232	συλογούμενον’.	replace	συλογούμενον.
 232	ubi	equal	ubi
@@ -65222,7 +65222,7 @@
 232	a	equal	a
 232	Palamede	equal	Palamede
 232	fraudis	equal	fraudis
-232	convictus'.	equal	convictus'.
+232	convictus’.	replace	convictus'.
 232	Brunck.	equal	Brunck.
 232	cf.	equal	cf.
 232	praeter	equal	praeter
@@ -65610,7 +65610,7 @@
 234	ὁ	equal	ὁ
 234	ἀδελφιδοῦς	equal	ἀδελφιδοῦς
 234	Δημοσθένους	equal	Δημοσθένους
-234		insert	–
+234		insert	 
 234	φησὶν	equal	φησὶν
 234	Ἰσχάνδρου	equal	Ἰσχάνδρου
 234	τοῦ	equal	τοῦ
@@ -65635,7 +65635,7 @@
 234	Σαννίωνος	equal	Σαννίωνος
 234	τοῦ	equal	τοῦ
 234	χοροδιδασκάλου	equal	χοροδιδασκάλου
-234		insert	–
+234		insert	 
 234	καὶ	equal	καὶ
 234	μετὰ	equal	μετὰ
 234	Σωκράτους	equal	Σωκράτους
@@ -65991,7 +65991,7 @@
 235	Ἱπποδάμειαν	equal	Ἱπποδάμειαν
 235	φησί	equal	φησί
 235	῾τοιάνδ’	replace	τοιάνδε
-235	κανών’.	replace	–
+235	κανών’.	replace	 
 235		replace	κανών.
 235	v.	equal	v.
 235	1	equal	1
@@ -66509,7 +66509,7 @@
 237	cf.	equal	cf.
 237	Suidas:	equal	Suidas:
 237	δρωπακίζω	equal	δρωπακίζω
-237		insert	–
+237		insert	 
 237	δρωπτὰ	equal	δρωπτὰ
 237	γὰρ	equal	γὰρ
 237	τὰ	equal	τὰ
@@ -67464,7 +67464,7 @@
 240	Πηλεῖ	equal	Πηλεῖ
 240	‘μὴ	equal	‘μὴ
 240	ψεῦσον	equal	ψεῦσον
-240	δορός’.	replace	–
+240	δορός’.	replace	 
 240	ρεσπιψιτ	replace	δορός.
 240	Αντιαττ.	replace	respicit
 240		replace	Antiatt.
@@ -67705,7 +67705,7 @@
 241	392,	equal	392,
 241	6:	equal	6:
 241	Κυκνῖτις	replace	Κυκνίτης
-241		replace	–
+241		replace	 
 241	Σοφοκλῆς	equal	Σοφοκλῆς
 241	ἐν	equal	ἐν
 241	Πηλεῖ.	replace	Πηλεῖ,
@@ -68430,7 +68430,7 @@
 243	τε	equal	τε
 243	μηκάδος	equal	μηκάδος
 243	βοὸς	replace	βοὺς
-243	ῥηνέων.'	replace	ῥηνέων.
+243	ῥηνέων.’	replace	ῥηνέων.
 243	ex	equal	ex
 243	Amphiarai	equal	Amphiarai
 243	loco	equal	loco
@@ -68939,7 +68939,7 @@
 245	τοῦ	equal	τοῦ
 245	θνῄσκοντος	equal	θνῄσκοντος
 245	Οἰδίπου	equal	Οἰδίπου
-245		insert	–
+245		insert	 
 245	πεφάντασται	equal	πεφάντασται
 245	καὶ	equal	καὶ
 245	κατὰ	equal	κατὰ
@@ -69944,7 +69944,7 @@
 249	3	equal	3
 249	καδιος	equal	καδιος
 249	p.	replace	P.
-249	ν,	replace	v.
+249	v.	replace	v.
 249	4:	replace	4
 249	καλυπταὶ	equal	καλυπταὶ
 249	Valckenaer	replace	'Valckenaer
@@ -70863,7 +70863,7 @@
 252	ἀρσενικῶς	equal	ἀρσενικῶς
 252	τοὺς	equal	τοὺς
 252	αὐλῶνας	equal	αὐλῶνας
-252		insert	–
+252		insert	 
 252	οἱ	equal	οἱ
 252	δὲ	equal	δὲ
 252	ποιηταὶ	equal	ποιηταὶ
@@ -71091,7 +71091,7 @@
 253	Imag.	equal	Imag.
 253	1:	equal	1:
 253	Σκῦρος	replace	Σκύρος
-253		replace	–
+253		replace	 
 253	ἣν	equal	ἣν
 253	ὁ	equal	ὁ
 253	θεῖος	equal	θεῖος
@@ -72189,7 +72189,7 @@
 257	Σοφοκλέους	equal	Σοφοκλέους
 257	ἀναγινώσκομεν	equal	ἀναγινώσκομεν
 257	῾ἥλιε	replace	ἥλιο
-257	σέλας’.	replace	–
+257	σέλας’.	replace	 
 257		replace	σέλας.
 257	Φίλιππος	equal	Φίλιππος
 257	δὲ	equal	δὲ
@@ -72615,7 +72615,7 @@
 258	(ἐντείνει	equal	(ἐντείνει
 258	cod.)	equal	cod.)
 258	‘σπεύδουσαν	replace	σπεύδουσαν
-258		replace	–
+258		replace	 
 258	ποικίλῳ	equal	ποικίλῳ
 258	φάρει	equal	φάρει
 258	τῷδ’	equal	τῷδ’
@@ -74516,7 +74516,7 @@
 265	125,	equal	125,
 265	26:	equal	26:
 265	μελίνη	equal	μελίνη
-265	ὀσπρίου	replace	–
+265	ὀσπρίου	replace	 
 265		replace	οσπρίου
 265	ἐστὶ	equal	ἐστὶ
 265	σπέρμα,	equal	σπέρμα,
@@ -74751,7 +74751,7 @@
 265	(Σοφοκλεῖ	replace	(20φοκλεῖ
 265	Cramer)	equal	Cramer)
 265	‘ἀπυνδάκωτος	equal	‘ἀπυνδάκωτος
-265	κύλιξ’.	replace	–
+265	κύλιξ’.	replace	 
 265		replace	κύλιξ.
 265	sine	equal	sine
 265	poetae	equal	poetae
@@ -75182,7 +75182,7 @@
 267	Σοφοκλῆς	equal	Σοφοκλῆς
 267	Τρωίλῳ	equal	Τρωίλῳ
 267	‘πρὸς	replace	πρὸς
-267	ποτά’.	replace	–
+267	ποτά’.	replace	 
 267		replace	ποτά.
 267	cf.	equal	cf.
 267	Etym.	equal	Etym.
@@ -77080,7 +77080,7 @@
 274	ὁ	equal	ὁ
 274	Σοφοκλῆς	equal	Σοφοκλῆς
 274	‘σαφῶς	equal	‘σαφῶς
-274	τοὔνομα’	replace	–
+274	τοὔνομα’	replace	 
 274		replace	τοὔνομα
 274	(v.	equal	(v.
 274	2).	equal	2).
@@ -77325,7 +77325,7 @@
 275	῾κόμης	replace	ὁ
 275	δὲ	replace	κόμης
 275		replace	δὲ
-275		replace	–
+275		replace	 
 275	πάρος	equal	πάρος
 275	φόβην’.	replace	φόβην.
 275	cf.	equal	cf.
@@ -78174,7 +78174,7 @@
 278	Ἀκέστη,	equal	Ἀκέστη,
 278	πόλις	equal	πόλις
 278	Σικελίας	equal	Σικελίας
-278		insert	–
+278		insert	 
 278	τὸ	equal	τὸ
 278	ἐθνικὸν	equal	ἐθνικὸν
 278	Ἀκεσταῖος.	equal	Ἀκεσταῖος.
@@ -78574,7 +78574,7 @@
 279	Σοφοκλέους	equal	Σοφοκλέους
 279	Φαίδρα.	equal	Φαίδρα.
 279	῾αἴσχη	replace	αἴσχη
-279	φέρειν’.	replace	–
+279	φέρειν’.	replace	 
 279		replace	φέρειν.
 279	v.	equal	v.
 279	2	equal	2
@@ -78743,7 +78743,7 @@
 280	Σοφοκλῆς	equal	Σοφοκλῆς
 280	Φαίδρα.	equal	Φαίδρα.
 280	‘οὕτω	replace	οὕτω
-280	λέγει’.	replace	–
+280	λέγει’.	replace	 
 280	v.	replace	λέγει.
 280	1	replace	v.
 280	οὔτοι	replace	1
@@ -78997,7 +78997,7 @@
 281	om.	equal	om.
 281	Ρ).	replace	P).
 281	῾ἔζης	replace	ἔξης
-281	βιάζεται’.	replace	–
+281	βιάζεται’.	replace	 
 281		replace	βιάζεται.
 281	vivus	equal	vivus
 281	inferos	equal	inferos
@@ -80257,7 +80257,7 @@
 286	δὲ	equal	δὲ
 286	Φοίνικι	equal	Φοίνικι
 286	῾κύναρος	replace	κύναρος
-286	γύην’.	replace	–
+286	γύην’.	replace	 
 286		replace	γύην.
 286	Eust.	equal	Eust.
 286	Od.	equal	Od.
@@ -80930,7 +80930,7 @@
 288	κεῖται	equal	κεῖται
 288	ἐν	equal	ἐν
 288	Πλεισθένει	equal	Πλεισθένει
-288		insert	–
+288		insert	 
 288	καὶ	equal	καὶ
 288	Σοφοκλῆς	equal	Σοφοκλῆς
 288	ἐν	equal	ἐν
@@ -81336,7 +81336,7 @@
 290	καὶ	equal	καὶ
 290	τὸ	equal	τὸ
 290	‘φίλου	replace	φίλου
-290	φίλοι’	replace	–
+290	φίλοι’	replace	 
 290		replace	φίλοι
 290	Σοφοκλέους	equal	Σοφοκλέους
 290	ὂν	replace	ἂν
@@ -81620,7 +81620,7 @@
 291	ἄρα	equal	ἄρα
 291	‘τὸ	replace	τὸ
 291	πρὸς	equal	πρὸς
-291	βίᾳ’	replace	–
+291	βίᾳ’	replace	 
 291	.	replace	βίας.
 291	v.	equal	v.
 291	2	equal	2
@@ -83198,7 +83198,7 @@
 297	Θεωρίδος	equal	Θεωρίδος
 297	τῆς	equal	τῆς
 297	ἑταίρας	equal	ἑταίρας
-297		insert	–
+297		insert	 
 297	τῆς	equal	τῆς
 297	δὲ	equal	δὲ
 297	Θεωρίδος	equal	Θεωρίδος
@@ -83547,7 +83547,7 @@
 298	‘πρὸς	replace	πρὸς
 298	δ’	equal	δ’
 298	οἷον	equal	οἷον
-298		insert	–
+298		insert	 
 298	ἁπλῶς	equal	ἁπλῶς
 298	δίκην’.	equal	δίκην’.
 298	Plut.	equal	Plut.
@@ -83760,7 +83760,7 @@
 298	μαρτυρεῖ	equal	μαρτυρεῖ
 298	Σοφοκλῆς	equal	Σοφοκλῆς
 298	‘Θήβας	equal	‘Θήβας
-298	θεούς’.	replace	–
+298	θεούς’.	replace	 
 298		replace	θεούς.
 298	v.	equal	v.
 298	1	equal	1
@@ -83895,7 +83895,7 @@
 299	Θρᾴκης.	replace	Θράκης.
 299	Σοφοκλῆς	equal	Σοφοκλῆς
 299	῾Ἄθως	replace	Ἄθως
-299	βοός’.	replace	–
+299	βοός’.	replace	 
 299		replace	βοός.
 299	Schol.	equal	Schol.
 299	Theocr.	equal	Theocr.
@@ -84015,7 +84015,7 @@
 299	ἱμάτιον	equal	ἱμάτιον
 299	Σοφοκλῆς	equal	Σοφοκλῆς
 299	‘τρύχει	replace	τρύχει
-299	ἁπληγίδος’.	replace	–
+299	ἁπληγίδος’.	replace	 
 299		replace	ἁπληγίδος.
 299	Strab.	equal	Strab.
 299	XI	equal	XI
@@ -84089,7 +84089,7 @@
 299	p.	equal	p.
 299	66):	equal	66):
 299	βλιμάζειν	equal	βλιμάζειν
-299		insert	–
+299		insert	 
 299	λαμβάνεται	equal	λαμβάνεται
 299	δὲ	equal	δὲ
 299	ἡ	equal	ἡ
@@ -84213,7 +84213,7 @@
 300	313,	equal	313,
 300	3:	equal	3:
 300	ἔγχος	equal	ἔγχος
-300		insert	–
+300		insert	 
 300	ὁ	equal	ὁ
 300	δὲ	equal	δὲ
 300	Σοφοκλῆς	equal	Σοφοκλῆς
@@ -84283,7 +84283,7 @@
 300	(παρασοφοκλέους	equal	(παρασοφοκλέους
 300	F)	replace	Γ)
 300	‘πολὺς	replace	πολὺς
-300	τυρβάζεται’.	replace	–
+300	τυρβάζεται’.	replace	 
 300		replace	τυρβάζεται.
 300	eadem	equal	eadem
 300	Etym.	equal	Etym.
@@ -85307,7 +85307,7 @@
 304	ἑτέρα	equal	ἑτέρα
 304	παραπλήσιος	equal	παραπλήσιος
 304	ἀργύρῳ.	equal	ἀργύρῳ.
-304		insert	–
+304		insert	 
 304	κέκληται	equal	κέκληται
 304	δὲ	equal	δὲ
 304	οὕτως	equal	οὕτως
@@ -85576,7 +85576,7 @@
 305	Λογγῖνος	replace	Λογγίνος
 305	ἐν	equal	ἐν
 305	τῷ	equal	τῷ
-305	κα'	replace	καί
+305	κα’	replace	καί
 305	τῶν	equal	τῶν
 305	Φιλολόγων.	equal	Φιλολόγων.
 305	spectare	equal	spectare
@@ -86253,7 +86253,7 @@
 307		insert	*
 307	τὸ	equal	τὸ
 307	κέρδος	equal	κέρδος
-307		insert	–
+307		insert	 
 307	ψευδῶν	equal	ψευδῶν
 307	εἴη’·	replace	εἴη·
 307	καὶ	equal	καὶ
@@ -86848,7 +86848,7 @@
 309	τοίνυν	equal	τοίνυν
 309	μὴ	equal	μὴ
 309	οὔσης	equal	οὔσης
-309		insert	–
+309		insert	 
 309	ἐλήρησεν	equal	ἐλήρησεν
 309	εἰπὼν	equal	εἰπὼν
 309	ὁ	equal	ὁ
@@ -87152,7 +87152,7 @@
 310	ὁ	equal	ὁ
 310	γοῦν	equal	γοῦν
 310	Σιμωνίδης	equal	Σιμωνίδης
-310	,	replace	–,
+310	,	replace	 ,
 310	Σοφοκλῆς	equal	Σοφοκλῆς
 310	δέ	equal	δέ
 310	῾σὺ	replace	σὺ
@@ -87218,7 +87218,7 @@
 310	εἶπεν	equal	εἶπεν
 310	῾οὐ	replace	οὐ
 310	κόσμος	equal	κόσμος
-310	φρενῶν’.	replace	–
+310	φρενῶν’.	replace	 
 310	763	replace	φρενῶν.
 310	εὔκαρπον	equal	εὔκαρπον
 310	Κυθέρειαν	equal	Κυθέρειαν
@@ -87956,7 +87956,7 @@
 313	Τρώων	equal	Τρώων
 313	ὡς	equal	ὡς
 313	῾φίλιπποι	replace	φίλιπποι
-313	παλαισταί’.	replace	–
+313	παλαισταί’.	replace	 
 313		replace	παλαισταί.
 313	v.	equal	v.
 313	2	equal	2
@@ -88177,7 +88177,7 @@
 314	῾οἱ	replace	οἱ
 314	μὲν	equal	μὲν
 314	ἐστερημένοι	equal	ἐστερημένοι
-314	φυγεῖν’.	replace	–
+314	φυγεῖν’.	replace	 
 314		replace	φυγεῖν.
 314	780	equal	780
 314	λάμπει	equal	λάμπει
@@ -88480,7 +88480,7 @@
 315	δεδογμένον	equal	δεδογμένον
 315	ἐστίν	equal	ἐστίν
 315	῾εὖ	replace	εὖ
-315	τεκταίνεται’.	replace	–
+315	τεκταίνεται’.	replace	 
 315		replace	τεκταίνεται.
 315	v.	equal	v.
 315	2	equal	2
@@ -88937,7 +88937,7 @@
 316	ἑαυτὸν	equal	ἑαυτὸν
 316	ἀνενεγκών	equal	ἀνενεγκών
 316	῾ὅστις	replace	ὅστις
-316	μόλῃ’	replace	–
+316	μόλῃ’	replace	 
 316	ἐνέβαινεν	replace	μόλῃς
 316		replace	ἐνέ
 316		replace	βαινεν
@@ -88980,7 +88980,7 @@
 316	τοῦ	equal	τοῦ
 316	Σοφοκλέους	equal	Σοφοκλέους
 316	῾ὅστις	replace	ὅστις
-316	μόλῃ’,	replace	–
+316	μόλῃ’,	replace	 
 316		replace	μόλῃ,
 316	μετέγραφεν	equal	μετέγραφεν
 316	῾οὐκ	delete	
@@ -89135,7 +89135,7 @@
 317	μὲν	equal	μὲν
 317	γὰρ	equal	γὰρ
 317	εἴρηκε	equal	εἴρηκε
-317		insert	–
+317		insert	 
 317	Σοφοκλῆς	equal	Σοφοκλῆς
 317	δὲ	equal	δὲ
 317	῾ἕως	replace	ἕως
@@ -89323,7 +89323,7 @@
 317	in	equal	in
 317	hoc	equal	hoc
 317	῾Ἀλφεσίβοιαν	replace	Ἀλφεσίβοιαν
-317	πατήρ’.	replace	–
+317	πατήρ’.	replace	 
 317		replace	πα
 317		replace	τήρ’.
 317	hic	equal	hic
@@ -89530,7 +89530,7 @@
 318	Σοφοκλῆς	replace	Σοφοκλῆς
 318	῾ὁ	replace	ὁ
 318	σκηπτροβάμων	equal	σκηπτροβάμων
-318	Διός’.	replace	–
+318	Διός’.	replace	 
 318		replace	Διός.
 318	ἀετὸς	equal	ἀετὸς
 318	G.	equal	G.
@@ -89768,7 +89768,7 @@
 319	1164:	equal	1164:
 319	φῖτυ]	replace	φίτυ]
 319	στέρμα	equal	στέρμα
-319		insert	–
+319		insert	 
 319	καὶ	equal	καὶ
 319	Σοφοκλῆς	equal	Σοφοκλῆς
 319	‘οὐτ’	replace	οὔτ’
@@ -89926,7 +89926,7 @@
 319	καὶ	equal	καὶ
 319	Σοφοκλῆς	equal	Σοφοκλῆς
 319	παῖδας	equal	παῖδας
-319	ἔχει’.	replace	–
+319	ἔχει’.	replace	 
 319		replace	ἔχει.
 319	καὶ	equal	καὶ
 319	πάλιν	equal	πάλιν
@@ -90410,7 +90410,7 @@
 321	Ο	replace	O
 321	102:	equal	102:
 321	μέτωπον	equal	μέτωπον
-321		insert	–
+321		insert	 
 321	ἰάνθη]	equal	ἰάνθη]
 321	Σοφοκλῆς	equal	Σοφοκλῆς
 321	‘ὡς	replace	ὡς
@@ -90504,7 +90504,7 @@
 322	ἐστι	equal	ἐστι
 322	τὴν	equal	τὴν
 322	στρατιάν.	equal	στρατιάν.
-322		insert	–
+322		insert	 
 322	καὶ	equal	καὶ
 322	Σοφοκλῆς	equal	Σοφοκλῆς
 322	‘ἐν	equal	‘ἐν
@@ -91133,7 +91133,7 @@
 324	καὶ	equal	καὶ
 324	Σοφοκλῆς	equal	Σοφοκλῆς
 324	‘πάνσοφον	replace	πάνσοφον
-324	γόνος’.	replace	–
+324	γόνος’.	replace	 
 324		replace	γόνος.
 324	τὸ	equal	τὸ
 324	πάνσοφον	equal	πάνσοφον
@@ -91954,7 +91954,7 @@
 327	4:	equal	4:
 327	Σοφοκλέους.	equal	Σοφοκλέους.
 327	‘κλέπτων	replace	κλέπτων
-327	στόμα’.	replace	–
+327	στόμα’.	replace	 
 327		replace	στόμα.
 327	v.	equal	v.
 327	2	equal	2
@@ -93587,7 +93587,7 @@
 332	12:	equal	12:
 332	Σοφοκλέους.	equal	Σοφοκλέους.
 332	‘ὅστις	replace	ὅστις
-332	μολών’.	replace	–
+332	μολών’.	replace	 
 332		replace	μολών.
 332	eclogam	equal	eclogam
 332	habet	equal	habet
@@ -93756,7 +93756,7 @@
 333	Σοφοκλέους.	equal	Σοφοκλέους.
 333	τἀληθὲς	equal	τἀληθὲς
 333	-	replace	λόγου‘.
-333	λόγου'.	replace	
+333	λόγου’.	replace	
 333	ἰσχύειν	equal	ἰσχύειν
 333	λέγω	equal	λέγω
 333	ego	equal	ego
@@ -93998,7 +93998,7 @@
 334	Λύκῳ	equal	Λύκῳ
 334	‘τὸν	replace	τὸν
 334	ἀντίπλευρον	equal	ἀντίπλευρον
-334	Πάλλας'	replace	—
+334	Πάλλας’	replace	—
 334		replace	Πάλλας
 334	(v.	equal	(v.
 334	4-8).	equal	4-8).
@@ -94238,7 +94238,7 @@
 335	ἑτέρῳ	equal	ἑτέρῳ
 335	λέγει	equal	λέγει
 335	‘θεοῦ	replace	θεοῦ
-335	βροτός’.	replace	–
+335	βροτός’.	replace	 
 335	Eundem	replace	βροτός‘.
 335		replace	eundem
 335	versum	equal	versum
@@ -94608,7 +94608,7 @@
 336	S)	equal	S)
 336	Σοφοκλῆς	equal	Σοφοκλῆς
 336	‘ὅταν	replace	ὅταν
-336	νόμον’	replace	–
+336	νόμον’	replace	 
 336		replace	νόμον
 336	(v.	equal	(v.
 336	1).	equal	1).
@@ -95428,7 +95428,7 @@
 340	ἀντὶ	equal	ἀντὶ
 340	τοῦ	equal	τοῦ
 340	ἀμείβεσθαι,	equal	ἀμείβεσθαι,
-340	–	equal	–
+340	–	replace	 
 340	Σοφοκλῆς	replace	Σου
 340		replace	φοκλῆς
 340	δὲ	equal	δὲ
@@ -96029,7 +96029,7 @@
 342	p.	equal	p.
 342	353:	equal	353:
 342	βαίτη	equal	βαίτη
-342		insert	–
+342		insert	 
 342	ἔνιοι	equal	ἔνιοι
 342	δὲ	equal	δὲ
 342	σκηνὴν	equal	σκηνὴν
@@ -97066,7 +97066,7 @@
 347	291,	equal	291,
 347	20:	equal	20:
 347	λίτρα	equal	λίτρα
-347		insert	–
+347		insert	 
 347	Σοφοκλῆς	equal	Σοφοκλῆς
 347	δὲ	equal	δὲ
 347	λιτροσκόπον	equal	λιτροσκόπον
@@ -97649,7 +97649,7 @@
 350	πύγαργος·	equal	πύγαργος·
 350	εἶσος	replace	εἶδος
 350	ἀετοῦ	equal	ἀετοῦ
-350		insert	–
+350		insert	 
 350	Σοφοκλῆς	equal	Σοφοκλῆς
 350	ἐπὶ	equal	ἐπὶ
 350	τοῦ	equal	τοῦ
@@ -98291,7 +98291,7 @@
 352	καὶ	equal	καὶ
 352	θηλυκὸν	replace	θηλυκόν
 352	Τεγεᾶτις	replace	Τεγεῖτις
-352		replace	–
+352		replace	 
 352	λέγεται	equal	λέγεται
 352	καὶ	equal	καὶ
 352	Τεγεάς	equal	Τεγεάς
@@ -98767,7 +98767,7 @@
 354		replace	που
 354	Φιλόχορος	equal	Φιλόχορος
 354	φησίν	equal	φησίν
-354		insert	–
+354		insert	 
 354	ὁ	equal	ὁ
 354	δὲ	equal	δὲ
 354	Σοφοκλῆς	equal	Σοφοκλῆς
@@ -98854,12 +98854,12 @@
 355	ἄκουε	equal	ἄκουε
 355	σίγα.	equal	σίγα.
 355	Κρατῖνος	replace	Κρατίνος
-355		replace	–
+355		replace	 
 355	καὶ	equal	καὶ
 355	Σοφοκλῆς	equal	Σοφοκλῆς
 355	‘ἄκουε	replace	ἄκουε
 355	σίγα	equal	σίγα
-355	βοή;’	replace	–
+355	βοή;’	replace	 
 355		replace	βοή;
 355	simillimus	equal	simillimus
 355	est	equal	est
@@ -100003,7 +100003,7 @@
 358	Σοφοκλέους	equal	Σοφοκλέους
 358	‘εἷς	equal	‘εἷς
 358	ταῖς	equal	ταῖς
-358		insert	–
+358		insert	 
 358	γαῖαν	equal	γαῖαν
 358	μακράν’	replace	μακράν
 358	ab	equal	ab
@@ -100823,7 +100823,7 @@
 360	θεοῖσι’	replace	θεοῖσι
 360	λέγει	equal	λέγει
 360	‘αὐθαίρετα	replace	αυθαίρετα
-360	ἀρχήν’.	replace	–
+360	ἀρχήν’.	replace	 
 360		replace	άρ
 360		replace	χήν.
 360	v.	equal	v.
@@ -101243,7 +101243,7 @@
 364	om.	equal	om.
 364	A).	equal	A).
 364	‘εἰ	replace	εἰ
-364	κακά’.	replace	–
+364	κακά’.	replace	 
 364	καθέξεις	replace	κακά'.
 364		replace	καθέξεις,
 364	Porson,	equal	Porson,
@@ -101268,7 +101268,7 @@
 364	Εὐριπίδου	equal	Εὐριπίδου
 364	Αἰγέως.	equal	Αἰγέως.
 364	‘τί	equal	‘τί
-364	χθονός;’	replace	–
+364	χθονός;’	replace	 
 364		replace	χθονός;”
 364	7	equal	7
 364	κρεῖσσον	equal	κρεῖσσον
@@ -101301,7 +101301,7 @@
 364	Εὐριπίδου	equal	Εὐριπίδου
 364	Θησεῖ.	replace	Θησεί.
 364	‘κρεῖσσον	replace	κρείσσον
-364	παρουσίαι’.	replace	–
+364	παρουσίαι’.	replace	 
 364		replace	παρουσίαι‘.
 364	v.	equal	v.
 364	1	equal	1
@@ -101519,7 +101519,7 @@
 365	τοπικὸν	equal	τοπικὸν
 365	ἔδει	equal	ἔδει
 365	ἀντρίτης	equal	ἀντρίτης
-365		insert	–
+365		insert	 
 365	εὕρηται	equal	εὕρηται
 365	δὲ	equal	δὲ
 365	ἀντραῖος,	equal	ἀντραῖος,
@@ -101565,7 +101565,7 @@
 365	ταύταις	equal	ταύταις
 365	ἴσους	equal	ἴσους
 365	υἱούς	equal	υἱούς
-365		insert	–
+365		insert	 
 365	ὁ	equal	ὁ
 365	δὲ	equal	δὲ
 365	Εὐριπίδης	equal	Εὐριπίδης
@@ -102478,7 +102478,7 @@
 368		replace	EVRIPIDIS
 368	τοῦ	equal	τοῦ
 368	ἄρχοντος	equal	ἄρχοντος
-368		insert	–
+368		insert	 
 368	καὶ	equal	καὶ
 368	Εὐριπίδης	equal	Εὐριπίδης
 368	φησί	equal	φησί
@@ -102921,8 +102921,8 @@
 369	αὐτοῦ	equal	αὐτοῦ
 369	S)	equal	S)
 369	Αἰόλῳ.	equal	Αἰόλῳ.
-369	‘δοκεῖτ'	replace	‘δοκεῖτε
-369	τιμώμεθα'.	replace	τιμώμεθα.
+369	‘δοκεῖτ’	replace	‘δοκεῖτε
+369	τιμώμεθα’.	replace	τιμώμεθα.
 369	v.	equal	v.
 369	3	equal	3
 369	et	equal	et
@@ -102990,7 +102990,7 @@
 369	ἂν	equal	ἂν
 369	γένοιτο	equal	γένοιτο
 369	χωρὶς	equal	χωρὶς
-369	ἐσθλά'.	replace	ἐσθλά.
+369	ἐσθλά’.	replace	ἐσθλά.
 369	v.	equal	v.
 369	1	equal	1
 369	γαῖαν	equal	γαῖαν
@@ -103001,7 +103001,7 @@
 369	5	equal	5
 369	πένητι	equal	πένητι
 369	Erfurdt,	equal	Erfurdt,
-369	πένηθ'	replace	πένηθ’
+369	πένηθ’	equal	πένηθ’
 369	ὁ	equal	ὁ
 369	libri.	equal	libri.
 369	v.	equal	v.
@@ -103024,7 +103024,7 @@
 369		insert	v.
 369	22	equal	22
 369	τὴν	equal	τὴν
-369	δ'	replace	δ’
+369	δ’	equal	δ’
 369	εὐγένειαν	equal	εὐγένειαν
 369	πρὸς	equal	πρὸς
 369	θεῶν	equal	θεῶν
@@ -103033,7 +103033,7 @@
 369	λέγε,	equal	λέγε,
 369	ἐν	equal	ἐν
 369	χρήμασιν	equal	χρήμασιν
-369	τόδ'	replace	τόδ’
+369	τόδ’	equal	τόδ’
 369	ἐστί,	equal	ἐστί,
 369	μὴ	equal	μὴ
 369	γαυροῦ,	equal	γαυροῦ,
@@ -103049,11 +103049,11 @@
 369	οὐκ	equal	οὐκ
 369	ἔχει·	equal	ἔχει·
 369	κοινοῖσι	equal	κοινοῖσι
-369	δ'	replace	δ’
+369	δ’	equal	δ’
 369	αὐτοῖς	equal	αὐτοῖς
 369	χρώμεθ'·	replace	χρώμεθ’
 369	ᾧ	equal	ᾧ
-369	δ'	replace	δ’
+369	δ’	equal	δ’
 369	ἂν	equal	ἂν
 369	ἐν	equal	ἐν
 369	δόμοις	equal	δόμοις
@@ -103074,13 +103074,13 @@
 369	αἰόλω	replace	απόλω
 369	MA).	equal	MA).
 369	‘τὴν	replace	τὴν
-369	δ'	replace	
+369	δ’	replace	
 369	οὗτος	equal	οὗτος
 369	εὐτυχής’.	replace	εὐτυχής‘.
 369	v.	equal	v.
 369	4	equal	4
 369	μονίμοισι	equal	μονίμοισι
-369	δ'	replace	δ’
+369	δ’	equal	δ’
 369	οὔτοι	replace	οὗτοι
 369	F.	equal	F.
 369	G.	equal	G.
@@ -103093,7 +103093,7 @@
 369	χρώμεθα	equal	χρώμεθα
 369	SM.	equal	SM.
 369	ὧν	equal	ὧν
-369	δ'	replace	δ’
+369	δ’	equal	δ’
 369	M.	equal	M.
 369	v.	equal	v.
 369	5	equal	5
@@ -103104,7 +103104,7 @@
 369	εὐτυχής	equal	εὐτυχής
 369	SMA.	equal	SMA.
 369	23	equal	23
-369	ἀλλ'	replace	ἀλλ’
+369	ἀλλ’	equal	ἀλλ’
 369	ἢ	equal	ἢ
 369	τὸ	equal	τὸ
 369	γῆρας	equal	γῆρας
@@ -103113,7 +103113,7 @@
 369	χαίρειν	equal	χαίρειν
 369	ἐᾷ,	equal	ἐᾷ,
 369	ἥ	equal	ἥ
-369	τ'	replace	τ’
+369	τ’	equal	τ’
 369	Ἀφροδίτη	equal	Ἀφροδίτη
 369	τοῖς	equal	τοῖς
 369	γέρουσιν	equal	γέρουσιν
@@ -103126,8 +103126,8 @@
 369	Αἰόλῳ	equal	Αἰόλῳ
 369	(διόλου	equal	(διόλου
 369	M).	equal	M).
-369	‘ἀλλ'	replace	‘ἀλλ’
-369	ἄχθεται'.	replace	ἄχθεται’.
+369	‘ἀλλ’	equal	‘ἀλλ’
+369	ἄχθεται’.	equal	ἄχθεται’.
 369	v.	equal	v.
 369	1	equal	1
 369	et	equal	et
@@ -103877,7 +103877,7 @@
 372	S)	equal	S)
 372	Αἰόλου.	equal	Αἰόλου.
 372	‘οἴμοι	replace	οἴμοι
-372	δάκρυ;’	replace	–
+372	δάκρυ;’	replace	 
 372	v.	replace	δάκρυ;
 372	1	replace	
 372	συναλγεῖν	replace	
@@ -104019,7 +104019,7 @@
 372	Εὐριπίδου	equal	Εὐριπίδου
 372	Αἰόλου.	equal	Αἰόλου.
 372	‘γυναῖκα	replace	γυναῖκα
-372	κεκλήσεται’.	replace	–
+372	κεκλήσεται’.	replace	 
 372	v.	replace	κεκλήσεται.
 372	1	equal	1
 372	γυναῖκας	equal	γυναῖκας
@@ -104719,7 +104719,7 @@
 375	Εὐριπίδου	replace	Εὐριπίδου
 375	om.	replace	om.S).
 375	S).	replace	ὥστ’
-375	‘ὥστ’	replace	–
+375	‘ὥστ’	replace	 
 375	εὐδαιμονεῖ’.	replace	εὐδαιμονεῖ‘.
 375	ὡς	equal	ὡς
 375	οὔτις	equal	οὔτις
@@ -105735,7 +105735,7 @@
 378	82:	equal	82:
 378	apud	equal	apud
 378	Ennium	equal	Ennium
-378	‘quapropter	replace	–
+378	‘quapropter	replace	 
 378		replace	Aquapropter
 378	Parim	equal	Parim
 378	pastores	equal	pastores
@@ -105896,7 +105896,7 @@
 379	ἄρχοντος	equal	ἄρχοντος
 379	τὸ	equal	τὸ
 379	λ	equal	λ
-379	(πε'	replace	(πε’
+379	(πε’	equal	(πε’
 379	ὀλ.	replace	λ.
 379	coni.	equal	coni.
 379	Dindorf).	equal	Dindorf).
@@ -107550,7 +107550,7 @@
 384	om.	equal	om.
 384	S).	equal	S).
 384	‘γυναῖκα	replace	γυναῖκα
-384	λόγῳ’.	replace	–
+384	λόγῳ’.	replace	 
 384		replace	λόγῳ‘.
 384	v.	equal	v.
 384	1	equal	1
@@ -107924,7 +107924,7 @@
 385	Ἀλκμαίωνι	equal	Ἀλκμαίωνι
 385	φησί	equal	φησί
 385	‘γυναῖκες	replace	γυναῖκες
-385		replace	–
+385		replace	 
 385	τέχνην’.	equal	τέχνην’.
 385	v.	equal	v.
 385	1	equal	1
@@ -108318,7 +108318,7 @@
 387	Εὐριπίδου	equal	Εὐριπίδου
 387	Ἀλκμήνης.	equal	Ἀλκμήνης.
 387	‘ἴστω	replace	ἴστω
-387	γαυρούμενος’.	replace	–
+387	γαυρούμενος’.	replace	 
 387		replace	γαυρούμενος.
 387	eclogam	equal	eclogam
 387	om.	equal	om.
@@ -109320,7 +109320,7 @@
 390	ἐν	equal	ἐν
 390	τῷ	equal	τῷ
 390	‘γέμουσαν	equal	‘γέμουσαν
-390	θεοσπόρου’.	replace	–
+390	θεοσπόρου’.	replace	 
 390		replace	θεοσπόρου‘.
 390	Eust.	equal	Eust.
 390	Od.	equal	Od.
@@ -110742,7 +110742,7 @@
 395	‘συνάλγησον	replace	395
 395	μόχθων’.	replace	·
 395		replace	συναλγησον
-395		replace	–
+395		replace	 
 395		replace	μόχθων.
 395	chori	equal	chori
 395	notam	equal	notam
@@ -111124,7 +111124,7 @@
 396	subicit	replace	subiit
 396	haec:	equal	haec:
 396	Περσεὺς	replace	Περσεύς
-396	κομίζων’.	replace	–
+396	κομίζων’.	replace	 
 396		replace	κομίζων‘.
 396	Fritzschio	equal	Fritzschio
 396	et	equal	et
@@ -111263,7 +111263,7 @@
 397	ἐξ	equal	ἐξ
 397	Ἀνδρομέδας	equal	Ἀνδρομέδας
 397	‘ἔα	replace	ἔα
-397		replace	–
+397		replace	 
 397	εἰκώ	equal	εἰκώ
 397	τινα’	replace	τινας
 397	(v.	equal	(v.
@@ -111297,7 +111297,7 @@
 397	ἐν	equal	ἐν
 397	ὕλῃ	equal	ὕλῃ
 397	ἀτμήτῳ	equal	ἀτμήτῳ
-397		insert	–
+397		insert	 
 397	ὡς	equal	ὡς
 397	δηλοῖ	equal	δηλοῖ
 397	καὶ	equal	καὶ
@@ -112175,7 +112175,7 @@
 399	Ἀνδρομέδα.	equal	Ἀνδρομέδα.
 399	‘ἦ	replace	ἦ
 399	που	equal	που
-399	κακόν’.	replace	–
+399	κακόν’.	replace	 
 399		replace	κακόν.
 399		replace	v.
 399	2	equal	2
@@ -112413,7 +112413,7 @@
 400	Εὐριπίδου	equal	Εὐριπίδου
 400	Ἀνδρομέδας.	equal	Ἀνδρομέδας.
 400	‘τῶν	equal	‘τῶν
-400	εὑρεῖν’.	replace	–
+400	εὑρεῖν’.	replace	 
 400		replace	εὑρεῖν.
 400	v.	equal	v.
 400	1	equal	1
@@ -112565,7 +112565,7 @@
 401	Ἀνδρομέδας.	equal	Ἀνδρομέδας.
 401	‘ὦ	replace	ὦ
 401	τλῆμον	equal	τλῆμον
-401	λόγοι’.	replace	–
+401	λόγοι’.	replace	 
 401		replace	λόγοι.
 401	v.	equal	v.
 401	1	equal	1
@@ -114023,7 +114023,7 @@
 405	narrationem	equal	narrationem
 405	ex	equal	ex
 405	recentioris	equal	recentioris
-405	cuisusdam	replace	cuiusdam
+405	cuiusdam	equal	cuiusdam
 405	poetae	equal	poetae
 405	Antigona	equal	Antigona
 405	derivatam	equal	derivatam
@@ -114064,7 +114064,7 @@
 405	Schol.	equal	Schol.
 405	Aesch.	equal	Aesch.
 405	Sept.	equal	Sept.
-405	774,	replace	775,
+405	775,	equal	775,
 405	quo	equal	quo
 405	utroque	equal	utroque
 405	loco	equal	loco
@@ -114081,8 +114081,7 @@
 405	Ran.	equal	Ran.
 405	1187:	equal	1187:
 405	‘εἶτ’	replace	'elt'
-405	β	replace	βροτῶν.
-405	ροτῶν’.	replace	
+405	βροτῶν’.	replace	βροτῶν.
 405	ex	equal	ex
 405	Euripideae	equal	Euripideae
 405	Antigonae	equal	Antigonae
@@ -114098,7 +114097,7 @@
 405	dubio	equal	dubio
 405	autem	equal	autem
 405	felicitatem	equal	felicitatem
-405	oedipi	replace	Oedipi
+405	Oedipi	equal	Oedipi
 405	fr.	equal	fr.
 405	157	equal	157
 405	commemoratam	equal	commemoratam
@@ -114131,8 +114130,8 @@
 405	Μαίων	equal	Μαίων
 405	Αἱμονίδης.	equal	Αἱμονίδης.
 406	406"/>	replace	406
-406	Euripedes	replace	EVRIPIDIS
-406		replace	Euripides
+406		replace	EVRIPIDIS
+406	Euripides	equal	Euripides
 406	antea	equal	antea
 406	quam	equal	quam
 406	miseriam	equal	miseriam
@@ -114395,7 +114394,7 @@
 406	Exerc.	equal	Exerc.
 406	crit.	equal	crit.
 406	p.	equal	p.
-406	35:	replace	35,
+406	35.	replace	35,
 406	σοφώτερος	equal	σοφώτερος
 406	SMA.	equal	SMA.
 406	v.	equal	v.
@@ -114430,7 +114429,7 @@
 407	χρυσὸς	equal	χρυσὸς
 407	ἀμαθίας	equal	ἀμαθίας
 407	μέτα	equal	μέτα
-407	ἄχρηστος.	replace	ἄχρηστος,
+407	ἄχρηστος,	equal	ἄχρηστος,
 407	εἰ	equal	εἰ
 407	μὴ	equal	μὴ
 407	κἀρετὴν	equal	κἀρετὴν
@@ -114441,7 +114440,7 @@
 407	93,	equal	93,
 407	13:	equal	13:
 407	Εὐριπίδου	equal	Εὐριπίδου
-407	τοῦ	replace	(τοῦ
+407	(τοῦ	equal	(τοῦ
 407	αὐτοῦ	equal	αὐτοῦ
 407	A)	equal	A)
 407	Ἀντιγόνης	equal	Ἀντιγόνης
@@ -114557,7 +114556,7 @@
 407	δέδοικε	equal	δέδοικε
 407	μηδὲν	equal	μηδὲν
 407	ἐξαμαρτάνειν’.	replace	ἐξαμαρτάνειν.
-407	Flor	replace	Flor.
+407	Flor.	equal	Flor.
 407	67,	equal	67,
 407	14:	equal	14:
 407	Ἱπποθόωντος.	replace	Ἰπποθόωντος.
@@ -114842,7 +114841,7 @@
 408	VI	equal	VI
 408	p.	equal	p.
 408	741:	equal	741:
-408	κaὶ	replace	καὶ
+408	καὶ	equal	καὶ
 408	Εὐριπίδου	equal	Εὐριπίδου
 408	μὲν	equal	μὲν
 408	ἐξ	equal	ἐξ
@@ -115046,7 +115045,7 @@
 409	Stud.	equal	Stud.
 409	2	equal	2
 409	p.	equal	p.
-409	447:	replace	447,
+409	447,	equal	447,
 409	νόμων	equal	νόμων
 409	ἄτερ	equal	ἄτερ
 409	Gomperz.	equal	Gomperz.
@@ -115060,7 +115059,7 @@
 409	πέλειν	equal	πέλειν
 409	L.	equal	L.
 409	Dindorf	equal	Dindorf
-409	Thes	replace	Thes.
+409	Thes.	equal	Thes.
 409	Gr.	equal	Gr.
 409	L.	equal	L.
 409	3	equal	3
@@ -115074,7 +115073,7 @@
 409	Exerc.	equal	Exerc.
 409	crit.	equal	crit.
 409	p.	equal	p.
-409	5:	replace	5,
+409	5,	equal	5,
 409	καὶ	equal	καὶ
 409	σέβειν	equal	σέβειν
 409	G.	equal	G.
@@ -115124,7 +115123,7 @@
 409	MA,	equal	MA,
 409	τοῦ	equal	τοῦ
 409	αὐτοῦ	equal	αὐτοῦ
-409	8)	replace	S)
+409	S)	equal	S)
 409	Ἀντιγόνῃ.	replace	Ἀντιγόνη.
 409	‘οἰκεῖος	replace	‘
 409		replace	οἰκεῖος
@@ -115153,7 +115152,7 @@
 409	διχοστατεῖ	equal	διχοστατεῖ
 409	M.	equal	M.
 409	174	equal	174
-409	μὴ	replace	[μὴ
+409	[μὴ	equal	[μὴ
 409	οὖν	equal	οὖν
 409	ἔθελε	equal	ἔθελε
 409	λυπεῖν	equal	λυπεῖν
@@ -115207,7 +115206,7 @@
 409	v.	equal	v.
 409	18:	equal	18:
 409	μὴ	equal	μὴ
-409	λυπεῖ	replace	λύπει
+409	λύπει	equal	λύπει
 409	σαυτὸν	equal	σαυτὸν
 409	τοῦτο	equal	τοῦτο
 409	γινώσκων	equal	γινώσκων
@@ -115237,7 +115236,7 @@
 409	Adv.	equal	Adv.
 409	2	equal	2
 409	p.	equal	p.
-409	360	replace	360,
+409	360,	equal	360,
 409	qui	equal	qui
 409	in	equal	in
 409	Stobaei	equal	Stobaei
@@ -115248,7 +115247,7 @@
 409	hunc	equal	hunc
 409	ordinem	equal	ordinem
 409	requirit:	equal	requirit:
-409	(??)	replace	3
+409	3	equal	3
 409	τοῦ	equal	τοῦ
 409	αὐτοῦ	equal	αὐτοῦ
 409	(i.	equal	(i.
@@ -115260,7 +115259,7 @@
 409	4	equal	4
 409	Εὐριπίδου	equal	Εὐριπίδου
 409	Ἀντιγόνῃ	replace	Ἀντιγόνη
-409	οὐδεὶς	equal	οὐδεὶς
+409	'οὐδεὶς	replace	οὐδεὶς
 409	ἐπὶ	equal	ἐπὶ
 409	σμικροῖσι	equal	σμικροῖσι
 409	λυπεῖται	equal	λυπεῖται
@@ -115269,7 +115268,7 @@
 409	Χαιρήμονος	equal	Χαιρήμονος
 409	‘πειρῶ	replace	πειρῶ
 409	τύχης	equal	τύχης
-409	(??)νοιαν	replace	ἄνοιαν
+409	ἄνοιαν	equal	ἄνοιαν
 409	ἀνδρείως	equal	ἀνδρείως
 409	φέρειν’.	replace	φέρειν.
 409	6	equal	6
@@ -115412,8 +115411,8 @@
 410	Εὐριπίδου	equal	Εὐριπίδου
 410	Ἀντιγόνης.	equal	Ἀντιγόνης.
 410	‘θάνατος	replace	θάνατος
-410	παθημά-	replace	παθημάτ
-410	των;’	replace	των;
+410	παθημάτων;’	replace	παθημάτ
+410		replace	των;
 410	v.	equal	v.
 410	1	equal	1
 410	ἀνθρώποισιν	equal	ἀνθρώποισιν
@@ -115528,7 +115527,7 @@
 410	Pyth.	equal	Pyth.
 410	3,	equal	3,
 410	177:	equal	177:
-410	Θυώνη	replace	Θυώνῃ
+410	Θυώνῃ	equal	Θυώνῃ
 410	τῇ	equal	τῇ
 410	Σεμέλῃ	replace	Σεμέλη
 410		replace	V.
@@ -115682,7 +115681,7 @@
 410	σάτυρον	equal	σάτυρον
 410	μεταβληθεὶς	equal	μεταβληθεὶς
 410	ἔφθειρε	equal	ἔφθειρε
-410	ἢ	replace	τὴν
+410	τὴν	equal	τὴν
 411	411"/>	replace	ΑΝΤΙΓΟΝΗ
 411		replace	ΑΝΤΙΟΠΗ
 411		replace	411
@@ -116111,11 +116110,11 @@
 411	p.	replace	μ.
 411	47,	equal	47,
 411	20.	equal	20.
-411	έν	replace	ἐν
+411	ἐν	equal	ἐν
 411	Ἐρασθαίῳ	equal	Ἐρασθαίῳ
 411	χωρίῳ	equal	χωρίῳ
 411	Θηβῶν	replace	Θηβών
-411	T(??)etz.	replace	Tzetz.
+411	Tzetz.	equal	Tzetz.
 411	schol.	equal	schol.
 411	ad	equal	ad
 411	exeg.	equal	exeg.
@@ -116136,7 +116135,7 @@
 411	Gr.	equal	Gr.
 411	vol.	equal	vol.
 411	3	equal	3
-411	'p.	replace	p.
+411	p.	equal	p.
 411	629.	equal	629.
 412	412"/>	replace	412
 412		replace	EVRIPIDIS
@@ -116153,7 +116152,7 @@
 412	usum	equal	usum
 412	esse	equal	esse
 412	testatur	equal	testatur
-412	Secholion	replace	Scholion
+412	Scholion	equal	Scholion
 412	Eur.	equal	Eur.
 412	Hipp.	equal	Hipp.
 412	58:	equal	58:
@@ -116219,7 +116218,7 @@
 412	50,	equal	50,
 412	94:	equal	94:
 412	ut	equal	ut
-412	Amphiom	replace	Amphion
+412	Amphion	equal	Amphion
 412	apud	equal	apud
 412	Euripidem,	equal	Euripidem,
 412	item	equal	item
@@ -116238,8 +116237,7 @@
 412	Wecklein	equal	Wecklein
 412	Sitzungsb.	equal	Sitzungsb.
 412	der	equal	der
-412	philos.	replace	philos.philol.
-412	philol.	replace	
+412	philos.-philol.	replace	philos.philol.
 412	u.	equal	u.
 412	histor.	equal	histor.
 412	Cl.	equal	Cl.
@@ -116312,7 +116310,7 @@
 412	χόρτοι	equal	χόρτοι
 412	δὲ	equal	δὲ
 412	οἱ	equal	οἱ
-412	τρργχοί,	replace	τριγχοί,
+412	τριγχοί,	equal	τριγχοί,
 412	ὡς	equal	ὡς
 412	καὶ	equal	καὶ
 412	Εὐριπίδης	equal	Εὐριπίδης
@@ -116321,10 +116319,10 @@
 412	‘σύγχορτα	replace	σύγχορτα
 412	ναίω	equal	ναίω
 412	πεδία	equal	πεδία
-412	ταῖς	replace	(ταῖς
+412	(ταῖς	equal	(ταῖς
 412	Ἐλευθεραῖς	equal	Ἐλευθεραῖς
 412	addit	equal	addit
-412	A)'.	replace	A).
+412	A)’.	replace	A).
 412	item	equal	item
 412	v.	equal	v.
 412	2	equal	2
@@ -116347,11 +116345,11 @@
 412	αὐλῆς	equal	αὐλῆς
 412	ἐν	equal	ἐν
 412	χόρτῳ	equal	χόρτῳ
-412		insert	–
+412		insert	 
 412	ὡς	equal	ὡς
 412	Εὐριπίδης	equal	Εὐριπίδης
 412	‘σύγχορτα	replace	σύγχορτα
-412	‘Ελευθέραις'.	replace	Ἐλευ
+412	Ἐλευθέραις’.	replace	Ἐλευ
 412		replace	θέραις.
 412	Strabo	equal	Strabo
 412	(vel	equal	(vel
@@ -116375,7 +116373,7 @@
 412	πρὸς	equal	πρὸς
 412	Ἐλευθεραῖς	equal	Ἐλευθεραῖς
 412	‘Οἰνώνῃ	replace	Οἰνώνῃ
-412	Ἐλευθεραῖσ',	replace	—
+412	Ἐλευθεραῖσ’,	replace	—
 412		replace	Ἐλευθεραῖς,
 412	καὶ	equal	καὶ
 412	μιᾷ	equal	μιᾷ
@@ -116388,11 +116386,11 @@
 412	Μαραθῶνα,	equal	Μαραθῶνα,
 412	καθ’	equal	καθ’
 412	ἧς	equal	ἧς
-412	ὴ	replace	ἡ
+412	ἡ	equal	ἡ
 412	παροιμία	equal	παροιμία
 412	Οἰνώνη	equal	Οἰνώνη
 412	τὴν	equal	τὴν
-412	χαράδραν'.	replace	χαράδραν.
+412	χαράδραν’.	replace	χαράδραν.
 412	v.	equal	v.
 412	1	equal	1
 412	Οἰνώνῃ	replace	Οἰνώνη
@@ -116425,7 +116423,7 @@
 412	Apollon.	equal	Apollon.
 412	Matthiae	equal	Matthiae
 412	huc	equal	huc
-412	rettulitf	replace	rettulit
+412	rettulit	equal	rettulit
 412	locum	equal	locum
 412	Dionis	equal	Dionis
 412	Chrysost.	equal	Chrysost.
@@ -116434,11 +116432,10 @@
 412	πλήν	equal	πλήν
 412	γε	equal	γε
 412	τῆς	equal	τῆς
-412	Οἰ-	replace	Οἰνέως
-412	νέως	replace	
+412	Οἰνέως	equal	Οἰνέως
 412	τοῦ	equal	τοῦ
 412	Πανδίονος	equal	Πανδίονος
-412		insert	–
+412		insert	 
 412	νόθου	equal	νόθου
 412	παιδός·	equal	παιδός·
 412	ὁ	equal	ὁ
@@ -116458,7 +116455,7 @@
 412	ἐν	equal	ἐν
 412	τῇ	equal	τῇ
 412	ὁδῷ	equal	ὁδῷ
-412	παρδία	replace	παιδία
+412	παιδία	equal	παιδία
 412	οὐκ	equal	οὐκ
 412	εἰδότες	equal	εἰδότες
 412	ὅτου	equal	ὅτου
@@ -116524,7 +116521,7 @@
 412	δ’	equal	δ’
 412	ἐν	equal	ἐν
 412	Ὑσιαῖς	equal	Ὑσιαῖς
-412	ἐν	equal	ἐν
+412	(ἐν	replace	ἐν
 412	ὑσίᾳ	equal	ὑσίᾳ
 412	libri,	equal	libri,
 412	correxit	equal	correxit
@@ -116539,7 +116536,7 @@
 413	μὲν	equal	μὲν
 413	κίκλησκε	equal	κίκλησκε
 413	Ζῆθον·	equal	Ζῆθον·
-413	ἐξήτησε	replace	ἐζήτησε
+413	ἐζήτησε	equal	ἐζήτησε
 413	γὰρ	equal	γὰρ
 413	τόκοισιν	equal	τόκοισιν
 413	εὐμάρειαν	equal	εὐμάρειαν
@@ -116557,7 +116554,7 @@
 413	ἡ	equal	ἡ
 413	μήτηρ	equal	μήτηρ
 413	αὐτοῦ	equal	αὐτοῦ
-413	ἐξήτει	replace	ἐζήτει
+413	ἐζήτει	equal	ἐζήτει
 413	(ἐζήτησεν	replace	(ἐξή
 413		replace	τησεν
 413	F)	equal	F)
@@ -116569,11 +116566,11 @@
 413	Εὐριπίδης	equal	Εὐριπίδης
 413	‘τὸν	equal	‘τὸν
 413	μὲν	equal	μὲν
-413	ντν’.	replace	νιν’.
+413	νιν’.	equal	νιν’.
 413	v.	equal	v.
 413	1	equal	1
 413	κίκλησκε]	equal	κίκλησκε]
-413	κακλήσκει	replace	κικλήσκει
+413	κικλήσκει	equal	κικλήσκει
 413	Valckenaer	equal	Valckenaer
 413	Diatr.	equal	Diatr.
 413	p.	equal	p.
@@ -116590,7 +116587,7 @@
 413	cod.	equal	cod.
 413	Sorb.	equal	Sorb.
 413	p.	equal	p.
-413	117	replace	1174
+413	1174	equal	1174
 413	A:	equal	A:
 413	Ζῆθος·	replace	Ζῆθος
 413	Εὐριπίδης	equal	Εὐριπίδης
@@ -116640,8 +116637,8 @@
 413	ἐκλήθη	equal	ἐκλήθη
 413	παρὰ	equal	παρὰ
 413	τὸ	equal	τὸ
-413	ἀμφ’ὁδὸν	replace	ἀμφ’
-413		replace	ὁδὸν
+413	ἀμφ’	equal	ἀμφ’
+413	ὁδὸν	equal	ὁδὸν
 413	cum	equal	cum
 413	Sylburgio)	replace	Sylburgio
 413	ἤγουν	replace	ήγουν
@@ -116652,10 +116649,10 @@
 413	cf.	equal	cf.
 413	Hyginus	equal	Hyginus
 413	fab.	equal	fab.
-413	7:dolor	replace	7:
-413	cam	replace	dolor
-413	(Antipam)	replace	eam
-413		replace	(Antiopam)
+413	7:	equal	7:
+413	dolor	equal	dolor
+413	eam	equal	eam
+413	(Antipam)	replace	(Antiopam)
 413	in	equal	in
 413	ipso	equal	ipso
 413	bivio	equal	bivio
@@ -116705,7 +116702,7 @@
 413	est	equal	est
 413	quoniam	equal	quoniam
 413	in	equal	in
-413	biuio	replace	bivio
+413	bivio	equal	bivio
 413	eum	equal	eum
 413	edidit.	equal	edidit.
 413	ineptam	equal	ineptam
@@ -116775,9 +116772,9 @@
 413	‘καὶ	replace	καὶ
 413	ἐπὶ	equal	ἐπὶ
 413	τοῦτ’	equal	τοῦτ’
-413	ὥν’.	replace	v'.
+413	ὤν’.	replace	v'.
 413	ubi	equal	ubi
-413	Schol	replace	Schol.
+413	Schol.	equal	Schol.
 413	p.	equal	p.
 413	911	equal	911
 413	a	equal	a
@@ -116787,18 +116784,18 @@
 413	ταῦτ’	equal	ταῦτ’
 413	ἐστὶν	equal	ἐστὶν
 413	ἐξ	equal	ἐξ
-413		insert	Ἀντιόπης
-413		insert	τοῦ
-413		insert	δράματος
-413		insert	Εὐ
-413		insert	ριπίδου
-413		insert	ἐκ
-413		insert	τῆς
-413		insert	Ζήθου
-413		insert	ῥήσεως
-413		insert	πρὸς
-413		insert	τὸν
-413		insert	ἀδελφὸν
+413	Ἀντιόπης	equal	Ἀντιόπης
+413	τοῦ	equal	τοῦ
+413	δράματος	equal	δράματος
+413	Εὐριπίδου	replace	Εὐ
+413		replace	ριπίδου
+413	ἐκ	equal	ἐκ
+413	τῆς	equal	τῆς
+413	Ζήθου	equal	Ζήθου
+413	ῥήσεως	equal	ῥήσεως
+413	πρὸς	equal	πρὸς
+413	τὸν	equal	τὸν
+413	ἀδελφὸν	equal	ἀδελφὸν
 413	Ἀμφίονα.	equal	Ἀμφίονα.
 413	Valckenaer	equal	Valckenaer
 413	ἐν	equal	ἐν
@@ -116820,7 +116817,7 @@
 413	1371	equal	1371
 413	b	equal	b
 413	31:	equal	31:
-413	ὥστερ	replace	ὥσπερ
+413	ὥσπερ	equal	ὥσπερ
 413	καὶ	equal	καὶ
 413	ὁ	equal	ὁ
 413	ποιητὴς	equal	ποιητὴς
@@ -116829,22 +116826,24 @@
 413	τοῦτ’	equal	τοῦτ’
 413	–	delete	
 413	βέλτιστος	equal	βέλτιστος
-413	ὤν’.	replace	ὤν.
-413		replace	Aristot.
-413		replace	q.
-413		replace	d.
-413		replace	Probl.
-413		replace	18,
-413		replace	6
-413		replace	p.
-413		replace	917
-413		replace	a
-413		replace	13:
-413		replace	ὃ
-413		replace	δὲ
-413		replace	αἱρεῖται,
-413		replace	ἐπὶ
-413		replace	τοῦτ’
+413	ὤν’.	delete	
+413	replace	delete	
+413	ὤν.	equal	ὤν.
+413	Aristot.	equal	Aristot.
+413	q.	equal	q.
+413	d.	equal	d.
+413	Probl.	equal	Probl.
+413	18,	equal	18,
+413	6	equal	6
+413	p.	equal	p.
+413	917	equal	917
+413	a	equal	a
+413	13:	equal	13:
+413	ὃ	equal	ὃ
+413	δὲ	equal	δὲ
+413	αἱρεῖται,	equal	αἱρεῖται,
+413	ἐπὶ	equal	ἐπὶ
+413	τοῦτ’	equal	τοῦτ’
 413	ἐπείξεται,	equal	ἐπείξεται,
 413	νέμων	equal	νέμων
 413	τὸ	equal	τὸ
@@ -116873,34 +116872,24 @@
 413	τῆς	equal	τῆς
 413	πολιτείας	equal	πολιτείας
 413	τούτῳ	equal	τούτῳ
-413	τούτῳ	delete	
 413	μέρος,	equal	μέρος,
-413		insert	κράτιστος
-413		insert	ὤν
-413		insert	(v.
-413		insert	3).
-413		insert	Plut.
-413		insert	de
-413		insert	garrul.
-413		insert	c.
-413		insert	22
-413		insert	p.
-413		insert	514
-413		insert	A:
-413		insert	φίλο
-413	αυτος	equal	αυτος
-413	γὰρ	equal	γὰρ
-413	ὤν	replace	ἂν
-413	καὶ	replace	
-413	φιλόδοξος	replace	
-413	ὁ	replace	
-413	τοιοῦτο	replace	
-413	‘νέμει	replace	
-413	τὸ	replace	
-413	πλεῖστον	replace	
-413	κράαντος	replace	
-413	γὰρ	replace	
-413	ὤν	replace	
+413	‘ἵν’	delete	
+413	κράτιστος	equal	κράτιστος
+413	ὤν	equal	ὤν
+413	(v.	equal	(v.
+413	3).	equal	3).
+413	Plut.	equal	Plut.
+413	de	equal	de
+413	garrul.	equal	garrul.
+413	c.	equal	c.
+413	22	equal	22
+413	p.	equal	p.
+413	514	equal	514
+413	A:	equal	A:
+413	φίλαυτος	replace	φίλο
+413	γὰρ	replace	αυτος
+413	ὤν	replace	γὰρ
+413		replace	ἂν
 413	καὶ	equal	καὶ
 413	φιλόδοξος	equal	φιλόδοξος
 413	ὁ	equal	ὁ
@@ -116908,11 +116897,11 @@
 413	‘νέμει	replace	νέμει
 413	τὸ	equal	τὸ
 413	πλεῖστον	equal	πλεῖστον
-413	κράτοστος	replace	–
-413	ὤν’(v.	replace	κρά
+413	κράτιστος	replace	 
+413	ὤν’	replace	κρά
 413		replace	τιστος
 413		replace	ὤν
-413		replace	(v.
+413	(v.	equal	(v.
 413	2	equal	2
 413	et	equal	et
 413	3).	equal	3).
@@ -116933,8 +116922,8 @@
 413	ἄγεται	equal	ἄγεται
 413	καὶ	equal	καὶ
 413	προθύμως	equal	προθύμως
-413	‘ἵνα	replace	ἵνα
-413	κρἀτιστος	replace	κράτιστος
+413	ἵνα	equal	ἵνα
+413	κράτιστος	equal	κράτιστος
 413	ὤν’	replace	ὤν
 413		replace	ιν
 414	414"/>	replace	414
@@ -116963,9 +116952,9 @@
 414	ἀλλὰ	equal	ἀλλὰ
 414	καὶ	equal	καὶ
 414	διαλεγόμενος,	equal	διαλεγόμενος,
-414	‘ἵν'	replace	ἵν’
+414	‘ἵν’	replace	ἵν’
 414	κράτιστος	equal	κράτιστος
-414	ὤν'	replace	ὤν
+414	ὤν’	replace	ὤν
 414	(v.	equal	(v.
 414	3),	equal	3),
 414	ἡδέως	equal	ἡδέως
@@ -117034,7 +117023,7 @@
 414	Aristot.	equal	Aristot.
 414	Rhet.	equal	Rhet.
 414	184	equal	184
-414	μοῦσαν	replace	μουσάν
+414	μοῦσάν	replace	μουσάν
 414	τιν’	equal	τιν’
 414	ἄτοπον	equal	ἄτοπον
 414	εἰσάγεις,	equal	εἰσάγεις,
@@ -117104,10 +117093,10 @@
 414	τῶν	equal	τῶν
 414	αὑτοῦ	equal	αὑτοῦ
 414	ἀτημελῆ	replace	ἀτη
-414	καὶ	replace	μελῆ
-414	νὴ	replace	ἴσως·
-414		replace	καὶ
-414		replace	νή
+414		replace	μελῆ
+414	ἴσως·	equal	ἴσως·
+414	καὶ	equal	καὶ
+414	νὴ	replace	νή
 414	Δία	equal	Δία
 414	λέγοι	equal	λέγοι
 414	ἂν	equal	ἂν
@@ -117119,7 +117108,7 @@
 414	ὧν	equal	ὧν
 414	κενοῖσιν	equal	κενοῖσιν
 414	ἐγκατοικήσεις	equal	ἐγκατοικήσεις
-414	δόμοις'	replace	δόμοις”
+414	δόμοις’	replace	δόμοις”
 414	(fr.	equal	(fr.
 414	188,	equal	188,
 414	6).	equal	6).
@@ -117137,8 +117126,8 @@
 414	‘ἀργήν,	equal	‘ἀργήν,
 414	φίλοινον,	equal	φίλοινον,
 414	χρημάτων	equal	χρημάτων
-414	ἀτημελῆ'.	replace	ἀτημελῆς.
-414	ν,	replace	v.
+414	ἀτημελῆ’.	replace	ἀτημελῆς.
+414	v.	equal	v.
 414	1	equal	1
 414	restituit	equal	restituit
 414	Porson	equal	Porson
@@ -117181,7 +117170,7 @@
 414	φιλῳδόν	equal	φιλῳδόν
 414	F.	equal	F.
 414	G.	equal	G.
-414	Schmit	replace	Schmidt
+414	Schmidt	equal	Schmidt
 414	Krit.	equal	Krit.
 414	Stud.	equal	Stud.
 414	2	equal	2
@@ -117205,12 +117194,12 @@
 414	γυναικομίμῳ	equal	γυναικομίμῳ
 414	διαπρέπεις	equal	διαπρέπεις
 414	μορφώματι	equal	μορφώματι
-414	.	replace	κοὔτ’
-414	.	replace	
-414	.	replace	
-414	.	replace	
-414	.	replace	
-414	κοὔτ'	replace	
+414	.	delete	
+414	.	delete	
+414	.	delete	
+414	.	delete	
+414	.	delete	
+414	κοὔτ’	equal	κοὔτ’
 414	ἂν	equal	ἂν
 414	ἀσπίδος	equal	ἀσπίδος
 414	κύτει	equal	κύτει
@@ -117239,7 +117228,7 @@
 414	πρὸς	equal	πρὸς
 414	τὸν	equal	τὸν
 414	Ἀμφίονα	equal	Ἀμφίονα
-414		insert	ὁ
+414	ὁ	equal	ὁ
 414	Εὐριπίδου,	equal	Εὐριπίδου,
 414	οὗπερ	equal	οὗπερ
 414	ἐμνήσθην·	equal	ἐμνήσθην·
@@ -117271,15 +117260,15 @@
 414	ψυχῆς	equal	ψυχῆς
 414	ὧδε	equal	ὧδε
 414	γενναίαν	equal	γενναίαν
-414	ἔχων	equal	ἔχων
+414	(ἔχων	replace	ἔχων
 414	addit	equal	addit
 414	Ruhnken,	equal	Ruhnken,
 414	λαχὼν	replace	λαχών
 414	H.	equal	H.
-414	μειρακιώδει	replace	Weil)
-414	μειρατινὶ	replace	μειρα
+414	Weil)	equal	Weil)
+414	μειρακιώδει	replace	μειρα
 414		replace	κιώδει
-414		replace	τινὶ
+414	τινὶ	equal	τινὶ
 414	διαπρέπεις	equal	διαπρέπεις
 414	μορφώματι,	equal	μορφώματι,
 414	καὶ	equal	καὶ
@@ -117287,7 +117276,7 @@
 414	ἂν	equal	ἂν
 414	δίκης	equal	δίκης
 414	βουλαῖσι	equal	βουλαῖσι
-414	προσθεῖ'	replace	προσθεῖ’
+414	προσθεῖ’	equal	προσθεῖ’
 414	ἂν	equal	ἂν
 414	ὀρθῶς	equal	ὀρθῶς
 414	λόγον	equal	λόγον
@@ -117305,7 +117294,7 @@
 415	BT,	equal	BT,
 415	corr.	equal	corr.
 415	Bonitz)	equal	Bonitz)
-415	οὔθ'	replace	οὔθ’
+415	οὔθ’	equal	οὔθ’
 415	ὑπὲρ	equal	ὑπὲρ
 415	ἄλλου	equal	ἄλλου
 415	νεανικὸν	equal	νεανικὸν
@@ -117330,8 +117319,8 @@
 415	αὐτοῦ	equal	αὐτοῦ
 415	Ἀντιόπης	equal	Ἀντιόπης
 415	δράματος	equal	δράματος
-415	εἴληγφε·	replace	εἴληφε·
-415		replace	—
+415	εἴληφε·	equal	εἴληφε·
+415		insert	—
 415	ὁ	equal	ὁ
 415	τῶν	equal	τῶν
 415	στίχων	equal	στίχων
@@ -117351,7 +117340,7 @@
 415	λύραν,	equal	λύραν,
 415	κέχρησο	equal	κέχρησο
 415	δὲ	equal	δὲ
-415	ὅπλοις'.	replace	ὅπλοις’.
+415	ὅπλοις’.	equal	ὅπλοις’.
 415	cf.	equal	cf.
 415	Olympiodorus	equal	Olympiodorus
 415	in	equal	in
@@ -117388,7 +117377,7 @@
 415	κέχρησο	equal	κέχρησο
 415	ὅπλοις.	equal	ὅπλοις.
 415	mox	equal	mox
-415	Olsympiodorus:	replace	Olympiodorus:
+415	Olympiodorus:	equal	Olympiodorus:
 415	μειρακιώδει	equal	μειρακιώδει
 415	τινὶ	equal	τινὶ
 415	διαπρέπεις]	equal	διαπρέπεις]
@@ -117403,7 +117392,7 @@
 415	αὐτὸς	equal	αὐτὸς
 415	μειρακιώδει	replace	μει
 415		replace	ρακιώδει
-415		replace	εἶπε.
+415	εἶπε.	equal	εἶπε.
 415	καὶ	equal	καὶ
 415	οὐκ	equal	οὐκ
 415	ἂν	equal	ἂν
@@ -117413,12 +117402,11 @@
 415	Εὐριπίδης	equal	Εὐριπίδης
 415	εἶπε	equal	εἶπε
 415	‘καὶ	replace	καὶ
-415	οὔτ'	replace	οὔτ’
+415	οὔτ’	equal	οὔτ’
 415	ἂν	equal	ἂν
 415	ἀσπίδος	equal	ἀσπίδος
 415	κύτει	equal	κύτει
-415	προσομιλήσεις	replace	προσομιλήσεις.
-415	.	replace	
+415	προσομιλήσεις.	equal	προσομιλήσεις.
 415	Philostr.	equal	Philostr.
 415	V.	equal	V.
 415	Apollon.	equal	Apollon.
@@ -117433,7 +117421,7 @@
 415	νῦν	equal	νῦν
 415	δὲ	equal	δὲ
 415	ἴσως	equal	ἴσως
-415	ὀμοῦνται	replace	ὁμοῦνται
+415	ὁμοῦνται	equal	ὁμοῦνται
 415	(sc.	equal	(sc.
 415	οἱ	equal	οἱ
 415	ἔφηβοι)	equal	ἔφηβοι)
@@ -117459,10 +117447,10 @@
 415	42,	equal	42,
 415	21:	equal	21:
 415	ἠσκημένους	replace	ησκημένους
-415		replace	–
+415		replace	 
 415	πλοχμοὺς	equal	πλοχμοὺς
 415	καθιέναι	equal	καθιέναι
-415	κατ'	replace	κατ’
+415	κατ’	equal	κατ’
 415	ὤμων	equal	ὤμων
 415	καὶ	equal	καὶ
 415	μεταφρένων	replace	μεταφρέ
@@ -117486,7 +117474,7 @@
 415	‘γυναικομίμοις	replace	γυναικομί
 415		replace	μοις
 415	ἐμπρέπεις	equal	ἐμπρέπεις
-415	ἐσθήμασιν'.	replace	ἐσθήμασιν.
+415	ἐσθήμασιν’.	replace	ἐσθήμασιν.
 415	ex	equal	ex
 415	his	equal	his
 415	locis	equal	locis
@@ -117517,13 +117505,13 @@
 415	Weil	equal	Weil
 415	Sept	equal	Sept
 415	trag.	equal	trag.
-415	d'	replace	d'Eur.
+415	d’	replace	d'Eur.
 415	Eur.	replace	
 415	p.	equal	p.
 415	IV.	equal	IV.
 415	v.	equal	v.
 415	5	equal	5
-415	οὔτ'	replace	οὔτ’
+415	οὔτ’	equal	οὔτ’
 415	ἀστῶν	equal	ἀστῶν
 415	ὕπερ	equal	ὕπερ
 415	malim.	equal	malim.
@@ -117559,7 +117547,7 @@
 415	Σώκρατες,	equal	Σώκρατες,
 415	εἴ	equal	εἴ
 415	τις	equal	τις
-415	ἥτις	replace	(ἥτις
+415	(ἥτις	equal	(ἥτις
 415	Β)	replace	B)
 415	εὐφυᾶ	equal	εὐφυᾶ
 415	λαβοῦσα	equal	λαβοῦσα
@@ -117578,7 +117566,7 @@
 415	τῶν	equal	τῶν
 415	μεγίστων	equal	μεγίστων
 415	κινδύνων	equal	κινδύνων
-415		insert	μήτε
+415	μήτε	equal	μήτε
 415	ἑαυτὸν	equal	ἑαυτὸν
 415	μήτε	equal	μήτε
 415	ἄλλον	equal	ἄλλον
@@ -117600,7 +117588,7 @@
 415	πόλει;	equal	πόλει;
 415	versus	equal	versus
 415	Euripideos	equal	Euripideos
-415	agmpvit	replace	agnovit
+415	agnovit	equal	agnovit
 415	Grotius.	equal	Grotius.
 415	deinceps	equal	deinceps
 415	Euripidem	equal	Euripidem
@@ -117608,7 +117596,7 @@
 415	μήτ’	equal	μήτ’
 415	αὐτὸν	equal	αὐτὸν
 415	αὑτῷ	replace	αὐτῷ
-415	δυνάμενον	replace	δυνάμενόν
+415	δυνάμενόν	equal	δυνάμενόν
 415	γ’	equal	γ’
 415	ἐπαρκέσαι	equal	ἐπαρκέσαι
 415	coni.	equal	coni.
@@ -117675,7 +117663,7 @@
 416	MA).	equal	MA).
 416	‘ἀνὴρ	replace	ἀνὴρ
 416	τις	equal	τις
-416	ᾖ.	replace	ᾖ'.
+416	ᾖ’.	replace	ᾖ'.
 416	v.	equal	v.
 416	1	equal	1
 416	expressit	equal	expressit
@@ -117689,7 +117677,7 @@
 416	VI	equal	VI
 416	p.	equal	p.
 416	247	equal	247
-416	0.	replace	C.
+416	C.	equal	C.
 416	v.	equal	v.
 416	2	equal	2
 416	παρειάσει	equal	παρειάσει
@@ -117717,7 +117705,7 @@
 416	ἡσθεὶς	equal	ἡσθεὶς
 416		insert	—
 416	τις	equal	τις
-416	ᾖ'.	replace	ᾖ.
+416	ᾖ’.	replace	ᾖ.
 416	v.	equal	v.
 416	4	equal	4
 416	ἀργὸς	equal	ἀργὸς
@@ -117750,7 +117738,7 @@
 416	ἥσσων	replace	ήσσων
 416	Gesner,	equal	Gesner,
 416	ἧσσον	equal	ἧσσον
-416	8.	replace	S.
+416	S.	equal	S.
 416	188	equal	188
 416	ἀλλ’	equal	ἀλλ’
 416	ἐμοὶ	equal	ἐμοὶ
@@ -117774,7 +117762,7 @@
 416	ἄλλοις	equal	ἄλλοις
 416	τὰ	equal	τὰ
 416	κομψὰ	equal	κομψὰ
-416	ταῦτ'	replace	ταῦτ’
+416	ταῦτ’	equal	ταῦτ’
 416	ἀφεὶς	equal	ἀφεὶς
 416	σοφίσματα,	equal	σοφίσματα,
 416	ἐξ	equal	ἐξ
@@ -117819,7 +117807,7 @@
 416	φλυαρίας,	equal	φλυαρίας,
 416	‘ἐξ	replace	ἐξ
 416	ὧν	equal	ὧν
-416	δόμοις'	replace	δόμοις”
+416	δόμοις’	replace	δόμοις”
 416	(v.	equal	(v.
 416	6),	equal	6),
 416	ζηλῶν	equal	ζηλῶν
@@ -117877,8 +117865,8 @@
 416	13:	equal	13:
 416	Εὐριπίδου	equal	Εὐριπίδου
 416	Ἀντιόπης.	equal	Ἀντιόπης.
-416	‘τοιαῦτ'	replace	τοιαῦτ’
-416	σοφίσματα'	replace	σοφίσματα
+416	‘τοιαῦτ’	replace	τοιαῦτ’
+416	σοφίσματα’	replace	σοφίσματα
 416	(v.	equal	(v.
 416	3-5).	replace	35).
 416	Dio	equal	Dio
@@ -117896,7 +117884,7 @@
 416	ἔπος	equal	ἔπος
 416	‘ἐξ	equal	‘ἐξ
 416	ὧν	equal	ὧν
-416	δόμοις'	replace	δόμοις
+416	δόμοις’	replace	δόμοις
 416	(v.	equal	(v.
 416	6).	equal	6).
 416	Euripidea	equal	Euripidea
@@ -117912,7 +117900,7 @@
 416	Diatr.	equal	Diatr.
 416	p.	equal	p.
 416	86.	equal	86.
-416	ν,	replace	v.
+416	v.	equal	v.
 416	2	equal	2
 416	traditum	equal	traditum
 416	παῦσαι	equal	παῦσαι
@@ -117934,7 +117922,7 @@
 416	El.	equal	El.
 416	p.	equal	p.
 416	109	equal	109
-416	παῦσαι	replace	sq.,
+416	sq.	replace	sq.,
 416	παῦσαι	equal	παῦσαι
 416	δὲ	equal	δὲ
 416	μέλπων	equal	μέλπων
@@ -117971,7 +117959,7 @@
 416	p.	equal	p.
 416	659:	equal	659:
 416	παῦσαι	equal	παῦσαι
-416	μελῳδοῦσ',	replace	μελῳδοῦσ’,
+416	μελῳδοῦσ’,	equal	μελῳδοῦσ’,
 416	ἀλλὰ	equal	ἀλλὰ
 416	πεζῇ	equal	πεζῇ
 416	μοι	equal	μοι
@@ -118008,7 +117996,7 @@
 416	malim.	equal	malim.
 416	v.	equal	v.
 416	3	equal	3
-416	τοιαῦτ	replace	τοιαῦτ’
+416	τοιαῦτ’	equal	τοιαῦτ’
 416	ἄειδε	equal	ἄειδε
 416	Stob.,	equal	Stob.,
 416	τοιαῦτα	equal	τοιαῦτα
@@ -118053,7 +118041,7 @@
 416	εἰ	equal	εἰ
 416	λέγειν	equal	λέγειν
 416	εἴη	equal	εἴη
-416	σοφός	replace	σοφός.
+416	σοφός.	equal	σοφός.
 417	417"/>	replace	ΑΝΤΙΟΠΗ
 417		replace	417
 417	Stob.	equal	Stob.
@@ -118077,7 +118065,7 @@
 417	S)	equal	S)
 417	Ἀντιόπῃ.	equal	Ἀντιόπῃ.
 417	‘ἐκ	replace	ἐκ
-417	σοφός'.	replace	—
+417	σοφός’.	replace	—
 417		replace	σοφός‘.
 417	eosdem	equal	eosdem
 417	versus	equal	versus
@@ -118090,7 +118078,7 @@
 417	p.	equal	p.
 417	677	equal	677
 417	B	equal	B
-417	(Edust.	replace	(Eust.
+417	(Eust.	equal	(Eust.
 417	II.	equal	II.
 417	p.	equal	p.
 417	1192,	equal	1192,
@@ -118118,8 +118106,8 @@
 417	2	equal	2
 417	p.	equal	p.
 417	133	equal	133
-417	sq:	replace	sq.:
-417	ἴν’	replace	ἵν’
+417	sq.:	equal	sq.:
+417	ἵν’	equal	ἵν’
 417	ὡς	equal	ὡς
 417	ἀληθῶς	equal	ἀληθῶς
 417	καὶ	equal	καὶ
@@ -118191,7 +118179,7 @@
 417		replace	λύρα
 417	βοῶν	equal	βοῶν
 417	ῥύσι’	equal	ῥύσι’
-417	ἐξερρύσατο'.	replace	ἐξερρύσατο.
+417	ἐξερρύσατο’.	replace	ἐξερρύσατο.
 417	λύρα	equal	λύρα
 417	cod.	equal	cod.
 417	Neap.	equal	Neap.
@@ -118213,14 +118201,14 @@
 417	λύρᾳ	replace	λύρα
 417	βοῶν	equal	βοῶν
 417	γὰρ	equal	γὰρ
-417	ῥύσι'	replace	φύσι’
+417	ῥύσι’	replace	φύσι’
 417	ἐξελύσατο	equal	ἐξελύσατο
 417	coni.	equal	coni.
 417	Schneidewin,	equal	Schneidewin,
 417	λύρα	equal	λύρα
 417	βοῶν	equal	βοῶν
 417	νιν	equal	νιν
-417	ῥύσι'	replace	φύσι’
+417	ῥύσι’	replace	φύσι’
 417	ἐξερρύσατο	equal	ἐξερρύσατο
 417	Vnger	equal	Vnger
 417	Theb.	equal	Theb.
@@ -118231,7 +118219,7 @@
 417	.	delete	
 417	.	delete	
 417	κρεῖσσον	equal	κρεῖσσον
-417		insert	ὄλβου
+417	ὄλβου	equal	ὄλβου
 417	κτῆμα	equal	κτῆμα
 417	Philostr.	equal	Philostr.
 417	V.	equal	V.
@@ -118242,7 +118230,7 @@
 417	μελέτης	equal	μελέτης
 417	δὲ	equal	δὲ
 417	ὁ	equal	ὁ
-417	‘Ιππόδρομος	replace	Ἱππόδρομος
+417	‘Ἱππόδρομος	replace	Ἱππόδρομος
 417	οὔτε	equal	οὔτε
 417	ἐν	equal	ἐν
 417	ἀγρῷ	equal	ἀγρῷ
@@ -118261,7 +118249,7 @@
 417	κρείττω	equal	κρείττω
 417	al.)	equal	al.)
 417	ὄλβου	equal	ὄλβου
-417	κτῆμα'	replace	κτῆμα
+417	κτῆμα’	replace	κτῆμα
 417	ἐκάλει	equal	ἐκάλει
 417	αὐτὴν	equal	αὐτὴν
 417	ἐκ	equal	ἐκ
@@ -118293,7 +118281,7 @@
 417	Apoll.	equal	Apoll.
 417	7,	equal	7,
 417	4:	equal	4:
-417	τά	replace	τὰ
+417	τὰ	equal	τὰ
 417	Τειρεσίου	equal	Τειρεσίου
 417	τε	equal	τε
 417	καὶ	equal	καὶ
@@ -118316,9 +118304,9 @@
 417	Ἀ.	replace	A.
 417	Παπαδόπουλος	equal	Παπαδόπουλος
 417	ὁ	equal	ὁ
-417	κεραμεύς	replace	Κεραμεύς
+417	Κεραμεύς	equal	Κεραμεύς
 417	Constantinop.	equal	Constantinop.
-417	a	replace	a.
+417	a.	equal	a.
 417	1885	equal	1885
 417	edidit	equal	edidit
 417	et	equal	et
@@ -118348,7 +118336,7 @@
 417	θεῶν	equal	θεῶν
 417	ἔρως	equal	ἔρως
 417	τε	equal	τε
-417	ὐμνῳδίας.	replace	ὑμνῳδίας.
+417	ὑμνῳδίας.	equal	ὑμνῳδίας.
 417	eadem	equal	eadem
 417	Iuliani	equal	Iuliani
 417	verba	equal	verba
@@ -118359,7 +118347,7 @@
 417	ubi	equal	ubi
 417	χρόνος,	equal	χρόνος,
 417	θεοῦ	equal	θεοῦ
-417	πνσῦμα,	replace	πνεῦμα,
+417	πνεῦμα,	equal	πνεῦμα,
 417	ἔρως	equal	ἔρως
 417	ὑμνῳδίας	equal	ὑμνῳδίας
 417	legitur.	equal	legitur.
@@ -118378,8 +118366,8 @@
 417	ὁ	equal	ὁ
 417	ἀπολογησόμενος	equal	ἀπολογησόμενος
 417	ἔσται;	equal	ἔσται;
-417	‘χρόνος'’.ἔφη	replace	χρόνος”
-417		replace	ἔφη
+417	‘χρόνος’	replace	χρόνος”
+417	ἔφη	equal	ἔφη
 417	‘καὶ	equal	‘καὶ
 417	θεῶν	equal	θεῶν
 417	πνεῦμα	equal	πνεῦμα
@@ -118387,7 +118375,7 @@
 417	σοφίας	equal	σοφίας
 417	ἔρως,	equal	ἔρως,
 417	ᾗ	equal	ᾗ
-417	ξύνειμι'.	replace	ξύνειμι.
+417	ξύνειμι’.	replace	ξύνειμι.
 417	cf.	equal	cf.
 417	Flor.	equal	Flor.
 417	Monac.	equal	Monac.
@@ -118427,7 +118415,7 @@
 418	Εὐριπίδου	equal	Εὐριπίδου
 418	Ἀντιόπῃ.	replace	Ἀντιόπῃ,
 418	‘ὄστις	replace	ὅστις
-418	ἀπράγμονα'.	replace	ἀπράγμονα.
+418	ἀπράγμονα’.	replace	ἀπράγμονα.
 418	v.	equal	v.
 418	1	equal	1
 418	πολλὰ]	equal	πολλὰ]
@@ -118475,8 +118463,8 @@
 418	μὴ	equal	μὴ
 418	τὰ	equal	τὰ
 418	κινδυνεύματα	equal	κινδυνεύματα
-418	αἰνεῖτ’’.ἐγὼ	replace	αἰνεῖτ’·
-418		replace	ἐγὼ
+418	αἰνεῖτ’·	equal	αἰνεῖτ’·
+418	ἐγὼ	equal	ἐγὼ
 418	γὰρ	equal	γὰρ
 418	οὔτε	equal	οὔτε
 418	ναυτίλον	equal	ναυτίλον
@@ -118491,10 +118479,10 @@
 418	48,	equal	48,
 418	3:	equal	3:
 418	Εὐριπίδου	equal	Εὐριπίδου
-418	Ἀντιόπης.’.ὁ	replace	Ἀντιόπης.
-418		replace	‘ὁ
+418	Ἀντιόπης.’	replace	Ἀντιόπης.
+418	ὁ	replace	‘ὁ
 418	δ’	equal	δ’
-418	χθονός'.	replace	–
+418	χθονός’.	replace	 
 418		replace	χθονός‘.
 418	v.	equal	v.
 418	1	equal	1
@@ -118575,7 +118563,7 @@
 418	Ἀντιόπης	equal	Ἀντιόπης
 418	Εὐριπίδου.	equal	Εὐριπίδου.
 418	‘ἅπαντα	replace	ἅπαντα
-418	λαμβάνει'.	replace	λαμβάνει.
+418	λαμβάνει’.	replace	λαμβάνει.
 418	cf.	equal	cf.
 418	Men.	equal	Men.
 418	monost.	equal	monost.
@@ -118661,7 +118649,7 @@
 418	MA)	equal	MA)
 418	Ἀντιόπης.	equal	Ἀντιόπης.
 418	‘τοιόσδε	replace	τοιόσδε
-418	λυπούμενοι;'	replace	λυπούμενοι;”
+418	λυπούμενοι;’	replace	λυπούμενοι;”
 418	v.	equal	v.
 418	1	equal	1
 418	βίος]	equal	βίος]
@@ -118679,7 +118667,7 @@
 418	οὐδ’	equal	οὐδ’
 418	εὐτυχεῖ	equal	εὐτυχεῖ
 418	SMA,	equal	SMA,
-418	οὔτ'	replace	οὔτ’
+418	οὔτ’	equal	οὔτ’
 418	εὐτυχεῖ	equal	εὐτυχεῖ
 418	Matthiae.	equal	Matthiae.
 418	v.	equal	v.
@@ -119540,7 +119528,7 @@
 421	‘	replace	
 421	καὶ	equal	καὶ
 421	μὴν	equal	μὴν
-421	μένειν’.	replace	–
+421	μένειν’.	replace	 
 421		replace	μένειν.
 421	v.	equal	v.
 421	2	equal	2
@@ -119708,7 +119696,7 @@
 421	Ἀντιόπῃ	equal	Ἀντιόπῃ
 421	φησίν	equal	φησίν
 421	‘	replace	ἔνδον
-421	ἔδον	replace	–
+421	ἔδον	replace	 
 421	θεοῦ’.	replace	θεοῦ.
 421	v.	equal	v.
 421	1	equal	1
@@ -119833,7 +119821,7 @@
 422	ἐν	equal	ἐν
 422	Ἀντιόπῃ	equal	Ἀντιόπῃ
 422	‘φρονῶ	replace	φρονῶ
-422	κακόν’.	replace	–
+422	κακόν’.	replace	 
 422		replace	κακόν.
 422	ὃ	equal	ὃ
 422	Erot.,	equal	Erot.,
@@ -122734,7 +122722,7 @@
 431	Ἀρχελάῳ.	replace	Ἀρχελάω.
 431	‘ὁ	replace	ὁ
 431	δ’	replace	δ’
-431	ἄν’.	replace	–
+431	ἄν’.	replace	 
 431		replace	ἄν‘.
 431		replace	av'.
 431	v.	equal	v.
@@ -122928,7 +122916,7 @@
 431	ταὐτῷ.	equal	ταὐτῷ.
 431	‘φέρει	replace	φέρει
 431	δὲ	replace	δὲ
-431	φάτιν’.	replace	–
+431	φάτιν’.	replace	 
 431	v.	replace	φάτιν.
 431	1	replace	φάτιν.
 431	φέρει	equal	φέρει
@@ -122977,7 +122965,7 @@
 432	Εὐριπίδης	equal	Εὐριπίδης
 432	Ἀρχελάῳ.	replace	Ἀρχελάω.
 432	‘ὀλίγον	replace	ὀλίγον
-432	στρατεύματος’.	replace	–
+432	στρατεύματος’.	replace	 
 432		replace	στρατεύμα
 432		replace	τος.
 432	v.	equal	v.
@@ -123132,7 +123120,7 @@
 432	om.	equal	om.
 432	L).	equal	L).
 432	‘νεανίας	replace	νεανίας
-432	ἀνθυμήσεως’.	replace	–
+432	ἀνθυμήσεως’.	replace	 
 432		replace	ἐνθυμήσεως‘.
 432	v.	equal	v.
 432	1	equal	1
@@ -123165,7 +123153,7 @@
 432	Ἀρχελάου.	equal	Ἀρχελάου.
 432	‘τί	replace	τί
 432	δ’	equal	δ’
-432		insert	–
+432		insert	 
 432	γεγώς;	equal	γεγώς;
 432	eclogam	equal	eclogam
 432	om.	replace	om
@@ -124303,7 +124291,7 @@
 436	Εὐριπίδου	equal	Εὐριπίδου
 436	Ἀρχελάου.	equal	Ἀρχελάου.
 436	‘ἔστι	replace	ἔστι
-436	οἴκῳ’.	replace	–
+436	οἴκῳ’.	replace	 
 436		replace	οἴκῳ‘.
 436	v.	equal	v.
 436	1	equal	1
@@ -126839,7 +126827,7 @@
 444	Εὐριπίδου	equal	Εὐριπίδου
 444	Βελλεροφόντου.	equal	Βελλεροφόντου.
 444	‘ἐγὼ	equal	‘ἐγὼ
-444	βροτῷ’	replace	–
+444	βροτῷ’	replace	 
 444		replace	βροτῷ”
 444	(v.	equal	(v.
 444	1	equal	1
@@ -127369,7 +127357,7 @@
 445	‘	delete	
 445	εἰ	equal	εἰ
 445	θεοί	equal	θεοί
-445		insert	–
+445		insert	 
 445	εἰσὶν	equal	εἰσὶν
 445	θεοί’	replace	θεοί
 445	(fr.	equal	(fr.
@@ -127702,7 +127690,7 @@
 446	βελλεροφπῶντι	replace	
 446	M).	equal	M).
 446	‘δόλοι	replace	δόλοι
-446	βροτῖς’.	replace	–
+446	βροτῖς’.	replace	 
 446	v.	replace	βροτοῖς‘.
 446	1	replace	v.
 446	δοῦλοι	replace	1
@@ -127775,7 +127763,7 @@
 446	ἐκ	equal	ἐκ
 446	Βελλεροφόντου.	equal	Βελλεροφόντου.
 446	‘νίκη	replace	νίκη
-446	φίλος’.	replace	–
+446	φίλος’.	replace	 
 446		replace	φίλος".
 446	v.	equal	v.
 446	1	equal	1
@@ -127995,7 +127983,7 @@
 447	S.	equal	S.
 447	MA	equal	MA
 447	primum	equal	primum
-447	ν,	replace	v.
+447	v.	equal	v.
 447	1-3	equal	1-3
 447	praebent	equal	praebent
 447	cum	equal	cum
@@ -128200,7 +128188,7 @@
 448	Βελλεροφόντου	replace	βελλεροφόντου
 448	M).	equal	M).
 448	‘τιμή	replace	τιμή
-448	τιμωμένους’.	replace	–
+448	τιμωμένους’.	replace	 
 448		replace	τιμωμένους‘.
 448	inter	equal	inter
 448	duas	equal	duas
@@ -128777,7 +128765,7 @@
 449	Ὅμηρον	equal	Ὅμηρον
 449	καὶ	equal	καὶ
 449	Εὐριπίδην	equal	Εὐριπίδην
-449		insert	–
+449		insert	 
 449	καὶ	equal	καὶ
 449	προεφέρετο	equal	προεφέρετο
 449	τὸν	equal	τὸν
@@ -128787,7 +128775,7 @@
 449	τοῦ	equal	τοῦ
 449	Βελλεροφόντου	equal	Βελλεροφόντου
 449	‘οἴμοι	replace	οἴμοι
-449	πεπόνθαμεν’.	replace	–
+449	πεπόνθαμεν’.	replace	 
 449		replace	πεπόνθαμεν.
 449	Suid.	equal	Suid.
 449	v.	equal	v.
@@ -128799,7 +128787,7 @@
 449	Βελλεροφόντου	equal	Βελλεροφόντου
 449	‘	delete	
 449	οἴμοι	equal	οἴμοι
-449	πεπόνθαμεν’.	replace	–
+449	πεπόνθαμεν’.	replace	 
 449		replace	πεπόνθαμεν.
 449	Plut.	equal	Plut.
 449	de	equal	de
@@ -128815,7 +128803,7 @@
 449	Εὐριπίδειον	equal	Εὐριπίδειον
 449	‘	delete	
 449	οἴμοι	equal	οἴμοι
-449	πεπόνθαμεν’.	replace	–
+449	πεπόνθαμεν’.	replace	 
 449		replace	πεπόνθαμεν.
 449	eundem	equal	eundem
 449	versum	equal	versum
@@ -131722,7 +131710,7 @@
 459	MA)	equal	MA)
 459	Δανάης.	equal	Δανάης.
 459	‘ὅστις	replace	ὅστις
-459	πεφυκέναι’.	replace	–
+459	πεφυκέναι’.	replace	 
 459		replace	πεφυκέναι.
 459		replace	πεφυκέναι.
 459	v.	equal	v.
@@ -131731,7 +131719,7 @@
 459		insert	v.
 459		insert	1
 459		insert	δόμους
-459		insert	–
+459		insert	 
 459	πληρουμένους	equal	πληρουμένους
 459	A,	replace	SA,
 459	δόμοις	equal	δόμοις
@@ -132099,7 +132087,7 @@
 460	εἰς	equal	εἰς
 460	τὰ	equal	τὰ
 460	βασίλεια	equal	βασίλεια
-460		insert	–
+460		insert	 
 460	ἀπεστραμμένος	equal	ἀπεστραμμένος
 460	τὴν	equal	τὴν
 460	κεφαλὴν	equal	κεφαλὴν
@@ -132144,7 +132132,7 @@
 460	vol.	equal	vol.
 460	1	equal	1
 460	p.	equal	p.
-460	109-118,	replace	109–118,
+460	109-118,	replace	109 118,
 460	qui	equal	qui
 460	huc	equal	huc
 460	revocari	equal	revocari
@@ -132561,7 +132549,7 @@
 461	Εὐριπίδου	equal	Εὐριπίδου
 461	Δίκτυί·.	replace	Δίκτυϊ.
 461	‘εἰς	replace	εἰς
-461	δοκεῖ’.	replace	–
+461	δοκεῖ’.	replace	 
 461	v.	replace	δοκεῖ.
 461	2	replace	
 461	spectat	equal	spectat
@@ -133832,7 +133820,7 @@
 465	Εὐριπίδου	equal	Εὐριπίδου
 465	Ἐρεχθεῖ.	equal	Ἐρεχθεῖ.
 465	‘ὡς	replace	ὡς
-465	βίᾳ	replace	–
+465	βίᾳ	replace	 
 465		replace	TRAG.
 465		replace	GRAEC.
 465		replace	FRAGMENTA.
@@ -134141,7 +134129,7 @@
 467	Εὐριπίδου	equal	Εὐριπίδου
 467	Ἐρεχθεῖ.	equal	Ἐρεχθεῖ.
 467	‘θετῶν	equal	‘θετῶν
-467	χρεών’.	replace	–
+467	χρεών’.	replace	 
 467		replace	χρεών.
 467	v.	equal	v.
 467	1	equal	1
@@ -134604,7 +134592,7 @@
 468	Εὐριπίδης;	equal	Εὐριπίδης;
 468	‘ᾗ	delete	
 468	πρῶτα	equal	πρῶτα
-468		insert	–
+468		insert	 
 468	εἰσὶν	equal	εἰσὶν
 468	ἐξαγώγιμοι’	replace	ἐξαγώγιμοι
 468	(v.	equal	(v.
@@ -134919,7 +134907,7 @@
 469	319,	equal	319,
 469	ζῆν	equal	ζῆν
 469	παῖδας	equal	παῖδας
-469	εἵλοντ'	replace	εἵλοντ’
+469	εἵλοντ’	equal	εἵλοντ’
 469	ἢ	equal	ἢ
 469	Matthiae.	replace	Matv.
 469	v.	replace	
@@ -134931,7 +134919,7 @@
 469	μιᾷ	replace	(μια
 469	A)	equal	A)
 469	μόνη	equal	μόνη
-469		insert	–
+469		insert	 
 469	θανοῦσα	equal	θανοῦσα
 469	libri,	equal	libri,
 469	εἷς	replace	εἰς
@@ -135035,7 +135023,7 @@
 469	v.	equal	v.
 469	43	equal	43
 469	ἐκεῖνο	equal	ἐκεῖνο
-469	δ'	replace	δ’
+469	δ’	equal	δ’
 469	οὗ	equal	οὗ
 469	τὸ	equal	τὸ
 469	Ald.,	equal	Ald.,
@@ -136871,7 +136859,7 @@
 474	λέγοντα	equal	λέγοντα
 474	οὕτως	equal	οὕτως
 474	‘πέμψεις	replace	πέμψεις
-474		replace	–
+474		replace	 
 474	εἰσπορεύομαι‘.	equal	εἰσπορεύομαι‘.
 474	v.	equal	v.
 474	1	equal	1
@@ -137125,7 +137113,7 @@
 475	v.	equal	v.
 475	2	equal	2
 475	τοιοῦτόν	equal	τοιοῦτόν
-475	τ'	replace	τ’
+475	τ’	equal	τ’
 475	εἶναι	equal	εἶναι
 475	SMA,	equal	SMA,
 475	τοιοῦτον	equal	τοιοῦτον
@@ -137141,7 +137129,7 @@
 475	582.	equal	582.
 475	376	equal	376
 475	οὐκ	equal	οὐκ
-475	οἶδ'	replace	οἶδ’
+475	οἶδ’	equal	οἶδ’
 475	ὅτῳ	equal	ὅτῳ
 475	χρὴ	equal	χρὴ
 475	κανόνι	equal	κανόνι
@@ -137169,14 +137157,14 @@
 475	2	equal	2
 475	αθρήσαντες	equal	αθρήσαντες
 475	A,	equal	A,
-475	σταθμήσαντ'	replace	σταθμήσαντ’
+475	σταθμήσαντ’	equal	σταθμήσαντ’
 475	Pierson	equal	Pierson
 475	(v.	equal	(v.
 475	Valcken.	equal	Valcken.
 475	Diatr.	equal	Diatr.
 475	p.	equal	p.
 475	171),	equal	171),
-475	μετρήσαντ'	replace	μετρήσαντ’
+475	μετρήσαντ’	equal	μετρήσαντ’
 475	malebat	equal	malebat
 475	Wagner.	equal	Wagner.
 476	476"/>	replace	476
@@ -137421,7 +137409,7 @@
 476	606,	equal	606,
 476	12:	equal	12:
 476	Τάρταρος	equal	Τάρταρος
-476		insert	–
+476		insert	 
 476	ὁ	equal	ὁ
 476	οἰκήτωρ	equal	οἰκήτωρ
 476	Ταρτάριος,	equal	Ταρτάριος,
@@ -137737,7 +137725,7 @@
 477	ἐπιγεγραμμένον	equal	ἐπιγεγραμμένον
 477	οὕτως	equal	οὕτως
 477	‘ἐγὼ	replace	ἐγὼ
-477		replace	–
+477		replace	 
 477	προσεμφερές.	equal	προσεμφερές.
 477	v.	equal	v.
 477	3	equal	3
@@ -138032,7 +138020,7 @@
 478	Θησεῖ	equal	Θησεῖ
 478	Εὐριπίδου	equal	Εὐριπίδου
 478	‘	replace	‘κάρα
-478	κάρα	replace	–
+478	κάρα	replace	 
 478		replace	κάτω.
 478	κάτω’.	equal	κάτω’.
 478	v.	equal	v.
@@ -139592,7 +139580,7 @@
 483	ἔδρασε	equal	ἔδρασε
 483	μεταμελομένης,	equal	μεταμελομένης,
 483	‘φίλαι	replace	φίλαι
-483	μηδέν;’	replace	–
+483	μηδέν;’	replace	 
 483		replace	μηδέν;'
 483	Euripidi	equal	Euripidi
 483	locum	equal	locum
@@ -139673,7 +139661,7 @@
 483	710,	equal	710,
 483	21).	equal	21).
 483	῾φεῦ	replace	φεῦ
-483	πλέον’.	replace	–
+483	πλέον’.	replace	 
 483		replace	πλέον.
 483	402	equal	402
 483	νόμοι	equal	νόμοι
@@ -139847,7 +139835,7 @@
 484	Ἰνοῦς.	equal	Ἰνοῦς.
 484	‘τίς	replace	τίς
 484	ἆρα	replace	άρα
-484	νόσων'.	replace	
+484	νόσων’.	replace	
 484	v.	equal	v.
 484	2	equal	2
 484	respicit	equal	respicit
@@ -140001,7 +139989,7 @@
 484	Οἰνεῖ	replace	οἰνεῖ
 484	M).	equal	M).
 484	‘τό	replace	τό
-484	γῆς’.	replace	–
+484	γῆς’.	replace	 
 484	v.	replace	γῆς.
 484		replace	τ.
 484	2	equal	2
@@ -140763,7 +140751,7 @@
 487	καὶ	equal	καὶ
 487	λέγων	equal	λέγων
 487	τὰ	equal	τὰ
-487	καίρια',	replace	καίρια,
+487	καίρια’,	replace	καίρια,
 487	Euripides	equal	Euripides
 487	ita	replace	μια
 487	‘σιγᾶν	replace	σιγᾶν
@@ -141103,7 +141091,7 @@
 488	ἀπώλεσεν’.	replace	Ἰνοῖ.
 488		replace	κέκτησο
 488		replace	κέκτησο
-488		replace	–
+488		replace	 
 488		replace	ἀπώλεσεν.
 488	ibid.	equal	ibid.
 488	9,	equal	9,
@@ -141450,7 +141438,7 @@
 489	τῆς	equal	τῆς
 489	Ἀσίας	equal	Ἀσίας
 489	ἄρχοντος	equal	ἄρχοντος
-489		insert	–
+489		insert	 
 489	ὁ	equal	ὁ
 489	μὲν	equal	μὲν
 489	ὑποκριτὴς	equal	ὑποκριτὴς
@@ -142006,7 +141994,7 @@
 490	ἀστῶν	equal	ἀστῶν
 490	πλέον	equal	πλέον
 490	ἔχειν	equal	ἔχειν
-490	πέφυκ'	replace	πέφυκ’
+490	πέφυκ’	equal	πέφυκ’
 490	ἀνήρ,	equal	ἀνήρ,
 490	οὐδὲν	replace	[οὐδὲν
 490	φρονεῖ	equal	φρονεῖ
@@ -144444,7 +144432,7 @@
 498	Εὐριπίδης	equal	Εὐριπίδης
 498	φησίν	equal	φησίν
 498	‘ἐχρῆν	replace	ἐχρῆν
-498	δόμων'.	replace	dóμov'.
+498	δόμων’.	replace	dóμov'.
 498	eosdem	equal	eosdem
 498	versus	equal	versus
 498	afferunt	equal	afferunt
@@ -144775,10 +144763,10 @@
 499		replace	εἰ
 499	μὲν	equal	μὲν
 499	γὰρ	equal	γὰρ
-499	οἰκεῖ'	replace	οἰκεῖ
+499	οἰκεῖ’	replace	οἰκεῖ
 499	φησί	equal	φησί
 499	‘νερτέρας	replace	νερτέρας
-499	σθένοι'.	replace	σθένοι‘.
+499	σθένοι’.	replace	σθένοι‘.
 499	v.	equal	v.
 499	1	equal	1
 499	νερτέρου	equal	νερτέρου
@@ -144842,7 +144830,7 @@
 499	eluserit	replace	cluserit
 499	‘εἰ	replace	εἰ
 499	γάρ	equal	γάρ
-499	παρήλυθεν'.	replace	παρήλυθεν.
+499	παρήλυθεν’.	replace	παρήλυθεν.
 499	v.	equal	v.
 499	1	equal	1
 499	κτενεῖν	equal	κτενεῖν
@@ -144892,7 +144880,7 @@
 499	452	equal	452
 499	ἐκεῖνο	equal	ἐκεῖνο
 499	γὰρ	equal	γὰρ
-499	πέπονθ'	replace	πέπονθ’
+499	πέπονθ’	equal	πέπονθ’
 499	ὅπερ	equal	ὅπερ
 499	πάντες	equal	πάντες
 499	βροτοί·	equal	βροτοί·
@@ -144915,7 +144903,7 @@
 499	κέχρηται	equal	κέχρηται
 499	οὕτως	equal	οὕτως
 499	‘ἐκεῖνο	replace	ἐκεῖνο
-499	αἰσχύνομαι'.	replace	—
+499	αἰσχύνομαι’.	replace	—
 499		replace	αἰσχύνομαι.
 499		replace	αἰσχύνομαι‘.
 499	v.	equal	v.
@@ -145001,7 +144989,7 @@
 500	Εὐριπίδου	equal	Εὐριπίδου
 500	Κρεσφόντου.	equal	Κρεσφόντου.
 500	‘Εἰρήνη	delete	
-500	σιδάρῳ'	delete	
+500	σιδάρῳ’	delete	
 500	(chori	equal	(chori
 500	notam	equal	notam
 500	apponitf	replace	apponit
@@ -145202,7 +145190,7 @@
 500	λέγουσα	equal	λέγουσα
 500	τοιαῦτα	equal	τοιαῦτα
 500	‘τεθνᾶσι	replace	τεθνᾶσι
-500	βίον'.	replace	βίον.
+500	βίον’.	replace	βίον.
 500	Euripidi	equal	Euripidi
 500	locum	equal	locum
 500	tribuit	equal	tribuit
@@ -145234,7 +145222,7 @@
 500	Κρεσφόντῃ	equal	Κρεσφόντῃ
 500	‘καὶ	replace	καὶ
 500	δὶς	equal	δὶς
-500	τοξεύμασιν'.	replace	—
+500	τοξεύμασιν’.	replace	—
 500		replace	τοξεύμασιν.
 500	Gellius	equal	Gellius
 500	N.	equal	N.
@@ -145264,7 +145252,7 @@
 500	456	equal	456
 500	ὠνητέραν	equal	ὠνητέραν
 500	δὴ	equal	δὴ
-500	τήνδ'	replace	τήνδ’
+500	τήνδ’	equal	τήνδ’
 500	ἐγὼ	equal	ἐγὼ
 500	δίδωμί	equal	δίδωμί
 500	σοι	equal	σοι
@@ -145303,7 +145291,7 @@
 501	καὶ	equal	καὶ
 501	λέγουσαν	equal	λέγουσαν
 501	‘ὠνητέραν	replace	ὠνητέραν
-501	πληγήν',	replace	πληγήν’,
+501	πληγήν’,	equal	πληγήν’,
 501	ὅσον	equal	ὅσον
 501	ἐν	equal	ἐν
 501	τῷ	equal	τῷ
@@ -145351,7 +145339,7 @@
 501	ἀποκτείνει	equal	ἀποκτείνει
 501	δὲ	equal	δὲ
 501	οὔ.	replace	οὔ,
-501	ἀλλ'	replace	ἀλλ’
+501	ἀλλ’	equal	ἀλλ’
 501	ἀνεγνώρισεν.	equal	ἀνεγνώρισεν.
 501	v.	equal	v.
 501	1	equal	1
@@ -145369,7 +145357,7 @@
 501	ed.	equal	ed.
 501	Duebner,	equal	Duebner,
 501	ὦ	equal	ὦ
-501	νέρτερ'	replace	νέρτερ’
+501	νέρτερ’	equal	νέρτερ’
 501	Ἅιδη	replace	Ἄἰδη
 501	secundum	equal	secundum
 501	Eur.	equal	Eur.
@@ -145456,7 +145444,7 @@
 501	‘αἱ	replace	‘
 501		replace	αἱ
 501	τύχαι	equal	τύχαι
-501	ἔθηκαν'.	replace	ἔθηκαν‘.
+501	ἔθηκαν’.	replace	ἔθηκαν‘.
 501	Euripidi	equal	Euripidi
 501	fr.	equal	fr.
 501	vindicavit	equal	vindicavit
@@ -145481,7 +145469,7 @@
 501	Ε·ὐριπίδου	replace	Εὐριπίδου
 501	Κρεσθόντῃ.	replace	Κρεσφόντῃ.
 501	‘κέρδη	replace	κέρδη
-501	στένειν'.	replace	στένειν.
+501	στένειν’.	replace	στένειν.
 501	ubi	equal	ubi
 501	quae	equal	quae
 501	continuo	equal	continuo
@@ -145722,7 +145710,7 @@
 502	Εὐριπίδου	equal	Εὐριπίδου
 502	Κρησσῶν.	equal	Κρησσῶν.
 502	‘λύπη	replace	λύπη
-502	τοιάδε'.	replace	τοιάδε.
+502	τοιάδε’.	replace	τοιάδε.
 502	v.	equal	v.
 502	1	equal	1
 502	ἄτηι	equal	ἄτηι
@@ -145775,7 +145763,7 @@
 502	Κρήσσαις.	equal	Κρήσσαις.
 502	‘οὐκ	replace	οὐκ
 502	ἂν	replace	νεανίαν.
-502	νεανίαν'.	replace	
+502	νεανίαν’.	replace	
 502	462	equal	462
 502	ἐπίσταμαι	equal	ἐπίσταμαι
 502	δὲ	equal	δὲ
@@ -145795,7 +145783,7 @@
 502	Εὐριπίδου	equal	Εὐριπίδου
 502	Κρήσσαις.	equal	Κρήσσαις.
 502	‘ἐπίσταμαι	equal	‘ἐπίσταμαι
-502	φίλοι'.	replace	–
+502	φίλοι’.	replace	 
 502	v.	equal	v.
 502	2	equal	2
 502	recurrit	equal	recurrit
@@ -145810,7 +145798,7 @@
 502		replace	φίλοι‘.
 502		replace	ὡς
 502	τῶν	equal	τῶν
-502	φίλοι'.	replace	φίλοι.
+502	φίλοι’.	replace	φίλοι.
 502	ubi	equal	ubi
 502	qui	equal	qui
 502	sequuntur	equal	sequuntur
@@ -145901,7 +145889,7 @@
 503	Κρήσσαις.	equal	Κρήσσαις.
 503	‘οὐ	replace	οὐ
 503	γάρ	equal	γάρ
-503	λαβών'.	delete	
+503	λαβών’.	delete	
 503	464	equal	464
 503	γαμεῖτε	equal	γαμεῖτε
 503	νυν,	replace	νῦν,
@@ -145924,7 +145912,7 @@
 503	Κρήσσαις.	equal	Κρήσσαις.
 503	‘γαμεῖτε	equal	‘γαμεῖτε
 503	νῦν	equal	νῦν
-503	δόλοις'.	replace	—
+503	δόλοις’.	replace	—
 503	v.	equal	v.
 503	1	equal	1
 503	καταθνήσκετε	equal	καταθνήσκετε
@@ -146014,7 +146002,7 @@
 503	Ἀερόπην	replace	Ἀερό
 503		replace	πην
 503	‘κρινεῖ	equal	‘κρινεῖ
-503	ταῦτα'.	replace	ταῦτα’.
+503	ταῦτα’.	equal	ταῦτα’.
 503	Ἅιδης	replace	Ἄἰδης
 503	addendum	equal	addendum
 503	esse	equal	esse
@@ -146065,7 +146053,7 @@
 503	γὰρ	equal	γὰρ
 503	Κρήσσαις	equal	Κρήσσαις
 503	‘ἐγὼ	replace	ἐγὼ
-503	κατακτενῶ'	replace	κατακτενῶ
+503	κατακτενῶ’	replace	κατακτενῶ
 503	καὶ	equal	καὶ
 503	ἐν	equal	ἐν
 503	Αὔγῃ	replace	Αύγῃ
@@ -146153,8 +146141,8 @@
 503	Hipp.	equal	Hipp.
 503	436).	equal	436).
 503	‘τί	replace	τί
-503	γὰρ	replace	γὰρ
-503	δεδευμένα',	replace	δεδευμένα’,
+503	γὰρ	equal	γὰρ
+503	δεδευμένα’,	equal	δεδευμένα’,
 503	φησὶν	equal	φησὶν
 504	504"/>	replace	504
 504		replace	EVRIPIDIS
@@ -146184,7 +146172,7 @@
 504		replace	πάρεισι
 504	μόσχων	equal	μόσχων
 504	τέρειναι	equal	τέρειναι
-504	σάρκες'	replace	σάρκες’
+504	σάρκες’	equal	σάρκες’
 504	ἤγουν	equal	ἤγουν
 504	ἁπαλαί.	equal	ἁπαλαί.
 504	v.	equal	v.
@@ -146300,7 +146288,7 @@
 504	ἀλλὰ	equal	ἀλλὰ
 504	πίνει	equal	πίνει
 504	τὴν	equal	τὴν
-504	κύκλῳ'	replace	κύκλῳ
+504	κύκλῳ’	replace	κύκλῳ
 504	καὶ	equal	καὶ
 504	πάλιν	equal	πάλιν
 504	ἐκ	equal	ἐκ
@@ -146312,7 +146300,7 @@
 504	περισόβει	equal	περισόβει
 504	ποτήριον	equal	ποτήριον
 504	αὐτοῖς	equal	αὐτοῖς
-504	ἀκράτου'.	replace	ἀκράτους.
+504	ἀκράτου’.	replace	ἀκράτους.
 504	καὶ	equal	καὶ
 504	Εὐριπίδης	equal	Εὐριπίδης
 504	δ’	equal	δ’
@@ -146320,7 +146308,7 @@
 504	Κρήσσαις	equal	Κρήσσαις
 504	‘τὰ	replace	τὰ
 504	δ’	equal	δ’
-504	κύκλῳ'.	replace	–
+504	κύκλῳ’.	replace	 
 504		replace	κύκλῳ‘.
 504	sagicissime	equal	sagicissime
 504	M.	equal	M.
@@ -146417,7 +146405,7 @@
 504	εὔχονται	equal	εὔχονται
 504	καλεῖσθαι·	equal	καλεῖσθαι·
 504	‘νόμος	equal	‘νόμος
-504	κυσίν'	replace	κυσίν’
+504	κυσίν’	equal	κυσίν’
 504	ἐν	equal	ἐν
 504	Κρήσσαις	equal	Κρήσσαις
 504	ὁ	equal	ὁ
@@ -146462,7 +146450,7 @@
 504	‘πρὶν	replace	πρὶν
 504	ἂν	equal	ἂν
 504	ἐκφλῆναί	replace	ἐκφλῆναι
-504	λόγον'.	replace	—
+504	λόγον’.	replace	—
 504		replace	λόγον.
 504	post	equal	post
 504	ἂν	equal	ἂν
@@ -147211,7 +147199,7 @@
 507	τὸν	equal	τὸν
 507	ἀριθμὸν	equal	ἀριθμὸν
 507	δέκα.	equal	δέκα.
-507		insert	–
+507		insert	 
 507	πρώτη	equal	πρώτη
 507	οὖν	equal	οὖν
 507	ἡ	equal	ἡ
@@ -147687,7 +147675,7 @@
 508	1356,	equal	1356,
 508	62:	equal	62:
 508	φαῦλον	equal	φαῦλον
-508		insert	–
+508		insert	 
 508	καὶ	equal	καὶ
 508	τὸ	equal	τὸ
 508	ἀγαθόν,	equal	ἀγαθόν,
@@ -147885,7 +147873,7 @@
 508	τὸ	delete	
 508	ἐθνικὸν	equal	ἐθνικὸν
 508	Τευθράνιος	equal	Τευθράνιος
-508		insert	–
+508		insert	 
 508	καὶ	equal	καὶ
 508	Τευθράντιος.	equal	Τευθράντιος.
 508	Εὐριπίδης	equal	Εὐριπίδης
@@ -148560,7 +148548,6 @@
 510	οἶδα	equal	οἶδα
 510	πλὴν	equal	πλὴν
 510	λόγῳ	equal	λόγῳ
-510		insert	–
 510	Lucian.	equal	Lucian.
 510	Iov.	equal	Iov.
 510	trag.	equal	trag.
@@ -149089,7 +149076,7 @@
 512	‘καὶ	replace	καὶ
 512	οὐκ	replace	οὐκ
 512	ἐμὸς	replace	ἐμὸς
-512	πάρα’.	replace	–
+512	πάρα’.	replace	 
 512		replace	πάρα.
 512	respicit	equal	respicit
 512	Plato	equal	Plato
@@ -151210,7 +151197,7 @@
 518	phUol.	replace	philol.
 518	4	equal	4
 518	p.	equal	p.
-518	121-124	replace	121–124
+518	121-124	replace	121 124
 518	χ	replace	
 518	et	equal	et
 518	N.	equal	N.
@@ -151229,11 +151216,11 @@
 518	εφείς	replace	ἐφεὶς
 518	έμοί;	replace	ἐμοί;
 518	ώς	replace	ὡς
-518	δ'	replace	δ’
+518	δ’	equal	δ’
 518	ονχ	replace	οὐκ
 518	έφαινόμεβθα,	replace	ἐφαινόμεσθα,
 518	ϋΐγα	replace	σίγα
-518	ό'	replace	δ’
+518	ό’	replace	δ’
 518	εϊχομεν,	replace	είχομεν,
 518	πρόϋω	replace	πρόσω
 518	προς	replace	πρὸς
@@ -152687,7 +152674,7 @@
 523	Εὐριπίδου	equal	Εὐριπίδου
 523	Μελανίππης.	equal	Μελανίππης.
 523	῾τί	replace	‘τί
-523	ἀλγήματα;’	replace	–
+523	ἀλγήματα;’	replace	 
 523		replace	ἀλγήματα;
 523	v.	equal	v.
 523	1	equal	1
@@ -153078,7 +153065,7 @@
 525	Eur.	equal	Eur.
 525	mythopoeia	equal	mythopoeia
 525	p.	equal	p.
-525	77-83.	replace	77–83.
+525	77-83.	replace	77 83.
 525	515	equal	515
 525	Καλυδὼν	replace	Καλυδών
 525	μὲν	equal	μὲν
@@ -154062,7 +154049,7 @@
 528	Diatr.	equal	Diatr.
 528	p.	equal	p.
 528	143.	equal	143.
-528	ν,	replace	v.
+528	v.	equal	v.
 528	3	equal	3
 528	βέλτιον	equal	βέλτιον
 528	MA,	equal	MA,
@@ -154717,7 +154704,7 @@
 530	M).	equal	M).
 530	῾τοὺς	delete	
 530	ζῶντας	equal	ζῶντας
-530		insert	–
+530		insert	 
 530	οὐδὲν	equal	οὐδὲν
 530	ῥέπει’.	replace	ῥέπει.
 530		replace	οὐδὲν
@@ -156943,7 +156930,7 @@
 538		replace	-om.
 538	S)	equal	S)
 538	‘σχολὴ	replace	σχολή
-538	πάλιν’.	replace	–
+538	πάλιν’.	replace	 
 538		replace	πάλιν.
 538	Galenus	equal	Galenus
 538	vol.	equal	vol.
@@ -156954,7 +156941,7 @@
 538	δὲ	equal	δὲ
 538	καὶ	equal	καὶ
 538	τοιαῦτα	equal	τοιαῦτα
-538		insert	–
+538		insert	 
 538	εἰς	equal	εἰς
 538	τὸ	equal	τὸ
 538	κατὰ	equal	κατὰ
@@ -157804,7 +157791,7 @@
 540	Οἰνομάῳ	equal	Οἰνομάῳ
 540	λέγοντι	equal	λέγοντι
 540	‘τεκμαιρόμεσθα	replace	τεκμαιρόμεσθα
-540	τἀφανές’.	replace	–
+540	τἀφανές’.	replace	 
 540		replace	τα
 540		replace	φανές.
 540	τεκμαιρόμεθα	equal	τεκμαιρόμεθα
@@ -158590,7 +158577,7 @@
 543	p.	equal	p.
 543	318,	equal	318,
 543	20.	equal	20.
-543	ν,	replace	v.
+543	v.	equal	v.
 543	4-7	equal	4-7
 543	om.	equal	om.
 543	A.	equal	A.
@@ -159314,7 +159301,7 @@
 545	Εὐριπίδου	equal	Εὐριπίδου
 545	Παλαμήδει.	equal	Παλαμήδει.
 545	‘εἷς	replace	εἷς
-545	συλλαβών’.	replace	–
+545	συλλαβών’.	replace	 
 545		replace	συλλαβών.
 545	eclogam	equal	eclogam
 545	habet	equal	habet
@@ -160642,7 +160629,7 @@
 549	τε	equal	τε
 549	χρόνος	equal	χρόνος
 549	περί	equal	περί
-549	γ'	replace	γ’
+549	γ’	equal	γ’
 549	ἀενάῳ	replace	ἀενάρ
 549	ῥεύματι	replace	ρεύματι
 549	πλήρης	equal	πλήρης
@@ -160651,7 +160638,7 @@
 549	αὐτὸς	equal	αὐτὸς
 549	ἑαυτόν,	equal	ἑαυτόν,
 549	δίδυμοί	equal	δίδυμοί
-549	τ'	replace	τ’
+549	τ’	equal	τ’
 549	ἄρκτοι	equal	ἄρκτοι
 549	τοῖς	replace	ταῖς
 549	ὠκυπάνοις	replace	ὠκυπλάνοις
@@ -160775,8 +160762,8 @@
 549	ξένος	equal	ξένος
 549	‘αἰδοῦς	replace	αἰδοῦς
 549	πέδαις’,	replace	—
-549	ἀλλ'	replace	πέδαις,
-549		replace	ἀλλ’
+549		replace	πέδαις,
+549	ἀλλ’	equal	ἀλλ’
 549	ὁ	equal	ὁ
 549	σύναιμος.	equal	σύναιμος.
 549	id.	equal	id.
@@ -160795,7 +160782,7 @@
 549	τὴν	equal	τὴν
 549	ἐπαγγελίαν	equal	ἐπαγγελίαν
 549	‘αἰδοῦς	replace	αἰδοῦς
-549		replace	–
+549		replace	 
 549	πέδαις’.	equal	πέδαις’.
 549	Euripidis	equal	Euripidis
 549	esse	equal	esse
@@ -160887,7 +160874,7 @@
 549	μὴ	equal	μὴ
 549	ζῆν	equal	ζῆν
 549	κρεῖσσόν	equal	κρεῖσσόν
-549	ἐστ'	replace	ἐστ’
+549	ἐστ’	equal	ἐστ’
 549	ἢ	equal	ἢ
 549	χῆν	replace	ζῆν
 549	κακῶς;	equal	κακῶς;
@@ -160928,7 +160915,7 @@
 549	λόγος	equal	λόγος
 549	δύναιτο,	equal	δύναιτο,
 549	τὸν	equal	τὸν
-549	δ'	replace	δ’
+549	δ’	equal	δ’
 549	ἄνω	equal	ἄνω
 549	τε	equal	τε
 549	καὶ	equal	καὶ
@@ -162530,7 +162517,7 @@
 555	F.	equal	F.
 555		insert	cut!
 555		insert	κλῦτε
-555		insert	–
+555		insert	 
 555		insert	εξό
 555	v.	equal	v.
 555	2	equal	2
@@ -162648,7 +162635,7 @@
 555	ἐπιφέρει	equal	ἐπιφέρει
 555	γὰρ	equal	γὰρ
 555	‘ἰώ	replace	ιώ
-555	δόμοις;’	replace	–
+555	δόμοις;’	replace	 
 555		replace	δόμοις;
 555	ἥτις	equal	ἥτις
 555	libri,	equal	libri,
@@ -162749,7 +162736,7 @@
 556	Δ	replace	4
 556	319:	replace	319.
 556	ἔκταν	equal	ἔκταν
-556		insert	–
+556		insert	 
 556	ἐν	equal	ἐν
 556	χρήσει	equal	χρήσει
 556	ὁρᾶται	equal	ὁρᾶται
@@ -163225,7 +163212,7 @@
 557	λεγομένους	equal	λεγομένους
 557	κοσσάβους.	equal	κοσσάβους.
 557	διὸ	equal	διὸ
-557		insert	–
+557		insert	 
 557	καὶ	equal	καὶ
 557	Εὐριπίδης	equal	Εὐριπίδης
 557	ἐν	equal	ἐν
@@ -164440,7 +164427,7 @@
 560	δράματος	equal	δράματος
 560	Εὐριπίδον	replace	Εὐριπίδου
 560	‘τίς	replace	τίς
-560	ωομίζεται;’.item	replace	–
+560	ωομίζεται;’.item	replace	 
 560		replace	νομίζεται;
 560		replace	item
 560	Schol.	equal	Schol.
@@ -164479,7 +164466,7 @@
 561	Πολυίδῳ	replace	Πολυίδω
 561	῾τίς	replace	τίς
 561	δ’	replace	δ’
-561	δὲ	replace	–
+561	δὲ	replace	 
 561	ζῆν;’	replace	δὲ
 561		replace	ζῆν;”
 561	Schol.	equal	Schol.
@@ -164666,7 +164653,7 @@
 561	(πολυϊδου	equal	(πολυϊδου
 561	M).	equal	M).
 561	῾ἀνθρώπων	replace	θρώπων
-561		replace	–
+561		replace	 
 561	κενάς’.	equal	κενάς’.
 561	v.	equal	v.
 561	1	equal	1
@@ -165119,7 +165106,7 @@
 562	59,	equal	59,
 562	12:	equal	12:
 562	‘συγγνώμονάς	replace	συγγνώμονάς
-562	δίκης',	replace	δί-
+562	δίκης’,	replace	δί-
 563	563"/>	replace	ΠΟΛΥΙΔΟΣ
 563		replace	563
 563		replace	ΠΡΩΤΕΣΙΛΑΟΣ
@@ -165534,7 +165521,7 @@
 564	παρὸ	replace	παρὰ
 564	τάξιν	equal	τάξιν
 564	λέγει.	equal	λέγει.
-564		insert	–
+564		insert	 
 564	καὶ	equal	καὶ
 564	ὁ	equal	ὁ
 564	Πρωτεσίλαος	equal	Πρωτεσίλαος
@@ -167263,7 +167250,7 @@
 569	μουσικὴν	equal	μουσικὴν
 569	ἔρως	equal	ἔρως
 569	δύναμιν	equal	δύναμιν
-569		insert	–
+569		insert	 
 569	κινεῖ.	equal	κινεῖ.
 569	Plut.	equal	Plut.
 569	Amator.	equal	Amator.
@@ -167726,7 +167713,7 @@
 570	Εὐριπίδης	equal	Εὐριπίδης
 570	Σθενεβοίᾳ	replace	Σθενεβοία
 570	῾τίς	replace	‘τίς
-570	ξεναπάτην’.	replace	–
+570	ξεναπάτην’.	replace	 
 570		replace	ξεναπάτην.
 570	Pollux	equal	Pollux
 570	3,	equal	3,
@@ -170664,7 +170651,7 @@
 579	(Εὐριπίδης)	equal	(Εὐριπίδης)
 579	ἐπάγων	equal	ἐπάγων
 579	ἐνίοτε	equal	ἐνίοτε
-579		insert	–
+579		insert	 
 579	βασιλεῖς	equal	βασιλεῖς
 579	προσαιτοῦντας	equal	προσαιτοῦντας
 579	μετὰ	equal	μετὰ
@@ -171352,7 +171339,7 @@
 581	poetae	equal	poetae
 581	dicunt)	equal	dicunt)
 581	‘πτωχὰ	replace	πτωχά
-581	τύχης’.	replace	–
+581	τύχης’.	replace	 
 581		replace	τύχης‘.
 581	v.	equal	v.
 581	1	equal	1
@@ -172577,7 +172564,7 @@
 585	Εὐριπίδου	equal	Εὐριπίδου
 585	῾εἰ	replace	εἰ
 585	δὴ	equal	δὴ
-585		insert	–
+585		insert	 
 585	δεδρακότες’.	equal	δεδρακότες’.
 585	v.	equal	v.
 585	1	equal	1
@@ -173187,7 +173174,7 @@
 587	οὕτως	replace	οὕ
 587	῾κακῶς	replace	τως
 587	Ἑλλάδι’.	replace	κακῶς
-587		replace	–
+587		replace	 
 587		replace	Ἐλλάδι.
 587	cf.	equal	cf.
 587	Suid.	equal	Suid.
@@ -173674,7 +173661,7 @@
 588	Τηλέφου	equal	Τηλέφου
 588	τραῦμα	equal	τραῦμα
 588	῾πριστοῖσι	replace	'πριστοῖσι
-588	ῥινήμασιν’,	replace	–
+588	ῥινήμασιν’,	replace	 
 588		replace	ῥινήμασιν,
 588	ἀλλὰ	equal	ἀλλὰ
 588	καὶ	equal	καὶ
@@ -174038,13 +174025,13 @@
 590	οὐ	equal	οὐ
 590	προσεκτέον,	replace	προσεκτἑον,
 590	ὡς	equal	ὡς
-590	παρ'	replace	παρ’
+590	παρ’	equal	παρ’
 590	Ευριπίδη	replace	Εὐριπίδη
 590	-	replace	
 590	ἐν	equal	ἐν
 590	Τημενίδαις	equal	Τημενίδαις
 590	'ἅπασα	replace	ἅπασα
-590	πόλις'	replace	
+590	πόλις’	replace	
 590	mira	equal	mira
 590	est	equal	est
 590	Πελοπόννησος	equal	Πελοπόννησος
@@ -174070,9 +174057,9 @@
 590	2:	equal	2:
 590	Εὐριπίδου	equal	Εὐριπίδου
 590	Τημενίδων.	equal	Τημενίδων.
-590	'	replace	οὐκ
+590	’	replace	οὐκ
 590	οὐκ	replace	δορί.
-590	δορί.'	replace	κρεῖτ
+590	δορί.’	replace	κρεῖτ
 590	κρεῖττον	replace	τον
 590	SMA.	equal	SMA.
 590	732	equal	732
@@ -174096,10 +174083,10 @@
 590	τιμενίσι	equal	τιμενίσι
 590	A).	equal	A).
 590	'ῥώμη	replace	ρώμη
-590	βλάβην'.	replace	βλάβην,
+590	βλάβην’.	replace	βλάβην,
 590	ῥώμη	equal	ῥώμη
 590	δέ	equal	δέ
-590	γ'	replace	γ’
+590	γ’	equal	γ’
 590	άμαθης	replace	ἀμαθὴς
 590	coni.	equal	coni.
 590	Matthiae,	equal	Matthiae,
@@ -174150,7 +174137,7 @@
 590	'τοις	replace	τοῖς
 590	πϋβιν	replace	πᾶσιν
 590	μὴ	equal	μὴ
-590	χρεών,''	replace	χρεών.
+590	χρεών,'’	replace	χρεών.
 590	v.	equal	v.
 590	2	equal	2
 590	fortasse	equal	fortasse
@@ -174227,7 +174214,7 @@
 590	om.	equal	om.
 590	SA).	equal	SA).
 590	'ἀρετὴ	replace	ἀρετὴ
-590	χθονός'.	replace	-χθονός.
+590	χθονός’.	replace	-χθονός.
 590	v.	replace	V.
 590	1	equal	1
 590	om.	equal	om.
@@ -174248,7 +174235,7 @@
 590	M.	equal	M.
 590	v.	equal	v.
 590	3	equal	3
-590	συνθανόντ'	replace	συνθανόντ’
+590	συνθανόντ’	equal	συνθανόντ’
 590	M.	equal	M.
 591	591"/>	replace	ΤΗΜΕΝΙΔΑΙ
 591		replace	591
@@ -174352,7 +174339,7 @@
 591	om.	equal	om.
 591	A).	equal	A).
 591	‘ὡς	replace	ὡς
-591	φίλου’	replace	–
+591	φίλου’	replace	 
 591		replace	φίλους
 591	(v.	equal	(v.
 591	1	equal	1
@@ -174449,7 +174436,7 @@
 591	iterato	equal	iterato
 591	L).	equal	L).
 591	‘καλόν	replace	καλόν
-591	παρρησία’	replace	–
+591	παρρησία’	replace	 
 591		replace	παρρησία.
 591	ἀτενὴς	equal	ἀτενὴς
 591	(ἀγενὴς	equal	(ἀγενὴς
@@ -176413,7 +176400,7 @@
 598	Scholia:	equal	Scholia:
 598	ἑτέρᾳ	replace	ἑτέρα
 598	φράσω]	equal	φράσω]
-598		insert	–
+598		insert	 
 598	ἔστι	equal	ἔστι
 598	δὲ	equal	δὲ
 598	τὸ	equal	τὸ
@@ -178132,7 +178119,7 @@
 602	λέγει	equal	λέγει
 602	γοῦν	equal	γοῦν
 602	ἐν	equal	ἐν
-602		insert	–
+602		insert	 
 602	Φαέθοντι	equal	Φαέθοντι
 602	‘θερμὴ	replace	θερμὴ
 602	γῆς’	replace	γῆς"
@@ -178652,7 +178639,7 @@
 604	folio	equal	folio
 604	recto	equal	recto
 604	v.	equal	v.
-604	42-77.	replace	42–77.
+604	42-77.	replace	42 77.
 604	v.	replace	v.
 604		replace	V.
 604	1-4	equal	1-4
@@ -179877,7 +179864,7 @@
 607	Ἥλιος	equal	Ἥλιος
 607	ἴλα	replace	ἔλα
 607	δὲ	replace	δὲ
-607	διοίσει’	replace	–
+607	διοίσει’	replace	 
 607		replace	διοίσει"
 607	(v.	equal	(v.
 607	1-3)	equal	1-3)
@@ -180547,7 +180534,7 @@
 610	ἐμφ.	equal	ἐμφ.
 610	φλογός	replace	φλογός)
 610	Rau.	replace	Ran.
-610	ν,	replace	
+610	v.	replace	
 610	3	replace	
 610	ν	replace	
 610	.	replace	
@@ -180645,7 +180632,7 @@
 610	cod.,	equal	cod.,
 610	ξεστοῖσι	equal	ξεστοῖσι
 610	Burges.	equal	Burges.
-610	ν,	replace	v.
+610	v.	equal	v.
 610	10	equal	10
 610	κληθραεγω	equal	κληθραεγω
 610	cod.	equal	cod.
@@ -181264,7 +181251,7 @@
 611	cod.,	equal	cod.,
 611	corr.	equal	corr.
 611	Hermann.	equal	Hermann.
-611	ν,	replace	v.
+611	v.	equal	v.
 611	65	equal	65
 611	καταφανησεται	replace	καταφανήσεται
 611	b,	replace	υ,
@@ -182207,7 +182194,7 @@
 614	μετὰ	equal	μετὰ
 614	τοῦ	equal	τοῦ
 614	Διομήδους	equal	Διομήδους
-614		insert	–
+614		insert	 
 614	καὶ	equal	καὶ
 614	τὸ	equal	τὸ
 614	ὅλον,	equal	ὅλον,
@@ -183825,7 +183812,7 @@
 617	om.	equal	om.
 617	M).	equal	M).
 617	῾ἅλις	replace	ἅλις
-617	λενέσθαι’.	replace	–
+617	λενέσθαι’.	replace	 
 617		replace	γενέσθαι.
 617	v.	equal	v.
 617	1	equal	1
@@ -184704,7 +184691,7 @@
 620	τοῦ	equal	τοῦ
 620	Φιλοκτήτου.	equal	Φιλοκτήτου.
 620	‘φεῦ	replace	φεϋ
-620	χρόνῳ’.	replace	–
+620	χρόνῳ’.	replace	 
 620		replace	χρόνῳ‘.
 620	Orion	equal	Orion
 620	Flor.	equal	Flor.
@@ -185151,7 +185138,7 @@
 622		replace	EVRIPIDIS
 622	δίδωσιν	equal	δίδωσιν
 622	ὅστις	equal	ὅστις
-622	οὐκέθ'	replace	οὐκέθ’
+622	οὐκέθ’	equal	οὐκέθ’
 622	ὡραῖος	equal	ὡραῖος
 622	γαμεῖ·	equal	γαμεῖ·
 622	δέσποινα	equal	δέσποινα
@@ -185235,7 +185222,7 @@
 622	τιμωρίαν	equal	τιμωρίαν
 622	δίδωσιν	equal	δίδωσιν
 622	ὅσrις	replace	ὅστις
-622	γαμεῖ	replace	–
+622	γαμεῖ	replace	 
 622	γαμεῖ	replace	γαμεί
 622	suppleri	equal	suppleri
 622	vult.	equal	vult.
@@ -185610,7 +185597,7 @@
 623	Ὑπερείδης	equal	Ὑπερείδης
 623	λέγει	equal	λέγει
 623	ἃ	equal	ἃ
-623	δ'	replace	δ’
+623	δ’	equal	δ’
 623	ἐστὶν	equal	ἐστὶν
 623	ἀφανῆ	equal	ἀφανῆ
 623	ἀνάγκη	equal	ἀνάγκη
@@ -185725,7 +185712,7 @@
 623	μὴ	equal	μὴ
 623	ἐξ	equal	ἐξ
 623	ὑποψίας	equal	ὑποψίας
-623	μηδ'	replace	μηδ’
+623	μηδ’	equal	μηδ’
 623	ἐκ	equal	ἐκ
 623	διαβολῆς	equal	διαβολῆς
 623	ἀλλ’	equal	ἀλλ’
@@ -186160,7 +186147,7 @@
 624	2	equal	2
 624	p.	equal	p.
 624	491.	equal	491.
-624	ν,	replace	v.
+624	v.	equal	v.
 624	2	equal	2
 624	ἁμιλληθείς	equal	ἁμιλληθείς
 624	γε	equal	γε
@@ -188005,7 +187992,7 @@
 630	φησίν,	equal	φησίν,
 630	οὐκ	equal	οὐκ
 630	ἀνάζιον	replace	ἀνάξιον
-630		replace	–
+630		replace	 
 630	;	equal	;
 630	Dobree	equal	Dobree
 630	v.	replace	Adv.
@@ -188167,7 +188154,7 @@
 631	τάδ’	equal	τάδ’
 631	ἂν	equal	ἂν
 631	Sylburg,	equal	Sylburg,
-631	τάδ'	replace	τάδ’
+631	τάδ’	equal	τάδ’
 631	ἃ	replace	2
 631	C,	replace	O,
 631	τάδε	equal	τάδε
@@ -188180,7 +188167,7 @@
 631	CF.	equal	CF.
 631	833	equal	833
 631	τίς	equal	τίς
-631	δ'	replace	δ’
+631	δ’	equal	δ’
 631	οἶδεν	equal	οἶδεν
 631	εἰ	equal	εἰ
 631	ζῆν	equal	ζῆν
@@ -188260,7 +188247,7 @@
 631	νοσοῦσιν	equal	νοσοῦσιν
 631	Trinc.,	replace	Trine.,
 631	νοσοῦσι	equal	νοσοῦσι
-631	δ'	replace	δ’
+631	δ’	equal	δ’
 631	S,	equal	S,
 631	νοσοῦσί	equal	νοσοῦσί
 631	θ’	equal	θ’
@@ -190730,7 +190717,7 @@
 639	τῇ	equal	τῇ
 639	Ἰφιγενείᾳ	replace	Ἰφιγενεία
 639	‘ἔλαφον	replace	ἔλαφον
-639	θυγατέρα’.	replace	–
+639	θυγατέρα’.	replace	 
 639	v.	replace	θυγατέρα‘.
 639		replace	V.
 639	1	equal	1
@@ -191176,7 +191163,7 @@
 640	θεὸν	equal	θεὸν
 640	λέγοντα	equal	λέγοντα
 640	‘παίζω	replace	παίζω
-640	φιλῶ’.	replace	–
+640	φιλῶ’.	replace	 
 640		replace	φιλῶ‘.
 640	λέγει	equal	λέγει
 640	δὲ	equal	δὲ
@@ -191815,7 +191802,7 @@
 643	παραλήγουσα.	equal	παραλήγουσα.
 643	Εὐριπίδης	equal	Εὐριπίδης
 643	‘τίς	equal	‘τίς
-643	τυχεῖν;’	replace	–
+643	τυχεῖν;’	replace	 
 643		replace	τυχεῖν;
 643	λεσμοῦ	equal	λεσμοῦ
 643	codex,	equal	codex,
@@ -192075,7 +192062,7 @@
 644	τὰ	equal	τὰ
 644	Εὐριπίδου	equal	Εὐριπίδου
 644	‘ἄληθες	equal	‘ἄληθες
-644	θεοῦ;’	replace	–
+644	θεοῦ;’	replace	 
 644		replace	θεοῦ;
 644	verba	equal	verba
 644	τῆς	equal	τῆς
@@ -192405,7 +192392,7 @@
 645	1084,	equal	1084,
 645	2:	equal	2:
 645	‘βέβληκ’	replace	βέβληκα
-645	καὶ	replace	–
+645	καὶ	replace	 
 645	τἐτταρα’,	replace	καὶ
 645	ἤγουν	replace	τέτταρα,
 645		replace	ήγουν
@@ -192539,7 +192526,7 @@
 645	ὦ	equal	ὦ
 645	Σκύθα,	equal	Σκύθα,
 645	‘πεσεῖν	replace	πεσεῖν
-645	λέχος;’	replace	–
+645	λέχος;’	replace	 
 645		replace	λέχος;”
 645	Euripideum	equal	Euripideum
 645	esse	equal	esse
@@ -193137,7 +193124,7 @@
 647	λαβὼν	equal	λαβὼν
 647	ἔφη	equal	ἔφη
 647	‘ἐν	equal	‘ἐν
-647	οὔ’.	replace	–
+647	οὔ’.	replace	 
 647		replace	οὔ.
 647	Schol.	equal	Schol.
 647	Theocr.	equal	Theocr.
@@ -193428,8 +193415,8 @@
 648	αἴθοπα	equal	αἴθοπα
 648	C.	replace	O.
 648	ὀαρχάτους	replace	δαρχάτους
-648	A.	replace	A.
-648	ν,	replace	v.
+648	A.	equal	A.
+648	v.	equal	v.
 648	3	equal	3
 648	αἰθίοπα	replace	αιθίοπα
 648	A.	equal	A.
@@ -193668,7 +193655,7 @@
 648	ἡμῖν	equal	ἡμῖν
 648	πάντα	equal	πάντα
 648	καὶ	equal	καὶ
-648	τρέφουσ'	replace	τρέφουσ’
+648	τρέφουσ’	equal	τρέφουσ’
 648	ἅμα,	equal	ἅμα,
 648	δι’	equal	δι’
 648	ὧν	equal	ὧν
@@ -193735,7 +193722,7 @@
 649	v.	equal	v.
 649	2	equal	2
 649	ἢν]	replace	ἣν]
-649	αλλ'	replace	ἀλλ’
+649	αλλ’	replace	ἀλλ’
 649	Stob.	equal	Stob.
 649	v.	equal	v.
 649	3	equal	3
@@ -194300,7 +194287,7 @@
 650	p.	equal	p.
 650	132:	equal	132:
 650	‘πολλάκι	replace	πολλάκι
-650	ἄγει’.	replace	–
+650	ἄγει’.	replace	 
 650	εἰ	replace	ἄγει‘.
 650		replace	εἰς
 650	τὸ	equal	τὸ
@@ -194509,7 +194496,7 @@
 650	ἄνδρα	equal	ἄνδρα
 650		insert	-
 651	651"/>	replace	INCERTARVM
-651	φίλον'.	replace	FABVLARVM
+651	φίλον’.	replace	FABVLARVM
 651		replace	FRAGMENTA
 651		replace	651
 651		replace	φίλον.
@@ -194566,7 +194553,7 @@
 651	‘τὸν	replace	τὸν
 651	ἐσθλὸν	equal	ἐσθλὸν
 651	ἄνδρα	equal	ἄνδρα
-651	φίλον’.	replace	–
+651	φίλον’.	replace	 
 651		replace	φίλον.
 651	adde	equal	adde
 651	Procop.	equal	Procop.
@@ -194853,7 +194840,7 @@
 651	p.	equal	p.
 651	153.	equal	153.
 651	904	equal	904
-651	ἀλλ'	replace	ἀλλ’
+651	ἀλλ’	equal	ἀλλ’
 651	ἄκρας	equal	ἄκρας
 651	εὐηθίας	equal	εὐηθίας
 651	ἅπτοιτ’	equal	ἅπτοιτ’
@@ -194889,9 +194876,9 @@
 651	μακρᾶς,	equal	μακρᾶς,
 651	φησίν,	equal	φησίν,
 651	εὐθείας	equal	εὐθείας
-651	'	replace	‘
+651	’	replace	‘
 651	ἅπτοιτ’	equal	ἅπτοιτ’
-651	θέλει'.	delete	
+651	θέλει’.	delete	
 651	v.	equal	v.
 651	1	equal	1
 651	ἀλλ’	equal	ἀλλ’
@@ -194935,7 +194922,7 @@
 652	vera	equal	vera
 652	praecepta	equal	praecepta
 652	Εὐριπίδου·	equal	Εὐριπίδου·
-652	'	delete	
+652	’	delete	
 652	μισῶ	equal	μισῶ
 652	σοφός’.	replace	σοφός.
 652	eundem	equal	eundem
@@ -195037,7 +195024,7 @@
 652	8,	equal	8,
 652	2:	equal	2:
 652	‘ψῦχος	replace	'ψύχος
-652	πολεμιώτατον',	replace	ripides.
+652	πολεμιώτατον’,	replace	ripides.
 652		replace	907
 652		replace	πολεμιώτατον,
 652	inquit	equal	inquit
@@ -195078,7 +195065,7 @@
 652	κρέασι	equal	κρέασι
 652	χλωρὰ	equal	χλωρὰ
 652	σῦκ’	replace	συκο
-652	μαθεῖν'.	replace	μαθεῖν.
+652	μαθεῖν’.	replace	μαθεῖν.
 652	v.	equal	v.
 652	1	equal	1
 652	supplevit	equal	supplevit
@@ -195434,7 +195421,7 @@
 653	ἀπολύειν	equal	ἀπολύειν
 653	L.	equal	L.
 653	κἀπὶ	equal	κἀπὶ
-653	τῇδ'	replace	τῇδ’
+653	τῇδ’	equal	τῇδ’
 653	Grotius,	equal	Grotius,
 653	κόπεὶ	replace	κἀπεὶ
 653	τῇδε	equal	τῇδε
@@ -195578,7 +195565,7 @@
 653	ὅμοια	equal	ὅμοια
 653	‘ἡδὺ	equal	‘ἡδὺ
 653	δ’	equal	δ’
-653	μέρος'	replace	ἔχειν
+653	μέρος’	replace	ἔχειν
 653	μἐρος’	replace	μέρος
 653		replace	(v.
 653	9	equal	9
@@ -195598,7 +195585,7 @@
 653	ἐπιφέρει	equal	ἐπιφέρει
 653	‘σοὶ	replace	σοὶ
 653	δ’	replace	δ’
-653	πικρόν'	replace	πικρόν
+653	πικρόν’	replace	πικρόν
 653	(v.	equal	(v.
 653	11	equal	11
 653	et	equal	et
@@ -195640,7 +195627,7 @@
 654	κρίνεσθαι,	equal	κρίνεσθαι,
 654	ἀλλ’	equal	ἀλλ’
 654	ἀρετῇ.	equal	ἀρετῇ.
-654	Ὁὐδεμίαν'	replace	οὐδεμίαν
+654	Ὁὐδεμίαν’	replace	οὐδεμίαν
 654	φησὶν	equal	φησὶν
 654	ἡ	equal	ἡ
 654	τραγῳδία	equal	τραγῳδία
@@ -196308,10 +196295,10 @@
 656	υἱὸν	equal	υἱὸν
 656	ἅμα	equal	ἅμα
 656	οὐκ	equal	οὐκ
-656	οἶδ'	replace	οἶδ’
+656	οἶδ’	equal	οἶδ’
 656	ὅπως	equal	ὅπως
 656	αἰνισσόμενος	equal	αἰνισσόμενος
-656	'	replace	·
+656	’	replace	·
 656	σοὶ	equal	σοὶ
 656	τῷ	equal	τῷ
 656	προχυτίαν’	replace	προχυτίαν
@@ -196342,7 +196329,7 @@
 656	λέγει	equal	λέγει
 656	‘	delete	
 656	πέμψον	equal	πέμψον
-656	ἀνάπαυλαν'	replace	ἀνάπαυ
+656	ἀνάπαυλαν’	replace	ἀνάπαυ
 656	v.	replace	λαν
 656		replace	(τ.
 656	9-13).	equal	9-13).
@@ -196356,7 +196343,7 @@
 656	Grotius,	equal	Grotius,
 656	φέρων	equal	φέρων
 656	L.	equal	L.
-656	εἴθ'	replace	εἴθ’
+656	εἴθ’	equal	εἴθ’
 656	Ἅιδης	replace	Ἄἰδης
 656	hoc	equal	hoc
 656	loco	equal	loco
@@ -196497,7 +196484,7 @@
 656	‘ὃς	replace	ὃς
 656	τάδε	equal	τάδε
 656	λεύσσων	equal	λεύσσων
-656	μετέχουσα’.	replace	–
+656	μετέχουσα’.	replace	 
 656		replace	μετέχουσα‘.
 656	v.	equal	v.
 656	1	equal	1
@@ -196656,7 +196643,7 @@
 657	ποιεῖ	equal	ποιεῖ
 657	‘νικᾷ	equal	‘νικᾷ
 657	δὲ	equal	δὲ
-657	κακά'.	equal	κακά'.
+657	κακά’.	replace	κακά'.
 657	Diphilus	equal	Diphilus
 657	(Com.	equal	(Com.
 657	vol.	equal	vol.
@@ -196670,7 +196657,7 @@
 657	422	equal	422
 657	B:	equal	B:
 657	εὖ	equal	εὖ
-657	γ'	replace	γ’
+657	γ’	equal	γ’
 657	ὁ	equal	ὁ
 657	κατάχρυσος	equal	κατάχρυσος
 657	εἶπε	equal	εἶπε
@@ -196691,7 +196678,7 @@
 657	ἐστι	equal	ἐστι
 657	γὰρ	equal	γὰρ
 657	γαστρός.	equal	γαστρός.
-657	ν,	replace	v.
+657	v.	equal	v.
 657	1:	replace	1
 657	μ’	equal	μ’
 657	ἡ	equal	ἡ
@@ -196764,7 +196751,7 @@
 657	εἰπόντος	equal	εἰπόντος
 657	῾ὦ	replace	ὦ
 657	πολύμοχθος	equal	πολύμοχθος
-657	τελευτή’.Δίφιλος	replace	–
+657	τελευτή’.Δίφιλος	replace	 
 657		replace	τελευτής
 657		replace	Δίφιλος
 657	γράφει	equal	γράφει
@@ -196853,7 +196840,7 @@
 657	καὶ	equal	καὶ
 657	ἡλικίην	equal	ἡλικίην
 657	καὶ	equal	καὶ
-657	νούσους'	replace	νούσους”
+657	νούσους’	replace	νούσους”
 657	γράφοντος	equal	γράφοντος
 657	Εὐριπίδης	equal	Εὐριπίδης
 657	ἐν	equal	ἐν
@@ -197523,7 +197510,7 @@
 659	γὰρ	equal	γὰρ
 659	‘τίς	replace	τίς
 659	γένος;	replace	γένος;”
-659	'	replace	
+659	’	replace	
 659	v.	equal	v.
 659	1	equal	1
 659	τοὐμὸν	replace	τουμὸν
@@ -197590,7 +197577,7 @@
 659	20)	equal	20)
 659	de	equal	de
 659	proverbio	equal	proverbio
-659	'	replace	‘ἐγγύα
+659	’	replace	‘ἐγγύα
 659	ἐγγύα	replace	
 659	πάρα	equal	πάρα
 659	δ’	equal	δ’
@@ -197598,7 +197585,7 @@
 659		replace	disputans:
 659	καὶ	equal	καὶ
 659	Εὐριπίδης	equal	Εὐριπίδης
-659	'	replace	‘
+659	’	replace	‘
 659	οὐκ	equal	οὐκ
 659	ἐγγυῶμαι	equal	ἐγγυῶμαι
 659	γράμματα’.	replace	γράμματα.
@@ -198022,7 +198009,7 @@
 661	Εὐριπίδου	equal	Εὐριπίδου
 661	λέγουσαν	equal	λέγουσαν
 661	ἔνδον	equal	ἔνδον
-661	λόγος'.	replace	λόγος.
+661	λόγος’.	replace	λόγος.
 661	οίκέτας	replace	οἰκέτας
 661	Eust.,	equal	Eust.,
 661	οἰκέταις	equal	οἰκέταις
@@ -198082,7 +198069,7 @@
 661	249.	equal	249.
 661	929	equal	929
 661	ἑῷος	equal	ἑῷος
-661	ἡνίχ'	replace	ἡνίχ’
+661	ἡνίχ’	equal	ἡνίχ’
 661	ἱππότης	equal	ἱππότης
 661	ἐξέλαμψεν	equal	ἐξέλαμψεν
 661	ἀστὴρ	replace	ἀστήρ
@@ -198102,9 +198089,9 @@
 661	μὲν	equal	μὲν
 661	αὐτῷ	equal	αὐτῷ
 661	Εὐριπίδῃ	equal	Εὐριπίδῃ
-661	'	replace	ἑφος
+661	’	replace	ἑφος
 661	ἑῷος	replace	ἀστήρ’.
-661	ἀστήρ'	replace	
+661	ἀστήρ’	replace	
 661	.	replace	
 661	ἱππότης	equal	ἱππότης
 661	Schol.	equal	Schol.
@@ -198156,7 +198143,7 @@
 661	παρὰ	equal	παρὰ
 661	τῷ	equal	τῷ
 661	Εὐριπίδῃ	equal	Εὐριπίδῃ
-661	'	delete	
+661	’	delete	
 661	οἴμοι	equal	οἴμοι
 661	ἥμισυ’.	replace	ἥμισυ.
 661	τοῦτο	equal	τοῦτο
@@ -198169,7 +198156,7 @@
 661	τῇ	equal	τῇ
 661	ἐπιφορᾷ	replace	ἐπι
 661	‘τέκνον	replace	φορᾷ
-661	πατρί'.	replace	τέκνον
+661	πατρί’.	replace	τέκνον
 661		replace	*τέκνον
 661		replace	—
 661		replace	πατρί.
@@ -198435,7 +198422,7 @@
 662	ὁ	equal	ὁ
 662	ἀνδραποδιστής.	equal	ἀνδραποδιστής.
 662	Εὐριπίδης	replace	Εὐ
-662	'	replace	ριπίδης
+662	’	replace	ριπίδης
 662	βάσκανον	equal	βάσκανον
 662	μέγιστον	equal	μέγιστον
 662	ψυχαγωγόν’.	replace	ψυχαγωγόν.
@@ -198448,7 +198435,7 @@
 662	1128:	equal	1128:
 662	οὐ	equal	οὐ
 662	ψυχαγωγὸν	equal	ψυχαγωγὸν
-662	τόνδ'	replace	τόνδ’
+662	τόνδ’	equal	τόνδ’
 662	ἐποιήσω	equal	ἐποιήσω
 662	ξένον.	equal	ξένον.
 662	utique	equal	utique
@@ -198513,9 +198500,9 @@
 662	νοῦν	equal	νοῦν
 662	ἔχοντος	equal	ἔχοντος
 662	εἶναι	equal	εἶναι
-662	'	delete	
+662	’	delete	
 662	φίλον	equal	φίλον
-662	σαφῆ’.	replace	–
+662	σαφῆ’.	replace	 
 662		replace	σαφῆς.
 662	v.	equal	v.
 662	1	equal	1
@@ -198564,7 +198551,7 @@
 662	Κασσάνδρας	equal	Κασσάνδρας
 662	αὐτῷ	equal	αὐτῷ
 662	(Euripidi)	equal	(Euripidi)
-662	ἀλλ'	replace	‘ἀλλ’
+662	ἀλλ’	replace	‘ἀλλ’
 662	Τρῶες’.	replace	—
 662	εχ	replace	Τρῶες.
 662		replace	ex
@@ -198618,7 +198605,7 @@
 663	ὑπαρχῆς	equal	ὑπαρχῆς
 663	ἀναβεβίωκεν.	equal	ἀναβεβίωκεν.
 663	ΜΕΝ.	equal	ΜΕΝ.
-663	'	delete	
+663	’	delete	
 663	οὔκ	equal	οὔκ
 663	ἐδέξατο’.	replace	ἐδέξατο.
 663	Euripidis	equal	Euripidis
@@ -198663,7 +198650,7 @@
 663	ἐκεῖνος	equal	ἐκεῖνος
 663	ἐκσώσειέ	equal	ἐκσώσειέ
 663	με.	equal	με.
-663	'	delete	
+663	’	delete	
 663	μὴ	equal	μὴ
 663	κτανεῖν’.	delete	
 663	938	equal	938
@@ -198699,7 +198686,7 @@
 663	413);	equal	413);
 663	ΛΟΥΚ.	equal	ΛΟΥΚ.
 663	νῦν	replace	‘νῦν
-663	με;'	replace	–
+663	με;’	replace	 
 663		replace	με;”
 663	ῥημάτων]	equal	ῥημάτων]
 663	ῥήματος	equal	ῥήματος
@@ -198845,7 +198832,7 @@
 663	‘πρὸς	replace	πρὸς
 663	οἰκεῖον	equal	οἰκεῖον
 663	χορὸν	equal	χορὸν
-663	ἐρεῖς'.	replace	ἐρεῖς.
+663	ἐρεῖς’.	replace	ἐρεῖς.
 663	941	equal	941
 663	ὁρᾷς	replace	ὁρᾶς
 663	τὸν	equal	τὸν
@@ -199338,7 +199325,7 @@
 665	τῆς	equal	τῆς
 665	γῆς	equal	γῆς
 665	μέμνηται	equal	μέμνηται
-665	'	delete	
+665	’	delete	
 665	ἑστίαν	equal	ἑστίαν
 665	δέ	equal	δέ
 665	γε	equal	γε
@@ -199440,7 +199427,7 @@
 665	p.	equal	p.
 665	55,	equal	55,
 665	23:	equal	23:
-665	'	delete	
+665	’	delete	
 665	ἦ	delete	
 665	θεός’.	equal	θεός’.
 665	δύσγνωτα	equal	δύσγνωτα
@@ -199505,7 +199492,7 @@
 665	(80.	replace	(sc.
 665	Εὐp.	replace	Εὐρ.
 665	Ἡρακλείδαις).	equal	Ἡρακλείδαις).
-665	'	delete	
+665	’	delete	
 665	οὐκ	equal	οὐκ
 665	ἔστι	equal	ἔστι
 665	παισὶ	equal	παισὶ
@@ -199652,7 +199639,7 @@
 666	p.	equal	p.
 666	56,	equal	56,
 666	28:	equal	28:
-666	'	delete	
+666	’	delete	
 666	ὅστις	equal	ὅστις
 666	βαρύ’.	replace	βαρύ.
 666	v.	equal	v.
@@ -199744,7 +199731,7 @@
 666	ἴσως	equal	ἴσως
 666	ἄφρων	equal	ἄφρων
 666	ἐγὼ	equal	ἐγὼ
-666	οὖσ',	replace	οὖσ’,
+666	οὖσ’,	equal	οὖσ’,
 666	οὐκ	equal	οὐκ
 666	ἂν	equal	ἂν
 666	ἀντείποιμι·	equal	ἀντείποιμι·
@@ -199811,7 +199798,7 @@
 667	γέγονεν	equal	γέγονεν
 667	ἐκεῖνος	equal	ἐκεῖνος
 667	εἰς	equal	εἰς
-667	ἔμ'	replace	ἔμ’
+667	ἔμ’	equal	ἔμ’
 667	οἷον	equal	οἷον
 667	ἠξίουν,	equal	ἠξίουν,
 667	ἐμοί	equal	ἐμοί
@@ -199847,7 +199834,7 @@
 667	καὶ	equal	καὶ
 667	ποῦ	equal	ποῦ
 667	τοσαῦτα	equal	τοσαῦτα
-667	χρήματ'	replace	χρήματ’
+667	χρήματ’	equal	χρήματ’
 667	ἐστίν,	equal	ἐστίν,
 667	ὦ	equal	ὦ
 667	πάτερ,	equal	πάτερ,
@@ -199879,7 +199866,7 @@
 667	μὴ	equal	μὴ
 667	λαβεῖν	equal	λαβεῖν
 667	μέρος;	equal	μέρος;
-667	φέρ'	replace	φέρ’
+667	φέρ’	equal	φέρ’
 667	ἢν	replace	ἣν
 667	ὁ	equal	ὁ
 667	νῦν	equal	νῦν
@@ -199892,7 +199879,7 @@
 667	μὴ	equal	μὴ
 667	γένοιτο,	equal	γένοιτο,
 667	Ζεῦ	equal	Ζεῦ
-667	φίλ',,	replace	φίλ’,
+667	φίλ’,,	replace	φίλ’,
 667	οὐδ’	equal	οὐδ’
 667	ἔσται	equal	ἔσται
 667	ποτέ,	equal	ποτέ,
@@ -200020,7 +200007,7 @@
 667	ὦ	equal	ὦ
 667	πάτερ	equal	πάτερ
 667	αἰσχύνης	equal	αἰσχύνης
-667	φέρειν',	replace	φέ
+667	φέρειν’,	replace	φέ
 667		replace	ρειν.
 667	in	equal	in
 667	recto	equal	recto
@@ -200186,9 +200173,9 @@
 668	quod	equal	quod
 668	alii	equal	alii
 668	praetulerunt	equal	praetulerunt
-668	μ'	replace	μ’
+668	μ’	equal	μ’
 668	ἔδει.	equal	ἔδει.
-668	ν,	replace	v.
+668	v.	equal	v.
 668	9	equal	9
 668	τυγχάνουσ’	equal	τυγχάνουσ’
 668	pro	replace	ριο
@@ -200200,7 +200187,7 @@
 668	Nikitin.	equal	Nikitin.
 668	v.	equal	v.
 668	10	equal	10
-668	ταῦτ'	replace	ταῦτ’
+668	ταῦτ’	equal	ταῦτ’
 668	οὐκ	equal	οὐκ
 668	ἂν	equal	ἂν
 668	Weil	equal	Weil
@@ -200314,7 +200301,7 @@
 668	elisio,	equal	elisio,
 668	velut	equal	velut
 668	μεανηρ	replace	με
-668	ν,	replace	ανηρ
+668	v.	replace	ανηρ
 668	27:	replace	v.
 668	ζευφιλε	replace	27,
 668		replace	ζε
@@ -200440,7 +200427,7 @@
 668	b,	replace	b.
 668	v.	equal	v.
 668	34	equal	34
-668	ὅτ'	replace	ὅτι
+668	ὅτ’	replace	ὅτι
 668	ἦν	equal	ἦν
 668	οτεην	replace	(οτεην
 668	b)	replace	δ)
@@ -200452,7 +200439,7 @@
 668	absurda,	equal	absurda,
 668	expectes	equal	expectes
 668	ἄζυγες	equal	ἄζυγες
-668	ὅτ'	replace	ὅτ’
+668	ὅτ’	equal	ὅτ’
 668	ἦμεν.	equal	ἦμεν.
 668	v.	equal	v.
 668	36	equal	36
@@ -200583,7 +200570,7 @@
 668	λε	replace	le
 668	Ρ,	replace	P,
 668	auant	replace	avant
-668	l'	equal	l'
+668	l’	replace	l'
 668	E,	equal	E,
 668	couver	replace	couvre
 668	un	equal	un
@@ -200596,7 +200583,7 @@
 668	rigueur,	equal	rigueur,
 668	étre	replace	être
 668	un	equal	un
-668	T'.	equal	T'.
+668	T’.	replace	T'.
 668	correctiones	equal	correctiones
 668	temptatae	equal	temptatae
 668	sunt	equal	sunt
@@ -202472,7 +202459,7 @@
 674	Εὐριπίδου	equal	Εὐριπίδου
 674	λέγοντος	equal	λέγοντος
 674	‘πολλαῖσι	replace	πολλαῖσι
-674		replace	–
+674		replace	 
 674	πεφυκότες’.	equal	πεφυκότες’.
 674	.	delete	
 674	Stob.	equal	Stob.
@@ -202518,7 +202505,7 @@
 674	φησί,	equal	φησί,
 674	‘μάντις	replace	μάντις
 674	ἄριστος	equal	ἄριστος
-674	καλῶς’.	replace	–
+674	καλῶς’.	replace	 
 674		replace	καλῶς.
 674	Appian.	equal	Appian.
 674	B.	equal	B.
@@ -202534,7 +202521,7 @@
 674	ὅτι	equal	ὅτι
 674	‘μάντις	replace	μάντις
 674	ἄριστος	equal	ἄριστος
-674	καλῶς’.	replace	–
+674	καλῶς’.	replace	 
 674		replace	καλῶς.
 674		replace	καλῶς.
 674	Arrian.	equal	Arrian.
@@ -202732,7 +202719,7 @@
 675	κατὰ	equal	κατὰ
 675	τὸν	equal	τὸν
 675	Εὐριπίδαν.	replace	Εὐριπίδην.
-675	ν,	replace	v.
+675	v.	equal	v.
 675	2	equal	2
 675	ἀφεὶς]	equal	ἀφεὶς]
 675	ἀνεὶς	replace	ἀνείς
@@ -202932,7 +202919,7 @@
 676	εἰπὼν	equal	εἰπὼν
 676	῾εἰ	replace	‘εἰ
 676	δ’	equal	δ’
-676		insert	–
+676		insert	 
 676	οὐκ	equal	οὐκ
 676	ἔχει’,	replace	ἔχει,
 676	φορτικωτάτῃ	equal	φορτικωτάτῃ
@@ -203337,7 +203324,7 @@
 677	(fr.	equal	(fr.
 677	360,	equal	360,
 677	7-10).	replace	7
-677	‘εἰ	replace	–
+677	‘εἰ	replace	 
 677	δὲ	replace	10).
 677	πάρεργον	replace	εἰ
 677	συνθηρεύομεν’.	replace	δὲ
@@ -204317,13 +204304,13 @@
 680	φησί,	equal	φησί,
 680	‘	delete	
 680	σύμμικτον	equal	σύμμικτον
-680	βρέφος’	replace	–
+680	βρέφος’	replace	 
 680		replace	βρέφος”
 680	γεγονέναι	equal	γεγονέναι
 680	καὶ	equal	καὶ
 680	‘	delete	
 680	ταύρου	equal	ταύρου
-680	φύσει’	replace	–
+680	φύσει’	replace	 
 680		replace	φύσει”
 680	(fr.	equal	(fr.
 680	997).	equal	997).
@@ -205352,7 +205339,7 @@
 683	377)	equal	377)
 683	οὕτως	equal	οὕτως
 683	εὕρομεν	equal	εὕρομεν
-683		insert	–
+683		insert	 
 683	καὶ	equal	καὶ
 683	παρ’	equal	παρ’
 683	Εὐριπίδῃ	replace	Εὐριπίδη
@@ -205435,7 +205422,7 @@
 684	πατέρων	equal	πατέρων
 684	ἀδιόριστον	equal	ἀδιόριστον
 684	εἶναι	equal	εἶναι
-684		insert	–
+684		insert	 
 684	ὅθεν	equal	ὅθεν
 684	καὶ	equal	καὶ
 684	Εὐριπίδης	equal	Εὐριπίδης
@@ -206683,7 +206670,7 @@
 687	locus).	equal	locus).
 687	῾παῖς	replace	παῖς
 687	ὢν	equal	ὢν
-687	ἔμφυτον’.	replace	–
+687	ἔμφυτον’.	replace	 
 687		replace	ἔμφυτον.
 687		replace	ἔμφυτον.
 687	v.	equal	v.
@@ -206976,7 +206963,7 @@
 688	om.	equal	om.
 688	8).	replace	5).
 688	‘τὸ	replace	τὸ
-688	θράσους’.	replace	–
+688	θράσους’.	replace	 
 688		replace	θρά
 688		replace	σους‘.
 688	v.	equal	v.
@@ -207369,7 +207356,7 @@
 690	om.	equal	om.
 690	MA).	equal	MA).
 690	῾ὀργαὶ	replace	όργαὶ
-690	προσίσταται’.	replace	–
+690	προσίσταται’.	replace	 
 690		replace	προσίσταται.
 690	de	equal	de
 690	Archelao	equal	Archelao
@@ -208129,7 +208116,7 @@
 692	οἷς	equal	οἷς
 692	φησίν	equal	φησίν
 692	῾ἅπας	replace	ἅπας
-692	πατρίς’.	replace	–
+692	πατρίς’.	replace	 
 692		replace	πατρίς.
 692	v.	equal	v.
 692	1	equal	1
@@ -209211,7 +209198,7 @@
 696	73,	equal	73,
 696	6:	equal	6:
 696	‘ἐχθροῖσιν	replace	ἐχθροῖσιν
-696	ἔχειν'.	replace	—
+696	ἔχειν’.	replace	—
 696	‘Euripidis	replace	ἔχειν.
 696		replace	Euripidis
 696	esse	equal	esse
@@ -209236,7 +209223,7 @@
 696	uno	equal	uno
 696	lemmate	equal	lemmate
 696	Εὐριπίδου	equal	Εὐριπίδου
-696	comprehendit'.	replace	comprehendit.
+696	comprehendit’.	replace	comprehendit.
 696	O.	equal	O.
 696	Hense.	equal	Hense.
 696	πολεμίαν	equal	πολεμίαν
@@ -209274,7 +209261,7 @@
 696	10:	equal	10:
 696	Εὐριπίδου.	equal	Εὐριπίδου.
 696	‘μοχθοῦμεν	replace	μοχθοῦμεν
-696	πλέον;'	replace	–
+696	πλέον;’	replace	 
 696		replace	πλέον;
 696	v.	equal	v.
 696	1	equal	1
@@ -209367,7 +209354,7 @@
 696	om.	equal	om.
 696	S).	replace	5).
 696	‘γυναικὶ	replace	γυναικὶ
-696	ἔχῃ'.	replace	ἔχῃ.
+696	ἔχῃ’.	replace	ἔχῃ.
 696	ἂν	equal	ἂν
 696	SMA.	equal	SMA.
 696	1063	equal	1063
@@ -209416,7 +209403,7 @@
 697		replace	697
 697	τὴν	equal	τὴν
 697	ὄψιν	equal	ὄψιν
-697	ἐμπλήσασ'	replace	ἐμπλήσασ’
+697	ἐμπλήσασ’	equal	ἐμπλήσασ’
 697	ἀπήλλακται	equal	ἀπήλλακται
 697	καχῶν·	replace	κακῶν·
 697	τό	equal	τό
@@ -209504,7 +209491,7 @@
 697	γυναῖκα	equal	γυναῖκα
 697	δεῖ.	equal	δεῖ.
 697	‘ἐκπυνθάνεσθαι	replace	ἐκπυνθάνεσθαι
-697	διοίχεται'.	replace	διοίχεται‘.
+697	διοίχεται’.	replace	διοίχεται‘.
 697	Menandri	equal	Menandri
 697	et	equal	et
 697	tragici	equal	tragici
@@ -209585,7 +209572,7 @@
 697	μὲν	equal	μὲν
 697	μέγιστον	equal	μέγιστον
 697	ἀπήλλακται	equal	ἀπήλλακται
-697	κακῶν'	replace	κακῶν
+697	κακῶν’	replace	κακῶν
 697	(v.	equal	(v.
 697	2-7).	equal	2-7).
 697	ἀκούεις	equal	ἀκούεις
@@ -209648,7 +209635,7 @@
 697	praebet	equal	praebet
 697	Choricius	delete	
 697	ἐρᾷ	equal	ἐρᾷ
-697	δ'	replace	δ’
+697	δ’	equal	δ’
 697	ἀκούειν	equal	ἀκούειν
 697	ὧν	equal	ὧν
 697	φυλάττεται	equal	φυλάττεται
@@ -209776,7 +209763,7 @@
 697	8.	replace	S.
 697	1064	equal	1064
 697	ἀλλ’	equal	ἀλλ’
-697	ἴσθ',	replace	ἴσθ’,
+697	ἴσθ’,	equal	ἴσθ’,
 697	ἐμοὶ	equal	ἐμοὶ
 697	μὲν	equal	μὲν
 697	οὗτος	equal	οὗτος
@@ -209944,7 +209931,7 @@
 698	8:	equal	8:
 698	Εὐριπίδου.	equal	Εὐριπίδου.
 698	‘καὶ	replace	βροτοῖς‘.
-698	βροτοῖς'.	replace	
+698	βροτοῖς’.	replace	
 698	v.	equal	v.
 698	2	equal	2
 698	λόγοι	equal	λόγοι
@@ -209991,7 +209978,7 @@
 698	1:	equal	1:
 698	Εὐριπίδου.	equal	Εὐριπίδου.
 698	‘ἦ	replace	μένει.
-698	μένει'.	replace	
+698	μένει’.	replace	
 698	v.	equal	v.
 698	1	equal	1
 698	ἦ	replace	ἡ
@@ -210045,7 +210032,7 @@
 698	8:	equal	8:
 698	Εὐριπίδου.	equal	Εὐριπίδου.
 698	‘τοσόνδε	replace	τοσόνδε
-698	ποτί'.	replace	—
+698	ποτί’.	replace	—
 698	v.	replace	ποτέ.
 698	1	equal	1
 698	τοσόνδε	equal	τοσόνδε
@@ -210154,7 +210141,7 @@
 699	om.	equal	om.
 699	S).	equal	S).
 699	‘οὐ	replace	πεφυκέναι.
-699	πεφυκέναρ'.	replace	
+699	πεφυκέναρ’.	replace	
 699	v.	equal	v.
 699	2	equal	2
 699	κακοῦ	equal	κακοῦ
@@ -210190,7 +210177,7 @@
 699	αὐτοῦ	equal	αὐτοῦ
 699	A),	replace	A).
 699	‘σκαιὸν	replace	σκαιὸν
-699	εἰδέναι'	replace	–
+699	εἰδέναι’	replace	 
 699		replace	εἰδέναι
 699	(v.	equal	(v.
 699	2).	equal	2).
@@ -210264,7 +210251,7 @@
 699	4:	equal	4:
 699	Εὐριπίδου.	equal	Εὐριπίδου.
 699	‘ὅστις	replace	ὅστις
-699	ἀεί'.	equal	ἀεί'.
+699	ἀεί’.	replace	ἀεί'.
 699	v.	equal	v.
 699	2	equal	2
 699	δεῖν	equal	δεῖν
@@ -210332,7 +210319,7 @@
 699	αὐτοῦ	equal	αὐτοῦ
 699	8).	replace	S).
 699	‘λύπαι	replace	λύπαι
-699	νόσουσ'.	replace	νόσους‘.
+699	νόσουσ’.	replace	νόσους‘.
 699	idem	equal	idem
 699	versus	equal	versus
 699	extat	equal	extat
@@ -210385,7 +210372,7 @@
 699	νόσῳ	equal	νόσῳ
 699	διδοὺς	equal	διδοὺς
 699	χρόνον	equal	χρόνον
-699	ἰάσατ'	replace	ἰάσατ’
+699	ἰάσατ’	equal	ἰάσατ’
 699	ἤδη	equal	ἤδη
 699	μᾶλλον	equal	μᾶλλον
 699	ἢ	equal	ἢ
@@ -210399,11 +210386,12 @@
 699	102,	equal	102,
 699	2:	equal	2:
 699	Εὐριπίδου.	equal	Εὐριπίδου.
-699	‘μέλλοντ'	replace	μέλλοντ’
-699	χρόα'.	replace	λοντ’
-699	v.	replace	
-699	1	replace	
-699	μέλλοντ'	replace	
+699	‘μέλλοντ’	delete	
+699	χρόα’.	delete	
+699	v.	delete	
+699	1	delete	
+699	μέλλοντ’	equal	μέλλοντ’
+699		insert	λοντ’
 699	SMA,	equal	SMA,
 699	μέλλων	equal	μέλλων
 699	γ’	equal	γ’
@@ -210412,7 +210400,7 @@
 699	p.	equal	p.
 699	230,	equal	230,
 699	μέλλων	equal	μέλλων
-699	τ'	replace	τ’
+699	τ’	equal	τ’
 699	Musgrave,	equal	Musgrave,
 699	μέλλων	equal	μέλλων
 699	Pappageorgius	equal	Pappageorgius
@@ -210485,7 +210473,7 @@
 700	8:	equal	8:
 700	Εὐριπίδου.	equal	Εὐριπίδου.
 700	‘οὐ	equal	‘οὐ
-700	παθεῖν'.	replace	παθεῖν.
+700	παθεῖν’.	replace	παθεῖν.
 700	v.	equal	v.
 700	7	equal	7
 700	τῆς	equal	τῆς
@@ -210512,7 +210500,7 @@
 700	om.	equal	om.
 700	S).	equal	S).
 700	‘βέβαια	replace	βέβαια
-700	γεγώς'.	replace	γεγώς.
+700	γεγώς’.	replace	γεγώς.
 700	θνητὸς	equal	θνητὸς
 700	εὐτυχεῖ	equal	εὐτυχεῖ
 700	MA,	equal	MA,
@@ -210564,7 +210552,7 @@
 700	Stobaeus	equal	Stobaeus
 700	subicit).	equal	subicit).
 700	‘θνητὸς	replace	θνητός
-700	ὤν;'	replace	ὤν;
+700	ὤν;’	replace	ὤν;
 700	v.	equal	v.
 700	1	equal	1
 700	πήσεσθαι	equal	πήσεσθαι
@@ -210620,7 +210608,7 @@
 700	om.	equal	om.
 700	MA),	replace	MA).
 700	‘πάντων	replace	πάντων
-700	ἀμπλακεῖν'.	replace	
+700	ἀμπλακεῖν’.	replace	
 700	1077	equal	1077
 700	πέπονθας	equal	πέπονθας
 700	οἷα	equal	οἷα
@@ -210643,7 +210631,7 @@
 700	25:	equal	25:
 700	Εὐριπίδου.	equal	Εὐριπίδου.
 700	‘πέπονθας	replace	πέπονθας
-700	ἀβουλίᾳ'.	replace	χέτεροι
+700	ἀβουλίᾳ’.	replace	χέτεροι
 700	v.	replace	5,
 700	1	replace	
 700	χἕτεροι	replace	
@@ -211044,7 +211032,7 @@
 702	τὸν	equal	τὸν
 702	Δία·	equal	Δία·
 702	‘Ζεὺς	replace	Ζεὺς
-702		replace	–
+702		replace	 
 702	πατήρ’.	equal	πατήρ’.
 702	v.	equal	v.
 702	2	equal	2
@@ -211181,7 +211169,7 @@
 702	φησὶν	equal	φησὶν
 702	ἔχειν	equal	ἔχειν
 702	‘πολὺν	replace	πολὺν
-702	πολέμοις’	replace	–
+702	πολέμοις’	replace	 
 702		replace	πολέμοις
 702	(v.	equal	(v.
 702	1-3).	equal	1-3).
@@ -211934,7 +211922,7 @@
 705	σχου	replace	—
 705	ἔχαιρες’.	replace	ἔχαιρες‘.
 705	‘νόμου	replace	νόμου
-705	κακῶς’	replace	–
+705	κακῶς’	replace	 
 705		replace	κακῶς
 705	(fr.	equal	(fr.
 705	1091).	equal	1091).
@@ -213260,7 +213248,7 @@
 710	Εὐριπίδου.	equal	Εὐριπίδου.
 710	῾ἡ	replace	ἡ
 710	φύσις	equal	φύσις
-710	πατρίς’.	replace	–
+710	πατρίς’.	replace	 
 710		replace	πατρίς‘.
 710	idem	equal	idem
 710	versus	equal	versus
@@ -216502,7 +216490,7 @@
 723	κωμικῷ	equal	κωμικῷ
 723	‘ἃ	replace	ἃ
 723	δ’	replace	δ’
-723	φράσομεν’.	replace	–
+723	φράσομεν’.	replace	 
 723		replace	φράσομεν.
 723	v.	equal	v.
 723	2	equal	2
@@ -217507,7 +217495,7 @@
 727	Ἀριστίου	equal	Ἀριστίου
 727	Ὀρφεῖ	equal	Ὀρφεῖ
 727	῾ἧν	replace	ἦν
-727	πέλας'.	replace	πέλας‘.
+727	πέλας’.	replace	πέλας‘.
 727		replace	ξυστοί.
 727		replace	C
 727	INCERTARVM	equal	INCERTARVM
@@ -217538,7 +217526,7 @@
 727	μύκητος	equal	μύκητος
 727	καὶ	equal	καὶ
 727	μύκου	equal	μύκου
-727		insert	–
+727		insert	 
 727	τῆς	equal	τῆς
 727	μὲν	equal	μὲν
 727	ἰσοσυλλαβίας	equal	ἰσοσυλλαβίας
@@ -218185,7 +218173,7 @@
 730	φασί.	equal	φασί.
 730	Suidas:	equal	Suidas:
 730	Νεόφρων	equal	Νεόφρων
-730		insert	–
+730		insert	 
 730	οὗ	equal	οὗ
 730	φασὶν	equal	φασὶν
 730	εἶναι	equal	εἶναι
@@ -219003,7 +218991,7 @@
 732	ἐν	equal	ἐν
 732	Ἀγαμέμνονι	replace	’Aγαμέμνονι
 732	‘οἴσει	replace	οἴσει
-732	ποδῶν’.	replace	–
+732	ποδῶν’.	replace	 
 732		replace	ποδῶν.
 732	v.	equal	v.
 732	1	equal	1
@@ -219605,7 +219593,7 @@
 735	δράματι	equal	δράματι
 735	εἰπόντος	equal	εἰπόντος
 735	'ψαθαρὸν	replace	ψαθαρὸν
-735	νάρθηκα'.	replace	νάρθηκα.
+735	νάρθηκα’.	replace	νάρθηκα.
 735		replace	μελαγχρῆ
 735	16	equal	16
 735	μελαγχρῆ	delete	
@@ -220111,9 +220099,9 @@
 736	οὗ	equal	οὗ
 736	Ἴων	replace	μνημονεύει
 736	Ὀμφάλῃ	replace	τρόπον.
-736	῾βάκκαρις	replace	
+736	῾βάκκαρις	replace	ν,
 736	τρόπον’.	replace	
-736	ν,	equal	ν,
+736	v.	replace	
 736	1	equal	1
 736	βάκκαρις	equal	βάκκαρις
 736	libri,	equal	libri,
@@ -220296,7 +220284,7 @@
 737	ἐν	equal	ἐν
 737	Ὀμφάλῃ	replace	Oμφάλῃ
 737	‘οἶνος	replace	οἶνος
-737	σκύφει’	replace	–
+737	σκύφει’	replace	 
 737		replace	σκύψει
 737	τῷ	equal	τῷ
 737	σκύφει	replace	σκύψει
@@ -221104,7 +221092,7 @@
 740	τούτοις	equal	τούτοις
 740	῾ἐπὶ	replace	‘ἐπὶ
 740	δ’	replace	δ’
-740	Ἀχαιῶν’.	replace	–
+740	Ἀχαιῶν’.	replace	 
 740		replace	Aχαιῶν.
 740	ἐπὶ	equal	ἐπὶ
 740	δ’	equal	δ’
@@ -222023,7 +222011,7 @@
 743	τινα	equal	τινα
 743	λέγουσαν	equal	λέγουσαν
 743	῾ἐξῆλθον	replace	ἐξῆλθον
-743	πενθητηρίους’.	replace	–
+743	πενθητηρίους’.	replace	 
 743	v.	replace	πενθητηρίους‘.
 743	1	replace	
 743	ὑμῶν	equal	ὑμῶν
@@ -223431,7 +223419,7 @@
 748	παροψὶς)	replace	παροψίς)
 748	εἴρηκεν	equal	εἴρηκεν
 748	Ἀντιφάνης	equal	Ἀντιφάνης
-748	Ἀχαιὸς	replace	–
+748	Ἀχαιὸς	replace	 
 748		replace	Ἀχαιός
 748	δ’	equal	δ’
 748	ἐν	equal	ἐν
@@ -223804,7 +223792,7 @@
 749	ὅσον	equal	ὅσον
 749	τὰ	equal	τὰ
 749	ἱερεῖα	equal	ἱερεῖα
-749		insert	–
+749		insert	 
 749	ἐκαρύκευον.	equal	ἐκαρύκευον.
 749	καρυκκοποιοὺς	replace	καρυκκοποιούς
 749	ante	equal	ante
@@ -224603,7 +224591,7 @@
 752		replace	malim.
 752		replace	―
 752		replace	πεινῶντι
-752		replace	–
+752		replace	 
 752		replace	κἀλέφαντος
 752	κατὰ	equal	κατὰ
 752	τὸν	equal	τὸν
@@ -225214,7 +225202,7 @@
 754	6	replace	ὁ
 754	δὲ	equal	δὲ
 754	σκύφος	equal	σκύφος
-754	κηρύσσετον’.	replace	–
+754	κηρύσσετον’.	replace	 
 754		replace	κηρύσσετον.
 754		replace	κηρύσσετον.
 754	v.	equal	v.
@@ -227490,7 +227478,7 @@
 763	301,	equal	301,
 763	57:	equal	57:
 763	εἰσῇμεν	equal	εἰσῇμεν
-763		insert	–
+763		insert	 
 763	καὶ	equal	καὶ
 763	εἰσῇσαν	equal	εἰσῇσαν
 763	ἀντὶ	equal	ἀντὶ
@@ -227662,7 +227650,7 @@
 763	ἐκειράμεσθα’	replace	ἐκειράμεσθα
 763	φησί	equal	φησί
 763	‘μάρτυρας	replace	μάρτυρας
-763	τριχός’.	replace	–
+763	τριχός’.	replace	 
 763		replace	τριχός‘.
 763	similiter	equal	similiter
 763	om.	equal	om.
@@ -229448,7 +229436,7 @@
 770	ἐπιφέρει	equal	ἐπιφέρει
 770	῾τί	replace	τί
 770	δαί	equal	δαί
-770	κακόν;’	replace	–
+770	κακόν;’	replace	 
 770		replace	κακόν;”
 770	Εὐφρόνιος	equal	Εὐφρόνιος
 770	παρὰ	equal	παρὰ
@@ -231398,7 +231386,7 @@
 776	33:	equal	33:
 776	Δικαιογένους.	equal	Δικαιογένους.
 776	‘θεὸς	replace	‘Θεὸς
-776	γονεῖς’.	replace	–
+776	γονεῖς’.	replace	 
 776		replace	γονεῖς.
 776	θεὸς	equal	θεὸς
 776	μέγιστος]	replace	μέγι
@@ -234661,7 +234649,7 @@
 787	τὸν	equal	τὸν
 787	τραγικόν	equal	τραγικόν
 787	‘ἐπεὶ	equal	‘ἐπεὶ
-787	διεπεράσαμεν’.	replace	–
+787	διεπεράσαμεν’.	replace	 
 787		replace	διεπεράσαμεν.
 787	Eust.	equal	Eust.
 787	Od.	equal	Od.
@@ -236156,7 +236144,7 @@
 793	τῷ	equal	τῷ
 793	Ἀδώνιδι	equal	Ἀδώνιδι
 793	‘νυμφῶν	replace	νυμφῶν
-793	ἀκροθινιάζομαι’.	replace	–
+793	ἀκροθινιάζομαι’.	replace	 
 793		replace	ἀκροθινιάζομαι‘.
 793	v.	equal	v.
 793	1	equal	1
@@ -236404,7 +236392,7 @@
 794	coni.	equal	coni.
 794	Elmsley).	equal	Elmsley).
 794	‘θνητῶν	replace	θνητῶν
-794	ἐπαινἐσαι’.	replace	–
+794	ἐπαινἐσαι’.	replace	 
 794		replace	ἐπαινέσαι.
 794	v.	equal	v.
 794	2	equal	2
@@ -237605,7 +237593,7 @@
 798	ποιηταὶ	equal	ποιηταὶ
 798	θηλυκῶς.	equal	θηλυκῶς.
 798		insert	αὐλῶνας
-798		insert	–
+798		insert	 
 798		insert	οἱ
 798	Καρκίνος	equal	Καρκίνος
 798	μὲν	equal	μὲν
@@ -238000,7 +237988,7 @@
 799	στί-	replace	στί
 799	χους	equal	χους
 799	‘λἐγουσι	replace	λέγουσι
-799		replace	–
+799		replace	 
 799	τὰ	equal	τὰ
 799	νῦν	equal	νῦν
 799	ἔτι’.	replace	ἔτι‘.
@@ -239073,7 +239061,7 @@
 803	γάρ	equal	γάρ
 803	ἐστιν.	equal	ἐστιν.
 803	‘δίκαιόν	replace	δίκαιόν
-803	πόσιν,’	replace	–
+803	πόσιν,’	replace	 
 803		replace	πόσιν,
 803	ἀποθνῄσκειν	equal	ἀποθνῄσκειν
 803	ταύτην,	equal	ταύτην,
@@ -239110,7 +239098,7 @@
 803	ἐκ	equal	ἐκ
 803	συλλογισμοῦ,	equal	συλλογισμοῦ,
 803	οἷον	equal	οἷον
-803		insert	–
+803		insert	 
 803	ἐν	equal	ἐν
 803	τῷ	equal	τῷ
 803	τοῦ	equal	τοῦ
@@ -240808,7 +240796,7 @@
 809	γράφει	equal	γράφει
 809	‘οἱ	replace	οἱ
 809	τῆς	equal	τῆς
-809	βαιά’,	replace	–
+809	βαιά’,	replace	 
 809		replace	βαιάς,
 809	καὶ	equal	καὶ
 809	τὰ	equal	τὰ
@@ -241226,7 +241214,7 @@
 810	οἶσθα’	replace	οἶσθα
 810	φησί	equal	φησί
 810	‘πήρα	replace	πήρα
-810	μέλειν’.	replace	–
+810	μέλειν’.	replace	 
 810		replace	μέλειν.
 810		replace	tragoediae
 810	eiusdem	equal	eiusdem
@@ -242422,7 +242410,7 @@
 814	om.	equal	om.
 814	P).	equal	P).
 814	‘πρῶτον	replace	πρῶτον
-814	δυσσεβές’.	replace	–
+814	δυσσεβές’.	replace	 
 814		replace	δυσσεβές‘.
 814	v.	equal	v.
 814	3	equal	3
@@ -242818,7 +242806,7 @@
 815	S).	equal	S).
 815	‘τί	delete	
 815	κέρδος	equal	κέρδος
-815	πέτρου.’	replace	–
+815	πέτρου.’	replace	 
 815		replace	πέτρου.
 815	v.	equal	v.
 815	1	equal	1
@@ -243028,7 +243016,7 @@
 816	Μοσχίωνος.	equal	Μοσχίωνος.
 816	῾σὺν	replace	σὺν
 816	αἷσι	replace	αἶσι
-816	βροτῶν’.	replace	–
+816	βροτῶν’.	replace	 
 816		replace	βροτῶν.
 816	v.	equal	v.
 816	1	equal	1
@@ -243420,7 +243408,7 @@
 817	τοὺς	equal	τοὺς
 817	σατύρους	equal	σατύρους
 817	῾παῖδες	replace	παῖδες
-817	καλόν’.	replace	–
+817	καλόν’.	replace	 
 817		replace	καλόν.
 817	v.	equal	v.
 817	1	equal	1
@@ -243531,7 +243519,7 @@
 818	δεῖπνα	equal	δεῖπνα
 818	φησί	equal	φησί
 818	῾καὶ	replace	‘καὶ
-818	συμπότης’.	replace	–
+818	συμπότης’.	replace	 
 818		replace	συμπότης‘.
 818	v.	equal	v.
 818	4	equal	4
@@ -243632,7 +243620,7 @@
 818	τοιαυτί	equal	τοιαυτί
 818	῾ὡς	replace	ὡς
 818	ἐκ	equal	ἐκ
-818	λόγος’.	replace	–
+818	λόγος’.	replace	 
 818		replace	λόγος.
 818	Ath.	equal	Ath.
 818	X	equal	X
@@ -246258,11 +246246,11 @@
 828	ζενχθεϊς	replace	ζευχθεὶς
 828	γάμοιϋιν	replace	γάμοισιν
 828	ούχέτ	replace	οὐκέτ’
-828	έΰτ'	replace	ἔστ’
+828	έΰτ’	replace	ἔστ’
 828	έλενθερος.	replace	ἐλεύθερος.
-828	άλλ'	replace	ἀλλ’
+828	άλλ’	replace	ἀλλ’
 828	εν	replace	ἕν
-828	γ'	replace	γ’
+828	γ’	equal	γ’
 828	έχει,	replace	ἔχει
 828	τι	equal	τι
 828	χρηδτόν	replace	χρηστόν·
@@ -246297,7 +246285,7 @@
 828	άνδρί	replace	κτῆμα
 828	χτήμα	replace	συμπαθής
 828	σνμπαθής	replace	γυνή.
-828	γννή'.	replace	
+828	γννή’.	replace	
 828	lemmata	equal	lemmata
 828	sedem	equal	sedem
 828	mutare	equal	mutare
@@ -246366,7 +246354,7 @@
 828	ίππο	replace	ἱππο
 828	S).	replace	5).
 828	'γήρας	replace	γῆρας
-828	νεβρών'.	replace	νεβρῶν.
+828	νεβρών’.	replace	νεβρῶν.
 828	άλχμαίων	replace	ἀλκμαίων
 828	Stobaei	equal	Stobaei
 828	A.	equal	A.
@@ -246395,7 +246383,7 @@
 828	Ίππώναχτος.	replace	Ἰππώνακτος.
 828	*	replace	
 828	γάμος	equal	γάμος
-828	μόνη',	replace	μόνη’.
+828	μόνη’,	replace	μόνη’.
 828	v.	equal	v.
 828	2	equal	2
 828	έδνον	replace	δνον
@@ -246468,7 +246456,7 @@
 828	δε	replace	δὲ
 828	τρνφερώς	replace	τρυφερῶς
 828	ζην	replace	ζῆν
-828	γνναϊχ'	replace	γυναῖκ’
+828	γνναϊχ’	replace	γυναῖκ’
 828	είργει	replace	εἴργει
 828	λαβών	equal	λαβών
 828	bene	equal	bene
@@ -246539,7 +246527,7 @@
 829	εἰσιδώου	replace	εἰσιδώρου
 829	S).	replace	5).
 829	‘μορφὰς	replace	μορφὰς
-829	γίγνεται’.	replace	–
+829	γίγνεται’.	replace	 
 829		replace	γίγνεται.
 829	v.	equal	v.
 829	3	equal	3
@@ -246756,7 +246744,7 @@
 830	νάννου	equal	νάννου
 830	MA).	equal	MA).
 830	‘οἷα	replace	οἷα
-830	αὑτούς‘.	replace	–
+830	αὑτούς‘.	replace	 
 830		replace	αυτούς.
 830		replace	αυτούς.
 830	v.	equal	v.
@@ -248161,7 +248149,7 @@
 838	εἰς	equal	εἰς
 838	τὴν	equal	τὴν
 838	ἀγοράν,	equal	ἀγοράν,
-838		insert	–
+838		insert	 
 838	εἶτα	equal	εἶτα
 838	μονῳδεῖν	equal	μονῳδεῖν
 838	ἐκ	equal	ἐκ
@@ -248908,7 +248896,7 @@
 841	τὸν	equal	τὸν
 841	Φιλοκτήτην	equal	Φιλοκτήτην
 841	‘τίς	replace	τίς
-841	τάλας’,	replace	–
+841	τάλας’,	replace	 
 841		replace	τάλας,
 841	οὐκ	equal	οὐκ
 841	ἄτοπός	equal	ἄτοπός
@@ -249664,7 +249652,7 @@
 843	ἡ	equal	ἡ
 843	εὐθεῖα	equal	εὐθεῖα
 843	δόρυ	equal	δόρυ
-843		insert	–
+843		insert	 
 843	ἡ	equal	ἡ
 843	γενικὴ	equal	γενικὴ
 843	δούρατος	replace	δού
@@ -250365,7 +250353,7 @@
 846	Vind.	equal	Vind.
 846	136:	equal	136:
 846	‘	replace	μαίνεται
-846	μ	replace	–
+846	μ	replace	 
 846	αίνεται	replace	ὑπερτέρους‘.
 846	ὑπερτέρους’.	replace	
 846	v.	equal	v.
@@ -250572,9 +250560,9 @@
 847	που	equal	που
 847	λέγει	equal	λέγει
 847	'φίλων	replace	‘φίλων
-847	θέλεις',	replace	θέλεις,
+847	θέλεις’,	replace	θέλεις,
 847	ὃ	equal	ὃ
-847	δ'	replace	δ’
+847	δ’	equal	δ’
 847	αὖ	equal	αὖ
 847	(Soph.	equal	(Soph.
 847	Ai.	equal	Ai.
@@ -250584,7 +250572,7 @@
 847	τοι	equal	τοι
 847	τῶν	equal	τῶν
 847	φίλων	equal	φίλων
-847	ἡσσώμενος'.	replace	ἡσσώμενος‘.
+847	ἡσσώμενος’.	replace	ἡσσώμενος‘.
 847	Euripidis	equal	Euripidis
 847	esse	equal	esse
 847	priorem	equal	priorem
@@ -250610,7 +250598,7 @@
 847	μὲν	equal	μὲν
 847	ἄστυ,	equal	ἄστυ,
 847	τὸν	equal	τὸν
-847	δ'	replace	δ’
+847	δ’	equal	δ’
 847	ἐμὸν	equal	ἐμὸν
 847	δῆμον	equal	δῆμον
 847	ποθῶν	equal	ποθῶν
@@ -250717,7 +250705,7 @@
 847	καὶ	equal	καὶ
 847	ἠέλιος	equal	ἠέλιος
 847	ὃς	equal	ὃς
-847	πάντ'	replace	πάντ’
+847	πάντ’	equal	πάντ’
 847	ἐφορᾶς.	equal	ἐφορᾶς.
 847	ubi	equal	ubi
 847	scribendum	equal	scribendum
@@ -250787,7 +250775,7 @@
 847	ἰδὼν	equal	ἰδὼν
 847	λείπω	equal	λείπω
 847	φάος	equal	φάος
-847	τόδ'	replace	τόδ’·
+847	τόδ’	replace	τόδ’·
 847	ούκέτ	replace	οὐκέτ’
 847	ονδέν	replace	οὐδέν)
 847	εἰμ’	equal	εἰμ’
@@ -250799,7 +250787,7 @@
 847	ἐξηύδα	equal	ἐξηύδα
 847	μέλος	equal	μέλος
 847	'ὦ	replace	ὦ
-847	ἐγώ'.	replace	00
+847	ἐγώ’.	replace	00
 847		replace	ἐγώ.
 847	v.	equal	v.
 847	2	equal	2
@@ -251291,7 +251279,7 @@
 849	p.	equal	p.
 849	1005:	equal	1005:
 849	ὡς	equal	ὡς
-849	σφόδρ'	replace	σφόδρ’
+849	σφόδρ’	equal	σφόδρ’
 849	ἐπὶ	equal	ἐπὶ
 849	λεπτῶν	equal	λεπτῶν
 849	ἐλπίδων	equal	ἐλπίδων
@@ -252602,7 +252590,7 @@
 854	οὐ	equal	οὐ
 854	δεῖ	equal	δεῖ
 854	γενέσθαι	equal	γενέσθαι
-854	ἀπ'	replace	ἀπ’
+854	ἀπ’	equal	ἀπ’
 854	ἀλλήλων	equal	ἀλλήλων
 854	τούτου	equal	τούτου
 854	γινομένου.	equal	γινομένου.
@@ -253833,7 +253821,7 @@
 858	παροιμία,	equal	παροιμία,
 858	καὶ	equal	καὶ
 858	‘τηλοῦ	equal	‘τηλοῦ
-858	εἰσὶν	replace	–
+858	εἰσὶν	replace	 
 858	φίλοι’.	replace	εἰσὶν
 858		replace	φίλοι‘.
 858	Nicephorus	equal	Nicephorus
@@ -254068,7 +254056,7 @@
 859	p.	equal	p.
 859	134:	equal	134:
 859	‘πολλάκι	replace	πολλάκι
-859	ἄγει’	replace	–
+859	ἄγει’	replace	 
 859		replace	ἄγει
 859	(Eur.	equal	(Eur.
 859	fr.	equal	fr.
@@ -254112,7 +254100,7 @@
 859	ἄν	equal	ἄν
 859	῾πῶς	replace	‘πῶς
 859	οὖν	equal	οὖν
-859	χρώμεθα;’	replace	–
+859	χρώμεθα;’	replace	 
 859	1	replace	χρώμεθα;
 859	εἰσορῶντας	replace	v.
 859	Bodl.	replace	1
@@ -254360,7 +254348,7 @@
 860	in	equal	in
 860	ἢν	replace	v
 860	mutavi.	equal	mutavi.
-860	ν,	replace	v.
+860	v.	equal	v.
 860	3	equal	3
 860	temptare	equal	temptare
 860	possis	equal	possis
@@ -254713,7 +254701,7 @@
 861	τὸν	equal	τὸν
 861	θεῶν	equal	θεῶν
 861	ὑπηρέταν	equal	ὑπηρέταν
-861		insert	–
+861		insert	 
 861	ὁ	equal	ὁ
 861	νυκτικλέπτας	equal	νυκτικλέπτας
 861	Αὖλος	replace	Αὐλος
@@ -257035,7 +257023,7 @@
 869	μολοττοῦ)	equal	μολοττοῦ)
 869	τόδε	equal	τόδε
 869	ὦ	equal	ὦ
-869	σωτῆρες’,	replace	–
+869	σωτῆρες’,	replace	 
 869		replace	σωτῆρες.
 869	καλλίστας	equal	καλλίστας
 869	coni.	equal	coni.
@@ -257071,7 +257059,7 @@
 869	222	equal	222
 869	Schaef.):	equal	Schaef.):
 869	ἀμφίβραχυς	equal	ἀμφίβραχυς
-869	διακέκλασταί	replace	–
+869	διακέκλασταί	replace	 
 869		replace	διακέκλωσταί
 869	τε	equal	τε
 869	καὶ	equal	καὶ
@@ -257210,7 +257198,7 @@
 869	ἐστι	equal	ἐστι
 869	ταυτί	equal	ταυτί
 869	σοὶ	equal	σοὶ
-869	συμβῶμεν	replace	–
+869	συμβῶμεν	replace	 
 869	’,	replace	συμβῶμεν,
 869	ἀνδρῶδες	equal	ἀνδρῶδες
 869	δὲ	equal	δὲ
@@ -257552,7 +257540,7 @@
 871	οἶνος·	equal	οἶνος·
 871	οἷον	equal	οἷον
 871	ὕδωρ	equal	ὕδωρ
-871	στυγεῖ’,	replace	–
+871	στυγεῖ’,	replace	 
 871		replace	στυγεία,
 871	ἀπὸ	equal	ἀπὸ
 871	Βιβλίνης	equal	Βιβλίνης
@@ -257686,7 +257674,7 @@
 871	ᾔδεμεν,	equal	ᾔδεμεν,
 871	καὶ	equal	καὶ
 871	τὸ	equal	τὸ
-871	'	replace	‘ᾔδει
+871	’	replace	‘ᾔδει
 871	ἤδει	replace	καλῶς.
 871	καλῶς’,	replace	
 871	ᾔδη	equal	ᾔδη
@@ -258452,7 +258440,7 @@
 874	εἴη	equal	εἴη
 874	εἰπεῖν	equal	εἰπεῖν
 874	‘μικρόν	replace	μικρόν
-874		replace	–
+874		replace	 
 874	τάχει	equal	τάχει
 874	τάφου’.	replace	τάφου.
 874	ἐδόκει	equal	ἐδόκει
@@ -258583,7 +258571,7 @@
 874	Monac.	equal	Monac.
 874	3:	equal	3:
 874	‘θεὸς	replace	‘Θεὸς
-874		replace	–
+874		replace	 
 874	οὐ	equal	οὐ
 874	θεός’.	replace	θεός‘.
 874	cf.	equal	cf.
@@ -258888,7 +258876,7 @@
 875	καὶ	equal	καὶ
 875	πάλιν	equal	πάλιν
 875	‘πηδῶν	replace	πηδῶν
-875	μαντεύεται’	replace	–
+875	μαντεύεται’	replace	 
 875		replace	μαντεύεται
 875	(fr.	equal	(fr.
 875	176).	equal	176).
@@ -259474,7 +259462,7 @@
 877	ἐρᾶν	replace	ἐρῶν
 877	ὡς’.πίκουρος	replace	ὡς
 877		replace	Ἐπίκουρος
-877		replace	–
+877		replace	 
 877	καὶ	equal	καὶ
 877	ὁ	equal	ὁ
 877	εἰπών	equal	εἰπών
@@ -263141,7 +263129,7 @@
 893	οὐσίαν	equal	οὐσίαν
 893	καταλιπεῖν	equal	καταλιπεῖν
 893	Ἀρκεσιλάῳ	equal	Ἀρκεσιλάῳ
-893		insert	–
+893		insert	 
 893	καὶ	equal	καὶ
 893	ἐρωτηθέντα	equal	ἐρωτηθέντα
 893	πρὸς	equal	πρὸς
@@ -265380,7 +265368,7 @@
 901	ἔφη’	equal	ἔφη’
 901	καὶ	equal	καὶ
 901	‘δοῦλος	equal	‘δοῦλος
-901	λόγου’	replace	–
+901	λόγου’	replace	 
 901		replace	λόγου
 901	(adesp.	equal	(adesp.
 901	fr.	equal	fr.
@@ -265761,7 +265749,7 @@
 902	τῶν	equal	τῶν
 902	ἀπατηλῶν	replace	ἀπα
 902		replace	τηλῶν
-902		replace	–
+902		replace	 
 902	ἢ	equal	ἢ
 902	ὅτι	equal	ὅτι
 902	μύουσι	equal	μύουσι
@@ -265831,7 +265819,7 @@
 903	δὲ	replace	δὲ
 903	γελᾷ.	replace	ἀκύματος
 903		replace	δὲ
-903		replace	–
+903		replace	 
 903		replace	γελά.
 903	ita	equal	ita
 903	Bekker	equal	Bekker
@@ -265852,7 +265840,7 @@
 903	Εὐριπίδης	equal	Εὐριπίδης
 903	῾ἀκύματος	replace	‘ἀκύματος
 903	δὲ	replace	δὲ
-903	γελᾷ’.	replace	–
+903	γελᾷ’.	replace	 
 903		replace	γελα.
 903	hunc	equal	hunc
 903	igitur	equal	igitur
@@ -266635,7 +266623,7 @@
 906	εἰ	equal	εἰ
 906	‘πρὸς	replace	πρὸς
 906	θῆλυ	equal	θῆλυ
-906	τἄρρενα’,	replace	–
+906	τἄρρενα’,	replace	 
 906		replace	τἄρρενα,
 906	καὶ	equal	καὶ
 906	ἀποκρινάμενος	equal	ἀποκρινάμενος
@@ -267499,7 +267487,7 @@
 909	‘τίς	equal	‘τίς
 909	δ’	equal	δ’
 909	ἔστι	equal	ἔστι
-909		insert	–
+909		insert	 
 909	ὤν	equal	ὤν
 909	(	replace	(Eur.
 909	Eur.	replace	
@@ -267930,7 +267918,7 @@
 910	φησί	equal	φησί
 910	(Brutus)	equal	(Brutus)
 910	῾τλῆμον	replace	τλῆμον
-910	τύχῃ’,	replace	–
+910	τύχῃ’,	replace	 
 910		replace	τύχῃ,
 910	ἀγεννῆ	equal	ἀγεννῆ
 910	ταῦτα	equal	ταῦτα
@@ -268479,7 +268467,7 @@
 912	Plut.	equal	Plut.
 912	et	equal	et
 912	Tzetz.,	equal	Tzetz.,
-912	καθ'	replace	καθ’
+912	καθ’	equal	καθ’
 912	ὅπλα	equal	ὅπλα
 912	Duebner,	equal	Duebner,
 912	καὶ	equal	καὶ
@@ -268515,9 +268503,9 @@
 912	fr.	equal	fr.
 912	1085.	equal	1085.
 912	382	equal	382
-912	ἄνδρ'	replace	ἄνδρ’
+912	ἄνδρ’	equal	ἄνδρ’
 912	ἠδίκησας·	equal	ἠδίκησας·
-912	ἄνδρ'	replace	ἄνδρ’
+912	ἄνδρ’	equal	ἄνδρ’
 912	ἀνεκτέον	replace	ἀνεκτἑον
 912	τόδε;	replace	τόδε,
 912	Plut.	equal	Plut.
@@ -268533,7 +268521,7 @@
 912	καταφρονεῖν	equal	καταφρονεῖν
 912	τῶν	equal	τῶν
 912	λεγόντων·	equal	λεγόντων·
-912	ἄνδρ'	replace	ἄνδρ’
+912	ἄνδρ’	equal	ἄνδρ’
 912	ἠδίκησας,	equal	ἠδίκησας,
 912	ἄνδρ’	equal	ἄνδρ’
 912	ἀνεκτέον	replace	ἀνεκτἑον
@@ -268576,7 +268564,7 @@
 912	E:	equal	E:
 912	'καὶ	replace	καὶ
 912	γὰρ	equal	γὰρ
-912	εὐμαρέστερον'.	replace	E:
+912	εὐμαρέστερον’.	replace	E:
 912		replace	ρον‘.
 912	ἀλλ’	equal	ἀλλ’
 912	ἡμεῖς	equal	ἡμεῖς
@@ -268689,7 +268677,7 @@
 912	γὰρ	equal	γὰρ
 912	μόνον	equal	μόνον
 912	ὅπου	equal	ὅπου
-912	ἔχει',	replace	ἔχει’,
+912	ἔχει’,	equal	ἔχει’,
 912	ἀλλὰ	equal	ἀλλὰ
 912	καὶ	equal	καὶ
 912	τὸ	equal	τὸ
@@ -268709,7 +268697,7 @@
 912	25:	equal	25:
 912	παροιμία.	equal	παροιμία.
 912	'ὅπου	replace	ὅπου
-912	ἔχει'.	replace	ἔχει.
+912	ἔχει’.	replace	ἔχει.
 912	Amphidi	equal	Amphidi
 912	versum	equal	versum
 912	male	equal	male
@@ -269121,7 +269109,7 @@
 914	εἶπεν	equal	εἶπεν
 914	‘	delete	
 914	Ἀργεῖος	equal	Ἀργεῖος
-914	πατρίς’·	replace	–
+914	πατρίς’·	replace	 
 914		replace	πατρίς·
 914	ὁ	equal	ὁ
 914	δὲ	equal	δὲ
@@ -269439,7 +269427,7 @@
 915	τῆς	equal	τῆς
 915	ἡδονῆς,	equal	ἡδονῆς,
 915	‘λήγει	replace	λήγει
-915		replace	–
+915		replace	 
 915	φίλος	equal	φίλος
 915	βακχείου’·	replace	βακχείου·
 915	συντείνουσι	equal	συντείνουσι
@@ -269519,7 +269507,7 @@
 915	ἐφιᾶσιν	equal	ἐφιᾶσιν
 915	εἰπεῖν	equal	εἰπεῖν
 915	‘γλῶσσα	equal	‘γλῶσσα
-915	ἔξειπε’,	replace	–
+915	ἔξειπε’,	replace	 
 915		replace	ἔξειπε,
 915	καὶ	equal	καὶ
 915	παρρησία	equal	παρρησία
@@ -270172,7 +270160,7 @@
 917	καὶ	equal	καὶ
 917	μαλακίας·	equal	μαλακίας·
 917	῾πολλοῦ	replace	πολλοῦ
-917	πατήρ’,	replace	–
+917	πατήρ’,	replace	 
 917	καὶ	replace	πατήρ,
 917	‘μήτε	replace	καὶ
 917		replace	μήτε
@@ -270205,7 +270193,7 @@
 918	ἀκούομεν	equal	ἀκούομεν
 918	φωνάς	equal	φωνάς
 918	‘πολλοῦ	equal	‘πολλοῦ
-918	πατήρ’,	replace	–
+918	πατήρ’,	replace	 
 918	καὶ	replace	πατήρ,
 918	῾μή	replace	καὶ
 918		replace	‘μή
@@ -271599,7 +271587,7 @@
 922	ταύτας.	equal	ταύτας.
 922	῾ὁ	replace	‘ὁ
 922	δρῶν	equal	δρῶν
-922	φέρων’.	replace	–
+922	φέρων’.	replace	 
 922		replace	φέρων.
 922	fortasse	equal	fortasse
 922	tragici	equal	tragici
@@ -272287,7 +272275,7 @@
 924	Ach.	equal	Ach.
 924	3:	equal	3:
 924	φαμμακοσιογάργαρα	replace	ψαμμακοσιογάργαρα
-924		replace	–
+924		replace	 
 924	καὶ	equal	καὶ
 924	ἐν	equal	ἐν
 924	τῇ	equal	τῇ
@@ -273282,7 +273270,7 @@
 928		replace	ισχίον
 928	αὐτῷ	equal	αὐτῷ
 928	ἔπεμψαν	equal	ἔπεμψαν
-928		insert	–
+928		insert	 
 928	καὶ	equal	καὶ
 928	ἔοικεν	equal	ἔοικεν
 928	τὸ	equal	τὸ
@@ -274095,7 +274083,7 @@
 931	τὸ	delete	
 931	ἐθνικὸν	equal	ἐθνικὸν
 931	Ἀκταῖος	equal	Ἀκταῖος
-931		insert	–
+931		insert	 
 931	καὶ	equal	καὶ
 931	Ἀκτίτης,	equal	Ἀκτίτης,
 931	ἐξ	equal	ἐξ
@@ -276530,7 +276518,7 @@
 939	97,	equal	97,
 939	2:	equal	2:
 939	‘οὐκ	replace	οὐκ
-939	ὁρᾷ’.	replace	–
+939	ὁρᾷ’.	replace	 
 939		replace	ὁρᾷ.
 939	vulgo	equal	vulgo
 939	ad	equal	ad
@@ -276940,7 +276928,7 @@
 940	quo	equal	quo
 940	disiunxit	equal	disiunxit
 940	Boissonade.	equal	Boissonade.
-940	ν,	delete	
+940	v.	delete	
 940	3	equal	3
 940	et	equal	et
 940	4	equal	4
@@ -276998,7 +276986,7 @@
 940	παροιμία.	equal	παροιμία.
 940	‘	delete	
 940	μελέτη	equal	μελέτη
-940		insert	–
+940		insert	 
 940	καθίσταται’.	equal	καθίσταται’.
 940	Stob.	equal	Stob.
 940	Ecl.	equal	Ecl.
@@ -277018,7 +277006,7 @@
 940	τοῦτο	equal	τοῦτο
 940	παρεδέξαντο	equal	παρεδέξαντο
 940	‘	replace	‘μελέτη
-940	μελέτη	replace	–
+940	μελέτη	replace	 
 940	καθίσταται’.	replace	καθίστα
 940		replace	ται.
 940	χρονισθεῖσα	equal	χρονισθεῖσα
@@ -279420,7 +279408,7 @@
 949		replace	εχω
 949	τὸ	equal	τὸ
 949	γὰρ	equal	γὰρ
-949	δυνήσεται'.	replace	δυνήσεται.
+949	δυνήσεται’.	replace	δυνήσεται.
 949	eclogam	equal	eclogam
 949	om.	equal	om.
 949	SMA.	equal	SMA.
@@ -279467,7 +279455,7 @@
 949	ed.	equal	ed.
 949	Mein.):	equal	Mein.):
 949	‘ἐλευθέρα	replace	ἐλευθέρα
-949	έλευθέρων'.	replace	ἐλευθέρων‘.
+949	έλευθέρων’.	replace	ἐλευθέρων‘.
 949	eclogam	equal	eclogam
 949	om.	equal	om.
 949	SMA.	equal	SMA.
@@ -279497,7 +279485,7 @@
 949	ed.	equal	ed.
 949	Mein.):	equal	Mein.):
 949	‘ἐλευθερία	replace	ἐλευθερία
-949	τέχος'.	replace	τέκος.
+949	τέχος’.	replace	τέκος.
 949	Sophocli	equal	Sophocli
 949	locum	equal	locum
 949	tribuit	equal	tribuit
@@ -279526,7 +279514,7 @@
 949	ed.	equal	ed.
 949	Mein.):	equal	Mein.):
 949	‘αἰδὼς	replace	αἰδὼς
-949	ἐκτήσατο'.	replace	ἐκτήσατο.
+949	ἐκτήσατο’.	replace	ἐκτήσατο.
 949	eclogam	equal	eclogam
 949	om.	equal	om.
 949	SMA.	equal	SMA.
@@ -279576,7 +279564,7 @@
 949	Mein.):	equal	Mein.):
 949	τοῖς	equal	τοῖς
 949	γὰρ	equal	γὰρ
-949	βίου'.	replace	βίου‘.
+949	βίου’.	replace	βίου‘.
 949	eclogam	equal	eclogam
 949	om.	equal	om.
 949	SMA,	equal	SMA,
@@ -280392,7 +280380,7 @@
 952	στένεις	equal	στένεις
 952	καὶ	equal	καὶ
 952	‘κλύδωνα	replace	κλύδωνα
-952	αὐθαίρετον;‘	replace	–
+952	αὐθαίρετον;‘	replace	 
 952		replace	αυθαίρετον;
 952	videtur	equal	videtur
 952	tragici	equal	tragici
@@ -281208,7 +281196,7 @@
 955	τὸ	equal	τὸ
 955	‘ἃ	equal	‘ἃ
 955	δεῖ	equal	δεῖ
-955	γενήσεται'.	replace	γενήσεται.
+955	γενήσεται’.	replace	γενήσεται.
 955		replace	μαντικήν
 955		replace	ἀγένειος
 955	584	equal	584
@@ -281473,7 +281461,7 @@
 956	Ἡρακλείδης	replace	Ἡρακλεί
 956		replace	δης
 956	ἐκαλεῖτο	equal	ἐκαλεῖτο
-956		insert	–
+956		insert	 
 956	ἔτι	equal	ἔτι
 956	δὲ	equal	δὲ
 956	καὶ	equal	καὶ
@@ -281668,7 +281656,7 @@
 957	τὸ	equal	τὸ
 957	συμπόσιον	equal	συμπόσιον
 957	ἑστιάτωρ	equal	ἑστιάτωρ
-957	ὁ	replace	–
+957	ὁ	replace	 
 957		replace	δ
 957	γὰρ	equal	γὰρ
 957	οἰκοδέγμων	equal	οἰκοδέγμων
