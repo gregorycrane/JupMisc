@@ -1,0 +1,1246 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Aeschylus, Prometheus Bound (Hermann Edition)</title>
+            <style>
+                body {
+                    font-family: 'Georgia', serif; display: flex; flex-direction: column;
+                    height: 100vh; margin: 0; background-color: #fdfdfd;
+                }
+                header {
+                    padding: 10px 20px; border-bottom: 2px solid #ddd;
+                    background-color: #fff; text-align: center; flex-shrink: 0;
+                }
+                h1 { margin: 0; font-size: 1.8em; color: #333; }
+                h2 { margin: 5px 0 0; font-size: 1.1em; color: #555; font-weight: normal;}
+                .container {
+                    display: grid; grid-template-columns: repeat(2, 1fr); 
+                    gap: 15px; 
+                    flex-grow: 1; padding: 15px; overflow: hidden; 
+                }
+                .column {
+                    background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 4px;
+                    display: flex; flex-direction: column; overflow: hidden; 
+                }
+                .column h3 {
+                    text-align: center; margin: 0; padding: 12px;
+                    border-bottom: 1px solid #e0e0e0; background-color: #f0f0f0; 
+                    color: #444; font-size: 1em; font-weight: bold;
+                    flex-shrink: 0;
+                }
+                .content {
+                     padding: 10px 15px;
+                     overflow-y: auto; 
+                     height: 100%; 
+                     line-height: 1.6; 
+                     flex-grow: 1;
+                     scroll-behavior: smooth;
+                }
+                .line {
+                    display: flex; align-items: baseline; padding: 2px 5px; 
+                    border-radius: 3px;
+                     margin-bottom: 2px; 
+                     min-height: 1.5em;
+                }
+                #app-crit-content .line {
+                     min-height: auto;
+                     align-items: flex-start; 
+                }
+                #greek-content .line.empty .text {
+                     color: #ccc; 
+                }
+                .line.highlight { background-color: #e7f5ff; }
+                .line-num {
+                    flex-shrink: 0; width: 40px; font-size: 0.75em; 
+                    color: #999; 
+                    cursor: pointer; text-align: right; margin-right: 12px; 
+                    font-family: monospace;
+                    padding-top: 0.2em; 
+                }
+                .line-num:hover { color: #007bff; text-decoration: underline; }
+                .text { flex-grow: 1; } 
+                .speaker { font-weight: bold; margin-right: 8px; color: #800000; }
+                .app-lemma { font-style: italic; color: #0056b3; background-color: #f0f8ff; padding: 0 3px; border-radius: 2px;}
+                .app-quote { font-family: monospace; color: #444; }
+                .editorial-note { color: #006400; font-style: italic; }
+                .gap { color: #999; font-style: italic; }
+                 .stage-direction { color: #777; font-style: italic; font-size: 0.9em; }
+                 #app-crit-content .text {
+                      word-break: break-word;
+                      white-space: normal; 
+                 }
+                .lemma-not-found { 
+                    color: red !important; 
+                }
+                .matched-lemma {
+                    background-color: #fffacd; /* Light yellow */
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Aeschylus, Prometheus Bound</h1>
+                <h2>Aeschylus | Edited by: Gottfried Hermann (1852)</h2>
+            </header>
+            <div class="container">
+                <div class="column">
+                    <h3>Greek Text</h3>
+                    <div class="content" id="greek-content"><div class="line" id="g-1"><a class="line-num" data-line="1">1</a> <span class="text"><span class="speaker">Κράτος</span> Χθονὸς μὲν εἰς τηλουρὸν ἥκομεν πέδον,</span></div>
+<div class="line" id="g-2"><a class="line-num" data-line="2">2</a> <span class="text">Σκύθην ἐς οἶμον, ἄβροτον εἰς ἐρημίαν.</span></div>
+<div class="line" id="g-3"><a class="line-num" data-line="3">3</a> <span class="text">Ἥφαιστε, σοὶ δὲ χρὴ μέλειν ἐπιστολὰς</span></div>
+<div class="line" id="g-4"><a class="line-num" data-line="4">4</a> <span class="text">ἅς σοι πατὴρ ἐφεῖτο, τόνδε πρὸς πέτραις</span></div>
+<div class="line" id="g-5"><a class="line-num" data-line="5">5</a> <span class="text">ὑψηλοκρήμνοις τὸν λεωργὸν ὀχμάσαι</span></div>
+<div class="line" id="g-6"><a class="line-num" data-line="6">6</a> <span class="text">ἀδαμαντίνων δεσμῶν ἐν ἀρρήκτοις πέδαις.</span></div>
+<div class="line" id="g-7"><a class="line-num" data-line="7">7</a> <span class="text">τὸ σὸν γὰρ ἄνθος, παντέχνου πυρὸς σέλας,</span></div>
+<div class="line" id="g-8"><a class="line-num" data-line="8">8</a> <span class="text">θνητοῖσι κλέψας ὤπασεν· τοιᾶςδέ τοι</span></div>
+<div class="line" id="g-9"><a class="line-num" data-line="9">9</a> <span class="text">ἁμαρτίας σφὲ δεῖ θεοῖς δοῦναι δίκην,</span></div>
+<div class="line" id="g-10"><a class="line-num" data-line="10">10</a> <span class="text">ὡς ἂν διδαχθῇ τὴν Διὸς τυραννίδα</span></div>
+<div class="line" id="g-11"><a class="line-num" data-line="11">11</a> <span class="text">στέργειν, φιλανθρώπου δὲ παύεσθαι τρόπου.</span></div>
+<div class="line" id="g-12"><a class="line-num" data-line="12">12</a> <span class="text"><span class="speaker">Ἥφαιστος</span> Κράτος Βία τε, σφῷν μὲν ἐντολὴ Διὸς</span></div>
+<div class="line" id="g-13"><a class="line-num" data-line="13">13</a> <span class="text">ἔχει τέλος δή, κοὐδὲν ἐμποδὼν ἔτι.</span></div>
+<div class="line" id="g-14"><a class="line-num" data-line="14">14</a> <span class="text">ἐγὼ δ᾽ ἄτολμός εἰμι συγγενῆ θεὸν</span></div>
+<div class="line" id="g-15"><a class="line-num" data-line="15">15</a> <span class="text">δῆσαι βίᾳ φάραγγι πρὸς δυςχειμέρῳ.</span></div>
+<div class="line" id="g-16"><a class="line-num" data-line="16">16</a> <span class="text">πάντως δ᾽ ἀνάγκη τῶνδέ μοι τόλμαν σχεθεῖν·</span></div>
+<div class="line" id="g-17"><a class="line-num" data-line="17">17</a> <span class="text">ἐξωριάζειν γὰρ πατρὸς λόγους βαρύ.</span></div>
+<div class="line" id="g-18"><a class="line-num" data-line="18">18</a> <span class="text">τῆς ὀρθοβούλου Θέμιδος αἰπυμῆτα παῖ,</span></div>
+<div class="line" id="g-19"><a class="line-num" data-line="19">19</a> <span class="text">ἄκοντά σ&#x27; ἄκων δυςλύτοις χαλκεύμασιν</span></div>
+<div class="line" id="g-20"><a class="line-num" data-line="20">20</a> <span class="text">προςπασσαλεύσω τῷδ᾽ ἀπανθρώπῳ πάγῳ,</span></div>
+<div class="line" id="g-21"><a class="line-num" data-line="21">21</a> <span class="text">ἵν᾽ οὔτε φωνὴν οὔτε του μορφὴν βροτῶν</span></div>
+<div class="line" id="g-22"><a class="line-num" data-line="22">22</a> <span class="text">ὄψει, σταθευτὸς δ&#x27; ἡλίου φοίβῃ φλογὶ</span></div>
+<div class="line" id="g-23"><a class="line-num" data-line="23">23</a> <span class="text"><span class="speaker">Ἥφαιστος</span> χροιᾶς ἀμείψεις ἄνθος, ἀσμένῳ δέ σοι</span></div>
+<div class="line" id="g-24"><a class="line-num" data-line="24">24</a> <span class="text">ἡ ποικιλείμων νὺξ ἀποκρύψει φάος,</span></div>
+<div class="line" id="g-25"><a class="line-num" data-line="25">25</a> <span class="text">πάχνην θ&#x27; ἑῴαν ἥλιος σκεδᾷ πάλιν·</span></div>
+<div class="line" id="g-26"><a class="line-num" data-line="26">26</a> <span class="text">ἀεὶ δὲ τοῦ παρόντος ἀχθηδὼν κακοῦ</span></div>
+<div class="line" id="g-27"><a class="line-num" data-line="27">27</a> <span class="text">τρύσει σ&#x27;· ὁ λωφήσων γὰρ οὐ πέφυκέ πω.</span></div>
+<div class="line" id="g-28"><a class="line-num" data-line="28">28</a> <span class="text">τοιαῦτ᾽ ἐπηύρω τοῦ φιλανθρώπου τρόπου.</span></div>
+<div class="line" id="g-29"><a class="line-num" data-line="29">29</a> <span class="text">θεὸς θεῶν γὰρ οὐχ ὑποπτήσσων χόλον</span></div>
+<div class="line" id="g-30"><a class="line-num" data-line="30">30</a> <span class="text">βροτοῖσι τιμὰς ὤπασας πέρα δίκης.</span></div>
+<div class="line" id="g-31"><a class="line-num" data-line="31">31</a> <span class="text">ἀνθ&#x27; ὧν ἀτερπῆ τήνδε φρουρήσεις πέτραν,</span></div>
+<div class="line" id="g-32"><a class="line-num" data-line="32">32</a> <span class="text">ὀρθοστάδην, ἄϋπνος, οὐ κάμπτων γόνυ.</span></div>
+<div class="line" id="g-33"><a class="line-num" data-line="33">33</a> <span class="text">πολλοὺς δ᾽ ὀδυρμοὺς καὶ γόους ἀνωφελεῖς</span></div>
+<div class="line" id="g-34"><a class="line-num" data-line="34">34</a> <span class="text">φθέγξει· Διὸς γὰρ δυςπαραίτητοι φρένες.</span></div>
+<div class="line" id="g-35"><a class="line-num" data-line="35">35</a> <span class="text">ἅπας δὲ τραχύς, ὅςτις ἂν νέον κρατῇ.</span></div>
+<div class="line" id="g-36"><a class="line-num" data-line="36">36</a> <span class="text"><span class="speaker">Κράτος</span> εἶεν· τί μέλλεις καὶ κατοικτίζεις μάτην;</span></div>
+<div class="line" id="g-37"><a class="line-num" data-line="37">37</a> <span class="text">τί τὸν θεοῖς ἔχθιστον οὐ στυγεῖς θεόν,</span></div>
+<div class="line" id="g-38"><a class="line-num" data-line="38">38</a> <span class="text">ὅςτις τὸ σὸν θνητοῖσι προὔδωκεν γέρας;</span></div>
+<div class="line" id="g-39"><a class="line-num" data-line="39">39</a> <span class="text"><span class="speaker">Ἥφαιστος</span> τὸ συγγενές τοι δεινὸν ἥ θ&#x27; ὁμιλία.</span></div>
+<div class="line" id="g-40"><a class="line-num" data-line="40">40</a> <span class="text"><span class="speaker">Κράτος</span> σύμφημ&#x27;· ἀνηκουστεῖν δὲ τῶν πατρὸς λόγων</span></div>
+<div class="line" id="g-41"><a class="line-num" data-line="41">41</a> <span class="text">οἷόν τε πῶς; οὐ τοῦτο δειμαίνεις πλέον;</span></div>
+<div class="line" id="g-42"><a class="line-num" data-line="42">42</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ἀεί γε δὴ νηλὴς σὺ καὶ θράσους πλέως.</span></div>
+<div class="line" id="g-43"><a class="line-num" data-line="43">43</a> <span class="text"><span class="speaker">Κράτος</span> ἄκος γὰρ οὐδὲν τόνδε θρηνεῖσθαι· σὺ δὲ</span></div>
+<div class="line" id="g-44"><a class="line-num" data-line="44">44</a> <span class="text">τὰ μηδὲν ὠφελοῦντα μὴ πόνει μάτην.</span></div>
+<div class="line" id="g-45"><a class="line-num" data-line="45">45</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ὦ πολλὰ μισηθεῖσα χειρωναξία.</span></div>
+<div class="line" id="g-46"><a class="line-num" data-line="46">46</a> <span class="text"><span class="speaker">Κράτος</span> τί νιν στυγεῖς; πόνων γὰρ ὡς ἁπλῷ λόγῳ</span></div>
+<div class="line" id="g-47"><a class="line-num" data-line="47">47</a> <span class="text">τῶν νῦν παρόντων οὐδὲν αἰτία τέχνη.</span></div>
+<div class="line" id="g-48"><a class="line-num" data-line="48">48</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ἔμπας τις αὐτὴν ἄλλος ὤφελεν λαχεῖν.</span></div>
+<div class="line" id="g-49"><a class="line-num" data-line="49">49</a> <span class="text"><span class="speaker">Κράτος</span> ἅπαντ᾽ ἐπαχθῆ πλὴν θεοῖσι κοιρανεῖν.</span></div>
+<div class="line" id="g-50"><a class="line-num" data-line="50">50</a> <span class="text">ἐλεύθερος γὰρ οὔτις ἐστὶ πλὴν Διός.</span></div>
+<div class="line" id="g-51"><a class="line-num" data-line="51">51</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ἔγνωκα τοῖςδε, κοὐδὲν ἀντειπεῖν ἔχω.</span></div>
+<div class="line" id="g-52"><a class="line-num" data-line="52">52</a> <span class="text"><span class="speaker">Κράτος</span> οὔκουν ἐπείξει δεσμὰ τῷδε περιβαλεῖν,</span></div>
+<div class="line" id="g-53"><a class="line-num" data-line="53">53</a> <span class="text">ὡς μή σ᾽ ἐλινύοντα προςδέχθῃ πατήρ;</span></div>
+<div class="line" id="g-54"><a class="line-num" data-line="54">54</a> <span class="text"><span class="speaker">Ἥφαιστος</span> καὶ δὴ πρόχειρα ψάλια δέρκεσθαι πάρα.</span></div>
+<div class="line" id="g-55"><a class="line-num" data-line="55">55</a> <span class="text"><span class="speaker">Κράτος</span> λαβών νιν ἀμφὶ χερσὶν ἐγκρατεῖ σθένει</span></div>
+<div class="line" id="g-56"><a class="line-num" data-line="56">56</a> <span class="text">ῥαιστῆρι θεῖνε, πασσάλευε πρὸς πέτραις.</span></div>
+<div class="line" id="g-57"><a class="line-num" data-line="57">57</a> <span class="text"><span class="speaker">Ἥφαιστος</span> περαίνεται δὴ κοὐ ματᾷ τοῦργον τόδε.</span></div>
+<div class="line" id="g-58"><a class="line-num" data-line="58">58</a> <span class="text"><span class="speaker">Κράτος</span> ἄρασσε μᾶλλον, σφίγγε, μηδαμῇ χάλα.</span></div>
+<div class="line" id="g-59"><a class="line-num" data-line="59">59</a> <span class="text">δεινὸς γὰρ εὑρεῖν κἀξ ἀμηχάνων πόρον.</span></div>
+<div class="line" id="g-60"><a class="line-num" data-line="60">60</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ἄραρεν ἥδε γ&#x27; ὠλένη δυςεκλύτως.</span></div>
+<div class="line" id="g-61"><a class="line-num" data-line="61">61</a> <span class="text"><span class="speaker">Κράτος</span> καὶ τήνδε νῦν πόρπασον ἀσφαλῶς, ἵνα</span></div>
+<div class="line" id="g-62"><a class="line-num" data-line="62">62</a> <span class="text">μάθῃ σοφιστὴς ὢν Διὸς νωθέστερος.</span></div>
+<div class="line" id="g-63"><a class="line-num" data-line="63">63</a> <span class="text"><span class="speaker">Ἥφαιστος</span> πλὴν τοῦδ᾽ ἂν οὐδεὶς ἐνδίκως μέμψαιτό μοι.</span></div>
+<div class="line" id="g-64"><a class="line-num" data-line="64">64</a> <span class="text"><span class="speaker">Κράτος</span> ἀδαμαντίνου νῦν σφηνὸς αὐθάδη γνάθον</span></div>
+<div class="line" id="g-65"><a class="line-num" data-line="65">65</a> <span class="text">στέρνων διαμπαξ πασσάλευ᾽ ἐρρωμένως.</span></div>
+<div class="line" id="g-66"><a class="line-num" data-line="66">66</a> <span class="text"><span class="speaker">Ἥφαιστος</span> αἰαῖ Προμηθεῦ, σῶν ὑπὲρ στένω πόνων.</span></div>
+<div class="line" id="g-67"><a class="line-num" data-line="67">67</a> <span class="text"><span class="speaker">Κράτος</span> σὺ δ᾽ αὖ κατοκνεῖς τῶν Διός τ&#x27; ἐχθρῶν ὕπερ</span></div>
+<div class="line" id="g-68"><a class="line-num" data-line="68">68</a> <span class="text">στένεις; ὅπως μὴ σαυτὸν οἰκτιεῖς ποτέ.</span></div>
+<div class="line" id="g-69"><a class="line-num" data-line="69">69</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ὁρᾷς θέαμα δυςθέατον ὄμμασιν.</span></div>
+<div class="line" id="g-70"><a class="line-num" data-line="70">70</a> <span class="text"><span class="speaker">Κράτος</span> ὁρῶ κυροῦντα τόνδε τῶν ἐπαξίων.</span></div>
+<div class="line" id="g-71"><a class="line-num" data-line="71">71</a> <span class="text">ἀλλ᾽ ἀμφὶ πλευραῖς μασχαλιστῆρας βάλε.</span></div>
+<div class="line" id="g-72"><a class="line-num" data-line="72">72</a> <span class="text"><span class="speaker">Ἥφαιστος</span> δρᾶν ταῦτ᾽ ἀνάγκη, μηδὲν ἐγκέλευ&#x27; ἄγαν.</span></div>
+<div class="line" id="g-73"><a class="line-num" data-line="73">73</a> <span class="text"><span class="speaker">Κράτος</span> ἦ μὴν κελεύσω κἀπιθωΰξω γε πρός.</span></div>
+<div class="line" id="g-74"><a class="line-num" data-line="74">74</a> <span class="text">χώρει κάτω, σκέλη δὲ κίρκωσον βίᾳ.</span></div>
+<div class="line" id="g-75"><a class="line-num" data-line="75">75</a> <span class="text"><span class="speaker">Ἥφαιστος</span> καὶ δὴ πέπρακται τοὖργον οὐ μακρῷ πόνῳ.</span></div>
+<div class="line" id="g-76"><a class="line-num" data-line="76">76</a> <span class="text"><span class="speaker">Κράτος</span> ἐρρωμένως νῦν θεῖνε διατόρους πέδας.</span></div>
+<div class="line" id="g-77"><a class="line-num" data-line="77">77</a> <span class="text">ὡς οὑπιτιμητής γε τῶν ἔργων βαρύς.</span></div>
+<div class="line" id="g-78"><a class="line-num" data-line="78">78</a> <span class="text"><span class="speaker">Ἥφαιστος</span> ὅμοια μορφῇ γλῶσσά σου γηρύεται.</span></div>
+<div class="line" id="g-79"><a class="line-num" data-line="79">79</a> <span class="text"><span class="speaker">Κράτος</span> σὺ μαλθακίζου, τὴν δ᾽ ἐμὴν αὐθαδίαν</span></div>
+<div class="line" id="g-80"><a class="line-num" data-line="80">80</a> <span class="text">ὀργῆς τε τραχύτητα μὴ &#x27;πίπλησσέ μοι.</span></div>
+<div class="line" id="g-81"><a class="line-num" data-line="81">81</a> <span class="text"><span class="speaker">Ἥφαιστος</span> στείχωμεν, ὡς κώλοισιν ἀμφίβληστρ᾽ ἔχει.</span></div>
+<div class="line" id="g-82"><a class="line-num" data-line="82">82</a> <span class="text"><span class="speaker">Κράτος</span> ἐνταῦθα νῦν ὕβριζε, καὶ θεῶν γέρα</span></div>
+<div class="line" id="g-83"><a class="line-num" data-line="83">83</a> <span class="text">συλῶν ἐφημέροισι προςτίθει. τί σοι</span></div>
+<div class="line" id="g-84"><a class="line-num" data-line="84">84</a> <span class="text">οἷοί τε θνητοὶ τῶνδ᾽ ἀπαντλῆσαι πόνων;</span></div>
+<div class="line" id="g-85"><a class="line-num" data-line="85">85</a> <span class="text">ψευδωνύμως σε δαίμονες Προμηθέα</span></div>
+<div class="line" id="g-86"><a class="line-num" data-line="86">86</a> <span class="text">καλοῦσιν· αὐτὸν γάρ σε δεῖ Προμηθέως,</span></div>
+<div class="line" id="g-87"><a class="line-num" data-line="87">87</a> <span class="text">ὅτῳ τρόπῳ τῆςδ᾽ ἐκκυλισθήσει τέχνης.</span></div>
+<div class="line" id="g-88"><a class="line-num" data-line="88">88</a> <span class="text"><span class="speaker">Προμηθεύς</span> ὦ δῖος αἰθὴρ καὶ ταχύπτεροι πνοαί,</span></div>
+<div class="line" id="g-89"><a class="line-num" data-line="89">89</a> <span class="text">ποταμῶν τε πηγαί, ποντίων τε κυμάτων</span></div>
+<div class="line" id="g-90"><a class="line-num" data-line="90">90</a> <span class="text">ἀνήριθμον γέλασμα, παμμῆτόρ τε γῆ,</span></div>
+<div class="line" id="g-91"><a class="line-num" data-line="91">91</a> <span class="text">καὶ τὸν πανόπτην κύκλον ἡλίου καλῶ,</span></div>
+<div class="line" id="g-92"><a class="line-num" data-line="92">92</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἴδεσθέ μ&#x27;, οἷα πρὸς θεῶν πάσχω θεός.</span></div>
+<div class="line" id="g-93"><a class="line-num" data-line="93">93</a> <span class="text">δέρκεσθε, οἵαις αἰκίαισιν</span></div>
+<div class="line" id="g-94"><a class="line-num" data-line="94">94</a> <span class="text">διακναιόμενος τὸν μυριετῆ</span></div>
+<div class="line" id="g-95"><a class="line-num" data-line="95">95</a> <span class="text">χρόνον ἀθλεύσω.</span></div>
+<div class="line" id="g-96"><a class="line-num" data-line="96">96</a> <span class="text">τοιόνδ᾽ ὁ νέος ταγὸς μακάρων</span></div>
+<div class="line" id="g-97"><a class="line-num" data-line="97">97</a> <span class="text">ἐξεῦρ᾽ ἐπ&#x27; ἐμοὶ δεσμὸν ἀεικῆ.</span></div>
+<div class="line" id="g-98"><a class="line-num" data-line="98">98</a> <span class="text">αἰαῖ, τὸ παρόν, τό τ&#x27; ἐπερχόμενον</span></div>
+<div class="line" id="g-99"><a class="line-num" data-line="99">99</a> <span class="text">πῆμα στενάχω, πῇ ποτε μόχθων</span></div>
+<div class="line" id="g-100"><a class="line-num" data-line="100">100</a> <span class="text">χρὴ τέρματα τῶνδ᾽ ἐπιτεῖλαι.</span></div>
+<div class="line" id="g-101"><a class="line-num" data-line="101">101</a> <span class="text">καίτοι τί φημι; πάντα προὐξεπίσταμαι</span></div>
+<div class="line" id="g-102"><a class="line-num" data-line="102">102</a> <span class="text">σκεθρῶς τὰ μέλλοντ&#x27;, οὐδέ μοι ποταίνιον</span></div>
+<div class="line" id="g-103"><a class="line-num" data-line="103">103</a> <span class="text">πῆμ&#x27; οὐδὲν ἥξει. τὴν πεπρωμένην δὲ χρὴ</span></div>
+<div class="line" id="g-104"><a class="line-num" data-line="104">104</a> <span class="text">αἶσαν φέρειν ὡς ῥᾷστα, γιγνώσκονθ᾽ ὅτι</span></div>
+<div class="line" id="g-105"><a class="line-num" data-line="105">105</a> <span class="text">τὸ τῆς ἀνάγκης ἔστ᾽ ἀδήριτον σθένος.</span></div>
+<div class="line" id="g-106"><a class="line-num" data-line="106">106</a> <span class="text">ἀλλ᾽ οὔτε σιγᾶν οὔτε μὴ σιγᾶν τύχας</span></div>
+<div class="line" id="g-107"><a class="line-num" data-line="107">107</a> <span class="text">οἷόν τέ μοι τάςδ᾽ ἐστί. θνητοῖς γὰρ γέρα</span></div>
+<div class="line" id="g-108"><a class="line-num" data-line="108">108</a> <span class="text">πορὼν ἀνάγκαις ταῖςδ᾽ ἐνέζευγμαι τάλας·</span></div>
+<div class="line" id="g-109"><a class="line-num" data-line="109">109</a> <span class="text">ναρθηκοπλήρωτον δὲ θηρῶμαι πυρὸς</span></div>
+<div class="line" id="g-110"><a class="line-num" data-line="110">110</a> <span class="text">πηγὴν κλοπαίαν, ἣ διδάσκαλος τέχνης</span></div>
+<div class="line" id="g-111"><a class="line-num" data-line="111">111</a> <span class="text">πάσης βροτοῖς πέφηνε καὶ μέγας πόρος.</span></div>
+<div class="line" id="g-112"><a class="line-num" data-line="112">112</a> <span class="text">τοιάςδε ποινὰς ἀμπλακημάτων τίνω,</span></div>
+<div class="line" id="g-113"><a class="line-num" data-line="113">113</a> <span class="text">ὑπαίθριος δεσμοῖσι πασσαλευτὸς ὤν.</span></div>
+<div class="line" id="g-114"><a class="line-num" data-line="114">114</a> <span class="text">ἔα ἔα.</span></div>
+<div class="line" id="g-115"><a class="line-num" data-line="115">115</a> <span class="text">τίς ἀχώ, τίς ὀδμὰ προςέπτα μ&#x27; ἀφεγγής;</span></div>
+<div class="line" id="g-116"><a class="line-num" data-line="116">116</a> <span class="text">θεόσυτος ἢ βρότειος ἢ κεκραμένη;</span></div>
+<div class="line" id="g-117"><a class="line-num" data-line="117">117</a> <span class="text">ἵκετο τερμόνιον ἐπὶ πάγον</span></div>
+<div class="line" id="g-118"><a class="line-num" data-line="118">118</a> <span class="text">πόνων ἐμῶν θεωρός, ἢ τί δὴ θέλων;</span></div>
+<div class="line" id="g-119"><a class="line-num" data-line="119">119</a> <span class="text">ὁρᾶτε δεσμώτην με δύςποτμον θεόν,</span></div>
+<div class="line" id="g-120"><a class="line-num" data-line="120">120</a> <span class="text">τὸν Διὸς ἐχθρόν, τὸν πᾶσι θεοῖς</span></div>
+<div class="line" id="g-121"><a class="line-num" data-line="121">121</a> <span class="text">δι&#x27; ἀπεχθείας ἐλθόνθ&#x27;, ὁπόσοι</span></div>
+<div class="line" id="g-122"><a class="line-num" data-line="122">122</a> <span class="text">τὴν Διὸς αὐλὴν εἰςοιχνεῦσιν,</span></div>
+<div class="line" id="g-123"><a class="line-num" data-line="123">123</a> <span class="text">διὰ τὴν λίαν φιλότητα βροτῶν.</span></div>
+<div class="line" id="g-124"><a class="line-num" data-line="124">124</a> <span class="text">φεῦ φεῦ, τί ποτ&#x27; αὖ κινάθισμα κλύω</span></div>
+<div class="line" id="g-125"><a class="line-num" data-line="125">125</a> <span class="text">πέλας οἰωνῶν; αἰθὴρ δ&#x27; ἐλαφραῖς</span></div>
+<div class="line" id="g-126"><a class="line-num" data-line="126">126</a> <span class="text"><span class="speaker">Προμηθεύς</span> πτερύγων ῥιπαῖς ὑποσυρίζει.</span></div>
+<div class="line" id="g-127"><a class="line-num" data-line="127">127</a> <span class="text">πᾶν μοι φοβερὸν τὸ προςέρπον.</span></div>
+<div class="line" id="g-128"><a class="line-num" data-line="128">128</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μηδὲν φοβηθῇς· φιλία γὰρ ἥδε τάξις</span></div>
+<div class="line" id="g-129"><a class="line-num" data-line="129">129</a> <span class="text">πτερύγων θοαῖς ἁμίλλαις</span></div>
+<div class="line" id="g-130"><a class="line-num" data-line="130">130</a> <span class="text">προςέβα τόνδε πάγον, πατρῴας</span></div>
+<div class="line" id="g-131"><a class="line-num" data-line="131">131</a> <span class="text">μόγις παρειποῦσα φρένας.</span></div>
+<div class="line" id="g-132"><a class="line-num" data-line="132">132</a> <span class="text">κραιπνοφόροι δέ μ&#x27; ἔπεμψαν αὖραι·</span></div>
+<div class="line" id="g-133"><a class="line-num" data-line="133">133</a> <span class="text">κτύπου γὰρ ἀχὼ χάλυβος διῇξεν ἄντρων</span></div>
+<div class="line" id="g-134"><a class="line-num" data-line="134">134</a> <span class="text">μυχόν, ἐκ δ᾽ ἔπληξέ μου τὴν θεμερῶπιν αἰδῶ·</span></div>
+<div class="line" id="g-135"><a class="line-num" data-line="135">135</a> <span class="text">σύθην δ᾽ ἀπέδιλος ὄχῳ πτερωτῷ.</span></div>
+<div class="line" id="g-136"><a class="line-num" data-line="136">136</a> <span class="text"><span class="speaker">Προμηθεύς</span> αἰαῖ, αἰαῖ,</span></div>
+<div class="line" id="g-137"><a class="line-num" data-line="137">137</a> <span class="text">τῆς πολυτέκνου Τηθύος ἔκγονα,</span></div>
+<div class="line" id="g-138"><a class="line-num" data-line="138">138</a> <span class="text">τοῦ περὶ πᾶσαν χθόνα εἱλισσομένου</span></div>
+<div class="line" id="g-139"><a class="line-num" data-line="139">139</a> <span class="text">ἀκοιμήτῳ ῥεύματι παῖδες</span></div>
+<div class="line" id="g-140"><a class="line-num" data-line="140">140</a> <span class="text">πατρὸς Ὠκεανοῦ, δέρκεσθ&#x27;, ἐςίδεσθ&#x27;</span></div>
+<div class="line" id="g-141"><a class="line-num" data-line="141">141</a> <span class="text">οἵῳ δεσμῷ προςπορπατὸς</span></div>
+<div class="line" id="g-142"><a class="line-num" data-line="142">142</a> <span class="text">τῆσδε φάραγγος σκοπέλοις ἐν ἄκροις</span></div>
+<div class="line" id="g-143"><a class="line-num" data-line="143">143</a> <span class="text">φρουρὰν ἄζηλον ὀχήσω.</span></div>
+<div class="line" id="g-144"><a class="line-num" data-line="144">144</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> λεύσσω, Προμηθεῦ· φοβερὰ δ᾽ ἐμοῖσιν ὄσσοις</span></div>
+<div class="line" id="g-145"><a class="line-num" data-line="145">145</a> <span class="text">ὁμίχλη προςῇξε πλήρης</span></div>
+<div class="line" id="g-146"><a class="line-num" data-line="146">146</a> <span class="text">δακρύων, σὸν δέμας εἰςιδούσα</span></div>
+<div class="line" id="g-147"><a class="line-num" data-line="147">147</a> <span class="text">πέτραις προςαυαινόμενον</span></div>
+<div class="line" id="g-148"><a class="line-num" data-line="148">148</a> <span class="text">ταῖςδ᾽ ἀδαμαντοδέτοισι λύμαις·</span></div>
+<div class="line" id="g-149"><a class="line-num" data-line="149">149</a> <span class="text">νέοι γὰρ οἰακονόμοι κρατοῦσ᾽ Ὀλύμπου·</span></div>
+<div class="line" id="g-150"><a class="line-num" data-line="150">150</a> <span class="text">νεοχμοῖς δὲ δὴ νόμοις Ζεὺς ἀθέτως κρατύνει,</span></div>
+<div class="line" id="g-151"><a class="line-num" data-line="151">151</a> <span class="text">τὰ πρὶν δὲ πελώρια νῦν ἀϊστοῖ.</span></div>
+<div class="line" id="g-152"><a class="line-num" data-line="152">152</a> <span class="text"><span class="speaker">Προμηθεύς</span> εἰ γάρ μ&#x27; ὑπὸ γῆν νέρθεν θ&#x27; Ἅιδου</span></div>
+<div class="line" id="g-153"><a class="line-num" data-line="153">153</a> <span class="text">τοῦ νεκροδέγμονος εἰς ἀπέραντον</span></div>
+<div class="line" id="g-154"><a class="line-num" data-line="154">154</a> <span class="text">Τάρταρον ἧκεν δεσμοῖς ἀλύτοις</span></div>
+<div class="line" id="g-155"><a class="line-num" data-line="155">155</a> <span class="text">ἀγρίως πελάσας, ὡς μήτε θεὸς</span></div>
+<div class="line" id="g-156"><a class="line-num" data-line="156">156</a> <span class="text"><span class="speaker">Προμηθεύς</span> μήτε τις ἄλλος τοῖςδ᾽ ἐγεγήθει.</span></div>
+<div class="line" id="g-157"><a class="line-num" data-line="157">157</a> <span class="text">νῦν δ᾽ αἰθέριον κίνυγμ᾽ ὁ τάλας</span></div>
+<div class="line" id="g-158"><a class="line-num" data-line="158">158</a> <span class="text">ἐχθροῖς ἐπίχαρτα πέπονθα.</span></div>
+<div class="line" id="g-159"><a class="line-num" data-line="159">159</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τίς ὧδε πλησικάρδιος</span></div>
+<div class="line" id="g-160"><a class="line-num" data-line="160">160</a> <span class="text">θεῶν, ὅτῳ τάδ᾽ ἐπιχαρῆ;</span></div>
+<div class="line" id="g-161"><a class="line-num" data-line="161">161</a> <span class="text">τίς οὐ ξυνασχαλᾷ κακοῖς</span></div>
+<div class="line" id="g-162"><a class="line-num" data-line="162">162</a> <span class="text">τεοῖσι δίχα γοῦν ἑνός; ὃ δ᾽ ἐπικότως ἀεὶ</span></div>
+<div class="line" id="g-163"><a class="line-num" data-line="163">163</a> <span class="text">θέμενος ἄγναμπτον νόον</span></div>
+<div class="line" id="g-164"><a class="line-num" data-line="164">164</a> <span class="text">δάμναται οὐρανίαν</span></div>
+<div class="line" id="g-165"><a class="line-num" data-line="165">165</a> <span class="text">γένναν, οὐδὲ λήξει,</span></div>
+<div class="line" id="g-166"><a class="line-num" data-line="166">166</a> <span class="text">πρὶν ἂν ἢ κορέσῃ κέαρ, ἢ παλά-</span></div>
+<div class="line" id="g-167"><a class="line-num" data-line="167">167</a> <span class="text">μᾳ τινὶ τὰν δυςάλωτον ἕλῃ τις ἀρχάν.</span></div>
+<div class="line" id="g-168"><a class="line-num" data-line="168">168</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἦ μὴν ἔτ᾽ ἐμοῦ, καίπερ κρατεραῖς</span></div>
+<div class="line" id="g-169"><a class="line-num" data-line="169">169</a> <span class="text">ἐν γυιοπέδαις αἰκιζομένου</span></div>
+<div class="line" id="g-170"><a class="line-num" data-line="170">170</a> <span class="text">χρείαν ἕξει μακάρων πρύτανις</span></div>
+<div class="line" id="g-171"><a class="line-num" data-line="171">171</a> <span class="text">δεῖξαι τὸ νέον βούλευμ᾽, ὑφ᾽ ὅτου</span></div>
+<div class="line" id="g-172"><a class="line-num" data-line="172">172</a> <span class="text">σκῆπτρον τιμάς τ᾽ ἀποσυλᾶται.</span></div>
+<div class="line" id="g-173"><a class="line-num" data-line="173">173</a> <span class="text">καί μ&#x27; οὔτε μελιγλώσσοις πειθοῦς</span></div>
+<div class="line" id="g-174"><a class="line-num" data-line="174">174</a> <span class="text">ἐπαοιδαῖσιν θέλξει, στερεάς τ&#x27;</span></div>
+<div class="line" id="g-175"><a class="line-num" data-line="175">175</a> <span class="text">οὔποτ᾽ ἀπειλὰς πτήξας τόδ᾽ ἐγὼ</span></div>
+<div class="line" id="g-176"><a class="line-num" data-line="176">176</a> <span class="text">καταμηνύσω, πρὶν ἂν ἐξ ἀγρίων</span></div>
+<div class="line" id="g-177"><a class="line-num" data-line="177">177</a> <span class="text">δεσμῶν χαλάσῃ ποινάς τε τίνειν</span></div>
+<div class="line" id="g-178"><a class="line-num" data-line="178">178</a> <span class="text">τῆσδ&#x27; αἰκίας ἐθελήσῃ.</span></div>
+<div class="line" id="g-179"><a class="line-num" data-line="179">179</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> σὺ μὲν θρασύς τε καὶ πικραῖς</span></div>
+<div class="line" id="g-180"><a class="line-num" data-line="180">180</a> <span class="text">δύαισιν οὐδὲν ἐνδίδως,</span></div>
+<div class="line" id="g-181"><a class="line-num" data-line="181">181</a> <span class="text">ἄγαν δ᾽ ἐλευθεροστομεῖς.</span></div>
+<div class="line" id="g-182"><a class="line-num" data-line="182">182</a> <span class="text">ἐμὰς δὲ φρένας ἠρέθισε διάτορος φόβος·</span></div>
+<div class="line" id="g-183"><a class="line-num" data-line="183">183</a> <span class="text">δέδια δ᾽ ἀμφὶ σαῖς τύχαις,</span></div>
+<div class="line" id="g-184"><a class="line-num" data-line="184">184</a> <span class="text">πᾷ ποτε τῶνδε πόνων</span></div>
+<div class="line" id="g-185"><a class="line-num" data-line="185">185</a> <span class="text">χρή σε τέρμα κέλ-</span></div>
+<div class="line" id="g-186"><a class="line-num" data-line="186">186</a> <span class="text">σαντ᾽ ἐςιδεῖν· ἀκίχητα γὰρ ἤθεα</span></div>
+<div class="line" id="g-187"><a class="line-num" data-line="187">187</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> καὶ κέαρ ἀπαράμυθον ἔχει Κρόνου παῖς.</span></div>
+<div class="line" id="g-188"><a class="line-num" data-line="188">188</a> <span class="text"><span class="speaker">Προμηθεύς</span> οἶδ&#x27; ὅτι τραχὺς καὶ παρ&#x27; ἑαυτῷ</span></div>
+<div class="line" id="g-189"><a class="line-num" data-line="189">189</a> <span class="text">τὸ δίκαιον ἔχων Ζεύς· ἀλλ᾽ ἔμπας</span></div>
+<div class="line" id="g-190"><a class="line-num" data-line="190">190</a> <span class="text">μαλακογνώμων ἔσται ποθ᾽, ὅταν</span></div>
+<div class="line" id="g-191"><a class="line-num" data-line="191">191</a> <span class="text">ταύτῃ ῥαισθῇ·</span></div>
+<div class="line" id="g-192"><a class="line-num" data-line="192">192</a> <span class="text">τὴν δ᾽ ἀτέραμνον στορέσας ὀργὴν</span></div>
+<div class="line" id="g-193"><a class="line-num" data-line="193">193</a> <span class="text">εἰς ἀρθμὸν ἐμοὶ καὶ φιλότητα</span></div>
+<div class="line" id="g-194"><a class="line-num" data-line="194">194</a> <span class="text">σπεύδων σπεύδοντί ποθ᾽ ἥξει.</span></div>
+<div class="line" id="g-195"><a class="line-num" data-line="195">195</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> πάντ&#x27; ἐκκάλυψον καὶ γέγων&#x27; ἡμῖν λόγον,</span></div>
+<div class="line" id="g-196"><a class="line-num" data-line="196">196</a> <span class="text">ποίῳ λαβών σε Ζεὺς ἐπ᾽ αἰτιάματι</span></div>
+<div class="line" id="g-197"><a class="line-num" data-line="197">197</a> <span class="text">οὕτως ἀτίμως καὶ πικρῶς αἰκίζεται.</span></div>
+<div class="line" id="g-198"><a class="line-num" data-line="198">198</a> <span class="text">δίδαξον ἡμᾶς, εἴ τι μὴ βλάπτει λόγῳ.</span></div>
+<div class="line" id="g-199"><a class="line-num" data-line="199">199</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἀλγεινὰ μέν μοι καὶ λέγειν ἐστὶν τάδε,</span></div>
+<div class="line" id="g-200"><a class="line-num" data-line="200">200</a> <span class="text">ἄλγος δὲ σιγᾶν, πανταχῇ δὲ δύςποτμα.</span></div>
+<div class="line" id="g-201"><a class="line-num" data-line="201">201</a> <span class="text">ἐπεὶ τάχιστ᾽ ἤρξαντο δαίμονες χόλου,</span></div>
+<div class="line" id="g-202"><a class="line-num" data-line="202">202</a> <span class="text">στάσις τ᾽ ἐν ἀλλήλοισιν ὠροθύνετο,</span></div>
+<div class="line" id="g-203"><a class="line-num" data-line="203">203</a> <span class="text">οἱ μὲν θέλοντες ἐκβαλεῖν ἕδρας Κρόνον,</span></div>
+<div class="line" id="g-204"><a class="line-num" data-line="204">204</a> <span class="text">ὡς Ζεὺς ἀνάσσοι δῆθεν, οἳ δὲ τούμπαλιν</span></div>
+<div class="line" id="g-205"><a class="line-num" data-line="205">205</a> <span class="text">σπεύδοντες, ὡς Ζεὺς μήποτ&#x27; ἄρξειεν θεῶν,</span></div>
+<div class="line" id="g-206"><a class="line-num" data-line="206">206</a> <span class="text">ἐνταῦθ᾽ ἐγὼ τὰ λῷστα βουλεύων πιθεῖν</span></div>
+<div class="line" id="g-207"><a class="line-num" data-line="207">207</a> <span class="text">Τιτᾶνας, Οὐρανοῦ τε καὶ Χθονός τέκνα,</span></div>
+<div class="line" id="g-208"><a class="line-num" data-line="208">208</a> <span class="text">οὐκ ἠδυνήθην· αἱμύλας δὲ μηχανὰς</span></div>
+<div class="line" id="g-209"><a class="line-num" data-line="209">209</a> <span class="text">ἀτιμάσαντες καρτεροῖς φρονήμασιν</span></div>
+<div class="line" id="g-210"><a class="line-num" data-line="210">210</a> <span class="text">ᾤοντ᾽ ἀμοχθὶ πρὸς βίαν τε δεσπόσειν·</span></div>
+<div class="line" id="g-211"><a class="line-num" data-line="211">211</a> <span class="text">ἐμοὶ δὲ μήτηρ οὐχ ἅπαξ μόνον Θέμις,</span></div>
+<div class="line" id="g-212"><a class="line-num" data-line="212">212</a> <span class="text">καὶ Γαῖα, πολλῶν ὀνομάτων μορφὴ μία,</span></div>
+<div class="line" id="g-213"><a class="line-num" data-line="213">213</a> <span class="text">τὸ μέλλον ᾗ κραίνοιτο προὐτεθεσπίκει,</span></div>
+<div class="line" id="g-214"><a class="line-num" data-line="214">214</a> <span class="text">ὡς οὐ κατ&#x27; ἰσχὺν οὐδὲ πρὸς τὸ καρτερὸν</span></div>
+<div class="line" id="g-215"><a class="line-num" data-line="215">215</a> <span class="text">χρείη, δόλῳ δὲ τοὺς ὑπερσχόντας κρατεῖν.</span></div>
+<div class="line" id="g-216"><a class="line-num" data-line="216">216</a> <span class="text">τοιαῦτ᾽ ἐμοῦ λόγοισιν ἐξηγουμένου</span></div>
+<div class="line" id="g-217"><a class="line-num" data-line="217">217</a> <span class="text">οὐκ ἠξίωσαν οὐδὲ προςβλέψαι τὸ πᾶν.</span></div>
+<div class="line" id="g-218"><a class="line-num" data-line="218">218</a> <span class="text"><span class="speaker">Προμηθεύς</span> κράτιστα δή μοι τῶν παρεστώτων τότε</span></div>
+<div class="line" id="g-219"><a class="line-num" data-line="219">219</a> <span class="text">ἐφαίνετ᾽ εἶναι προςλαβόντα μητέρα</span></div>
+<div class="line" id="g-220"><a class="line-num" data-line="220">220</a> <span class="text">ἑκόνθ&#x27; ἑκόντι Ζηνὶ συμπαραστατεῖν.</span></div>
+<div class="line" id="g-221"><a class="line-num" data-line="221">221</a> <span class="text">ἐμαῖς δὲ βουλαῖς Ταρτάρου μελαμβαθὴς</span></div>
+<div class="line" id="g-222"><a class="line-num" data-line="222">222</a> <span class="text">κευθμὼν καλύπτει τὸν παλαιγενῆ Κρόνον</span></div>
+<div class="line" id="g-223"><a class="line-num" data-line="223">223</a> <span class="text">αὐτοῖσι συμμάχοισι. τοιάδ᾽ ἐξ ἐμοῦ</span></div>
+<div class="line" id="g-224"><a class="line-num" data-line="224">224</a> <span class="text">ὁ τῶν θεῶν τύραννος ὠφελημένος</span></div>
+<div class="line" id="g-225"><a class="line-num" data-line="225">225</a> <span class="text">κακαῖσι ποιναῖς ταῖςδέ μ&#x27; ἐξημείψατο.</span></div>
+<div class="line" id="g-226"><a class="line-num" data-line="226">226</a> <span class="text">ἔνεστι γάρ πως τοῦτο τῇ τυραννίδι</span></div>
+<div class="line" id="g-227"><a class="line-num" data-line="227">227</a> <span class="text">νόσημα, τοῖς φίλοισι μὴ πεποιθέναι.</span></div>
+<div class="line" id="g-228"><a class="line-num" data-line="228">228</a> <span class="text">ὃ δ᾽ οὖν ἐρωτᾶτ&#x27;, αἰτίαν καθ&#x27; ἥντινα</span></div>
+<div class="line" id="g-229"><a class="line-num" data-line="229">229</a> <span class="text">αἰκίζεταί με, τοῦτο δὴ σαφηνιῶ.</span></div>
+<div class="line" id="g-230"><a class="line-num" data-line="230">230</a> <span class="text">ὅπως τάχιστα τὸν πατρῷον ἐς θρόνον</span></div>
+<div class="line" id="g-231"><a class="line-num" data-line="231">231</a> <span class="text">καθέζετ&#x27;, εὐθὺς δαίμοσιν νέμει γέρα</span></div>
+<div class="line" id="g-232"><a class="line-num" data-line="232">232</a> <span class="text">ἄλλοισιν ἄλλα καὶ διεστοιχίζετο</span></div>
+<div class="line" id="g-233"><a class="line-num" data-line="233">233</a> <span class="text">ἀρχήν, βροτῶν δὲ τῶν ταλαιπώρων λόγον</span></div>
+<div class="line" id="g-234"><a class="line-num" data-line="234">234</a> <span class="text">οὐκ ἔσχεν οὐδέν, ἀλλ᾽ ἀϊστώσας γένος</span></div>
+<div class="line" id="g-235"><a class="line-num" data-line="235">235</a> <span class="text">τὸ πᾶν ἔχρηζεν ἄλλο φιτῦσαι νέον.</span></div>
+<div class="line" id="g-236"><a class="line-num" data-line="236">236</a> <span class="text">καὶ τοῖσιν οὐδεὶς ἀντέβαινε πλὴν ἐμοῦ.</span></div>
+<div class="line" id="g-237"><a class="line-num" data-line="237">237</a> <span class="text">ἐγὼ δ&#x27; ἐτόλμησ᾽· ἐξελυσάμην βροτοὺς</span></div>
+<div class="line" id="g-238"><a class="line-num" data-line="238">238</a> <span class="text">τοῦ μὴ διαρραισθέντας εἰς Ἅιδου μολεῖν.</span></div>
+<div class="line" id="g-239"><a class="line-num" data-line="239">239</a> <span class="text">τῷ τοι τοιαῖςδε πημοναῖσι κάμπτομαι,</span></div>
+<div class="line" id="g-240"><a class="line-num" data-line="240">240</a> <span class="text">πάσχειν μὲν ἀλγειναῖσιν, οἰκτραῖσιν δ᾽ ἰδεῖν·</span></div>
+<div class="line" id="g-241"><a class="line-num" data-line="241">241</a> <span class="text">θνητοὺς δ᾽ ἐν οἴκτῳ προθέμενος, τούτου τυχεῖν</span></div>
+<div class="line" id="g-242"><a class="line-num" data-line="242">242</a> <span class="text">οὐκ ἠξιώθην αὐτός, ἀλλὰ νηλεῶς</span></div>
+<div class="line" id="g-243"><a class="line-num" data-line="243">243</a> <span class="text">ὧδ᾽ ἐρρύθμισμαι, Ζηνὶ δυςκλεὴς θέα.</span></div>
+<div class="line" id="g-244"><a class="line-num" data-line="244">244</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> σιδηρόφρων τε κἀκ πέτρας εἰργασμένος,</span></div>
+<div class="line" id="g-245"><a class="line-num" data-line="245">245</a> <span class="text">ὅςτις, Προμηθεῦ, σοῖσιν οὐ ξυνασχαλᾷ</span></div>
+<div class="line" id="g-246"><a class="line-num" data-line="246">246</a> <span class="text">μόχθοις· ἐγὼ γὰρ οὔτ᾽ ἂν εἰςιδεῖν τάδε</span></div>
+<div class="line" id="g-247"><a class="line-num" data-line="247">247</a> <span class="text">ἔχρηζον, εἰςιδοῦσά τ&#x27; ἠλγύνθην κέαρ.</span></div>
+<div class="line" id="g-248"><a class="line-num" data-line="248">248</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ μὴν φίλοισιν οἰκτρὸς εἰςορᾶν ἐγώ.</span></div>
+<div class="line" id="g-249"><a class="line-num" data-line="249">249</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μή πού τι προὔβης τῶνδε καὶ περαιτέρω;</span></div>
+<div class="line" id="g-250"><a class="line-num" data-line="250">250</a> <span class="text"><span class="speaker">Προμηθεύς</span> θνητούς γε παύσας μὴ προδέρκεσθαι μόρον.</span></div>
+<div class="line" id="g-251"><a class="line-num" data-line="251">251</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τὸ ποῖον εὑρὼν τῆςδε φάρμακον νόσου;</span></div>
+<div class="line" id="g-252"><a class="line-num" data-line="252">252</a> <span class="text"><span class="speaker">Προμηθεύς</span> τυφλὰς ἐν αὐτοῖς ἐλπίδας κατῴκισα.</span></div>
+<div class="line" id="g-253"><a class="line-num" data-line="253">253</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μέγ&#x27; ὠφέλημα τοῦτ&#x27; ἐδωρήσω βροτοῖς.</span></div>
+<div class="line" id="g-254"><a class="line-num" data-line="254">254</a> <span class="text"><span class="speaker">Προμηθεύς</span> πρὸς τοῖςδε μέντοι πῦρ ἐγώ σφιν ὤπασα.</span></div>
+<div class="line" id="g-255"><a class="line-num" data-line="255">255</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> καὶ νῦν φλογωπὸν πῦρ ἔχουσ᾽ ἐφήμεροι;</span></div>
+<div class="line" id="g-256"><a class="line-num" data-line="256">256</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἀφ᾽ οὗ γε πολλὰς ἐκμαθήσονται τέχνας.</span></div>
+<div class="line" id="g-257"><a class="line-num" data-line="257">257</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τοιοῖςδε δή σε Ζεὺς ἐπ᾽ αἰτιάμασιν</span></div>
+<div class="line" id="g-258"><a class="line-num" data-line="258">258</a> <span class="text">αἰκίζεταί τε κοὐδαμῇ χαλᾷ κακῶν;</span></div>
+<div class="line" id="g-259"><a class="line-num" data-line="259">259</a> <span class="text">οὐδ᾽ ἔστιν ἄθλου τέρμα σοι προκείμενον;</span></div>
+<div class="line" id="g-260"><a class="line-num" data-line="260">260</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὐκ ἄλλο γ&#x27; οὐδέν, πλὴν ὅταν κείνῳ δοκῇ.</span></div>
+<div class="line" id="g-261"><a class="line-num" data-line="261">261</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> δόξει δὲ πῶς; τίς ἐλπίς; οὐχ ὁρᾷς ὅτι</span></div>
+<div class="line" id="g-262"><a class="line-num" data-line="262">262</a> <span class="text">ἥμαρτες; ὡς δ᾽ ἥμαρτες οὔτ᾽ ἐμοὶ λέγειν</span></div>
+<div class="line" id="g-263"><a class="line-num" data-line="263">263</a> <span class="text">καθ᾽ ἡδονήν, σοί τ&#x27; ἄλγος. ἀλλὰ ταῦτα μὲν</span></div>
+<div class="line" id="g-264"><a class="line-num" data-line="264">264</a> <span class="text">μεθῶμεν, ἄθλου δ᾽ ἔκλυσιν ζήτει τινά.</span></div>
+<div class="line" id="g-265"><a class="line-num" data-line="265">265</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐλαφρὸν ὅςτις πημάτων ἔξω πόδα</span></div>
+<div class="line" id="g-266"><a class="line-num" data-line="266">266</a> <span class="text">ἔχει παραινεῖν νουθετεῖν τε τὸν κακῶς</span></div>
+<div class="line" id="g-267"><a class="line-num" data-line="267">267</a> <span class="text">πράσσοντ&#x27;. ἐγὼ δὲ ταῦθ᾽ ἅπαντ᾽ ἐπιστάμην.</span></div>
+<div class="line" id="g-268"><a class="line-num" data-line="268">268</a> <span class="text">ἑκών, ἑκὼν ἥμαρτον, οὐκ ἀρνήσομαι·</span></div>
+<div class="line" id="g-269"><a class="line-num" data-line="269">269</a> <span class="text">θνητοῖς δ᾽ ἀρήγων αὐτὸς εὑρόμην πόνους.</span></div>
+<div class="line" id="g-270"><a class="line-num" data-line="270">270</a> <span class="text">οὐ μήν τι ποιναῖς γ&#x27; ᾠόμην τοίαισί με</span></div>
+<div class="line" id="g-271"><a class="line-num" data-line="271">271</a> <span class="text"><span class="speaker">Προμηθεύς</span> κατισχνανεῖσθαι πρὸς πέτραις πεδαρσίοις,</span></div>
+<div class="line" id="g-272"><a class="line-num" data-line="272">272</a> <span class="text">τυχόντ᾽ ἐρήμου τοῦδ᾽ ἀγείτονος πάγου.</span></div>
+<div class="line" id="g-273"><a class="line-num" data-line="273">273</a> <span class="text">καίτοι τὰ μὲν παρόντα μὴ δύρεσθ᾽ ἄχη,</span></div>
+<div class="line" id="g-274"><a class="line-num" data-line="274">274</a> <span class="text">πέδοι δὲ βᾶσαι τὰς προςερπούσας τύχας</span></div>
+<div class="line" id="g-275"><a class="line-num" data-line="275">275</a> <span class="text">ἀκούσαθ&#x27;, ὡς μάθητε διὰ τέλους τὸ πᾶν.</span></div>
+<div class="line" id="g-276"><a class="line-num" data-line="276">276</a> <span class="text">πείθεσθέ μοι, πείθεσθε, συμπονήσατε</span></div>
+<div class="line" id="g-277"><a class="line-num" data-line="277">277</a> <span class="text">τῷ νῦν μογοῦντι. ταὐτά τοι πλανωμένη</span></div>
+<div class="line" id="g-278"><a class="line-num" data-line="278">278</a> <span class="text">πρὸς ἄλλοτ᾽ ἄλλον πημονὴ προςιζάνει.</span></div>
+<div class="line" id="g-279"><a class="line-num" data-line="279">279</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> <span class="editorial-note">curr. οὐκ ἀκούσαις ἐπεθώϋξας</span></span></div>
+<div class="line" id="g-280"><a class="line-num" data-line="280">280</a> <span class="text">τοῦτο, Προμηθεῦ. καὶ νῦν ἐλαφρῷ</span></div>
+<div class="line" id="g-281"><a class="line-num" data-line="281">281</a> <span class="text">ποδὶ κραιπνόσυτον θᾶκον προλιποῦσ&#x27;,</span></div>
+<div class="line" id="g-282"><a class="line-num" data-line="282">282</a> <span class="text">αἰθέρα θ᾽ ἁγνόν, πόρον οἰωνῶν,</span></div>
+<div class="line" id="g-283"><a class="line-num" data-line="283">283</a> <span class="text">ὀκριοέσσῃ χθονὶ τῇδε πελῶ·</span></div>
+<div class="line" id="g-284"><a class="line-num" data-line="284">284</a> <span class="text">τοὺς σοὺς δὲ πόνους</span></div>
+<div class="line" id="g-285"><a class="line-num" data-line="285">285</a> <span class="text">χρήζω διὰ παντὸς ἀκοῦσαι.</span></div>
+<div class="line" id="g-286"><a class="line-num" data-line="286">286</a> <span class="text"><span class="speaker">Ὠκεανός</span> ἥκω δολιχῆς τέρμα κελεύθου</span></div>
+<div class="line" id="g-287"><a class="line-num" data-line="287">287</a> <span class="text">διαμειψάμενος πρὸς σέ, Προμηθεῦ,</span></div>
+<div class="line" id="g-288"><a class="line-num" data-line="288">288</a> <span class="text">τὸν πτερυγωκῆ τόνδ&#x27; οἰωνὸν</span></div>
+<div class="line" id="g-289"><a class="line-num" data-line="289">289</a> <span class="text">γνώμῃ στομίων ἄτερ εὐθύνων·</span></div>
+<div class="line" id="g-290"><a class="line-num" data-line="290">290</a> <span class="text">ταῖς σαῖς δὲ τύχαις, ἴσθι, συναλγῶ.</span></div>
+<div class="line" id="g-291"><a class="line-num" data-line="291">291</a> <span class="text">τό τε γάρ με, δοκῶ, ξυγγενὲς οὕτως</span></div>
+<div class="line" id="g-292"><a class="line-num" data-line="292">292</a> <span class="text">ἐςαναγκάζει, χωρίς τε γένους</span></div>
+<div class="line" id="g-293"><a class="line-num" data-line="293">293</a> <span class="text">οὐκ ἔστιν ὅτῳ μείζονα μοῖραν</span></div>
+<div class="line" id="g-294"><a class="line-num" data-line="294">294</a> <span class="text">νείμαιμ᾽ ἢ σοί.</span></div>
+<div class="line" id="g-295"><a class="line-num" data-line="295">295</a> <span class="text">γνώσει δὲ τάδ᾽ ὡς ἔτυμ&#x27;, οὐδὲ μάτην</span></div>
+<div class="line" id="g-296"><a class="line-num" data-line="296">296</a> <span class="text">χαριτογλωσσεῖν ἔνι μοι· φέρε γὰρ</span></div>
+<div class="line" id="g-297"><a class="line-num" data-line="297">297</a> <span class="text">σήμαιν&#x27; ὅ τι χρή σοι ξυμπράσσειν·</span></div>
+<div class="line" id="g-298"><a class="line-num" data-line="298">298</a> <span class="text">οὐ γάρ ποτ᾽ ἐρεῖς ὡς Ὠκεανοῦ</span></div>
+<div class="line" id="g-299"><a class="line-num" data-line="299">299</a> <span class="text">φίλος ἐστὶ βεβαιότερός σοι.</span></div>
+<div class="line" id="g-300"><a class="line-num" data-line="300">300</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἔα, τί χρῆμα; καὶ σὺ δὴ πόνων ἐμῶν</span></div>
+<div class="line" id="g-301"><a class="line-num" data-line="301">301</a> <span class="text">ἥκεις ἐπόπτης; πῶς ἐτόλμησας, λιπὼν</span></div>
+<div class="line" id="g-302"><a class="line-num" data-line="302">302</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐπώνυμόν τε ῥεῦμα καὶ πετρηρεφῆ</span></div>
+<div class="line" id="g-303"><a class="line-num" data-line="303">303</a> <span class="text">αὐτόκτιτ᾽ ἄντρα, τὴν σιδηρομήτορα</span></div>
+<div class="line" id="g-304"><a class="line-num" data-line="304">304</a> <span class="text">ἐλθεῖν ἐς αἶαν; ἢ θεωρήσων τύχας</span></div>
+<div class="line" id="g-305"><a class="line-num" data-line="305">305</a> <span class="text">ἐμὰς ἀφῖξαι καὶ ξυνασχαλῶν κακοῖς;</span></div>
+<div class="line" id="g-306"><a class="line-num" data-line="306">306</a> <span class="text">δέρκου θέαμα, τόνδε τὸν Διὸς φίλον,</span></div>
+<div class="line" id="g-307"><a class="line-num" data-line="307">307</a> <span class="text">τὸν συγκαταστήσαντα τὴν τυραννίδα,</span></div>
+<div class="line" id="g-308"><a class="line-num" data-line="308">308</a> <span class="text">οἵαις ὑπ&#x27; αὐτοῦ πημοναῖσι κάμπτομαι.</span></div>
+<div class="line" id="g-309"><a class="line-num" data-line="309">309</a> <span class="text"><span class="speaker">Ὠκεανός</span> ὁρῶ, Προμηθεῦ, καὶ παραινέσαι γέ σοι</span></div>
+<div class="line" id="g-310"><a class="line-num" data-line="310">310</a> <span class="text">θέλω τὰ λῷστα, καίπερ ὄντι ποικίλῳ.</span></div>
+<div class="line" id="g-311"><a class="line-num" data-line="311">311</a> <span class="text">γίγνωσκε σαυτόν, καὶ μεθάρμοσαι τρόπους</span></div>
+<div class="line" id="g-312"><a class="line-num" data-line="312">312</a> <span class="text">νέους· νέος γὰρ καὶ τύραννος ἐν θεοῖς.</span></div>
+<div class="line" id="g-313"><a class="line-num" data-line="313">313</a> <span class="text">εἰ δ᾽ ὧδε τραχεῖς καὶ τεθηγμένους λόγους</span></div>
+<div class="line" id="g-314"><a class="line-num" data-line="314">314</a> <span class="text">ῥίψεις, τάχ᾽ ἄν σου καὶ μακρὰν ἀνωτέρω</span></div>
+<div class="line" id="g-315"><a class="line-num" data-line="315">315</a> <span class="text">θακῶν κλύοι Ζεύς, ὥςτε σοι τὸν νῦν χόλον</span></div>
+<div class="line" id="g-316"><a class="line-num" data-line="316">316</a> <span class="text">παρόντα μόχθων παιδιὰν εἶναι δοκεῖν.</span></div>
+<div class="line" id="g-317"><a class="line-num" data-line="317">317</a> <span class="text">ἀλλ᾽, ὦ ταλαίπωρ&#x27;, ἃς ἔχεις ὀργὰς ἄφες,</span></div>
+<div class="line" id="g-318"><a class="line-num" data-line="318">318</a> <span class="text">ζήτει δὲ τῶνδε πημάτων ἀπαλλαγάς.</span></div>
+<div class="line" id="g-319"><a class="line-num" data-line="319">319</a> <span class="text">ἀρχαῖ᾽ ἴσως σοι φαίνομαι λέγειν τάδε·</span></div>
+<div class="line" id="g-320"><a class="line-num" data-line="320">320</a> <span class="text">τοιαῦτα μέντοι τῆς ἄγαν ὑψηγόρου</span></div>
+<div class="line" id="g-321"><a class="line-num" data-line="321">321</a> <span class="text">γλώσσης, Προμηθεῦ, τἀπίχειρα γίγνεται.</span></div>
+<div class="line" id="g-322"><a class="line-num" data-line="322">322</a> <span class="text">σὺ δ᾽ οὐδέπω ταπεινός, οὐδ᾽ εἴκεις κακοῖς,</span></div>
+<div class="line" id="g-323"><a class="line-num" data-line="323">323</a> <span class="text">πρὸς τοῖς παροῦσι δ᾽ ἄλλα προςλαβεῖν θέλεις.</span></div>
+<div class="line" id="g-324"><a class="line-num" data-line="324">324</a> <span class="text">οὔκουν ἔμοιγε χρώμενος διδασκάλῳ</span></div>
+<div class="line" id="g-325"><a class="line-num" data-line="325">325</a> <span class="text">πρὸς κέντρα κῶλον ἐκτενεῖς, ὁρῶν ὅτι</span></div>
+<div class="line" id="g-326"><a class="line-num" data-line="326">326</a> <span class="text">τραχὺς μόναρχος, οὐδ᾽ ὑπεύθυνος κρατεῖ.</span></div>
+<div class="line" id="g-327"><a class="line-num" data-line="327">327</a> <span class="text">καὶ νῦν ἐγὼ μὲν εἶμι καὶ πειράσομαι,</span></div>
+<div class="line" id="g-328"><a class="line-num" data-line="328">328</a> <span class="text">ἐὰν δύνωμαι, τῶνδέ σ᾽ ἐκλύσαι πόνων.</span></div>
+<div class="line" id="g-329"><a class="line-num" data-line="329">329</a> <span class="text">σὺ δ᾽ ἡσύχαζε, μηδ&#x27; ἄγαν λαβροστόμει.</span></div>
+<div class="line" id="g-330"><a class="line-num" data-line="330">330</a> <span class="text">ἢ οὐκ οἶσθ᾽ ἀκριβῶς, ὢν περισσόφρων, ὅτι</span></div>
+<div class="line" id="g-331"><a class="line-num" data-line="331">331</a> <span class="text">γλώσσῃ ματαίᾳ ζημία προςτρίβεται;</span></div>
+<div class="line" id="g-332"><a class="line-num" data-line="332">332</a> <span class="text"><span class="speaker">Προμηθεύς</span> ζηλῶ σ᾽ ὁθούνεκ&#x27; ἐκτὸς αἰτίας κυρεῖς,</span></div>
+<div class="line" id="g-333"><a class="line-num" data-line="333">333</a> <span class="text">πάντων μετασχὼν καὶ τετολμηκὼς ἐμοί.</span></div>
+<div class="line" id="g-334"><a class="line-num" data-line="334">334</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ νῦν ἔασον, μηδέ σοι μελησάτω.</span></div>
+<div class="line" id="g-335"><a class="line-num" data-line="335">335</a> <span class="text">πάντως γὰρ οὐ πείσεις νιν· οὐ γὰρ εὐπιθής.</span></div>
+<div class="line" id="g-336"><a class="line-num" data-line="336">336</a> <span class="text">πάπταινε δ᾽ αὐτός, μή τι πημανθῇς ὁδῷ.</span></div>
+<div class="line" id="g-337"><a class="line-num" data-line="337">337</a> <span class="text"><span class="speaker">Ὠκεανός</span> πολλῷ γ᾽ ἀμείνων τοὺς πέλας φρενοῦν ἔφυς</span></div>
+<div class="line" id="g-338"><a class="line-num" data-line="338">338</a> <span class="text">ἢ σαυτόν· ἔργῳ κοὐ λόγῳ τεκμαίρομαι.</span></div>
+<div class="line" id="g-339"><a class="line-num" data-line="339">339</a> <span class="text">ὁρμώμενον δὲ μηδαμῶς ἀντισπάσῃς.</span></div>
+<div class="line" id="g-340"><a class="line-num" data-line="340">340</a> <span class="text">αὐχῶ γάρ, αὐχῶ τήνδε δωρεὰν ἐμοὶ</span></div>
+<div class="line" id="g-341"><a class="line-num" data-line="341">341</a> <span class="text">δώσειν Δί&#x27;, ὥςτε τῶνδέ σ᾽ ἐκλῦσαι πόνων.</span></div>
+<div class="line" id="g-342"><a class="line-num" data-line="342">342</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὰ μὲν σ᾽ ἐπαινῶ κοὐδαμῇ λήξω ποτέ·</span></div>
+<div class="line" id="g-343"><a class="line-num" data-line="343">343</a> <span class="text">προθυμίας γὰρ οὐδὲν ἐλλείπεις. ἀτὰρ</span></div>
+<div class="line" id="g-344"><a class="line-num" data-line="344">344</a> <span class="text">μηδὲν πόνει· μάτην γὰρ οὐδὲν ὠφελῶν</span></div>
+<div class="line" id="g-345"><a class="line-num" data-line="345">345</a> <span class="text">ἐμοὶ πονήσεις, εἴ τι καὶ πονεῖν θέλοις.</span></div>
+<div class="line" id="g-346"><a class="line-num" data-line="346">346</a> <span class="text">ἀλλ᾽ ἡσύχαζε σαυτὸν ἐκποδὼν ἔχων·</span></div>
+<div class="line" id="g-347"><a class="line-num" data-line="347">347</a> <span class="text">ἐγὼ γὰρ οὐκ εἰ δυςτυχῶ τοῦδ᾽ οἵνεκα</span></div>
+<div class="line" id="g-348"><a class="line-num" data-line="348">348</a> <span class="text">θέλοιμ᾽ ἂν ὡς πλείστοισι πημονὰς τυχεῖν.</span></div>
+<div class="line" id="g-349"><a class="line-num" data-line="349">349</a> <span class="text">οὐ δῆτ᾽, ἐπεί με καὶ κασιγνήτου τύχαι</span></div>
+<div class="line" id="g-350"><a class="line-num" data-line="350">350</a> <span class="text">τείρουσ᾽ Ἄτλαντος, ὃς πρὸς ἑσπέρους τόπους</span></div>
+<div class="line" id="g-351"><a class="line-num" data-line="351">351</a> <span class="text">ἕστηκε κίον᾽ οὐρανοῦ τε καὶ χθονὸς</span></div>
+<div class="line" id="g-352"><a class="line-num" data-line="352">352</a> <span class="text">ὤμοις ἐρείδων, ἄχθος οὐκ εὐάγκαλον.</span></div>
+<div class="line" id="g-353"><a class="line-num" data-line="353">353</a> <span class="text">τὸν γηγενῆ τε Κιλικίων οἰκήτορα</span></div>
+<div class="line" id="g-354"><a class="line-num" data-line="354">354</a> <span class="text">ἄντρων ἰδὼν ᾤκτειρα, δάϊον τέρας,</span></div>
+<div class="line" id="g-355"><a class="line-num" data-line="355">355</a> <span class="text">ἑκατογκάρηνον πρὸς βίαν χειρούμενον</span></div>
+<div class="line" id="g-356"><a class="line-num" data-line="356">356</a> <span class="text">Τυφῶνα θοῦρον, πᾶσι δ᾽ ἀντέστη θεοῖς,</span></div>
+<div class="line" id="g-357"><a class="line-num" data-line="357">357</a> <span class="text">σμερδναῖσι γαμφηλαῖσι συρίζων φόνον·</span></div>
+<div class="line" id="g-358"><a class="line-num" data-line="358">358</a> <span class="text">ἐξ ὀμμάτων δ᾽ ἤστραπτε γοργωπὸν σέλας,</span></div>
+<div class="line" id="g-359"><a class="line-num" data-line="359">359</a> <span class="text">ὡς τὴν Διὸς τυραννίδ᾽ ἐκπέρσων βίᾳ·</span></div>
+<div class="line" id="g-360"><a class="line-num" data-line="360">360</a> <span class="text">ἀλλ᾽ ἦλθεν αὐτῷ Ζηνὸς ἄγρυπνον βέλος,</span></div>
+<div class="line" id="g-361"><a class="line-num" data-line="361">361</a> <span class="text">καταιβάτης κεραυνὸς ἐκπνέων φλόγα,</span></div>
+<div class="line" id="g-362"><a class="line-num" data-line="362">362</a> <span class="text">ὃς αὐτὸν ἐξέπληξε τῶν ὑψηγόρων</span></div>
+<div class="line" id="g-363"><a class="line-num" data-line="363">363</a> <span class="text">κομπασμάτων. φρένας γὰρ εἰς αὐτὰς τυπεὶς</span></div>
+<div class="line" id="g-364"><a class="line-num" data-line="364">364</a> <span class="text">ἐφεψαλώθη κἀξεβροντήθη σθένος.</span></div>
+<div class="line" id="g-365"><a class="line-num" data-line="365">365</a> <span class="text">καὶ νῦν ἀχρεῖον καὶ παράορον δέμας</span></div>
+<div class="line" id="g-366"><a class="line-num" data-line="366">366</a> <span class="text"><span class="speaker">Προμηθεύς</span> κεῖται στενωποῦ πλησίον θαλασσίου</span></div>
+<div class="line" id="g-367"><a class="line-num" data-line="367">367</a> <span class="text">ἰπούμενος ῥίζαισιν Αἰτναίαις ὕπο·</span></div>
+<div class="line" id="g-368"><a class="line-num" data-line="368">368</a> <span class="text">κορυφαῖς δ᾽ ἐν ἄκραις ἥμενος μυδροκτυπεῖ</span></div>
+<div class="line" id="g-369"><a class="line-num" data-line="369">369</a> <span class="text">Ἥφαιστος, ἔνθεν ἐκραγήσονταί ποτε</span></div>
+<div class="line" id="g-370"><a class="line-num" data-line="370">370</a> <span class="text">ποταμοὶ πυρὸς δάπτοντες ἀγρίαις γνάθοις</span></div>
+<div class="line" id="g-371"><a class="line-num" data-line="371">371</a> <span class="text">τῆς καλλικάρπου Σικελίας λευρὰς γύας·</span></div>
+<div class="line" id="g-372"><a class="line-num" data-line="372">372</a> <span class="text">τοιόνδε Τυφὼς ἐξαναζέσει χόλον</span></div>
+<div class="line" id="g-373"><a class="line-num" data-line="373">373</a> <span class="text">θερμῆς ἀπλήστου βέλεσι πυρπνόου ζάλης,</span></div>
+<div class="line" id="g-374"><a class="line-num" data-line="374">374</a> <span class="text">καίπερ κεραυνῷ Ζηνὸς ἠνθρακωμένος.</span></div>
+<div class="line" id="g-375"><a class="line-num" data-line="375">375</a> <span class="text">σὺ δ᾽ οὐκ ἄπειρος, οὐδ᾽ ἐμοῦ διδασκάλου</span></div>
+<div class="line" id="g-376"><a class="line-num" data-line="376">376</a> <span class="text">χρήζεις· σεαυτὸν σῶζ&#x27; ὅπως ἐπίστασαι·</span></div>
+<div class="line" id="g-377"><a class="line-num" data-line="377">377</a> <span class="text">ἐγὼ δὲ τὴν παροῦσαν ἀντλήσω τύχην,</span></div>
+<div class="line" id="g-378"><a class="line-num" data-line="378">378</a> <span class="text">ἔςτ&#x27; ἂν Διὸς φρόνημα λωφήσῃ χόλου.</span></div>
+<div class="line" id="g-379"><a class="line-num" data-line="379">379</a> <span class="text"><span class="speaker">Ὠκεανός</span> οὔκουν, Προμηθεῦ, τοῦτο γιγνώσκεις ὅτι</span></div>
+<div class="line" id="g-380"><a class="line-num" data-line="380">380</a> <span class="text">ψυχῆς νοσούσης εἰσὶν ἰατροὶ λόγοι;</span></div>
+<div class="line" id="g-381"><a class="line-num" data-line="381">381</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐάν τις ἐν καιρῷ γε μαλθάσσῃ κέαρ</span></div>
+<div class="line" id="g-382"><a class="line-num" data-line="382">382</a> <span class="text">καὶ μὴ σφυδῶντα θυμὸν ἰσχναίνῃ βίᾳ.</span></div>
+<div class="line" id="g-383"><a class="line-num" data-line="383">383</a> <span class="text"><span class="speaker">Ὠκεανός</span> ἐν τῷ προμηθεῖσθαι δὲ καὶ τολμᾶν τίνα</span></div>
+<div class="line" id="g-384"><a class="line-num" data-line="384">384</a> <span class="text">ὁρᾷς ἐνοῦσαν ζημίαν; δίδασκέ με.</span></div>
+<div class="line" id="g-385"><a class="line-num" data-line="385">385</a> <span class="text"><span class="speaker">Προμηθεύς</span> μόχθον περισσὸν κουφόνούν τ᾽ εὐηθίαν.</span></div>
+<div class="line" id="g-386"><a class="line-num" data-line="386">386</a> <span class="text"><span class="speaker">Ὠκεανός</span> ἔα με τῇδε τῇ νόσῳ νοσεῖν, ἐπεὶ</span></div>
+<div class="line" id="g-387"><a class="line-num" data-line="387">387</a> <span class="text">κέρδιστον εὖ φρονοῦντα μὴ δοκεῖν φρονεῖν.</span></div>
+<div class="line" id="g-388"><a class="line-num" data-line="388">388</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐμὸν δόκει σοι ταμπλάκημ᾽ εἶναι τόδε.</span></div>
+<div class="line" id="g-389"><a class="line-num" data-line="389">389</a> <span class="text"><span class="speaker">Ὠκεανός</span> σαφῶς μ&#x27; ἐς οἶκον σὸς λόγος στέλλει πάλιν.</span></div>
+<div class="line" id="g-390"><a class="line-num" data-line="390">390</a> <span class="text"><span class="speaker">Προμηθεύς</span> μὴ γάρ σε θρῆνος οὑμὸς εἰς ἔχθραν βάλῃ.</span></div>
+<div class="line" id="g-391"><a class="line-num" data-line="391">391</a> <span class="text"><span class="speaker">Ὠκεανός</span> ἦ τῷ νέον θακοῦντι παγκρατεῖς ἕδρας;</span></div>
+<div class="line" id="g-392"><a class="line-num" data-line="392">392</a> <span class="text"><span class="speaker">Προμηθεύς</span> τούτου φυλάσσου μή ποτ&#x27; ἀχθεσθῇ κέαρ.</span></div>
+<div class="line" id="g-393"><a class="line-num" data-line="393">393</a> <span class="text"><span class="speaker">Ὠκεανός</span> ἡ σή, Προμηθεῦ, συμφορὰ διδάσκαλος.</span></div>
+<div class="line" id="g-394"><a class="line-num" data-line="394">394</a> <span class="text"><span class="speaker">Προμηθεύς</span> στέλλου, κομίζου, σῶζε τὸν παρόντα νοῦν.</span></div>
+<div class="line" id="g-395"><a class="line-num" data-line="395">395</a> <span class="text"><span class="speaker">Ὠκεανός</span> ὁρμωμένῳ μοι τόνδ᾽ ἐθώϋξας λόγον.</span></div>
+<div class="line" id="g-396"><a class="line-num" data-line="396">396</a> <span class="text">λευρὸν γὰρ οἶμον αἰθέρος ψαίρει πτεροῖς</span></div>
+<div class="line" id="g-397"><a class="line-num" data-line="397">397</a> <span class="text">τετρασκελὴς οἰωνός· ἄσμενος δέ τἂν</span></div>
+<div class="line" id="g-398"><a class="line-num" data-line="398">398</a> <span class="text">σταθμοῖς ἐν οἰκείοισι κάμψειεν γόνυ.</span></div>
+<div class="line" id="g-399"><a class="line-num" data-line="399">399</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> στένω σε τᾶς οὐλομένας τύχας, Προμηθεῦ,</span></div>
+<div class="line" id="g-400"><a class="line-num" data-line="400">400</a> <span class="text">δακρυσίστακτον ἀπ&#x27; ὄσσων ῥαδινῶν δ᾽ εἰ-</span></div>
+<div class="line" id="g-401"><a class="line-num" data-line="401">401</a> <span class="text">βομένα δέος παρειὰν</span></div>
+<div class="line" id="g-402"><a class="line-num" data-line="402">402</a> <span class="text">νοτίοις ἔτεγξα παγαῖς.</span></div>
+<div class="line" id="g-403"><a class="line-num" data-line="403">403</a> <span class="text">ἀμέγαρτα γὰρ τάδε· Ζεὺς δ᾽</span></div>
+<div class="line" id="g-404"><a class="line-num" data-line="404">404</a> <span class="text">ἰδίοις νόμοις κρατύνων</span></div>
+<div class="line" id="g-405"><a class="line-num" data-line="405">405</a> <span class="text">ὑπερήφανον θεοῖς τοῖς</span></div>
+<div class="line" id="g-406"><a class="line-num" data-line="406">406</a> <span class="text">πάρος ἐνδείκνυσιν αἰχμάν.</span></div>
+<div class="line" id="g-407"><a class="line-num" data-line="407">407</a> <span class="text">πρόπασα δ᾽ ἤδη στονόεν λέλακε χώρα,</span></div>
+<div class="line" id="g-408"><a class="line-num" data-line="408">408</a> <span class="text">μεγαλοσχήμονά τ&#x27; ἀρχαιοπρεπῆ <span class="editorial-note">*</span> δα-</span></div>
+<div class="line" id="g-409"><a class="line-num" data-line="409">409</a> <span class="text">κρυχέει<span class="editorial-note">*</span> στένουσα τὴν σὰν</span></div>
+<div class="line" id="g-410"><a class="line-num" data-line="410">410</a> <span class="text">ξυνομαιμόνων τε τιμάν·</span></div>
+<div class="line" id="g-411"><a class="line-num" data-line="411">411</a> <span class="text">ὁπόσοι τ᾽ ἔποικον ἁγνᾶς</span></div>
+<div class="line" id="g-412"><a class="line-num" data-line="412">412</a> <span class="text">Ἀσίας ἕδος νέμονται,</span></div>
+<div class="line" id="g-413"><a class="line-num" data-line="413">413</a> <span class="text">μεγαλοστόνοισι σοῖς πή-</span></div>
+<div class="line" id="g-414"><a class="line-num" data-line="414">414</a> <span class="text">μασι συγκάμνουσι θνητοί·</span></div>
+<div class="line" id="g-415"><a class="line-num" data-line="415">415</a> <span class="text">Κολχίδος τε γᾶς ἔνοικοι</span></div>
+<div class="line" id="g-416"><a class="line-num" data-line="416">416</a> <span class="text">παρθένοι, μάχαις ἄτρεστοι,</span></div>
+<div class="line" id="g-417"><a class="line-num" data-line="417">417</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> καὶ Σκύθης ὅμιλος, οἳ γᾶς</span></div>
+<div class="line" id="g-418"><a class="line-num" data-line="418">418</a> <span class="text">ἔσχατον τόπον ἀμφὶ Μαι-</span></div>
+<div class="line" id="g-419"><a class="line-num" data-line="419">419</a> <span class="text">ῶτιν ἔχουσι λίμναν,</span></div>
+<div class="line" id="g-420"><a class="line-num" data-line="420">420</a> <span class="text">Σαρματᾶν τ&#x27; ἄρειον ἄνθος,</span></div>
+<div class="line" id="g-421"><a class="line-num" data-line="421">421</a> <span class="text">ὑψίκρημνον οἳ πόλισμα,</span></div>
+<div class="line" id="g-422"><a class="line-num" data-line="422">422</a> <span class="text">Καυκάσου πύλας, νέμονται,</span></div>
+<div class="line" id="g-423"><a class="line-num" data-line="423">423</a> <span class="text">δάϊος στρατός, ὀξυπρώ-</span></div>
+<div class="line" id="g-424"><a class="line-num" data-line="424">424</a> <span class="text">ροισι βρέμων ἐν αἰχμαῖς.</span></div>
+<div class="line" id="g-425"><a class="line-num" data-line="425">425</a> <span class="text">μόνον δὲ πρόσθεν ἐν πόνοις</span></div>
+<div class="line" id="g-426"><a class="line-num" data-line="426">426</a> <span class="text">δαμέντ᾽ ἀδαμαντοδέτοις Τιτᾶνα λύ-</span></div>
+<div class="line" id="g-427"><a class="line-num" data-line="427">427</a> <span class="text">μαις ἐςειδόμαν θεῶν</span></div>
+<div class="line" id="g-428"><a class="line-num" data-line="428">428</a> <span class="text">Ἄτλαντος ὑπέροχον σθένος κραταιόν,</span></div>
+<div class="line" id="g-429"><a class="line-num" data-line="429">429</a> <span class="text">ὃς γᾶν οὐράνιόν τε πόλον</span></div>
+<div class="line" id="g-430"><a class="line-num" data-line="430">430</a> <span class="text">νώτοις ὑποστεγάζει.</span></div>
+<div class="line" id="g-431"><a class="line-num" data-line="431">431</a> <span class="text">βοᾷ δὲ πόντιος κλύδων</span></div>
+<div class="line" id="g-432"><a class="line-num" data-line="432">432</a> <span class="text"><span class="gap">[...]</span></span></div>
+<div class="line" id="g-433"><a class="line-num" data-line="433">433</a> <span class="text">ξυμπίτνων, στένει βυθός,</span></div>
+<div class="line" id="g-434"><a class="line-num" data-line="434">434</a> <span class="text">κελαινὸς Ἄϊδος ὑποβρέμει μυχὸς γᾶς,</span></div>
+<div class="line" id="g-435"><a class="line-num" data-line="435">435</a> <span class="text">παγαί θ᾽ ἁγνορύτων ποταμῶν</span></div>
+<div class="line" id="g-436"><a class="line-num" data-line="436">436</a> <span class="text">στένουσιν ἄλγος οἰκτρόν.</span></div>
+<div class="line" id="g-437"><a class="line-num" data-line="437">437</a> <span class="text"><span class="speaker">Προμηθεύς</span> μή τοι χλιδῇ δοκεῖτε μηδ&#x27; αὐθαδίᾳ</span></div>
+<div class="line" id="g-438"><a class="line-num" data-line="438">438</a> <span class="text">σιγᾶν με· συννοίᾳ δὲ δάπτομαι κέαρ,</span></div>
+<div class="line" id="g-439"><a class="line-num" data-line="439">439</a> <span class="text">ὁρῶν ἐμαυτὸν ὧδε προςσελούμενον.</span></div>
+<div class="line" id="g-440"><a class="line-num" data-line="440">440</a> <span class="text">καίτοι θεοῖσι τοῖς νέοις τούτοις γέρα</span></div>
+<div class="line" id="g-441"><a class="line-num" data-line="441">441</a> <span class="text">τίς ἄλλος ἢ &#x27;γὼ παντελῶς διώρισεν;</span></div>
+<div class="line" id="g-442"><a class="line-num" data-line="442">442</a> <span class="text">ἀλλ᾽ αὐτὰ σιγῶ. καὶ γὰρ εἰδυίαισιν ἂν</span></div>
+<div class="line" id="g-443"><a class="line-num" data-line="443">443</a> <span class="text">ὑμῖν λέγοιμι· τἄν βροτοῖς δὲ πήματα</span></div>
+<div class="line" id="g-444"><a class="line-num" data-line="444">444</a> <span class="text">ἀκούσαθ&#x27;, ὥς σφας νηπίους ὄντας τὸ πρὶν</span></div>
+<div class="line" id="g-445"><a class="line-num" data-line="445">445</a> <span class="text">ἔννους ἔθηκα καὶ φρενῶν ἐπηβόλους.</span></div>
+<div class="line" id="g-446"><a class="line-num" data-line="446">446</a> <span class="text">λέξω δέ, μέμψιν οὔτιν᾽ ἀνθρώποις ἔχων,</span></div>
+<div class="line" id="g-447"><a class="line-num" data-line="447">447</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἀλλ᾽ ὧν δέδωκ&#x27; εὔνοιαν ἐξηγούμενος·</span></div>
+<div class="line" id="g-448"><a class="line-num" data-line="448">448</a> <span class="text">οἱ πρῶτα μὲν βλέποντες ἔβλεπον μάτην,</span></div>
+<div class="line" id="g-449"><a class="line-num" data-line="449">449</a> <span class="text">κλύοντες οὐκ ἤκουον, ἀλλ᾽ ὀνειράτων</span></div>
+<div class="line" id="g-450"><a class="line-num" data-line="450">450</a> <span class="text">ἀλίγκιοι μορφαῖσι τὸν μακρὸν χρόνον</span></div>
+<div class="line" id="g-451"><a class="line-num" data-line="451">451</a> <span class="text">ἔφυρον εἰκῇ πάντα, κοὔτε πλινθυφεῖς</span></div>
+<div class="line" id="g-452"><a class="line-num" data-line="452">452</a> <span class="text">δόμους προςείλους ἦσαν, οὐ ξυλουργίαν·</span></div>
+<div class="line" id="g-453"><a class="line-num" data-line="453">453</a> <span class="text">κατώρυχες δ᾽ ἔναιον ὥςτ᾽ ἀήσυροι</span></div>
+<div class="line" id="g-454"><a class="line-num" data-line="454">454</a> <span class="text">μύρμηκες ἄντρων ἐν μυχοῖς ἀνηλίοις.</span></div>
+<div class="line" id="g-455"><a class="line-num" data-line="455">455</a> <span class="text">ἦν δ᾽ οὐδὲν αὐτοῖς οὔτε χείματος τέκμαρ</span></div>
+<div class="line" id="g-456"><a class="line-num" data-line="456">456</a> <span class="text">οὔτ᾽ ἀνθεμώδους ἦρος οὔτε καρπίμου</span></div>
+<div class="line" id="g-457"><a class="line-num" data-line="457">457</a> <span class="text">θέρους βέβαιον, ἀλλ᾽ ἄτερ γνώμης τὸ πᾶν</span></div>
+<div class="line" id="g-458"><a class="line-num" data-line="458">458</a> <span class="text">ἔπρασσον, ἔςτε δή σφιν ἀντολὰς ἐγὼ</span></div>
+<div class="line" id="g-459"><a class="line-num" data-line="459">459</a> <span class="text">ἄστρων ἔδειξα τάς τε δυςκρίτους δύσεις.</span></div>
+<div class="line" id="g-460"><a class="line-num" data-line="460">460</a> <span class="text">καὶ μὴν ἀριθμὸν ἔξοχον σοφισμάτων</span></div>
+<div class="line" id="g-461"><a class="line-num" data-line="461">461</a> <span class="text">ἐξεῦρον αὐτοῖς, γραμμάτων τε συνθέσεις,</span></div>
+<div class="line" id="g-462"><a class="line-num" data-line="462">462</a> <span class="text">μνήμην ἁπάντων μουσομήτορ&#x27; ἐργάνην.</span></div>
+<div class="line" id="g-463"><a class="line-num" data-line="463">463</a> <span class="text">κἄζευξα πρῶτος ἐν ζυγοῖσι κνώδαλα</span></div>
+<div class="line" id="g-464"><a class="line-num" data-line="464">464</a> <span class="text">ζεύγλαισι δουλεύοντα σώμασίν θ&#x27;, ὅπως</span></div>
+<div class="line" id="g-465"><a class="line-num" data-line="465">465</a> <span class="text">θνητοῖς μεγίστων διάδοχοι μοχθημάτων</span></div>
+<div class="line" id="g-466"><a class="line-num" data-line="466">466</a> <span class="text">γένοινθ&#x27;, ὑφ᾽ ἅρμα τ&#x27; ἤγαγον φιληνίους</span></div>
+<div class="line" id="g-467"><a class="line-num" data-line="467">467</a> <span class="text">ἵππους, ἄγαλμα τῆς ὑπερπλούτου χλιδῆς.</span></div>
+<div class="line" id="g-468"><a class="line-num" data-line="468">468</a> <span class="text">θαλασσόπλαγκτα δ᾽ οὔτις ἄλλος ἀντ᾽ ἐμοῦ</span></div>
+<div class="line" id="g-469"><a class="line-num" data-line="469">469</a> <span class="text">λινόπτερ&#x27; εὗρε ναυτίλων ὀχήματα.</span></div>
+<div class="line" id="g-470"><a class="line-num" data-line="470">470</a> <span class="text">τοιαῦτα μηχανήματ᾽ ἐξευρὼν τάλας</span></div>
+<div class="line" id="g-471"><a class="line-num" data-line="471">471</a> <span class="text">βροτοῖσιν, αὐτὸς οὐκ ἔχω σόφισμ᾽ ὅτῳ</span></div>
+<div class="line" id="g-472"><a class="line-num" data-line="472">472</a> <span class="text">τῆς νῦν παρούσης πημονῆς ἀπαλλαγῶ.</span></div>
+<div class="line" id="g-473"><a class="line-num" data-line="473">473</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> πέπονθας αἰκὲς πῆμ᾽, ἀποσφαλεὶς φρενῶν</span></div>
+<div class="line" id="g-474"><a class="line-num" data-line="474">474</a> <span class="text">πλανᾷ, κακὸς δ&#x27; ἰατρὸς ὥς τις ἐς νόσον πεσὼν</span></div>
+<div class="line" id="g-475"><a class="line-num" data-line="475">475</a> <span class="text"><span class="editorial-note">* κακοῖς*</span> ἀθυμεῖς καὶ σεαυτὸν οὐκ ἔχεις</span></div>
+<div class="line" id="g-476"><a class="line-num" data-line="476">476</a> <span class="text">εὑρεῖν ὁποίοις φαρμάκοις ἰάσιμος.</span></div>
+<div class="line" id="g-477"><a class="line-num" data-line="477">477</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὰ λοιπά μου κλύουσα θαυμάσει πλέον,</span></div>
+<div class="line" id="g-478"><a class="line-num" data-line="478">478</a> <span class="text">οἷας τέχνας τε καὶ πόρους ἐμησάμην.</span></div>
+<div class="line" id="g-479"><a class="line-num" data-line="479">479</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὸ μὲν μέγιστον, εἴ τις ἐς νόσον πέσοι,</span></div>
+<div class="line" id="g-480"><a class="line-num" data-line="480">480</a> <span class="text">οὐκ ἦν ἀλέξημ᾽ οὐδὲν οὔτε βρώσιμον,</span></div>
+<div class="line" id="g-481"><a class="line-num" data-line="481">481</a> <span class="text">οὐ χριστόν, οὐδὲ πιστόν, ἀλλὰ φαρμάκων</span></div>
+<div class="line" id="g-482"><a class="line-num" data-line="482">482</a> <span class="text">χρείᾳ κατεσκέλλοντο, πρίν γ&#x27; ἐγώ σφισιν</span></div>
+<div class="line" id="g-483"><a class="line-num" data-line="483">483</a> <span class="text">ἔδειξα κράσεις ἠπίων ἀκεσμάτων,</span></div>
+<div class="line" id="g-484"><a class="line-num" data-line="484">484</a> <span class="text">αἷς τὰς ἁπάσας ἐξαμύνονται νόσους.</span></div>
+<div class="line" id="g-485"><a class="line-num" data-line="485">485</a> <span class="text">τρόπους δὲ πολλοὺς μαντικῆς ἐστοίχισα,</span></div>
+<div class="line" id="g-486"><a class="line-num" data-line="486">486</a> <span class="text">κἄκρινα πρῶτος ἐξ ὀνειράτων ἃ χρὴ</span></div>
+<div class="line" id="g-487"><a class="line-num" data-line="487">487</a> <span class="text">ὕπαρ γενέσθαι, κληδόνας τε δυςκρίτους</span></div>
+<div class="line" id="g-488"><a class="line-num" data-line="488">488</a> <span class="text">ἐγνώρισ᾽ αὐτοῖς· ἐνοδίους τε συμβόλους</span></div>
+<div class="line" id="g-489"><a class="line-num" data-line="489">489</a> <span class="text">γαμψωνύχων τε πτῆσιν οἰωνῶν σκεθρῶς</span></div>
+<div class="line" id="g-490"><a class="line-num" data-line="490">490</a> <span class="text">διώρισ᾽, οἵτινές τε δεξιοὶ φύσιν,</span></div>
+<div class="line" id="g-491"><a class="line-num" data-line="491">491</a> <span class="text">εὐωνύμους τε, καὶ δίαιταν ἥντινα</span></div>
+<div class="line" id="g-492"><a class="line-num" data-line="492">492</a> <span class="text">ἔχουσ᾽ ἕκαστοι, καὶ πρὸς ἀλλήλους τίνες</span></div>
+<div class="line" id="g-493"><a class="line-num" data-line="493">493</a> <span class="text">ἔχθραι τε καὶ στέργηθρα καὶ συνεδρίαι·</span></div>
+<div class="line" id="g-494"><a class="line-num" data-line="494">494</a> <span class="text">σπλάγχνων τε λειότητα, καὶ χροιὰν τίνα</span></div>
+<div class="line" id="g-495"><a class="line-num" data-line="495">495</a> <span class="text">ἔχοντ᾽ ἂν εἴη δαίμοσιν πρὸς ἡδονήν,</span></div>
+<div class="line" id="g-496"><a class="line-num" data-line="496">496</a> <span class="text">χολῆς λοβοῦ τε ποικίλην εὐμορφίαν.</span></div>
+<div class="line" id="g-497"><a class="line-num" data-line="497">497</a> <span class="text"><span class="gap">[...]</span></span></div>
+<div class="line" id="g-498"><a class="line-num" data-line="498">498</a> <span class="text">κνίσῃ τε κῶλα συγκαλυπτά· καὶ μακρὰν</span></div>
+<div class="line" id="g-499"><a class="line-num" data-line="499">499</a> <span class="text">ὀσφὺν πυρώσας δυςτέκμαρτον εἰς τέχνην</span></div>
+<div class="line" id="g-500"><a class="line-num" data-line="500">500</a> <span class="text">ὥδωσα θνητούς· καὶ φλογωπὰ σήματα</span></div>
+<div class="line" id="g-501"><a class="line-num" data-line="501">501</a> <span class="text">ἐξωμμάτωσα, πρόσθεν ὄντ᾽ ἐπάργεμα.</span></div>
+<div class="line" id="g-502"><a class="line-num" data-line="502">502</a> <span class="text">τοιαῦτα μὲν δὴ ταῦτ᾽· ἔνερθε δὲ χθονὸς</span></div>
+<div class="line" id="g-503"><a class="line-num" data-line="503">503</a> <span class="text">κεκρυμμέν᾽ ἀνθρώποισιν ὠφελήματα,</span></div>
+<div class="line" id="g-504"><a class="line-num" data-line="504">504</a> <span class="text">χαλκόν, σίδηρον, ἄργυρον, χρυσόν τε τίς</span></div>
+<div class="line" id="g-505"><a class="line-num" data-line="505">505</a> <span class="text">φήσειεν ἂν πάροιθεν ἐξευρεῖν ἐμοῦ;</span></div>
+<div class="line" id="g-506"><a class="line-num" data-line="506">506</a> <span class="text">οὐδείς, σάφ᾽ οἶδα, μὴ μάτην φλῦσαι θέλων.</span></div>
+<div class="line" id="g-507"><a class="line-num" data-line="507">507</a> <span class="text">βραχεῖ δὲ μύθῳ πάντα συλλήβδην μάθε,</span></div>
+<div class="line" id="g-508"><a class="line-num" data-line="508">508</a> <span class="text">πᾶσαι τέχναι βροτοῖσιν ἐκ Προμηθέως.</span></div>
+<div class="line" id="g-509"><a class="line-num" data-line="509">509</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μὴ νῦν βροτοὺς μὲν ὠφέλει καιροῦ πέρα,</span></div>
+<div class="line" id="g-510"><a class="line-num" data-line="510">510</a> <span class="text">σαυτοῦ δ᾽ ἀκήδει δυςτυχοῦντος· ὡς ἐγὼ</span></div>
+<div class="line" id="g-511"><a class="line-num" data-line="511">511</a> <span class="text">εὔελπίς εἰμι τῶνδέ σ᾽ ἐκ δεσμῶν ἔτι</span></div>
+<div class="line" id="g-512"><a class="line-num" data-line="512">512</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> λυθέντα μηδὲν μεῖον ἰσχύσειν Διός.</span></div>
+<div class="line" id="g-513"><a class="line-num" data-line="513">513</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὐ ταῦτα ταύτῃ μοῖρά πω τελεςφόρος</span></div>
+<div class="line" id="g-514"><a class="line-num" data-line="514">514</a> <span class="text">κρᾶναι πέπρωται, μυρίαις δὲ πημοναῖς</span></div>
+<div class="line" id="g-515"><a class="line-num" data-line="515">515</a> <span class="text">δύαις τε καμφθεὶς ὧδε δεσμὰ φυγγάνω.</span></div>
+<div class="line" id="g-516"><a class="line-num" data-line="516">516</a> <span class="text">τέχνη δ᾽ ἀνάγκης ἀσθενεστέρα μακρῷ.</span></div>
+<div class="line" id="g-517"><a class="line-num" data-line="517">517</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τίς οὖν ἀνάγκης ἐστὶν οἰακοστρόφος;</span></div>
+<div class="line" id="g-518"><a class="line-num" data-line="518">518</a> <span class="text"><span class="speaker">Προμηθεύς</span> Μοῖραι τρίμορφοι μνήμονές τ&#x27; Ἐρινύες.</span></div>
+<div class="line" id="g-519"><a class="line-num" data-line="519">519</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τούτων ἄρα Ζεύς ἐστιν ἀσθενέστερος;</span></div>
+<div class="line" id="g-520"><a class="line-num" data-line="520">520</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὔκουν ἂν ἐκφύγοι γε τὴν πεπρωμένην.</span></div>
+<div class="line" id="g-521"><a class="line-num" data-line="521">521</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τί γὰр πέπρωται Ζηνὶ πλὴν ἀεὶ κρατεῖν;</span></div>
+<div class="line" id="g-522"><a class="line-num" data-line="522">522</a> <span class="text"><span class="speaker">Προμηθεύς</span> τοῦτ᾽ οὐκ ἂν ἐκπύθοιο, μηδὲ λιπάρει.</span></div>
+<div class="line" id="g-523"><a class="line-num" data-line="523">523</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἦ πού τι σεμνόν ἐστιν ὃ ξυναμπέχεις.</span></div>
+<div class="line" id="g-524"><a class="line-num" data-line="524">524</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἄλλου λόγου μέμνησθε, τόνδε δ᾽ οὐδαμῶς</span></div>
+<div class="line" id="g-525"><a class="line-num" data-line="525">525</a> <span class="text">καιρὸς γεγωνεῖν, ἀλλὰ συγκαλυπτέος</span></div>
+<div class="line" id="g-526"><a class="line-num" data-line="526">526</a> <span class="text">ὅσον μάλιστα· τόνδε γὰρ σώζων ἐγὼ</span></div>
+<div class="line" id="g-527"><a class="line-num" data-line="527">527</a> <span class="text">δεσμοὺς ἀεικεῖς καὶ δύας ἐκφυγγάνω.</span></div>
+<div class="line" id="g-528"><a class="line-num" data-line="528">528</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μηδάμ᾽ ὁ πάντα νέμων</span></div>
+<div class="line" id="g-529"><a class="line-num" data-line="529">529</a> <span class="text">θεῖτ᾽ ἐμᾷ γνώμᾳ κράτος ἀντίπαλον Ζεύς,</span></div>
+<div class="line" id="g-530"><a class="line-num" data-line="530">530</a> <span class="text">μηδ&#x27; ἐλινύσαιμι θεοὺς ὁσίαις</span></div>
+<div class="line" id="g-531"><a class="line-num" data-line="531">531</a> <span class="text">θοίναις ποτινισσομένα</span></div>
+<div class="line" id="g-532"><a class="line-num" data-line="532">532</a> <span class="text">βουφόνοις παρ&#x27; Ὠκεανοῦ πατρὸς ἄσβεστον πόρον,</span></div>
+<div class="line" id="g-533"><a class="line-num" data-line="533">533</a> <span class="text">μηδ&#x27; ἀλίτοιμι λόγοις·</span></div>
+<div class="line" id="g-534"><a class="line-num" data-line="534">534</a> <span class="text">ἀλλά μοι τοῦτ&#x27; ἐμμένοι</span></div>
+<div class="line" id="g-535"><a class="line-num" data-line="535">535</a> <span class="text">καὶ μήποτ&#x27; ἐκτακείη.</span></div>
+<div class="line" id="g-536"><a class="line-num" data-line="536">536</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἁδύ τι θαρσαλέαις</span></div>
+<div class="line" id="g-537"><a class="line-num" data-line="537">537</a> <span class="text">τὸν μακρὸν τείνειν βίον ἐλπίσι, φαιναῖς</span></div>
+<div class="line" id="g-538"><a class="line-num" data-line="538">538</a> <span class="text">θυμὸν ἀλδαίνουσαν ἐν εὐφροσύναις.</span></div>
+<div class="line" id="g-539"><a class="line-num" data-line="539">539</a> <span class="text">φρίσσω δέ σε δερκομένα</span></div>
+<div class="line" id="g-540"><a class="line-num" data-line="540">540</a> <span class="text">μυρίοις μόχθοις διακναιόμενον.</span></div>
+<div class="line" id="g-541"><a class="line-num" data-line="541">541</a> <span class="text">Ζῆνα γὰρ οὐ τρομέων</span></div>
+<div class="line" id="g-542"><a class="line-num" data-line="542">542</a> <span class="text">ἰδίᾳ γνώμᾳ σέβει</span></div>
+<div class="line" id="g-543"><a class="line-num" data-line="543">543</a> <span class="text">θνητοὺς ἄγαν, Προμηθεῦ.</span></div>
+<div class="line" id="g-544"><a class="line-num" data-line="544">544</a> <span class="text">φέρ&#x27; ὅπως ἄχαρις χάρις· ὦ φίλος, εἰπέ, ποῦ τις ἀλκά;</span></div>
+<div class="line" id="g-545"><a class="line-num" data-line="545">545</a> <span class="text">τίς ἐφαμερίων ἄρηξις; οὐδ᾽ ἐδέρκης</span></div>
+<div class="line" id="g-546"><a class="line-num" data-line="546">546</a> <span class="text">ὀλιγοδρανίαν ἄκικυν,</span></div>
+<div class="line" id="g-547"><a class="line-num" data-line="547">547</a> <span class="text">ἰσόνειρον, ᾧ τὸ φωτῶν</span></div>
+<div class="line" id="g-548"><a class="line-num" data-line="548">548</a> <span class="text">ἀλαὸν <span class="editorial-note">* δέδεται*</span> γένος ἐμπεποδισμένον; οὔπως</span></div>
+<div class="line" id="g-549"><a class="line-num" data-line="549">549</a> <span class="text">τὰν Διὸς ἁρμονίαν</span></div>
+<div class="line" id="g-550"><a class="line-num" data-line="550">550</a> <span class="text">θνατῶν παρεξίασι βουλαί.</span></div>
+<div class="line" id="g-551"><a class="line-num" data-line="551">551</a> <span class="text">ἔμαθον τάδε σὰς προςιδοῦσ᾽ ὀλοὰς τύχας, Προμηθεῦ.</span></div>
+<div class="line" id="g-552"><a class="line-num" data-line="552">552</a> <span class="text">τὸ διαμφίδιον δέ μοι μέλος προςέπτα</span></div>
+<div class="line" id="g-553"><a class="line-num" data-line="553">553</a> <span class="text">τόδ&#x27;, ἐκεῖνό θ᾽, ὅτ᾽ ἀμφὶ λουτρὰ</span></div>
+<div class="line" id="g-554"><a class="line-num" data-line="554">554</a> <span class="text">καὶ λέχος σὸν ὑμεναίουν</span></div>
+<div class="line" id="g-555"><a class="line-num" data-line="555">555</a> <span class="text">ἰότατι γάμων, ὅτε τὰν ὁμοπάτριον ἕδνοις</span></div>
+<div class="line" id="g-556"><a class="line-num" data-line="556">556</a> <span class="text">ἄγαγες Ἡσιόναν</span></div>
+<div class="line" id="g-557"><a class="line-num" data-line="557">557</a> <span class="text">πιθὼν δάμαρτα κοινόλεκτρον.</span></div>
+<div class="line" id="g-558"><a class="line-num" data-line="558">558</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> τίς γῆ; τί γένος; τίνα φῶ λεύσσειν</span></div>
+<div class="line" id="g-559"><a class="line-num" data-line="559">559</a> <span class="text">τόνδε χαλινοῖς ἐν πετρίνοισιν</span></div>
+<div class="line" id="g-560"><a class="line-num" data-line="560">560</a> <span class="text">χειμαζόμενον; τίνος ἀμπλακίας</span></div>
+<div class="line" id="g-561"><a class="line-num" data-line="561">561</a> <span class="text">ποινὰς ὀλέκει; σήμηνον ὅπῃ</span></div>
+<div class="line" id="g-562"><a class="line-num" data-line="562">562</a> <span class="text">γῆς ἡ μογερὰ πεπλάνημαι.</span></div>
+<div class="line" id="g-563"><a class="line-num" data-line="563">563</a> <span class="text">ἔα ἔα, να ἔα·</span></div>
+<div class="line" id="g-564"><a class="line-num" data-line="564">564</a> <span class="text">χρίει τις αὖ με τὰν τάλαιναν οἶστρος,</span></div>
+<div class="line" id="g-565"><a class="line-num" data-line="565">565</a> <span class="text">εἴδωλον Ἄργου γηγενοῦς, ἄλευε δᾶ,</span></div>
+<div class="line" id="g-566"><a class="line-num" data-line="566">566</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> τὸν μυριωπὸν εἰςορῶσα βούταν.</span></div>
+<div class="line" id="g-567"><a class="line-num" data-line="567">567</a> <span class="text">ὃ δὲ πορεύεται δόλιον ὄμμ᾽ ἔχων,</span></div>
+<div class="line" id="g-568"><a class="line-num" data-line="568">568</a> <span class="text">ὃν οὐδὲ κατθανόντα γαῖα κεύθει.</span></div>
+<div class="line" id="g-569"><a class="line-num" data-line="569">569</a> <span class="text">ἀλλά με τὰν τάλαιναν</span></div>
+<div class="line" id="g-570"><a class="line-num" data-line="570">570</a> <span class="text">ἐξ ἐνέρων περῶν κυναγεῖ, πλανᾷ</span></div>
+<div class="line" id="g-571"><a class="line-num" data-line="571">571</a> <span class="text">τε νῆστιν ἀνὰ τὴν παραλίαν ψάμμον.</span></div>
+<div class="line" id="g-572"><a class="line-num" data-line="572">572</a> <span class="text">ὑπὸ δὲ κηρόπλαστος ὀτοβεῖ δόναξ ἀχέτας</span></div>
+<div class="line" id="g-573"><a class="line-num" data-line="573">573</a> <span class="text">ὑπνοδόταν νόμον.</span></div>
+<div class="line" id="g-574"><a class="line-num" data-line="574">574</a> <span class="text">ἰὼ ἰὼ πόποι, ποῖ μ᾽ ἄγουσιν <span class="gap">[...]</span></span></div>
+<div class="line" id="g-575"><a class="line-num" data-line="575">575</a> <span class="text">τηλέπλανοι πλάναι;</span></div>
+<div class="line" id="g-576"><a class="line-num" data-line="576">576</a> <span class="text">τί ποτέ μ&#x27;, ὦ Κρόνιε παῖ, τί ποτε ταῖςδ&#x27;</span></div>
+<div class="line" id="g-577"><a class="line-num" data-line="577">577</a> <span class="text">ἐνέζευξας εὑρὼν ἁμαρτοῦσαν ἐν</span></div>
+<div class="line" id="g-578"><a class="line-num" data-line="578">578</a> <span class="text">πημοσύναις; ἔ ἔ.</span></div>
+<div class="line" id="g-579"><a class="line-num" data-line="579">579</a> <span class="text">οἰστρηλάτῳ δὲ δείματι δειλαίαν</span></div>
+<div class="line" id="g-580"><a class="line-num" data-line="580">580</a> <span class="text">παράκοπον ὧδε τείρεις;</span></div>
+<div class="line" id="g-581"><a class="line-num" data-line="581">581</a> <span class="text">πυρί με φλέξον, ἢ χθονὶ κάλυψον, ἢ ποντίοις</span></div>
+<div class="line" id="g-582"><a class="line-num" data-line="582">582</a> <span class="text">δάκεσι δὸς βοράν,</span></div>
+<div class="line" id="g-583"><a class="line-num" data-line="583">583</a> <span class="text">μηδέ μοι φθονήσῃς</span></div>
+<div class="line" id="g-584"><a class="line-num" data-line="584">584</a> <span class="text">εὐγμάτων, ἄναξ.</span></div>
+<div class="line" id="g-585"><a class="line-num" data-line="585">585</a> <span class="text">ἄδην με πολύπλανοι πλάναι</span></div>
+<div class="line" id="g-586"><a class="line-num" data-line="586">586</a> <span class="text">γεγυμνάκασιν, οὐδ᾽ ἔχω μαθεῖν ὅπῃ</span></div>
+<div class="line" id="g-587"><a class="line-num" data-line="587">587</a> <span class="text">πημονὰς ἀλύξω.</span></div>
+<div class="line" id="g-588"><a class="line-num" data-line="588">588</a> <span class="text">κλύεις φθέγμα τᾶς βουκέρω παρθένου;</span></div>
+<div class="line" id="g-589"><a class="line-num" data-line="589">589</a> <span class="text"><span class="speaker">Προμηθεύς</span> πῶς δ᾽ οὐ κλύω τῆς οἰστροδινήτου κόρης</span></div>
+<div class="line" id="g-590"><a class="line-num" data-line="590">590</a> <span class="text">τῆς Ἰναχείας; ἣ Διὸς θάλπει κέαρ</span></div>
+<div class="line" id="g-591"><a class="line-num" data-line="591">591</a> <span class="text">ἔρωτι, καὶ νῦν τοὺς ὑπερμήκεις δρόμους</span></div>
+<div class="line" id="g-592"><a class="line-num" data-line="592">592</a> <span class="text">Ἥρᾳ στυγητὸς πρὸς βίαν γυμνάζεται.</span></div>
+<div class="line" id="g-593"><a class="line-num" data-line="593">593</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> πόθεν ἐμοῦ σὺ πατρὸς ὄνομ᾽ ἀπύεις; εἰπέ μοι</span></div>
+<div class="line" id="g-594"><a class="line-num" data-line="594">594</a> <span class="text">τὰ μογερᾷ, τίς ὤν,</span></div>
+<div class="line" id="g-595"><a class="line-num" data-line="595">595</a> <span class="text">τίς ἄρα μ᾽, ὦ τάλας, τὰν ταλαίπωρον ὧδ&#x27;</span></div>
+<div class="line" id="g-596"><a class="line-num" data-line="596">596</a> <span class="text">ἔτυμα προςθροεῖς·</span></div>
+<div class="line" id="g-597"><a class="line-num" data-line="597">597</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> θεόσυτόν τε νόσον ὠνόμασας, ἃ</span></div>
+<div class="line" id="g-598"><a class="line-num" data-line="598">598</a> <span class="text">μαραίνει με χρίουσα κέντροις  <span class="gap">[...]</span></span></div>
+<div class="line" id="g-599"><a class="line-num" data-line="599">599</a> <span class="text">φοιταλέοις; ἔ ἔ.</span></div>
+<div class="line" id="g-600"><a class="line-num" data-line="600">600</a> <span class="text">σκιρτημάτων δὲ νήστισιν αἰκίαις</span></div>
+<div class="line" id="g-601"><a class="line-num" data-line="601">601</a> <span class="text">λαβρόσυτος ἦλθον, Ἥρας</span></div>
+<div class="line" id="g-602"><a class="line-num" data-line="602">602</a> <span class="text">ἐπικότοισι μήδεσι δαμεῖσα. δυςδαιμόνων</span></div>
+<div class="line" id="g-603"><a class="line-num" data-line="603">603</a> <span class="text">δὲ τίνες, οἵ, ἔ ἔ,</span></div>
+<div class="line" id="g-604"><a class="line-num" data-line="604">604</a> <span class="text">οἷ᾽ ἐγὼ μογοῦσιν;</span></div>
+<div class="line" id="g-605"><a class="line-num" data-line="605">605</a> <span class="text">ἀλλά μοι τορῶς</span></div>
+<div class="line" id="g-606"><a class="line-num" data-line="606">606</a> <span class="text">τέκμηρον ὅ τι μ&#x27; ἐπαμμένει</span></div>
+<div class="line" id="g-607"><a class="line-num" data-line="607">607</a> <span class="text">παθεῖν, τί μῆχαρ, ἢ τί φάρμακον νόσου</span></div>
+<div class="line" id="g-608"><a class="line-num" data-line="608">608</a> <span class="text">δεῖξον, εἴπερ οἶσθα·</span></div>
+<div class="line" id="g-609"><a class="line-num" data-line="609">609</a> <span class="text">θρόει, φράζε τᾷ δυςπλάνῳ παρθένῳ.</span></div>
+<div class="line" id="g-610"><a class="line-num" data-line="610">610</a> <span class="text"><span class="speaker">Προμηθεύς</span> λέξω τορῶς σοι πᾶν ὅπερ χρήζεις μαθεῖν,</span></div>
+<div class="line" id="g-611"><a class="line-num" data-line="611">611</a> <span class="text">οὐκ ἐμπλέκων αἰνίγματ&#x27;, ἀλλ᾽ ἁπλῷ λόγῳ,</span></div>
+<div class="line" id="g-612"><a class="line-num" data-line="612">612</a> <span class="text">ὥςπερ δίκαιον πρὸς φίλους οἴγειν στόμα.</span></div>
+<div class="line" id="g-613"><a class="line-num" data-line="613">613</a> <span class="text">πυρὸς βροτοῖς δοτῆρ᾽ ὁρᾷς Προμηθέα.</span></div>
+<div class="line" id="g-614"><a class="line-num" data-line="614">614</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ὦ κοινὸν ὠφέλημα θνητοῖσιν φανείς,</span></div>
+<div class="line" id="g-615"><a class="line-num" data-line="615">615</a> <span class="text">τλῆμον Προμηθεῦ, τοῦ δίκην πάσχεις τάδε;</span></div>
+<div class="line" id="g-616"><a class="line-num" data-line="616">616</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἁρμοῖ πέπαυμαι τοὺς ἐμοὺς θρηνῶν πόνους.</span></div>
+<div class="line" id="g-617"><a class="line-num" data-line="617">617</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> οὔκουν πόροις ἂν τήνδε δωρεὰν ἐμοί;</span></div>
+<div class="line" id="g-618"><a class="line-num" data-line="618">618</a> <span class="text"><span class="speaker">Προμηθεύς</span> λέγ&#x27; ἥντιν&#x27; αἰτεῖ· πᾶν γὰρ ἂν πύθοιό μου.</span></div>
+<div class="line" id="g-619"><a class="line-num" data-line="619">619</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> σήμηνον ὅςτις ἐν φάραγγί σ᾽ ὤχμασεν.</span></div>
+<div class="line" id="g-620"><a class="line-num" data-line="620">620</a> <span class="text"><span class="speaker">Προμηθεύς</span> βούλευμα μὲν τὸ Δῖον, Ἡφαίστου δὲ χείρ.</span></div>
+<div class="line" id="g-621"><a class="line-num" data-line="621">621</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ποινὰς δὲ ποίων ἀμπλακημάτων τίνεις;</span></div>
+<div class="line" id="g-622"><a class="line-num" data-line="622">622</a> <span class="text"><span class="speaker">Προμηθεύς</span> τοσοῦτον ἀρκεῖ σοι σαφηνίσαι μόνον.</span></div>
+<div class="line" id="g-623"><a class="line-num" data-line="623">623</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> καὶ πρός γε τούτοις τέρμα τῆς ἐμῆς πλάνης</span></div>
+<div class="line" id="g-624"><a class="line-num" data-line="624">624</a> <span class="text">δεῖξον τίς ἔσται τῇ ταλαιπώρῳ χρόνος.</span></div>
+<div class="line" id="g-625"><a class="line-num" data-line="625">625</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὸ μὴ μαθεῖν σοι κρεῖσσον ἢ μαθεῖν τάδε.</span></div>
+<div class="line" id="g-626"><a class="line-num" data-line="626">626</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> μήτοι με κρύψῃς τοῦθ᾽ ὅπερ μέλλω παθεῖν.</span></div>
+<div class="line" id="g-627"><a class="line-num" data-line="627">627</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἀλλ᾽ οὐ μεγαίρω τοῦδέ σοι δωρήματος.</span></div>
+<div class="line" id="g-628"><a class="line-num" data-line="628">628</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> τί δῆτα μέλλεις μὴ οὐ γεγωνίσκειν τὸ πᾶν;</span></div>
+<div class="line" id="g-629"><a class="line-num" data-line="629">629</a> <span class="text"><span class="speaker">Προμηθεύς</span> φθόνος μὲν οὐδείς, σὰς δ᾽ ὀκνῶ θράξαι φρένας.</span></div>
+<div class="line" id="g-630"><a class="line-num" data-line="630">630</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> μή μου προκήδου μᾶσσον ἢ ἐμοὶ γλυκύ.</span></div>
+<div class="line" id="g-631"><a class="line-num" data-line="631">631</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐπεὶ προθυμεῖ, χρὴ λέγειν· ἄκουε δή.</span></div>
+<div class="line" id="g-632"><a class="line-num" data-line="632">632</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> μήπω γε· μοῖραν δ᾽ ἡδονῆς κἀμοὶ πόρε.</span></div>
+<div class="line" id="g-633"><a class="line-num" data-line="633">633</a> <span class="text">τὴν τῆσδε πρῶτον ἱστορήσωμεν νόσον,</span></div>
+<div class="line" id="g-634"><a class="line-num" data-line="634">634</a> <span class="text">αὐτῆς λεγούσης τὰς πολυφθόρους τύχας·</span></div>
+<div class="line" id="g-635"><a class="line-num" data-line="635">635</a> <span class="text">τὰ λοιπὰ δ᾽ ἄθλων σοῦ διδαχθήτω πάρα.</span></div>
+<div class="line" id="g-636"><a class="line-num" data-line="636">636</a> <span class="text"><span class="speaker">Προμηθεύς</span> σὸν ἔργον, Ἰοῖ, ταῖςδ᾽ ὑπουργῆσαι χάριν,</span></div>
+<div class="line" id="g-637"><a class="line-num" data-line="637">637</a> <span class="text">ἄλλως τε πάντως καὶ κασιγνήταις πατρός.</span></div>
+<div class="line" id="g-638"><a class="line-num" data-line="638">638</a> <span class="text">ὡς τἀποκλαῦσαι κἀποδύρασθαι τύχας</span></div>
+<div class="line" id="g-639"><a class="line-num" data-line="639">639</a> <span class="text">ἐνταῦθ᾽, ὅπῃ μέλλει τις οἴσεσθαι δάκρυ</span></div>
+<div class="line" id="g-640"><a class="line-num" data-line="640">640</a> <span class="text">πρὸς τῶν κλυόντων, ἀξίαν τριβὴν ἔχει.</span></div>
+<div class="line" id="g-641"><a class="line-num" data-line="641">641</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> οὐκ οἶδ&#x27; ὅπως ὑμῖν ἀπιστῆσαί με χρή·</span></div>
+<div class="line" id="g-642"><a class="line-num" data-line="642">642</a> <span class="text">σαφεῖ δὲ μύθῳ πᾶν ὅπερ προςχρήζετε</span></div>
+<div class="line" id="g-643"><a class="line-num" data-line="643">643</a> <span class="text">πεύσεσθε· καίτοι καὶ λέγουσ᾽ αἰσχύνομαι</span></div>
+<div class="line" id="g-644"><a class="line-num" data-line="644">644</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> θεόσσυτον χειμῶνα καὶ διαφθορὰν</span></div>
+<div class="line" id="g-645"><a class="line-num" data-line="645">645</a> <span class="text">μορφῆς, ὅθεν μοι σχετλίᾳ προςέπτατο·</span></div>
+<div class="line" id="g-646"><a class="line-num" data-line="646">646</a> <span class="text">ἀεὶ γὰρ ὄψεις ἔννυχοι πωλεύμεναι</span></div>
+<div class="line" id="g-647"><a class="line-num" data-line="647">647</a> <span class="text">ἐς παρθενῶνας τοὺς ἐμοὺς παρηγόρουν</span></div>
+<div class="line" id="g-648"><a class="line-num" data-line="648">648</a> <span class="text">λείοισι μύθοις· ὦ μέγ&#x27; εὐδαίμων κόρη,</span></div>
+<div class="line" id="g-649"><a class="line-num" data-line="649">649</a> <span class="text">τί παρθενεύει δαρόν, ἐξόν σοι γάμου</span></div>
+<div class="line" id="g-650"><a class="line-num" data-line="650">650</a> <span class="text">τυχεῖν μεγίστου; Ζεὺς γὰρ ἱμέρου βέλει</span></div>
+<div class="line" id="g-651"><a class="line-num" data-line="651">651</a> <span class="text">πρὸς σοῦ τέθαλπται καὶ συναίρεσθαι Κύπριν</span></div>
+<div class="line" id="g-652"><a class="line-num" data-line="652">652</a> <span class="text">θέλει· σὺ δ᾽, ὦ παῖ, μὴ &#x27;πολακτίσῃς λέχος</span></div>
+<div class="line" id="g-653"><a class="line-num" data-line="653">653</a> <span class="text">τὸ Ζηνός, ἀλλ᾽ ἔξελθε πρὸς Λέρνης βαθὺν</span></div>
+<div class="line" id="g-654"><a class="line-num" data-line="654">654</a> <span class="text">λειμῶνα, ποίμνας βουστάσεις τε πρὸς πατρός,</span></div>
+<div class="line" id="g-655"><a class="line-num" data-line="655">655</a> <span class="text">ὡς ἂν τὸ Δῖον ὄμμα λωφήσῃ πόθου.</span></div>
+<div class="line" id="g-656"><a class="line-num" data-line="656">656</a> <span class="text">τοιοῖςδε πάσας εὐφρόνας ὀνείμασιν</span></div>
+<div class="line" id="g-657"><a class="line-num" data-line="657">657</a> <span class="text">ξυνειχόμην δύστηνος, ἔςτε δὴ πατρὶ</span></div>
+<div class="line" id="g-658"><a class="line-num" data-line="658">658</a> <span class="text">ἔτλην γεγωνεῖν νυκτίφοιτ&#x27; ὀνείρατα.</span></div>
+<div class="line" id="g-659"><a class="line-num" data-line="659">659</a> <span class="text">ὃ δ᾽ ἐς τε Πυθὼ κἀπὶ Δωδώνης πυκνοὺς</span></div>
+<div class="line" id="g-660"><a class="line-num" data-line="660">660</a> <span class="text">θεοπρόπους ἴαλλεν, ὡς μάθοι τί χρὴ</span></div>
+<div class="line" id="g-661"><a class="line-num" data-line="661">661</a> <span class="text">δρῶντ᾽ ἢ λέγοντα δαίμοσιν πράσσειν φίλα.</span></div>
+<div class="line" id="g-662"><a class="line-num" data-line="662">662</a> <span class="text">ἧκον δ᾽ ἀναγγέλλοντες αἰολοστόμους</span></div>
+<div class="line" id="g-663"><a class="line-num" data-line="663">663</a> <span class="text">χρησμοὺς ἀσήμους δυςκρίτως τ᾽ εἰρημένους.</span></div>
+<div class="line" id="g-664"><a class="line-num" data-line="664">664</a> <span class="text">τέλος δ᾽ ἐναργὴς βάξις ἦλθεν Ἰνάχῳ</span></div>
+<div class="line" id="g-665"><a class="line-num" data-line="665">665</a> <span class="text">σαφῶς ἐπισκήπτουσα καὶ μυθουμένη</span></div>
+<div class="line" id="g-666"><a class="line-num" data-line="666">666</a> <span class="text">ἔξω δόμων τε καὶ πάτρας ὠθεῖν ἐμέ,</span></div>
+<div class="line" id="g-667"><a class="line-num" data-line="667">667</a> <span class="text">ἄφετον ἀλᾶσθαι γῆς ἐπ᾽ ἐσχάτοις ὅροις·</span></div>
+<div class="line" id="g-668"><a class="line-num" data-line="668">668</a> <span class="text">κεἰ μὴ θέλοι, πυρωπὸν ἐκ Διὸς μολεῖν</span></div>
+<div class="line" id="g-669"><a class="line-num" data-line="669">669</a> <span class="text">κεραυνόν, ὃς πᾶν ἐξαϊστώσει γένος.</span></div>
+<div class="line" id="g-670"><a class="line-num" data-line="670">670</a> <span class="text">τοιοῖςδε πεισθεὶς Λοξίου μαντεύμασιν</span></div>
+<div class="line" id="g-671"><a class="line-num" data-line="671">671</a> <span class="text">ἐξήλασέν με κἀπέκλεισε δωμάτων</span></div>
+<div class="line" id="g-672"><a class="line-num" data-line="672">672</a> <span class="text">ἄκουσαν ἄκων· ἀλλ᾽ ἐπηνάγκαζέ νιν</span></div>
+<div class="line" id="g-673"><a class="line-num" data-line="673">673</a> <span class="text">Διὸς χαλινὸς πρὸς βίαν πράσσειν τάδε.</span></div>
+<div class="line" id="g-674"><a class="line-num" data-line="674">674</a> <span class="text">εὐθὺς δὲ μορφὴ καὶ φρένες διάστροφοι</span></div>
+<div class="line" id="g-675"><a class="line-num" data-line="675">675</a> <span class="text">ἦσαν, κεράστις δ&#x27;, ὡς ὁρᾶτ&#x27;, ὀξυστόμῳ</span></div>
+<div class="line" id="g-676"><a class="line-num" data-line="676">676</a> <span class="text">μύωπι χρισθεῖσ᾽ ἐμμανεῖ σκιρτήματι</span></div>
+<div class="line" id="g-677"><a class="line-num" data-line="677">677</a> <span class="text">ᾖσσον πρὸς εὔποτόν τε Κεγχρείας ῥέος</span></div>
+<div class="line" id="g-678"><a class="line-num" data-line="678">678</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> Λέρνης τ᾽ ἐς ἄκρην· βουκόλος δὲ γηγενὴς</span></div>
+<div class="line" id="g-679"><a class="line-num" data-line="679">679</a> <span class="text">ἄκρατος ὀργὴν Ἄργος ὡμάρτει, πυκνοῖς</span></div>
+<div class="line" id="g-680"><a class="line-num" data-line="680">680</a> <span class="text">ὄσσοις δεδορκὼς τοὺς ἐμοὺς κατὰ στίβους.</span></div>
+<div class="line" id="g-681"><a class="line-num" data-line="681">681</a> <span class="text">ἀπροςδόκητος δ᾽ αὐτὸν αἰφνίδιος μόρος</span></div>
+<div class="line" id="g-682"><a class="line-num" data-line="682">682</a> <span class="text">τοῦ ζῆν ἀπεστέρησεν. οἰστροπλὴξ δ᾽ ἐγὼ</span></div>
+<div class="line" id="g-683"><a class="line-num" data-line="683">683</a> <span class="text">μάστιγι θείᾳ γῆν πρὸ γῆς ἐλαύνομαι.</span></div>
+<div class="line" id="g-684"><a class="line-num" data-line="684">684</a> <span class="text">κλύεις τὰ πραχθέντ᾽· εἰ δ᾽ ἔχεις εἰπεῖν ὅ τι</span></div>
+<div class="line" id="g-685"><a class="line-num" data-line="685">685</a> <span class="text">λοιπὸν πόνων, σήμαινε· μηδέ μ&#x27; οἰκτίσας</span></div>
+<div class="line" id="g-686"><a class="line-num" data-line="686">686</a> <span class="text">ξύνθαλπε μύθοις ψευδέσιν· νόσημα γὰρ</span></div>
+<div class="line" id="g-687"><a class="line-num" data-line="687">687</a> <span class="text">αἴσχιστον εἶναί φημι συνθέτους λόγους.</span></div>
+<div class="line" id="g-688"><a class="line-num" data-line="688">688</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἔα, ἔα, ἄπεχε, φεῦ.</span></div>
+<div class="line" id="g-689"><a class="line-num" data-line="689">689</a> <span class="text">οὐπώποτ&#x27;, οὐπώποτ&#x27; ηὔχουν ξένους</span></div>
+<div class="line" id="g-690"><a class="line-num" data-line="690">690</a> <span class="text">μολεῖσθαι λόγους ἐς ἀκοὰν ἐμάν,</span></div>
+<div class="line" id="g-691"><a class="line-num" data-line="691">691</a> <span class="text">οὐδ᾽ ὧδε δυςθέατα καὶ δύςοιστα</span></div>
+<div class="line" id="g-692"><a class="line-num" data-line="692">692</a> <span class="text">πήματα, λύματ᾽, ἀμφήκει σὺν κέντρῳ</span></div>
+<div class="line" id="g-693"><a class="line-num" data-line="693">693</a> <span class="text">ψύχειν ψυχὰν ἐμάν.</span></div>
+<div class="line" id="g-694"><a class="line-num" data-line="694">694</a> <span class="text">ἰὼ ἰώ, μοῖρα, μοῖρα,</span></div>
+<div class="line" id="g-695"><a class="line-num" data-line="695">695</a> <span class="text">πέφρικ᾽ εἰςιδοῦσα πρᾶξιν Ἰοῦς.</span></div>
+<div class="line" id="g-696"><a class="line-num" data-line="696">696</a> <span class="text"><span class="speaker">Προμηθεύς</span> πρό γε στενάζεις καὶ φόβου πλέα τις εἶ·</span></div>
+<div class="line" id="g-697"><a class="line-num" data-line="697">697</a> <span class="text">ἐπίσχες ἔςτ᾽ ἂν καὶ τὰ λοιπὰ προςμάθῃς.</span></div>
+<div class="line" id="g-698"><a class="line-num" data-line="698">698</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> λέγ᾽, ἐκδίδασκε· τοῖς νοσοῦσί τοι γλυκὺ</span></div>
+<div class="line" id="g-699"><a class="line-num" data-line="699">699</a> <span class="text">τὸ λοιπὸν ἄλγος προὐξεπίστασθαι τορῶς.</span></div>
+<div class="line" id="g-700"><a class="line-num" data-line="700">700</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὴν πρίν γε χρείαν ἠνύσασθ᾽ ἐμοῦ πάρα</span></div>
+<div class="line" id="g-701"><a class="line-num" data-line="701">701</a> <span class="text">κούφως· μαθεῖν γὰρ τῆσδε πρῶτ᾽ ἐχρῄζετε</span></div>
+<div class="line" id="g-702"><a class="line-num" data-line="702">702</a> <span class="text">τὸν ἀμφ&#x27; ἑαυτῆς ἆθλον ἐξηγουμένης.</span></div>
+<div class="line" id="g-703"><a class="line-num" data-line="703">703</a> <span class="text">τὰ λοιπὰ νῦν ἀκούσαθ&#x27;, οἷα χρὴ πάθη</span></div>
+<div class="line" id="g-704"><a class="line-num" data-line="704">704</a> <span class="text">τλῆναι πρὸς Ἥρας τήνδε τὴν νεάνιδα.</span></div>
+<div class="line" id="g-705"><a class="line-num" data-line="705">705</a> <span class="text">σύ τ&#x27;, Ἰνάχειον σπέρμα, τοὺς ἐμοὺς λόγους</span></div>
+<div class="line" id="g-706"><a class="line-num" data-line="706">706</a> <span class="text">θυμῷ βάλ&#x27;, ὡς ἂν τέρματ᾽ ἐκμάθῃς ὁδοῦ.</span></div>
+<div class="line" id="g-707"><a class="line-num" data-line="707">707</a> <span class="text">πρῶτον μὲν ἐνθένδ᾽ ἡλίου πρὸς ἀντολὰς</span></div>
+<div class="line" id="g-708"><a class="line-num" data-line="708">708</a> <span class="text"><span class="speaker">Προμηθεύς</span> τρέψασα σαυτὴν στεῖχ᾽ ἀνηρότους γύας·</span></div>
+<div class="line" id="g-709"><a class="line-num" data-line="709">709</a> <span class="text">Σκύθας δ᾽ ἀφίξει νομάδας, οἳ πλεκτὰς στέγας</span></div>
+<div class="line" id="g-710"><a class="line-num" data-line="710">710</a> <span class="text">πεδάρσιοι ναίουσ᾽ ἐπ᾽ εὐκύκλοις ὄχοις,</span></div>
+<div class="line" id="g-711"><a class="line-num" data-line="711">711</a> <span class="text">ἑκηβόλοις τόξοισιν ἐξηρτημένοι·</span></div>
+<div class="line" id="g-712"><a class="line-num" data-line="712">712</a> <span class="text">οἷς μὴ πελάζειν, ἀλλ᾽ ἁλιστόνοις πόδας</span></div>
+<div class="line" id="g-713"><a class="line-num" data-line="713">713</a> <span class="text">χρίμπτουσα ῥαχίαισιν ἐκπερᾶν χθόνα.</span></div>
+<div class="line" id="g-714"><a class="line-num" data-line="714">714</a> <span class="text">λαιᾶς δὲ χειρὸς οἱ σιδηροτέκτονες</span></div>
+<div class="line" id="g-715"><a class="line-num" data-line="715">715</a> <span class="text">οἰκοῦσι Χάλυβες, οὓς φυλάξασθαί σε χρή.</span></div>
+<div class="line" id="g-716"><a class="line-num" data-line="716">716</a> <span class="text">ἀνήμεροι γὰρ οὐδὲ πρόςπλαστοι ξένοις.</span></div>
+<div class="line" id="g-717"><a class="line-num" data-line="717">717</a> <span class="text">ἥξεις δ᾽ ὑβριστὴν ποταμὸν οὐ ψευδώνυμον,</span></div>
+<div class="line" id="g-718"><a class="line-num" data-line="718">718</a> <span class="text"><span class="gap">[...]</span></span></div>
+<div class="line" id="g-719"><a class="line-num" data-line="719">719</a> <span class="text">ὃν μὴ περάσῃς, οὐ γὰρ εὔβατος περᾶν,</span></div>
+<div class="line" id="g-720"><a class="line-num" data-line="720">720</a> <span class="text">πρὶν ἂν πρὸς αὐτὸν Καύκασον μόλῃς, ὀρῶν</span></div>
+<div class="line" id="g-721"><a class="line-num" data-line="721">721</a> <span class="text">ὕψιστον, ἔνθα ποταμὸς ἐκφυσᾷ μένος</span></div>
+<div class="line" id="g-722"><a class="line-num" data-line="722">722</a> <span class="text">κροτάφων ἀπ&#x27; αὐτῶν. ἀστρογείτονας δὲ χρὴ</span></div>
+<div class="line" id="g-723"><a class="line-num" data-line="723">723</a> <span class="text">κορυφὰς ὑπερβάλλουσαν ἐς μεσημβρινὴν</span></div>
+<div class="line" id="g-724"><a class="line-num" data-line="724">724</a> <span class="text">βῆναι κέλευθον, ἔνθ&#x27; Ἀμαζόνων στρατὸν</span></div>
+<div class="line" id="g-725"><a class="line-num" data-line="725">725</a> <span class="text">ἵξει στυγάνορ&#x27;, αἳ Θεμίσκυράν ποτε</span></div>
+<div class="line" id="g-726"><a class="line-num" data-line="726">726</a> <span class="text">κατοικιοῦσιν ἀμφὶ Θερμώδονθ&#x27;, ἵνα</span></div>
+<div class="line" id="g-727"><a class="line-num" data-line="727">727</a> <span class="text">τραχεῖα πόντου Σαλμυδησσία γνάθος</span></div>
+<div class="line" id="g-728"><a class="line-num" data-line="728">728</a> <span class="text">ἐχθρόξενος ναύταισι, μητρυιὰ νεῶν·</span></div>
+<div class="line" id="g-729"><a class="line-num" data-line="729">729</a> <span class="text">αὗταί σ᾽ ὁδηγήσουσι καὶ μάλ᾽ ἀσμένως.</span></div>
+<div class="line" id="g-730"><a class="line-num" data-line="730">730</a> <span class="text">ἰσθμὸν δ᾽ ἐπ᾽ αὐταῖς στενοπόροις λίμνης πύλαις</span></div>
+<div class="line" id="g-731"><a class="line-num" data-line="731">731</a> <span class="text">Κιμμερικὸν ἥξεις, ὃν θρασυσπλάγχνως σε χρὴ</span></div>
+<div class="line" id="g-732"><a class="line-num" data-line="732">732</a> <span class="text">λιποῦσαν αὐλῶν᾽ ἐκπερᾶν Μαιωτικόν·</span></div>
+<div class="line" id="g-733"><a class="line-num" data-line="733">733</a> <span class="text">ἔσται δὲ θνητοῖς εἰςαεὶ λόγος μέγας</span></div>
+<div class="line" id="g-734"><a class="line-num" data-line="734">734</a> <span class="text">τῆς σῆς πορείας, Βόςπορος δ᾽ ἐπώνυμος</span></div>
+<div class="line" id="g-735"><a class="line-num" data-line="735">735</a> <span class="text">κεκλήσεται. λιποῦσα δ᾽ Εὐρώπης πέδον,</span></div>
+<div class="line" id="g-736"><a class="line-num" data-line="736">736</a> <span class="text">ἤπειρον ἥξεις Ἀσιάδ&#x27;. ἆρ᾽ ὑμῖν δοκεῖ</span></div>
+<div class="line" id="g-737"><a class="line-num" data-line="737">737</a> <span class="text">ὁ τῶν θεῶν τύραννος ἐς τὰ πάνθ&#x27; ὁμῶς</span></div>
+<div class="line" id="g-738"><a class="line-num" data-line="738">738</a> <span class="text">βίαιος εἶναι; τῇδε γὰρ θνητῇ θεὸς</span></div>
+<div class="line" id="g-739"><a class="line-num" data-line="739">739</a> <span class="text">χρήζων μιγῆναι τάςδ᾽ ἐπέρριψεν πλάνας.</span></div>
+<div class="line" id="g-740"><a class="line-num" data-line="740">740</a> <span class="text">πικροῦ δ᾽ ἔκυρσας, ὦ κόρη, τῶν σῶν γάμων</span></div>
+<div class="line" id="g-741"><a class="line-num" data-line="741">741</a> <span class="text">μνηστῆρος. οὓς γὰρ νῦν ἀκήκοας λόγους,</span></div>
+<div class="line" id="g-742"><a class="line-num" data-line="742">742</a> <span class="text"><span class="speaker">Προμηθεύς</span> εἶναι δόκει σοὶ μηδέπω &#x27;ν προοιμίοις.</span></div>
+<div class="line" id="g-743"><a class="line-num" data-line="743">743</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ἰώ μοί μοι, ἔ ἔ.</span></div>
+<div class="line" id="g-744"><a class="line-num" data-line="744">744</a> <span class="text"><span class="speaker">Προμηθεύς</span> σὺ δ᾽ αὖ κέκραγας κἀναμυχθίζει· τί που</span></div>
+<div class="line" id="g-745"><a class="line-num" data-line="745">745</a> <span class="text">δράσεις, ὅταν τὰ λοιπὰ πυνθάνῃ κακά;</span></div>
+<div class="line" id="g-746"><a class="line-num" data-line="746">746</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἦ γάρ τι λοιπὸν τῇδε πημάτων ἐρεῖς;</span></div>
+<div class="line" id="g-747"><a class="line-num" data-line="747">747</a> <span class="text"><span class="speaker">Προμηθεύς</span> δυσχείμερόν γε πέλαγος ἀτηρᾶς δύης.</span></div>
+<div class="line" id="g-748"><a class="line-num" data-line="748">748</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> τί δῆτ᾽ ἐμοὶ ζῆν κέρδος, ἀλλ᾽ οὐκ ἐν τάχει</span></div>
+<div class="line" id="g-749"><a class="line-num" data-line="749">749</a> <span class="text">ἔρριψ᾽ ἐμαυτὴν τῆσδ᾽ ἀπὸ στυφλοῦ πέτρας,</span></div>
+<div class="line" id="g-750"><a class="line-num" data-line="750">750</a> <span class="text">ὅπως πέδῳ σκήψασα τῶν πάντων πόνων</span></div>
+<div class="line" id="g-751"><a class="line-num" data-line="751">751</a> <span class="text">ἀπηλλάγην; κρεῖσσον γὰρ εἰςάπαξ θανεῖν</span></div>
+<div class="line" id="g-752"><a class="line-num" data-line="752">752</a> <span class="text">ἢ τὰς ἁπάσας ἡμέρας πάσχειν κακῶς.</span></div>
+<div class="line" id="g-753"><a class="line-num" data-line="753">753</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἦ δυςπετῶς ἂν τοὺς ἐμοὺς ἄθλους φέροις,</span></div>
+<div class="line" id="g-754"><a class="line-num" data-line="754">754</a> <span class="text">ὅτῳ θανεῖν μέν ἐστιν οὐ πεπρωμένον·</span></div>
+<div class="line" id="g-755"><a class="line-num" data-line="755">755</a> <span class="text">αὕτη γὰρ ἦν ἂν πημάτων ἀπαλλαγή.</span></div>
+<div class="line" id="g-756"><a class="line-num" data-line="756">756</a> <span class="text">νῦν δ᾽ οὐδέν ἐστι τέρμα μοι προκείμενον</span></div>
+<div class="line" id="g-757"><a class="line-num" data-line="757">757</a> <span class="text">μόχθων, πρὶν ἂν Ζεὺς ἐκπέσῃ τυραννίδος.</span></div>
+<div class="line" id="g-758"><a class="line-num" data-line="758">758</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ἦ γάρ ποτ&#x27; ἔστιν ἐκπεσεῖν ἀρχῆς Δία;</span></div>
+<div class="line" id="g-759"><a class="line-num" data-line="759">759</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἥδοι᾽ ἄν, οἶμαι, τήνδ&#x27; ἰδοῦσα συμφοράν.</span></div>
+<div class="line" id="g-760"><a class="line-num" data-line="760">760</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> πῶς δ᾽ οὐκ ἄν, ἥτις ἐκ Διὸς πάσχω κακῶς;</span></div>
+<div class="line" id="g-761"><a class="line-num" data-line="761">761</a> <span class="text"><span class="speaker">Προμηθεύς</span> ὡς τοίνυν ὄντων τῶνδέ σοι μαθεῖν πάρα.</span></div>
+<div class="line" id="g-762"><a class="line-num" data-line="762">762</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> πρὸς τοῦ τύραννα σκῆπτρα συληθήσεται;</span></div>
+<div class="line" id="g-763"><a class="line-num" data-line="763">763</a> <span class="text"><span class="speaker">Προμηθεύς</span> αὐτὸς πρὸς αὑτοῦ κενοφρόνων βουλευμάτων.</span></div>
+<div class="line" id="g-764"><a class="line-num" data-line="764">764</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ποίῳ τρόπῳ; σήμηνον, εἰ μή τις βλάβη.</span></div>
+<div class="line" id="g-765"><a class="line-num" data-line="765">765</a> <span class="text"><span class="speaker">Προμηθεύς</span> γαμεῖ γάμον τοιοῦτον ᾧ ποτ᾽ ἀσχαλᾷ.</span></div>
+<div class="line" id="g-766"><a class="line-num" data-line="766">766</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> θέορτον, ἢ βρότειον; εἰ ῥητόν, φράσον.</span></div>
+<div class="line" id="g-767"><a class="line-num" data-line="767">767</a> <span class="text"><span class="speaker">Προμηθεύς</span> τί δ᾽ ὅντιν᾽; οὐ γὰρ ῥητὸν αὐδᾶσθαι τόδε.</span></div>
+<div class="line" id="g-768"><a class="line-num" data-line="768">768</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ἢ πρὸς δάμαρτος ἐξανίσταται θρόνων;</span></div>
+<div class="line" id="g-769"><a class="line-num" data-line="769">769</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἣ τέξεταί γε παῖδα φέρτερον πατρός.</span></div>
+<div class="line" id="g-770"><a class="line-num" data-line="770">770</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> οὐδ᾽ ἔστιν αὐτῷ τῆσδ&#x27; ἀποστροφὴ τύχης;</span></div>
+<div class="line" id="g-771"><a class="line-num" data-line="771">771</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὐ δῆτα, πλὴν ἔγωγ᾽ ἂν ἐκ δεσμῶν λυθείς.</span></div>
+<div class="line" id="g-772"><a class="line-num" data-line="772">772</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> τίς οὖν ὁ λύσων σ᾽ ἐστὶν ἄκοντος Διός;</span></div>
+<div class="line" id="g-773"><a class="line-num" data-line="773">773</a> <span class="text"><span class="speaker">Προμηθεύς</span> τῶν σῶν τιν&#x27; αὐτὸν ἐκγόνων εἶναι χρεών.</span></div>
+<div class="line" id="g-774"><a class="line-num" data-line="774">774</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> πῶς εἶπας; ἦ &#x27;μὸς παῖς σ᾽ ἀπαλλάξει κακῶν;</span></div>
+<div class="line" id="g-775"><a class="line-num" data-line="775">775</a> <span class="text"><span class="speaker">Προμηθεύς</span> τρίτος γε γένναν πρὸς δέκ᾽ ἄλλαισιν γοναῖς.</span></div>
+<div class="line" id="g-776"><a class="line-num" data-line="776">776</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ἥδ᾽ οὐκέτ᾽ εὐξύμβλητος ἡ χρησμῳδία.</span></div>
+<div class="line" id="g-777"><a class="line-num" data-line="777">777</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ μηδὲ σαυτῆς γ᾽ ἐκμαθεῖν ζήτει πόνους.</span></div>
+<div class="line" id="g-778"><a class="line-num" data-line="778">778</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> μή μοι προτείνων κέρδος, εἶτ᾽ ἀποστέρει.</span></div>
+<div class="line" id="g-779"><a class="line-num" data-line="779">779</a> <span class="text"><span class="speaker">Προμηθεύς</span> δυοῖν λόγοιν σε θατέρῳ δωρήσομαι.</span></div>
+<div class="line" id="g-780"><a class="line-num" data-line="780">780</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ποίοιν; πρόδειξον αἵρεσίν τ&#x27; ἐμοὶ δίδου.</span></div>
+<div class="line" id="g-781"><a class="line-num" data-line="781">781</a> <span class="text"><span class="speaker">Προμηθεύς</span> δίδωμ&#x27;· ἑλοῦ γὰρ ἢ πόνων τὰ λοιπά σοι</span></div>
+<div class="line" id="g-782"><a class="line-num" data-line="782">782</a> <span class="text">φράσω σαφηνῶς, ἢ τὸν ἐκλύσοντ᾽ ἐμέ.</span></div>
+<div class="line" id="g-783"><a class="line-num" data-line="783">783</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> τούτων σὺ τὴν μὲν τῇδε, τὴν δ᾽ ἐμοὶ χάριν</span></div>
+<div class="line" id="g-784"><a class="line-num" data-line="784">784</a> <span class="text">θέσθαι θέλησον, μηδ&#x27; ἀτιμάσῃς λόγους·</span></div>
+<div class="line" id="g-785"><a class="line-num" data-line="785">785</a> <span class="text">καὶ τῇδε μὲν γέγωνε τὴν λοιπὴν πλάνην,</span></div>
+<div class="line" id="g-786"><a class="line-num" data-line="786">786</a> <span class="text">ἐμοὶ δὲ τὸν λύσοντα· τοῦτο γὰρ ποθῶ.</span></div>
+<div class="line" id="g-787"><a class="line-num" data-line="787">787</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἐπεὶ προθυμεῖσθ᾽, οὐκ ἐναντιώσομαι</span></div>
+<div class="line" id="g-788"><a class="line-num" data-line="788">788</a> <span class="text">τὸ μὴ οὐ γεγωνεῖν πᾶν ὅσον προςχρήζετε.</span></div>
+<div class="line" id="g-789"><a class="line-num" data-line="789">789</a> <span class="text">σοὶ πρῶτον, Ἰοῖ, πολύδονον πλάνην φράσω,</span></div>
+<div class="line" id="g-790"><a class="line-num" data-line="790">790</a> <span class="text">ἣν ἐγγράφου σὺ μνήμοσιν δέλτοις φρενῶν.</span></div>
+<div class="line" id="g-791"><a class="line-num" data-line="791">791</a> <span class="text">ὅταν περάσῃς ῥεῖθρον ἠπείρων ὅρον,</span></div>
+<div class="line" id="g-792"><a class="line-num" data-line="792">792</a> <span class="text">πρὸς ἀντολὰς φλογῶπας ἡλιοστιβεῖς</span></div>
+<div class="line" id="g-793"><a class="line-num" data-line="793">793</a> <span class="text">πόντου περῶσα φλοῖσβον, ἔςτ᾽ ἂν ἐξίκῃ</span></div>
+<div class="line" id="g-794"><a class="line-num" data-line="794">794</a> <span class="text">πρὸς Γοργόνεια πεδία Κισθήνης, ἵνα</span></div>
+<div class="line" id="g-795"><a class="line-num" data-line="795">795</a> <span class="text">αἱ Φορκίδες ναίουσι δηναιαὶ κόραι</span></div>
+<div class="line" id="g-796"><a class="line-num" data-line="796">796</a> <span class="text">τρεῖς κυκνόμορφοι, κοινὸν ὄμμ᾽ ἐκτημέναι,</span></div>
+<div class="line" id="g-797"><a class="line-num" data-line="797">797</a> <span class="text">μονόδοντες, ἃς οὔθ᾽ ἥλιος προςδέρκεται</span></div>
+<div class="line" id="g-798"><a class="line-num" data-line="798">798</a> <span class="text">ἀκτῖσιν οὔτε νύκτερος μήνη ποτέ.</span></div>
+<div class="line" id="g-799"><a class="line-num" data-line="799">799</a> <span class="text">πέλας δ᾽ ἀδελφαὶ τῶνδε τρεῖς κατάπτεροι,</span></div>
+<div class="line" id="g-800"><a class="line-num" data-line="800">800</a> <span class="text">δρακοντόμαλλοι Γοργόνες βροτοστυγεῖς,</span></div>
+<div class="line" id="g-801"><a class="line-num" data-line="801">801</a> <span class="text">ἃς θνητὸς οὐδεὶς εἰςιδὼν ἕξει πνοάς·</span></div>
+<div class="line" id="g-802"><a class="line-num" data-line="802">802</a> <span class="text">τοιοῦτο μέν σοι τοῦτο φρούριον λέγω.</span></div>
+<div class="line" id="g-803"><a class="line-num" data-line="803">803</a> <span class="text">ἄλλην δ᾽ ἄκουσον δυςχερῆ θεωρίαν·</span></div>
+<div class="line" id="g-804"><a class="line-num" data-line="804">804</a> <span class="text">ὀξυστόμους γὰρ Ζηνὸς ἀκραγεῖς κύνας</span></div>
+<div class="line" id="g-805"><a class="line-num" data-line="805">805</a> <span class="text">γρῦπας φύλαξαι, τόν τε μουνῶπα στρατὸν</span></div>
+<div class="line" id="g-806"><a class="line-num" data-line="806">806</a> <span class="text">Ἀριμασπὸν ἱπποβάμον, οἳ χρυσόρρυτον</span></div>
+<div class="line" id="g-807"><a class="line-num" data-line="807">807</a> <span class="text">οἰκοῦσιν ἀμφὶ νᾶμα Πλούτωνος πόρου·</span></div>
+<div class="line" id="g-808"><a class="line-num" data-line="808">808</a> <span class="text">τούτοις σὺ μὴ πέλαζε. τηλουρὸν δὲ γῆν</span></div>
+<div class="line" id="g-809"><a class="line-num" data-line="809">809</a> <span class="text">ἥξεις κελαινὸν φῦλον, οἳ πρὸς ἡλίου</span></div>
+<div class="line" id="g-810"><a class="line-num" data-line="810">810</a> <span class="text">ναίουσι πηγαῖς, ἔνθα ποταμὸς Αἰθίοψ.</span></div>
+<div class="line" id="g-811"><a class="line-num" data-line="811">811</a> <span class="text"><span class="speaker">Προμηθεύς</span> τούτου παρ᾽ ὄχθας ἕρφ᾽, ἕως ἂν ἐξίκῃ</span></div>
+<div class="line" id="g-812"><a class="line-num" data-line="812">812</a> <span class="text">καταβασμόν, ἔνθα Βυβλίνων ὀρῶν ἄπο</span></div>
+<div class="line" id="g-813"><a class="line-num" data-line="813">813</a> <span class="text">ἵησι σεπτὸν Νεῖλος εὔποτον ῥέος.</span></div>
+<div class="line" id="g-814"><a class="line-num" data-line="814">814</a> <span class="text">οὗτός σ᾽ ὁδώσει τὴν τρίγωνον ἐς χθόνα</span></div>
+<div class="line" id="g-815"><a class="line-num" data-line="815">815</a> <span class="text">Νειλῶτιν, οὗ δὴ τὴν μακρὰν ἀποικίαν,</span></div>
+<div class="line" id="g-816"><a class="line-num" data-line="816">816</a> <span class="text">Ἰοῖ, πέπρωται σοί τε καὶ τέκνοις κτίσαι.</span></div>
+<div class="line" id="g-817"><a class="line-num" data-line="817">817</a> <span class="text">τῶν δ᾽ εἴ τί σοι ψελλόν τε καὶ δυςεύρετον,</span></div>
+<div class="line" id="g-818"><a class="line-num" data-line="818">818</a> <span class="text">ἐπαναδίπλαζε, καὶ σαφῶς ἐκμάνθανε·</span></div>
+<div class="line" id="g-819"><a class="line-num" data-line="819">819</a> <span class="text">σχολὴ δὲ πλείων ἢ θέλω πάρεστί μοι.</span></div>
+<div class="line" id="g-820"><a class="line-num" data-line="820">820</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> εἰ μέν τι τῇδε λοιπὸν ἢ παρειμένον</span></div>
+<div class="line" id="g-821"><a class="line-num" data-line="821">821</a> <span class="text">ἔχεις γεγωνεῖν τῆς πολυφθόρου πλάνης,</span></div>
+<div class="line" id="g-822"><a class="line-num" data-line="822">822</a> <span class="text">λέγ᾽· εἰ δὲ πάντ᾽ εἴρηκας, ἡμῖν αὖ χάριν</span></div>
+<div class="line" id="g-823"><a class="line-num" data-line="823">823</a> <span class="text">δὸς ἥνπερ αἰτούμεσθα, μέμνησαι δέ που.</span></div>
+<div class="line" id="g-824"><a class="line-num" data-line="824">824</a> <span class="text"><span class="speaker">Προμηθεύς</span> τὸ πᾶν πορείας ἥδε τέρμ&#x27; ἀκήκοεν.</span></div>
+<div class="line" id="g-825"><a class="line-num" data-line="825">825</a> <span class="text">ὅπως δ᾽ ἂν εἰδῇ μὴ μάτην κλύουσά μου,</span></div>
+<div class="line" id="g-826"><a class="line-num" data-line="826">826</a> <span class="text">ἃ πρὶν μολεῖν δεῦρ᾽ ἐκμεμόχθηκεν φράσω,</span></div>
+<div class="line" id="g-827"><a class="line-num" data-line="827">827</a> <span class="text">τεκμήριον τοῦτ᾽ αὐτὸ δοὺς μύθων ἐμῶν.</span></div>
+<div class="line" id="g-828"><a class="line-num" data-line="828">828</a> <span class="text">ὄχλον μὲν οὖν τὸν πλεῖστον ἐκλείψω λόγων,</span></div>
+<div class="line" id="g-829"><a class="line-num" data-line="829">829</a> <span class="text">πρὸς αὐτὸ δ᾽ εἶμι τέρμα σῶν πλανημάτων.</span></div>
+<div class="line" id="g-830"><a class="line-num" data-line="830">830</a> <span class="text">ἐπεὶ γὰρ ἦλθες πρὸς Μολοσσὰ δάπεδα,</span></div>
+<div class="line" id="g-831"><a class="line-num" data-line="831">831</a> <span class="text">τὴν αἰπύνωτόν τ&#x27; ἀμφὶ Δωδώνην, ἵνα</span></div>
+<div class="line" id="g-832"><a class="line-num" data-line="832">832</a> <span class="text">μαντεῖα θᾶκός τ᾽ ἐστὶ Θεσπρωτοῦ Διός,</span></div>
+<div class="line" id="g-833"><a class="line-num" data-line="833">833</a> <span class="text">τέρας τ&#x27; ἄπιστον, αἱ προςήγοροι δρύες,</span></div>
+<div class="line" id="g-834"><a class="line-num" data-line="834">834</a> <span class="text">ὑφ᾽ ὧν σὺ λαμπρῶς κοὐδὲν αἰνικτηρίως</span></div>
+<div class="line" id="g-835"><a class="line-num" data-line="835">835</a> <span class="text">προςηγορεύθης ἡ Διὸς κλεινὴ δάμαρ</span></div>
+<div class="line" id="g-836"><a class="line-num" data-line="836">836</a> <span class="text">μέλλουσ᾽ ἔσεσθαι, εἰ τῶνδε προςσαίνει σε τι.</span></div>
+<div class="line" id="g-837"><a class="line-num" data-line="837">837</a> <span class="text">ἐντεῦθεν οἰστρήσασα τὴν παράκτιον</span></div>
+<div class="line" id="g-838"><a class="line-num" data-line="838">838</a> <span class="text">κέλευθον ᾖξας πρὸς μέγαν κόλπον Ῥέας,</span></div>
+<div class="line" id="g-839"><a class="line-num" data-line="839">839</a> <span class="text">ἀφ᾽ οὗ παλιμπλάγκτοισι χειμάζει δρόμοις·</span></div>
+<div class="line" id="g-840"><a class="line-num" data-line="840">840</a> <span class="text">χρόνον δὲ τὸν μέλλοντα πόντιος μυχός,</span></div>
+<div class="line" id="g-841"><a class="line-num" data-line="841">841</a> <span class="text">σαφῶς ἐπίστασ&#x27;, Ἰόνιος κεκλήσεται,</span></div>
+<div class="line" id="g-842"><a class="line-num" data-line="842">842</a> <span class="text">τῆς σῆς πορείας μνῆμα τοῖς πᾶσιν βροτοῖς.</span></div>
+<div class="line" id="g-843"><a class="line-num" data-line="843">843</a> <span class="text"><span class="speaker">Προμηθεύς</span> σημεῖα σοι τάδ&#x27; ἐστὶ τῆς ἐμῆς φρενός,</span></div>
+<div class="line" id="g-844"><a class="line-num" data-line="844">844</a> <span class="text">ὡς δέρκεται πλέον τι τοῦ πεφασμένου.</span></div>
+<div class="line" id="g-845"><a class="line-num" data-line="845">845</a> <span class="text">τὰ λοιπὰ δ᾽ ὑμῖν τῇδέ τ᾽ ἐς κοινὸν φράσω,</span></div>
+<div class="line" id="g-846"><a class="line-num" data-line="846">846</a> <span class="text">ἐς ταὐτὸν ἐλθὼν τῶν πάλαι λόγων ἴχνος.</span></div>
+<div class="line" id="g-847"><a class="line-num" data-line="847">847</a> <span class="text">ἔστιν πόλις Κάνωβος ἐσχάτη χθονός,</span></div>
+<div class="line" id="g-848"><a class="line-num" data-line="848">848</a> <span class="text">Νείλου πρὸς αὐτῷ στόματι καὶ προςχώματι·</span></div>
+<div class="line" id="g-849"><a class="line-num" data-line="849">849</a> <span class="text">ἐνταῦθα δή σε Ζεὺς τίθησιν ἔμφρονα,</span></div>
+<div class="line" id="g-850"><a class="line-num" data-line="850">850</a> <span class="text"><span class="gap">[...]</span></span></div>
+<div class="line" id="g-851"><a class="line-num" data-line="851">851</a> <span class="text">ἐπαφῶν ἀταρβεῖ χειρὶ καὶ θιγὼν μόνον.</span></div>
+<div class="line" id="g-852"><a class="line-num" data-line="852">852</a> <span class="text">ἐπώνυμον δὲ τῶν Διὸς γεννημάτων</span></div>
+<div class="line" id="g-853"><a class="line-num" data-line="853">853</a> <span class="text">τέξεις κελαινὸν Ἔπαφον, ὃς καρπώσεται</span></div>
+<div class="line" id="g-854"><a class="line-num" data-line="854">854</a> <span class="text">ὅσην πλατύρρους Νεῖλος ἀρδεύει χθόνα·</span></div>
+<div class="line" id="g-855"><a class="line-num" data-line="855">855</a> <span class="text">πέμπτη δ᾽ ἀπ&#x27; αὐτοῦ γέννα πεντηκοντάπαις</span></div>
+<div class="line" id="g-856"><a class="line-num" data-line="856">856</a> <span class="text">πάλιν πρὸς Ἄργος οὐχ ἑκοῦσ᾽ ἐλεύσεται</span></div>
+<div class="line" id="g-857"><a class="line-num" data-line="857">857</a> <span class="text">θηλύσπορος, φεύγουσα συγγενῆ γάμον</span></div>
+<div class="line" id="g-858"><a class="line-num" data-line="858">858</a> <span class="text">ἀνεψιῶν· οἱ δ᾽ ἐπτοημένοι φρένας,</span></div>
+<div class="line" id="g-859"><a class="line-num" data-line="859">859</a> <span class="text">κίρκοι πελειῶν οὐ μακρὰν λελειμμένοι,</span></div>
+<div class="line" id="g-860"><a class="line-num" data-line="860">860</a> <span class="text">ἥξουσι θηρεύσοντες οὐ θηρασίμους</span></div>
+<div class="line" id="g-861"><a class="line-num" data-line="861">861</a> <span class="text">γάμους, φθόνον δὲ σωμάτων ἕξει θεός·</span></div>
+<div class="line" id="g-862"><a class="line-num" data-line="862">862</a> <span class="text">Πελασγία δὲ δέξεται <span class="gap">[...]</span></span></div>
+<div class="line" id="g-863"><a class="line-num" data-line="863">863</a> <span class="text"><span class="gap">[...]</span> θηλυκτόνῳ</span></div>
+<div class="line" id="g-864"><a class="line-num" data-line="864">864</a> <span class="text">Ἄρει δαμέντων νυκτιφρουρήτῳ θράσει·</span></div>
+<div class="line" id="g-865"><a class="line-num" data-line="865">865</a> <span class="text">γυνὴ γὰρ ἄνδρ᾽ ἕκαστον αἰῶνος στερεῖ,</span></div>
+<div class="line" id="g-866"><a class="line-num" data-line="866">866</a> <span class="text">δίθηκτον ἐν σφαγαῖσι βάψασα ξίφος·</span></div>
+<div class="line" id="g-867"><a class="line-num" data-line="867">867</a> <span class="text">τοιάδ᾽ ἐπ&#x27; ἐχθροὺς τοὺς ἐμοὺς ἔλθοι Κύπρις·</span></div>
+<div class="line" id="g-868"><a class="line-num" data-line="868">868</a> <span class="text">μίαν δὲ παίδων ἵμερος θέλξει τὸ μὴ</span></div>
+<div class="line" id="g-869"><a class="line-num" data-line="869">869</a> <span class="text">κτεῖναι σύνευνον, ἀλλ᾽ ἀπαμβλυνθήσεται</span></div>
+<div class="line" id="g-870"><a class="line-num" data-line="870">870</a> <span class="text">γνώμην· δυοῖν δὲ θάτερον βουλήσεται,</span></div>
+<div class="line" id="g-871"><a class="line-num" data-line="871">871</a> <span class="text">κλύειν ἄναλκις μᾶλλον ἢ μιαιφόνος.</span></div>
+<div class="line" id="g-872"><a class="line-num" data-line="872">872</a> <span class="text">αὕτη κατ&#x27; Ἄργος βασιλικὸν τέξει γένος.</span></div>
+<div class="line" id="g-873"><a class="line-num" data-line="873">873</a> <span class="text">μακροῦ λόγου δὲ ταῦτ᾽ ἐπεξελθεῖν τορῶς.</span></div>
+<div class="line" id="g-874"><a class="line-num" data-line="874">874</a> <span class="text">σπορᾶς γε μὴν ἐκ τῆσδε φύσεται θρασύς,</span></div>
+<div class="line" id="g-875"><a class="line-num" data-line="875">875</a> <span class="text">τόξοισι κλεινός, ὃς πόνων ἐκ τῶνδ᾽ ἐμὲ</span></div>
+<div class="line" id="g-876"><a class="line-num" data-line="876">876</a> <span class="text">λύσει. τοιόνδε χρησμὸν ἡ παλαιγενὴς</span></div>
+<div class="line" id="g-877"><a class="line-num" data-line="877">877</a> <span class="text"><span class="speaker">Προμηθεύς</span> μήτηρ ἐμοὶ διῆλθε Τιτανὶς θεῶν.</span></div>
+<div class="line" id="g-878"><a class="line-num" data-line="878">878</a> <span class="text">ὅπως δὲ χὤπῃ, ταῦτα δεῖ μακροῦ λόγου</span></div>
+<div class="line" id="g-879"><a class="line-num" data-line="879">879</a> <span class="text">εἰπεῖν, σύ τ᾽ οὐδὲν ἐκμαθοῦσα κερδανεῖς.</span></div>
+<div class="line" id="g-880"><a class="line-num" data-line="880">880</a> <span class="text"><span class="speaker">Ἰὼ ἡ Ἰνάχου</span> ἐλελεῦ, ἐλελεῦ, ὑπό μ&#x27; αὖ σφάκελος</span></div>
+<div class="line" id="g-881"><a class="line-num" data-line="881">881</a> <span class="text">καὶ φρενοπληγεῖς μανίαι θάλπουσ&#x27;,</span></div>
+<div class="line" id="g-882"><a class="line-num" data-line="882">882</a> <span class="text">οἴστρου δ᾽ ἄρδις χρίει μ&#x27; ἄπυρος·</span></div>
+<div class="line" id="g-883"><a class="line-num" data-line="883">883</a> <span class="text">κραδία δὲ φόβῳ φρένα λακτίζει.</span></div>
+<div class="line" id="g-884"><a class="line-num" data-line="884">884</a> <span class="text">τροχοδινεῖται δ᾽ ὄμμαθ᾽ ἑλίγδην,</span></div>
+<div class="line" id="g-885"><a class="line-num" data-line="885">885</a> <span class="text">ἔξω δὲ δρόμου φέρομαι λύσσης</span></div>
+<div class="line" id="g-886"><a class="line-num" data-line="886">886</a> <span class="text">πνεύματι μάργῳ, γλώσσης ἀκρατής·</span></div>
+<div class="line" id="g-887"><a class="line-num" data-line="887">887</a> <span class="text">θολεροὶ δὲ λόγοι παίουσ᾽ εἰκῇ</span></div>
+<div class="line" id="g-888"><a class="line-num" data-line="888">888</a> <span class="text">στυγνῆς πρὸς κύμασιν ἄτης.</span></div>
+<div class="line" id="g-889"><a class="line-num" data-line="889">889</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἦ σοφός, ἦ σοφὸς ἦν, ὃς</span></div>
+<div class="line" id="g-890"><a class="line-num" data-line="890">890</a> <span class="text">πρῶτος ἐν γνώμᾳ τόδ᾽ ἐβάστασε καὶ γλώσ-</span></div>
+<div class="line" id="g-891"><a class="line-num" data-line="891">891</a> <span class="text">σᾳ διεμυθολόγησεν,</span></div>
+<div class="line" id="g-892"><a class="line-num" data-line="892">892</a> <span class="text">ὡς τὸ κηδεῦσαι καθ&#x27; ἑαυτὸν ἀριστεύει μακρῷ,</span></div>
+<div class="line" id="g-893"><a class="line-num" data-line="893">893</a> <span class="text">καὶ μήτε τῶν πλούτῳ διαθρυπτομένων,</span></div>
+<div class="line" id="g-894"><a class="line-num" data-line="894">894</a> <span class="text">μήτε τῶν γέννᾳ μεγαλυνομένων</span></div>
+<div class="line" id="g-895"><a class="line-num" data-line="895">895</a> <span class="text">ὄντα χερνήτην ἐραστεῦσαι γάμων.</span></div>
+<div class="line" id="g-896"><a class="line-num" data-line="896">896</a> <span class="text">μήποτε, μήποτέ μ&#x27;, ὦ Μοῖ-</span></div>
+<div class="line" id="g-897"><a class="line-num" data-line="897">897</a> <span class="text">ραι, <span class="gap">[...]</span> λεχέων Διὸς εὐνά-</span></div>
+<div class="line" id="g-898"><a class="line-num" data-line="898">898</a> <span class="text">τειραν ἴδοισθε πέλουσαν·</span></div>
+<div class="line" id="g-899"><a class="line-num" data-line="899">899</a> <span class="text">μηδὲ πλαθείην γαμέτᾳ τινὶ τῶν ἐξ οὐρανοῦ.</span></div>
+<div class="line" id="g-900"><a class="line-num" data-line="900">900</a> <span class="text">ταρβῶ γὰρ ἀστεργάνορα παρθενίαν</span></div>
+<div class="line" id="g-901"><a class="line-num" data-line="901">901</a> <span class="text">εἰςορῶσ᾽ Ἰοῦς μέγα δαπτομέναν</span></div>
+<div class="line" id="g-902"><a class="line-num" data-line="902">902</a> <span class="text">δυςπλάνοις Ἥρας ἀλατείαις πόνων.</span></div>
+<div class="line" id="g-903"><a class="line-num" data-line="903">903</a> <span class="text">ἐμοὶ δέ γ&#x27; ὅτε μὲν ὁμαλὸς ὁ γάμος,</span></div>
+<div class="line" id="g-904"><a class="line-num" data-line="904">904</a> <span class="text">ἄφοβος, οὐδὲ δέδια· μηδέ τού με</span></div>
+<div class="line" id="g-905"><a class="line-num" data-line="905">905</a> <span class="text">κρεισσόνων θεῶν ἔρως</span></div>
+<div class="line" id="g-906"><a class="line-num" data-line="906">906</a> <span class="text">προςδράκοι ὄμμ&#x27; ἄφυκτον.</span></div>
+<div class="line" id="g-907"><a class="line-num" data-line="907">907</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἀπόλεμος ὅδε γ&#x27; ὁ πόλεμος, ἄπορα</span></div>
+<div class="line" id="g-908"><a class="line-num" data-line="908">908</a> <span class="text">πόριμος, οὐδ᾽ ἔχω τίς ἂν γενοίμαν·</span></div>
+<div class="line" id="g-909"><a class="line-num" data-line="909">909</a> <span class="text">τὰν Διὸς γὰρ οὐχ ὁρῶ</span></div>
+<div class="line" id="g-910"><a class="line-num" data-line="910">910</a> <span class="text">μῆτιν ὅπᾳ φύγοιμ&#x27; ἄν.</span></div>
+<div class="line" id="g-911"><a class="line-num" data-line="911">911</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἦ μὴν ἔτι Ζεύς, καίπερ αὐθάδης φρενῶν,</span></div>
+<div class="line" id="g-912"><a class="line-num" data-line="912">912</a> <span class="text">ἔσται ταπεινός, οἷον ἐξαρτύεται</span></div>
+<div class="line" id="g-913"><a class="line-num" data-line="913">913</a> <span class="text">γάμον γαμεῖν· ὃς αὐτὸν ἐκ τυραννίδος</span></div>
+<div class="line" id="g-914"><a class="line-num" data-line="914">914</a> <span class="text">θρόνων τ&#x27; ἄϊστον ἐκβαλεῖ· πατρὸς δ᾽ ἀρὰ</span></div>
+<div class="line" id="g-915"><a class="line-num" data-line="915">915</a> <span class="text">Κρόνου τότ&#x27; ἤδη παντελῶς κρανθήσεται,</span></div>
+<div class="line" id="g-916"><a class="line-num" data-line="916">916</a> <span class="text">ἣν ἐκπίτνων ἠρᾶτο δηναιῶν θρόνων.</span></div>
+<div class="line" id="g-917"><a class="line-num" data-line="917">917</a> <span class="text">τοιῶνδε μόχθων ἐκτροπὴν οὐδεὶς θεῶν</span></div>
+<div class="line" id="g-918"><a class="line-num" data-line="918">918</a> <span class="text">δύναιτ&#x27; ἂν αὐτῷ πλὴν ἐμοῦ δεῖξαι σαφῶς.</span></div>
+<div class="line" id="g-919"><a class="line-num" data-line="919">919</a> <span class="text">ἐγὼ τάδ᾽ οἶδα, χῷ τρόπῳ. πρὸς ταῦτα νῦν</span></div>
+<div class="line" id="g-920"><a class="line-num" data-line="920">920</a> <span class="text">θαρσῶν καθήσθω τοῖς πεδαρσίοις κτύποις</span></div>
+<div class="line" id="g-921"><a class="line-num" data-line="921">921</a> <span class="text">πιστός, τινάσσων χειρὶ πυρπνόον βέλος.</span></div>
+<div class="line" id="g-922"><a class="line-num" data-line="922">922</a> <span class="text">οὐδὲν γὰρ αὐτῷ ταῦτ᾽ ἐπαρκέσει τὸ μὴ οὐ</span></div>
+<div class="line" id="g-923"><a class="line-num" data-line="923">923</a> <span class="text">πεσεῖν ἀτίμως πτώματ᾽ οὐκ ἀνασχετά·</span></div>
+<div class="line" id="g-924"><a class="line-num" data-line="924">924</a> <span class="text">τοῖον παλαιστὴν νῦν παρασκευάζεται</span></div>
+<div class="line" id="g-925"><a class="line-num" data-line="925">925</a> <span class="text">ἐπ᾽ αὐτὸς αὑτῷ, δυςμαχώτατον τέρας·</span></div>
+<div class="line" id="g-926"><a class="line-num" data-line="926">926</a> <span class="text">ὃς δὴ κεραυνοῦ κρείσσον εὑρήσει φλόγα,</span></div>
+<div class="line" id="g-927"><a class="line-num" data-line="927">927</a> <span class="text">βροντῆς θ&#x27; ὑπερβάλλοντα καρτερὸν κτύπον·</span></div>
+<div class="line" id="g-928"><a class="line-num" data-line="928">928</a> <span class="text">θαλασσίαν τε γῆς τινάκτειραν νόσον,</span></div>
+<div class="line" id="g-929"><a class="line-num" data-line="929">929</a> <span class="text">τρίαιναν, αἰχμὴν τὴν Ποσειδῶνος, σκεδᾷ.</span></div>
+<div class="line" id="g-930"><a class="line-num" data-line="930">930</a> <span class="text">πταίσας δὲ τῷδε πρὸς κακῷ μαθήσεται</span></div>
+<div class="line" id="g-931"><a class="line-num" data-line="931">931</a> <span class="text">ὅσον τό τ&#x27; ἄρχειν καὶ τὸ δουλεύειν δίχα.</span></div>
+<div class="line" id="g-932"><a class="line-num" data-line="932">932</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> σύ θην ἃ χρήζεις, ταῦτ᾽ ἐπιγλωσσᾷ Διός.</span></div>
+<div class="line" id="g-933"><a class="line-num" data-line="933">933</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἅπερ τελεῖται, πρὸς δ᾽ ἃ βούλομαι λέγω.</span></div>
+<div class="line" id="g-934"><a class="line-num" data-line="934">934</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> καὶ προςδοκᾶν χρὴ δεσπόσειν Ζηνός τινα;</span></div>
+<div class="line" id="g-935"><a class="line-num" data-line="935">935</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ τῶνδέ γ&#x27; ἕξει δυςλοφωτέρους πόνους.</span></div>
+<div class="line" id="g-936"><a class="line-num" data-line="936">936</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> πῶς δ᾽ οὐχὶ ταρβεῖς τοιάδ᾽ ἐκρίπτων ἔπη;</span></div>
+<div class="line" id="g-937"><a class="line-num" data-line="937">937</a> <span class="text"><span class="speaker">Προμηθεύς</span> τί δ᾽ ἂν φοβοίμην, ᾧ θανεῖν οὐ μόρσιμον;</span></div>
+<div class="line" id="g-938"><a class="line-num" data-line="938">938</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἀλλ᾽ ἄθλον ἄν σοι τοῦδέ γ&#x27; ἀλγίω πόροι.</span></div>
+<div class="line" id="g-939"><a class="line-num" data-line="939">939</a> <span class="text"><span class="speaker">Προμηθεύς</span> ὃ δ᾽ οὖν ποιείτω· πάντα προςδοκητά μοι.</span></div>
+<div class="line" id="g-940"><a class="line-num" data-line="940">940</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> οἱ προςκυνοῦντες τὴν Ἀδράστειαν σοφοί.</span></div>
+<div class="line" id="g-941"><a class="line-num" data-line="941">941</a> <span class="text"><span class="speaker">Προμηθεύς</span> σέβου, προςεύχου, θῶπτε τὸν κρατοῦντ᾽ ἀεί.</span></div>
+<div class="line" id="g-942"><a class="line-num" data-line="942">942</a> <span class="text">ἐμοὶ δ᾽ ἔλασσον Ζηνὸς ἢ μηδὲν μέλει.</span></div>
+<div class="line" id="g-943"><a class="line-num" data-line="943">943</a> <span class="text">δράτω, κρατείτω τόνδε τὸν βραχὺν χρόνον,</span></div>
+<div class="line" id="g-944"><a class="line-num" data-line="944">944</a> <span class="text">ὅπως θέλει· δαρὸν γὰρ οὐκ ἄρξει θεοῖς.</span></div>
+<div class="line" id="g-945"><a class="line-num" data-line="945">945</a> <span class="text">ἀλλ᾽ εἰςορῶ γὰρ τόνδε τὸν Διὸς τρόχιν,</span></div>
+<div class="line" id="g-946"><a class="line-num" data-line="946">946</a> <span class="text">τὸν τοῦ τυράννου τοῦ νέου διάκονον·</span></div>
+<div class="line" id="g-947"><a class="line-num" data-line="947">947</a> <span class="text">πάντως τι καινὸν ἀγγελῶν ἐλήλυθεν.</span></div>
+<div class="line" id="g-948"><a class="line-num" data-line="948">948</a> <span class="text"><span class="speaker">Ἑρμῆς</span> σέ, τὸν σοφιστήν, τὸν πικρῶς ὑπέρπικρον,</span></div>
+<div class="line" id="g-949"><a class="line-num" data-line="949">949</a> <span class="text">τὸν ἐξαμαρτόντ᾽ εἰς θεούς, τὸν ἐφημέροις</span></div>
+<div class="line" id="g-950"><a class="line-num" data-line="950">950</a> <span class="text">πορόντα τιμάς, τὸν πυρὸς κλέπτην λέγω·</span></div>
+<div class="line" id="g-951"><a class="line-num" data-line="951">951</a> <span class="text">πατὴρ ἄνωγέ σ&#x27; οὕςτινας κομπεῖς γάμους</span></div>
+<div class="line" id="g-952"><a class="line-num" data-line="952">952</a> <span class="text">αὐδᾶν, πρὸς ὧν τ᾽ ἐκεῖνος ἐκπίπτει κράτους·</span></div>
+<div class="line" id="g-953"><a class="line-num" data-line="953">953</a> <span class="text">καὶ ταῦτα μέντοι μηδὲν αἰνικτηρίως,</span></div>
+<div class="line" id="g-954"><a class="line-num" data-line="954">954</a> <span class="text">ἀλλ᾽ αὔθ᾽ ἕκαστ᾽ ἔκφραζε· μηδέ μοι διπλᾶς</span></div>
+<div class="line" id="g-955"><a class="line-num" data-line="955">955</a> <span class="text">ὁδούς, Προμηθεῦ, προςβάλῃς· ὁρᾷς δ᾽ ὅτι</span></div>
+<div class="line" id="g-956"><a class="line-num" data-line="956">956</a> <span class="text">Ζεὺς τοῖς τοιούτοις οὐχὶ μαλθακίζεται.</span></div>
+<div class="line" id="g-957"><a class="line-num" data-line="957">957</a> <span class="text"><span class="speaker">Προμηθεύς</span> σεμνόστομός γε καὶ φρονήματος πλέως</span></div>
+<div class="line" id="g-958"><a class="line-num" data-line="958">958</a> <span class="text">ὁ μῦθός ἐστιν, ὡς θεῶν ὑπηρέτου.</span></div>
+<div class="line" id="g-959"><a class="line-num" data-line="959">959</a> <span class="text">νέον νέοι κρατεῖτε καὶ δοκεῖτε δὴ</span></div>
+<div class="line" id="g-960"><a class="line-num" data-line="960">960</a> <span class="text">ναίειν ἀπενθῆ πέργαμ&#x27;· οὐκ ἐκ τῶνδ᾽ ἐγὼ</span></div>
+<div class="line" id="g-961"><a class="line-num" data-line="961">961</a> <span class="text">δισσοὺς τυράννους ἐκπεσόντας ᾐσθόμην;</span></div>
+<div class="line" id="g-962"><a class="line-num" data-line="962">962</a> <span class="text"><span class="speaker">Προμηθεύς</span> τρίτον δὲ τὸν νῦν κοιρανοῦντ᾽ ἐπόψομαι</span></div>
+<div class="line" id="g-963"><a class="line-num" data-line="963">963</a> <span class="text">αἴσχιστα καὶ τάχιστα. μή τί σοι δοκῶ</span></div>
+<div class="line" id="g-964"><a class="line-num" data-line="964">964</a> <span class="text">ταρβεῖν ὑποπτήσσειν τε τοὺς νέους θεούς;</span></div>
+<div class="line" id="g-965"><a class="line-num" data-line="965">965</a> <span class="text">πολλοῦ γε καὶ τοῦ παντὸς ἐλλείπω. σὺ δὲ</span></div>
+<div class="line" id="g-966"><a class="line-num" data-line="966">966</a> <span class="text">κέλευθον ἥνπερ ἦλθες ἐγκόνει πάλιν·</span></div>
+<div class="line" id="g-967"><a class="line-num" data-line="967">967</a> <span class="text">πεύσει γὰρ οὐδὲν ὧν ἀνιστορεῖς ἐμέ.</span></div>
+<div class="line" id="g-968"><a class="line-num" data-line="968">968</a> <span class="text"><span class="speaker">Ἑρμῆς</span> τοιοῖςδε μέντοι καὶ πρὶν αὐθαδίσμασιν</span></div>
+<div class="line" id="g-969"><a class="line-num" data-line="969">969</a> <span class="text">ἐς τάσδε σαυτὸν πημονὰς κατούρισας.</span></div>
+<div class="line" id="g-970"><a class="line-num" data-line="970">970</a> <span class="text"><span class="speaker">Προμηθεύς</span> τῆς σῆς λατρείας τὴν ἐμὴν δυςπραξίαν,</span></div>
+<div class="line" id="g-971"><a class="line-num" data-line="971">971</a> <span class="text">σαφῶς ἐπίστασ&#x27;, οὐκ ἂν ἀλλάξαιμ᾽ ἐγώ.</span></div>
+<div class="line" id="g-972"><a class="line-num" data-line="972">972</a> <span class="text"><span class="speaker">Ἑρμῆς</span> κρεῖσσον γὰρ οἶμαι τῇδε λατρεύειν πέτρᾳ</span></div>
+<div class="line" id="g-973"><a class="line-num" data-line="973">973</a> <span class="text">ἢ πατρὶ φῦναι Ζηνὶ πιστὸν ἄγγελον.</span></div>
+<div class="line" id="g-974"><a class="line-num" data-line="974">974</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὕτως ὑβρίζειν τοὺς ὑβρίζοντας χρεών.</span></div>
+<div class="line" id="g-975"><a class="line-num" data-line="975">975</a> <span class="text"><span class="speaker">Ἑρμῆς</span> χλιδᾶν ἔοικας τοῖς παροῦσι πράγμασιν.</span></div>
+<div class="line" id="g-976"><a class="line-num" data-line="976">976</a> <span class="text"><span class="speaker">Προμηθεύς</span> χλιδῶ; χλιδῶντας ὧδε τοὺς ἐμοὺς ἐγὼ</span></div>
+<div class="line" id="g-977"><a class="line-num" data-line="977">977</a> <span class="text">ἐχθροὺς ἴδοιμι· καὶ σὲ δ᾽ ἐν τούτοις λέγω.</span></div>
+<div class="line" id="g-978"><a class="line-num" data-line="978">978</a> <span class="text"><span class="speaker">Ἑρμῆς</span> ἦ κἀμὲ γάρ τι συμφοραῖς ἐπαιτιᾷ;</span></div>
+<div class="line" id="g-979"><a class="line-num" data-line="979">979</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἁπλῷ λόγῳ τοὺς πάντας ἐχθαίρω θεούς,</span></div>
+<div class="line" id="g-980"><a class="line-num" data-line="980">980</a> <span class="text">ὅσοι παθόντες εὖ κακοῦσί μ&#x27; ἐκδίκως.</span></div>
+<div class="line" id="g-981"><a class="line-num" data-line="981">981</a> <span class="text"><span class="speaker">Ἑρμῆς</span> κλύω σ᾽ ἐγὼ μεμηνότ᾽ οὐ σμικρὰν νόσον.</span></div>
+<div class="line" id="g-982"><a class="line-num" data-line="982">982</a> <span class="text"><span class="speaker">Προμηθεύς</span> νοσοῖμ&#x27; ἄν, εἰ νόσημα τοὺς ἐχθροὺς στυγεῖν.</span></div>
+<div class="line" id="g-983"><a class="line-num" data-line="983">983</a> <span class="text"><span class="speaker">Ἑρμῆς</span> εἴης φορητὸς οὐκ ἄν, εἰ πράσσοις καλῶς.</span></div>
+<div class="line" id="g-984"><a class="line-num" data-line="984">984</a> <span class="text"><span class="speaker">Ἑρμῆς</span> τόδε Ζεὺς τοὔπος οὐκ ἐπίσταται.</span></div>
+<div class="line" id="g-985"><a class="line-num" data-line="985">985</a> <span class="text"><span class="speaker">Προμηθεύς</span> ἀλλ᾽ ἐκδιδάσκει πάνθ&#x27; ὁ γηράσκων χρόνος.</span></div>
+<div class="line" id="g-986"><a class="line-num" data-line="986">986</a> <span class="text"><span class="speaker">Ἑρμῆς</span> καὶ μὴν σύ γ&#x27; οὔπω σωφρονεῖν ἐπίστασαι.</span></div>
+<div class="line" id="g-987"><a class="line-num" data-line="987">987</a> <span class="text"><span class="speaker">Προμηθεύς</span> σὲ γὰр προςηύδων οὐκ ἂν ὄνθ᾽ ὑπηρέτην.</span></div>
+<div class="line" id="g-988"><a class="line-num" data-line="988">988</a> <span class="text"><span class="speaker">Ἑρμῆς</span> ἐρεῖν ἔοικας οὐδὲν ὧν χρήζει πατήρ.</span></div>
+<div class="line" id="g-989"><a class="line-num" data-line="989">989</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ μὴν ὀφείλων γ᾽ ἂν τίνοιμ&#x27; αὐτῷ χάριν.</span></div>
+<div class="line" id="g-990"><a class="line-num" data-line="990">990</a> <span class="text"><span class="speaker">Ἑρμῆς</span> ἐκερτόμησας δῆθεν ὥςτε παῖδά με.</span></div>
+<div class="line" id="g-991"><a class="line-num" data-line="991">991</a> <span class="text"><span class="speaker">Προμηθεύς</span> οὐ γὰρ σὺ παῖς τε κἄτι τοῦδ᾽ ἀνούστερος,</span></div>
+<div class="line" id="g-992"><a class="line-num" data-line="992">992</a> <span class="text">εἰ προςδοκᾷς ἐμοῦ τι πευσεῖσθαι πάρα;</span></div>
+<div class="line" id="g-993"><a class="line-num" data-line="993">993</a> <span class="text">οὐκ ἔστιν αἴκισμ᾽ οὐδὲ μηχάνημ᾽ ὅτῳ</span></div>
+<div class="line" id="g-994"><a class="line-num" data-line="994">994</a> <span class="text">προτρέψεται με Ζεὺς γεγωνῆσαι τάδε,</span></div>
+<div class="line" id="g-995"><a class="line-num" data-line="995">995</a> <span class="text">πρὶν ἂν χαλασθῇ δεσμὰ λυμαντήρια.</span></div>
+<div class="line" id="g-996"><a class="line-num" data-line="996">996</a> <span class="text">πρὸς ταῦτα ῥιπτέσθω μὲν αἰθαλοῦσσα φλόξ,</span></div>
+<div class="line" id="g-997"><a class="line-num" data-line="997">997</a> <span class="text">λευκοπτέρῳ δὲ νιφάδι καὶ βροντήμασιν</span></div>
+<div class="line" id="g-998"><a class="line-num" data-line="998">998</a> <span class="text">χθονίοις κυκάτω πάντα καὶ ταρασσέτω·</span></div>
+<div class="line" id="g-999"><a class="line-num" data-line="999">999</a> <span class="text">γνάμψει γὰρ οὐδὲν τῶνδέ μ&#x27; ὥςτε καὶ φράσαι</span></div>
+<div class="line" id="g-1000"><a class="line-num" data-line="1000">1000</a> <span class="text">πρὸς οὗ χρεών νιν ἐκπεσεῖν τυραννίδος.</span></div>
+<div class="line" id="g-1001"><a class="line-num" data-line="1001">1001</a> <span class="text"><span class="speaker">Ἑρμῆς</span> ὅρα νῦν εἴ σοι ταῦτ᾽ ἀρωγὰ φαίνεται.</span></div>
+<div class="line" id="g-1002"><a class="line-num" data-line="1002">1002</a> <span class="text"><span class="speaker">Προμηθεύς</span> ὦπται πάλαι δὴ καὶ βεβούλευται τάδε.</span></div>
+<div class="line" id="g-1003"><a class="line-num" data-line="1003">1003</a> <span class="text"><span class="speaker">Ἑρμῆς</span> τόλμησον, ὦ μάταιε, τόλμησόν ποτε</span></div>
+<div class="line" id="g-1004"><a class="line-num" data-line="1004">1004</a> <span class="text">πρὸς τὰς παρούσας πημονὰς ὀρθῶς φρονεῖν.</span></div>
+<div class="line" id="g-1005"><a class="line-num" data-line="1005">1005</a> <span class="text"><span class="speaker">Προμηθεύς</span> ὀχλεῖς μάτην με κῦμ᾽ ὅπως παρηγορῶν.</span></div>
+<div class="line" id="g-1006"><a class="line-num" data-line="1006">1006</a> <span class="text">εἰςελθέτω σε μήποθ&#x27; ὡς ἐγὼ Διὸς</span></div>
+<div class="line" id="g-1007"><a class="line-num" data-line="1007">1007</a> <span class="text">γνώμην φοβηθεὶς θηλύνους γενήσομαι,</span></div>
+<div class="line" id="g-1008"><a class="line-num" data-line="1008">1008</a> <span class="text">καὶ λιπαρήσω τὸν μέγα στυγούμενον</span></div>
+<div class="line" id="g-1009"><a class="line-num" data-line="1009">1009</a> <span class="text">γυναικομίμοις ὑπτιάσμασιν χερῶν,</span></div>
+<div class="line" id="g-1010"><a class="line-num" data-line="1010">1010</a> <span class="text">λῦσαί με δεσμῶν τῶνδε· τοῦ παντὸς δέω.</span></div>
+<div class="line" id="g-1011"><a class="line-num" data-line="1011">1011</a> <span class="text"><span class="speaker">Ἑρμῆς</span> λέγων ἔοικα πολλὰ καὶ μάτην ἐρεῖν·</span></div>
+<div class="line" id="g-1012"><a class="line-num" data-line="1012">1012</a> <span class="text">τέγγει γὰρ οὐδὲν οὐδὲ μαλθάσσει κέαρ</span></div>
+<div class="line" id="g-1013"><a class="line-num" data-line="1013">1013</a> <span class="text">λιταῖς· δακὼν δὲ στόμιον ὡς νεοζυγὴς</span></div>
+<div class="line" id="g-1014"><a class="line-num" data-line="1014">1014</a> <span class="text">πῶλος βιάζει καὶ πρὸς ἡνίας μάχει.</span></div>
+<div class="line" id="g-1015"><a class="line-num" data-line="1015">1015</a> <span class="text">ἀτὰρ σφοδρύνει γ&#x27; ἀσθενεῖ σοφίσματι.</span></div>
+<div class="line" id="g-1016"><a class="line-num" data-line="1016">1016</a> <span class="text">αὐθαδία γὰρ τῷ φρονοῦντι μὴ καλῶς</span></div>
+<div class="line" id="g-1017"><a class="line-num" data-line="1017">1017</a> <span class="text">αὐτὴ καθ᾽ αὑτὴν οὐδενὸς μεῖον σθένει.</span></div>
+<div class="line" id="g-1018"><a class="line-num" data-line="1018">1018</a> <span class="text">σκέψαι δ&#x27;, ἐὰν μὴ τοῖς ἐμοῖς πεισθῇς λόγοις,</span></div>
+<div class="line" id="g-1019"><a class="line-num" data-line="1019">1019</a> <span class="text">οἷός σε χειμὼν καὶ κακῶν τρικυμία</span></div>
+<div class="line" id="g-1020"><a class="line-num" data-line="1020">1020</a> <span class="text">ἔπεισ᾽ ἄφυκτος· πρῶτα μὲν γὰρ ἀκρίδα</span></div>
+<div class="line" id="g-1021"><a class="line-num" data-line="1021">1021</a> <span class="text">φάραγγα βροντῇ καὶ κεραυνίᾳ φλογὶ</span></div>
+<div class="line" id="g-1022"><a class="line-num" data-line="1022">1022</a> <span class="text">πατὴρ σπαράξει τήνδε, καὶ κρύψει δέμας</span></div>
+<div class="line" id="g-1023"><a class="line-num" data-line="1023">1023</a> <span class="text">τὸ σόν, πετραία δ᾽ ἀγκάλη σε βαστάσει.</span></div>
+<div class="line" id="g-1024"><a class="line-num" data-line="1024">1024</a> <span class="text">μακρὸν δὲ μῆκος ἐκτελευτήσας χρόνου</span></div>
+<div class="line" id="g-1025"><a class="line-num" data-line="1025">1025</a> <span class="text">ἄψορρον ἥξεις ἐς φάος· Διὸς δέ σοι</span></div>
+<div class="line" id="g-1026"><a class="line-num" data-line="1026">1026</a> <span class="text">πτηνὸς κύων δαφοινὸς αἰετὸς λάβρως</span></div>
+<div class="line" id="g-1027"><a class="line-num" data-line="1027">1027</a> <span class="text">διαρταμήσει σώματος μέγα ῥάκος,</span></div>
+<div class="line" id="g-1028"><a class="line-num" data-line="1028">1028</a> <span class="text">ἄκλητος ἕρπων δαιταλεὺς πανήμερος,</span></div>
+<div class="line" id="g-1029"><a class="line-num" data-line="1029">1029</a> <span class="text">κελαινόβρωτον δ᾽ ἧπαρ ἐκθοινήσεται.</span></div>
+<div class="line" id="g-1030"><a class="line-num" data-line="1030">1030</a> <span class="text">τοιοῦδε μόχθου τέρμα μή τι προςδόκα,</span></div>
+<div class="line" id="g-1031"><a class="line-num" data-line="1031">1031</a> <span class="text">πρὶν ἂν θεῶν τις διάδοχος τῶν σῶν πόνων</span></div>
+<div class="line" id="g-1032"><a class="line-num" data-line="1032">1032</a> <span class="text">φανῇ, θελήσῃ τ&#x27; εἰς ἀναύγητον μολεῖν</span></div>
+<div class="line" id="g-1033"><a class="line-num" data-line="1033">1033</a> <span class="text">Ἅιδην κνεφαῖά τ&#x27; ἀμφὶ Ταρτάρου βάθη.</span></div>
+<div class="line" id="g-1034"><a class="line-num" data-line="1034">1034</a> <span class="text">πρὸς ταῦτα βούλευ· ὡς ὅδ᾽ οὐ πεπλασμένος</span></div>
+<div class="line" id="g-1035"><a class="line-num" data-line="1035">1035</a> <span class="text">ὁ κόμπος, ἀλλὰ καὶ λίαν εἰρημένος·</span></div>
+<div class="line" id="g-1036"><a class="line-num" data-line="1036">1036</a> <span class="text">ψευδηγορεῖν γὰρ οὐκ ἐπίσταται στόμα</span></div>
+<div class="line" id="g-1037"><a class="line-num" data-line="1037">1037</a> <span class="text"><span class="speaker">Ἑρμῆς</span> τὸ Δῖον, ἀλλὰ πᾶν ἔπος τελεῖ. σὺ δὲ</span></div>
+<div class="line" id="g-1038"><a class="line-num" data-line="1038">1038</a> <span class="text">πάπταινε καὶ φρόντιζε, μηδ&#x27; αὐθαδίαν</span></div>
+<div class="line" id="g-1039"><a class="line-num" data-line="1039">1039</a> <span class="text">εὐβουλίας ἀμείνον᾽ ἡγήσῃ ποτέ.</span></div>
+<div class="line" id="g-1040"><a class="line-num" data-line="1040">1040</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἡμῖν μὲν Ἑρμῆς οὐκ ἄκαιρα φαίνεται</span></div>
+<div class="line" id="g-1041"><a class="line-num" data-line="1041">1041</a> <span class="text">λέγειν· ἄνωγε γάρ σε τὴν αὐθαδίαν</span></div>
+<div class="line" id="g-1042"><a class="line-num" data-line="1042">1042</a> <span class="text">μεθέντ&#x27; ἐρευνᾶν τὴν σοφὴν εὐβουλίαν.</span></div>
+<div class="line" id="g-1043"><a class="line-num" data-line="1043">1043</a> <span class="text">πείθου· σοφῷ γὰρ αἰσχρὸν ἐξαμαρτάνειν.</span></div>
+<div class="line" id="g-1044"><a class="line-num" data-line="1044">1044</a> <span class="text"><span class="speaker">Προμηθεύς</span> εἰδότι τοί μοι τάσδ᾽ ἀγγελίας</span></div>
+<div class="line" id="g-1045"><a class="line-num" data-line="1045">1045</a> <span class="text">ὅδ᾽ ἐθώϋξεν, πάσχειν δὲ κακῶς</span></div>
+<div class="line" id="g-1046"><a class="line-num" data-line="1046">1046</a> <span class="text">ἐχθρὸν ὑπ᾽ ἐχθρῶν οὐδὲν ἀεικές.</span></div>
+<div class="line" id="g-1047"><a class="line-num" data-line="1047">1047</a> <span class="text">πρὸς ταῦτ᾽ ἐπ&#x27; ἐμοὶ ῥιπτέσθω μὲν</span></div>
+<div class="line" id="g-1048"><a class="line-num" data-line="1048">1048</a> <span class="text">πυρὸς ἀμφήκης βόστρυχος, αἰθὴρ δ᾽</span></div>
+<div class="line" id="g-1049"><a class="line-num" data-line="1049">1049</a> <span class="text">ἐρεθιζέσθω βροντῇ σφακέλῳ τ&#x27;</span></div>
+<div class="line" id="g-1050"><a class="line-num" data-line="1050">1050</a> <span class="text">ἀγρίων ἀνέμων· χθόνα δ&#x27; ἐκ πυθμένων</span></div>
+<div class="line" id="g-1051"><a class="line-num" data-line="1051">1051</a> <span class="text">αὐταῖς ῥίζαις πνεῦμα κραδαίνοι,</span></div>
+<div class="line" id="g-1052"><a class="line-num" data-line="1052">1052</a> <span class="text">κῦμα δὲ πόντου τραχεῖ ῥοθίῳ</span></div>
+<div class="line" id="g-1053"><a class="line-num" data-line="1053">1053</a> <span class="text">συγχώσειεν τῶν τ᾽ οὐρανίων</span></div>
+<div class="line" id="g-1054"><a class="line-num" data-line="1054">1054</a> <span class="text">ἄστρων διόδους, ἔς τε κελαινὸν</span></div>
+<div class="line" id="g-1055"><a class="line-num" data-line="1055">1055</a> <span class="text">Τάρταρον ἄρδην ῥίψειε δέμας</span></div>
+<div class="line" id="g-1056"><a class="line-num" data-line="1056">1056</a> <span class="text">τοὐμὸν ἀνάγκης στερεαῖς δίναις·</span></div>
+<div class="line" id="g-1057"><a class="line-num" data-line="1057">1057</a> <span class="text">πάντως ἐμέ γ&#x27; οὐ θανατώσει.</span></div>
+<div class="line" id="g-1058"><a class="line-num" data-line="1058">1058</a> <span class="text"><span class="speaker">Ἑρμῆς</span> τοιάδε μέντοι τῶν φρενοπλήκτων</span></div>
+<div class="line" id="g-1059"><a class="line-num" data-line="1059">1059</a> <span class="text">βουλεύματ᾽ ἔπη τ᾽ ἔστιν ἀκοῦσαι.</span></div>
+<div class="line" id="g-1060"><a class="line-num" data-line="1060">1060</a> <span class="text">τί γὰρ ἐλλείπει μὴ παραπαίειν,</span></div>
+<div class="line" id="g-1061"><a class="line-num" data-line="1061">1061</a> <span class="text">εἴ γ᾽ οὐδ᾽ εὐχῇ τι χαλᾷ μανιῶν;</span></div>
+<div class="line" id="g-1062"><a class="line-num" data-line="1062">1062</a> <span class="text">ἀλλ᾽ οὖν ὑμεῖς γ&#x27; αἱ πημοσύναις</span></div>
+<div class="line" id="g-1063"><a class="line-num" data-line="1063">1063</a> <span class="text">συγκάμνουσαι ταῖς τοῦδε τόπων</span></div>
+<div class="line" id="g-1064"><a class="line-num" data-line="1064">1064</a> <span class="text">μετά που χωρεῖτ᾽ ἐκ τῶνδε θοῶς·</span></div>
+<div class="line" id="g-1065"><a class="line-num" data-line="1065">1065</a> <span class="text">μὴ φρένας ὑμῶν ἠλιθιώσῃ</span></div>
+<div class="line" id="g-1066"><a class="line-num" data-line="1066">1066</a> <span class="text">βροντῆς μύκημ&#x27; ἀτέραμνον.</span></div>
+<div class="line" id="g-1067"><a class="line-num" data-line="1067">1067</a> <span class="text"><span class="speaker">Χορὸς Ὠκεανίδων Νυμφῶν</span> ἄλλο τι φώνει καὶ παραμυθοῦ μ&#x27;</span></div>
+<div class="line" id="g-1068"><a class="line-num" data-line="1068">1068</a> <span class="text">ὅ τι καὶ πείσεις· οὐ γὰρ δή που</span></div>
+<div class="line" id="g-1069"><a class="line-num" data-line="1069">1069</a> <span class="text">τοῦτό γε τλητὸν παρέσυρας ἔπος.</span></div>
+<div class="line" id="g-1070"><a class="line-num" data-line="1070">1070</a> <span class="text">πῶς με κελεύεις κακότητ᾽ ἀσκεῖν;</span></div>
+<div class="line" id="g-1071"><a class="line-num" data-line="1071">1071</a> <span class="text">μετὰ τοῦδ&#x27; ὅ τι χρὴ πάσχειν ἐθέλω.</span></div>
+<div class="line" id="g-1072"><a class="line-num" data-line="1072">1072</a> <span class="text">τοὺς προδότας γὰρ μισεῖν ἔμαθον,</span></div>
+<div class="line" id="g-1073"><a class="line-num" data-line="1073">1073</a> <span class="text">κοὐκ ἔστι νόσος</span></div>
+<div class="line" id="g-1074"><a class="line-num" data-line="1074">1074</a> <span class="text">τῆσδ᾽ ἥντιν᾽ ἀπέπτυσα μᾶλλον.</span></div>
+<div class="line" id="g-1075"><a class="line-num" data-line="1075">1075</a> <span class="text"><span class="speaker">Ἑρμῆς</span> ἀλλ᾽ οὖν μέμνησθ᾽ ἅ γ᾽ ἐγὼ προλέγω·</span></div>
+<div class="line" id="g-1076"><a class="line-num" data-line="1076">1076</a> <span class="text">μηδὲ πρὸς ἄτης θηραθεῖσαι</span></div>
+<div class="line" id="g-1077"><a class="line-num" data-line="1077">1077</a> <span class="text">μέμψησθε τύχην, μηδέ ποτ᾽ εἴπηθ᾽</span></div>
+<div class="line" id="g-1078"><a class="line-num" data-line="1078">1078</a> <span class="text">ὡς Ζεὺς ὑμᾶς εἰς ἀπρόοπτον</span></div>
+<div class="line" id="g-1079"><a class="line-num" data-line="1079">1079</a> <span class="text">πῆμ᾽ εἰςέβαλεν· μὴ δῆτ&#x27;, αὐταὶ δ᾽</span></div>
+<div class="line" id="g-1080"><a class="line-num" data-line="1080">1080</a> <span class="text">ὑμᾶς αὐτάς. εἰδυῖαι γὰρ</span></div>
+<div class="line" id="g-1081"><a class="line-num" data-line="1081">1081</a> <span class="text">κοὐκ ἐξαίφνης οὐδὲ λαθραίως</span></div>
+<div class="line" id="g-1082"><a class="line-num" data-line="1082">1082</a> <span class="text">εἰς ἀπέραντον δίκτυον ἄτης</span></div>
+<div class="line" id="g-1083"><a class="line-num" data-line="1083">1083</a> <span class="text">ἐμπλεχθήσεσθ᾽ ὑπ᾽ ἀνοίας.</span></div>
+<div class="line" id="g-1084"><a class="line-num" data-line="1084">1084</a> <span class="text"><span class="speaker">Προμηθεύς</span> καὶ μὴν ἔργῳ κοὐκ ἔτι μύθῳ</span></div>
+<div class="line" id="g-1085"><a class="line-num" data-line="1085">1085</a> <span class="text">χθὼν σεσάλευται· βρυχία δ&#x27; ἠχὼ</span></div>
+<div class="line" id="g-1086"><a class="line-num" data-line="1086">1086</a> <span class="text">παραμυκᾶται βροντῆς, ἕλικες δ&#x27;</span></div>
+<div class="line" id="g-1087"><a class="line-num" data-line="1087">1087</a> <span class="text">ἐκλάμπουσι στεροπῆς ζάπυροι,</span></div>
+<div class="line" id="g-1088"><a class="line-num" data-line="1088">1088</a> <span class="text">στρόμβοι δὲ κόνιν εἱλίσσουσι·</span></div>
+<div class="line" id="g-1089"><a class="line-num" data-line="1089">1089</a> <span class="text">σκιρτᾷ δ᾽ ἀνέμων πνεύματα πάντων</span></div>
+<div class="line" id="g-1090"><a class="line-num" data-line="1090">1090</a> <span class="text">εἰς ἄλληλα στάσιν ἀντίπνουν</span></div>
+<div class="line" id="g-1091"><a class="line-num" data-line="1091">1091</a> <span class="text">ἀποδεικνύμενα· ξυντετάρακται δ᾽</span></div>
+<div class="line" id="g-1092"><a class="line-num" data-line="1092">1092</a> <span class="text">αἰθὴρ πόντῳ. τοιάδ᾽ ἐπ&#x27; ἐμοὶ</span></div>
+<div class="line" id="g-1093"><a class="line-num" data-line="1093">1093</a> <span class="text">ῥιπὴ διόθεν τεύχουσα φόβον</span></div>
+<div class="line" id="g-1094"><a class="line-num" data-line="1094">1094</a> <span class="text">στείχει φανερῶς. <span class="editorial-note">* ὦ Θέμις, ὦ Γῆ,*</span></span></div>
+<div class="line" id="g-1095"><a class="line-num" data-line="1095">1095</a> <span class="text">ὦ μητρὸς ἐμῆς σέβας, ὦ πάντων</span></div>
+<div class="line" id="g-1096"><a class="line-num" data-line="1096">1096</a> <span class="text">αἰθὴρ κοινὸν φάος εἱλίσσων,</span></div>
+<div class="line" id="g-1097"><a class="line-num" data-line="1097">1097</a> <span class="text">ἐςορᾷς μ&#x27; ὡς ἔκδικα πάσχω;</span></div></div>
+                </div>
+                <div class="column">
+                    <h3>Apparatus Criticus</h3>
+                    <div class="content" id="app-crit-content"></div>
+                </div>
+            </div>
+            <script>
+                // --- SIMPLIFIED SCRIPT (Removed scroll listener) --- 
+                document.addEventListener('DOMContentLoaded', function() {
+                    const container = document.querySelector('.container');
+                    const contents = { // Store content divs by ID for easy access
+                        'g': document.getElementById('greek-content'),
+                        'app': document.getElementById('app-crit-content')
+                    };
+                    let lastClickedLine = null;
+
+                    // Function to scroll a specific column to an element
+                    function scrollToElementInColumn(columnPrefix, lineNumber) {
+                        const elementId = `${columnPrefix}-${lineNumber}`; // Use template literal
+                        const element = document.getElementById(elementId);
+                        const contentDiv = contents[columnPrefix];
+
+                        if (element && contentDiv) {
+                            element.classList.add('highlight');
+                            const elementTop = element.offsetTop - contentDiv.offsetTop;
+                            const elementHeight = element.offsetHeight;
+                            const contentHeight = contentDiv.clientHeight;
+                            let scrollToPosition = elementTop - (contentHeight / 2) + (elementHeight / 2);
+                            scrollToPosition = Math.max(0, scrollToPosition);
+                            scrollToPosition = Math.min(contentDiv.scrollHeight - contentHeight, scrollToPosition);
+                            
+                            // Directly set scrollTop for immediate jump, or use behavior:'smooth' if supported and desired
+                            contentDiv.scrollTop = scrollToPosition;
+                            
+                            // Alternative smooth scroll:
+                            // contentDiv.scrollTo({ top: scrollToPosition, behavior: 'smooth' });
+                        }
+                    }
+
+                    container.addEventListener('click', function(event) {
+                        if (event.target.classList.contains('line-num')) {
+                            event.preventDefault();
+                            const lineNumber = event.target.dataset.line;
+
+                            // Remove previous highlights
+                            document.querySelectorAll(`.line.highlight`).forEach(el => el.classList.remove('highlight'));
+
+                            // Scroll both columns to the target line number
+                            scrollToElementInColumn('g', lineNumber);
+                            scrollToElementInColumn('app', lineNumber);
+
+                            lastClickedLine = lineNumber; // Update last clicked line
+                        }
+                    });
+                });
+            </script>
+        </body>
+        </html>
+        
