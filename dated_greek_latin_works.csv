@@ -1,0 +1,2018 @@
+﻿file,repo,language,author_code,author,century,genre,word_count,century_label
+tlg0057.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0057,Galen,-1,prose,31809,1st c. BCE
+tlg0059.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,15102,4th c. BCE
+tlg0059.tlg036.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,16860,4th c. BCE
+tlg0059.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,23755,4th c. BCE
+tlg0059.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,17204,4th c. BCE
+tlg0059.tlg001.perseus-grc1.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,5392,4th c. BCE
+tlg0059.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,23526,4th c. BCE
+tlg0059.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,mixed,88137,4th c. BCE
+tlg0059.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,18312,4th c. BCE
+tlg0059.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,2395,4th c. BCE
+tlg0059.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,16983,4th c. BCE
+tlg0059.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,10244,4th c. BCE
+tlg0059.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,27293,4th c. BCE
+tlg0059.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,mixed,17239,4th c. BCE
+tlg0059.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,8796,4th c. BCE
+tlg0059.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,11171,4th c. BCE
+tlg0059.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4354,4th c. BCE
+tlg0059.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4960,4th c. BCE
+tlg0059.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,6331,4th c. BCE
+tlg0059.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4268,4th c. BCE
+tlg0059.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,22449,4th c. BCE
+tlg0059.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,18984,4th c. BCE
+tlg0059.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,8661,4th c. BCE
+tlg0059.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,104683,4th c. BCE
+tlg0059.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,3011,4th c. BCE
+tlg0059.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,17260,4th c. BCE
+tlg0059.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,2386,4th c. BCE
+tlg0059.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,1553,4th c. BCE
+tlg0059.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,6650,4th c. BCE
+tlg0059.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4022,4th c. BCE
+tlg0059.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,8302,4th c. BCE
+tlg0059.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4391,4th c. BCE
+tlg0059.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,7924,4th c. BCE
+tlg0059.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,12201,4th c. BCE
+tlg0059.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,3581,4th c. BCE
+tlg0059.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,4847,4th c. BCE
+tlg0059.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0059,Plato,-4,prose,18842,4th c. BCE
+tlg0032.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,7385,4th c. BCE
+tlg0032.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,79307,4th c. BCE
+tlg0032.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,66524,4th c. BCE
+tlg0032.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,57191,4th c. BCE
+tlg0032.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,5969,4th c. BCE
+tlg0032.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,5779,4th c. BCE
+tlg0032.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,6983,4th c. BCE
+tlg0032.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,9142,4th c. BCE
+tlg0032.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,17819,4th c. BCE
+tlg0032.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,9530,4th c. BCE
+tlg0032.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,2000,4th c. BCE
+tlg0032.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,35830,4th c. BCE
+tlg0032.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,3853,4th c. BCE
+tlg0032.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0032,Xenophon,-4,prose,4925,4th c. BCE
+tlg0003.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0003,Thucydides,-5,prose,150340,5th c. BCE
+tlg0004.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0004,Diogenes Laertius,-3,mixed,110056,3rd c. BCE
+tlg0058.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0058,Aeneas Tacticus,-3,prose,14068,3rd c. BCE
+tlg0093.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0093,Theophrastus,-1,prose,6716,1st c. BCE
+tlg0094.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0094,Pseudo-Plutarch,2,prose,16059,2nd c. CE
+tlg0094.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0094,Pseudo-Plutarch,2,mixed,7917,2nd c. CE
+tlg0060.tlg001.perseus-grc5.xml,Perseus-Greek,Greek,0060,Diodorus Siculus,2,prose,121555,2nd c. CE
+tlg0060.tlg001.perseus-grc4.xml,Perseus-Greek,Greek,0060,Diodorus Siculus,2,prose,182985,2nd c. CE
+tlg0060.tlg001.perseus-grc6.xml,Perseus-Greek,Greek,0060,Diodorus Siculus,2,prose,79279,2nd c. CE
+tlg1389.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,1389,"Harpocration, Valerius",2,prose,39028,2nd c. CE
+tlg0638.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,7666,3rd c. CE
+tlg0638.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,83893,3rd c. CE
+tlg0638.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,7595,3rd c. CE
+tlg0638.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,29054,3rd c. CE
+tlg0638.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,22039,3rd c. CE
+tlg0638.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0638,Philostratus the Athenian,3,prose,1007,3rd c. CE
+tlg0005.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0005,Theocritus,-3,poetry,19762,3rd c. BCE
+tlg0005.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0005,Theocritus,-3,poetry,1754,3rd c. BCE
+tlg0034.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0034,Lycurgus,2,mixed,11655,2nd c. CE
+tlg0033.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0033,Pindar,-5,poetry,5928,5th c. BCE
+tlg0033.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0033,Pindar,-5,poetry,4979,5th c. BCE
+tlg0033.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0033,Pindar,-5,poetry,2931,5th c. BCE
+tlg0033.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0033,Pindar,-5,poetry,7462,5th c. BCE
+tlg0525.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0525,Pausanias,2,prose,217618,2nd c. CE
+tlg2040.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,2040,"Basil, Saint, Bishop of Caesarea",3,prose,136837,3rd c. CE
+tlg2040.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,2040,"Basil, Saint, Bishop of Caesarea",3,prose,4798,3rd c. CE
+tlg0719.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0719,Aretaeus of Cappadocia,2,prose,9722,2nd c. CE
+tlg0719.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0719,Aretaeus of Cappadocia,2,prose,16531,2nd c. CE
+tlg0719.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0719,Aretaeus of Cappadocia,2,prose,8145,2nd c. CE
+tlg0719.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0719,Aretaeus of Cappadocia,2,prose,17697,2nd c. CE
+tlg1600.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,1600,Philostratus Sophista,3,prose,23099,3rd c. CE
+tlg0540.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,905,5th c. BCE
+tlg0540.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1867,5th c. BCE
+tlg0540.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2085,5th c. BCE
+tlg0540.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2441,5th c. BCE
+tlg0540.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2706,5th c. BCE
+tlg0540.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1914,5th c. BCE
+tlg0540.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1096,5th c. BCE
+tlg0540.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,624,5th c. BCE
+tlg0540.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,5024,5th c. BCE
+tlg0540.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1460,5th c. BCE
+tlg0540.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,794,5th c. BCE
+tlg0540.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1145,5th c. BCE
+tlg0540.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2056,5th c. BCE
+tlg0540.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,5021,5th c. BCE
+tlg0540.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2519,5th c. BCE
+tlg0540.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1745,5th c. BCE
+tlg0540.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,2200,5th c. BCE
+tlg0540.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,972,5th c. BCE
+tlg0540.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,281,5th c. BCE
+tlg0540.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,4074,5th c. BCE
+tlg0540.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,554,5th c. BCE
+tlg0540.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,446,5th c. BCE
+tlg0540.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,567,5th c. BCE
+tlg0540.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1170,5th c. BCE
+tlg0540.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,671,5th c. BCE
+tlg0540.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1950,5th c. BCE
+tlg0540.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,753,5th c. BCE
+tlg0540.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1369,5th c. BCE
+tlg0540.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1431,5th c. BCE
+tlg0540.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,3216,5th c. BCE
+tlg0540.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1311,5th c. BCE
+tlg0540.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,596,5th c. BCE
+tlg0540.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,915,5th c. BCE
+tlg0540.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0540,Lysias,-5,prose,1533,5th c. BCE
+tlg3135.tlg001.opp-grc3.xml,Perseus-Greek,Greek,3135,Joannes Zonaras,12,prose,94133,12th c. CE
+tlg2046.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,2046,Quintus Smyrnaeus,4,poetry,60191,4th c. CE
+tlg0548.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0548,Apollodorus,2,prose,27250,2nd c. CE
+tlg0548.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0548,Apollodorus,2,prose,7882,2nd c. CE
+tlg0555.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0555,Clement of Alexandria,3,mixed,23819,3rd c. CE
+tlg0555.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0555,Clement of Alexandria,3,prose,9367,3rd c. CE
+tlg0555.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0555,Clement of Alexandria,3,prose,709,3rd c. CE
+tlg0555.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0555,Clement of Alexandria,3,prose,162211,3rd c. CE
+tlg0554.tlg001.perseus-grc1.xml,Perseus-Greek,Greek,0554,Chariton,1,prose,34818,1st c. CE
+tlg0562.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0562,Marcus Aurelius,2,prose,29236,2nd c. CE
+tlg0011.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,10946,5th c. BCE
+tlg0011.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,7567,5th c. BCE
+tlg0011.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,9244,5th c. BCE
+tlg0011.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,2027,5th c. BCE
+tlg0011.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,8225,5th c. BCE
+tlg0011.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,9746,5th c. BCE
+tlg0011.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,9125,5th c. BCE
+tlg0011.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0011,Sophocles,-5,poetry,7659,5th c. BCE
+tlg0029.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0029,Dinarchus,-4,prose,1503,4th c. BCE
+tlg0029.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0029,Dinarchus,-4,prose,8153,4th c. BCE
+tlg0029.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0029,Dinarchus,-4,prose,1931,4th c. BCE
+tlg0016.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0016,Herodotus,-5,prose,184922,5th c. BCE
+tlg0020.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0020,Hesiod,-7,poetry,7039,7th c. BCE
+tlg0020.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0020,Hesiod,-7,poetry,3298,7th c. BCE
+tlg0020.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0020,Hesiod,-7,poetry,5856,7th c. BCE
+tlg0027.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0027,Andocides,-4,prose,10343,4th c. BCE
+tlg0027.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0027,Andocides,-4,prose,2802,4th c. BCE
+tlg0027.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0027,Andocides,-4,prose,2894,4th c. BCE
+tlg0027.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0027,Andocides,-4,prose,2006,4th c. BCE
+tlg0074.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,78472,2nd c. CE
+tlg0074.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,1265,2nd c. CE
+tlg0074.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,5974,2nd c. CE
+tlg0074.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,4344,2nd c. CE
+tlg0074.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,8993,2nd c. CE
+tlg0074.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0074,Arrian,2,prose,13754,2nd c. CE
+tlg0284.tlg054.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,10903,2nd c. CE
+tlg0284.tlg053.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,8963,2nd c. CE
+tlg0284.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2855,2nd c. CE
+tlg0284.tlg036.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2445,2nd c. CE
+tlg0284.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2349,2nd c. CE
+tlg0284.tlg038.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3956,2nd c. CE
+tlg0284.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1511,2nd c. CE
+tlg0284.tlg052.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3442,2nd c. CE
+tlg0284.tlg055.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,368,2nd c. CE
+tlg0284.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2021,2nd c. CE
+tlg0284.tlg039.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4160,2nd c. CE
+tlg0284.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1207,2nd c. CE
+tlg0284.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4397,2nd c. CE
+tlg0284.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2613,2nd c. CE
+tlg0284.tlg037.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3183,2nd c. CE
+tlg0284.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1857,2nd c. CE
+tlg0284.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2739,2nd c. CE
+tlg0284.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,5738,2nd c. CE
+tlg0284.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,5171,2nd c. CE
+tlg0284.tlg048.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,10748,2nd c. CE
+tlg0284.tlg046.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,52185,2nd c. CE
+tlg0284.tlg041.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1185,2nd c. CE
+tlg0284.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1107,2nd c. CE
+tlg0284.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3475,2nd c. CE
+tlg0284.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,28651,2nd c. CE
+tlg0284.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,8379,2nd c. CE
+tlg0284.tlg040.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2112,2nd c. CE
+tlg0284.tlg047.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4285,2nd c. CE
+tlg0284.tlg049.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,poetry,11192,2nd c. CE
+tlg0284.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2009,2nd c. CE
+tlg0284.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2598,2nd c. CE
+tlg0284.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3403,2nd c. CE
+tlg0284.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,753,2nd c. CE
+tlg0284.tlg050.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4076,2nd c. CE
+tlg0284.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1486,2nd c. CE
+tlg0284.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2247,2nd c. CE
+tlg0284.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,6014,2nd c. CE
+tlg0284.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,5695,2nd c. CE
+tlg0284.tlg056.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,22749,2nd c. CE
+tlg0284.tlg051.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2235,2nd c. CE
+tlg0284.tlg042.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,6427,2nd c. CE
+tlg0284.tlg045.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,mixed,30044,2nd c. CE
+tlg0284.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1288,2nd c. CE
+tlg0284.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3221,2nd c. CE
+tlg0284.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,3788,2nd c. CE
+tlg0284.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,728,2nd c. CE
+tlg0284.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4439,2nd c. CE
+tlg0284.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1266,2nd c. CE
+tlg0284.tlg044.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,4325,2nd c. CE
+tlg0284.tlg043.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,5236,2nd c. CE
+tlg0284.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,7943,2nd c. CE
+tlg0284.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1016,2nd c. CE
+tlg0284.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1666,2nd c. CE
+tlg0284.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,1163,2nd c. CE
+tlg0284.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,133,2nd c. CE
+tlg0284.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0284,Aelius Aristides,2,prose,2082,2nd c. CE
+tlg0613.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0613,Demetrius of Phaleron,-1,prose,15428,1st c. BCE
+tlg4029.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,4029,Procopius,6,prose,224548,6th c. CE
+tlg4029.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,4029,Procopius,6,prose,32246,6th c. CE
+tlg0019.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,9977,5th c. BCE
+tlg0019.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,8806,5th c. BCE
+tlg0019.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,7716,5th c. BCE
+tlg0019.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,11528,5th c. BCE
+tlg0019.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,7873,5th c. BCE
+tlg0019.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,10406,5th c. BCE
+tlg0019.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,10365,5th c. BCE
+tlg0019.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,8678,5th c. BCE
+tlg0019.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,9487,5th c. BCE
+tlg0019.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,8794,5th c. BCE
+tlg0019.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0019,Aristophanes,-5,poetry,8434,5th c. BCE
+tlg0026.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0026,Aeschines,-5,prose,14065,5th c. BCE
+tlg0026.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0026,Aeschines,-5,prose,19306,5th c. BCE
+tlg0026.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0026,Aeschines,-5,prose,12920,5th c. BCE
+tlg0028.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,1825,4th c. BCE
+tlg0028.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,3663,4th c. BCE
+tlg0028.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,2277,4th c. BCE
+tlg0028.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,2021,4th c. BCE
+tlg0028.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,6884,4th c. BCE
+tlg0028.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0028,Antiphon,-4,prose,2599,4th c. BCE
+tlg0641.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0641,Xenophon of Ephesus,2,prose,16473,2nd c. CE
+tlg0017.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,2318,4th c. BCE
+tlg0017.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,2851,4th c. BCE
+tlg0017.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,2780,4th c. BCE
+tlg0017.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,3731,4th c. BCE
+tlg0017.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,3258,4th c. BCE
+tlg0017.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,987,4th c. BCE
+tlg0017.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,4540,4th c. BCE
+tlg0017.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,1828,4th c. BCE
+tlg0017.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,3173,4th c. BCE
+tlg0017.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,2820,4th c. BCE
+tlg0017.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,3676,4th c. BCE
+tlg0017.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0017,Isaeus,-4,prose,2071,4th c. BCE
+tlg0010.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3736,4th c. BCE
+tlg0010.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,2905,4th c. BCE
+tlg0010.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,1113,4th c. BCE
+tlg0010.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,2935,4th c. BCE
+tlg0010.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,421,4th c. BCE
+tlg0010.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,1328,4th c. BCE
+tlg0010.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,4623,4th c. BCE
+tlg0010.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3204,4th c. BCE
+tlg0010.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,1144,4th c. BCE
+tlg0010.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,892,4th c. BCE
+tlg0010.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,588,4th c. BCE
+tlg0010.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,668,4th c. BCE
+tlg0010.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3015,4th c. BCE
+tlg0010.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3763,4th c. BCE
+tlg0010.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,1121,4th c. BCE
+tlg0010.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,2919,4th c. BCE
+tlg0010.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3384,4th c. BCE
+tlg0010.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,3593,4th c. BCE
+tlg0010.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,10800,4th c. BCE
+tlg0010.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,6142,4th c. BCE
+tlg0010.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,825,4th c. BCE
+tlg0010.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,8773,4th c. BCE
+tlg0010.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,1294,4th c. BCE
+tlg0010.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,4584,4th c. BCE
+tlg0010.tlg026.perseus-grc3.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,783,4th c. BCE
+tlg0010.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,17671,4th c. BCE
+tlg0010.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,15887,4th c. BCE
+tlg0010.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,7948,4th c. BCE
+tlg0010.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,282,4th c. BCE
+tlg0010.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0010,Isocrates,-4,prose,2754,4th c. BCE
+tlg0612.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0612,Dio Chrysostom,1,prose,178358,1st c. CE
+tlg0081.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,4209,5th c. BCE
+tlg0081.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,180,5th c. BCE
+tlg0081.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,284276,5th c. BCE
+tlg0081.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,21960,5th c. BCE
+tlg0081.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,3416,5th c. BCE
+tlg0081.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,4327,5th c. BCE
+tlg0081.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,20854,5th c. BCE
+tlg0081.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,7760,5th c. BCE
+tlg0081.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,6404,5th c. BCE
+tlg0081.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,5337,5th c. BCE
+tlg0081.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,878,5th c. BCE
+tlg0081.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,2612,5th c. BCE
+tlg0081.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0081,Dionysius of Halicarnassus,-5,prose,16868,5th c. BCE
+tlg0086.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,26289,4th c. BCE
+tlg0086.tlg038.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,43177,4th c. BCE
+tlg0086.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,78695,4th c. BCE
+tlg0086.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,65512,4th c. BCE
+tlg0086.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,16596,4th c. BCE
+tlg0086.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,10263,4th c. BCE
+tlg0086.tlg034.digicorpus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,10228,4th c. BCE
+tlg0086.tlg045.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,1497,4th c. BCE
+tlg0086.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,prose,6228,4th c. BCE
+tlg0086.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0086,Aristotle,-4,mixed,56566,4th c. BCE
+tlg2934.tlg066.perseus-grc2.xml,Perseus-Greek,Greek,2934,John of Damascus,5,prose,64571,5th c. CE
+tlg0031.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,2232,1st c. CE
+tlg0031.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,6816,1st c. CE
+tlg0031.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,18289,1st c. CE
+tlg0031.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,7108,1st c. CE
+tlg0031.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,4472,1st c. CE
+tlg0031.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1597,1st c. CE
+tlg0031.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1580,1st c. CE
+tlg0031.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,247,1st c. CE
+tlg0031.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,2137,1st c. CE
+tlg0031.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1097,1st c. CE
+tlg0031.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,221,1st c. CE
+tlg0031.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1478,1st c. CE
+tlg0031.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,825,1st c. CE
+tlg0031.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,19452,1st c. CE
+tlg0031.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,15587,1st c. CE
+tlg0031.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,18402,1st c. CE
+tlg0031.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,11271,1st c. CE
+tlg0031.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1633,1st c. CE
+tlg0031.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1242,1st c. CE
+tlg0031.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1735,1st c. CE
+tlg0031.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,9843,1st c. CE
+tlg0031.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,336,1st c. CE
+tlg0031.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,457,1st c. CE
+tlg0031.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,mixed,4973,1st c. CE
+tlg0031.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,1670,1st c. CE
+tlg0031.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,661,1st c. CE
+tlg0031.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0031,New Testament,1,prose,2419,1st c. CE
+tlg0007.tlg118.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,12912,4th c. BCE
+tlg0007.tlg127.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,5003,4th c. BCE
+tlg0007.tlg120.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,2171,4th c. BCE
+tlg0007.tlg129.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,11881,4th c. BCE
+tlg0007.tlg116.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,1727,4th c. BCE
+tlg0007.tlg111.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,2116,4th c. BCE
+tlg0007.tlg110.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,4274,4th c. BCE
+tlg0007.tlg128.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1624,4th c. BCE
+tlg0007.tlg117.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,7136,4th c. BCE
+tlg0007.tlg121.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,9087,4th c. BCE
+tlg0007.tlg119.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,599,4th c. BCE
+tlg0007.tlg126.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,12674,4th c. BCE
+tlg0007.tlg054.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6843,4th c. BCE
+tlg0007.tlg053.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,981,4th c. BCE
+tlg0007.tlg098.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,2413,4th c. BCE
+tlg0007.tlg091.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,7857,4th c. BCE
+tlg0007.tlg065.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6186,4th c. BCE
+tlg0007.tlg062.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,943,4th c. BCE
+tlg0007.tlg096.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,6310,4th c. BCE
+tlg0007.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,945,4th c. BCE
+tlg0007.tlg036.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,13339,4th c. BCE
+tlg0007.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,12820,4th c. BCE
+tlg0007.tlg038.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9020,4th c. BCE
+tlg0007.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,8531,4th c. BCE
+tlg0007.tlg097.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,6817,4th c. BCE
+tlg0007.tlg063.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11808,4th c. BCE
+tlg0007.tlg064.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,7350,4th c. BCE
+tlg0007.tlg090.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,5263,4th c. BCE
+tlg0007.tlg052.perseus-grc1.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9215,4th c. BCE
+tlg0007.tlg099.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,930,4th c. BCE
+tlg0007.tlg055.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11995,4th c. BCE
+tlg0007.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,7454,4th c. BCE
+tlg0007.tlg039.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,10272,4th c. BCE
+tlg0007.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1597,4th c. BCE
+tlg0007.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,10928,4th c. BCE
+tlg0007.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,5855,4th c. BCE
+tlg0007.tlg037.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,989,4th c. BCE
+tlg0007.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,10074,4th c. BCE
+tlg0007.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,10029,4th c. BCE
+tlg0007.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8201,4th c. BCE
+tlg0007.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,816,4th c. BCE
+tlg0007.tlg048.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,16028,4th c. BCE
+tlg0007.tlg083.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9750,4th c. BCE
+tlg0007.tlg083.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9729,4th c. BCE
+tlg0007.tlg077.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,7212,4th c. BCE
+tlg0007.tlg070.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,12011,4th c. BCE
+tlg0007.tlg079.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,9089,4th c. BCE
+tlg0007.tlg046.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1083,4th c. BCE
+tlg0007.tlg041.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,5512,4th c. BCE
+tlg0007.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8483,4th c. BCE
+tlg0007.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8109,4th c. BCE
+tlg0007.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,7774,4th c. BCE
+tlg0007.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,728,4th c. BCE
+tlg0007.tlg040.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1230,4th c. BCE
+tlg0007.tlg078.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,3798,4th c. BCE
+tlg0007.tlg047.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,19952,4th c. BCE
+tlg0007.tlg085.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,4998,4th c. BCE
+tlg0007.tlg085.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,4726,4th c. BCE
+tlg0007.tlg071.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,5195,4th c. BCE
+tlg0007.tlg049.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8204,4th c. BCE
+tlg0007.tlg076.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,9703,4th c. BCE
+tlg0007.tlg082.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,14123,4th c. BCE
+tlg0007.tlg082.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,13881,4th c. BCE
+tlg0007.tlg104.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,3755,4th c. BCE
+tlg0007.tlg103.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,2345,4th c. BCE
+tlg0007.tlg135.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1192,4th c. BCE
+tlg0007.tlg084a.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,13939,4th c. BCE
+tlg0007.tlg084a.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,13984,4th c. BCE
+tlg0007.tlg132.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,1245,4th c. BCE
+tlg0007.tlg133.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6198,4th c. BCE
+tlg0007.tlg134.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9439,4th c. BCE
+tlg0007.tlg102.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,3803,4th c. BCE
+tlg0007.tlg105.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1073,4th c. BCE
+tlg0007.tlg082b.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1135,4th c. BCE
+tlg0007.tlg082b.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1147,4th c. BCE
+tlg0007.tlg123.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,8940,4th c. BCE
+tlg0007.tlg112.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,66478,4th c. BCE
+tlg0007.tlg115.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,1779,4th c. BCE
+tlg0007.tlg141.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,1238,4th c. BCE
+tlg0007.tlg114.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1854,4th c. BCE
+tlg0007.tlg113.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,11946,4th c. BCE
+tlg0007.tlg125.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,4060,4th c. BCE
+tlg0007.tlg122.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,717,4th c. BCE
+tlg0007.tlg140.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,9887,4th c. BCE
+tlg0007.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8136,4th c. BCE
+tlg0007.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,5865,4th c. BCE
+tlg0007.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1164,4th c. BCE
+tlg0007.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9459,4th c. BCE
+tlg0007.tlg050.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,16704,4th c. BCE
+tlg0007.tlg057.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,12354,4th c. BCE
+tlg0007.tlg068.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,10097,4th c. BCE
+tlg0007.tlg061.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11878,4th c. BCE
+tlg0007.tlg095.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,5640,4th c. BCE
+tlg0007.tlg092.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,14652,4th c. BCE
+tlg0007.tlg066.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,4139,4th c. BCE
+tlg0007.tlg059.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,887,4th c. BCE
+tlg0007.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,7543,4th c. BCE
+tlg0007.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9266,4th c. BCE
+tlg0007.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1237,4th c. BCE
+tlg0007.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11520,4th c. BCE
+tlg0007.tlg067.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,6246,4th c. BCE
+tlg0007.tlg093.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,716,4th c. BCE
+tlg0007.tlg058.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,18506,4th c. BCE
+tlg0007.tlg094.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,6022,4th c. BCE
+tlg0007.tlg060.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11790,4th c. BCE
+tlg0007.tlg056.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,990,4th c. BCE
+tlg0007.tlg069.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,5204,4th c. BCE
+tlg0007.tlg051.perseus-grc1.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,13479,4th c. BCE
+tlg0007.tlg073.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,1903,4th c. BCE
+tlg0007.tlg087.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,8661,4th c. BCE
+tlg0007.tlg087.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,8346,4th c. BCE
+tlg0007.tlg080.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,3418,4th c. BCE
+tlg0007.tlg074.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,1309,4th c. BCE
+tlg0007.tlg089.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,17324,4th c. BCE
+tlg0007.tlg042.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6658,4th c. BCE
+tlg0007.tlg045.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,20140,4th c. BCE
+tlg0007.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,11070,4th c. BCE
+tlg0007.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9353,4th c. BCE
+tlg0007.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,550,4th c. BCE
+tlg0007.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,483,4th c. BCE
+tlg0007.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,5697,4th c. BCE
+tlg0007.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9080,4th c. BCE
+tlg0007.tlg044.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,10766,4th c. BCE
+tlg0007.tlg088.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,3010,4th c. BCE
+tlg0007.tlg088.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,2976,4th c. BCE
+tlg0007.tlg043.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,403,4th c. BCE
+tlg0007.tlg075.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,677,4th c. BCE
+tlg0007.tlg081.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,16524,4th c. BCE
+tlg0007.tlg081.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,16369,4th c. BCE
+tlg0007.tlg086.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,5053,4th c. BCE
+tlg0007.tlg086.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,4599,4th c. BCE
+tlg0007.tlg072.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,3090,4th c. BCE
+tlg0007.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1464,4th c. BCE
+tlg0007.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9640,4th c. BCE
+tlg0007.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,9441,4th c. BCE
+tlg0007.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1085,4th c. BCE
+tlg0007.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,5850,4th c. BCE
+tlg0007.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,7983,4th c. BCE
+tlg0007.tlg100.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,890,4th c. BCE
+tlg0007.tlg107.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,9835,4th c. BCE
+tlg0007.tlg138.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,13781,4th c. BCE
+tlg0007.tlg084b.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6172,4th c. BCE
+tlg0007.tlg084b.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,6273,4th c. BCE
+tlg0007.tlg131.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,1587,4th c. BCE
+tlg0007.tlg136.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,12066,4th c. BCE
+tlg0007.tlg109.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,12585,4th c. BCE
+tlg0007.tlg082a.perseus-grc3.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1694,4th c. BCE
+tlg0007.tlg082a.perseus-grc4.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,1666,4th c. BCE
+tlg0007.tlg137.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,502,4th c. BCE
+tlg0007.tlg108.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,3847,4th c. BCE
+tlg0007.tlg130.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,prose,3452,4th c. BCE
+tlg0007.tlg106.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,poetry,4137,4th c. BCE
+tlg0007.tlg139.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,9710,4th c. BCE
+tlg0007.tlg101.perseus-grc2.xml,Perseus-Greek,Greek,0007,Plutarch,-4,mixed,6068,4th c. BCE
+tlg0062.tlg054.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,934,1st c. CE
+tlg0062.tlg054.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,mixed,939,1st c. CE
+tlg0062.tlg053.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,7763,1st c. CE
+tlg0062.tlg053.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,7563,1st c. CE
+tlg0062.tlg065.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,5508,1st c. CE
+tlg0062.tlg065.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,5440,1st c. CE
+tlg0062.tlg062.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1832,1st c. CE
+tlg0062.tlg062.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,1872,1st c. CE
+tlg0062.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3188,1st c. CE
+tlg0062.tlg036.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1779,1st c. CE
+tlg0062.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6433,1st c. CE
+tlg0062.tlg038.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,mixed,7101,1st c. CE
+tlg0062.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4126,1st c. CE
+tlg0062.tlg063.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,14206,1st c. CE
+tlg0062.tlg063.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,14304,1st c. CE
+tlg0062.tlg064.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1008,1st c. CE
+tlg0062.tlg064.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,1063,1st c. CE
+tlg0062.tlg052.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4961,1st c. CE
+tlg0062.tlg055.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,5292,1st c. CE
+tlg0062.tlg055.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,5238,1st c. CE
+tlg0062.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,2894,1st c. CE
+tlg0062.tlg039.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3294,1st c. CE
+tlg0062.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,mixed,1195,1st c. CE
+tlg0062.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6855,1st c. CE
+tlg0062.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3122,1st c. CE
+tlg0062.tlg037.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3586,1st c. CE
+tlg0062.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4822,1st c. CE
+tlg0062.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,11238,1st c. CE
+tlg0062.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3675,1st c. CE
+tlg0062.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4289,1st c. CE
+tlg0062.tlg048.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2009,1st c. CE
+tlg0062.tlg070.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1837,1st c. CE
+tlg0062.tlg046.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2970,1st c. CE
+tlg0062.tlg041.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6290,1st c. CE
+tlg0062.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6103,1st c. CE
+tlg0062.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6636,1st c. CE
+tlg0062.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3196,1st c. CE
+tlg0062.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1241,1st c. CE
+tlg0062.tlg040.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3568,1st c. CE
+tlg0062.tlg047.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1367,1st c. CE
+tlg0062.tlg071.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,poetry,1792,1st c. CE
+tlg0062.tlg049.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4011,1st c. CE
+tlg0062.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2084,1st c. CE
+tlg0062.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3363,1st c. CE
+tlg0062.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1040,1st c. CE
+tlg0062.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,782,1st c. CE
+tlg0062.tlg050.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1921,1st c. CE
+tlg0062.tlg057.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1585,1st c. CE
+tlg0062.tlg057.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,1570,1st c. CE
+tlg0062.tlg068.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,7939,1st c. CE
+tlg0062.tlg068.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,7879,1st c. CE
+tlg0062.tlg061.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,948,1st c. CE
+tlg0062.tlg061.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,940,1st c. CE
+tlg0062.tlg066.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,12022,1st c. CE
+tlg0062.tlg066.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,11691,1st c. CE
+tlg0062.tlg059.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2065,1st c. CE
+tlg0062.tlg059.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,mixed,2102,1st c. CE
+tlg0062.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,603,1st c. CE
+tlg0062.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,997,1st c. CE
+tlg0062.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6411,1st c. CE
+tlg0062.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,7162,1st c. CE
+tlg0062.tlg067.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4132,1st c. CE
+tlg0062.tlg067.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,4173,1st c. CE
+tlg0062.tlg058.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,mixed,1651,1st c. CE
+tlg0062.tlg058.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1592,1st c. CE
+tlg0062.tlg060.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,997,1st c. CE
+tlg0062.tlg060.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,980,1st c. CE
+tlg0062.tlg056.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,947,1st c. CE
+tlg0062.tlg056.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,925,1st c. CE
+tlg0062.tlg069.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,8141,1st c. CE
+tlg0062.tlg069.perseus-grc3.xml,Perseus-Greek,Greek,0062,Lucian of Samosata,1,prose,8088,1st c. CE
+tlg0062.tlg051.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3018,1st c. CE
+tlg0062.tlg042.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,mixed,4305,1st c. CE
+tlg0062.tlg045.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,7275,1st c. CE
+tlg0062.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2154,1st c. CE
+tlg0062.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,4084,1st c. CE
+tlg0062.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1829,1st c. CE
+tlg0062.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2424,1st c. CE
+tlg0062.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,1827,1st c. CE
+tlg0062.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,6759,1st c. CE
+tlg0062.tlg044.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,10017,1st c. CE
+tlg0062.tlg043.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3302,1st c. CE
+tlg0062.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,5775,1st c. CE
+tlg0062.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,5825,1st c. CE
+tlg0062.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,5361,1st c. CE
+tlg0062.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,2397,1st c. CE
+tlg0062.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,3868,1st c. CE
+tlg0062.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0062,Lucian,1,prose,957,1st c. CE
+tlg0001.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0001,Apollonius Rhodius,-3,poetry,38825,3rd c. BCE
+tlg0006.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,8250,5th c. BCE
+tlg0006.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,7589,5th c. BCE
+tlg0006.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,4405,5th c. BCE
+tlg0006.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,7626,5th c. BCE
+tlg0006.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,7358,5th c. BCE
+tlg0006.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,10352,5th c. BCE
+tlg0006.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,8103,5th c. BCE
+tlg0006.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,8849,5th c. BCE
+tlg0006.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,10450,5th c. BCE
+tlg0006.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,8278,5th c. BCE
+tlg0006.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,6474,5th c. BCE
+tlg0006.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,8528,5th c. BCE
+tlg0006.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,6925,5th c. BCE
+tlg0006.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,7448,5th c. BCE
+tlg0006.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,10606,5th c. BCE
+tlg0006.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,9893,5th c. BCE
+tlg0006.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,5667,5th c. BCE
+tlg0006.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,7996,5th c. BCE
+tlg0006.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0006,Euripides,-5,poetry,9853,5th c. BCE
+tlg4036.tlg023.cypria-grc1.xml,Perseus-Greek,Greek,4036,Proclus,5,prose,625,5th c. CE
+tlg0030.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,1482,4th c. BCE
+tlg0030.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,2252,4th c. BCE
+tlg0030.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,2519,4th c. BCE
+tlg0030.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,2728,4th c. BCE
+tlg0030.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,2191,4th c. BCE
+tlg0030.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0030,Hyperides,-4,prose,942,4th c. BCE
+tlg0008.tlg001.perseus-grc3.xml,Perseus-Greek,Greek,0008,Athenaeus,2,poetry,265096,2nd c. CE
+tlg0008.tlg001.perseus-grc4.xml,Perseus-Greek,Greek,0008,Athenaeus,2,prose,265746,2nd c. CE
+tlg0090.tlg001.opp-grc1.xml,Perseus-Greek,Greek,0090,Agathemerus,2,prose,1986,2nd c. CE
+tlg0099.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0099,Strabo,-1,mixed,287550,1st c. BCE
+tlg0543.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0543,Polybius,-4,prose,312647,4th c. BCE
+tlg0526.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0526,Flavius Josephus,1,prose,311987,1st c. CE
+tlg0526.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0526,Flavius Josephus,1,prose,20514,1st c. CE
+tlg0526.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0526,Flavius Josephus,1,prose,125274,1st c. CE
+tlg0526.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0526,Flavius Josephus,1,prose,15783,1st c. CE
+tlg0545.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0545,Aelian,3,prose,103309,3rd c. CE
+tlg0545.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0545,Aelian,3,prose,2178,3rd c. CE
+tlg0545.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0545,Aelian,3,prose,38535,3rd c. CE
+tlg2018.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,2018,Eusebius of Caesarea,3,prose,100574,3rd c. CE
+tlg0385.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0385,Cassius Dio Cocceianus,3,prose,191358,3rd c. CE
+tlg2045.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,2045,Nonnus of Panopolis,5,poetry,127720,5th c. CE
+tlg0533.tlg015.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,705,3rd c. BCE
+tlg0533.tlg015.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,745,3rd c. BCE
+tlg0533.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,1937,3rd c. BCE
+tlg0533.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,2099,3rd c. BCE
+tlg0533.tlg016.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,785,3rd c. BCE
+tlg0533.tlg016.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,798,3rd c. BCE
+tlg0533.tlg020.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,970,3rd c. BCE
+tlg0533.tlg020.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,1035,3rd c. BCE
+tlg0533.tlg018.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,2248,3rd c. BCE
+tlg0533.tlg018.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,2166,3rd c. BCE
+tlg0533.tlg019.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,963,3rd c. BCE
+tlg0533.tlg019.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,916,3rd c. BCE
+tlg0533.tlg017.perseus-grc4.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,1857,3rd c. BCE
+tlg0533.tlg017.perseus-grc3.xml,Perseus-Greek,Greek,0533,Callimachus,-3,poetry,1910,3rd c. BCE
+tlg0551.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,25073,2nd c. CE
+tlg0551.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,15987,2nd c. CE
+tlg0551.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,946,2nd c. CE
+tlg0551.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,9668,2nd c. CE
+tlg0551.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,4838,2nd c. CE
+tlg0551.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,13684,2nd c. CE
+tlg0551.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,24015,2nd c. CE
+tlg0551.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,1116,2nd c. CE
+tlg0551.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,3419,2nd c. CE
+tlg0551.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,2124,2nd c. CE
+tlg0551.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,813,2nd c. CE
+tlg0551.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,3610,2nd c. CE
+tlg0551.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,116920,2nd c. CE
+tlg0551.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0551,Appian of Alexandria,2,prose,381,2nd c. CE
+tlg0556.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0556,Asclepiodotus,2,prose,6655,2nd c. CE
+tlg0535.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0535,Demades,2,prose,2076,2nd c. CE
+tlg0363.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0363,Claudius Ptolemy,2,prose,38016,2nd c. CE
+tlg0532.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0532,Achilles Tatius,2,prose,41666,2nd c. CE
+tlg0557.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0557,Epictetus,-2,prose,75143,2nd c. BCE
+tlg0557.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0557,Epictetus,-2,prose,1907,2nd c. BCE
+tlg0557.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0557,Epictetus,-2,prose,279,2nd c. BCE
+tlg0557.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0557,Epictetus,-2,prose,1841,2nd c. BCE
+tlg0557.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0557,Epictetus,-2,prose,4988,2nd c. BCE
+tlg2003.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,5658,4th c. CE
+tlg2003.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,8844,4th c. CE
+tlg2003.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,11591,4th c. CE
+tlg2003.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,3305,4th c. CE
+tlg2003.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,5758,4th c. CE
+tlg2003.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,8311,4th c. CE
+tlg2003.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,27363,4th c. CE
+tlg2003.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,13040,4th c. CE
+tlg2003.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,3036,4th c. CE
+tlg2003.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,4661,4th c. CE
+tlg2003.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,6856,4th c. CE
+tlg2003.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,7457,4th c. CE
+tlg2003.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,10643,4th c. CE
+tlg2003.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,2003,Julian the Emperor,4,prose,6713,4th c. CE
+tlg0561.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0561,Longus,2,prose,19750,2nd c. CE
+tlg0012.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0012,Homer,-8,poetry,111895,8th c. BCE
+tlg0012.tlg003.perseus-grc1.xml,Perseus-Greek,Greek,0012,Homer,-8,poetry,751,8th c. BCE
+tlg0012.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0012,Homer,-8,poetry,87177,8th c. BCE
+tlg0023.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0023,Oppian,2,poetry,22758,2nd c. CE
+tlg0085.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,5511,5th c. BCE
+tlg0085.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,5213,5th c. BCE
+tlg0085.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,5688,5th c. BCE
+tlg0085.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,6156,5th c. BCE
+tlg0085.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,5340,5th c. BCE
+tlg0085.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,8488,5th c. BCE
+tlg0085.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0085,Aeschylus,-5,poetry,5433,5th c. BCE
+tlg0627.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,11244,5th c. BCE
+tlg0627.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,4997,5th c. BCE
+tlg0627.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,5528,5th c. BCE
+tlg0627.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,10866,5th c. BCE
+tlg0627.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,1547,5th c. BCE
+tlg0627.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,2148,5th c. BCE
+tlg0627.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,7093,5th c. BCE
+tlg0627.tlg046.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,1309,5th c. BCE
+tlg0627.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,251,5th c. BCE
+tlg0627.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,5220,5th c. BCE
+tlg0627.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,6135,5th c. BCE
+tlg0627.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,5225,5th c. BCE
+tlg0627.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,7490,5th c. BCE
+tlg0627.tlg051.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,1347,5th c. BCE
+tlg0627.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,4956,5th c. BCE
+tlg0627.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,899,5th c. BCE
+tlg0627.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,4720,5th c. BCE
+tlg0627.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,3325,5th c. BCE
+tlg0627.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0627,Hippocrates,-5,prose,21328,5th c. BCE
+tlg1799.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,1799,Euclid,-3,prose,152654,3rd c. BCE
+tlg0013.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,59,5th c. BCE
+tlg0013.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,133,5th c. BCE
+tlg0013.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,427,5th c. BCE
+tlg0013.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,146,5th c. BCE
+tlg0013.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,133,5th c. BCE
+tlg0013.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,137,5th c. BCE
+tlg0013.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,102,5th c. BCE
+tlg0013.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,64,5th c. BCE
+tlg0013.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,30,5th c. BCE
+tlg0013.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,35,5th c. BCE
+tlg0013.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,25,5th c. BCE
+tlg0013.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,44,5th c. BCE
+tlg0013.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,55,5th c. BCE
+tlg0013.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,20,5th c. BCE
+tlg0013.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,49,5th c. BCE
+tlg0013.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,125,5th c. BCE
+tlg0013.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,3841,5th c. BCE
+tlg0013.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,4031,5th c. BCE
+tlg0013.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,2049,5th c. BCE
+tlg0013.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,3375,5th c. BCE
+tlg0013.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,118,5th c. BCE
+tlg0013.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,37,5th c. BCE
+tlg0013.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,35,5th c. BCE
+tlg0013.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,98,5th c. BCE
+tlg0013.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,53,5th c. BCE
+tlg0013.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,134,5th c. BCE
+tlg0013.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,77,5th c. BCE
+tlg0013.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,91,5th c. BCE
+tlg0013.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,338,5th c. BCE
+tlg0013.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,40,5th c. BCE
+tlg0013.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,29,5th c. BCE
+tlg0013.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,113,5th c. BCE
+tlg0013.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0013,Anonymous,-5,poetry,41,5th c. BCE
+tlg0014.tlg054.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3190,4th c. BCE
+tlg0014.tlg053.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2015,4th c. BCE
+tlg0014.tlg062.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,9567,4th c. BCE
+tlg0014.tlg009.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4307,4th c. BCE
+tlg0014.tlg036.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3972,4th c. BCE
+tlg0014.tlg031.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,951,4th c. BCE
+tlg0014.tlg038.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1852,4th c. BCE
+tlg0014.tlg007.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2439,4th c. BCE
+tlg0014.tlg063.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,6096,4th c. BCE
+tlg0014.tlg052.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2122,4th c. BCE
+tlg0014.tlg055.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2119,4th c. BCE
+tlg0014.tlg001.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1835,4th c. BCE
+tlg0014.tlg039.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2747,4th c. BCE
+tlg0014.tlg006.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1996,4th c. BCE
+tlg0014.tlg030.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2356,4th c. BCE
+tlg0014.tlg008.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4233,4th c. BCE
+tlg0014.tlg037.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3786,4th c. BCE
+tlg0014.tlg015.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2210,4th c. BCE
+tlg0014.tlg012.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1414,4th c. BCE
+tlg0014.tlg024.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,14667,4th c. BCE
+tlg0014.tlg023.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,15418,4th c. BCE
+tlg0014.tlg048.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3524,4th c. BCE
+tlg0014.tlg046.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1857,4th c. BCE
+tlg0014.tlg041.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1967,4th c. BCE
+tlg0014.tlg022.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,5634,4th c. BCE
+tlg0014.tlg025.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,6722,4th c. BCE
+tlg0014.tlg013.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2318,4th c. BCE
+tlg0014.tlg014.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2592,4th c. BCE
+tlg0014.tlg040.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3914,4th c. BCE
+tlg0014.tlg047.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,5397,4th c. BCE
+tlg0014.tlg049.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4365,4th c. BCE
+tlg0014.tlg032.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1913,4th c. BCE
+tlg0014.tlg035.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3653,4th c. BCE
+tlg0014.tlg003.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2357,4th c. BCE
+tlg0014.tlg004.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3287,4th c. BCE
+tlg0014.tlg050.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4618,4th c. BCE
+tlg0014.tlg057.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4624,4th c. BCE
+tlg0014.tlg061.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3661,4th c. BCE
+tlg0014.tlg059.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,9229,4th c. BCE
+tlg0014.tlg005.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1457,4th c. BCE
+tlg0014.tlg002.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2045,4th c. BCE
+tlg0014.tlg034.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3269,4th c. BCE
+tlg0014.tlg033.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2553,4th c. BCE
+tlg0014.tlg058.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4698,4th c. BCE
+tlg0014.tlg060.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2545,4th c. BCE
+tlg0014.tlg056.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3309,4th c. BCE
+tlg0014.tlg051.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1345,4th c. BCE
+tlg0014.tlg042.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,2242,4th c. BCE
+tlg0014.tlg045.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,5707,4th c. BCE
+tlg0014.tlg011.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1290,4th c. BCE
+tlg0014.tlg016.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1856,4th c. BCE
+tlg0014.tlg029.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,3908,4th c. BCE
+tlg0014.tlg020.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,11367,4th c. BCE
+tlg0014.tlg027.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4575,4th c. BCE
+tlg0014.tlg018.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,22431,4th c. BCE
+tlg0014.tlg044.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4217,4th c. BCE
+tlg0014.tlg043.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,6300,4th c. BCE
+tlg0014.tlg026.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1686,4th c. BCE
+tlg0014.tlg019.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,23061,4th c. BCE
+tlg0014.tlg021.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,15747,4th c. BCE
+tlg0014.tlg017.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1790,4th c. BCE
+tlg0014.tlg028.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,1516,4th c. BCE
+tlg0014.tlg010.perseus-grc2.xml,Perseus-Greek,Greek,0014,Demosthenes,-4,prose,4447,4th c. BCE
+tlg0057.tlg054.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,4221,1st c. BCE
+tlg0057.tlg053.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,5803,1st c. BCE
+tlg0057.tlg065.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,27265,1st c. BCE
+tlg0057.tlg062.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,36318,1st c. BCE
+tlg0057.tlg096.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,9831,1st c. BCE
+tlg0057.tlg009.1st1K-grc2.xml,First1KGreek,Greek,0057,Galen,-1,prose,27713,1st c. BCE
+tlg0057.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,27694,1st c. BCE
+tlg0057.tlg036.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,66879,1st c. BCE
+tlg0057.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,4468,1st c. BCE
+tlg0057.tlg038.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,10187,1st c. BCE
+tlg0057.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,16153,1st c. BCE
+tlg0057.tlg063.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,15712,1st c. BCE
+tlg0057.tlg064.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,33858,1st c. BCE
+tlg0057.tlg052.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,3251,1st c. BCE
+tlg0057.tlg099.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,42854,1st c. BCE
+tlg0057.tlg055.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,3158,1st c. BCE
+tlg0057.tlg001.1st1K-grc2.xml,First1KGreek,Greek,0057,Galen,-1,mixed,5092,1st c. BCE
+tlg0057.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,poetry,5041,1st c. BCE
+tlg0057.tlg039.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,2212,1st c. BCE
+tlg0057.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,11963,1st c. BCE
+tlg0057.tlg030.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6257,1st c. BCE
+tlg0057.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,13405,1st c. BCE
+tlg0057.tlg037.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,44962,1st c. BCE
+tlg0057.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,4198,1st c. BCE
+tlg0057.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6930,1st c. BCE
+tlg0057.tlg024.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1766,1st c. BCE
+tlg0057.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,4713,1st c. BCE
+tlg0057.tlg048.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1581,1st c. BCE
+tlg0057.tlg083.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,11017,1st c. BCE
+tlg0057.tlg077.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,poetry,103969,1st c. BCE
+tlg0057.tlg070.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,10057,1st c. BCE
+tlg0057.tlg084.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1370,1st c. BCE
+tlg0057.tlg079.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,13017,1st c. BCE
+tlg0057.tlg046.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,5294,1st c. BCE
+tlg0057.tlg041.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6645,1st c. BCE
+tlg0057.tlg022.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,7712,1st c. BCE
+tlg0057.tlg025.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,821,1st c. BCE
+tlg0057.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,7539,1st c. BCE
+tlg0057.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,3606,1st c. BCE
+tlg0057.tlg040.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,503,1st c. BCE
+tlg0057.tlg078.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,poetry,27861,1st c. BCE
+tlg0057.tlg047.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,3538,1st c. BCE
+tlg0057.tlg085.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,24376,1st c. BCE
+tlg0057.tlg071.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,704,1st c. BCE
+tlg0057.tlg049.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,5603,1st c. BCE
+tlg0057.tlg076.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,142666,1st c. BCE
+tlg0057.tlg082.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,2530,1st c. BCE
+tlg0057.tlg103.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,4007,1st c. BCE
+tlg0057.tlg102.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,14746,1st c. BCE
+tlg0057.tlg114.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,675,1st c. BCE
+tlg0057.tlg032.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,94753,1st c. BCE
+tlg0057.tlg035.1st1K-grc3.xml,First1KGreek,Greek,0057,Galen,-1,prose,681,1st c. BCE
+tlg0057.tlg035.1st1K-grc2.xml,First1KGreek,Greek,0057,Galen,-1,prose,396,1st c. BCE
+tlg0057.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1388,1st c. BCE
+tlg0057.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6225,1st c. BCE
+tlg0057.tlg050.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,11076,1st c. BCE
+tlg0057.tlg057.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,69856,1st c. BCE
+tlg0057.tlg068.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,5971,1st c. BCE
+tlg0057.tlg061.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,32090,1st c. BCE
+tlg0057.tlg095.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,51618,1st c. BCE
+tlg0057.tlg092.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,96004,1st c. BCE
+tlg0057.tlg066.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,157546,1st c. BCE
+tlg0057.tlg059.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,42804,1st c. BCE
+tlg0057.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1830,1st c. BCE
+tlg0057.tlg034.1st1K-grc2.xml,First1KGreek,Greek,0057,Galen,-1,prose,1712,1st c. BCE
+tlg0057.tlg034.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1700,1st c. BCE
+tlg0057.tlg033.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,13831,1st c. BCE
+tlg0057.tlg067.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,22890,1st c. BCE
+tlg0057.tlg093.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,7436,1st c. BCE
+tlg0057.tlg058.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,5977,1st c. BCE
+tlg0057.tlg094.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,7591,1st c. BCE
+tlg0057.tlg060.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,31232,1st c. BCE
+tlg0057.tlg056.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,31842,1st c. BCE
+tlg0057.tlg069.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,9042,1st c. BCE
+tlg0057.tlg051.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,9114,1st c. BCE
+tlg0057.tlg073.1st1K-grc2.xml,First1KGreek,Greek,0057,Galen,-1,prose,2250,1st c. BCE
+tlg0057.tlg073.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,1996,1st c. BCE
+tlg0057.tlg087.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,67030,1st c. BCE
+tlg0057.tlg074.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,3219,1st c. BCE
+tlg0057.tlg089.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,156383,1st c. BCE
+tlg0057.tlg042.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6085,1st c. BCE
+tlg0057.tlg045.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,20902,1st c. BCE
+tlg0057.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,78399,1st c. BCE
+tlg0057.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,3261,1st c. BCE
+tlg0057.tlg029.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6320,1st c. BCE
+tlg0057.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6050,1st c. BCE
+tlg0057.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,mixed,8377,1st c. BCE
+tlg0057.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,14720,1st c. BCE
+tlg0057.tlg044.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,29418,1st c. BCE
+tlg0057.tlg043.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6621,1st c. BCE
+tlg0057.tlg075.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,133890,1st c. BCE
+tlg0057.tlg081.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,8450,1st c. BCE
+tlg0057.tlg086.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6623,1st c. BCE
+tlg0057.tlg072.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,2973,1st c. BCE
+tlg0057.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,6487,1st c. BCE
+tlg0057.tlg019.opp-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,7240,1st c. BCE
+tlg0057.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,20793,1st c. BCE
+tlg0057.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,194297,1st c. BCE
+tlg0057.tlg028.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,8194,1st c. BCE
+tlg0057.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,31893,1st c. BCE
+tlg0057.tlg100.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,41682,1st c. BCE
+tlg0057.tlg107.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,997,1st c. BCE
+tlg0057.tlg101.1st1K-grc1.xml,First1KGreek,Greek,0057,Galen,-1,prose,41054,1st c. BCE
+tlg0061.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,mixed,3348,2nd c. CE
+tlg0061.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,prose,9654,2nd c. CE
+tlg0061.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,prose,2456,2nd c. CE
+tlg0061.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,prose,3465,2nd c. CE
+tlg0061.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,prose,5144,2nd c. CE
+tlg0061.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,prose,929,2nd c. CE
+tlg0061.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,poetry,1198,2nd c. CE
+tlg0061.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0061,Pseudo-Lucian,2,mixed,7663,2nd c. CE
+tlg0059.tlg037.1st1K-grc1.xml,First1KGreek,Greek,0059,Plato,-4,prose,1928,4th c. BCE
+tlg4034.tlg006.1st1K-grc1.xml,First1KGreek,Greek,4034,Michael of Ephesus,11,prose,31732,11th c. CE
+tlg4034.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4034,Michael of Ephesus,11,prose,43727,11th c. CE
+tlg4034.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4034,Michael of Ephesius,11,prose,11524,11th c. CE
+tlg4034.tlg005.1st1K-grc1.xml,First1KGreek,Greek,4034,Michael of Ephesus,11,prose,15494,11th c. CE
+tlg4034.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4034,Michael Ephesius,11,prose,59563,11th c. CE
+tlg0067.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0067,Agatharchides,-2,prose,23878,2nd c. BCE
+tlg0093.tlg010x04.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,1429,1st c. BCE
+tlg0093.tlg010x03.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,3720,1st c. BCE
+tlg0093.tlg010x02.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,5596,1st c. BCE
+tlg0093.tlg010x05.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,925,1st c. BCE
+tlg0093.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,75869,1st c. BCE
+tlg0093.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,3368,1st c. BCE
+tlg0093.ogl001.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,5558,1st c. BCE
+tlg0093.tlg010x07.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,293,1st c. BCE
+tlg0093.tlg010x09.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,13698,1st c. BCE
+tlg0093.tlg010x08.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,95,1st c. BCE
+tlg0093.tlg010x06.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,2412,1st c. BCE
+tlg0093.tlg010x01.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,5570,1st c. BCE
+tlg0093.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,9004,1st c. BCE
+tlg0093.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,4264,1st c. BCE
+tlg0093.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,6082,1st c. BCE
+tlg0093.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,69672,1st c. BCE
+tlg0093.ogl002.1st1K-grc1.xml,First1KGreek,Greek,0093,Theophrastus,-1,prose,3806,1st c. BCE
+tlg0094.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0094,Pseudo-Plutarch,2,prose,6548,2nd c. CE
+tlg1719.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1719,Theodosius of Bithynia,-2,prose,27489,2nd c. BCE
+tlg0005.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0005,Theocritus,-3,poetry,77,3rd c. BCE
+tlg1264.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1264,Chrysippus,-3,prose,98444,3rd c. BCE
+tlg1264.tlg003.1st1K-grc1.xml,First1KGreek,Greek,1264,Chrysippus,-3,prose,253,3rd c. BCE
+tlg1264.tlg004.1st1K-grc1.xml,First1KGreek,Greek,1264,Chrysippus,-3,prose,2477,3rd c. BCE
+tlg1264.tlg002.1st1K-grc1.xml,First1KGreek,Greek,1264,Chrysippus,-3,prose,46976,3rd c. BCE
+tlg2022.tlg009.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregory of Nazianzus,3,prose,6415,3rd c. CE
+tlg2022.tlg007.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregory of Nazianzus,3,prose,3082,3rd c. CE
+tlg2022.tlg008.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregorius Nazianzenus,3,prose,10227,3rd c. CE
+tlg2022.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregory of Nazianzus,3,poetry,23709,3rd c. CE
+tlg2022.tlg060.1st1K-grc1.xml,First1KGreek,Greek,2022,pseudo-Menander,3,prose,144,3rd c. CE
+tlg2022.tlg011.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregory of Nazianzus,3,prose,8241,3rd c. CE
+tlg2022.tlg010.1st1K-grc1.xml,First1KGreek,Greek,2022,Gregorius Nazianzenus,3,prose,6849,3rd c. CE
+tlg3135.tlg001.1st1K-grc1.xml,First1KGreek,Greek,3135,Joannes Zonaras,12,prose,347954,12th c. CE
+tlg3135.tlg012.1st1K-grc1.xml,First1KGreek,Greek,3135,Joannes Zonaras,12,prose,989,12th c. CE
+tlg3135.tlg011.1st1K-grc1.xml,First1KGreek,Greek,3135,Joannes Zonaras,12,prose,24835,12th c. CE
+tlg2048.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2048,"Sozomenus, Salaminius Hermias",5,prose,112976,5th c. CE
+tlg0317.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0317,Acta Joannis,2,prose,18267,2nd c. CE
+tlg0317.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0317,Acta Joannis,2,prose,2493,2nd c. CE
+tlg0541.tlg042.1st1K-grc2.xml,First1KGreek,Greek,0541,pseudo-Menander,-3,prose,380,3rd c. BCE
+tlg0541.tlg042.1st1K-grc3.xml,First1KGreek,Greek,0541,pseudo-Menander,-3,prose,144,3rd c. BCE
+tlg0541.tlg042.1st1K-grc1.xml,First1KGreek,Greek,0541,pseudo-Menander,-3,prose,1857,3rd c. BCE
+tlg5034.tlg001a.perseus-grc1.xml,First1KGreek,Greek,5034,Scholia in Pindarum,12,prose,67515,12th c. CE
+tlg5034.tlg001b.perseus-grc1.xml,First1KGreek,Greek,5034,Scholia in Pindarum,12,prose,47443,12th c. CE
+tlg5034.tlg001d.perseus-grc1.xml,First1KGreek,Greek,5034,Pindar Scholia,12,prose,17567,12th c. CE
+tlg5034.tlg001c.perseus-grc1.xml,First1KGreek,Greek,5034,Scholia in Pindarum,12,prose,36654,12th c. CE
+tlg2023.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2023,Iamblichus,3,prose,29951,3rd c. CE
+tlg2023.tlg006.1st1K-grc1.xml,First1KGreek,Greek,2023,Iamblichus,3,prose,41261,3rd c. CE
+tlg2023.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2023,Iamblichus,3,prose,19992,3rd c. CE
+tlg2023.tlg004.1st1K-grc1.xml,First1KGreek,Greek,2023,Iamblichus,3,prose,26588,3rd c. CE
+tlg2023.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2023,Iamblichus,3,prose,27874,3rd c. CE
+tlg3118.tlg001.1st1K-grc1.xml,First1KGreek,Greek,3118,Syntipas,11,prose,28886,11th c. CE
+tlg3118.tlg002.1st1K-grc1.xml,First1KGreek,Greek,3118,Syntipas,11,prose,13439,11th c. CE
+tlg2001.tlg038.1st1K-grc1.xml,First1KGreek,Greek,2001,Themistius,4,prose,32888,4th c. CE
+tlg2001.tlg039.1st1K-grc1.xml,First1KGreek,Greek,2001,Themistius,4,prose,99866,4th c. CE
+tlg2001.tlg041.1st1K-grc1.xml,First1KGreek,Greek,2001,Themistius,4,prose,16786,4th c. CE
+tlg2001.tlg040.1st1K-grc1.xml,First1KGreek,Greek,2001,Themistius,4,prose,58258,4th c. CE
+tlg2001.tlg042.1st1K-grc1.xml,First1KGreek,Greek,2001,Themistius,4,prose,77263,4th c. CE
+tlg0563.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0563,Maximus of Tyre,2,prose,97637,2nd c. CE
+tlg0555.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,7536,3rd c. CE
+tlg0555.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,23339,3rd c. CE
+tlg0555.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,9189,3rd c. CE
+tlg0555.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,28559,3rd c. CE
+tlg0555.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,4974,3rd c. CE
+tlg0555.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0555,Clement of Alexandria,3,prose,57224,3rd c. CE
+tlg0552.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,436,3rd c. BCE
+tlg0552.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,5785,3rd c. BCE
+tlg0552.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,25670,3rd c. BCE
+tlg0552.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,5038,3rd c. BCE
+tlg0552.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,8568,3rd c. BCE
+tlg0552.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,695,3rd c. BCE
+tlg0552.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimedes,-3,prose,1187,3rd c. BCE
+tlg0552.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,22750,3rd c. BCE
+tlg0552.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,14349,3rd c. BCE
+tlg0552.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,9024,3rd c. BCE
+tlg0552.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,1090,3rd c. BCE
+tlg0552.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,3659,3rd c. BCE
+tlg0552.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0552,Archimède,-3,prose,9795,3rd c. BCE
+tlg1271.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1271,Clement of Rome,1,prose,9830,1st c. CE
+tlg1271.tlg006.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,64018,1st c. CE
+tlg1271.tlg012.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,25960,1st c. CE
+tlg1271.tlg003.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,490,1st c. CE
+tlg1271.tlg004.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,660,1st c. CE
+tlg1271.tlg005.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,2508,1st c. CE
+tlg1271.tlg002.1st1K-grc1.xml,First1KGreek,Greek,1271,Clement of Rome,1,prose,3013,1st c. CE
+tlg1271.tlg011.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,25242,1st c. CE
+tlg1271.tlg010.1st1K-grc1.xml,First1KGreek,Greek,1271,Clemens Romanus,1,prose,2050,1st c. CE
+tlg0553.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0553,Artemidorus,-3,prose,64279,3rd c. BCE
+tlg2036.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2036,Dexippus,3,prose,28588,3rd c. CE
+tlg5026.tlg007.1st1K-grc1.xml,First1KGreek,Greek,5026,Scholia in Homerum,10,prose,191068,10th c. CE
+tlg5026.tlg001.1st1K-grc1.xml,First1KGreek,Greek,5026,Scholia in Homerum,10,prose,755269,10th c. CE
+tlg2038.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2038,Acta Thomae,3,prose,28931,3rd c. CE
+tlg1443.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1443,Ignatius of Antioch,2,prose,7764,2nd c. CE
+tlg1443.tlg002.1st1K-grc1.xml,First1KGreek,Greek,1443,Ignatius of Antioch,2,prose,19312,2nd c. CE
+tlg0565.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0565,Soranus,2,prose,51042,2nd c. CE
+tlg0565.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0565,Soranus,2,prose,3246,2nd c. CE
+tlg0565.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0565,Soranus,2,prose,1077,2nd c. CE
+tlg0565.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0565,Soranus,2,prose,1265,2nd c. CE
+tlg2000.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2000,Plotinus,3,prose,214015,3rd c. CE
+tlg0358.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0358,Nicomachus of Gerasa,2,mixed,31978,2nd c. CE
+tlg0358.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0358,Nicomachus of Gerasa,2,prose,3199,2nd c. CE
+tlg0358.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0358,Nicomachus of Gerasa,2,mixed,1293,2nd c. CE
+tlg0358.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0358,Nicomachus of Gerasa,2,mixed,6002,2nd c. CE
+tlg0732.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,68154,3rd c. CE
+tlg0732.tlgX01.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,84384,3rd c. CE
+tlg0732.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,11617,3rd c. CE
+tlg0732.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,240023,3rd c. CE
+tlg0732.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,98170,3rd c. CE
+tlg0732.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,50272,3rd c. CE
+tlg0732.tlg012.1st1K-grc2.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,3613,3rd c. CE
+tlg0732.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,20384,3rd c. CE
+tlg0732.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,21046,3rd c. CE
+tlg0732.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,8100,3rd c. CE
+tlg0732.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,387770,3rd c. CE
+tlg0732.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,178764,3rd c. CE
+tlg0732.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,40351,3rd c. CE
+tlg0732.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0732,Alexander of Aphrodisias,3,prose,36809,3rd c. CE
+tlg1419.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1419,Hermas,2,prose,28604,2nd c. CE
+tlg0011.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0011,Sophocles,-5,poetry,8284,5th c. BCE
+tlg4021.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4021,David the Invincible,6,mixed,34694,6th c. CE
+tlg4021.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4021,David the Invincible,6,prose,55396,6th c. CE
+tlg4019.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4019,Olympiodorus,6,prose,10374,6th c. CE
+tlg4019.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4019,Olympiodorus,6,prose,122610,6th c. CE
+tlg4019.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4019,Olympiodorus,6,prose,51993,6th c. CE
+tlg0640.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0640,Alciphron,2,prose,30685,2nd c. CE
+tlg0018.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12160,2nd c. CE
+tlg0018.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,23638,2nd c. CE
+tlg0018.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,4392,2nd c. CE
+tlg0018.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,19603,2nd c. CE
+tlg0018.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,13132,2nd c. CE
+tlg0018.tlg030.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,11702,2nd c. CE
+tlg0018.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12432,2nd c. CE
+tlg0018.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,22222,2nd c. CE
+tlg0018.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,4336,2nd c. CE
+tlg0018.tlg024.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,81670,2nd c. CE
+tlg0018.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12042,2nd c. CE
+tlg0018.tlg022.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,47352,2nd c. CE
+tlg0018.tlg025.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,21974,2nd c. CE
+tlg0018.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12467,2nd c. CE
+tlg0018.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,14973,2nd c. CE
+tlg0018.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,10153,2nd c. CE
+tlg0018.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,14282,2nd c. CE
+tlg0018.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,13423,2nd c. CE
+tlg0018.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,37341,2nd c. CE
+tlg0018.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,14449,2nd c. CE
+tlg0018.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12064,2nd c. CE
+tlg0018.tlg029.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,15191,2nd c. CE
+tlg0018.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,19557,2nd c. CE
+tlg0018.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,mixed,12886,2nd c. CE
+tlg0018.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,15319,2nd c. CE
+tlg0018.tlg026.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12720,2nd c. CE
+tlg0018.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,32383,2nd c. CE
+tlg0018.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,18104,2nd c. CE
+tlg0018.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,12749,2nd c. CE
+tlg0018.tlg028.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,7969,2nd c. CE
+tlg0018.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0018,Philo Judaeus,2,prose,11849,2nd c. CE
+tlg4017.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4017,Syrianus,5,prose,79168,5th c. CE
+tlg0087.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,68604,1st c. CE
+tlg0087.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,56,1st c. CE
+tlg0087.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,37308,1st c. CE
+tlg0087.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0087,Aelius Herodianus,1,prose,136723,1st c. CE
+tlg0087.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,163,1st c. CE
+tlg0087.tlg030.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,709,1st c. CE
+tlg0087.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,10371,1st c. CE
+tlg0087.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,89,1st c. CE
+tlg0087.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,8055,1st c. CE
+tlg0087.tlg024.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,110,1st c. CE
+tlg0087.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,442,1st c. CE
+tlg0087.tlg022.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,9942,1st c. CE
+tlg0087.tlg025.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,743,1st c. CE
+tlg0087.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,54425,1st c. CE
+tlg0087.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,47,1st c. CE
+tlg0087.tlg009a.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,380,1st c. CE
+tlg0087.tlg032.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,59,1st c. CE
+tlg0087.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,4495,1st c. CE
+tlg0087.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,60,1st c. CE
+tlg0087.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0087,Aelius Herodianus,1,prose,2761,1st c. CE
+tlg0087.tlg033.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,13790,1st c. CE
+tlg0087.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,65262,1st c. CE
+tlg0087.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,91,1st c. CE
+tlg0087.tlg029.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,63,1st c. CE
+tlg0087.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,poetry,552,1st c. CE
+tlg0087.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,1836,1st c. CE
+tlg0087.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,1723,1st c. CE
+tlg0087.tlg026.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,14865,1st c. CE
+tlg0087.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,348,1st c. CE
+tlg0087.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,mixed,16982,1st c. CE
+tlg0087.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,62,1st c. CE
+tlg0087.tlg028.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,239,1st c. CE
+tlg0087.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0087,Herodianus,1,prose,6626,1st c. CE
+tlg0074.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0074,Arrian,2,prose,197,2nd c. CE
+tlg4072.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4072,Eutocius,6,prose,29694,6th c. CE
+tlg4072.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4072,Eutocius,6,prose,7216,6th c. CE
+tlg4072.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4072,Eutocius,6,prose,3928,6th c. CE
+tlg0614.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0614,Babrius,2,prose,11363,2nd c. CE
+tlg0614.tlg001.1st1K-grc2.xml,First1KGreek,Greek,0614,Babrius,2,poetry,40539,2nd c. CE
+tlg2371.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2371,Chronicon Paschale,7,mixed,132363,7th c. CE
+tlg4016.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4016,Ammonius,5,prose,52687,5th c. CE
+tlg4016.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4016,Ammonius,5,prose,124578,5th c. CE
+tlg4016.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4016,Ammonius,5,prose,41032,5th c. CE
+tlg4016.tlg005.1st1K-grc1.xml,First1KGreek,Greek,4016,Ammonius,5,prose,19411,5th c. CE
+tlg4016.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4016,Ammonius,5,prose,51958,5th c. CE
+tlg0026.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0026,Aeschines [Sp.],-5,prose,4272,5th c. BCE
+tlg4018.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4018,Asclepius,6,prose,190402,6th c. CE
+tlg2586.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2586,Menander,3,prose,9020,3rd c. CE
+tlg2586.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2586,Menander,3,mixed,19446,3rd c. CE
+tlg4020.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4020,Elias Neoplatonicus,6,mixed,40994,6th c. CE
+tlg4020.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4020,Elias Neoplatonicus,6,prose,63289,6th c. CE
+tlg0615.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0615,Aspasius,2,prose,80550,2nd c. CE
+tlg0088.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0088,Aristoxenus,2,prose,18121,2nd c. CE
+tlg2948.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2948,Acta Philippi,4,prose,16162,4th c. CE
+tlg0081.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0081,Dionysius of Halicarnassus,-5,prose,176,5th c. BCE
+tlg0081.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0081,Dionysius of Halicarnassus,-5,prose,27891,5th c. BCE
+tlg0081.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0081,Dionysius of Halicarnassus,-5,prose,9651,5th c. BCE
+tlg0081.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0081,Dionysius of Halicarnasus,-5,prose,2058,5th c. BCE
+tlg0081.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0081,Dionysius of Halicarnasus,-5,prose,22878,5th c. BCE
+tlg0086.tlg054.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2322,4th c. BCE
+tlg0086.tlg036.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,74081,4th c. BCE
+tlg0086.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,poetry,55391,4th c. BCE
+tlg0086.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,5002,4th c. BCE
+tlg0086.tlg052.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2444,4th c. BCE
+tlg0086.tlg001.1st1K-grc2.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,59615,4th c. BCE
+tlg0086.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,60116,4th c. BCE
+tlg0086.tlg039.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,12102,4th c. BCE
+tlg0086.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,10316,4th c. BCE
+tlg0086.tlg030.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,40552,4th c. BCE
+tlg0086.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,mixed,1207,4th c. BCE
+tlg0086.tlg037.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,mixed,6112,4th c. BCE
+tlg0086.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,7523,4th c. BCE
+tlg0086.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,50149,4th c. BCE
+tlg0086.tlg024.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2519,4th c. BCE
+tlg0086.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,8316,4th c. BCE
+tlg0086.tlg048.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,9758,4th c. BCE
+tlg0086.tlg046.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,431,4th c. BCE
+tlg0086.tlg041.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,7872,4th c. BCE
+tlg0086.tlg022.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,27089,4th c. BCE
+tlg0086.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,16637,4th c. BCE
+tlg0086.tlg013.1st1K-grc2.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,16723,4th c. BCE
+tlg0086.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,94068,4th c. BCE
+tlg0086.tlg040.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,14114,4th c. BCE
+tlg0086.tlg047.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,4883,4th c. BCE
+tlg0086.tlg032.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,5757,4th c. BCE
+tlg0086.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,mixed,31205,4th c. BCE
+tlg0086.tlg003.1st1K-grc2.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,993,4th c. BCE
+tlg0086.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,3492,4th c. BCE
+tlg0086.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,30325,4th c. BCE
+tlg0086.tlg002.1st1K-grc2.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,20908,4th c. BCE
+tlg0086.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,mixed,20881,4th c. BCE
+tlg0086.tlg034.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,mixed,10228,4th c. BCE
+tlg0086.tlg042.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2993,4th c. BCE
+tlg0086.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,800,4th c. BCE
+tlg0086.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2436,4th c. BCE
+tlg0086.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,1793,4th c. BCE
+tlg0086.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,9179,4th c. BCE
+tlg0086.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,1853,4th c. BCE
+tlg0086.tlg044.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,44125,4th c. BCE
+tlg0086.tlg043.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,3995,4th c. BCE
+tlg0086.tlg026.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,33789,4th c. BCE
+tlg0086.tlg026.1st1K-grc2.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,48718,4th c. BCE
+tlg0086.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,2959,4th c. BCE
+tlg0086.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,4766,4th c. BCE
+tlg0086.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0086,Aristotle,-4,prose,6245,4th c. BCE
+tlg4089.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4089,"Theodoret, Bishop of Cyrus",4,prose,67903,4th c. CE
+tlg4089.tlg003.opp-grc1.xml,First1KGreek,Greek,4089,Theodoretus,4,prose,96795,4th c. CE
+tlg4089.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4089,"Theodoret, Bishop of Cyrus",4,prose,44527,4th c. CE
+tlg0031.tlg002.INTF-grc1.xml,First1KGreek,Greek,0031,Unknown,1,poetry,824,1st c. CE
+tlg0658.tlg001.perseus-grc1.xml,First1KGreek,Greek,0658,Heliodorus of Emesa,4,prose,76360,4th c. CE
+tlg0007.tlg146.1st1K-grc1.xml,First1KGreek,Greek,0007,Plutarch,-4,prose,2669,4th c. BCE
+tlg0007.tlg147.1st1K-grc1.xml,First1KGreek,Greek,0007,Plutarch,-4,prose,143,4th c. BCE
+tlg0656.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0656,Dioscurides Pedianus,1,prose,170756,1st c. CE
+tlg0656.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0656,Dioscorides Pedianus,1,prose,31129,1st c. CE
+tlg4030.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4030,Sophonias,13,prose,74856,13th c. CE
+tlg2768.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2768,Gelasius,4,prose,57199,4th c. CE
+tlg4090.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4090,Cyril of Alexandria,4,prose,357860,4th c. CE
+tlg2703.tlg001.1st1K-grc2.xml,First1KGreek,Greek,2703,Annae Comnenae,12,prose,150778,12th c. CE
+tlg2703.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2703,Anna Comnena,12,prose,162386,12th c. CE
+tlg1724.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1724,Theon Smyrnaeus,2,prose,46262,2nd c. CE
+tlg0098.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0098,Zenobius Sophista,2,prose,20306,2nd c. CE
+tlg0053.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0053,Phalaridis Epistulae,2,prose,17906,2nd c. CE
+tlg0096.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0096,Aesop,-6,prose,40835,6th c. BCE
+tlg0096.tlg002.opp-grc3.xml,First1KGreek,Greek,0096,Aesop,-6,prose,30028,6th c. BCE
+tlg4031.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4031,Eustratius,12,prose,264213,12th c. CE
+tlg0006.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0006,Euripides,-5,poetry,17313,5th c. BCE
+tlg4036.tlg001.opp-grc1.xml,First1KGreek,Greek,4036,Proclus Diadochus,5,prose,175197,5th c. CE
+tlg1383.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1383,Geminus,-1,prose,20607,1st c. BCE
+tlg2959.tlg007.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,2362,5th c. CE
+tlg2959.tlg001.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,40741,5th c. CE
+tlg2959.tlg006.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,1431,5th c. CE
+tlg2959.tlg008.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,60,5th c. CE
+tlg2959.tlg005.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,2027,5th c. CE
+tlg2959.tlg002.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,13608,5th c. CE
+tlg2959.tlg010.opp-grc1.xml,First1KGreek,Greek,2959,Methodius,5,prose,209,5th c. CE
+tlg2733.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2733,"Evagrius, Scholasticus",6,prose,53862,6th c. CE
+tlg0090.tlg001.opp-grc6.xml,First1KGreek,Greek,0090,Agathemerus,2,prose,1985,2nd c. CE
+tlg0090.tlg001.opp-grc7.xml,First1KGreek,Greek,0090,Agathemerus,2,prose,1979,2nd c. CE
+tlg0090.tlg001.opp-grc3.xml,First1KGreek,Greek,0090,Agathemerus,2,prose,1978,2nd c. CE
+tlg0090.tlg001.opp-grc10.xml,First1KGreek,Greek,0090,Agathemerus,2,prose,1991,2nd c. CE
+tlg0090.tlg001.opp-grc9.xml,First1KGreek,Greek,0090,Agathemerus,2,prose,1993,2nd c. CE
+tlg0099.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0099,Strabo,-1,prose,37051,1st c. BCE
+tlg1725.tlg001.perseus-grc2.xml,First1KGreek,Greek,1725,Theophilus,2,prose,21548,2nd c. CE
+tlg1725.tlg001.perseus-grc1.xml,First1KGreek,Greek,1725,Theophilus,2,prose,21615,2nd c. CE
+tlg0544.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0544,Sextus Empiricus,2,prose,55549,2nd c. CE
+tlg0544.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0544,Sextus Empiricus,2,prose,166029,2nd c. CE
+tlg2021.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2021,Epiphanius,4,prose,46071,4th c. CE
+tlg2021.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2021,Epiphanius,4,prose,4388,4th c. CE
+tlg2021.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2021,Epiphanius,4,prose,236810,4th c. CE
+tlg1205.tlg001.perseus-grc2.xml,First1KGreek,Greek,1205,Athenagoras,2,prose,11315,2nd c. CE
+tlg1205.tlg001.perseus-grc1.xml,First1KGreek,Greek,1205,Athenagoras,2,prose,11307,2nd c. CE
+tlg1205.tlg002.perseus-grc1.xml,First1KGreek,Greek,1205,Athenagoras,2,prose,8823,2nd c. CE
+tlg1205.tlg002.perseus-grc2.xml,First1KGreek,Greek,1205,Athenagoras,2,prose,8920,2nd c. CE
+tlg1431.tlg003.1st1K-grc1.xml,First1KGreek,Greek,1431,Hipparchus,-2,mixed,31284,2nd c. BCE
+tlg0545.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0545,Aelian,3,prose,13232,3rd c. CE
+tlg2027.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2027,Valerius Apsines,3,prose,18409,3rd c. CE
+tlg2027.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2027,Valerius Apsines,3,prose,1828,3rd c. CE
+tlg2018.tlg009.opp-grc1.xml,First1KGreek,Greek,2018,Eusebius of Caesarea,3,prose,16341,3rd c. CE
+tlg2018.tlg009.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius of Caesarea,3,prose,41347,3rd c. CE
+tlg2018.tlg007.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius of Caesarea,3,prose,17866,3rd c. CE
+tlg2018.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,mixed,230002,3rd c. CE
+tlg2018.tlg008.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius of Caesarea,3,prose,184,3rd c. CE
+tlg2018.tlg023.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,51847,3rd c. CE
+tlg2018.tlg022.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,22416,3rd c. CE
+tlg2018.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,7865,3rd c. CE
+tlg2018.tlg005.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,156444,3rd c. CE
+tlg2018.tlg002.1st1K-grc2.xml,First1KGreek,Greek,2018,Eusebius,3,prose,99795,3rd c. CE
+tlg2018.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,101154,3rd c. CE
+tlg2018.tlg011.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,19158,3rd c. CE
+tlg2018.tlg020.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,46776,3rd c. CE
+tlg2018.tlg021.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,mixed,13630,3rd c. CE
+tlg2018.tlg010.1st1K-grc1.xml,First1KGreek,Greek,2018,Eusebius,3,prose,10099,3rd c. CE
+tlg0529.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0529,Arius Didymus,-1,prose,20853,1st c. BCE
+tlg0527.tlg054.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,982,1st c. CE
+tlg0527.tlg053.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,43171,1st c. CE
+tlg0527.tlg036.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,4873,1st c. CE
+tlg0527.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,2874,1st c. CE
+tlg0527.tlg038.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,3061,1st c. CE
+tlg0527.tlg052.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1836,1st c. CE
+tlg0527.tlg055.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1385,1st c. CE
+tlg0527.tlg001.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,40200,1st c. CE
+tlg0527.tlg039.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,2075,1st c. CE
+tlg0527.tlg006.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,21274,1st c. CE
+tlg0527.tlg008.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,26423,1st c. CE
+tlg0527.tlg037.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,4108,1st c. CE
+tlg0527.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,21688,1st c. CE
+tlg0527.tlg012.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,21721,1st c. CE
+tlg0527.tlg024.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,15215,1st c. CE
+tlg0527.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,24292,1st c. CE
+tlg0527.tlg048.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,45440,1st c. CE
+tlg0527.tlg048.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,32853,1st c. CE
+tlg0527.tlg046.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,6969,1st c. CE
+tlg0527.tlg041.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,1547,1st c. CE
+tlg0527.tlg025.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,6201,1st c. CE
+tlg0527.tlg013.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,28454,1st c. CE
+tlg0527.tlg014.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,23948,1st c. CE
+tlg0527.tlg040.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,727,1st c. CE
+tlg0527.tlg047.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,2028,1st c. CE
+tlg0527.tlg049.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,46523,1st c. CE
+tlg0527.tlg032.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,21177,1st c. CE
+tlg0527.tlg035.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,6040,1st c. CE
+tlg0527.tlg003.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,23345,1st c. CE
+tlg0527.tlg004.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,31138,1st c. CE
+tlg0527.tlg050.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,3212,1st c. CE
+tlg0527.tlg057.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,13183,1st c. CE
+tlg0527.tlg059.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1010,1st c. CE
+tlg0527.tlg005.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,mixed,29089,1st c. CE
+tlg0527.tlg002.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,31726,1st c. CE
+tlg0527.tlg034.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,24759,1st c. CE
+tlg0527.tlg034.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,19943,1st c. CE
+tlg0527.tlg033.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,8976,1st c. CE
+tlg0527.tlg058.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,982,1st c. CE
+tlg0527.tlg056.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,13226,1st c. CE
+tlg0527.tlg051.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,3681,1st c. CE
+tlg0527.tlg042.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1308,1st c. CE
+tlg0527.tlg045.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1290,1st c. CE
+tlg0527.tlg011.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,26041,1st c. CE
+tlg0527.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,24674,1st c. CE
+tlg0527.tlg029.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,13798,1st c. CE
+tlg0527.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,11640,1st c. CE
+tlg0527.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,46600,1st c. CE
+tlg0527.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,18040,1st c. CE
+tlg0527.tlg044.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,1727,1st c. CE
+tlg0527.tlg043.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,1549,1st c. CE
+tlg0527.tlg026.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,11040,1st c. CE
+tlg0527.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,9201,1st c. CE
+tlg0527.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,mixed,6426,1st c. CE
+tlg0527.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,11227,1st c. CE
+tlg0527.tlg028.1st1K-grc1.xml,First1KGreek,Greek,0527,Septuaginta,1,poetry,5158,1st c. CE
+tlg0527.tlg010.opp-grc2.xml,First1KGreek,Greek,0527,Septuaginta,1,prose,2486,1st c. CE
+tlg2042.tlg054.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,933,4th c. CE
+tlg2042.tlg053.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,2401,4th c. CE
+tlg2042.tlg009.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,27939,4th c. CE
+tlg2042.tlg007.perseus-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,12335,4th c. CE
+tlg2042.tlg052.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,1701,4th c. CE
+tlg2042.tlg055.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,270,4th c. CE
+tlg2042.tlg001.perseus-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,164895,4th c. CE
+tlg2042.tlg006.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,25760,4th c. CE
+tlg2042.tlg030.opp-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,99222,4th c. CE
+tlg2042.tlg008.perseus-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,27938,4th c. CE
+tlg2042.tlg015.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,96,4th c. CE
+tlg2042.tlg012.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,174,4th c. CE
+tlg2042.tlg048.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,9977,4th c. CE
+tlg2042.tlg077.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,4300,4th c. CE
+tlg2042.tlg070.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,1895,4th c. CE
+tlg2042.tlg084.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,844,4th c. CE
+tlg2042.tlg079.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,60082,4th c. CE
+tlg2042.tlg013.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,4280,4th c. CE
+tlg2042.tlg014.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,2291,4th c. CE
+tlg2042.tlg078.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,10859,4th c. CE
+tlg2042.tlg071.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,192,4th c. CE
+tlg2042.tlg076.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,6991,4th c. CE
+tlg2042.tlg050.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,3168,4th c. CE
+tlg2042.tlg057.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,3054,4th c. CE
+tlg2042.tlg068.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,518,4th c. CE
+tlg2042.tlg061.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,328,4th c. CE
+tlg2042.tlg066.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,654,4th c. CE
+tlg2042.tlg005.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,163583,4th c. CE
+tlg2042.tlg067.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,259,4th c. CE
+tlg2042.tlg058.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,100286,4th c. CE
+tlg2042.tlg069.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,376,4th c. CE
+tlg2042.tlg051.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,1474,4th c. CE
+tlg2042.tlg073.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,8581,4th c. CE
+tlg2042.tlg074.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,8715,4th c. CE
+tlg2042.tlg045.1st1K-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,5170,4th c. CE
+tlg2042.tlg011.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,11969,4th c. CE
+tlg2042.tlg016.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,29019,4th c. CE
+tlg2042.tlg029.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,23969,4th c. CE
+tlg2042.tlg044.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,7826,4th c. CE
+tlg2042.tlg075.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,17519,4th c. CE
+tlg2042.tlg086.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,6230,4th c. CE
+tlg2042.tlg072.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,146,4th c. CE
+tlg2042.tlg019.1st1K-grc1.xml,First1KGreek,Greek,2042,Origen,4,prose,68543,4th c. CE
+tlg2042.tlg021.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,35492,4th c. CE
+tlg2042.tlg017.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,18040,4th c. CE
+tlg2042.tlg010.opp-grc1.xml,First1KGreek,Greek,2042,Origenes,4,prose,9588,4th c. CE
+tlg1272.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1272,Cleomedes,2,prose,26194,2nd c. CE
+tlg2058.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2058,Philostorgius,5,prose,37646,5th c. CE
+tlg0708.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0708,Ammonius Grammaticus,4,mixed,16478,4th c. CE
+tlg0533.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0533,Callimachus,-3,prose,1166,3rd c. BCE
+tlg0533.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0533,Callimachus,-3,prose,1262,3rd c. BCE
+tlg0533.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0533,Callimachus,-3,prose,1410,3rd c. BCE
+tlg2806.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2806,Marcus Diaconus,5,prose,24043,5th c. CE
+tlg1210.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1210,Autolycus,-4,prose,5133,4th c. BCE
+tlg1210.tlg002.1st1K-grc1.xml,First1KGreek,Greek,1210,Autolycus,-4,prose,14040,4th c. BCE
+tlg5023.tlg001.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,143985,12th c. CE
+tlg5023.tlg015.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,73533,12th c. CE
+tlg5023.tlg012.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,6993,12th c. CE
+tlg5023.tlg013.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,33594,12th c. CE
+tlg5023.tlg014.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,86311,12th c. CE
+tlg5023.tlg011.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,mixed,5372,12th c. CE
+tlg5023.tlg016.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,prose,74018,12th c. CE
+tlg5023.tlg010.1st1K-grc1.xml,First1KGreek,Greek,5023,Scholia in Euripidem,12,poetry,2755,12th c. CE
+tlg2034.tlg007.opp-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,prose,34767,3rd c. CE
+tlg2034.tlg006.opp-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,prose,8253,3rd c. CE
+tlg2034.tlg015.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyry,3,poetry,18731,3rd c. CE
+tlg2034.tlg014.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyry,3,mixed,92614,3rd c. CE
+tlg2034.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,mixed,35970,3rd c. CE
+tlg2034.tlg005.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,prose,4760,3rd c. CE
+tlg2034.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,mixed,6089,3rd c. CE
+tlg2034.tlg027.1st1K-grc1.xml,First1KGreek,Greek,2034,Porphyrius,3,prose,1967,3rd c. CE
+tlg4102.tlg036.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,4525,8th c. CE
+tlg4102.tlg038.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,153061,8th c. CE
+tlg4102.tlg007.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,3535,8th c. CE
+tlg4102.tlgX01.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,775,8th c. CE
+tlg4102.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,77409,8th c. CE
+tlg4102.tlg006.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,3332,8th c. CE
+tlg4102.tlg008.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,118512,8th c. CE
+tlg4102.tlg037.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,2183,8th c. CE
+tlg4102.tlg012.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,105089,8th c. CE
+tlg4102.tlg024.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,8921,8th c. CE
+tlg4102.tlg023.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,9630,8th c. CE
+tlg4102.tlg046.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,4667,8th c. CE
+tlg4102.tlg041.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,11474,8th c. CE
+tlg4102.tlg022.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,13729,8th c. CE
+tlg4102.tlg013.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,33359,8th c. CE
+tlg4102.tlg040.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,10798,8th c. CE
+tlg4102.tlg035.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,7897,8th c. CE
+tlg4102.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,12725,8th c. CE
+tlg4102.tlgX02.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,89959,8th c. CE
+tlg4102.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,50262,8th c. CE
+tlg4102.tlg005.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,74248,8th c. CE
+tlg4102.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,53921,8th c. CE
+tlg4102.tlgX03.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,23603,8th c. CE
+tlg4102.tlg034.1st1K-grc1.xml,First1KGreek,Greek,4102,>Catenae (Novum Testamentum),8,prose,13903,8th c. CE
+tlg4102.tlg042.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,5222,8th c. CE
+tlg4102.tlg045.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,913,8th c. CE
+tlg4102.tlg011.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,114375,8th c. CE
+tlg4102.tlg020.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,38638,8th c. CE
+tlg4102.tlg044.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,657,8th c. CE
+tlg4102.tlg043.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,11580,8th c. CE
+tlg4102.tlg019.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,27139,8th c. CE
+tlg4102.tlg021.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,18534,8th c. CE
+tlg4102.tlg010.1st1K-grc1.xml,First1KGreek,Greek,4102,Catenae (Novum Testamentum),8,prose,48950,8th c. CE
+tlg0363.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0363,Claudius Ptolemaeus,2,prose,52881,2nd c. CE
+tlg0363.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0363,Claudius Ptolemaeus,2,prose,219381,2nd c. CE
+tlg0363.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0363,Claudius Ptolemaeus,2,mixed,1726,2nd c. CE
+tlg2057.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2057,"Socrates, Scholasticus",5,prose,101826,5th c. CE
+tlg9010.tlg001.1st1K-grc1.xml,First1KGreek,Greek,9010,Suda,10,prose,583818,10th c. CE
+tlg9019.tlg001.1st1K-grc1.xml,First1KGreek,Greek,9019,Stephanus of Alexandria,7,prose,28664,7th c. CE
+tlg0557.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0557,Epictetus,-2,prose,285,2nd c. BCE
+tlg0557.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0557,Epictetus,-2,prose,1864,2nd c. BCE
+tlg2200.tlg00443.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2528,4th c. CE
+tlg2200.tlg00444.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,500,4th c. CE
+tlg2200.tlg00426.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3362,4th c. CE
+tlg2200.tlg00410.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2423,4th c. CE
+tlg2200.tlg00428.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2592,4th c. CE
+tlg2200.tlg00445.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3743,4th c. CE
+tlg2200.tlg00442.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5572,4th c. CE
+tlg2200.tlg00429.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3761,4th c. CE
+tlg2200.tlg00411.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,20707,4th c. CE
+tlg2200.tlg00427.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4398,4th c. CE
+tlg2200.tlg00530.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,8499,4th c. CE
+tlg2200.tlg00508.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3437,4th c. CE
+tlg2200.tlg00537.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4149,4th c. CE
+tlg2200.tlg00501.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,19831,4th c. CE
+tlg2200.tlg00539.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4804,4th c. CE
+tlg2200.tlg00506.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,8129,4th c. CE
+tlg2200.tlg00538.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5508,4th c. CE
+tlg2200.tlg00507.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2726,4th c. CE
+tlg2200.tlg001.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,157570,4th c. CE
+tlg2200.tlg00509.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5036,4th c. CE
+tlg2200.tlg00536.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5566,4th c. CE
+tlg2200.tlg008.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4695,4th c. CE
+tlg2200.tlg00531.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6540,4th c. CE
+tlg2200.tlg00513.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,8286,4th c. CE
+tlg2200.tlg00514.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4324,4th c. CE
+tlg2200.tlg00522.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,4586,4th c. CE
+tlg2200.tlg00525.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5054,4th c. CE
+tlg2200.tlg00549.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,10036,4th c. CE
+tlg2200.tlg00540.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,8885,4th c. CE
+tlg2200.tlg00547.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5414,4th c. CE
+tlg2200.tlg00524.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3425,4th c. CE
+tlg2200.tlg00523.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,11595,4th c. CE
+tlg2200.tlg00515.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6587,4th c. CE
+tlg2200.tlg00512.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5659,4th c. CE
+tlg2200.tlg00546.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5390,4th c. CE
+tlg2200.tlg00541.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4973,4th c. CE
+tlg2200.tlg00548.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5905,4th c. CE
+tlg2200.tlg00402.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4997,4th c. CE
+tlg2200.tlg00405.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3598,4th c. CE
+tlg2200.tlg00433.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4796,4th c. CE
+tlg2200.tlg00434.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3210,4th c. CE
+tlg2200.tlg00460.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,2189,4th c. CE
+tlg2200.tlg00458.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,4200,4th c. CE
+tlg2200.tlg00451.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3438,4th c. CE
+tlg2200.tlg00456.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2993,4th c. CE
+tlg2200.tlg00435.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3226,4th c. CE
+tlg2200.tlg00432.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2801,4th c. CE
+tlg2200.tlg00404.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,2940,4th c. CE
+tlg2200.tlg00403.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,2323,4th c. CE
+tlg2200.tlg00457.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5163,4th c. CE
+tlg2200.tlg00450.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3321,4th c. CE
+tlg2200.tlg00459.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,17579,4th c. CE
+tlg2200.tlg00461.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,2389,4th c. CE
+tlg2200.tlg00447.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4181,4th c. CE
+tlg2200.tlg00440.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2906,4th c. CE
+tlg2200.tlg00449.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3595,4th c. CE
+tlg2200.tlg00448.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4493,4th c. CE
+tlg2200.tlg00441.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2014,4th c. CE
+tlg2200.tlg00446.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4683,4th c. CE
+tlg2200.tlg00534.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,13688,4th c. CE
+tlg2200.tlg00533.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5892,4th c. CE
+tlg2200.tlg00505.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,12062,4th c. CE
+tlg2200.tlg00502.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4052,4th c. CE
+tlg2200.tlg00551.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,1432,4th c. CE
+tlg2200.tlg00503.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4241,4th c. CE
+tlg2200.tlg00504.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,11438,4th c. CE
+tlg2200.tlg00532.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6185,4th c. CE
+tlg2200.tlg00535.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3717,4th c. CE
+tlg2200.tlg00550.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4816,4th c. CE
+tlg2200.tlg00544.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,8619,4th c. CE
+tlg2200.tlg00543.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,7517,4th c. CE
+tlg2200.tlg00517.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,9349,4th c. CE
+tlg2200.tlg00528.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,2836,4th c. CE
+tlg2200.tlg00510.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4797,4th c. CE
+tlg2200.tlg00526.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6567,4th c. CE
+tlg2200.tlg00519.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4210,4th c. CE
+tlg2200.tlg00521.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4006,4th c. CE
+tlg2200.tlg00542.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6266,4th c. CE
+tlg2200.tlg00545.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3353,4th c. CE
+tlg2200.tlg00520.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3368,4th c. CE
+tlg2200.tlg00527.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2859,4th c. CE
+tlg2200.tlg00518.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3322,4th c. CE
+tlg2200.tlg00511.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3592,4th c. CE
+tlg2200.tlg00516.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,7910,4th c. CE
+tlg2200.tlg00529.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3432,4th c. CE
+tlg2200.tlg00464.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,15480,4th c. CE
+tlg2200.tlg00463.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3866,4th c. CE
+tlg2200.tlg00455.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3783,4th c. CE
+tlg2200.tlg00452.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,5499,4th c. CE
+tlg2200.tlg00406.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,1380,4th c. CE
+tlg2200.tlg00439.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2269,4th c. CE
+tlg2200.tlg00401.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,28145,4th c. CE
+tlg2200.tlg00437.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2216,4th c. CE
+tlg2200.tlg00408.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,1130,4th c. CE
+tlg2200.tlg00430.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,6535,4th c. CE
+tlg2200.tlg00453.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,3415,4th c. CE
+tlg2200.tlg00454.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,7257,4th c. CE
+tlg2200.tlg00462.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,7459,4th c. CE
+tlg2200.tlg00431.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,4685,4th c. CE
+tlg2200.tlg00436.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,1697,4th c. CE
+tlg2200.tlg00409.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,1081,4th c. CE
+tlg2200.tlg00407.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,mixed,696,4th c. CE
+tlg2200.tlg00438.opp-grc1.xml,First1KGreek,Greek,2200,Libanius,4,prose,2400,4th c. CE
+tlg2032.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2032,Pappus Alexandrinus,4,prose,63212,4th c. CE
+tlg1220.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1220,Batrachomyomachia,-6,poetry,3335,6th c. BCE
+tlg2035.tlg117.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius,4,prose,10925,4th c. CE
+tlg2035.tlg132.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius,4,prose,24024,4th c. CE
+tlg2035.tlg003.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius of Alexandria,4,prose,1600,4th c. CE
+tlg2035.tlg002.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius of Alexandria,4,prose,19782,4th c. CE
+tlg2035.tlg131.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius,4,prose,29671,4th c. CE
+tlg2035.tlg130.1st1K-grc1.xml,First1KGreek,Greek,2035,Athanasius,4,prose,23111,4th c. CE
+tlg0559.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,13874,1st c. CE
+tlg0559.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,33578,1st c. CE
+tlg0559.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,20145,1st c. CE
+tlg0559.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,6211,1st c. CE
+tlg0559.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,5432,1st c. CE
+tlg0559.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,3592,1st c. CE
+tlg0559.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,4516,1st c. CE
+tlg0559.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,524,1st c. CE
+tlg0559.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,10690,1st c. CE
+tlg0559.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,5842,1st c. CE
+tlg0559.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,6582,1st c. CE
+tlg0559.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0559,Hero of Alexandria,1,prose,18970,1st c. CE
+tlg0592.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0592,Hermogenes,2,prose,5474,2nd c. CE
+tlg0592.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0592,Hermogenes,2,prose,26543,2nd c. CE
+tlg0592.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0592,Hermogenes,2,prose,45941,2nd c. CE
+tlg0592.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0592,Hermogenes,2,mixed,8295,2nd c. CE
+tlg0592.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0592,Hermogenes,2,prose,14523,2nd c. CE
+tlg1447.tlg009.1st1K-grc1.xml,First1KGreek,Greek,1447,"Irenaeus, Saint, Bishop of Lyon",2,prose,328,2nd c. CE
+tlg1447.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1447,Irenaeus,2,prose,21554,2nd c. CE
+tlg0046.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0046,Niciae Epistula,2,prose,736,2nd c. CE
+tlg1194.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1194,Aristonicus of Alexandria,1,prose,21090,1st c. CE
+tlg0628.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0628,Musonius Rufus,1,prose,15495,1st c. CE
+tlg0628.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0628,Musonius Rufus,1,prose,1326,1st c. CE
+tlg0628.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0628,Musonius Rufus,1,prose,1187,1st c. CE
+tlg0643.tlg001.1st1K-grc2.xml,First1KGreek,Greek,0643,Hermann Diels,1,prose,37,1st c. CE
+tlg0643.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0643,Anonymus Londinensis,1,poetry,17567,1st c. CE
+tlg0643.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0643,Anonymus Londinensis,1,mixed,134,1st c. CE
+tlg0643.opp003.1st1K-grc1.xml,First1KGreek,Greek,0643,Anonymus Londinensis,1,prose,260,1st c. CE
+tlg0015.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0015,Herodian,3,prose,46747,3rd c. CE
+tlg0644.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0644,Aristophanes of Byzantium,-3,prose,63148,3rd c. BCE
+tlg2583.tlg001.1st1K-grc1.xml,First1KGreek,Greek,2583,Manetho Astrologus,4,poetry,20014,4th c. CE
+tlg4013.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4013,Simplicius,6,prose,311570,6th c. CE
+tlg4013.tlg003.1st1K-grc1.xml,First1KGreek,Greek,4013,Simplicius,6,prose,194496,6th c. CE
+tlg4013.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4013,Simplicius,6,prose,493594,6th c. CE
+tlg4013.tlg005.1st1K-grc1.xml,First1KGreek,Greek,4013,Simplicius,6,prose,141111,6th c. CE
+tlg1595.tlg370.1st1K-grc1.xml,First1KGreek,Greek,1595,Philodemus,-1,prose,9695,1st c. BCE
+tlg1595.tlg221.1st1K-grc1.xml,First1KGreek,Greek,1595,Philodemus,-1,poetry,13350,1st c. BCE
+tlg0616.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0616,Polyaenus,2,prose,73094,2nd c. CE
+tlg0616.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0616,Polyaenus,2,prose,16779,2nd c. CE
+tlg4084.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4084,Zosimus,5,prose,62220,5th c. CE
+tlg0085.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,6092,5th c. BCE
+tlg0085.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,6237,5th c. BCE
+tlg0085.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,6475,5th c. BCE
+tlg0085.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,6725,5th c. BCE
+tlg0085.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,5991,5th c. BCE
+tlg0085.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,9437,5th c. BCE
+tlg0085.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0085,Aeschylus,-5,poetry,6152,5th c. BCE
+tlg0627.tlg053.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1286,5th c. BCE
+tlg0627.tlg009.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,11242,5th c. BCE
+tlg0627.tlg036.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,48657,5th c. BCE
+tlg0627.tlg031.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,19899,5th c. BCE
+tlg0627.tlg038.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,3403,5th c. BCE
+tlg0627.tlg007.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,5000,5th c. BCE
+tlg0627.tlg052.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1973,5th c. BCE
+tlg0627.tlg055.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,11789,5th c. BCE
+tlg0627.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,5528,5th c. BCE
+tlg0627.tlg039.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,476,5th c. BCE
+tlg0627.tlg006.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,41863,5th c. BCE
+tlg0627.tlg030.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1549,5th c. BCE
+tlg0627.tlg008.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,2145,5th c. BCE
+tlg0627.tlg037.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,454,5th c. BCE
+tlg0627.tlg015.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,2252,5th c. BCE
+tlg0627.tlg012.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,7095,5th c. BCE
+tlg0627.tlg023.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,35155,5th c. BCE
+tlg0627.tlg048.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,3326,5th c. BCE
+tlg0627.tlg046.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1315,5th c. BCE
+tlg0627.tlg041.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,383,5th c. BCE
+tlg0627.tlg022.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1478,5th c. BCE
+tlg0627.tlg025.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,7411,5th c. BCE
+tlg0627.tlg013.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,251,5th c. BCE
+tlg0627.tlg014.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,326,5th c. BCE
+tlg0627.tlg040.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,246,5th c. BCE
+tlg0627.tlg047.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,785,5th c. BCE
+tlg0627.tlg049.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1515,5th c. BCE
+tlg0627.tlg024a.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1951,5th c. BCE
+tlg0627.tlg032.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,16116,5th c. BCE
+tlg0627.tlg035.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,783,5th c. BCE
+tlg0627.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,5221,5th c. BCE
+tlg0627.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,6136,5th c. BCE
+tlg0627.tlg050.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1502,5th c. BCE
+tlg0627.tlg005.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,5335,5th c. BCE
+tlg0627.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,7456,5th c. BCE
+tlg0627.tlg033.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,11828,5th c. BCE
+tlg0627.tlg051.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1345,5th c. BCE
+tlg0627.tlg042.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1769,5th c. BCE
+tlg0627.tlg045.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1034,5th c. BCE
+tlg0627.tlg011.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,4956,5th c. BCE
+tlg0627.tlg016.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,10086,5th c. BCE
+tlg0627.tlg029.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,899,5th c. BCE
+tlg0627.tlg020.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,1458,5th c. BCE
+tlg0627.tlg027.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,4719,5th c. BCE
+tlg0627.tlg018.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,2701,5th c. BCE
+tlg0627.tlg043.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,3383,5th c. BCE
+tlg0627.tlg026.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,8474,5th c. BCE
+tlg0627.tlg019.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,3900,5th c. BCE
+tlg0627.tlg021.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,2842,5th c. BCE
+tlg0627.tlg017.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,12099,5th c. BCE
+tlg0627.tlg028.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,3285,5th c. BCE
+tlg0627.tlg010.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,21339,5th c. BCE
+tlg0627.tlg024b.1st1K-grc1.xml,First1KGreek,Greek,0627,Hippocrates,-5,prose,7299,5th c. BCE
+tlg0082.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0082,Apollonius Dyscolus,2,poetry,33523,2nd c. CE
+tlg0082.tlg003.1st1K-grc1.xml,First1KGreek,Greek,0082,Apollonius Dyscolus,2,prose,12140,2nd c. CE
+tlg0082.tlg004.1st1K-grc1.xml,First1KGreek,Greek,0082,Apollonius Dyscolus,2,mixed,125166,2nd c. CE
+tlg0082.tlg002.1st1K-grc1.xml,First1KGreek,Greek,0082,Apollonius Dyscolus,2,mixed,31805,2nd c. CE
+tlg1799.tlg009.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,12332,3rd c. BCE
+tlg1799.tlg007.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,22942,3rd c. BCE
+tlg1799.tlg008.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,4940,3rd c. BCE
+tlg1799.tlg015.1st1K-grc2.xml,First1KGreek,Greek,1799,Euclid,-3,prose,3380,3rd c. BCE
+tlg1799.tlg015.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,2765,3rd c. BCE
+tlg1799.tlg012.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,13582,3rd c. BCE
+tlg1799.tlg013.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,713,3rd c. BCE
+tlg1799.tlg014.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,2502,3rd c. BCE
+tlg1799.tlg011.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,6762,3rd c. BCE
+tlg1799.tlg016.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,10715,3rd c. BCE
+tlg1799.tlg017.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,56,3rd c. BCE
+tlg1799.tlg010.1st1K-grc1.xml,First1KGreek,Greek,1799,Euclid,-3,prose,11223,3rd c. BCE
+tlg4015.tlg009.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,368933,5th c. CE
+tlg4015.tlg007.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,108830,5th c. CE
+tlg4015.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,85197,5th c. CE
+tlg4015.tlg006.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,124338,5th c. CE
+tlg4015.tlg008.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,258365,5th c. CE
+tlg4015.tlg004.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,167946,5th c. CE
+tlg4015.tlg005.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,60771,5th c. CE
+tlg4015.tlg002.1st1K-grc1.xml,First1KGreek,Greek,4015,John Philoponus,5,prose,188454,5th c. CE
+tlg0645.tlg001.1st1K-grc1.xml,First1KGreek,Greek,0645,Justin Martyr,2,prose,14435,2nd c. CE
+tlg0645.tlg003.perseus-grc2.xml,First1KGreek,Greek,0645,Justin Martyr,2,prose,52099,2nd c. CE
+tlg0645.tlg002.perseus-grc2.xml,First1KGreek,Greek,0645,Justin Martyr,2,prose,3295,2nd c. CE
+tlg2115.tlg060.opp-grc1.xml,First1KGreek,Greek,2115,Hippolytus,3,prose,90083,3rd c. CE
+tlg2115.tlg060.perseus-grc1.xml,First1KGreek,Greek,2115,Hippolytus,3,poetry,69552,3rd c. CE
+tlg4024.tlg001.1st1K-grc1.xml,First1KGreek,Greek,4024,Agathias Scholasticus,6,prose,64847,6th c. CE
+tlg4024.tlg002.1st1K-grc2.xml,First1KGreek,Greek,4024,Agathias Scholasticus,6,prose,6438,6th c. CE
+tlg1764.tlg001.1st1K-grc1.xml,First1KGreek,Greek,1764,Vettius Valens,2,prose,110777,2nd c. CE
+phi0959.phi010.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,4032,1st c. CE
+phi0959.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,25762,1st c. CE
+phi0959.phi005.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,5258,1st c. CE
+phi0959.phi004.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,14903,1st c. CE
+phi0959.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,613,1st c. CE
+phi0959.phi008.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,23537,1st c. CE
+phi0959.phi006.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,78152,1st c. CE
+phi0959.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,15635,1st c. CE
+phi0959.phi007.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,31595,1st c. CE
+phi0959.phi009.perseus-lat2.xml,Perseus-Latin,Latin,0959,P. Ovidius Naso,1,poetry,21457,1st c. CE
+phi1276.phi001.perseus-lat2.xml,Perseus-Latin,Latin,1276,Juvenal,2,poetry,26514,2nd c. CE
+phi1017.phi010.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,5258,1st c. CE
+phi1017.phi011.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,2978,1st c. CE
+phi1017.phi002.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,6833,1st c. CE
+phi1017.phi005.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,7204,1st c. CE
+phi1017.phi004.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,5691,1st c. CE
+phi1017.phi003.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,4110,1st c. CE
+phi1017.phi014.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,prose,8471,1st c. CE
+phi1017.phi013.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,prose,45956,1st c. CE
+phi1017.phi015.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,prose,126700,1st c. CE
+phi1017.phi008.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,6315,1st c. CE
+phi1017.phi006.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,5938,1st c. CE
+phi1017.phi001.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,7653,1st c. CE
+phi1017.phi007.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,5582,1st c. CE
+phi1017.phi009.perseus-lat2.xml,Perseus-Latin,Latin,1017,"Seneca, Lucius Annaeus",1,poetry,11322,1st c. CE
+phi1212.phi002.perseus-lat1.xml,Perseus-Latin,Latin,1212,Apuleius,2,prose,54917,2nd c. CE
+phi1212.phi003.perseus-lat2.xml,Perseus-Latin,Latin,1212,Apuleius,2,mixed,7858,2nd c. CE
+phi1212.phi001.perseus-lat1.xml,Perseus-Latin,Latin,1212,Apuleius,2,prose,21468,2nd c. CE
+phi1351.phi002.perseus-lat1.xml,Perseus-Latin,Latin,1351,Cornelius Tacitus,1,prose,5521,1st c. CE
+phi1351.phi004.perseus-lat2.xml,Perseus-Latin,Latin,1351,Cornelius Tacitus,1,prose,51490,1st c. CE
+phi1351.phi003.perseus-lat1.xml,Perseus-Latin,Latin,1351,Cornelius Tacitus,1,prose,9311,1st c. CE
+phi1351.phi001.perseus-lat1.xml,Perseus-Latin,Latin,1351,Cornelius Tacitus,1,prose,6741,1st c. CE
+phi0472.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0472,C. Valerius Catullus,-1,poetry,12976,1st c. BCE
+phi0474.phi072.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4215,1st c. BCE
+phi0474.phi043.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,22220,1st c. BCE
+phi0474.phi010.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,25461,1st c. BCE
+phi0474.phi028.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,14579,1st c. BCE
+phi0474.phi017.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,10910,1st c. BCE
+phi0474.phi021.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,8655,1st c. BCE
+phi0474.phi019.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,5079,1st c. BCE
+phi0474.phi026.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,8656,1st c. BCE
+phi0474.phi045.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,6724,1st c. BCE
+phi0474.phi042.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,7334,1st c. BCE
+phi0474.phi018.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3336,1st c. BCE
+phi0474.phi027.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,10894,1st c. BCE
+phi0474.phi020.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,18638,1st c. BCE
+phi0474.phi029.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3482,1st c. BCE
+phi0474.phi016.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3927,1st c. BCE
+phi0474.phi011.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,13801,1st c. BCE
+phi0474.phi033.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4012,1st c. BCE
+phi0474.phi034.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4763,1st c. BCE
+phi0474.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,15543,1st c. BCE
+phi0474.phi005.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,121207,1st c. BCE
+phi0474.phi051.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,8449,1st c. BCE
+phi0474.phi056.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,121524,1st c. BCE
+phi0474.phi058.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,18668,1st c. BCE
+phi0474.phi004.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,6740,1st c. BCE
+phi0474.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4755,1st c. BCE
+phi0474.phi035.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,64191,1st c. BCE
+phi0474.phi032.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3310,1st c. BCE
+phi0474.phi059.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,9783,1st c. BCE
+phi0474.phi057.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,127235,1st c. BCE
+phi0474.phi050.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,mixed,36068,1st c. BCE
+phi0474.phi014.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,12956,1st c. BCE
+phi0474.phi013.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,15036,1st c. BCE
+phi0474.phi025.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,5785,1st c. BCE
+phi0474.phi022.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,20906,1st c. BCE
+phi0474.phi049.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,76340,1st c. BCE
+phi0474.phi047.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4395,1st c. BCE
+phi0474.phi040.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,21873,1st c. BCE
+phi0474.phi023.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,5373,1st c. BCE
+phi0474.phi024.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,10519,1st c. BCE
+phi0474.phi012.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3565,1st c. BCE
+phi0474.phi015.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,11773,1st c. BCE
+phi0474.phi041.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,1907,1st c. BCE
+phi0474.phi046.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,21402,1st c. BCE
+phi0474.phi048.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,59680,1st c. BCE
+phi0474.phi055.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,34220,1st c. BCE
+phi0474.phi052.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,9433,1st c. BCE
+phi0474.phi037.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,62045,1st c. BCE
+phi0474.phi008.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,10369,1st c. BCE
+phi0474.phi030.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,4074,1st c. BCE
+phi0474.phi006.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,3942,1st c. BCE
+phi0474.phi039.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,28358,1st c. BCE
+phi0474.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,8637,1st c. BCE
+phi0474.phi053.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,mixed,27808,1st c. BCE
+phi0474.phi054.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,5212,1st c. BCE
+phi0474.phi007.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,5539,1st c. BCE
+phi0474.phi038.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,10786,1st c. BCE
+phi0474.phi031.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,13212,1st c. BCE
+phi0474.phi036.perseus-lat1.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,33430,1st c. BCE
+phi0474.phi009.perseus-lat2.xml,Perseus-Latin,Latin,0474,M. Tullius Cicero,-1,prose,8333,1st c. BCE
+phi0690.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0690,P. Vergilius Maro,-1,poetry,14170,1st c. BCE
+phi0690.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0690,P. Vergilius Maro,-1,poetry,63698,1st c. BCE
+phi0690.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0690,P. Vergilius Maro,-1,poetry,5736,1st c. BCE
+phi2331.phi010.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,4650,3rd c. CE
+phi2331.phi028.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,4735,3rd c. CE
+phi2331.phi017.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,6325,3rd c. CE
+phi2331.phi021.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3593,3rd c. CE
+phi2331.phi019.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,5981,3rd c. CE
+phi2331.phi026.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,8883,3rd c. CE
+phi2331.phi018.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,11911,3rd c. CE
+phi2331.phi027.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3335,3rd c. CE
+phi2331.phi020.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,6052,3rd c. CE
+phi2331.phi029.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2677,3rd c. CE
+phi2331.phi016.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,1825,3rd c. CE
+phi2331.phi011.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2502,3rd c. CE
+phi2331.phi002.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,1654,3rd c. CE
+phi2331.phi005.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2304,3rd c. CE
+phi2331.phi004.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,6402,3rd c. CE
+phi2331.phi003.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2719,3rd c. CE
+phi2331.phi014.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,1313,3rd c. CE
+phi2331.phi013.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2345,3rd c. CE
+phi2331.phi025.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3361,3rd c. CE
+phi2331.phi022.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,1089,3rd c. CE
+phi2331.phi023.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,4438,3rd c. CE
+phi2331.phi024.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,7507,3rd c. CE
+phi2331.phi012.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3008,3rd c. CE
+phi2331.phi015.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2828,3rd c. CE
+phi2331.phi008.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2910,3rd c. CE
+phi2331.phi030.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3024,3rd c. CE
+phi2331.phi006.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,2948,3rd c. CE
+phi2331.phi001.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,6188,3rd c. CE
+phi2331.phi007.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,3993,3rd c. CE
+phi2331.phi009.perseus-lat2.xml,Perseus-Latin,Latin,2331,Unknown,3,prose,1702,3rd c. CE
+phi1318.phi001.perseus-lat1.xml,Perseus-Latin,Latin,1318,Pliny the Younger,1,prose,66667,1st c. CE
+phi0631.phi002.perseus-lat4.xml,Perseus-Latin,Latin,0631,Sallust,-1,prose,21231,1st c. BCE
+phi0631.phi002.perseus-lat3.xml,Perseus-Latin,Latin,0631,Sallust,-1,prose,21244,1st c. BCE
+phi0631.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0631,Sallust,-1,prose,4092,1st c. BCE
+phi0631.phi001.perseus-lat4.xml,Perseus-Latin,Latin,0631,Sallust,-1,prose,10655,1st c. BCE
+phi0631.phi001.perseus-lat3.xml,Perseus-Latin,Latin,0631,Sallust,-1,prose,10676,1st c. BCE
+phi1345.phi001.perseus-lat2.xml,Perseus-Latin,Latin,1345,Silius Italicus,4,poetry,76394,4th c. CE
+phi1002.phi001.perseus-lat2.xml,Perseus-Latin,Latin,1002,Quintilian,2,prose,176653,2nd c. CE
+phi1056.phi001.perseus-lat1.xml,Perseus-Latin,Latin,1056,Vitruvius Pollio,1,prose,58456,1st c. CE
+phi0917.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0917,M. Annaeus Lucanus,1,poetry,53094,1st c. CE
+phi0972.phi001f.perseus-lat1.xml,Perseus-Latin,Latin,0972,Petronius,1,poetry,873,1st c. CE
+phi0972.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0972,Petronius,1,poetry,31525,1st c. CE
+phi0972.phi001.perseus-lat1.xml,Perseus-Latin,Latin,0972,Petronius,1,poetry,31524,1st c. CE
+phi0975.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0975,Phaedrus,2,poetry,11572,2nd c. CE
+phi1254.phi001.perseus-lat2.xml,Perseus-Latin,Latin,1254,Aulus Gellius,1,prose,118178,1st c. CE
+phi0134.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,10973,2nd c. BCE
+phi0134.phi005.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,9009,2nd c. BCE
+phi0134.phi004.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,10826,2nd c. BCE
+phi0134.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,10830,2nd c. BCE
+phi0134.phi006.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,9884,2nd c. BCE
+phi0134.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0134,Publius Terentius Afer (Terence),-2,poetry,9849,2nd c. BCE
+phi0550.phi001.perseus-lat1.xml,Perseus-Latin,Latin,0550,Lucretius,-1,poetry,49017,1st c. BCE
+phi0845.phi002.perseus-lat3.xml,Perseus-Latin,Latin,0845,Columella,1,prose,99461,1st c. CE
+phi0448.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0448,Julius Caesar,-1,prose,32367,1st c. BCE
+phi0448.phi002.perseus-lat3.xml,Perseus-Latin,Latin,0448,Julius Caesar,-1,prose,32326,1st c. BCE
+phi0448.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0448,Julius Caesar,-1,prose,51311,1st c. BCE
+phi0620.phi001.perseus-lat3.xml,Perseus-Latin,Latin,0620,Sextus Propertius,1,poetry,25373,1st c. CE
+phi0660.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0660,Sulpicia,-1,poetry,256,1st c. BCE
+phi0660.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0660,Tibullus,-1,poetry,12362,1st c. BCE
+phi0893.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,309,1st c. BCE
+phi0893.phi005.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,9903,1st c. BCE
+phi0893.phi004.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,14369,1st c. BCE
+phi0893.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,3003,1st c. BCE
+phi0893.phi006.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,3096,1st c. BCE
+phi0893.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0893,Q. Horatius Flaccus,-1,poetry,13291,1st c. BCE
+phi1348.abo014.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,7743,2nd c. CE
+phi1348.abo013.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,9277,2nd c. CE
+phi1348.abo022.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,3550,2nd c. CE
+phi1348.abo012.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,13821,2nd c. CE
+phi1348.abo015.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,6501,2nd c. CE
+phi1348.abo017.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,2853,2nd c. CE
+phi1348.abo021.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,1486,2nd c. CE
+phi1348.abo019.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,2399,2nd c. CE
+phi1348.abo018.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,1665,2nd c. CE
+phi1348.abo020.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,3198,2nd c. CE
+phi1348.abo016.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,7894,2nd c. CE
+phi1348.abo011.perseus-lat2.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,9748,2nd c. CE
+phi1348.abo011.rolfe-lat1.xml,Perseus-Latin,Latin,1348,Suetonius,2,prose,10130,2nd c. CE
+phi1294.phi002.perseus-lat2.xml,Perseus-Latin,Latin,1294,Martial,1,poetry,58196,1st c. CE
+phi0588.abo014.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1822,1st c. BCE
+phi0588.abo013.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,657,1st c. BCE
+phi0588.abo025.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,3596,1st c. BCE
+phi0588.abo022.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,518,1st c. BCE
+phi0588.abo023.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,2079,1st c. BCE
+phi0588.abo024.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,443,1st c. BCE
+phi0588.abo012.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,489,1st c. BCE
+phi0588.abo015.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1673,1st c. BCE
+phi0588.abo008.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,603,1st c. BCE
+phi0588.abo006.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,540,1st c. BCE
+phi0588.abo001.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1357,1st c. BCE
+phi0588.abo007.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,2021,1st c. BCE
+phi0588.abo009.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,739,1st c. BCE
+phi0588.abo010.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1484,1st c. BCE
+phi0588.abo017.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1390,1st c. BCE
+phi0588.abo021.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,443,1st c. BCE
+phi0588.abo019.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,542,1st c. BCE
+phi0588.abo018.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,2289,1st c. BCE
+phi0588.abo020.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,828,1st c. BCE
+phi0588.abo016.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,714,1st c. BCE
+phi0588.abo011.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,411,1st c. BCE
+phi0588.abo002.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,1716,1st c. BCE
+phi0588.abo005.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,541,1st c. BCE
+phi0588.abo004.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,887,1st c. BCE
+phi0588.abo003.perseus-lat2.xml,Perseus-Latin,Latin,0588,Cornelius Nepos,-1,prose,347,1st c. BCE
+phi0978.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0978,Pliny the Elder,1,prose,724730,1st c. CE
+phi0914.phi00132.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,10891,1st c. CE
+phi0914.phi00113s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,182,1st c. CE
+phi0914.phi00135.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,12803,1st c. CE
+phi0914.phi0016.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,13426,1st c. CE
+phi0914.phi0011.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17401,1st c. CE
+phi0914.phi0011.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,18846,1st c. CE
+phi0914.phi0018.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,12896,1st c. CE
+phi0914.phi0018.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14598,1st c. CE
+phi0914.phi00119s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,217,1st c. CE
+phi0914.phi00134.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15282,1st c. CE
+phi0914.phi00133.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,11794,1st c. CE
+phi0914.phi0019.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17906,1st c. CE
+phi0914.phi0019.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15984,1st c. CE
+phi0914.phi0017.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,13172,1st c. CE
+phi0914.phi00142.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17014,1st c. CE
+phi0914.phi00114s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,128,1st c. CE
+phi0914.phi00145.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16086,1st c. CE
+phi0914.phi00145.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,13550,1st c. CE
+phi0914.phi00129.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15332,1st c. CE
+phi0914.phi00129.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,12230,1st c. CE
+phi0914.phi00127.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17287,1st c. CE
+phi0914.phi00127.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,21532,1st c. CE
+phi0914.phi00144.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15385,1st c. CE
+phi0914.phi00144.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,13001,1st c. CE
+phi0914.phi00143.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,7493,1st c. CE
+phi0914.phi00143.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,5891,1st c. CE
+phi0914.phi00117s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,127,1st c. CE
+phi0914.phi00126.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,19834,1st c. CE
+phi0914.phi00126.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16835,1st c. CE
+phi0914.phi00121.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15510,1st c. CE
+phi0914.phi00121.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17955,1st c. CE
+phi0914.phi00128.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16635,1st c. CE
+phi0914.phi00128.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,20681,1st c. CE
+phi0914.phi00110.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15094,1st c. CE
+phi0914.phi00110.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17048,1st c. CE
+phi0914.phi00120s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,221,1st c. CE
+phi0914.phi0012.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17797,1st c. CE
+phi0914.phi0012.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,19533,1st c. CE
+phi0914.phi0015.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16041,1st c. CE
+phi0914.phi0015.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17802,1st c. CE
+phi0914.phi00116s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,91,1st c. CE
+phi0914.phi00136.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,11513,1st c. CE
+phi0914.phi00131.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,12895,1st c. CE
+phi0914.phi00138.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17199,1st c. CE
+phi0914.phi0014.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,18903,1st c. CE
+phi0914.phi0014.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16783,1st c. CE
+phi0914.phi00115s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,101,1st c. CE
+phi0914.phi0013.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,20166,1st c. CE
+phi0914.phi0013.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,22581,1st c. CE
+phi0914.phi00139.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14959,1st c. CE
+phi0914.phi00130.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,13492,1st c. CE
+phi0914.phi00130.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17831,1st c. CE
+phi0914.phi00137.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,16583,1st c. CE
+phi0914.phi00111s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,232,1st c. CE
+phi0914.phi00124.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14102,1st c. CE
+phi0914.phi00124.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15591,1st c. CE
+phi0914.phi00123.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14658,1st c. CE
+phi0914.phi00123.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15975,1st c. CE
+phi0914.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,518011,1st c. CE
+phi0914.phi00141.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,7720,1st c. CE
+phi0914.phi00112s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,104,1st c. CE
+phi0914.phi00122.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,20954,1st c. CE
+phi0914.phi00122.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,17142,1st c. CE
+phi0914.phi00125.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14457,1st c. CE
+phi0914.phi00125.perseus-lat3.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,15479,1st c. CE
+phi0914.phi00140.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,14945,1st c. CE
+phi0914.phi00118s.perseus-lat2.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,197,1st c. CE
+phi0914.phi001fr.perseus-lat1.xml,Perseus-Latin,Latin,0914,Titus Livius (Livy),1,prose,11674,1st c. CE
+phi0119.phi010.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,9600,2nd c. BCE
+phi0119.phi017.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,11935,2nd c. BCE
+phi0119.phi019.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,9979,2nd c. BCE
+phi0119.phi018.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,6366,2nd c. BCE
+phi0119.phi020.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,8351,2nd c. BCE
+phi0119.phi016.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,11333,2nd c. BCE
+phi0119.phi011.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,8741,2nd c. BCE
+phi0119.phi002.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,8198,2nd c. BCE
+phi0119.phi005.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,8768,2nd c. BCE
+phi0119.phi004.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,10164,2nd c. BCE
+phi0119.phi003.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,6944,2nd c. BCE
+phi0119.phi014.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,7927,2nd c. BCE
+phi0119.phi013.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,9726,2nd c. BCE
+phi0119.phi012.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,12794,2nd c. BCE
+phi0119.phi015.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,11638,2nd c. BCE
+phi0119.phi008.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,6242,2nd c. BCE
+phi0119.phi006.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,7765,2nd c. BCE
+phi0119.phi001.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,9927,2nd c. BCE
+phi0119.phi007.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,5316,2nd c. BCE
+phi0119.phi009.perseus-lat2.xml,Perseus-Latin,Latin,0119,T. Maccius Plautus,-2,poetry,6552,2nd c. BCE
+stoa0045a.stoa001.opp-lat1.xml,CSEL,Latin,0045a,Catholic Church. Pope.,4,prose,221871,4th c. CE
+stoa0223.stoa002.opp-lat1.xml,CSEL,Latin,0223,Paulinus Nolanus,5,poetry,145514,5th c. CE
+stoa0223.stoa001.opp-lat1.xml,CSEL,Latin,0223,Paulinus Nolanus,5,poetry,94570,5th c. CE
+stoa0276.stoa010.opp-lat2.xml,CSEL,Latin,0276,Pseudo-Tertullian,4,poetry,2783,4th c. CE
+stoa0276.stoa003.opp-lat2.xml,CSEL,Latin,0276,Pseudo-Tertullian,4,prose,4157,4th c. CE
+stoa0276.stoa006.opp-lat2.xml,CSEL,Latin,0276,Pseudo-Tertullian,4,poetry,1865,4th c. CE
+stoa0034.stoa001.opp-lat1.xml,CSEL,Latin,0034,Arnobius of Sicca,4,prose,89048,4th c. CE
+stoa0058.stoa001.opp-lat3.xml,CSEL,Latin,0058,Boethius,6,poetry,31468,6th c. CE
+stoa0058.stoa007.opp-lat2.xml,CSEL,Latin,0058,Boethius,6,prose,41851,6th c. CE
+stoa0058.stoa007.opp-lat3.xml,CSEL,Latin,0058,Boethius,6,prose,69878,6th c. CE
+stoa0040.stoa056c.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,11944,5th c. CE
+stoa0040.stoa056b.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,8811,5th c. CE
+stoa0040.stoa035a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,11886,5th c. CE
+stoa0040.stoa015b.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,1495,5th c. CE
+stoa0040.stoa017.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,22865,5th c. CE
+stoa0040.stoa021.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,48767,5th c. CE
+stoa0040.stoa001a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,34804,5th c. CE
+stoa0040.stoa019.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,74978,5th c. CE
+stoa0040.stoa072.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,poetry,3339,5th c. CE
+stoa0040.stoa042a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,138097,5th c. CE
+stoa0040.stoa044.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,22463,5th c. CE
+stoa0040.stoa027.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,64787,5th c. CE
+stoa0040.stoa020.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,26392,5th c. CE
+stoa0040.stoa016.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,28605,5th c. CE
+stoa0040.stoa029.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,18649,5th c. CE
+stoa0040.stoa011.opp-lat2.xml,CSEL,Latin,0040,Augustine,5,prose,719858,5th c. CE
+stoa0040.stoa042.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,13799,5th c. CE
+stoa0040.stoa080.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,91308,5th c. CE
+stoa0040.stoa074.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,147977,5th c. CE
+stoa0040.stoa056.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,23402,5th c. CE
+stoa0040.stoa060.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,21187,5th c. CE
+stoa0040.stoa029a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,19039,5th c. CE
+stoa0040.stoa033.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,42943,5th c. CE
+stoa0040.stoa034.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,10047,5th c. CE
+stoa0040.stoa066c.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,4242,5th c. CE
+stoa0040.stoa057.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,52911,5th c. CE
+stoa0040.stoa050.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,16299,5th c. CE
+stoa0040.stoa003.opp-lat3.xml,CSEL,Latin,0040,Augustine,5,prose,382554,5th c. CE
+stoa0040.stoa035.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,14014,5th c. CE
+stoa0040.stoa080a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,124909,5th c. CE
+stoa0040.stoa032.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,11765,5th c. CE
+stoa0040.stoa037c.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,12828,5th c. CE
+stoa0040.stoa014a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,14931,5th c. CE
+stoa0040.stoa057a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,14518,5th c. CE
+stoa0040.stoa031a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,15486,5th c. CE
+stoa0040.stoa038a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,6392,5th c. CE
+stoa0040.stoa077c.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,3302,5th c. CE
+stoa0040.stoa077d.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,1591,5th c. CE
+stoa0040.stoa070a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,7355,5th c. CE
+stoa0040.stoa033a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,68430,5th c. CE
+stoa0040.stoa056a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,34290,5th c. CE
+stoa0040.stoa040.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,9494,5th c. CE
+stoa0040.stoa024b.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,9622,5th c. CE
+stoa0040.stoa021a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,17975,5th c. CE
+stoa0040.stoa025.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,22078,5th c. CE
+stoa0040.stoa041.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,18262,5th c. CE
+stoa0040.stoa046.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,12589,5th c. CE
+stoa0040.stoa070.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,33643,5th c. CE
+stoa0040.stoa077.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,66040,5th c. CE
+stoa0040.stoa023.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,37766,5th c. CE
+stoa0040.stoa024.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,168273,5th c. CE
+stoa0040.stoa037.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,131398,5th c. CE
+stoa0040.stoa006.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,9755,5th c. CE
+stoa0040.stoa001.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,132092,5th c. CE
+stoa0040.stoa055.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,19605,5th c. CE
+stoa0040.stoa064.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,14295,5th c. CE
+stoa0040.stoa063.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,9215,5th c. CE
+stoa0040.stoa031.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,13506,5th c. CE
+stoa0040.stoa036.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,19230,5th c. CE
+stoa0040.stoa062.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,25849,5th c. CE
+stoa0040.stoa053.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,10911,5th c. CE
+stoa0040.stoa054.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,23417,5th c. CE
+stoa0040.stoa054.opp-lat2.xml,CSEL,Latin,0040,Orosius,5,prose,4699,5th c. CE
+stoa0040.stoa037a.opp-lat1.xml,CSEL,Latin,0040,Augustine,5,prose,12905,5th c. CE
+stoa0076c.stoa002.opp-lat2.xml,CSEL,Latin,0076c,John Cassian,5,prose,69257,5th c. CE
+stoa0076c.stoa003.opp-lat1.xml,CSEL,Latin,0076c,John Cassian,5,prose,50424,5th c. CE
+stoa0076c.stoa001.opp-lat2.xml,CSEL,Latin,0076c,John Cassian,5,prose,187081,5th c. CE
+stoa0054.stoa001a.opp-lat1.xml,CSEL,Latin,0054,Bede the Venerable,8,prose,6524,8th c. CE
+stoa0111.stoa001.opp-lat3.xml,CSEL,Latin,0111,Anonymous,3,prose,20155,3rd c. CE
+stoa0117.stoa002.opp-lat1.xml,CSEL,Latin,0117,Eucherius of Lyon,5,prose,15232,5th c. CE
+stoa0117.stoa004.opp-lat1.xml,CSEL,Latin,0117,Eucherius of Lyon,5,prose,2506,5th c. CE
+stoa0117.stoa003.opp-lat1.xml,CSEL,Latin,0117,Eucherius of Lyon,5,prose,25858,5th c. CE
+stoa0117.stoa001.opp-lat1.xml,CSEL,Latin,0117,Eucherius of Lyon,5,prose,4830,5th c. CE

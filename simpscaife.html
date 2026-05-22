@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas API Fetcher (Fixed)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 2em;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        #urnInput {
+            width: 500px;
+            font-family: monospace;
+            font-size: 1.1em;
+            padding: 5px;
+        }
+        button {
+            font-size: 1em;
+            padding: 7px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #xmlOutput {
+            background-color: #eee;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            white-space: pre-wrap; /* Ensures the XML text wraps */
+            word-wrap: break-word; /* Breaks long strings */
+            font-family: "Courier New", Courier, monospace;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atlas API XML Fetcher</h1>
+
+    <div>
+        <label for="urnInput"><strong>Enter CTS URN:</strong></label>
+        <br>
+        <input type="text" id="urnInput" value="tlg0001.tlg001.perseus-grc2:1.1-1.2">
+        <button id="fetchButton">Fetch XML</button>
+    </div>
+
+    <h2>XML Output:</h2>
+    <pre id="xmlOutput"><code>Waiting for input...</code></pre>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            const urnInput = document.getElementById("urnInput");
+            const fetchButton = document.getElementById("fetchButton");
+            const xmlOutput = document.getElementById("xmlOutput").querySelector("code");
+
+            async function fetchXml() {
+                const urn = urnInput.value;
+                const baseURL = "https://atlas.perseus.tufts.edu/library/passage/urn:cts:greekLit:";
+                
+                // This is the original URL we want to fetch
+                const targetURL = `${baseURL}${urn}/xml/`;
+                
+                // *** FIX: We use a CORS proxy to bypass the browser's security policy. ***
+                // We must URL-encode the target URL to pass it to the proxy.
+                const encodedTargetURL = encodeURIComponent(targetURL);
+                const proxyURL = `https://api.allorigins.win/raw?url=${encodedTargetURL}`;
+
+                xmlOutput.textContent = `Fetching from ${targetURL} via proxy...`;
+
+                try {
+                    // Fetch from the proxy URL instead of the target URL
+                    const response = await fetch(proxyURL);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+
+                    const xmlText = await response.text();
+                    xmlOutput.textContent = xmlText;
+
+                } catch (error) {
+                    xmlOutput.textContent = `Error: ${error.message}`;
+                }
+            }
+
+            fetchButton.addEventListener("click", fetchXml);
+        });
+    </script>
+
+</body>
+</html>

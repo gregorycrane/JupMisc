@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>bsb11724902_00002</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="ocr-capabilities"
+          content="ocr_line ocr_page ocr_par ocrp_lang ocrx_block ocrx_word x_source x_wconf"/>
+  </head>
+  <body>
+<div class="ocr_page" title="x_source bsb11724902_00002; ppageno 2; bbox 0 0 1968 2936" lang="en">
+ <div class="ocrx_block" title="bbox 1511 2476 1755 2607">
+  <p class="ocr_par" title="bbox 1511 2476 1755 2607">
+   <span class="ocr_line" title="bbox 1511 2476 1755 2607"><span class="ocrx_word" title="bbox 1511 2476 1608 2597">L.</span> <span class="ocrx_word" title="bbox 1623 2484 1726 2605">gr</span><span class="ocrx_word" title="bbox 1728 2492 1755 2607">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1548 2748 1707 2852">
+  <p class="ocr_par" title="bbox 1548 2748 1707 2852">
+   <span class="ocr_line" title="bbox 1548 2748 1707 2852"><span class="ocrx_word" title="bbox 1548 2748 1707 2852">45</span></span>
+</p>
+</div>
+</div>
+  </body>
+</html>

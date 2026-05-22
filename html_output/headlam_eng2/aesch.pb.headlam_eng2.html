@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prometheus Bound</title>
+    <style>
+    body { font-family: 'Georgia', serif; display: flex; flex-direction: column; height: 100vh; margin: 0; background-color: #fdfdfd; }
+        header { padding: 10px 20px; border-bottom: 2px solid #ddd; background-color: #fff; text-align: center; z-index: 10; }
+        h1 { margin: 0; font-size: 1.8em; color: #333; }
+        h2 { margin: 5px 0 0; font-size: 1.2em; color: #666; font-style: italic; font-weight: normal;}
+        .container {
+            display: grid;
+            /* Default: 2 columns */
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            flex-grow: 1;
+            padding: 10px;
+            overflow: hidden;
+        }
+                        /* --- Fix TOC scroll behavior --- */
+        .container {
+            min-height: 0; /* allow flex/grid children to shrink and scroll */
+        }
+
+        .toc-wrapper {
+            min-height: 0; /* same fix for nested flex/grid container */
+        }
+
+        /* *** 3-column layout when TOC is present *** */
+        .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; /* TOC wrapper, Text, Notes */
+        }
+        .column {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;  /* This is fine for .column */
+        }
+
+        /* *** Wrapper for TOC column + Open Button *** */
+        .toc-wrapper {
+            position: relative; /* Context for the close button */
+            width: 250px; /* Initial width */
+            transition: width 0.3s ease, min-width 0.3s ease;
+            min-width: 250px;
+            /* The wrapper itself is a column in the grid, so it will be flex */
+            display: flex;
+            flex-direction: column;
+            /* Use transparent background for the wrapper */
+            background-color: transparent;
+            border: none;
+        }
+
+        /* *** TOC Column Styles (THE FIX IS HERE) *** */
+        .toc-column {
+            width: 100%; /* Fill the wrapper */
+            flex-grow: 1;
+            border: 1px solid #e0e0e0; /* Border now on the column */
+            border-radius: 4px; /* Rounded corners */
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;   /* <-- FIX 1: This column scrolls */
+            min-height: 0;      /* <-- FIX 2: This column is allowed to shrink */
+        }
+        .toc-column h3 { /* TOC Title */
+            background-color: #e9ecef; 
+            position: sticky; top: 0; z-index: 6;
+            font-size: 0.9em !important; /* Make TOC header smaller */
+            padding: 12px 12px 12px 35px; /* Add padding for close button */
+            text-align: center; margin: 0;
+            border-bottom: 1px solid #e0e0e0; 
+            color: #444; text-transform: uppercase; letter-spacing: 0.5px;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        #toc-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* *** Styling for nested TOC lists *** */
+        #toc-content > ul {
+            padding: 10px 15px; /* Padding for the list */
+        }
+        #toc-content ul ul {
+            padding-left: 20px; /* Indent nested lists */
+            margin: 0;
+        }
+        #toc-content li a {
+            display: block;
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+            /* overflow: hidden;  Hide overflow */
+            white-space: normal;
+        }
+        #toc-content li a:hover {
+            background-color: #e9ecef;
+        }
+        /* *** Styling for nested TOC items *** */
+        #toc-content ul ul li a {
+            font-size: 0.85em; /* Make sub-items slightly smaller */
+            color: #333; /* Darken them slightly */
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-bottom: none; /* No border for sub-items */
+        }
+        #toc-content ul ul li a:hover {
+            background-color: #dde; /* Different hover for sub-items */
+        }
+/* --- New Collapsible TOC Styles --- */
+
+    /* Hide nested lists by default */
+    #toc-content li ul {
+        display: none;
+        /* Keep your existing padding-left for indentation */
+    }
+
+    /* Style for parent items that can be clicked */
+    #toc-content li.has-children > a {
+        cursor: pointer; /* Show it's clickable */
+        /* Add a small indicator */
+    }
+
+    /* Add a clickable triangle/plus sign */
+    #toc-content li.has-children > a::before {
+        content: '► '; /* Collapsed state indicator */
+        font-size: 0.8em;
+        margin-right: 3px;
+        color: #555;
+    }
+
+    /* When the .open class is added, show the list */
+    #toc-content li.has-children.open > ul {
+        display: block;
+    }
+
+    /* Change the triangle to its expanded state */
+    #toc-content li.has-children.open > a::before {
+        content: '▼ '; /* Expanded state indicator */
+    }               
+        /* CLOSE Button (inside TOC) */
+        #toc-toggle {
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            z-index: 7; /* Above TOC header */
+            background: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            line-height: 1;
+            border-radius: 3px;
+        }
+
+        /* OPEN Button (sits inside wrapper) */
+        #toc-open-button {
+             display: none; /* Hidden by default */
+             padding: 8px;
+             font-size: 1.2em;
+             cursor: pointer;
+             border: 1px solid #ccc;
+             background: #f8f9fa;
+             border-radius: 3px;
+             margin: 0 0 0 5px; /* Position it nicely in the top-left */
+             width: 38px; /* Fixed width */
+             height: 38px; /* Fixed height */
+             box-sizing: border-box; /* Include padding in size */
+        }
+
+        /* Styles for collapsed TOC */
+        body.toc-collapsed .toc-wrapper {
+            width: 45px; /* Width of the open button area */
+            min-width: 45px;
+        }
+        body.toc-collapsed .toc-column {
+             display: none; /* Hide whole column */
+        }
+        body.toc-collapsed #toc-open-button {
+            display: block; /* Show open button */
+        }
+        
+        /* Adjust main grid when collapsed (NO change needed) */
+        body.toc-collapsed .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; 
+        }
+
+
+/* --- Style for <add> tags --- */
+        .tei-add {
+            color: #006400; /* Dark green text */
+        }
+
+        .tei-del {
+            text-decoration: none; 
+            font-size: 0.9em; 
+            color: #777; 
+        }
+        .tei-add::before {
+            content: '<';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-right: 0.1em; /* Small space after bracket */
+        }
+        .tei-add::after {
+            content: '>';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-left: 0.1em; /* Small space before bracket */
+        }
+        /* --- Style for <gloss> tags --- */
+        .gloss {
+            border-bottom: 1px dotted #555; /* Subtle dotted underline */
+            cursor: help; /* Changes cursor to indicate potential tooltip */
+        }
+        /* --- Style for <unclear> tags --- */
+        .unclear {
+            opacity: 0.7;
+            font-style: italic;
+            color: #555;
+        }
+        .gloss[title] { 
+        }
+        .loc { color: #666; text-decoration: none; font-family: monospace; margin-right: 0.5em; }
+        .column > h3 {
+            text-align: center; margin: 0; padding: 12px;
+            border-bottom: 1px solid #e0e0e0; background-color: #f9f9ff;
+            color: #444; font-size: 1em; text-transform: uppercase; letter-spacing: 0.5px;
+            position: sticky; top: 0; z-index: 5;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        .content {
+            padding: 15px;
+            overflow-y: auto;
+            flex-grow: 1;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 0;      /* <-- FIX 3: Allows main/note columns to scroll */
+        }
+
+        /* Override for TOC content to allow parent to scroll */
+        #toc-content {
+            overflow-y: visible; /* <-- FIX 4: Let the parent (.toc-column) handle scrolling */
+            flex-grow: 0;       /* <-- FIX 5: Stop this from growing to fit its content */
+            padding: 0;         /* Padding is moved to the <ul> */
+            min-height: auto;   /* Override min-height from .content */
+        }
+
+        /* English Text Column Styles */
+        #english-content h2, #english-content h3 { scroll-margin-top: 10px; } /* Add margin for scrolling */
+        #english-content h2 { font-size: 1.4em; color: #000; font-style: normal; text-align: center; margin-bottom: 1em;}
+        /* Styling for div/head (book/chapter) */
+        #english-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            font-style: normal; 
+            text-align: left; 
+            margin-top: 1.5em; 
+            margin-bottom: 0.5em; 
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 5px;
+        }
+        /* More specific for index main titles */
+        #english-content h2.index-main {
+            font-size: 1.6em;
+            font-style: normal;
+            text-align: center;
+            margin: 1em 0;
+        }
+        #english-content h4 { font-size: 1.1em; text-align: center; margin: 1em 0 0.5em; text-transform: uppercase;}
+        #english-content ul { list-style-type: none; padding-left: 0; text-align: center; margin-bottom: 1em;}
+        #english-content li { margin-bottom: 0.3em; }
+
+/* New Cast List Styles */
+        #english-content .cast-list {
+            list-style-type: none;
+            text-align: left; /* Align text to the left */
+            margin: 1.5em 3em; /* Give it some horizontal margin */
+            padding: 1.5em; /* Add padding inside the box */
+            border: 1px solid #eee;
+            background: #fdfdfd;
+            border-radius: 4px;
+        }
+        #english-content .cast-list li {
+            margin-bottom: 0.6em; /* Space out the list items */
+        }
+        #english-content .cast-list .role {
+            font-weight: bold;
+            color: #800000; /* Match the speaker color */
+        }
+        #english-content .cast-list .role-desc {
+            color: #333;
+        }
+        
+        #english-content .speech { margin-bottom: 1em; }
+        #english-content .speaker { font-weight: bold; margin-right: 8px; color: #800000; display: block; margin-bottom: 0.2em; }
+        #english-content .pb-hr { border: none; border-top: 1px dashed #ccc; margin: 1em 0; } /* Style hr for pb */
+        #english-content .pb { display: block; text-align: center; color: #888; font-size: 0.9em; margin-bottom: 1em; }
+        
+        #english-content .stage {
+            display: inline-block; 
+            font-style: italic; 
+            color: #555;
+            background-color: #fafafa; 
+            padding: 5px 8px;      
+            margin: 5px;           
+            border: 1px solid #eee;  
+            border-radius: 3px;
+            line-height: 1.4;      
+        }   
+
+        /* Table Styles */
+        #english-content table {
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+        }
+        #english-content caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            caption-side: top;
+            margin-bottom: 0.5em;
+        }
+        /* Style for character names in introductory lists/paragraphs */
+        #english-content .persName { /* Adjust selector if you use a different class */
+            font-weight: bold;
+            color: #800000; /* Same color as .speaker */
+            /* Do NOT add display: block or margins here */
+        }
+        #english-content th, #english-content td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        #english-content thead tr {
+            background-color: #f2f2f2;
+        }
+        #english-content tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #english-content .fn-link {
+            vertical-align: super; font-size: 0.8em; text-decoration: none;
+            color: #007bff; font-weight: bold; padding: 0 2px;
+            line-height: 1;
+            border-radius: 2px;
+            cursor: pointer; /* Add cursor pointer */
+        }
+        #english-content .fn-link:hover, #english-content .fn-link.highlight {
+             text-decoration: underline; background-color: #fff9c4;
+             outline: 1px solid #fdd835;
+             outline-offset: 1px;
+        }
+        #english-content p { margin: 0.5em 0; }
+        #english-content .verse-line {
+          display: block; /* Add this line */
+          margin: 0.1em 0 0.1em 2em;
+          text-indent: -1em;
+        }
+
+        /* Footnote Column Styles */
+        .line { display: flex; align-items: baseline; padding: 5px; border-radius: 3px; border-bottom: 1px solid #f0f0f0; }
+        .line:last-child { border-bottom: none; }
+        .line.highlight {
+            background-color: #fff9c4;
+            outline: 1px solid #fdd835;
+            outline-offset: -1px; /* Inset outline slightly */
+        }
+        .note-ref {
+            flex-shrink: 0; width: auto; font-size: 0.8em; color: #555;
+            cursor: pointer; text-align: right; margin-right: 10px; font-family: monospace;
+            padding-top: 0.1em;
+        }
+        .note-ref:hover { color: #007bff; text-decoration: underline; }
+        .text { line-height: 1.5; font-size: 0.9em; flex-grow: 1; }
+
+/* This targets the <span> created from a <l> tag inside a <blockquote> */
+        /* --- New Poetry Formatting in Notes --- */
+        
+        /* Style the converted TEI tags within notes */
+        .text blockquote {
+            font-style: italic; color: #333;
+            border-left: 3px solid #ccc;
+            margin: 0.5em 0 0.5em 5px;
+            padding-left: 0.4em; /* ADD THIS LINE - Space between border and text */
+            display: block;
+            /* Apply hanging indent directly to the blockquote */
+            /* padding-left: 2.5em; */
+            /* text-indent: -2.5em;  */
+        }
+
+         /* Add this new rule */
+        .text blockquote .verse-line { /* Or use .text blockquote div or .text blockquote p */
+            padding-left: 2.5em;
+            text-indent: -1.5em;
+            display: block; /* Ensure it's treated as a block */
+            margin: 0; /* Reset any default margins if needed */
+            margin-bottom: 0.5em;
+        }
+         
+        .text i { font-style: italic; }
+        .text strong { font-weight: bold; }
+        .text br {
+             display: block; content: ""; margin-top: 0.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Prometheus Bound</h1>
+        <h2>Aeschylus (Walter George Headlam, Clinton Edward Sowerby Headlam, trans.) (George Bell & Sons 1909)</h2>
+    </header>
+
+    <div class="container">
+
+        <div class="column">
+            <h3>English Translation</h3>
+            <div class="content" id="english-content"><h3><i>PROMETHEUS BOUND</i></h3>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-1">[Page 1]</span>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-2">[Page 2]</span>
+<h4>DRAMATIS PERSONÆ</h4>
+<ul class="cast-list">
+<li><span class="role">PROMETHEUS</span> <span class="role-desc">.</span></li>
+<li><span class="role">HEPHAESTUS</span> <span class="role-desc">.</span></li>
+<li><span class="role">POWER</span> <span class="role-desc">(</span></li>
+<li><span class="role">FORCE</span> <span class="role-desc">(</span></li>
+<li><span class="role">CHORUS OF NYMPHS</span> <span class="role-desc">daughters of Ocean.</span></li>
+<li><span class="role">OCEAN</span> <span class="role-desc">.</span></li>
+<li><span class="role">IO</span> <span class="role-desc">.</span></li>
+<li><span class="role">HERMES</span> <span class="role-desc">.</span></li>
+</ul>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-3">[Page 3]</span>
+<div class="speech"><span class="speaker">POWER [1–11]</span><p class="nested-p">We have arrived at the furthest confines of the Earth, the Scythian track, a desert wilderness; and now, Hephaestus, thou must attend to the charges which the Father has enjoined upon thee, to clamp this malefactor to the towering crags in firm shackles of adamantine bonds. For thine own rare jewel, the bright fire enabling every art, he stole and gave to mortal men; that is the sin for which he must give satisfaction to the Gods, that he may be<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="10"></span> taught to accept the sovereignty of Zeus and cease from his man-befriending ways.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [12–35]</span><p class="nested-p">Power and Force, the charge of Zeus to you is finished now, and there is nothing more before you; but I have not the heart to bind a brother-God by force upon a wintry bleak; however, come what may, strong need constrains me to take courage for it; for to make light of the Father&#x27;s words is a grave thing. <span class="stage">(To PROMETHEUS.)</span> Thou high-contriving son of right-advisèd Themis, it is with a heart as loth as thine that I must pin thee with strong forged<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="20"></span> fetters fast to this deserted steep,<a href="#note-3.1" class="fn-link" data-note="3.1">3.1</a> where thou shalt hear no voice nor see the form of man, but must be grilled by
+
+<hr class="pb-hr"><span class="pb" id="pb-4">[Page 4]</span>
+the pure flame of the sun till thy complexion change; and thou shalt welcome it when starry-kirtled night shall hide the day, and when the sun shall dissipate again the morning frost; and ever the sore burden of the present ill shall harass thee; for thy deliverer is not yet born.</p><p class="nested-p">These are the fruits that thou hast reaped from thy man-befriending bent; thou didst not quail before the anger of thy fellow-Gods, but in transgression of right bestowedst<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="30"></span> honours upon mortals. Wherefore thou shalt keep sentry at this dismal rock, in upright posture, sleepless, never bending knee; and many a groan and unavailing lamentation shalt thou utter; for the heart of Zeus is inexorable, and everyone is harsh whose power is new.</p></div>
+<div class="speech"><span class="speaker">POWER [36–38]</span><p class="nested-p">Well now, why dallying and commiserating uselessly? Why dost thou not view with hatred one most hateful to the Gods, who betrayed thy precious thing and gave it to mankind?</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [39–39]</span><p class="nested-p">Blood hath a strange power, and companionship.</p></div>
+<div class="speech"><span class="speaker">POWER [40–41]</span><p class="nested-p">I agree, but to be disobedient to the Father&#x27;s<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="40"></span> word, is that possible? Art thou not more strangely afraid of that?</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [42–42]</span><p class="nested-p">Oh, ruthless ever thus art thou, and full of daring.</p></div>
+<div class="speech"><span class="speaker">POWER [43–44]</span><p class="nested-p">Ay, it is no remedy lamenting over him, so do not waste thy pains on what is profitless.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [45–45]</span><p class="nested-p">O how I hate this mastery of craft!</p></div>
+<div class="speech"><span class="speaker">POWER [46–47]</span><p class="nested-p">Why hate it? For these present troubles Art is absolutely not to blame.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [48–48]</span><p class="nested-p">Nevertheless I would it had belonged to someone else.</p></div>
+<div class="speech"><span class="speaker">POWER [49–50]</span><p class="nested-p">There is trouble in everything, except in empire over Heaven: for there is none free but Zeus alone.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [51–51]</span><p class="nested-p">I know it well; to that I have nothing to say<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="50"></span> contrary.<a href="#note-4.1" class="fn-link" data-note="4.1">4.1</a></p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-5">[Page 5]</span>
+<div class="speech"><span class="speaker">POWER [52–53]</span><p class="nested-p">Well, make haste then to cast the fetters round him, that the Father may not behold thee tarrying.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [54–54]</span><p class="nested-p">Here are the armlets ready.</p></div>
+<div class="speech"><span class="speaker">POWER [55–56]</span><p class="nested-p">Throw them now about his hands and with might and main smite with the hammer, and clamp him to the rocks.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [57–57]</span><p class="nested-p">The work is getting through, and no mistake about it.</p></div>
+<div class="speech"><span class="speaker">POWER [58–59]</span><p class="nested-p">Hammer harder, clinch, leave no link loose, for he is a rare clever one to find out ways and means in difficulties.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [60–60]</span><p class="nested-p">That arm is fixed fast enough at any rate.</p></div>
+<div class="speech"><span class="speaker">POWER [61–62]</span><p class="nested-p">Now rivet this one firmly, to teach him that his<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="60"></span> clever wit is something sluggisher than Zeus.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [63–63]</span><p class="nested-p">Except him, no one could fairly complain of me.</p></div>
+<div class="speech"><span class="speaker">POWER [64–65]</span><p class="nested-p">Now drive the adamantine wedge&#x27;s stubborn jaw right through his breast and nail it vigorously.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [66–66]</span><p class="nested-p">Ah me, Prometheus, I sigh for thy pains!</p></div>
+<div class="speech"><span class="speaker">POWER [67–68]</span><p class="nested-p">There thou art, shrinking again and sighing for the enemies of Zeus! See thou be pitying not thyself one day!</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [69–69]</span><p class="nested-p">Thou seest a sad sight for the eyes to view.</p></div>
+<div class="speech"><span class="speaker">POWER [70–71]</span><p class="nested-p">I see a rogue here getting his deserts. Come,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="70"></span> throw the girths now around his ribs.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [72–72]</span><p class="nested-p">I am bound to do it; you need not urge me on so much.</p></div>
+<div class="speech"><span class="speaker">POWER [73–74]</span><p class="nested-p">Indeed I will urge, and halloo thee on too! Go down below, and ring his legs round strongly.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [75–75]</span><p class="nested-p">There is the work done without much labour.</p></div>
+<div class="speech"><span class="speaker">POWER [76–77]</span><p class="nested-p">Now hammer vigorously the perforated anklets; because the censor of the work is an austere one.</p></div>
+<div class="speech"><span class="speaker">HEPHAESTUS [78–78]</span><p class="nested-p">The utterance of thy tongue is like thy visage.</p></div>
+<div class="speech"><span class="speaker">POWER [79–80]</span><p class="nested-p">You may be soft, but cast not in my teeth my stern will and the harshness of my temper.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-6">[Page 6]</span>
+<div class="speech"><span class="speaker">HEPHAESTUS [81–81]</span><p class="nested-p">Let us go, as he has the swathings now upon his limbs.</p></div>
+<div class="speech"><span class="speaker">POWER [82–87]</span><span class="stage">(to PROMETHEUS)</span><p class="nested-p">There now, do thine outrage there, and filch the Gods&#x27; rights to bestow them upon men! What power have mortals to relieve thee of thy pains? &#x27;Tis by a false name that Spirits call thee Prometheus, for thou hast need thyself of that provision, to find a way of wriggling out of this art! <span class="stage">[Exeunt.</span></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [88–129]</span><p class="nested-p">O thou bright heavenly sky, and swift-winged breezes, ye river-springs, and thou innumerable dimpling smile of the ocean waves, O universal Mother Earth, and<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="90"></span> thee, all-seeing orb of the Sun, I call—behold what I, a God, am suffering at the hands of Gods!</p><p class="nested-p">Behold with what foul tortures I am racked and must endure in them my myriad years! This is the humiliating bondage that the Captain of the Blessed hath devised against me.</p><p class="nested-p">Ah me, ah me, I groan for suffering present and for suffering to come, despairing of the quarter where the end of my afflictions is to rise.</p><span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="100"></span><p class="nested-p">And yet, what say I? I have clear fore-knowledge of all that is in store, and no suffering will come upon me with surprise; and the lot by Fate appointed one must bear as easily as may be, recognising that the strength of Necessity is not to be striven with. And yet to hold my peace, and not to hold my peace about my case is equally impossible: it was for making gifts to mortals that I have been fastened in these torments:-I hunted out the spring of Fire concealed within the filling of a reed, a stolen source which<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="110"></span> hath been revealed to mortal men for their instructress in every art and their great providing means. That is the offence for which I am enduring punishment, here riveted beneath the open sky in fetters.</p><p class="nested-p">Ah, stay,—what sound, what perfume wingeth to me
+<hr class="pb-hr"><span class="pb" id="pb-7">[Page 7]</span>
+without vision? divine or mortal or of mingled strain? Hath he come unto this world&#x27;s end hill to view my sufferings, or with what intent?<a href="#note-7.1" class="fn-link" data-note="7.1">7.1</a> Behold ye me in bondage, an un-<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="120"></span>happy God, the enemy of Zeus, that have incurred the enmity of all the Gods that have the entry into his royal Court by reason of my too-much love for mortals.—Ah, listen,-what is this fluttering stir I hear close by, of wingèd creatures? the sky is whistling with the light rapid beat of pinions.—Every coming thing is apprehended fear.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(The DAUGHTERS of OCEAN enter in a winged car.)</span>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [130–140]</span><p class="nested-p">Fear not at all! for it is a friendly squadron this,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="130"></span> that hath advanced upon thy mountain with a racing rivalry of wings, having hardly won our Father over to consent; and I was carried by the coursing breezes; for the sound of the hammering of iron shot to the inner bower of my cavern and astounded all my meek-eyed shame away, and I sped unsandalled in a wingèd car.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [141–149]</span><p class="nested-p">Offspring of many-childed Tethys and of him that encircleth all the earth with his unsleeping stream, your father Ocean, look ye, behold the bondage I am pinned with on the rocky summits of this gorge to keep my miserable watch.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [150–160]</span><p class="nested-p">I see well, Prometheus, and in fear there sped upon<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="150"></span> my eyes a mist all full of tears, to see thy figure withering away upon the rocks here in these adamantine tortures; for the governors are new that hold the rule of Heaven, and with new-fangled laws Zeus holds dominion lawlessly, and the giant majesties of old he now abolisheth.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [161–168]</span><p class="nested-p">Would that he had but cast me under the earth and below Hades the Receiver of the dead into the bottomless
+
+<hr class="pb-hr"><span class="pb" id="pb-8">[Page 8]</span>
+pit of Tartarus, and put me savagely in firmest fetters, that so no God nor any other had made merry over this! But now, a light thing shaken in the air, I have suffered to the derision of mine enemies.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [169–179]</span><p class="nested-p">What God is so hard-hearted as to make this matter of derision? Who shares not indignation at thy<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="170"></span> distresses—except Zeus? He, with continual rancour, hath set his heart immovably and crusheth all the seed of Uranus, nor will he cease, until either he hath satisfied his heart or by some sleight another capture his impregnable domain.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [180–190]</span><p class="nested-p">Ah neverthεless, although I be thus tortured in<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="180"></span> strong fettering shackles, the prime lord of the Blessed Ones shall yet have need of me, to reveal him the new project, and the agency by which I see him stripped of his sceptre and his rank! And neither by honied enchantments of Persuasion shall he charm me, nor before stern menaces will I ever quail, to reveal the secret, until he loosen me from my cruel fetters and consent to give me satisfaction for this outrage.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [191–201]</span><p class="nested-p">Thou art bold in confidence and abatest nothing for thy bitter sorrows, and art over-free in speech; but my spirit is disquieted by thrilling fear :—I am afraid about thy fate,-I cannot guess what shore there is for thee to land upon and see the termination of these pains: for a nature beyond reaching and a heart inexorable hath the Son of<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="200"></span> Cronos.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [202–208]</span><p class="nested-p">Harsh, I know, he is, and with the law in his own hands;<a href="#note-8.1" class="fn-link" data-note="8.1">8.1</a> nevertheless his will, I reckon, shall be soft enough one day, when he hath been this way hammered; then he
+
+<hr class="pb-hr"><span class="pb" id="pb-9">[Page 9]</span>
+shall assuage his stubborn wrath and meet my eagerness half-way, to enter into bond and amity with me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [209–212]</span><p class="nested-p">Unfold now to us all the story and declare what charge it is that Zeus hath taken thee upon and tortures<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="210"></span> thee with such disgrace and bitterness-unless there is any harm to thee in telling.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [213–257]</span><p class="nested-p">It is a painful thing to tell, and painful to withhold; miserable every way.—When first the Deities began their anger, and sedition was stirred up amongst them-one party seeking to cast Cronos from his throne, to make Zeus king, to wit, the other bent upon the contrary, that Zeus should never reign over the Gods,-I thereupon endeavoured<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="220"></span> to persuade the Titans, children of Heaven and Earth, with the best advice, and was not able; subtle stratagems they quite despised, and thought with violent imaginations to gain the mastery without trouble and by force. But more than once my Mother, Themis or Gaea (Earth)—one form with many titles-had foretold to me the way in which the future was decreed to happen-how that it was not by strength or in the way of violence that the overcomers were to gain the mastery, but by guile. When I expounded this<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="230"></span> to them in speech, they would not deign so much as even to look at it. So the best course that lay before me then appeared to be that I should take my Mother&#x27;s aid and range myself, a welcome volunteer, upon the side of Zeus. And through my counselling it is that the black nether deep of Tartarus buries now the ancient Cronos with his allies together. These are the benefits which the sovereign of the Gods hath received from me and hath requited me with a reward so ill; for it is a vice inherent somehow in a<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="240"></span> sovereignty, that there is no putting trust in friends.</p><p class="nested-p">But for your question, on what charge it is that he is torturing me, that I will make plain.</p><p class="nested-p">So soon as ever he was seated on his Father&#x27;s throne, he
+<hr class="pb-hr"><span class="pb" id="pb-10">[Page 10]</span>
+set about assigning to the Powers Divine their several privileges and mapped out their spheres of rule; but of wretched mortals he took no account whatever, but desired to annihilate the race entirely and create another new one. And to this there was no one that made any opposition<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="250"></span> except me; I had the courage, I delivered men from being smashed to pieces and descending to the house of Death. And that is why I am now being bent with punishments like this, painful to suffer and piteous to behold: after preferring mortal men in pity I was not allowed to win the same myself, but have been straitened into shape thus mercilessly-a spectacle far from glorious to Zeus.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [258–261]</span><p class="nested-p">A heart of iron and made out of rock, Prometheus, is the being that feels not compassion in thy labours: I should have wished never to behold them, and beholding<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="260"></span> them my heart is grieved.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [262–262]</span><p class="nested-p">I am indeed a sight that friends might pity.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [263–263]</span><p class="nested-p">Didst thou, perhaps, transgress a little beyond this?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [264–264]</span><p class="nested-p">Yes, I caused Men no longer to foresee their latter end.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [265–265]</span><p class="nested-p">What was the medicine that you discovered for that ailment?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [266–266]</span><p class="nested-p">I implanted in their breasts blind Hopes.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [267–267]</span><p class="nested-p">That was a great boon that you bestowed upon them.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [268–268]</span><p class="nested-p">And there was this besides,—I gave them Fire.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [269–269]</span><p class="nested-p">And do weak mortals now possess the flame-eyed fire?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [270–270]</span><p class="nested-p">Yes, from which they will learn many Arts. <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="270"></span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [271–271]</span><p class="nested-p">These then are the charges upon which Zeus—</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [272–272]</span><p class="nested-p">Is torturing me, and relaxing nowise ever.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [273–273]</span><p class="nested-p">And is there no period appointed for thy pains?</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-11">[Page 11]</span>
+<div class="speech"><span class="speaker">PROMETHEUS [274–274]</span><p class="nested-p">No, none whatever, except when it seems good to him.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [275–278]</span><p class="nested-p">And how can it seem good? What hope is there? Seest thou not that thou hast erred, and how thou erredst it is not pleasurable to me to say, and pain to thee.-But let us leave this matter; turn thou now to seeking some release from thine affliction.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [279–292]</span><p class="nested-p">It is an easy thing for one whose feet are safe out of the mire of harm to give advice and admonition to<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="280"></span> another in distress; but I was aware beforehand of all this; of will, of will I erred, I will not deny it; succouring men, I got me sufferings myself. But still I never thought that I should be rewarded in this wise, to pine away upon rocks between earth and heaven, and get this desert and unneighboured peak. Now, pray you, mourn no longer for my present woes, but step upon the ground and let me tell you what is the oncoming future, that you may know the whole matter thoroughly. Consent, I pray, consent, show sympathy with<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="290"></span> the one in trouble now; you know, &#x27;tis common, and misfortune settles now upon one and now upon another.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [293–299]</span><p class="nested-p">Thine appeal is urged on willing hearts, Prometheus. So with light footstep I will quit my speeding seat and the pure airy path of wingèd creatures and draw nigh to yonder rugged land; and I desire to hear the whole story of thy suffering thoroughly.</p><span class="stage">(Enter OCEANUS, carried by a winged four-footed monster.)</span></div>
+<div class="speech"><span class="speaker">OCEAN [300–313]</span><p class="nested-p">I have reached the end of a long journey in my<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="300"></span> passage here to thee, Prometheus, guiding this swift-winged creature by my will without a bit; and be assured that I am sorry for the state that thou art in: relationship, I suppose, compels me, and apart from blood, there is no one I should have more consideration for than thee: and you will see that
+<hr class="pb-hr"><span class="pb" id="pb-12">[Page 12]</span>
+this is genuine and that there is no tongue-benefit in me,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="310"></span> for come, name anything that I am to assist you in you will never say that you have any truer friend than Ocean!<a href="#note-12.1" class="fn-link" data-note="12.1">12.1</a></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [314–322]</span><p class="nested-p">Ha, what have we here? Hast thou too come to view my sufferings? How didst thou nerve thyself to leave the stream that bears thy name and those rock-vaulted self-built caverns, and to come unto this iron-wombing land? Is it to view my state that thou art come, and to compassionate in my distress? Behold the spectacle—<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="320"></span> me here, the friend of Zeus, that helped him to set up his sovereignty, behold the sufferings that I am bent with now by him!</p></div>
+<div class="speech"><span class="speaker">OCEAN [323–345]</span><p class="nested-p">I see, Prometheus, and desire also to give thee the best advice, ingenious as thou art: recognise thyself, and adopt a new fashion of behaviour, for there is a new Sovereign in Heaven. But if thou persist in flinging out such harsh and whetted words, Zeus, though seated far aloft, perhaps may hear thee, so that thy present multitude<a href="#note-12.2" class="fn-link" data-note="12.2">12.2</a> of miseries shall seem but child&#x27;s-play. Come, unhappy<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="330"></span> one, dismiss thy present mood and try to find some way out of these troubles. What I say may seem, perhaps, trite and stale,-but these, Prometheus, are just the wages of a too presumptuous tongue. And you are not yet humble or submissive to misfortune, but wish to get still more than what you have already. If you will take my advice, you will not stretch out your legs against the goad, seeing that it is a harsh monarch now and irresponsible<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="340"></span> that is in power. And now I shall go and try whether I can release thee from thy pains; remain thou quiet, and be not too violent in speech-or else, with thy superior mind
+
+
+<hr class="pb-hr"><span class="pb" id="pb-13">[Page 13]</span>
+dost thou not know full well that there is fine inflicted on a wanton tongue?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [346–350]</span><p class="nested-p">You are lucky to be clear of blame, after having shared my enterprise and taken part in everything with me.<a href="#note-13.1" class="fn-link" data-note="13.1">13.1</a> So now, let it alone and do not concern yourself about it, for you will certainly not persuade him; he is not easy to persuade. Look shrewdly to it that you get no harm<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="350"></span> yourself upon this errand.</p></div>
+<div class="speech"><span class="speaker">OCEAN [351–355]</span><p class="nested-p">Truly thou art better far at schooling others than thyself! I judge by fact, not word. But as I am bent upon my course, by no means draw the curb, for I am confident, most confident, that Zeus will grant me this concession, to release thee from these sufferings.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [356–392]</span><p class="nested-p">I am much obliged, and shall never cease to be so, for one thing-your zealousness leaves nothing to be desired: only, take no trouble, for it will be but labour wasted and do me no good-supposing that you mean to take it. No, remain thou quiet and keep thyself out of harm&#x27;s<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="360"></span> way; for because I am in distress, I would not therefore wish distresses to befall the whole world too. No indeed, for I am troubled by the sad plight of my brother, Atlas, who stands towards the West<a href="#note-13.2" class="fn-link" data-note="13.2">13.2</a> with the Pillar of Earth and Heaven bearing upon his shoulders, no sweet burden to embrace. And the earth-sprung inhabiter of the Cilician caverns moved my pity to behold subdued by force, that fell prodigious monster, the bold hundred-headed Typho,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="370"></span> who rose up against the Gods of Heaven, with grisly jaws whistling the sound of terror, as meaning to storm the sovereignty of Zeus by force. But there came upon
+
+
+<hr class="pb-hr"><span class="pb" id="pb-14">[Page 14]</span>
+him the unsleeping shaft of Zeus, the descending thunder-bolt with breath of flame; which shocked him and amazed him from his lofty vaunting; for he was smitten in the very seat of sense, charred to a cinder, and his whole strength blasted out of him and now, a palsied sprawling mass, he lies near the strait passage of the sea, pressed beneath the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="380"></span> roots of Etna; while on the topmost summits sits Hephaestus hammering at the forge. Thence one day there shall burst forth rivers of fire with angry jaws devouring the smooth fields of fruitful Sicily; so fierce the rage that Typho shall send boiling up, with perilous discharges of hot fiery deluge, although consumed to cinders by the thunderbolt of Zeus.-But thou art not without experience nor in need of me to teach thee. Save thyself to the best of thine<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="390"></span> ability, while I will endure my present case, until the proud spirit of Zeus abate.</p></div>
+<div class="speech"><span class="speaker">OCEAN [393–394]</span><p class="nested-p">Knowest thou not then, Prometheus, what is said, that words are the physicians of a mood distempered?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [395–396]</span><p class="nested-p">Yes, if one soften the heart betimes in season, and not reduce a swelling passion forcibly.</p></div>
+<div class="speech"><span class="speaker">OCEAN [397–398]</span><p class="nested-p">And in being zealous and adventuring boldly seest thou any disadvantage?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [399–399]</span><p class="nested-p">Superfluous labour and light-witted simplicity.</p></div>
+<div class="speech"><span class="speaker">OCEAN [400–401]</span><p class="nested-p">Permit me to be still affected with that weakness,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="400"></span> since it is the best thing to be wise while seeming the contrary.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [402–402]</span><p class="nested-p">This folly will be considered to be mine.</p></div>
+<div class="speech"><span class="speaker">OCEAN [403–403]</span><p class="nested-p">Your words most evidently despatch me home again.<a href="#note-14.1" class="fn-link" data-note="14.1">14.1</a></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [404–404]</span><p class="nested-p">Beware lest haply thy lament for me should bring thee into enmity,</p></div>
+<div class="speech"><span class="speaker">OCEAN [405–405]</span><p class="nested-p">With the new holder of the almighty throne?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [406–406]</span><p class="nested-p">Be careful that his heart be not annoyed.</p></div>
+<div class="speech"><span class="speaker">OCEAN [407–407]</span><p class="nested-p">Thy fate, Prometheus, is my instructor.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-15">[Page 15]</span>
+<div class="speech"><span class="speaker">PROMETHEUS [408–408]</span><p class="nested-p">Go thy ways, despatch, maintain thy present mind.</p></div>
+<div class="speech"><span class="speaker">OCEAN [409–412]</span><p class="nested-p">&#x27;Tis urging of the eager steed, for my four-footed bird is flapping with his wings the smooth road of the air,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="410"></span> and would fain repose his limbs in his own stable.<a href="#note-15.1" class="fn-link" data-note="15.1">15.1</a> <span class="stage">[Exit.</span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [413–451]</span><p class="nested-p">I sigh for thy disastrous case, Prometheus; with a stream of tears distilling from my tender eyes, my cheek is wetted in the springs of moisture; for this is sorry work, Zeus holding sway with new laws of his own and displaying an overweening mettle toward the Gods that were before.</p><span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="420"></span><p class="nested-p">Every quarter of the land by now is crying aloud and sighing for the old-time grandeur and magnificence of dignity that belonged to thee and to thy brethren; all mortal men that occupy the planted habitation of pure Asia condole in thy great sufferings and groans.</p><span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="430"></span><p class="nested-p">And the dwellers in the land of Colchis, maidens dauntless in the battle, and the Scythian multitude who tenant the extreme region of the earth about the lake Maeotis:</p><p class="nested-p">And the warlike flower of Arabia that hold a towered citadel hard by the Caucasus, that savage army loudly raging with a serried front of spears.</p><span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="440"></span><p class="nested-p">One other only among Gods divine have I beheld before in suffering, a Titan quelled with torturing bonds of adamant the sturdy Atlas in his overpowering strength, who doth eternally roof up the vaulted pole of Heaven.<a href="#note-15.2" class="fn-link" data-note="15.2">15.2</a></p><p class="nested-p">The ocean billow, falling, roars in cadence, the deep groans, the black abyss of Hades rumbles in the
+
+
+<hr class="pb-hr"><span class="pb" id="pb-16">[Page 16]</span>
+bass, and the springs of the pure-flowing rivers moan with piteous anguish.<a href="#note-16.1" class="fn-link" data-note="16.1">16.1</a></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [452–487]</span><p class="nested-p">Think not that I am silent out of pride or<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="450"></span> stubbornness; my heart is gnawed with conscious thoughts, to see myself entreated thus with ignominy.-And yet to these new upstart Gods who else was it than I defined their dignities entirely? But I will not speak of them, because I should be only telling you what you already know; but listen to the sufferings among mankind, how they were witless before then, and I caused them to have mind and<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="460"></span> be possessed of understanding. And I say this, not with any wish to sneer at the defects of men, but to expound the benevolence of my bestowings..</p><p class="nested-p">First of all, they had eyes and saw to no purpose, had ears and heard not,, but were like the shapes of dream, all their life long doing everything confusedly at hazard; they knew neither of brick-woven houses turned to face the sun, nor timber-work, but lived as burrowers like tiny<a href="#note-16.2" class="fn-link" data-note="16.2">16.2</a> ants in sunless holes of caves. And they had no sign of winter or of<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="470"></span> flowery spring or fruitful summer to rely upon, but used to act in everything without grounded purpose, until the day when I revealed to them the risings of the stars and their ill-distinguished settings. Number, again, most excellent of artifices, I invented for them, and combinations of
+
+
+<hr class="pb-hr"><span class="pb" id="pb-17">[Page 17]</span>
+letters, to be memory of everything,<a href="#note-17.1" class="fn-link" data-note="17.1">17.1</a> the Muses&#x27; mother-instrument. And I was first to couple brute beasts under the yoke, to be subservient to the collar and the pack-saddle,<a href="#note-17.2" class="fn-link" data-note="17.2">17.2</a> that they might have the greatest labours of mankind<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="480"></span> transferred to them; and in the chariot I harnessed horses obedient to the rein, the lustre of luxurious affluence.<a href="#note-17.3" class="fn-link" data-note="17.3">17.3</a> And on the sea, it was no other one than I that found out sailors&#x27; canvas-winged cars to roam the sea.</p><p class="nested-p">Such are the devices that I found out for mortal men, and now I cannot find a subtle shift myself to get me free from the pain that is upon me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [488–491]</span><p class="nested-p">Thou hast suffered a sore humiliation; thou hast lost thy wits and gone astray, and like a bad physician, falling sick, thou losest heart and canst not find what<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="490"></span> medicines thou art curable thyself withal.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [492–522]</span><p class="nested-p">When thou hearest the rest, thou wilt marvel more, the arts and ways and means that I devised. This the chiefest,-if a man fell sick, there was no deliverance whether by way of eaten drug or ointment or of draught, but they were emaciated for want of medicines, until I showed to them the mixtures of beneficent remedies, by means of which they now can fend off all disorders.</p><p class="nested-p">And I distinguished many ways of divination, and was<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="500"></span> the first to judge results of dreams,-what were to come true in fact, and I made known to them the import of dark ominous chance-utterances and of signs that met them on the road; and I defined for them exactly the flight of crook-taloned fowls,—which were by nature favourable and
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-18">[Page 18]</span>
+the contrary, and what habit of life they severally follow, and what are their mutual likings and dislikings and consorting sessions: and the smoothness of the inwards, and what colour these must have to make them pleasing to the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="510"></span> Deities, and the good mottled aspect of the gall and liver, and the thigh-bones rolled up in fat and the long chine I burned with fire, and showed mankind the way into an Art of abstruse inference; and the look of fiery signs, whose vision had been dim and clouded hitherto, I caused to have clear eyes.</p><p class="nested-p">So much for these inventions; now the hidden benefits to men within the earth, brass, iron, silver, and gold, who can claim to have discovered before me? No one, I am very sure, unless he wished to babble empty folly. Hear<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="520"></span> in a brief word the sum of the whole matter-all arts that mankind have are from Prometheus.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [523–526]</span><p class="nested-p">Now be not a benefactor of mankind unduly and yet careless of thine own distress; because I am full of hope that thou shalt yet be delivered from thy bondage and have power no whit inferior to Zeus.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [527–530]</span><p class="nested-p">It is not so that all-effecting Fate is yet decreed to seal the issue; I must first be bent by pains and sorrows infinite, and only thus escape my bonds: the strength of Art is far inferior to Necessity.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [531–531]</span><p class="nested-p">Who then holds the helm that steers Necessity?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [532–532]</span><p class="nested-p">The triple Fates and the remembering Furies.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [533–533]</span><p class="nested-p">Is Zeus then the inferior of these in strength?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [534–534]</span><p class="nested-p">At any rate he cannot escape Fate&#x27;s decree.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [535–535]</span><p class="nested-p">Why, is there aught decreed for Zeus but power eternal?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [536–536]</span><p class="nested-p">That you cannot be told,<a href="#note-18.1" class="fn-link" data-note="18.1">18.1</a> and do not press me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [537–537]</span><p class="nested-p">It must be a grand secret that you wrap so closely!</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [538–541]</span><p class="nested-p">Name some other subject, for this it is anything but the time to utter; it must be covered up with all care
+
+<hr class="pb-hr"><span class="pb" id="pb-19">[Page 19]</span>
+possible, for it is by keeping this that I am to escape my<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="540"></span> foul indignities and sorrows..</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [542–580]</span><p class="nested-p">Never may Zeus the Disposer of all things set his power to cross my will, nor may I be tardy in approaching the Gods with religious sacrifice of slain oxen by the unquenched river of my father Ocean, nor may I offend in words, but may this rule abide within my heart and never<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="550"></span> be effaced.</p><p class="nested-p">A pleasant thing, to draw out all one&#x27;s length of days in hopeful confidence, gladdening my spirit with bright merry cheer-but I shudder to behold thee racked with torments infinite. ; for without fear of Zeus in wilfulness thou payest regard to mortals overmuch, Prometheus.<a href="#note-19.1" class="fn-link" data-note="19.1">19.1</a></p><span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="560"></span><p class="nested-p">Come tell me, friend, how thy good turn can find return?<a href="#note-19.2" class="fn-link" data-note="19.2">19.2</a> Where is there any power to succour thee, what saving help is there in creatures of a day? Have not thine eyes beheld the feeble strengthlessness, as of a dream, in which the blind generation of mankind is bound and trammelled?<a href="#note-19.3" class="fn-link" data-note="19.3">19.3</a> Never
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-20">[Page 20]</span>
+shall the devices of mankind transgress the Ordered Harmony of Zeus.<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="570"></span><a href="#note-20.1" class="fn-link" data-note="20.1">20.1</a></p><p class="nested-p">I have learnt this<a href="#note-20.2" class="fn-link" data-note="20.2">20.2</a> from beholding thy sad ruin, O Prometheus; and the difference in the strain came winging to my ears-in this and that which erst about thy bridal bath and couch I sang in wedding chorus upon occasion of thy marriage, when thou broughtest home Hermione my father&#x27;s daughter, after winning her with gifts, to be thy bride and share thy bed.<a href="#note-20.3" class="fn-link" data-note="20.3">20.3</a></p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter Io, with a heifer's horns, distracted.)</span>
+<div class="speech"><span class="speaker">IO [581–613]</span><p class="nested-p">What land? What people? Who can I suppose this is that I behold here tempest-beaten in bridles made of rock? For what offence art thou being punished with destruction? Tell me what quarter of the world, unhappy toiler, I have wandered to.</p><span class="stage">(A sudden fit of frenzy seizes her.)</span><p class="nested-p">Ah, ah! there is a sting-fly fretting me again-the ghost of earth-born Argos-O forfend!—as I behold the myriad-visioned Herdsman. He travels ever with his crafty eye<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="590"></span> upon me, and even after death the earth conceals him not, but winning his way from the dead below, he hunts me
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-21">[Page 21]</span>
+down, chased wandering and famished over the sand of the sea-shore.</p><p class="nested-p">And the wax-compacted reed keeps humming in my ears a drowsy strain. Alas, alas, ah, whither am I brought in my far-roaming course?</p><p class="nested-p">What is it, O Son of Cronos, what offence that thou hast<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="600"></span> found in me to harness me in these afflictions and to harass a poor maiden thus, distraught with terror of the driving sting? Burn me with fire, or cover me in earth, or give me to be meat unto the monsters of the sea, and grudge me not, O Lord, my supplication! Enough have I been tried and exercised with far-strayed wanderings and cannot see<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="610"></span> what way I can avoid my miseries. O hearest thou the utterance of the Hornèd Virgin?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [614–617]</span><p class="nested-p">How can I fail to hear that Maiden frenzy-tossed, the Daughter of Inachus, who, story tells, inflamed the heart of Zeus, and now is being exercised and driven violently in those immense long courses under Hera&#x27;s hatred?</p></div>
+<div class="speech"><span class="speaker">IO [618–635]</span><p class="nested-p">Whence comest thou to voice my father&#x27;s name? Tell the poor weary maid who art thou, who, unhappy one,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="620"></span> that criest me my wretched name so verily, and namest the disease that wears me out, still fretting me with fitful goads of wild distraction!</p><p class="nested-p">With cruel starving tortures of wild leaps I come in boisterous haste, the victim of Hera&#x27;s rancorous devices. Where are they among the evil-starred that suffer toil the like, ah me! the like of mine? O signify me certainly<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="630"></span> what suffering is yet in store for me, what remedy or medicine of my malady; reveal it, if thou knowest! Voice it, O declare to the poor Wandering Virgin!</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [636–639]</span><p class="nested-p">I will tell thee plainly all that thou desirest to know, with no riddling involution but in simple words, as it is right to open mouth toward friends :—he whom thou seest is Prometheus, the giver of Fire to Men.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-22">[Page 22]</span>
+<div class="speech"><span class="speaker">IO [640–641]</span><p class="nested-p">O risen a general benefaction to mankind, what is<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="640"></span> the cause that thou art suffering so?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [642–642]</span><p class="nested-p">I have but lately ceased lamenting my own pains.</p></div>
+<div class="speech"><span class="speaker">IO [643–643]</span><p class="nested-p">Wilt thou then grant a gift to me?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [644–644]</span><p class="nested-p">Tell me what it is thou askest, for there is nothing that thou mayst not learn from me.<a href="#note-22.1" class="fn-link" data-note="22.1">22.1</a></p></div>
+<div class="speech"><span class="speaker">IO [645–645]</span><p class="nested-p">Show me who it is that hath fastened thee in this ravine?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [646–646]</span><p class="nested-p">Zeus for the will, and for the hand, Hephaestus.</p></div>
+<div class="speech"><span class="speaker">IO [647–647]</span><p class="nested-p">And what is the offence that thou art punished for?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [648–648]</span><p class="nested-p">Thus much alone I can suffice thee with.</p></div>
+<div class="speech"><span class="speaker">IO [649–650]</span><p class="nested-p">Nay, show me besides that what date will be the termination of my miserable wandering?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [651–651]</span><p class="nested-p">Not to know that is better for thee than to know.</p></div>
+<div class="speech"><span class="speaker">IO [652–652]</span><p class="nested-p">Nay, hide thou not from me what I am doomed to suffer.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [653–653]</span><p class="nested-p">Oh, I am not jealous of the gift.</p></div>
+<div class="speech"><span class="speaker">IO [654–654]</span><p class="nested-p">Why then hesitate to utter the whole truth?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [655–655]</span><p class="nested-p">No grudging, only I am loth to shock thy feelings.</p></div>
+<div class="speech"><span class="speaker">IO [656–656]</span><p class="nested-p">Be not considerate for me beyond my liking.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [657–657]</span><p class="nested-p">Since thou art set upon it, I must speak: now listen.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [658–661]</span><p class="nested-p">Nay, wait a little, and indulge my pleasure also. First let us inquire the story of her malady, her own lips telling us of her lost wild wandering,<a href="#note-22.2" class="fn-link" data-note="22.2">22.2</a> and then let
+
+
+<hr class="pb-hr"><span class="pb" id="pb-23">[Page 23]</span>
+her have instruction in the remainder of her task from thee.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [662–666]</span><p class="nested-p">It behoves thee, Io, to afford these maids the favour, more especially as they are sisters of thy Father; for to have one&#x27;s fill of weeping and lament for sorrows in a case where one is like to win a tear, is worth the while.</p></div>
+<div class="speech"><span class="speaker">IO [667–713]</span><p class="nested-p">I do not know how I can be disobedient to you; ye shall hear in plain terms everything that ye desire of me :— yet I am ashamed even in the telling of the heaven-inflicted<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="670"></span> storm and ruin of my features-to tell whence it swooped upon unhappy me.</p><p class="nested-p">There were visions in the night continually haunting me, that kept visiting my bower with smooth words: &#x27;O thou highly-blessèd Maiden, why art thou so long a virgin when thou mayest win the greatest marriage? The heart of Zeus hath been inflamed by an arrow of desire from thee, and he would fain have loving converse with thee: thou, therefore, my child, lift not thy foot to kick away the bed of Zeus, but go thou forth unto the deep meadow-land of Lerna to thy father&#x27;s<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="680"></span> flocks and oxen-stalls, to the end that the eye of Zeus may be eased of his desire.&#x27;</p><p class="nested-p">With dreams like this I was afflicted every night; until at last I brought myself to confess the haunting visions to my father: and he kept sending frequent ambassadors to the oracles of Pytho and Dodona to find out what act or word he must perform to do the pleasure of the Deities. And they kept coming back with vaguely-spoken oracles of dim significance and darkly worded. But at last there<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="690"></span> came to Inachus a clear injunction, charging him directly in so many words to thrust me from my home and country to go wandering free at the extremities of the earth; and if he refused, a fiery thunderbolt should come from Zeus, which should destroy his whole house utterly.</p><p class="nested-p">Yielding obedience to this response of Loxias, he drove
+<hr class="pb-hr"><span class="pb" id="pb-24">[Page 24]</span>
+me out and shut me from the house-as sorely against his will as mine; but the constraint of Zeus was upon him as a bridle, forcing him to do this thing.</p><p class="nested-p">And immediately my shape and senses were distorted,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="700"></span> and with horns, as ye behold, upon my head, fretted with a sharp-biting sting I rushed with frantic leaps to the sweet drinking water of Kerchneia, and the springs of Lerna; and an earth-born herdsman of unmitigated temper, Argos, followed, having vision with a host of eyes, upon my steps. But a sudden destruction came upon him unawares<a href="#note-24.1" class="fn-link" data-note="24.1">24.1</a> and took his life. And I, still frenzy-stung, am driven by the Scourge of God from land to land.</p><p class="nested-p">This is the story of these doings, and if thou canst tell<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="710"></span> me what is the remainder of my toils, declare it, and do not out of pity flatter me with falsehood, for I think that made-up stories are the most shameful vice.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [714–721]</span><p class="nested-p">Ah, ah! away!</p><p class="nested-p">Never, never did I dream that such unheard-of utterances would come to my hearing, or such hideous, fearful sufferings, tortures, terrors, pierce me with a prong and strike a chill into my soul!</p><p class="nested-p">O Fate, O Fate, I am afraid at seeing the sore plight<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="720"></span> of Io.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-25">[Page 25]</span>
+<div class="speech"><span class="speaker">PROMETHEUS [722–723]</span><p class="nested-p">It is too soon that thou complainest and art full of fear : wait until thou hast been told the rest.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [724–725]</span><p class="nested-p">Say on, inform me! to the sick it is relief to know for sure beforehand their remaining pain.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [726–767]</span><p class="nested-p">Your former suit you obtained from me lightly; you desired instruction from her first, her own recital of her trial. Now hear the sequel-the sufferings that this damsel<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="730"></span> must endure from Hera. And thou, O seed of Inachus, lay up my sayings in thy heart, that thou mayest learn the lesson of thy journey to its end.</p><p class="nested-p">First, then, from hence reverse thy face toward the rising of the sun and take thy steps over the unploughed fields; and thou wilt come unto the Nomad Scythians, who dwell lifted up in wicker houses on wheeled caravans, accoutred with far-shooting bows. These thou must not approach, but keep thy footsteps close beside the thundering sea-beaches and so pass out of the country. And on the left<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="740"></span> hand dwell the iron-workers, Chalybes, whom also thou must avoid, for they are savage and not fit for strangers to approach, and thou wilt come unto a river Violent,<a href="#note-25.1" class="fn-link" data-note="25.1">25.1</a> not falsely named, which cross thou not, for it is not easy to ford, until thou come to Caucasus himself, the loftiest among mountains, where there is a river that jets out
+
+<hr class="pb-hr"><span class="pb" id="pb-26">[Page 26]</span>
+fiercely from his very forehead: his star-neighbouring peaks thou must surmount and enter on the path of the meridian, where thou wilt reach the army of the Amazons, abhorring men, who one day shall inhabit Themiskyra beside<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="750"></span> Thermodon, where is the rugged jaw of Salmydessus in the sea, ill-welcomer of mariners, the stepmother of ships: they shall bring thee on thy way most willingly; and right against the narrow entrance of the Lake thou wilt come to the Cimmerian isthmus, which thou must leave, and with a stout courage pass through the channel of Maeotis: and there shall be for ever among men great mention of thy passage and it shall be called after thee the Bosporus. And then leaving the land of Europe thou wilt reach the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="760"></span> continent of Asia.-Are ye satisfied that the new Sovereign of the Gods is violent and tyrannical in everything alike? A God, desiring to have converse with a mortal woman— thus it is that he hath inflicted all these wanderings upon her. It is a rueful suitor for thy marriage thou hast found, poor maiden! for the narrative that thou hast heard just now thou must not think is even in the prologue.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Io utters cries of despair.)</span>
+<div class="speech"><span class="speaker">PROMETHEUS [769–770]</span><p class="nested-p">Ah, thou art crying now and making moan,- what wilt thou do, I wonder, when thou hearest the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="770"></span> remainder?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [771–771]</span><p class="nested-p">Why, hast thou a remainder still to tell her?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [772–772]</span><p class="nested-p">Ay, a tempestuous sea of ruinous distress.</p></div>
+<div class="speech"><span class="speaker">IO [768–768]</span><p class="nested-p">What profit then is life to me? Why not hurl myself at once from this rough crag, to plunge upon the ground and so be rid of all my troubles? Better to die once for all than all one&#x27;s days to suffer misery!</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [778–782]</span><p class="nested-p">Ah, ill indeed wouldst thou endure my trials, for whom death is not designed by Fate-that would have been<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="780"></span>
+<hr class="pb-hr"><span class="pb" id="pb-27">[Page 27]</span>
+release from my afflictions; but now there is no term appointed me until Zeus be cast out from his sovereignty.</p></div>
+<div class="speech"><span class="speaker">IO [783–783]</span><p class="nested-p">Why, is it written that Zeus must be dethroned?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [784–784]</span><p class="nested-p">You would be glad, I dare say, to see that happen?</p></div>
+<div class="speech"><span class="speaker">IO [785–785]</span><p class="nested-p">How should I not, when I am suffering ill from Zeus?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [786–786]</span><p class="nested-p">Well, then, you may understand that so it is.<a href="#note-27.1" class="fn-link" data-note="27.1">27.1</a></p></div>
+<div class="speech"><span class="speaker">IO [787–787]</span><p class="nested-p">By whose means shall he be robbed of his imperial sceptre?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [788–788]</span><p class="nested-p">By means of his own empty-headed counsels.</p></div>
+<div class="speech"><span class="speaker">IO [789–789]</span><p class="nested-p">In what manner? tell me, if there is no harm.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [790–790]</span><p class="nested-p">He means to make a marriage that he shall one<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="790"></span> day rue.</p></div>
+<div class="speech"><span class="speaker">IO [791–791]</span><p class="nested-p">Of divine seed or human? If it may be told, explain.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [792–792]</span><p class="nested-p">Why ask the nature of it? This is not to be made known.</p></div>
+<div class="speech"><span class="speaker">IO [793–793]</span><p class="nested-p">Is it by his wife that he is to be dispossessed?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [794–794]</span><p class="nested-p">Ay, she will bear a son who shall excel his father.</p></div>
+<div class="speech"><span class="speaker">IO [795–795]</span><p class="nested-p">Is there no averting of the peril?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [796–796]</span><p class="nested-p">No-except I might, if I were released.</p></div>
+<div class="speech"><span class="speaker">IO [797–797]</span><p class="nested-p">Who then is to release thee in despite of Zeus?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [798–798]</span><p class="nested-p">It is to be one of thine own offspring.</p></div>
+<div class="speech"><span class="speaker">IO [799–799]</span><p class="nested-p">How sayest thou! My son shall set thee free?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [800–800]</span><p class="nested-p">Ay, the third in generation added to ten others.</p></div>
+<div class="speech"><span class="speaker">IO [801–801]</span><p class="nested-p">That utterance is no longer comprehensible.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [802–802]</span><p class="nested-p">No, and seek not to inquire thine own fate either.</p></div>
+<div class="speech"><span class="speaker">IO [803–803]</span><p class="nested-p">Do not hold out a boon and then withdraw it.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [804–804]</span><p class="nested-p">I will present thee with one or other of two secrets.</p></div>
+<div class="speech"><span class="speaker">IO [805–805]</span><p class="nested-p">What? Show me what they are, and offer me the choice.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [806–807]</span><p class="nested-p">I will; choose, whether I shall explain to thee the remainder of thy toils, or my deliverer.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-28">[Page 28]</span>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [808–811]</span><p class="nested-p">Be pleased to bestow one of these favours upon her and one on me; declare to her the remainder of her<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="810"></span> wanderings and to me thy deliverer, and refuse us not the telling.<a href="#note-28.1" class="fn-link" data-note="28.1">28.1</a></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [812–844]</span><p class="nested-p">Since ye are bent upon it, I will not oppose you or refrain from telling all that ye desire.</p><p class="nested-p">First, Io, I will show to thee thy long-tossed wandering, which do thou inscribe on the memorial tables of thy mind.</p><p class="nested-p">After thou hast crossed the stream which is the bourne of the two continents, towards the fiery Sun-trod Orient,<a href="#note-28.2" class="fn-link" data-note="28.2">28.2</a> passing the swelling surge of the sea, until thou reach the Gorgon Plains of Kisthene, where dwell the Daughters of Phorcys, ancient of days, three, of swan fashion, with one<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="820"></span> eye in common, and with one tooth only-upon whom the sun looks never with his rays, neither the moon by night. And near them are there sisters three, covered with wings and fleeced with serpents, horrible to human kind, whom no man born shall look upon and still draw breath.</p><p class="nested-p">Such is the nature of the opening scene;<a href="#note-28.3" class="fn-link" data-note="28.3">28.3</a> now listen to another uncouth spectacle: There are the sharp-mouthed eagle-barking hounds of Zeus, the Gryphons, that you must beware of, and the one-eyed host of Arimaspians, mounted<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="830"></span> upon horses, who inhabit by the golden-flowing stream of Pluto: these thou must not go nigh. And at the far end of the earth<a href="#note-28.4" class="fn-link" data-note="28.4">28.4</a> thou wilt arrive at the black tribe that dwell near to the sources of the Sun, where is the river Ethiop. Along his banks proceed thou until thou reach the falling Cataract, where from the Byblus Mountains Nile sends forth his worshipped river of sweet water.</p><p class="nested-p">He shall guide thee on thy way to his three-angled land
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-29">[Page 29]</span>
+Nilotic; and there it is destined for thee, Io, and thy children to plant thy far-off colony.</p><p class="nested-p">Herein if there be ought obscure and hard to understand, you may repeat again and learn it clearly; I have leisure<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="840"></span> at my disposal more than I desire.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [845–848]</span><p class="nested-p">If there be anything remaining or omitted in her lost wild<a href="#note-29.1" class="fn-link" data-note="29.1">29.1</a> wandering that thou hast yet to show to her, then say on; but if thou hast told all, now grant the boon we ask for; thou rememberest, doubtless.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [849–902]</span><p class="nested-p">She hath now heard the whole conclusion of her journey; but that she may be assured that what she has<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="850"></span> heard from me is not idle tale, I will rehearse the labours she has gone through before coming here, and give this for a warrant of my story.-Well, the great bulk of the narrative I will omit, and come to the conclusion of her wanderings.</p><p class="nested-p">After thou hadst come to the Molossian plains and the steep ridges of Dodona, where there is an oracle and seat of Zeus Thesprotian, and that prodigy incredible, the Talking Oaks,--by whom thou distinctly and in no ambiguous terms wast hailed as she that was to be the spouse of Zeus<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="860"></span> -doth any touch in this appeal to thee?<a href="#note-29.2" class="fn-link" data-note="29.2">29.2</a>—Thence in a frenzy thou didst rush upon the path along the shore to the great Gulf of Rhea, whence I see thee driven by a storm and beaten back upon thy course ;-and for ensuing time hereafter the sea-bay, be well assured, shall be called Ionian, for a memorial of thy passage unto all mankind.</p><p class="nested-p">This a sign of my intelligence, to show that it discerneth more than what is visible.-The rest I will declare to you<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="870"></span> (the Chorus) and her in common, picking up again the thread of my discourse.</p><p class="nested-p">There is a city called Canobus at the far end of the
+
+
+<hr class="pb-hr"><span class="pb" id="pb-30">[Page 30]</span>
+country, at the very mouth and silted bank of Nile; and there it is that Zeus is to restore thee to thy senses by the mere laying on of his undreadful hand and by its touch alone.</p><p class="nested-p">And after the manner of his engendering shall be named a son that thou shalt bear, the swarthy Epaphus, who shall possess all the land that is watered by the broad stream of the Nile. And fifth in descent from him a generation of fifty children shall return again, not of their will, to Argos<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="880"></span> -a female generation, flying from kindred marriage with their cousins; they, with hearts excited, hawks in chase of doves and close behind them, shall arrive there in pursuit of marriage wrongful to pursue. But God shall grudge possession of their bodies, and the Pelasgian land shall give them welcome, the men being slain in woman-battle with bold daring in the watches of the night:-for each wedded woman shall take her husband&#x27;s life by plunging a two-edged sword into his throat-may wedded love like that befall my enemies!-But one among these<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="890"></span> daughters shall be charmed by love&#x27;s desire to spare her bedfellow; the edge of her resolve shall be abated, and between two evils she shall choose the name of coward rather than of murderess. She shall give birth in Argos to a royal race. It would require a long discourse to go through all this thoroughly, the sum, however, is that from this seed there shall be born an offspring bold and famous in the bow, who shall deliver me from my distress.<a href="#note-30.1" class="fn-link" data-note="30.1">30.1</a></p><hr class="pb-hr"><span class="pb" id="pb-31">[Page 31]</span><p class="nested-p">This is the oracle that was expounded to me by my ancient Mother, Titan Themis; but the manner and the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="900"></span> means would take long to say, and thou wilt not gain anything from hearing it.</p></div>
+<div class="speech"><span class="speaker">IO [903–912]</span><p class="nested-p">Eleleu!</p><p class="nested-p">Again convulsion is coming over me and brain-struck fits of madness that inflame; the sting is fretting me as with a red-hot point;<a href="#note-31.1" class="fn-link" data-note="31.1">31.1</a> my heart in terror is kicking at my ribs, my eyes are rolling wildly in a whirl; I am swept out of the course<a href="#note-31.2" class="fn-link" data-note="31.2">31.2</a> by frenzy&#x27;s violent wind; my tongue is masterless,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="910"></span> and thick and turbid words come dashing all at random against waves of horrible affliction! <span class="stage">[Exit.</span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [913–938]</span><p class="nested-p">O wise, O wise was he that first well weighed that saying in his mind and made it current for a proverb with his tongue, that to make a match according to one&#x27;s own condition is the best by far, and that neither among them that are made proud and delicate by wealth nor them that magnify themselves with birth should a man that is a<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="920"></span> handicraftsman be enamoured to seek marriage.</p><p class="nested-p">Never, never, O ye<a href="#note-31.3" class="fn-link" data-note="31.3">31.3</a> . . . Fates, may ye behold me made a partner in the couch of Zeus, neither may I be wedded to any spouse among the host of Heaven! For I am sore afraid when I behold the man-rejecting maidenhood
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-32">[Page 32]</span>
+of Io in such tribulation from the toilsome wanderings of<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="930"></span> Hera&#x27;s task.</p><p class="nested-p">For me, when equal, marriage hath no terrors; but may the kind I fear, the love of greater Powers, never cast its fatal eye upon me!<a href="#note-32.1" class="fn-link" data-note="32.1">32.1</a> That is a war unwarrable, a source of all resourcelessness-I cannot tell what I should turn into,<a href="#note-32.2" class="fn-link" data-note="32.2">32.2</a> because I cannot see any means by which I could escape the design of Zeus.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [939–959]</span><p class="nested-p">Ah, nevertheless, although his pride be obstinate,<a href="#note-32.3" class="fn-link" data-note="32.3">32.3</a> Zeus verily shall yet be humble, seeing what a marriage he<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="940"></span> is preparing to make, that shall oust him from his throne and sovereignty into nothingness and then the curse of his father Cronos shall be accomplished to the full, the curse he imprecated when he was being cast out from his ancient throne: that shall be his affliction, and averting of it there is no God in Heaven that can show him except me: I know, and know the manner.</p><p class="nested-p">Now, therefore, let him sit there bravely, trusting in his loud noises up aloft, and brandishing in his hands his weapon that breathes fire! for all that shall serve him<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="950"></span> nothing to prevent his being cast out ignominiously with a fall intolerable; so strong a wrestler he is now preparing for his own antagonist, a fell portentous adversary, one that
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-33">[Page 33]</span>
+shall find out a flame superior to the lightning, and a noise more powerful to out-din the thunder, and that sea-distemper, that earth-shaking plague, the trident, weapon of Poseidon, he shall scatter :-and then, wrecked upon this evil, Zeus shall learn the difference between rule and servitude!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [960–960]</span><p class="nested-p">&#x27;Tis what you wish that you vociferate so loudly<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="960"></span> against Zeus.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [961–961]</span><p class="nested-p">What shall be done, and also what I wish.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [962–962]</span><p class="nested-p">And may one really look for Zeus to find a master?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [963–963]</span><p class="nested-p">Ay, and he shall have a yoke upon his neck still heavier than this!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [964–964]</span><p class="nested-p">How is it thou art not afraid to fling such words?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [965–965]</span><p class="nested-p">What should I fear, when death is not my destiny?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [966–966]</span><p class="nested-p">But he might give thee a task still more painful.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [967–967]</span><p class="nested-p">Then let him do it! I am prepared for everything.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [968–968]</span><p class="nested-p">They are wise that do obeisance to Adrasteia.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [969–975]</span><p class="nested-p">Worship, adore, still court the one in power! For Zeus I do not care so much as-nothing! Let him do his<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="970"></span> will and hold his power for this little space, for he shall not be long the King of Heaven! But stay:-yonder there I see his runner, our new imperial lord and master&#x27;s lackey: he must have come with news to bring. <span class="stage">[Enter HERMES.]</span></p></div>
+<div class="speech"><span class="speaker">HERMES [976–984]</span><p class="nested-p">Thou there, the clever wit, thou bitter one to all extremes, thou that hast sinned against the Gods by giving dignities to mortal creatures, thou, the thief of Fire! The Father commands thee to say what is this marriage that thou talkest of, by which he is to be cast out from his<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="980"></span> power :—and see too that thou tell it in no riddling fashion but explain with each particular, and do not give me the trouble of two journeys, Prometheus; thou seest that Zeus is not softened by such manners.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-34">[Page 34]</span>
+<div class="speech"><span class="speaker">PROMETHEUS [985–995]</span><p class="nested-p">Haughty indeed and full of lofty spirit for an underling of the Gods! Your power is young, and you suppose the towers you dwell in to be scatheless: Have I not seen from those same towers a brace of sovereigns cast out? And I shall see a third, this present<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="990"></span> King, with shamefullest fall and quickest. Dost thou imagine that I quail and cower before these new Gods? I am far-the whole way—from it! Get thee back again, trudge the road thou camest by, for thou shalt be told nothing that thou inquirest of.</p></div>
+<div class="speech"><span class="speaker">HERMES [996–997]</span><p class="nested-p">Well, it was by just such headstrong wilfulness before that thou didst land thyself<a href="#note-34.1" class="fn-link" data-note="34.1">34.1</a> in this disaster.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [998–999]</span><p class="nested-p">Be very sure, I would not exchange my misfortunes for thy servitude.</p></div>
+<div class="speech"><span class="speaker">HERMES [1000–1001]</span><p class="nested-p">Better, I suppose, to be in service to this rock<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1000"></span> than to be the trusted messenger of Father Zeus.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1002–1002]</span><p class="nested-p">That is the right way for insolence to be insulting.<a href="#note-34.2" class="fn-link" data-note="34.2">34.2</a></p></div>
+<div class="speech"><span class="speaker">HERMES [1003–1003]</span><p class="nested-p">It seems that thou exultest in thy sufferings.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1004–1005]</span><p class="nested-p">Exult! may I behold my enemies exulting in this way-and thee among them.</p></div>
+<div class="speech"><span class="speaker">HERMES [1006–1006]</span><p class="nested-p">Why, dost thou count me to blame for what has happened to thee?</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1007–1008]</span><p class="nested-p">In one word, I hate all the Gods that have had good done to them and treat me ill unjustly.</p></div>
+<div class="speech"><span class="speaker">HERMES [1009–1009]</span><p class="nested-p">Thou art brain-sick, mine ears tell me, in no slight degree.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1010–1010]</span><p class="nested-p">I am content to be so, if it be brain-sickness to<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1010"></span> hate one&#x27;s enemies!</p></div>
+<div class="speech"><span class="speaker">HERMES [1011–1011]</span><p class="nested-p">Thou wouldst be quite insufferable in prosperity.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-35">[Page 35]</span>
+<div class="speech"><span class="speaker">PROMETHEUS [1012–1012]</span><p class="nested-p">Alas!</p></div>
+<div class="speech"><span class="speaker">HERMES [1012a–1012a]</span><p class="nested-p">That is an expression Zeus is not acquainted with.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1013–1013]</span><p class="nested-p">But in his ageing course Time teaches everything.</p></div>
+<div class="speech"><span class="speaker">HERMES [1014–1014]</span><p class="nested-p">Yet thou hast not yet learnt wise-mindedness.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1015–1015]</span><p class="nested-p">No, else I would not have spoken to an underling like thee.</p></div>
+<div class="speech"><span class="speaker">HERMES [1016–1016]</span><p class="nested-p">It seems that thou wilt not say anything that the Father wishes.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1017–1017]</span><p class="nested-p">Well, if I were indebted to him I would repay.</p></div>
+<div class="speech"><span class="speaker">HERMES [1018–1018]</span><p class="nested-p">Thou mockest me as if I were a mere child.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1019–1028]</span><p class="nested-p">Why art thou not a child and still more foolish, if thou expectest to learn anything from me? There is no<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1020"></span> torture or contrivance by which Zeus shall impel my lips to utter it, until my galling bondage be undone. So let the sooty flame be hurled upon me, and with white feathery snow and earthquake-thunderings let him make ruin and confusion of the world! For nought of this shall bend my will to tell by whose hand he is to be dispossessed.</p></div>
+<div class="speech"><span class="speaker">HERMES [1029–1029]</span><p class="nested-p">Consider now whether this seem profitable to thee.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1030–1030]</span><p class="nested-p">It has been considered and determined long ago.</p></div>
+<div class="speech"><span class="speaker">HERMES [1031–1032]</span><p class="nested-p">Find heart, thou foolish one, find heart at length in face of these calamities to be right-minded.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1033–1038]</span><p class="nested-p">Thou art but vexing me in vain, like a wave,<a href="#note-35.1" class="fn-link" data-note="35.1">35.1</a> with thine exhorting; let it never enter thy head that I will be afraid before the will of Zeus, and grow effeminate and humbly supplicate my greatest detestation with womanish outspreadings of my palms to release me from this bondage! I am as far as can be from it.</p></div>
+<div class="speech"><span class="speaker">HERMES [1039–1067]</span><p class="nested-p">It seems that all my words will but be said in
+
+<hr class="pb-hr"><span class="pb" id="pb-36">[Page 36]</span>
+vain,<a href="#note-36.1" class="fn-link" data-note="36.1">36.1</a> for thou art not melted or softened by my entreaties,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1040"></span> but dost take the bit in thy teeth, like a colt new to harness, and plunge violently and fight against the reins. Yet it is but a weak conceit that thou dost ground thy force upon, for mere self-will in one that is not well advised is by itself as weak as anything.</p><p class="nested-p">Consider now, if thou refuse consent to my persuasion, what a storm and huge wave of calamity will come upon thee-first, this rocky gorge my Father with his thunder and the lightning-flame will rend to pieces, and thy body<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1050"></span> will conceal, and the embrace of rock shall fondle thee. And when thou hast completed a long space of time, thou shalt return back to the light again, and then, look you, there shall come the winged hound of Zeus, the blood-red eagle, and shall ravenously disjoint thy body into one great rag, a banqueter coming uninvited every day,<a href="#note-36.2" class="fn-link" data-note="36.2">36.2</a> and shall make his feast upon the dark meat of thy liver.</p><p class="nested-p">This shall be thy punishment, whereof thou must expect no term, until some God arise to take thy pains upon him, and consent to pass into the unillumined house of Death,<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1060"></span> and the black nether pit of Tartarus.</p><p class="nested-p">Therefore take counsel, because this declaration is not fabricated but most absolute verity;<a href="#note-36.3" class="fn-link" data-note="36.3">36.3</a> for the lips of God
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-37">[Page 37]</span>
+know not how to speak falsehood, but will bring every syllable to pass. Therefore take thought, and never reckon obstinacy better than wise counsel.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [1068–1071]</span><p class="nested-p">To us what Hermes says seems not amiss; he urges thee to abandon Obstinacy and seek that Counsel<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1070"></span> that is wise. O yield it is discreditable for the wise to err.</p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1072–1086]</span><p class="nested-p">I knew the message that this fellow hath so loudly noised upon me, but to suffer ill entreatment from one&#x27;s enemy is no humiliation. So let be hurled upon me the forked ringlet of his fire and let the sky be set a-quivering with thunder and convulsion of the furious winds; let the blast sway the earth by the roots from her foundations, and the wave of the sea with roughest surge and the<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1080"></span> courses of the stars in heaven confound together, and let him hurl my body into the bottomless pit of Tartarus with the circling whirl of stern Necessity: to death, at all events, he never shall put me!</p></div>
+<div class="speech"><span class="speaker">HERMES [1087–1095]</span><p class="nested-p">These are the very thoughts and speeches of the brain-struck! How does it come short of stark insanity, this prayer of his? What abatement is there in his mad-<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1090"></span> ness?-Ye, however, at any rate, that are condoling in his tribulations, retire somewhere speedily from these regions, lest the harsh bellowing of the thunder strike your senses silly.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF NYMPHS [1096–1103]</span><p class="nested-p">Give me some other words and exhortation, that you are likely to persuade me with! for you do not surely imagine that this sweeping speech of yours is tolerable!<a href="#note-37.1" class="fn-link" data-note="37.1">37.1</a>
+
+<hr class="pb-hr"><span class="pb" id="pb-38">[Page 38]</span>
+How can you dream of urging me to practise cowardice? I am content to share with him whatever Fate may have in<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1100"></span> store; for I have learnt to abhor traitors, and there is no vice that I have greater loathing for than this!</p></div>
+<div class="speech"><span class="speaker">HERMES [1104–1113]</span><p class="nested-p">Well, remember my warning, and when taken by the snaring hand of Ate, do not then blame Fortune; never say that it was Zeus who cast you into trouble unforeseen; nay, blame yourselves, for it is with knowledge<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1110"></span> and with no sudden surprise that ye will be entangled in the inextricable Net of Ate by your folly. <span class="stage">[Exit.</span></p></div>
+<div class="speech"><span class="speaker">PROMETHEUS [1114–1127]</span><p class="nested-p">Ah now in deed, in word no more, the earth is rocked and the subterranean sound of thunder is booming at my side,<a href="#note-38.1" class="fn-link" data-note="38.1">38.1</a> the fiery streaks of lightning flashing out, and whirlwinds rolling up the eddying dust; the blasts of all the winds leap wildly and display contention setting contrary<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1120"></span> against each other, and the sky is confounded with the sea so dire the rushing onset that proceeds from Zeus against me manifestly, working terror. O thou holy one, my Mother, O thou Sky, revolving the common light of all the world, beholdest thou the injustice I am suffering?<a href="#note-38.2" class="fn-link" data-note="38.2">38.2</a></p></div></div>
+        </div>
+
+        <div class="column">
+            <h3>Footnotes</h3>
+            <div class="content" id="footnote-content"><div class="line" id="note-3.1"><a class="note-ref" data-note="3.1">3.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάγῳ</i> MSS., but M alone has <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τόπῳ</i>, which was a gloss to distinguish one sense of <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάγος</i> from another; see for example <strong xmlns="http://www.tei-c.org/ns/1.0">schol. <i>Agam.</i> 347</strong>.</span></div>
+<div class="line" id="note-4.1"><a class="note-ref" data-note="4.1">4.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔγνωκα· τοῖσδέ γ᾽ οὐδὲν ἀντειπεῖν ἔχω</i> (<strong xmlns="http://www.tei-c.org/ns/1.0"><editor>Hartung</editor></strong>).</span></div>
+<div class="line" id="note-7.1"><a class="note-ref" data-note="7.1">7.1</a> <span class="text">1 v. 118: read:
+τερμόνιον ἐπὶ πάγον πόνων<br xmlns="http://www.tei-c.org/ns/1.0">
+ἐμῶν θεωρὸς ἵκετ᾽, ἢ τί δὴ θέλων ;<br xmlns="http://www.tei-c.org/ns/1.0"></span></div>
+<div class="line" id="note-8.1"><a class="note-ref" data-note="8.1">8.1</a> <span class="text">1 This has suffered from interpolation; the original probably was nearly in this form :
+τραχύς γ᾽ οἶδ&#x27; ὅτι καὶ παρ&#x27; ἑαυτῷ<br xmlns="http://www.tei-c.org/ns/1.0">
+τὸ δίκαιον ἔχων· ἔμπας, δΐω,<br xmlns="http://www.tei-c.org/ns/1.0"></span></div>
+<div class="line" id="note-12.1"><a class="note-ref" data-note="12.1">12.1</a> <span class="text">1 The character of Oceanus, the <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἡσυχαστής</i> (compare the <strong xmlns="http://www.tei-c.org/ns/1.0">Orphic fragments in <editor>Hermann</editor>'s <i><i lang="lat">Orphica</i></i>, p. 468</strong>), and Prometheus' ironical contempt for him, are drawn with admirable humour.</span></div>
+<div class="line" id="note-12.2"><a class="note-ref" data-note="12.2">12.2</a> <span class="text">2 Reading <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὄχλον</i>.</span></div>
+<div class="line" id="note-13.1"><a class="note-ref" data-note="13.1">13.1</a> <span class="text">1 With scornful sarcasm, whether we read with the MSS. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάντων μετασχὼν καὶ τετολμηκὼς ἐμοί</i>, or (accepting <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μετασχεῖν</i> from Weil) <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάντων μετασχεῖν καὶ τετολμηκὼς ἐμοί</i>, ' although having had the daring to take part in everything with me.'</span></div>
+<div class="line" id="note-13.2"><a class="note-ref" data-note="13.2">13.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὃς πρὸς ἑσπέρους τόπους</i>.</span></div>
+<div class="line" id="note-14.1"><a class="note-ref" data-note="14.1">14.1</a> <span class="text">1 As <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λέγεις δδόν μοι</i> in <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Herodas</author> vi. 95</strong>.</span></div>
+<div class="line" id="note-15.1"><a class="note-ref" data-note="15.1">15.1</a> <span class="text">1 Cf. <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Herodas</author> vi. 97</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Theocr.</author> xv. 147</strong>.</span></div>
+<div class="line" id="note-15.2"><a class="note-ref" data-note="15.2">15.2</a> <span class="text">2 Reading with Reisig:
+Ατλαντος ὑπέροχον σθένος<br xmlns="http://www.tei-c.org/ns/1.0">
+and with Hermann:
+νώτοις ὑποστεγάζει.<br xmlns="http://www.tei-c.org/ns/1.0">
+Compare Orph. hymn. i. 28 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">"Ατλαντός τε καὶ Αἰῶνος μέγ᾽ ὑπείροχον ἰσχύν</i>, Soph. Trach. 1096, Pind. Nem. iii. 24.</span></div>
+<div class="line" id="note-16.1"><a class="note-ref" data-note="16.1">16.1</a> <span class="text">1 Reading:
+βοᾷ δὲ πόντιος κλυδὼν<br xmlns="http://www.tei-c.org/ns/1.0">
+ξυμπίτνων, στένει βύθος,<br xmlns="http://www.tei-c.org/ns/1.0">
+κελαινὸς ῎Αιδος ὑποβρέμει μυχός,<br xmlns="http://www.tei-c.org/ns/1.0">
+παγαί θ᾽ ἁγνορύτων ποταμῶν<br xmlns="http://www.tei-c.org/ns/1.0">
+στένουσιν ἄλγος οἰκτρόν.<br xmlns="http://www.tei-c.org/ns/1.0">
+In the third line two syllables appear to be wanting for the rhythm— perhaps <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χθονός</i> with <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βύθος</i> or <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέγας</i> with <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μυχός</i>.</span></div>
+<div class="line" id="note-16.2"><a class="note-ref" data-note="16.2">16.2</a> <span class="text">2 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 468</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀησ-υρός</i> (formed like <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βλοσυρός</i> ‘blouzy,' <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀσουρής</i> ‘filthy”) seems to have meant 'quivering with a breath,' and so may have come to be applied in the sense 'busy': cf. <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Hom.</author><i lang="grc">η</i> 106 and schol</strong>,</span></div>
+<div class="line" id="note-17.1"><a class="note-ref" data-note="17.1">17.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Euryphamus</author> the Pythagorean in <author>Stob.</author> <i>Flor.</i> 103. 27</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">ἀνεúpeto δὲ καὶ γράμματα, θησαυροὺς τῷ μνάμα παρασκευασάμενος</i></blockquote>.</span></div>
+<div class="line" id="note-17.2"><a class="note-ref" data-note="17.2">17.2</a> <span class="text">2 Reading odyμaow with <strong xmlns="http://www.tei-c.org/ns/1.0"><editor>Pauw</editor></strong>.</span></div>
+<div class="line" id="note-17.3"><a class="note-ref" data-note="17.3">17.3</a> <span class="text">3 <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">ἄγαλμα τῆς ὑπερπλούτου χλιδῆς</i></blockquote>, as Helen is <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">ἄγαλμα πλούτου</i></blockquote> in <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Agam.</i> 740</strong>: <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Mr George Meredith</author> has made a felicitous application of the phrase to the Yacht and the Lady in <i>Beauchamp's Career</i>, at the end of c. xv</strong>.</span></div>
+<div class="line" id="note-18.1"><a class="note-ref" data-note="18.1">18.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 536</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τοῦT' OŮKét' av Tú0010</i> as <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Plat.</author><i>Legg.</i> 792 c</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Plut.</author><i>Themist.</i> 27</strong>.</span></div>
+<div class="line" id="note-19.1"><a class="note-ref" data-note="19.1">19.1</a> <span class="text">1 φρίσσω δέ σε δερκομένα<br xmlns="http://www.tei-c.org/ns/1.0">
+μυρίοις μόχθοις διακναιόμενον<br xmlns="http://www.tei-c.org/ns/1.0">
+Ζῆνα γὰρ οὐ τρομέων<br xmlns="http://www.tei-c.org/ns/1.0">
+αὐτοβουλίᾳ σέβει<br xmlns="http://www.tei-c.org/ns/1.0">
+θνητοὺς ἄγαν, Προμηθεῦ.<br xmlns="http://www.tei-c.org/ns/1.0"></span></div>
+<div class="line" id="note-19.2"><a class="note-ref" data-note="19.2">19.2</a> <span class="text">2 v. 561:
+φέρ᾽, ὅπως χάρις ἃ χάρις, ὦ<br xmlns="http://www.tei-c.org/ns/1.0">
+φίλος, εἰπέ, ποῦ τις ἀλκά ;<br xmlns="http://www.tei-c.org/ns/1.0">
+I have corrected the reading of the MSS., which is <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χάρις ἄχαρις</i>. The construction is <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φέρ' εἰπὲ ὅπως χάρις ἁ χάρις</i>, a challenge, as Soph. Ο.Τ. 390 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπεὶ φέρ᾽ εἰπέ, ποῦ σὺ μάντις εἶ σαφής ;</i> Εl. 286 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φέρε, πῶς ἀμελεῖν καλόν;</i> Eur. El. 1049 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λέγ' ὅπως τέθνηκε σὺς πατὴρ οὐκ ἐνδίκως</i>. The * order of the words is frequent, e.g. Eur. Οr. 367 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὅπου ἐστὶν εἴπατε,</i> Pherecrates frag. 45 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὅπως παρασκευάζεται τὸ δεῖπνον εἴπαθ᾽ ἡμῖν</i>.</span></div>
+<div class="line" id="note-19.3"><a class="note-ref" data-note="19.3">19.3</a> <span class="text">3 Reading with Meineke:
+ὀλιγοδρανίαν ἄκικυν ἰσ-<br xmlns="http://www.tei-c.org/ns/1.0">
+όνειρον ᾧ τὸ φωτῶν<br xmlns="http://www.tei-c.org/ns/1.0">
+ἀλαὸν δέδεται γένος ἐμπεποδισμένον ;<br xmlns="http://www.tei-c.org/ns/1.0">
+as Anth. Pal. vi. 296 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκ γήρως ἀδρανίῃ δέδεται</i>.</span></div>
+<div class="line" id="note-20.1"><a class="note-ref" data-note="20.1">20.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 569</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰν Διὸς ἁρμονίαν</i>: see the notes on <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Supp.</i> 106</strong> in my prose translation and in <strong xmlns="http://www.tei-c.org/ns/1.0"><i>A Book of Greek Verse</i>, p. 278</strong>.</span></div>
+<div class="line" id="note-20.2"><a class="note-ref" data-note="20.2">20.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔμαθον</i>, a premonition of the new law <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάθει μάθος</i>.</span></div>
+<div class="line" id="note-20.3"><a class="note-ref" data-note="20.3">20.3</a> <span class="text">3 Both <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἕδνοις</i> and <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πιθών</i> are in all the MSS., except that M has <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πείθων</i>, which is certainly wrong. Lachmann thought that <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἕδνοις</i> should be ejected, and it would be possible to have <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἕδνοις</i> without <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πιθών</i>: Apollonius Rhodius i. 977:
+Κλείτη ἐϋπλόκαμος, τὴν μὲν νέον ἐξέτι πατρὸς<br xmlns="http://www.tei-c.org/ns/1.0">
+θεσπεσίοις ἕδνοισιν ἀνήγαγεν ἀντιπέρηθεν :<br xmlns="http://www.tei-c.org/ns/1.0">
+ii. 239:
+Κλειοπάτρην ἕδνοισιν ἐμὸν δόμον ἦγον ἄκοιτιν.<br xmlns="http://www.tei-c.org/ns/1.0"></span></div>
+<div class="line" id="note-22.1"><a class="note-ref" data-note="22.1">22.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πᾶν γὰρ ἂν πύθοιό μου.</i></span></div>
+<div class="line" id="note-22.2"><a class="note-ref" data-note="22.2">22.2</a> <span class="text">2 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 660</strong>. This is the meaning of <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰς πολυφθόρους τύχας</i>, and of <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τῆς πολυφθόρου πλάνης</i> <strong xmlns="http://www.tei-c.org/ns/1.0">846</strong>. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φθείρεσθαι</i> often meant to wander aimlessly adrift (e.g. <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Eur.</author><i>Hel.</i> 773</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">ἀλλοῖον ἐφθείρου πλάνην</i></blockquote>, <strong xmlns="http://www.tei-c.org/ns/1.0"><i>El.</i> 232</strong>), and adjectives were used in the same sense; in <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Soph.</author> frag. 511</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">oi moλúplopol</i> is said of sailors cast adrift upon the sea, in <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Lycophon</author> 235</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λαρνακοφθόρους ῥιπάς</i> means 'casting adrift in an ark,' in <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Eur.</author> frag. 636</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νομάδα κυματόφθορον</i> (so read for <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κυματοφθόρον</i>) <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἁλιαίετον</i> means 'wave-roaming,' and <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἁλίφθορος</i> properly meant 'shipwrecked,' like <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ναύφθορος</i>, <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐφθαρμένος</i> (<strong xmlns="http://www.tei-c.org/ns/1.0"><i>Cycl.</i> 298</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0"><i>I.T.</i> 268</strong>), or 'sea-rover.'</span></div>
+<div class="line" id="note-24.1"><a class="note-ref" data-note="24.1">24.1</a> <span class="text">1 The MSS. give:
+ἀπροσδόκητος δ&#x27; αὐτὸν αἰφνίδιος μόρος.<br xmlns="http://www.tei-c.org/ns/1.0">
+I think it very likely that <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἰφνίδιος</i> is a gloss on <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄπτερος</i> : because with scholiasts it was one of the recognised interpretations of the doubtful <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἅπτερος</i> in Homer. Later poets, as Aeschylus in <i xmlns="http://www.tei-c.org/ns/1.0">Agam.</i> 288 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπτερος φάτις</i>, used the word of things which, though wingless, are as swift as wings, wing-swift; and the vagueness would be suitable, because the legends differed as to the manner in which Hermes killed Argus. In such cases Aeschylus is fond of using terms which will apply to various versions and leave scope to the imagination,—the nature of the <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἶστρος</i>, for example, in this play, and of Clytemnestra's weapon in the <i xmlns="http://www.tei-c.org/ns/1.0">Agamemnon</i>.</span></div>
+<div class="line" id="note-25.1"><a class="note-ref" data-note="25.1">25.1</a> <span class="text">1 v. 743 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἥξεις δ' ὑβριστὴν ποταμὸν</i> MSS., 'a violent river,' as <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὑβριστὴν ἄνεμον</i> Hesiod <i xmlns="http://www.tei-c.org/ns/1.0">Theog.</i> 308, <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τῷ ποταμῷ τοῦτο ὑβρίσαντι</i> Hdt. i. 189. The scholiast says that the Araxes is meant, <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸν Ἀράξην, παρὰ τὸ ἀράσσειν καὶ ἠχεῖν τὰ κύματα αὐτοῦ</i>, ‘The Araxes, from <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀράσσειν</i>, which, normally, should mean that the word in the text is derived from <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀράσσειν</i>: e.g. <i xmlns="http://www.tei-c.org/ns/1.0">Theb.</i> 195 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀρχαῖα [βασιλικά, παρὰ τὴν ἀρχήν</i>, <i xmlns="http://www.tei-c.org/ns/1.0">Cho.</i> 445 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄφερκτος] κατάκλειστος, παρὰ τὴν εἱρκτήν</i>. No difficulty would have been found if the text had been
+ἥξεις δ᾽ Αρακτὴν ποταμὸν οὐ ψευδώνυμον :<br xmlns="http://www.tei-c.org/ns/1.0">
+and one may conceive this being glossed with <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὑβριστήν</i>, for under the title <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὑβριστής</i> Pollux viii. 75-7 gives <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπάταξεν, ἦγξεν, ἤραξεν</i> and <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παίων, πατάσσων, ἀράσσων</i>.</span></div>
+<div class="line" id="note-27.1"><a class="note-ref" data-note="27.1">27.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 786</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὡς τοίνον ὄντων τῶνδε μανθάνειν πάρα</i> was the reading of M before alteration (<strong xmlns="http://www.tei-c.org/ns/1.0"><editor>Sikes</editor> and <editor>Willson</editor></strong>), and is certainly right.</span></div>
+<div class="line" id="note-28.1"><a class="note-ref" data-note="28.1">28.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μηδ' ἀτιμάσῃς λόγου.</i></span></div>
+<div class="line" id="note-28.2"><a class="note-ref" data-note="28.2">28.2</a> <span class="text">2 There may be a lacuna here.</span></div>
+<div class="line" id="note-28.3"><a class="note-ref" data-note="28.3">28.3</a> <span class="text">3 v. 827: reading <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φροίμιον</i> (Wakefield); cf. 767.</span></div>
+<div class="line" id="note-28.4"><a class="note-ref" data-note="28.4">28.4</a> <span class="text">4 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τηλουρὸν δὲ γῆς</i> <strong xmlns="http://www.tei-c.org/ns/1.0"><editor>Elmsley</editor></strong>.</span></div>
+<div class="line" id="note-29.1"><a class="note-ref" data-note="29.1">29.1</a> <span class="text">1 v. 846 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πολυφθόρου</i>: see note on v. 660.</span></div>
+<div class="line" id="note-29.2"><a class="note-ref" data-note="29.2">29.2</a> <span class="text">2 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 861</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσσαίνει</i>: see my note on <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσγελᾷ</i>, <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Eumen.</i> 253</strong>.</span></div>
+<div class="line" id="note-30.1"><a class="note-ref" data-note="30.1">30.1</a> <span class="text">1 v. 897: reading with Wecklein:
+σπορᾶς γε μὴν ἐκ τῆσδε φύσεται θρασὺς<br xmlns="http://www.tei-c.org/ns/1.0">
+τόξοισι κλεινὸς ἶνις, ὃς πόνων ἐμὲ<br xmlns="http://www.tei-c.org/ns/1.0">
+or <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὃς με τῶν πόνων</i>. This theory accounts well for the many variations which the MSS. play upon the words <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὃς πόνων ἐκ τῶνδ᾽ ἐμέ</i>, some omitting <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκ</i>. I note that a choliambic inscription, Kaibel <i xmlns="http://www.tei-c.org/ns/1.0">Epigr.</i> 549, begins <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁ κλεινὸς ἶνις βασιλέων Ἀρίζασπος</i>, and Heracles is called <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Διὸς ἶνις</i> in Eur. <i xmlns="http://www.tei-c.org/ns/1.0">Andr.</i> 781; and one may conceive him being called <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θρασὺς τοξόκλυτος υἱός</i> in Epic. The alternative is to read with Sikes and Willson <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σπόρος</i> for <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σπορᾶς</i>, 'from this ancestress there shall be born an offspring bold.' This gives a more attractive rhythm, and the MSS. variations might possibly be accounted for by <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τῶνδ᾽ ὃς ἐκ πόνων ἐκέ</i>.</span></div>
+<div class="line" id="note-31.1"><a class="note-ref" data-note="31.1">31.1</a> <span class="text">1 Compare <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Agam.</i> 1255, 1214, 984</strong>.</span></div>
+<div class="line" id="note-31.2"><a class="note-ref" data-note="31.2">31.2</a> <span class="text">2 As a ship.</span></div>
+<div class="line" id="note-31.3"><a class="note-ref" data-note="31.3">31.3</a> <span class="text">3 An epithet has been omitted in the text. The loss would be accounted for by
+μή ποτε, μή ποτέ μ᾽ ὦ<br xmlns="http://www.tei-c.org/ns/1.0">
+Μοῖραι &lt;τελέστειραι&gt;<br xmlns="http://www.tei-c.org/ns/1.0">
+'effecters of fulfilment.'</span></div>
+<div class="line" id="note-32.1"><a class="note-ref" data-note="32.1">32.1</a> <span class="text">1 v. 931: reading:
+ἐμοὶ δ᾽ (ὁπότε) μὲν ὁμαλὸς ὁ γάμος<br xmlns="http://www.tei-c.org/ns/1.0">
+ἄφοβος· ὃν δὲ δέδια, μή τι κρεισσόνων<br xmlns="http://www.tei-c.org/ns/1.0">
+ἔρως ἄφυκτον ὄμμα προσδράκοι με.<br xmlns="http://www.tei-c.org/ns/1.0">
+See the <i xmlns="http://www.tei-c.org/ns/1.0">Journal of Philology</i>, 1907, p. 314.</span></div>
+<div class="line" id="note-32.2"><a class="note-ref" data-note="32.2">32.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐδ᾽ ἔχω τις ἂν γενοίμαν</i>: I take this to be like the phrases <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παντοῖος</i> or <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παντόδαπος γevéolai</i>, 'to try all shifts' (<strong xmlns="http://www.tei-c.org/ns/1.0"><author>Hdt.</author> iii. 24, vii. 10, ix. 109</strong>; <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Lucian</author> i. 42</strong>; <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Dion Chrys.</author> i. 164</strong>; <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Achill. Tat.</author> ii. 29, iii. 23, vii. 1</strong>); at least 'I cannot tell what would become of me' should be, in classical Greek, <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τί ἂν γενοίμην</i>—e.g. <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Theb.</i> 284</strong>, <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">τί γένωμαι</i></blockquote>?</span></div>
+<div class="line" id="note-32.3"><a class="note-ref" data-note="32.3">32.3</a> <span class="text">3 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καίπερ αὐθάδη φρονῶν</i>: there is a v.l. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φρενῶν</i>, and this led to <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὐθάδης φρενῶν</i> which M has, and which is not Greek.</span></div>
+<div class="line" id="note-34.1"><a class="note-ref" data-note="34.1">34.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 997</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κατούρισας</i> <strong xmlns="http://www.tei-c.org/ns/1.0"><editor>Hermann</editor></strong>. The variants are the result of a gloss <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καθώρμισας</i> or <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καθώρμησας</i>, for <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁρμίσαι</i> (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁρμῆσαι</i>) was the regular word by which <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐρίσαι</i> and its compounds were explained.</span></div>
+<div class="line" id="note-34.2"><a class="note-ref" data-note="34.2">34.2</a> <span class="text">2 Others take it to mean That is how one ought to insult the insolent,&#x27;-the proper way for me to behave toward such as you.</span></div>
+<div class="line" id="note-35.1"><a class="note-ref" data-note="35.1">35.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 1033</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">ὀχλεῖς μάτην με κῦμ᾽ ὅπως παρηγορῶν</i></blockquote>, 'I am firm as a rock.' <cit xmlns="http://www.tei-c.org/ns/1.0"><strong><author>Anacreon</author> frag. 90</strong><blockquote><i lang="grc">μηδ' ὥστε κύμα πόντιον λάλαζε</i></blockquote></cit>, <strong xmlns="http://www.tei-c.org/ns/1.0">Proverb</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">αἰγιαλῷ λαλεῖς</i></blockquote>. They came also to say 'deaf as a wave,' probably through <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κῦμα</i> in the proverbial phrase being taken as a nominative.</span></div>
+<div class="line" id="note-36.1"><a class="note-ref" data-note="36.1">36.1</a> <span class="text">1 <strong xmlns="http://www.tei-c.org/ns/1.0">v. 1039</strong> <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πολλὰ καὶ μάτην</i> go together, as in <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Eum.</i> 144</strong>, <cit xmlns="http://www.tei-c.org/ns/1.0"><strong><author>Dio Cass.</author> xlvi. 26</strong><blockquote><i lang="grc">πολλὰ γοῦν καὶ μάτην ὑλακτεῖς</i></blockquote></cit>, <strong xmlns="http://www.tei-c.org/ns/1.0"><author>Soph.</author><i>Ant.</i> 1252</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0"><i>O.C.</i> 1565</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">πολλῶν γὰρ ἂν καὶ μάτην πημάτων</i></blockquote>.</span></div>
+<div class="line" id="note-36.2"><a class="note-ref" data-note="36.2">36.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πανήμερος</i>, or 'for the whole day.'.</span></div>
+<div class="line" id="note-36.3"><a class="note-ref" data-note="36.3">36.3</a> <span class="text">3 v. 1062 reading with Hartung:
+ὡς ὅδ᾽ οὐ πεπλασμένος<br xmlns="http://www.tei-c.org/ns/1.0">
+ὁ κόμπος, ἀλλὰ καὶ λίαν ἐτήτυμος.<br xmlns="http://www.tei-c.org/ns/1.0">
+The MSS. give <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀλλὰ καὶ λίαν εἰρημένος</i>, which is impossible; to make sense we should require <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀλλὰ καὶ λίαν ἀληθῶς εἰρημένος</i>, e.g. Dinarchus i. 75 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐ γὰρ ψευδός ἐστιν, ἀλλὰ καὶ λίαν ἀληθές</i>, Antiphon 123. 15 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐ γὰρ ἀφανής, ἀλλὰ καὶ λίαν φανερός</i>, Lucian iii. 586, Themistius 170, Eustath. 459. The opposite of <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πεπλασμένος</i> is not 'spoken' but ‘true," Plat. Rep. 485 E, Tim. 26 E, etc.</span></div>
+<div class="line" id="note-37.1"><a class="note-ref" data-note="37.1">37.1</a> <span class="text">1 V. 1097:
+οὐ γὰρ δήπου<br xmlns="http://www.tei-c.org/ns/1.0">
+τοῦτό γε τλητὸν παρέσυρας ἔπος<br xmlns="http://www.tei-c.org/ns/1.0">
+<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παρεσεῖρας</i> (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παρ-εσ-είρας</i>) might be thought of; cf. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἴρω, συνείρω, διείρω, παρείρω, παρενείρω</i>, 'get in edgeways,' 'interject,' 'insinuate': but <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παρασῦραι</i> was especially used of orators who carry their audience away in an overwhelming flood of eloquence (Pollux iv. 21 and vi. 147, Longinus 32. 4 and 33. 5); and I think that Aeschylus, slightly varying the phrase of daily life, is making the Chorus sneer at Hermes as the irresistible Orator.</span></div>
+<div class="line" id="note-38.1"><a class="note-ref" data-note="38.1">38.1</a> <span class="text">1 Or <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">περιμυκᾶται</i>, 'booming all around.'</span></div>
+<div class="line" id="note-38.2"><a class="note-ref" data-note="38.2">38.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάσχω</i> ends his last speech as it does his first; the sequel showed the working of the new law <blockquote xmlns="http://www.tei-c.org/ns/1.0"><i lang="grc">πάθει μάθος</i></blockquote>.</span></div></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Collapsible TOC Code ---
+            const tocContent = document.getElementById('toc-content');
+            if (tocContent) {
+                // 1. Mark items with children
+                tocContent.querySelectorAll('li > ul').forEach(ul => {
+                    ul.parentElement.classList.add('has-children');
+                });
+
+                // 2. Add click listener for toggling
+                tocContent.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link && link.parentElement.classList.contains('has-children')) {
+                        // Make sure the click wasn't on the main 'close' button
+                        if (event.target.id !== 'toc-toggle') {
+                             event.preventDefault(); // Stop the link from jumping
+                             link.parentElement.classList.toggle('open'); // Toggle open/closed
+                        }
+                    }
+                });
+            }
+            // --- End of Collapsible TOC Code ---
+
+
+            // --- Note-Linking Code ---
+            const container = document.querySelector('.container');
+            const englishContent = document.getElementById('english-content');
+            const footnoteContent = document.getElementById('footnote-content');
+            let lastHighlightedNoteElement = null;
+            let lastHighlightedLinkElements = []; // Can be multiple links
+
+            // Function to remove all highlights
+            function removeHighlights() {
+                if (lastHighlightedNoteElement) {
+                    lastHighlightedNoteElement.classList.remove('highlight');
+                }
+                lastHighlightedLinkElements.forEach(link => {
+                    link.classList.remove('highlight');
+                });
+                lastHighlightedNoteElement = null;
+                lastHighlightedLinkElements = [];
+            }
+
+            // Function to find, scroll, and highlight elements
+            function findScrollHighlight(targetNoteId, scrollTargetColumn) { // scrollTargetColumn is 'note' or 'link'
+                removeHighlights(); // Clear previous state
+
+                const noteElement = document.getElementById('note-' + targetNoteId);
+                const linkSelector = '.fn-link[data-note="' + targetNoteId + '"]';
+                const linkElements = englishContent.querySelectorAll(linkSelector);
+
+                // Highlight Note
+                if (noteElement) {
+                    noteElement.classList.add('highlight');
+                    lastHighlightedNoteElement = noteElement; // Store for removal
+                    // Scroll the note column if the link was clicked
+                    if (scrollTargetColumn === 'note') {
+                        // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        noteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                // Highlight ALL corresponding links and scroll the FIRST one
+                if (linkElements.length > 0) {
+                    linkElements.forEach(link => {
+                        link.classList.add('highlight'); // Highlight the link(s) in text
+                    });
+                    lastHighlightedLinkElements = Array.from(linkElements); // Store all for removal
+                    // Scroll the first link if the note was clicked
+                    if (scrollTargetColumn === 'link') {
+                         // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        linkElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+
+            // Add click listener using event delegation on the container
+            container.addEventListener('click', function(event) {
+                const linkTarget = event.target.closest('.fn-link');
+                const noteRefTarget = event.target.closest('.note-ref');
+
+                if (linkTarget && linkTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = linkTarget.dataset.note;
+                    console.log('Clicked text link for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'note'); // Scroll the note column
+
+                } else if (noteRefTarget && noteRefTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = noteRefTarget.dataset.note;
+                    console.log('Clicked footnote ref for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'link'); // Scroll the text column
+                }
+            });
+
+            // --- TOC Toggle (Show/Hide) Script ---
+            const tocToggle = document.getElementById('toc-toggle'); // Close button
+            const tocOpenButton = document.getElementById('toc-open-button'); // Open button
+            const body = document.body;
+
+            if (tocToggle && tocOpenButton) { // Only run if TOC elements exist
+                
+                // CLOSE Button (inside TOC)
+                tocToggle.addEventListener('click', function() {
+                    body.classList.add('toc-collapsed');
+                });
+                
+                // OPEN Button (outside TOC)
+                tocOpenButton.addEventListener('click', function() {
+                    body.classList.remove('toc-collapsed');
+                });
+            }
+            // --- END TOC Toggle Script ---
+            
+        });
+    </script>
+</body>
+</html>

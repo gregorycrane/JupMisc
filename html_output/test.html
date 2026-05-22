@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>CTS Passage Viewer</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; margin: 2rem; }
+  header { margin-bottom: 1rem; }
+  textarea { width: 100%; height: 8rem; }
+  .tei p, .tei div { margin: .4rem 0; }
+  .tei l { display: block; }
+  .byline { color: #666; font-size: .9rem; margin-top: .75rem; }
+  .error { color: #b00; }
+</style>
+
+<header>
+  <h1>CTS Passage Viewer</h1>
+  <div class="byline">Source: atlas.perseus.tufts.edu (XML)</div>
+</header>
+
+<label for="src">Atlas XML URL</label>
+<input id="src" size="120"
+  value="https://atlas.perseus.tufts.edu/library/passage/urn:cts:greekLit:tlg0003.tlg001.perseus-grc2:1.1.1-1.1.3/xml/">
+<button id="load">Load</button>
+<div id="status"></div>
+
+<h2>Rendered Text</h2>
+<div id="out" class="tei"></div>
+
+<h2>Raw XML (for debugging)</h2>
+<textarea id="raw" readonly></textarea>
+
+<script>
+  const $ = sel => document.querySelector(sel);
+  const status = msg => { $("#status").textContent = msg || ""; };
+
+  function simplifyTEI(doc) {
+    // Very light TEI → HTML mapping; extend as needed.
+    // Pull common block-y elements and lines; keep Greek/Latin text as-is.
+    const root = document.createElement("div");
+    const passage = doc.querySelector("TEI, tei\\:TEI, passage, cts\\:passage") || doc.documentElement;
+
+    // prefer actual text containers
+    const blocks = passage.querySelectorAll("p, l, div, seg, lb, head");
+    if (blocks.length === 0) {
+      root.textContent = passage.textContent.trim();
+      return root;
+    }
+
+    blocks.forEach(el => {
+      const name = el.localName;
+      if (name === "lb") {
+        root.appendChild(document.createElement("br"));
+        return;
+        }
+      const out = document.createElement(name === "l" ? "div" : (name === "head" ? "h3" : "p"));
+      out.textContent = el.textContent.replace(/\s+/g, " ").trim();
+      root.appendChild(out);
+    });
+    return root;
+  }
+
+  async function load() {
+    const url = $("#src").value.trim();
+    status("Fetching…");
+    $("#out").innerHTML = "";
+    $("#raw").value = "";
+    try {
+      const r = await fetch(url, { mode: "cors" });
+      if (!r.ok) throw new Error(r.status + " " + r.statusText);
+      const xmlText = await r.text();
+      $("#raw").value = xmlText;
+
+      const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+      // If the service returns an error payload, surface it
+      const parserErr = xml.querySelector("parsererror");
+      if (parserErr) throw new Error("XML parse error");
+
+      const rendered = simplifyTEI(xml);
+      $("#out").appendChild(rendered);
+      status("");
+    } catch (e) {
+      status("");
+      $("#out").innerHTML = `<div class="error">Failed to load: ${e.message}</div>`;
+    }
+  }
+
+  $("#load").addEventListener("click", load);
+  // Auto-load on first paint
+  load();
+</script>

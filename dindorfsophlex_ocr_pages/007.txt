@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>bsb11263667_00007</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="ocr-capabilities"
+          content="ocr_line ocr_page ocr_par ocrp_lang ocrx_block ocrx_word x_source x_wconf"/>
+  </head>
+  <body>
+<div class="ocr_page" title="x_source bsb11263667_00007; ppageno 7; bbox 0 0 1939 2892" lang="la">
+ <div class="ocrx_block" title="bbox 652 407 1222 491">
+  <p class="ocr_par" title="bbox 652 407 1222 491">
+   <span class="ocr_line" title="bbox 652 407 1222 491"><span class="ocrx_word" title="bbox 652 407 1222 491">LEXICON</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 213 646 1665 752">
+  <p class="ocr_par" title="bbox 213 646 1665 752">
+   <span class="ocr_line" title="bbox 213 646 1665 752"><span class="ocrx_word" title="bbox 213 646 1469 752">SOPHOCLEU</span> <span class="ocrx_word" title="bbox 1526 646 1665 752">M.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 301 1644 404 1729">
+  <p class="ocr_par" title="bbox 301 1644 404 1729">
+   <span class="ocr_line" title="bbox 301 1644 404 1729"><span class="ocrx_word" title="bbox 301 1644 404 1729">THUM</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 872 1207 1002 1232">
+  <p class="ocr_par" title="bbox 872 1207 1002 1232">
+   <span class="ocr_line" title="bbox 872 1207 1002 1232"><span class="ocrx_word" title="bbox 872 1207 1002 1232">EDIDIT</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 522 1398 1338 1445">
+  <p class="ocr_par" title="bbox 522 1398 1338 1445">
+   <span class="ocr_line" title="bbox 522 1398 1338 1445"><span class="ocrx_word" title="bbox 522 1398 894 1445">GUILELMUS</span> <span class="ocrx_word" title="bbox 936 1398 1324 1444">DINDORFIUS</span><span class="ocrx_word" title="bbox 1327 1398 1338 1444">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 391 1622 586 1840">
+  <p class="ocr_par" title="bbox 391 1622 586 1840">
+   <span class="ocr_line" title="bbox 413 1646 545 1827"><span class="ocrx_word" title="bbox 413 1646 495 1711">DER</span> <span class="ocrx_word" title="bbox 485 1705 545 1827">STADT</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 264 1632 552 1928">
+</div>
+ <div class="ocrx_block" title="bbox 328 1853 496 1883">
+  <p class="ocr_par" title="bbox 328 1853 496 1883">
+   <span class="ocr_line" title="bbox 328 1853 496 1883"><span class="ocrx_word" title="bbox 328 1853 496 1883">AUGSBURG</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 795 2478 1055 2515">
+  <p class="ocr_par" title="bbox 795 2478 1055 2515">
+   <span class="ocr_line" title="bbox 795 2478 1055 2515"><span class="ocrx_word" title="bbox 795 2478 1055 2515">LIPSIAE</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 489 2551 1365 2586">
+  <p class="ocr_par" title="bbox 489 2551 1365 2586">
+   <span class="ocr_line" title="bbox 489 2551 1365 2586"><span class="ocrx_word" title="bbox 489 2551 550 2586">IN</span> <span class="ocrx_word" title="bbox 588 2551 864 2586">AEDIBUS</span> <span class="ocrx_word" title="bbox 902 2551 937 2586">B.</span> <span class="ocrx_word" title="bbox 970 2551 1006 2586">G.</span> <span class="ocrx_word" title="bbox 1035 2551 1355 2586">TEUBNERI</span><span class="ocrx_word" title="bbox 1360 2551 1365 2586">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 827 2628 1028 2654">
+  <p class="ocr_par" title="bbox 827 2628 1028 2654">
+   <span class="ocr_line" title="bbox 827 2628 1028 2654"><span class="ocrx_word" title="bbox 827 2628 1018 2654">MDCCCLXX</span><span class="ocrx_word" title="bbox 1021 2628 1028 2654">,</span></span>
+</p>
+</div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Suppliant Women.</title>
+    <style>
+    body { font-family: 'Georgia', serif; display: flex; flex-direction: column; height: 100vh; margin: 0; background-color: #fdfdfd; }
+        header { padding: 10px 20px; border-bottom: 2px solid #ddd; background-color: #fff; text-align: center; z-index: 10; }
+        h1 { margin: 0; font-size: 1.8em; color: #333; }
+        h2 { margin: 5px 0 0; font-size: 1.2em; color: #666; font-style: italic; font-weight: normal;}
+        .container {
+            display: grid;
+            /* Default: 2 columns */
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            flex-grow: 1;
+            padding: 10px;
+            overflow: hidden;
+        }
+                        /* --- Fix TOC scroll behavior --- */
+        .container {
+            min-height: 0; /* allow flex/grid children to shrink and scroll */
+        }
+
+        .toc-wrapper {
+            min-height: 0; /* same fix for nested flex/grid container */
+        }
+
+        /* *** 3-column layout when TOC is present *** */
+        .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; /* TOC wrapper, Text, Notes */
+        }
+        .column {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;  /* This is fine for .column */
+        }
+
+        /* *** Wrapper for TOC column + Open Button *** */
+        .toc-wrapper {
+            position: relative; /* Context for the close button */
+            width: 250px; /* Initial width */
+            transition: width 0.3s ease, min-width 0.3s ease;
+            min-width: 250px;
+            /* The wrapper itself is a column in the grid, so it will be flex */
+            display: flex;
+            flex-direction: column;
+            /* Use transparent background for the wrapper */
+            background-color: transparent;
+            border: none;
+        }
+
+        /* *** TOC Column Styles (THE FIX IS HERE) *** */
+        .toc-column {
+            width: 100%; /* Fill the wrapper */
+            flex-grow: 1;
+            border: 1px solid #e0e0e0; /* Border now on the column */
+            border-radius: 4px; /* Rounded corners */
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;   /* <-- FIX 1: This column scrolls */
+            min-height: 0;      /* <-- FIX 2: This column is allowed to shrink */
+        }
+        .toc-column h3 { /* TOC Title */
+            background-color: #e9ecef; 
+            position: sticky; top: 0; z-index: 6;
+            font-size: 0.9em !important; /* Make TOC header smaller */
+            padding: 12px 12px 12px 35px; /* Add padding for close button */
+            text-align: center; margin: 0;
+            border-bottom: 1px solid #e0e0e0; 
+            color: #444; text-transform: uppercase; letter-spacing: 0.5px;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        #toc-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* *** Styling for nested TOC lists *** */
+        #toc-content > ul {
+            padding: 10px 15px; /* Padding for the list */
+        }
+        #toc-content ul ul {
+            padding-left: 20px; /* Indent nested lists */
+            margin: 0;
+        }
+        #toc-content li a {
+            display: block;
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+            /* overflow: hidden;  Hide overflow */
+            white-space: normal;
+        }
+        #toc-content li a:hover {
+            background-color: #e9ecef;
+        }
+        /* *** Styling for nested TOC items *** */
+        #toc-content ul ul li a {
+            font-size: 0.85em; /* Make sub-items slightly smaller */
+            color: #333; /* Darken them slightly */
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-bottom: none; /* No border for sub-items */
+        }
+        #toc-content ul ul li a:hover {
+            background-color: #dde; /* Different hover for sub-items */
+        }
+/* --- New Collapsible TOC Styles --- */
+
+    /* Hide nested lists by default */
+    #toc-content li ul {
+        display: none;
+        /* Keep your existing padding-left for indentation */
+    }
+
+    /* Style for parent items that can be clicked */
+    #toc-content li.has-children > a {
+        cursor: pointer; /* Show it's clickable */
+        /* Add a small indicator */
+    }
+
+    /* Add a clickable triangle/plus sign */
+    #toc-content li.has-children > a::before {
+        content: '► '; /* Collapsed state indicator */
+        font-size: 0.8em;
+        margin-right: 3px;
+        color: #555;
+    }
+
+    /* When the .open class is added, show the list */
+    #toc-content li.has-children.open > ul {
+        display: block;
+    }
+
+    /* Change the triangle to its expanded state */
+    #toc-content li.has-children.open > a::before {
+        content: '▼ '; /* Expanded state indicator */
+    }               
+        /* CLOSE Button (inside TOC) */
+        #toc-toggle {
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            z-index: 7; /* Above TOC header */
+            background: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            line-height: 1;
+            border-radius: 3px;
+        }
+
+        /* OPEN Button (sits inside wrapper) */
+        #toc-open-button {
+             display: none; /* Hidden by default */
+             padding: 8px;
+             font-size: 1.2em;
+             cursor: pointer;
+             border: 1px solid #ccc;
+             background: #f8f9fa;
+             border-radius: 3px;
+             margin: 0 0 0 5px; /* Position it nicely in the top-left */
+             width: 38px; /* Fixed width */
+             height: 38px; /* Fixed height */
+             box-sizing: border-box; /* Include padding in size */
+        }
+
+        /* Styles for collapsed TOC */
+        body.toc-collapsed .toc-wrapper {
+            width: 45px; /* Width of the open button area */
+            min-width: 45px;
+        }
+        body.toc-collapsed .toc-column {
+             display: none; /* Hide whole column */
+        }
+        body.toc-collapsed #toc-open-button {
+            display: block; /* Show open button */
+        }
+        
+        /* Adjust main grid when collapsed (NO change needed) */
+        body.toc-collapsed .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; 
+        }
+
+
+/* --- Style for <add> tags --- */
+        .tei-add {
+            color: #006400; /* Dark green text */
+        }
+
+        .tei-del {
+            text-decoration: none; 
+            font-size: 0.9em; 
+            color: #777; 
+        }
+        .tei-add::before {
+            content: '<';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-right: 0.1em; /* Small space after bracket */
+        }
+        .tei-add::after {
+            content: '>';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-left: 0.1em; /* Small space before bracket */
+        }
+        /* --- Style for <gloss> tags --- */
+        .gloss {
+            border-bottom: 1px dotted #555; /* Subtle dotted underline */
+            cursor: help; /* Changes cursor to indicate potential tooltip */
+        }
+        /* --- Style for <unclear> tags --- */
+        .unclear {
+            opacity: 0.7;
+            font-style: italic;
+            color: #555;
+        }
+        .gloss[title] { 
+        }
+        .loc { color: #666; text-decoration: none; font-family: monospace; margin-right: 0.5em; }
+        .column > h3 {
+            text-align: center; margin: 0; padding: 12px;
+            border-bottom: 1px solid #e0e0e0; background-color: #f9f9ff;
+            color: #444; font-size: 1em; text-transform: uppercase; letter-spacing: 0.5px;
+            position: sticky; top: 0; z-index: 5;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        .content {
+            padding: 15px;
+            overflow-y: auto;
+            flex-grow: 1;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 0;      /* <-- FIX 3: Allows main/note columns to scroll */
+        }
+
+        /* Override for TOC content to allow parent to scroll */
+        #toc-content {
+            overflow-y: visible; /* <-- FIX 4: Let the parent (.toc-column) handle scrolling */
+            flex-grow: 0;       /* <-- FIX 5: Stop this from growing to fit its content */
+            padding: 0;         /* Padding is moved to the <ul> */
+            min-height: auto;   /* Override min-height from .content */
+        }
+
+        /* English Text Column Styles */
+        #english-content h2, #english-content h3 { scroll-margin-top: 10px; } /* Add margin for scrolling */
+        #english-content h2 { font-size: 1.4em; color: #000; font-style: normal; text-align: center; margin-bottom: 1em;}
+        /* Styling for div/head (book/chapter) */
+        #english-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            font-style: normal; 
+            text-align: left; 
+            margin-top: 1.5em; 
+            margin-bottom: 0.5em; 
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 5px;
+        }
+        /* More specific for index main titles */
+        #english-content h2.index-main {
+            font-size: 1.6em;
+            font-style: normal;
+            text-align: center;
+            margin: 1em 0;
+        }
+        #english-content h4 { font-size: 1.1em; text-align: center; margin: 1em 0 0.5em; text-transform: uppercase;}
+        #english-content ul { list-style-type: none; padding-left: 0; text-align: center; margin-bottom: 1em;}
+        #english-content li { margin-bottom: 0.3em; }
+
+/* New Cast List Styles */
+        #english-content .cast-list {
+            list-style-type: none;
+            text-align: left; /* Align text to the left */
+            margin: 1.5em 3em; /* Give it some horizontal margin */
+            padding: 1.5em; /* Add padding inside the box */
+            border: 1px solid #eee;
+            background: #fdfdfd;
+            border-radius: 4px;
+        }
+        #english-content .cast-list li {
+            margin-bottom: 0.6em; /* Space out the list items */
+        }
+        #english-content .cast-list .role {
+            font-weight: bold;
+            color: #800000; /* Match the speaker color */
+        }
+        #english-content .cast-list .role-desc {
+            color: #333;
+        }
+        
+        #english-content .speech { margin-bottom: 1em; }
+        #english-content .speaker { font-weight: bold; margin-right: 8px; color: #800000; display: block; margin-bottom: 0.2em; }
+        #english-content .pb-hr { border: none; border-top: 1px dashed #ccc; margin: 1em 0; } /* Style hr for pb */
+        #english-content .pb { display: block; text-align: center; color: #888; font-size: 0.9em; margin-bottom: 1em; }
+        
+        #english-content .stage {
+            display: inline-block; 
+            font-style: italic; 
+            color: #555;
+            background-color: #fafafa; 
+            padding: 5px 8px;      
+            margin: 5px;           
+            border: 1px solid #eee;  
+            border-radius: 3px;
+            line-height: 1.4;      
+        }   
+
+        /* Table Styles */
+        #english-content table {
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+        }
+        #english-content caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            caption-side: top;
+            margin-bottom: 0.5em;
+        }
+        /* Style for character names in introductory lists/paragraphs */
+        #english-content .persName { /* Adjust selector if you use a different class */
+            font-weight: bold;
+            color: #800000; /* Same color as .speaker */
+            /* Do NOT add display: block or margins here */
+        }
+        #english-content th, #english-content td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        #english-content thead tr {
+            background-color: #f2f2f2;
+        }
+        #english-content tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #english-content .fn-link {
+            vertical-align: super; font-size: 0.8em; text-decoration: none;
+            color: #007bff; font-weight: bold; padding: 0 2px;
+            line-height: 1;
+            border-radius: 2px;
+            cursor: pointer; /* Add cursor pointer */
+        }
+        #english-content .fn-link:hover, #english-content .fn-link.highlight {
+             text-decoration: underline; background-color: #fff9c4;
+             outline: 1px solid #fdd835;
+             outline-offset: 1px;
+        }
+        #english-content p { margin: 0.5em 0; }
+        #english-content .verse-line {
+          display: block; /* Add this line */
+          margin: 0.1em 0 0.1em 2em;
+          text-indent: -1em;
+        }
+
+        /* Footnote Column Styles */
+        .line { display: flex; align-items: baseline; padding: 5px; border-radius: 3px; border-bottom: 1px solid #f0f0f0; }
+        .line:last-child { border-bottom: none; }
+        .line.highlight {
+            background-color: #fff9c4;
+            outline: 1px solid #fdd835;
+            outline-offset: -1px; /* Inset outline slightly */
+        }
+        .note-ref {
+            flex-shrink: 0; width: auto; font-size: 0.8em; color: #555;
+            cursor: pointer; text-align: right; margin-right: 10px; font-family: monospace;
+            padding-top: 0.1em;
+        }
+        .note-ref:hover { color: #007bff; text-decoration: underline; }
+        .text { line-height: 1.5; font-size: 0.9em; flex-grow: 1; }
+
+/* This targets the <span> created from a <l> tag inside a <blockquote> */
+        /* --- New Poetry Formatting in Notes --- */
+        
+        /* Style the converted TEI tags within notes */
+        .text blockquote {
+            font-style: italic; color: #333;
+            border-left: 3px solid #ccc;
+            margin: 0.5em 0 0.5em 5px;
+            padding-left: 0.4em; /* ADD THIS LINE - Space between border and text */
+            display: block;
+            /* Apply hanging indent directly to the blockquote */
+            /* padding-left: 2.5em; */
+            /* text-indent: -2.5em;  */
+        }
+
+         /* Add this new rule */
+        .text blockquote .verse-line { /* Or use .text blockquote div or .text blockquote p */
+            padding-left: 2.5em;
+            text-indent: -1.5em;
+            display: block; /* Ensure it's treated as a block */
+            margin: 0; /* Reset any default margins if needed */
+            margin-bottom: 0.5em;
+        }
+         
+        .text i { font-style: italic; }
+        .text strong { font-weight: bold; }
+        .text br {
+             display: block; content: ""; margin-top: 0.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Suppliant Women.</h1>
+        <h2>Aeschylus (Theodore Alois Buckley, trans.) (Bohn 1849)</h2>
+    </header>
+
+    <div class="container">
+
+        <div class="column">
+            <h3>English Translation</h3>
+            <div class="content" id="english-content"><hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-95">[Page 95]</span>
+<h3>THE SUPPLIANTS<a href="#note-210.1" class="fn-link" data-note="210.1">210.1</a>.</h3>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-210">[Page 210]</span>
+<p><i type="sub">ARGUMENT.</i></p>
+<p>The flight of the Danaides from Egypt, accompanied by their father to
+                Argos, and their supplication for protection against the lawless nuptials
+                threatened them by the sons of Ægyptus.</p>
+<h4>PERSONS REPRESENTED.</h4>
+<ul class="cast-list">
+<li><span class="role">CHORUS</span> <span class="role-desc">THE DAUGHTERS OF DANAUS.</span></li>
+<li><span class="role">DANAUS</span> <span class="role-desc">.</span></li>
+<li><span class="role">PELASGUS</span> <span class="role-desc">.</span></li>
+<li><span class="role">HERALD</span> <span class="role-desc">.</span></li>
+</ul>
+<div class="speech"><span class="speaker">CHORUS [2–40]</span><p class="nested-p">May Jove, indeed, the god of suppliants benevolently regard our naval
+                    train having set sail from the mouths of the Nile with its fine sands. But
+                    having left the divine land bordering on Syria we fled, sentenced to no
+                    banishment by the vote of the city, on account of bloodshed, but abhorring
+                    the man-shunning and impious nuptials of the sons of Ægyptus our kindred.
+                    But our father Danaus both our prime counsellor and leader of our flight,
+                    arranging these things, determined on the best of two evils (viz., the
+                    nuptials, or flight,) that we should fly with all speed over the billow of the
+                    deep, and put to at the land of Argos, from whence, indeed, our lineage, from
+                    the heifer rendered frantic by the gadfly, and from the touch and
+                    inspiration of Jove, boasts to be derived. To what country therefore more
+                    friendly than this can we come with these wool-wreathed branches of
+                    suppliants in our hands? O<a href="#note-210.2" class="fn-link" data-note="210.2">210.2</a> city, and land, and limpid water, and you
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-211">[Page 211]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="25-82"></span>
+        heavenly gods, and you dire-punishing infernal deities possessing temples, and
+                third [called upon] preserver Jove, receive this suppliant female train with a
+                merciful spirit of the country: but the male-abounding insolent swarm,
+                sprung from Ægyptus, before placing their foot in this marshy land, send thou
+                into the deep with their swift ship, and there having met with a furious
+                whirlwind, with thunder, lightning, and with the shower-bearing winds of the
+                fell sea, let them perish, before at any time ascending our unwilling beds,
+                from which Justice restrains them, having made their own<a href="#note-211.1" class="fn-link" data-note="211.1">211.1</a> us here their
+                kindred. But now invoking<a href="#note-211.2" class="fn-link" data-note="211.2">211.2</a> the divine calf, my avenger beyond the sea,
+                and the son of the flower-cropping heifer, our progenitor, from the breathing
+                of Jove. But the fated time rightly confirmed the touch [of Jove] in the name
+                [of her son,] and brought forth Epaphus; whom mentioning now in the
+                fertile regions of his ancient mother, calling to mind her former troubles,
+                partly now will I shew creditable proofs, and partly some things will appear, I
+                know, unlikely, although being unexpected<a href="#note-211.3" class="fn-link" data-note="211.3">211.3</a>. But one will ken words [when I
+                have spoken] at length. But if any augur chances to be near in the land,
+                hearing our mournful wail, he will think that he hears the wife of Tereus
+                wretched of device; and the hawk-chased nightingale; who driven from her
+                haunts and the rivers laments with new wail on account of her accustomed
+                haunts; and trills a song on the fate of the boy, how he perished by the very
+                hand of his cruel mother, having met with her wrath. So I, too, lamenting in
+                Ionian strains rend my tender cheek that was cherished beside the Nile, and my
+                heart unacquainted with tears. And I crop the flower of sad complaints,
+                fearing my friends, if there is any one who has regard for this flight of ours
+                from the land of Aeria<a href="#note-211.4" class="fn-link" data-note="211.4">211.4</a>. But ye gods, authors of our race, hear, duly
+                regarding justice, or if ye do not grant success in obtaining what is contrary
+                to right, but hating insolence in your souls, you should be just in regard to
+                nuptials<a href="#note-211.5" class="fn-link" data-note="211.5">211.5</a>. But there is even to those who fly from war, being hard
+            
+            
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-212">[Page 212]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="83-135"></span>
+            pressed, an altar, a defence from calamity<a href="#note-212.1" class="fn-link" data-note="212.1">212.1</a>, honoured by the deities. Would
+                that [the will] of Jove would bring to pass all things truly. The counsel of
+                Jove is not easily traced out, yet in all things it shines forth, even in
+                darkness, with black calamity to articulate-voiced men. But it falls firmly
+                not upon its back<a href="#note-212.2" class="fn-link" data-note="212.2">212.2</a>, if a thing be perfected by the head of Jove: for the ways of
+                the [divine] breast stretch thick and shady, difficult to discover. But he
+                smites abandoned mortals, looking down<a href="#note-212.3" class="fn-link" data-note="212.3">212.3</a> from his high-towered heights, and no
+                one arms violence unpunished by the deity: the [divine] mind sitting aloft<a href="#note-212.4" class="fn-link" data-note="212.4">212.4</a>
+                upon holy seats, nevertheless from that place takes vengeance on it. But let
+                him look to the insolence of mortal men, how a youthful stock shoots anew,
+                blooming<a href="#note-212.5" class="fn-link" data-note="212.5">212.5</a> on account of my nuptials, with ill-advised purpose, and having
+                furious thoughts, an inevitable sting, and having resolved on an infatuated
+                deed through disappointment<a href="#note-212.6" class="fn-link" data-note="212.6">212.6</a>. Such wretched sufferings I lamenting recount,
+                mournful, grievous, drawing tears, ah! ah! suited to funereal strains: I alive
+                honour<a href="#note-212.7" class="fn-link" data-note="212.7">212.7</a> myself with lamentations. I suppliant beseech the Apian land, and
+                may you hear kindly my barbarian voice. But oft I fall upon my linen
+                garments with rendings, and my Sidonian head-dress. But to the gods just and
+                perfect rites<a href="#note-212.8" class="fn-link" data-note="212.8">212.8</a>, matters having happened fortunately, shall be abundantly
+                afforded, when death is absent. Ah! ah! ah! troubles difficult to be judged!
+                where will this billow carry us? I suppliant beseech the Apian land, and may
+                you hear kindly my barbarian voice. But oft I fall upon my linen garments
+                with rendings. The oar indeed and the wooden house with flaxen sails<a href="#note-212.9" class="fn-link" data-note="212.9">212.9</a>,
+                keeping out the sea, has wafted me with the breezes untroubled</p><hr class="pb-hr"><span class="pb" id="pb-213">[Page 213]</span><span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="136-182"></span><p class="nested-p">by tempests: nor do I blame it: but hereafter may the all-seeing father
+                bring to pass a propitious end<a href="#note-213.1" class="fn-link" data-note="213.1">213.1</a>, that the mighty seed of our venerable mother
+                escape, alas! from the beds of men unwedded, virgin. But again may the
+                chaste daughter of Jove willingly regard me willing, keeping fixed upon me
+                her dread countenance: and with all her might let her a virgin defending
+                virgins from persecutions, be our deliverer<a href="#note-213.2" class="fn-link" data-note="213.2">213.2</a>. But if not, a blackened sun-burnt<a href="#note-213.3" class="fn-link" data-note="213.3">213.3</a>
+                race to Zagreus<a href="#note-213.4" class="fn-link" data-note="213.4">213.4</a>, the many-guest-receiving Jove of the dead will we approach
+                with these suppliant boughs, dying by the noose, not having obtained [the
+                favour] of the Olympian gods. O Jove<a href="#note-213.5" class="fn-link" data-note="213.5">213.5</a>, O wrath from the deities pursuing Io!
+                But I ken the vengeance of the wife [of Jove,] which overcomes heaven: for a
+                tempest will come from a fell blast. And then Jove will be subject to unjust
+                rumours, having slighted the son of the heifer, whom he himself once begot,
+                now keeping his eyes averted from our prayers; but may he favourable hear us
+                from above when invoked. O Jove, O wrath from the deities pursuing Io! But
+                I ken the vengeance of the wife [of Jove,] which overcomes heaven: for a
+                tempest will come from a fell blast.</p></div>
+<div class="speech"><span class="speaker">DANAUS [176–203]</span><p class="nested-p">My children, it behoves us to be prudent: and ye have come with me your
+                    prudent faithful aged father conductor of your voyage. And with respect to
+                    your behaviour on land now I bid you assume<a href="#note-213.6" class="fn-link" data-note="213.6">213.6</a> prudence to observe my
+                    words, engraving them on your minds. I see dust, the voiceless messenger of
+                    an army; the axle-driven naves are not silent, and I behold a bucklered and
+                    spear-brandishing crowd, with
+            
+            
+            
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-214">[Page 214]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="183-216"></span>
+            horses, and curved chariots. Perhaps the rulers of this land may be advancing
+                to us as spies, having heard [of us] from messengers. But whether harmless,
+                or enraged<a href="#note-214.1" class="fn-link" data-note="214.1">214.1</a> with fell wrath, they are rushing on this train, it is better, on
+                every account, O virgins, to sit down at this mound of the gods who preside
+                over assemblies. But an altar is better than a tower, an unbroken shield. But
+                as quickly as possible go, and holding reverently in your left<a href="#note-214.2" class="fn-link" data-note="214.2">214.2</a> hands the
+                white-wreathed suppliant boughs, ornaments of awful Jove, reply to the
+                strangers with modest and sad and fitting words, as becomes those in a
+                strange land, clearly relating these your bloodless flights. But first indeed
+                let not boldness of voice follow, and let no vain look proceed from your modest
+                foreheads, and quiet eye. And be not first to speak nor tedious in your talk:
+                the people in this country greatly dislike it. But be sure to yield: you are a
+                needy stranger exile; for it becomes not the lowly to be bold of speech.</p></div>
+<div class="speech"><span class="speaker">CHORUS [204–206]</span><p class="nested-p">Father, prudently to the prudent do you speak. But we mindful will
+                    observe these your wise injunctions; and may Jove the author of our race
+                    regard us.</p></div>
+<div class="speech"><span class="speaker">DANAUS [207–207]</span><p class="nested-p">Delay not now, but let there be an accomplishment of your plan<a href="#note-214.3" class="fn-link" data-note="214.3">214.3</a>.</p></div>
+<div class="speech"><span class="speaker">CHORUS [208–208]</span><p class="nested-p">I would now have my seat beside you.</p></div>
+<div class="speech"><span class="speaker">DANAUS [209–209]</span><p class="nested-p">O Jove, pity us not utterly consumed by troubles.</p></div>
+<div class="speech"><span class="speaker">CHORUS [210–210]</span><p class="nested-p">Let him regard us in truth with favouring eye: he willing it, these things
+                    will turn out well<a href="#note-214.4" class="fn-link" data-note="214.4">214.4</a>.</p></div>
+<div class="speech"><span class="speaker">DANAUS [211–211]</span><p class="nested-p">Invoke now also this bird of Jove.</p></div>
+<div class="speech"><span class="speaker">CHORUS [213–215]</span><p class="nested-p">We invoke the preserving rays of the sun, and holy Apollo, a god once
+                    exiled from heaven. Knowing this fate, let him be propitious to mortals.</p></div>
+<div class="speech"><span class="speaker">DANAUS [212–212]</span><p class="nested-p">Let him be propitious indeed, and readily afford succour.</p></div>
+<div class="speech"><span class="speaker">CHORUS [217–217]</span><p class="nested-p">Whom then of these deities shall I yet invoke?</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-215">[Page 215]</span>
+<div class="speech"><span class="speaker">DANAUS [218–218]</span><p class="nested-p">I behold this trident, a sign of the god.</p></div>
+<div class="speech"><span class="speaker">CHORUS [219–219]</span><p class="nested-p">But he has brought us well hither, and may he receive us well in the
+                    land,</p></div>
+<div class="speech"><span class="speaker">DANAUS [220–220]</span><p class="nested-p">This other is Mercury in the rites of the Greeks.</p></div>
+<div class="speech"><span class="speaker">CHORUS [221–221]</span><p class="nested-p">Let him then announce good tidings to us freed<a href="#note-215.1" class="fn-link" data-note="215.1">215.1</a></p></div>
+<div class="speech"><span class="speaker">DANAUS [222–233]</span><p class="nested-p">But reverence the common altar of all these kings, and sit in a holy place
+                    like a flock of doves, through fear of hawks of the same feather, kindred
+                    enemies, and polluting your race. How can a bird that devours a bird be
+                    pure? and how eould he who marries an unwilling maid from an unwilling
+                    father<a href="#note-215.2" class="fn-link" data-note="215.2">215.2</a> be pure? not even when dead in Hades can he who has done these
+                    things escape the blame of lewdness. And there, as is the tale, another Jove
+                    who passes the last judgments among the dead, judges crimes. Consider,
+                    and answer in this fashion, that this matter may turn out well to you.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [234–245]</span><p class="nested-p">Of what country is this band that we address, not Grecian in its garb,
+                    delicately attired in barbarian robes, and in many folds? for this attire of
+                    women is not Argolic, nor from the realms of Greece. But how you have
+                    dared fearlessly to come to this country, neither [announced] by heralds, and
+                    without a public host, without conductors, this is wonderful. Boughs indeed
+                    after the fashion of suppliants are laid by you at the altars of the gods who
+                    preside over assemblies. The Grecian land will gain by conjecture this only,
+                    (viz., that you are suppliants,) and it were just to guess many other things,
+                    were there not a voice to inform me present.</p></div>
+<div class="speech"><span class="speaker">CHORUS [246–248]</span><p class="nested-p">You have spoken concerning our dress a true speech. But whether shall
+                    I speak to you as a private person, or a sceptre-bearing guardian of the
+                    temple, or chief of the city<a href="#note-215.3" class="fn-link" data-note="215.3">215.3</a>?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [249–273]</span><p class="nested-p">Answer to these things, and speak boldly to me: for I am Pelasgus, son
+                    of earth-born Palacthon, leader of this land. And from me their king the
+                    race of Pelasgians aptly taking their name enjoys this land, and I rule all
+                    the territory
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-216">[Page 216]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="255-300"></span>
+            through which Algus flows, and Strymon, towards the setting sun. But I claim as
+                my borders the land of the Perræbians<a href="#note-216.1" class="fn-link" data-note="216.1">216.1</a>, and the parts beyond Pindus. beside
+                the Pæonians, and the mountains of Dodona: but the boundary of the watery
+                deep cuts it off: and beyond these parts I rule. But this plain of the Apian
+                land long since was named on account of a man skilled in healing arts : for Apis
+                having come from the country of Naupactus the healing-prophetic son of
+                Apollo, cleared this land from men-devouring monsters, which in truth the
+                earth defiled by pollutions of ancient blood produced, fierce animals, a dragon
+                band, a dire fellowship. Of these Apis having blamelessly made complete and
+                liberating remedies for the Argive land, found hereafter his memory in prayers
+                as his reward. Having now signs from me you can declare your race, and
+                speak farther : a long oration indeed the city loves not.</p></div>
+<div class="speech"><span class="speaker">CHORUS [274–276]</span><p class="nested-p">My speech shall be short and clear. We boast ourselves Argives as to our
+                    race, the seed of the heifer happy in her son: and I will prove all these
+                    things I say to be true.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [277–290]</span><p class="nested-p">You relate incredible things, O strangers, for me to hear, that this your
+                    race is Argive. For you are more like to Libyan women, and by no means to
+                    the natives of my country. The Nile might nurture such an offspring, and a
+                    like Cyprian image is stamped in female forms by male artists; and I hear that
+                    the wandering Indians ride on pannier-packed camels fleet as steeds, in their
+                    land bordering on the Ethiopians : and by all means I had conjectured that
+                    you were the unwedded flesh-eating Amazons, if you had carried bows.
+                    Instructed I would know this farther, how your race and seed is Argive.</p></div>
+<div class="speech"><span class="speaker">CHORUS [291–292]</span><p class="nested-p">They say that Io was once key-bearer [of the] temple of Juno in this
+                    Argive land, whom, as chiefly and great rumour prevails * *</p></div>
+<div class="speech"><span class="speaker">PELASGUS [293–295]</span><p class="nested-p">Is there not a tale that Jove mingled with a mortal ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [296–296]</span><p class="nested-p">And this intercourse without the knowledge of Juno **</p></div>
+<div class="speech"><span class="speaker">PELASGUS [297–297]</span><p class="nested-p">How then did this strife of the powers end ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [298–298]</span><p class="nested-p">The Argive goddess made the woman an heifer.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [300–300]</span><p class="nested-p">Did Jove still approach the well-horned heifer.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-217">[Page 217]</span>
+<div class="speech"><span class="speaker">CHORUS [301–301]</span><p class="nested-p">They say [that he did so,] likening his body to a cow-leaping bull.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [302–302]</span><p class="nested-p">What truly on this did the mighty wife of Jove ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [303–303]</span><p class="nested-p">She placed over the heifer an all-seeing keeper.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [304–304]</span><p class="nested-p">What all-viewing herdsman do you mean ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [305–305]</span><p class="nested-p">Argus, whom son of the Earth Mercury slew.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [306–306]</span><p class="nested-p">What other thing did she yet frame against the ill-fated heifer ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [307–307]</span><p class="nested-p">A cow-chasing gad-fly, quick in motion : those near the Nile call it a
+                    brize<a href="#note-217.1" class="fn-link" data-note="217.1">217.1</a>.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [308–308]</span><p class="nested-p">Accordingly it chased her from the land in long flight.</p></div>
+<div class="speech"><span class="speaker">CHORUS [309–309]</span><p class="nested-p">And you have spoken all these things agreeing with me.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [310–310]</span><p class="nested-p">Moreover she came to Canobus and to Memphis.</p></div>
+<div class="speech"><span class="speaker">CHORUS [311–311]</span><p class="nested-p">And Jove laying hands on her planted an offspring.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [313–313]</span><p class="nested-p">Who then is the divine calf that boasts to be sprung from an heifer ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [312–312]</span><p class="nested-p">Epaphus truly called from deliverance.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [315–315]</span><p class="nested-p">* *</p></div>
+<div class="speech"><span class="speaker">CHORUS [314–314]</span><p class="nested-p">Lybia enjoying the name of a very great land.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [317–317]</span><p class="nested-p">What other branch yet of this [heifer] do you men tion?</p></div>
+<div class="speech"><span class="speaker">CHORUS [316–316]</span><p class="nested-p">Belus having two sons, the father of my father here.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [319–319]</span><p class="nested-p">Tell me now the all-wise name of this<a href="#note-217.2" class="fn-link" data-note="217.2">217.2</a> man.</p></div>
+<div class="speech"><span class="speaker">CHORUS [318–318]</span><p class="nested-p">Danaus : and his brother has fifty sons.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [321–321]</span><p class="nested-p">Of him, too, declare the name in plain terms,</p></div>
+<div class="speech"><span class="speaker">CHORUS [320–320]</span><p class="nested-p">Ægyptus ; and knowing my ancient race you should act so as to support
+                    this Argive train.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [324–326]</span><p class="nested-p">You seem now to me to have shared this land of old : but how have you
+                    dared to leave your paternal abodes ? What mischance has befallen you ?</p></div>
+<div class="speech"><span class="speaker">CHORUS [322–323]</span><p class="nested-p">King of the Pelasgians, the ills of men are various: and no where can you
+                    behold the same wing of trouble: since who would have expected that this
+                    unhoped-for flight would have driven me to Argos, allied to our race of old,
+                    trembling through hate of the marriage bed ?</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-218">[Page 218]</span>
+<div class="speech"><span class="speaker">PELASGUS [332–333]</span><p class="nested-p">What do you say that you entreat from these gods of the assembly, holding
+                    white-wreathed new-cropped boughs?</p></div>
+<div class="speech"><span class="speaker">CHORUS [334–334]</span><p class="nested-p">That I may not become a slave to the race of Ægyptus.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [335–335]</span><p class="nested-p">Whether do you mean on account of hatred, or on account of its being
+                    unlawful?</p></div>
+<div class="speech"><span class="speaker">CHORUS [336–336]</span><p class="nested-p">Who would purchase<a href="#note-218.1" class="fn-link" data-note="218.1">218.1</a> [by a dowry] their kindred as their lords?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [337–337]</span><p class="nested-p">Thus, indeed, greater strength increases to mortals.</p></div>
+<div class="speech"><span class="speaker">CHORUS [338–338]</span><p class="nested-p">And from the wretched it is easy to turn away.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [339–339]</span><p class="nested-p">How then can I be pious toward you?</p></div>
+<div class="speech"><span class="speaker">CHORUS [340–340]</span><p class="nested-p">By not giving us up to the sons of Ægyptus demanding us.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [341–341]</span><p class="nested-p">You speak grievous things, to raise a new war.</p></div>
+<div class="speech"><span class="speaker">CHORUS [342–342]</span><p class="nested-p">But Justice defends her allies.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [343–343]</span><p class="nested-p">If perchance she was a sharer of their affairs from the beginning.</p></div>
+<div class="speech"><span class="speaker">CHORUS [344–344]</span><p class="nested-p">Revere the stern of the state thus crowned.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [345–345]</span><p class="nested-p">I shudder beholding these shaded seats.</p></div>
+<div class="speech"><span class="speaker">CHORUS [346–352]</span><p class="nested-p">Grievous, indeed, is the wrath of Jove who guards the suppliant. Son
+                    of Palacthon, hear me with willing heart, king of the Pelasgians. Behold
+                    me a suppliant, an exile, a wanderer, like a white-spotted<a href="#note-218.2" class="fn-link" data-note="218.2">218.2</a> heifer on the lofty
+                    rocks, where trusting for aid she lows telling to the herdsman her troubles.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [353–358]</span><p class="nested-p">I behold a youthful band<a href="#note-218.3" class="fn-link" data-note="218.3">218.3</a> shaded with new-cropped boughs [at the
+                    altars] of these gods who preside over the games. But may this business of
+                    the guests of our city be unattended with hurt nor let strife arise to the city
+                    from unexpected and sudden things, for these the city wants not.</p></div>
+<div class="speech"><span class="speaker">CHORUS [359–364]</span><p class="nested-p">May Themis, the goddess of suppliants, daughter of lot-directing Jove,
+                    regard in truth our harmless flight: but do you, though being an old man<a href="#note-218.4" class="fn-link" data-note="218.4">218.4</a>
+                    in mind, learn from one younger; reverencing a suppliant, you shall not be
+                    reduced to want.<a href="#note-218.5" class="fn-link" data-note="218.5">218.5</a> * * * * gifts offered to the gods from a pure man.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [365–369]</span><p class="nested-p">By no means do you sit at the hearth of my house: but if the city be
+                    polluted in common, together let the people take care to work out remedies:
+                    but I could not perform a
+            
+            
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-219">[Page 219]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="368-410"></span>
+            promise, before at least having communicated with all these of<a href="#note-219.1" class="fn-link" data-note="219.1">219.1</a> citizens
+                concerning these things.</p></div>
+<div class="speech"><span class="speaker">CHORUS [370–375]</span><p class="nested-p">You are the city, and you are the people, being a ruler accountable to
+                    none, you have sway over the altar, the hearth of the land: by your
+                    soul-deciding nod, and on a sole-sceptred throne you determine every thing;
+                    beware of pollution.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [376–380]</span><p class="nested-p">May pollution, indeed, be upon my enemies: but I can not aid you
+                    without harm, nor again is it prudent to reject these prayers. But I am
+                    perplexed, and fear holds my mind, whether to act, or not to act, and to take
+                    my chance.</p></div>
+<div class="speech"><span class="speaker">CHORUS [381–386]</span><p class="nested-p">Look to the beholder on high, the protector of troubled mortals, who
+                    sitting [as suppliants] before their kindred, obtain not lawful justice.
+                    Therefore the wrath of Jove guardian of suppliants waits upon the wailing of
+                    the sufferer, that can not be appeased.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [387–391]</span><p class="nested-p">If the sons of Ægyptus have power over you by the law of your state,
+                    saying that they are nearest of kin, who would wish to oppose them? Ye
+                    needs must therefore prove according to the laws of your home that they have
+                    no authority over you.</p></div>
+<div class="speech"><span class="speaker">CHORUS [392–396]</span><p class="nested-p">May I never at any time then become subject to the power of males:
+                    but I mark out a star-guided remedy of the wretched marriage by flight: and
+                    having taken Justice an ally, do thou determine according to the reverence
+                    due to the gods.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [397–401]</span><p class="nested-p">The judgment is not easy to judge: choose not me as judge. But I said
+                    even before, not without the people would I do these things, not even though
+                    ruler, lest at any time the people shall say, if perchance any thing fall out
+                    not such [as we wish]<a href="#note-219.2" class="fn-link" data-note="219.2">219.2</a>, honoring strangers you have destroyed the city.</p></div>
+<div class="speech"><span class="speaker">CHORUS [402–406]</span><p class="nested-p">Jove allied to both, inclining to one side, regards these things,
+                    distributing as is right unjust things to the bad, but the rewards of piety to
+                    the just<a href="#note-219.3" class="fn-link" data-note="219.3">219.3</a>. Wherefore, these being equally inclined, are you pained to do
+                    what is just?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [407–417]</span><p class="nested-p">There is need of deep thought, so that the clear-sighted eye may<a href="#note-219.4" class="fn-link" data-note="219.4">219.4</a>,
+                    without dizziness, reach the bottom of deep preserving thought, like a diver:
+                    that these things harmless, first indeed to the city and to ourselves, may
+                    turn out well, and that
+            
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-220">[Page 220]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="410-457"></span>
+            neither strife lay hold of the pledges<a href="#note-220.1" class="fn-link" data-note="220.1">220.1</a>, nor that we, having given up you placed
+                here in the seats of the gods, bring on ourselves a dire fellow-dweller the
+                all-destroying avenging god, who, not even in the abode of Hades frees the
+                dead. Does there not seem to be need of saving thought?</p></div>
+<div class="speech"><span class="speaker">CHORUS [418–437]</span><p class="nested-p">Consider, and be most justly a pious receiver of strangers, betray not the
+                    exile driven from afar by godless expulsion: nor behold me dragged as a
+                    pledge from the seats sacred to many gods, O you who possess the whole
+                    sway of the land. But consider the insolence of men, and guard against their
+                    wrath. In nowise endure to behold the suppliant led from the images in spite
+                    of Justice, like a steed, and the seizing of my fillets and robes woven with
+                    many threads. For know, whatever you determine, there awaits your
+                    children and your house to suffer a like justice. Consider these just
+                    commands of Jove.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [438–454]</span><p class="nested-p">And truly I have considered; and the matter is driven to this: it is
+                    absolutely necessary to undertake a great war either with these (viz. the
+                    gods) or with those (viz. the sons of Ægyptus): and it is compacted with
+                    nails, like a ship put together by naval wedges. But without sorrow by no
+                    means will there be a turning aside. And, indeed, when possessions are
+                    borne as plunder from the house, a heap greater than the loss, and which
+                    completely fills it up may arise from another quarter by the kindness of
+                    bounteous Jove. And the tongue having darted forth unseasonable things
+                    grievous, and provoking wrath, there may be other words to soothe the
+                    former. But it is necessary by all means to sacrifice, and for many victims
+                    to be slain for many gods, remedies of calamity, that kindred blood be not
+                    shed. Certainly I altogether pass by this strife; but I wish to be rather
+                    ignorant of, than acquainted with ills but may matters fall out well, contrary
+                    to my expectation.</p></div>
+<div class="speech"><span class="speaker">CHORUS [455–455]</span><p class="nested-p">Hear the end of many modest speeches.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [456–456]</span><p class="nested-p">I hear and speak, your words shall not escape me.</p></div>
+<div class="speech"><span class="speaker">CHORUS [457–457]</span><p class="nested-p">I have girdles and zones, that confine my robes.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-221">[Page 221]</span>
+<div class="speech"><span class="speaker">PELASGUS [458–458]</span><p class="nested-p">These are befitting to the condition of women.</p></div>
+<div class="speech"><span class="speaker">CHORUS [459–459]</span><p class="nested-p">From these, therefore, know an excellent contrivance ******</p></div>
+<div class="speech"><span class="speaker">PELASGUS [460–460]</span><p class="nested-p">Say what words are these that you are about to speak?</p></div>
+<div class="speech"><span class="speaker">CHORUS [461–461]</span><p class="nested-p">Unless you shall promise to this train something that may be trusted to *
+                    * * * * *</p></div>
+<div class="speech"><span class="speaker">PELASGUS [462–462]</span><p class="nested-p">What will the contrivance of the girdles avail you?</p></div>
+<div class="speech"><span class="speaker">CHORUS [463–463]</span><p class="nested-p">To adorn these images with new tablets.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [464–464]</span><p class="nested-p">Your words are riddles: but speak plainly.</p></div>
+<div class="speech"><span class="speaker">CHORUS [465–465]</span><p class="nested-p">With all speed to hang ourselves from these gods.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [466–466]</span><p class="nested-p">I have heard words that pierce my heart.</p></div>
+<div class="speech"><span class="speaker">CHORUS [467–467]</span><p class="nested-p">Do you understand? for I have let you see clearly.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [468–489]</span><p class="nested-p">And on every side matters are hard to struggle with, and a multitude of
+                    ills, like a river, comes on; and I have entered on a deep sea of calamity not
+                    easily passed over, and nowhere is there a harbor from ills. For if, indeed, I
+                    do not perform this thing for you, you have named a pollution not to be got
+                    over: but if again stationed before the walls I shall try the event of battle
+                    with your kindred, the sons of Egyptus, how shall not the loss be bitter, that
+                    men stain the ground with blood for the sake of women? But nevertheless it
+                    is necessary to dread the wrath of Jove the guardian of suppliants: for the
+                    fear [of him] among mortals is uppermost. Go then, aged father of these
+                    virgins, and quickly having taken in your arms these boughs, place them on
+                    the other altars of our country&#x27;s god&#x27;s, that all the citizens may behold a sign
+                    of this arrival, nor let my words be blabbed: for the people love to blame
+                    their rulers. And perchance some commiseration, having seen these things,
+                    will hate the insolence of the band of youths, and the people will be more
+                    well-inclined to you: for every one bears good-will to the weaker.</p></div>
+<div class="speech"><span class="speaker">DANAUS [490–499]</span><p class="nested-p">These things are much valued by us, to have obtained a pitying patron;
+                    but send with us attendants of the citizens to point out the way, that we may
+                    find the altars before the temples of the country&#x27;s gods, and the seats of
+                    those who guard the city, and that there may be safety to us proceeding
+                    through the city but the appearance of our form is not the same [with
+                    yours]: for the Nile nourishes a race different from Inachus;
+            <hr class="pb-hr"><span class="pb" id="pb-222">[Page 222]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="497-531"></span>
+            we must take care lest boldness produce fear<a href="#note-222.1" class="fn-link" data-note="222.1">222.1</a>
+                : and in truth one has slain a friend
+                through ignorance.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [500–503]</span><p class="nested-p">Go, attendants; for the stranger says well. Lead to the public altars
+                    and seats of the gods: and it behooves you not to talk much with those you
+                    meet, leading this sailor who has taken refuge at the hearth of the gods.</p></div>
+<div class="speech"><span class="speaker">CHORUS [504–505]</span><p class="nested-p">To him you have spoken: and he departs as he has been enjoined: but
+                    how shall I act? where (or how) do you afford confidence to me?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [506–506]</span><p class="nested-p">Leave here, indeed, the boughs a sign of your trouble.</p></div>
+<div class="speech"><span class="speaker">CHORUS [507–507]</span><p class="nested-p">And in truth I leave them, by your authority and words.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [508–508]</span><p class="nested-p">Now betake yourself to this level grove.</p></div>
+<div class="speech"><span class="speaker">CHORUS [509–509]</span><p class="nested-p">And how can an unconsecrated grove defend me.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [510–510]</span><p class="nested-p">By no means will we give you up to the rapine of winged birds.</p></div>
+<div class="speech"><span class="speaker">CHORUS [511–511]</span><p class="nested-p">But what if [you give us up] to those more hateful than hostile
+                    dragons?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [512–512]</span><p class="nested-p">May well-omened words be spoken by you addressed with well-omened
+                    words.</p></div>
+<div class="speech"><span class="speaker">CHORUS [513–513]</span><p class="nested-p">By no means is it a wonder that I am impatient in mind through
+                    terror.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [514–514]</span><p class="nested-p">The fear of kings is ever immoderate.</p></div>
+<div class="speech"><span class="speaker">CHORUS [515–515]</span><p class="nested-p">Do you both by words and deeds gladden my mind<a href="#note-222.2" class="fn-link" data-note="222.2">222.2</a>.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [516–523]</span><p class="nested-p">But for no long time shall your father be alone: but I assembling the
+                    people of the country, will persuade them in common, that I may render them
+                    favorable, and will instruct your father what he ought to say. Therefore
+                    remain, and entreat with prayers the gods of the country for those things
+                    which you have desire to obtain. But I having performed these things will
+                    return: and may persuasion attend me and effective good fortune.</p></div>
+<div class="speech"><span class="speaker">CHORUS [524–599]</span><p class="nested-p">King of kings, most blest of the blest, and most perfect might of the
+                    perfect, blessed Jove, be persuaded, and may it come to pass<a href="#note-222.3" class="fn-link" data-note="222.3">222.3</a>—avert from
+                    thy race the insolence of men, justly hating it, and plunge into the purple
+                    deep the black-benched pest<a href="#note-222.4" class="fn-link" data-note="222.4">222.4</a>. Regarding the woman&#x27;s side, renew the
+                    
+            
+        
+                  
+                         <hr class="pb-hr"><span class="pb" id="pb-223">[Page 223]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="532-595"></span>
+                    pleasing story of the beloved woman our ancestress; be mindful O you who
+                    embraced Io,<a href="#note-223.1" class="fn-link" data-note="223.1">223.1</a> by whom we boast ourselves to be your race, settlers from this
+                    land. But I have returned into the ancient track, and the flowery scenes of
+                    the watchings of our mother, the herd-feeding mead, from whence Io driven<a href="#note-223.2" class="fn-link" data-note="223.2">223.2</a>
+                    by the brize, flies distracted, passing through many tribes of mortals: and
+                    twice by fate having cut through the billowy way she reaches the opposite
+                    continent. She hastens through the Asian land, through sheep-feeding
+                    Phrygia: and she passes the city of Teuthras of the Mysians, and the Lydian
+                    plains, and through the Cilician and Pamphylian mountains with furious
+                    haste; and the ever-flowing rivers, and the wealthy region, and the
+                    corn-abounding land of Venus. She arrives, driven along by the sting of the
+                    winged herdsman, at the divine all-fostering grove, the snow-fed mead, and on
+                    which comes [with]<a href="#note-223.3" class="fn-link" data-note="223.3">223.3</a> the might of Typho, the water of Nile untouched by
+                    diseases, maddened by her ignominious toils, and by the stinging pains of
+                    raging Juno. But the mortals who then were dwellers in the land, were
+                    seized in their minds by pale fear, beholding an unwonted sight, an intractable
+                    heifer mingled with a mortal, in part a heifer, and in part again a woman, and
+                    they were astonished at the prodigy. And then who was it in truth who
+                    soothed the much-wandering wretched Io, driven by the brize? Jove, lord
+                    of ceaseless time but the violence [of Juno] ceases by unwasted strength,
+                    and by divine influence, but she drops the mournful modesty of tears. But
+                    having received the divine load, in true story, she produced her blameless
+                    son, all-happy for length of time; whence all the earth exclaims, this is truly
+                    the offspring of life-giving Jove: for who could have made to cease the pest
+                    inflicted by wily Juno? this is the work of Jove; and saying that that race is
+                    sprung from Epaphus you will hit the truth. Whom of the gods could I more
+                    rightly invoke than you for just deeds? the creative sire who by the touch of
+                    your hand became lord of Io, great all-prudent author of our race, Jove
+                    wafting every needful device. But neither subject to the rule
+
+       
+       
+       
+            <hr class="pb-hr"><span class="pb" id="pb-224">[Page 224]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="595-640"></span>
+            of any one are you less mighty than the powerful, nor from above do you
+                revere any inferior. But the deed is at hand with the word<a href="#note-224.1" class="fn-link" data-note="224.1">224.1</a>, quickly to
+                perform what your deep-counseling<a href="#note-224.2" class="fn-link" data-note="224.2">224.2</a> mind intends.</p></div>
+<div class="speech"><span class="speaker">DANAUS [600–601]</span><p class="nested-p">Have courage, my children, our affairs are well with the natives; perfect
+                    decrees of the people have been passed.</p></div>
+<div class="speech"><span class="speaker">CHORUS [602–604]</span><p class="nested-p">O hail, old man, dearest of messengers to me; but declare to us how
+                    the decree has been ratified, to what purport the prevailing hand of the people
+                    is in the majority<a href="#note-224.3" class="fn-link" data-note="224.3">224.3</a>.</p></div>
+<div class="speech"><span class="speaker">DANAUS [605–624]</span><p class="nested-p">The decree has been passed by the Argives, not with divided opinions, but
+                    so as for me to be young again in my aged mind. For in full assembly the
+                    air hurtled with the right hands [as the people] determined this matter; that
+                    we should inhabit this land, free, and not as pledges, and with sanctity of
+                    place among mortals; and that no one either of inhabitants or strangers should
+                    lead us away: but if violence should be added, that he of the citizens who did
+                    not give his aid should be disgraced by public exile. The king of the
+                    Pelasgians strove to persuade, speaking concerning us a speech to this effect,
+                    declaring the great wrath of Jove, that never in after time [the god] would
+                    increase the city, and saying that if a double pollution both to from the
+                    contempt of strangers, and upon the state, should appear before the city, it
+                    would be the food of irremediable calamity. Hearing such things, the Argive
+                    people passed a decree, without a crier, that these things should be: but the
+                    citizens of the Pelasgi heard the eloquent winning turns [of the king&#x27;s
+                    speech]: and Jove brought about a happy conclusion.</p></div>
+<div class="speech"><span class="speaker">CHORUS [625–709]</span><p class="nested-p">Come now, let us pour forth for the Argives good prayers, a return for
+                    good. And may Jove, protector of strangers, regard the honors of the
+                    stranger&#x27;s mouth truly blamelessly to full accomplishment. Now, if ever,
+                    you gods sprung from Jove, hear us pouring forth prayers for desirable
+                    things for this race: that bold Mars may never cause to be consumed by fire
+                    the Pelasgian city, who with joyless cry mows down mortals in other plowed
+                    fields: since they have pitied us, and have passed a favorable decree; but
+                    they
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-225">[Page 225]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="641-711"></span>
+            revere the suppliants of Jove, this band unenvied: nor have they passed a
+                decree in favor of the men, having slighted the cause of women: reverencing
+                the divine avenger and beholder not to be contented with, whom no house
+                would wish to have upon its roofs in his wrath, for heavily he sits on it. For
+                they reverence us their kindred, the holy suppliants of Jove; therefore they
+                shall please the gods at pure altars. Therefore from our mouths shaded [by
+                boughs] let the honoring prayer fly. Never let pestilence make empty the
+                city of these men: nor let [discord<a href="#note-225.1" class="fn-link" data-note="225.1">225.1</a>] make bloody the plain of the land with
+                corses of the natives. And let the flower of youth be uncropped; nor let the
+                paramour of Venus, man-destroying Mars mow the blossom. And let the
+                altars, at which are aged ministers, abound with venerable priests, and let
+                them blaze [with offerings], that the city may be rightly ruled. Let them
+                reverence mighty Jove, the god of hospitality, supreme, who by hoary law
+                directs fate. And we pray that other rulers of the land be ever born, and that
+                far-darting Diana look upon the labors of women. Nor let any man-destroying
+                pestilence come on, laying waste this city, averse to dance and lyre, exciting
+                tears, producing Mars and clamors of the people. And let the unjoyous
+                swarm of diseases settle at a distance from the citizens in their strength: and
+                let Lycian Apollo be propitious to all the youth. And may Jove render the
+                earth fruitful with increase at all seasons: and may the herds that feed before
+                [the city] in like manner bear young abundantly. And may they receive every
+                thing from the gods, and may the divine Muses and bards pour forth a
+                well-omened strain; and from holy mouths let the lyre-loving song be wafted
+                on. And may the people hold continually in honor their rulers; and may a
+                prudent sway, consulting for the common good, govern the city. And ready to
+                come to terms of peace, before preparing Mars, let them afford to strangers
+                what is just without evils. And ever let them honor their country&#x27;s gods,
+                who preside over the land, with native laurel-bearing bull-slaying honors. For
+                the reverence of parents this third is written in the laws of much-venerated
+                Justice.</p></div>
+<div class="speech"><span class="speaker">DANAUS [710–726]</span><p class="nested-p">I approve indeed of these wise prayers, oh, beloved: but be not you
+                    afraid hearing these unexpected and new tidings from your father: for from
+                    this suppliant-receiving mount I behold the ship:
+            
+            <hr class="pb-hr"><span class="pb" id="pb-226">[Page 226]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="712-745"></span>
+            for conspicuous it escapes not my notice, and the breasts of the sails and the
+                side-guards<a href="#note-226.1" class="fn-link" data-note="226.1">226.1</a> of the vessel, and the prow in the fore part beholding with its
+                eyes the way, too well obeying, as not being friendly to us, the directing helm
+                in the hinder part of the vessel. And the sailors may be seen conspicuous
+                with their black limbs out of white garments: and the other vessels and all the
+                assistant band is conspicuous, but the leading ship, having furled her sails under
+                the land, is rowed with oars sounding together. But it behooves you calmly
+                and prudently looking to the matter, not to neglect these gods. But I will come,
+                having taken assistants and patrons.</p></div>
+<div class="speech"><span class="speaker">CHORUS [727–728]</span><p class="nested-p">For perchance<a href="#note-226.2" class="fn-link" data-note="226.2">226.2</a> some herald or embassador may come, wishing to lead
+                    us away, laying hold of us as pledges.</p></div>
+<div class="speech"><span class="speaker">DANAUS [729–729]</span><p class="nested-p">But none of these things shall be, fear<a href="#note-226.3" class="fn-link" data-note="226.3">226.3</a> not now.</p></div>
+<div class="speech"><span class="speaker">CHORUS [730–731]</span><p class="nested-p">Nevertheless it is better, if we indeed be slow in getting aid, by no
+                    means to be forgetful of this protection.</p></div>
+<div class="speech"><span class="speaker">DANAUS [732–733]</span><p class="nested-p">Be of good courage; in appointed time and day every one of mortals
+                    who despises the gods shall pay the penalty.</p></div>
+<div class="speech"><span class="speaker">CHORUS [734–738]</span><p class="nested-p">Father, I am afraid, as the swift-winged vessels are come, and there is
+                    no length of time between. In truth excessive fear possesses me: [I fear]
+                    lest there be no advantage to me of my long flight. I perish, father, with
+                    terror. The offspring of Ægyptus is bold and insolent, and insatiate of the
+                    fight; and I speak to you who know it: and possessing black wood-compacted
+                    ships they have sailed here with wrath thus far successful, together with a
+                    numerous swarthy host.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-227">[Page 227]</span>
+<div class="speech"><span class="speaker">DANAUS [746–747]</span><p class="nested-p">And they shall find many who have their arms well-hardened to toil in
+                    the meridian heat.</p></div>
+<div class="speech"><span class="speaker">CHORUS [748–751]</span><p class="nested-p">But leave me not alone, I beseech, father. A forsaken woman is
+                    nothing. Mars is not in us. But they are wily and deceitful with impure
+                    minds, like crows, caring nought for the altars.</p></div>
+<div class="speech"><span class="speaker">DANAUS [752–753]</span><p class="nested-p">These things would advantage us well, O my children, if they were
+                    hateful both to you and to the gods.</p></div>
+<div class="speech"><span class="speaker">CHORUS [755–758]</span><p class="nested-p">Not dreading these tridents and the majesty of the gods will they keep
+                    off their hands from us, father. But they are very haughty, maddened with
+                    impious rage, of dog-like boldness, in no respect obeying regarding the gods.</p></div>
+<div class="speech"><span class="speaker">DANAUS [760–761]</span><p class="nested-p">But there is a saying that wolves are superior to dogs; and the fruit of
+                    the papyrus surpasses not the ear of corn.</p></div>
+<div class="speech"><span class="speaker">CHORUS [762–763]</span><p class="nested-p">And thus it behooves us well to guard against them having the
+                    dispositions of wanton and wicked beasts.</p></div>
+<div class="speech"><span class="speaker">DANAUS [764–775]</span><p class="nested-p">By no means is the management of a naval host quick, nor a station
+                    for the ships, nor a safe fastening for cables, to bring them to land, nor do the
+                    rulers of ships too quickly trust to the hold of anchors, especially when arriving
+                    at a harbourless land<a href="#note-227.1" class="fn-link" data-note="227.1">227.1</a>
+                    . When the sun departs<a href="#note-227.2" class="fn-link" data-note="227.2">227.2</a>, night is wont to produce
+                    anxiety to a skilful pilot. Thus there can not be even a safe disembarking of
+                    the host, before the ship has been stoutly fixed in its station. But do you
+                    take heed, not to neglect the gods, on the plea of fear, procuring aid. But the
+                    city will not blame a messenger who is old, but young in his mind prompt of
+                    speech.</p></div>
+<div class="speech"><span class="speaker">CHORUS [776–835]</span><p class="nested-p">O land of hills, just object of veneration, what shall we suffer? to what
+                    part of the Apian land shall we fly, if there is any where a dark cavern?
+                    Would I were black smoke, approaching to the clouds of Jove, and altogether
+                    invisible, and flying away without wings, might like dust be lost. But my
+                    heart can no longer abide without flight, and my darkened
+
+                    
+            
+                    <hr class="pb-hr"><span class="pb" id="pb-228">[Page 228]</span>
+<span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="785-832"></span>
+                    spirit<a href="#note-228.1" class="fn-link" data-note="228.1">228.1</a> throbs. But
+                    my father&#x27;s look-out has undone me: I perish with terror. Would I could
+                    obtain death by the twistings of the noose, before the abhorred man draw
+                    nigh<a href="#note-228.2" class="fn-link" data-note="228.2">228.2</a>, and, ere that, may Pluto rule us dying by our own hands. From
+                    whence can I have a seat in the air on which the watery clouds become snow<a href="#note-228.3" class="fn-link" data-note="228.3">228.3</a>,
+                    or a rock, rugged, inaccessible to goats, not pointed out,<a href="#note-228.4" class="fn-link" data-note="228.4">228.4</a> lonely, desolate, the
+                    haunt of vultures, witnessing a deep fall to me, before, in spite of my heart,
+                    having met with forced nuptials. And then I refuse not to become the prey of
+                    dogs, and the food of the birds of the country: for death is free from
+                    mournful ills: let fate approach, having seized me before the nuptial bed.
+                    What remedy for myself delivering me from the marriage can I yet find<a href="#note-228.5" class="fn-link" data-note="228.5">228.5</a>
+                    Pour forth a voice to the heavens, supplicating strains to the gods, and such as
+                    will bring about good fortune to me, being the means of deliverance for
+                    me<a href="#note-228.6" class="fn-link" data-note="228.6">228.6</a>. Father; do not love violence, seeing with just eyes and respect your
+                    suppliants, O earth-ruling, all-powerful Jove. For the male offspring of
+                    Ægyptus intolerable in insolence pursuing me with speed, seek with foul
+                    abuse to seize me a fugitive by force. But the beam of your balance is
+                    over all: and what without you is perfected to mortals? Ah! ah! ah! Here is
+                    the sea [and] land seizer<a href="#note-228.7" class="fn-link" data-note="228.7">228.7</a>
+                    . Mayest thou, Heigh ho! toil before the shore
+                    bringing to here, I utter a cry of pain. I see these preludes are a warranty
+                    of violent treatment, of me. Alas! alas! go in flight to [seek] protection
+                    against their fell desires, intolerable both by sea and land, O king, defend
+                    us<a href="#note-228.8" class="fn-link" data-note="228.8">228.8</a>.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-229">[Page 229]</span>
+<div class="speech"><span class="speaker">HERALD [836–837]</span><p class="nested-p">Haste, haste to the ship with all speed.</p></div>
+<div class="speech"><span class="speaker">CHORUS [838–841]</span><p class="nested-p">Then, then, [there await us] tearings, tearings, and stabbings, gory
+                    murderous,<a href="#note-229.1" class="fn-link" data-note="229.1">229.1</a> cuttings off of heads.</p></div>
+<div class="speech"><span class="speaker">HERALD [842–850]</span><p class="nested-p">Haste, haste, abandoned in utter destruction, to the vessel, or to the
+                    billowy salt deep, with tyrannic insolence, and with a spear firmly bound with
+                    iron, I will place you bloody in the ship, wheref<a href="#note-229.2" class="fn-link" data-note="229.2">229.2</a> if after that you continue your
+                    vociferations, I with violence command you to lay aside madness<a href="#note-229.3" class="fn-link" data-note="229.3">229.3</a> from your
+                    mind.</p></div>
+<div class="speech"><span class="speaker">CHORUS [851–851]</span><p class="nested-p">Alas! alas!</p></div>
+<div class="speech"><span class="speaker">HERALD [852–853]</span><p class="nested-p">Leave these seats, go to the ship; it is useless to adore the gods in the
+                    city.</p></div>
+<div class="speech"><span class="speaker">CHORUS [854–860]</span><p class="nested-p">Never again may I behold the flock-nurturing stream, from whence the
+                    life-blood of mortals increased is enlivened.† I am holy from of old on
+                    account of this seat, this seat, old man.</p></div>
+<div class="speech"><span class="speaker">HERALD [861–865]</span><p class="nested-p">But you to the ship, to the ship shall go quickly, willing, or unwilling,†
+                    forced with much violence; go to the ship before having suffered ill, struck
+                    to death by my hands.</p></div>
+<div class="speech"><span class="speaker">CHORUS [866–871]</span><p class="nested-p">Ah! ah! ah! without an helping hand may you perish in the billowy
+                    deep, at the sandy Sarpedonian promontory, wandering in the wide air!</p></div>
+<div class="speech"><span class="speaker">HERALD [872–875]</span><p class="nested-p">Exclaim, and rend your robes, and invoke the gods; for you shall not
+                    escape the Egyptian bark: exclaim and cry, with more bitter grievings,
+                    obtaining the name of calamity.</p></div>
+<div class="speech"><span class="speaker">CHORUS [876–881]</span><p class="nested-p">Oh! oh! oh!† the pollution of seizing barks: approaching, thou dost
+                    terribly insult: †who askest, may great Nile turn you away treating us with
+                    indelible insolence.</p></div>
+<div class="speech"><span class="speaker">HERALD [882–884]</span><p class="nested-p">I bid you go to the ship turned toward [the shore] with all speed: nor
+                    let any one delay: for dragging by no means shall spare your tresses.</p></div>
+<div class="speech"><span class="speaker">CHORUS [885–892]</span><p class="nested-p">Oh! oh! Father, the protection of your image, now leads me to
+                    calamity, to the sea like a spider, black spectre.
+
+            
+            
+            
+            <hr class="pb-hr"><span class="pb" id="pb-230">[Page 230]</span>
+            <span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="888-927"></span>
+            Alas! mother Earth, mother Earth, repel the dreadful cries. O Jove son of Earth
+                advance.</p></div>
+<div class="speech"><span class="speaker">HERALD [893–894]</span><p class="nested-p">By no means do I dread the deities here; for they have not nourished me,
+                    nor brought me to old age by their rearing.</p></div>
+<div class="speech"><span class="speaker">CHORUS [895–901]</span><p class="nested-p">The two-footed serpent rages near me, and like a viper,† gnawing my
+                    foot. Mother Earth, mother Earth, repel the dreadful cries. O Jove son of
+                    Earth advance.</p></div>
+<div class="speech"><span class="speaker">HERALD [902–903]</span><p class="nested-p">Unless some one goes to the ship, submitting to these things, a tearing
+                    shall not pity the work of her garment.</p></div>
+<div class="speech"><span class="speaker">CHORUS [904–904]</span><p class="nested-p">Oh chief rulers of the city, I am overpowered.</p></div>
+<div class="speech"><span class="speaker">HERALD [905–906]</span><p class="nested-p">You shall presently behold many rulers, the sons of Ægyptus; be of
+                    good courage, you will not call it an anarchy.</p></div>
+<div class="speech"><span class="speaker">CHORUS [907–907]</span><p class="nested-p">We are undone, we suffer, O king, unlooked-for things.</p></div>
+<div class="speech"><span class="speaker">HERALD [908–910]</span><p class="nested-p">It seems I must drag you tearing you by the hair, since you do not
+                    quickly obey my words.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [911–915]</span><p class="nested-p">Hark you, what are you about? from what boldness do you dishonor
+                    this land of Pelasgic men? do you think that you have come to a city of
+                    women? Being a barbarian, you are over-insolent toward Greeks: and having
+                    erred much, you have done nothing rightly in your mind.</p></div>
+<div class="speech"><span class="speaker">HERALD [916–916]</span><p class="nested-p">In which of these things have I erred contrary to justice?</p></div>
+<div class="speech"><span class="speaker">PELASGUS [917–917]</span><p class="nested-p">First indeed you forget that you are a stranger.</p></div>
+<div class="speech"><span class="speaker">HERALD [918–918]</span><p class="nested-p">How not? I have found what was lost.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [919–919]</span><p class="nested-p">Having addressed which of the natives as patrons.</p></div>
+<div class="speech"><span class="speaker">HERALD [920–920]</span><p class="nested-p">Hermes the searcher, a very great patron.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [921–921]</span><p class="nested-p">Having addressed the gods, you in no way reverence the gods.</p></div>
+<div class="speech"><span class="speaker">HERALD [922–922]</span><p class="nested-p">I reverence the deities at the Nile.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [923–923]</span><p class="nested-p">But those here, are nothing, as I hear from you.</p></div>
+<div class="speech"><span class="speaker">HERALD [924–924]</span><p class="nested-p">I will lead away these, if some one does not snatch them from me.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [925–925]</span><p class="nested-p">You will rue it, if you touch them, no long time after.</p></div>
+<div class="speech"><span class="speaker">HERALD [926–926]</span><p class="nested-p">I hear words by no means hospitable.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [927–927]</span><p class="nested-p">For I do not hospitably receive the spoilers of the gods.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-231">[Page 231]</span>
+<div class="speech"><span class="speaker">HERALD [928–928]</span><p class="nested-p">Having gone thou mayest tell these things to the sons of <blockquote>Ægyptus</blockquote><a href="#note-231.1" class="fn-link" data-note="231.1">231.1</a>.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [929–929]</span><p class="nested-p">This is unheeded in my thoughts.</p></div>
+<div class="speech"><span class="speaker">HERALD [930–937]</span><p class="nested-p">But, that you may know, I will more plainly speak: for it is proper that an herald declare all things clearly—how shall I say, and by whom, that I come deprived of the train of kindred women? Mars determines not these things by witnesses, and puts an end to the strife not by the receipt of silver; but before that there are many slaughters of men, and trampling-down of lives.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [938–949]</span><p class="nested-p">What does it behove you to say? Having at length learnt what is just, do you yourself determine, and your fellow-voyagers. But you may lead away these willing indeed according to the inclinations of their minds, if a lawful speech can persuade them. But such an unanimous public decree of the state has been passed, never to give up by force the train of women. Of these things the nail is firmly driven through and through, so as to remain fixed. These things are not graven on tablets, nor sealed in the folds of books, but you hear them plain from a free-speaking tongue; but with all speed take yourself from my eyes.</p></div>
+<div class="speech"><span class="speaker">HERALD [950–951]</span><p class="nested-p">Know this, now you will undertake a new war: but may victory and strength be to the males.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [952–965]</span><p class="nested-p">But you will find males inhabitants also of this land, not drinking wine made from barley. But do you all, with your loved attendants, take courage, and go to the well-fortified city, inclosed by a deep device of towers. And there are indeed many public abodes, but I have built with no scant hand. It is pleasant to inhabit well-built abodes with many others; but if it be any greater pleasure, you are at liberty to dwell also in abodes which hold but one family. Of these choose the best and what are most pleasing. But I will be your patron, and all the citizens, by whom this decree is now passed. Why wait you for more powerful ones than these?</p></div>
+<div class="speech"><span class="speaker">CHORUS [966–974]</span><p class="nested-p">But in return for good things may you abound with
+
+<hr class="pb-hr"><span class="pb" id="pb-232">[Page 232]</span>
+<span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="967-1001"></span>
+good, divine king of the Pelasgians. But benevolently send hither our father Danaus, of good courage, prudent, and our chief adviser. For his is the first counsel, where it behoves us to inhabit abodes, and [where is] a place not subject to envy. Every one is ready to speak reproach against foreigners: but may the best things befall.</p></div>
+<div class="speech"><span class="speaker">PELASGUS [975–979]</span><p class="nested-p">Both with fair fame, and with no wrathful rumour of the people regulate yourselves in the country, O friendly attendants, so as Danaus has assigned you to each [of his daughters] a servile dowry.</p></div>
+<div class="speech"><span class="speaker">DANAUS [980–1013]</span><p class="nested-p">O daughters, it is fitting to pay vows to the Argives, and to sacrifice and pour libations, as to the Olympian gods, since they are our preservers with one mind. And they have heard with indignation from me what things have been done with regard to our headstrong friends, our kindred: but they have appointed for me these attendants and armed guards, that I might have this mark of honour, and that I might not unexpectedly perish without their knowledge by the death of the spear, and an everlasting pollution be upon this city. I having obtained<a href="#note-232.1" class="fn-link" data-note="232.1">232.1</a> such things, do you observe a proper gratitude of mind more precious<a href="#note-232.2" class="fn-link" data-note="232.2">232.2</a>. And these things, indeed write down in addition to the many other written prudent sayings of your father, so as in time to convince the unknown band<a href="#note-232.3" class="fn-link" data-note="232.3">232.3</a>. But every one bears a ready evil tongue against a stranger, and to speak slander is an easy thing. But I exhort you not to disgrace me, being of a time of life which is attractive to men. And by no means is the tender mature fruit easy to guard: but beasts and mortals harm it in somewise and winged and four-footed animals. Venus proclaims the dropping fruits: I affirm that rapine awaits them in whatever way they [try to] hinder it<a href="#note-232.4" class="fn-link" data-note="232.4">232.4</a>. And on the fair-formed beauty of virgins every one that passes by sends forth a melting dart from his eye, overcome by desire. Therefore let us not suffer those things on account of which we have had much toil, and much sea has been†<a href="#note-232.5" class="fn-link" data-note="232.5">232.5</a> passed over in a ship, nor let us cause disgrace
+
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-233">[Page 233]</span>
+<span class="tei-unknown-milestone" data-tei-unit="linechunk" data-tei-n="1008-1060"></span>
+to us, and pleasure to my enemies. But even a double dwelling is offered to us, the one, Pelasgus, and the other, the city gives, to dwell apart from servants: these things are easy. Only observe these injunctions of your father, honouring modesty more than life.</p></div>
+<div class="speech"><span class="speaker">CHORUS [1014–1047]</span><p class="nested-p">In other things may we be fortunate from the gods, but on account of my mature age be of good courage, father: for unless something new has been determined by the gods, I will not turn aside the former step of my mind. Go now celebrating the blessed gods who guard the state, both those inhabiting the city, and those who dwell around the ancient wave of Erasinus. But do you, attendants, receive the strain<a href="#note-233.1" class="fn-link" data-note="233.1">233.1</a>: and let praise possess this city of Pelasgians, nor let us adore the mouths of Nile with hymns, but the rivers that pour through this country a willing stream, authors of increase, softening this soil of the earth with enriching weaves. And may chaste Diana regard with pity this train: nor through necessity let Cythercan nuptials come: but this reward is hateful<a href="#note-233.2" class="fn-link" data-note="233.2">233.2</a>. But this favouring strain neglects not Venus: for she has a power over Jove together with Juno: and the nearest to the many-counselled goddess is honoured for her mighty works. But loved companions are present with mother [Venus], and no passion is disobedient to soothing persuasion. But to Harmonia is given a portion of deceiving Venus and the ways of loves. Expeditions by sea against us fugitive, and dire woes, and bloody wars, in truth I dread beforehand. For why have they performed a lucky voyage with swift pursuit?</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1048–1051]</span><p class="nested-p">Whatever is fated, that will take place: the great immense mind of Jove is not to be transgressed. But perhaps with many other nuptials this event will be according to what has formerly befallen other women.</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1052–1053]</span><p class="nested-p">O mighty Jove defend me from the nuptials of the sons of <blockquote>Ægyptus.</blockquote></p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1055–1055]</span><p class="nested-p">That, indeed, would be best: but you would soothe [a deity] not to be soothed.</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1056–1056]</span><p class="nested-p">But you at least knew not the future.</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1057–1057]</span><p class="nested-p">Howcan I behold the divine mind, a fathomless view? Pray now for moderate things.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-234">[Page 234]</span>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1061–1061]</span><p class="nested-p">What moderation do you teach me?</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1062–1062]</span><p class="nested-p">Not to pry into the affairs of the gods.</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1063–1067]</span><p class="nested-p">May royal Jove repel the hateful hostile nuptials of the men, who delivered Io from her misery, well restraining her with healing hand, with benevolent force having founded<a href="#note-234.1" class="fn-link" data-note="234.1">234.1</a> [our race].</p></div>
+<div class="speech"><span class="speaker">SEMI-CHORUS [1068–1074]</span><p class="nested-p">Let him afford strength also to women. I prefer the better of two evils, and partly good and partly bad<a href="#note-234.2" class="fn-link" data-note="234.2">234.2</a>, and that justice follow justice with my prayers by liberating aid from the god.</p></div></div>
+        </div>
+
+        <div class="column">
+            <h3>Footnotes</h3>
+            <div class="content" id="footnote-content"><div class="line" id="note-210.1"><a class="note-ref" data-note="210.1">210.1</a> <span class="text">1 In translating this very corrupt play, I shall adhere as closely to Dindorf as
+                is possible. As it is seldom read, and as the text is so uncertain, I shall
+                not burden the text with much illustrative annotation. Paley&#x27;s edition is
+                the only one that will give the student much assistance. To enumerate all
+                the various readings, would fill half a volume, but I shall notice such as
+                seem to furnish an easy clue to the sense.</span></div>
+<div class="line" id="note-210.2"><a class="note-ref" data-note="210.2">210.2</a> <span class="text">2 I follow <strong xmlns="http://www.tei-c.org/ns/1.0">Robortelli</strong>. See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-211.1"><a class="note-ref" data-note="211.1">211.1</a> <span class="text">1 But see <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-211.2"><a class="note-ref" data-note="211.2">211.2</a> <span class="text">2 There is no finite verb.</span></div>
+<div class="line" id="note-211.3"><a class="note-ref" data-note="211.3">211.3</a> <span class="text">3 This is reasoning with a vengeance. See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-211.4"><a class="note-ref" data-note="211.4">211.4</a> <span class="text">4 On this epithet of Egypt, see <strong xmlns="http://www.tei-c.org/ns/1.0">Stanley</strong>.</span></div>
+<div class="line" id="note-211.5"><a class="note-ref" data-note="211.5">211.5</a> <span class="text">5 See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-212.1"><a class="note-ref" data-note="212.1">212.1</a> <span class="text">1 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">άρους.</blockquote> See <strong xmlns="http://www.tei-c.org/ns/1.0">Dindorf</strong>.</span></div>
+<div class="line" id="note-212.2"><a class="note-ref" data-note="212.2">212.2</a> <span class="text">2 i. e. it is not thrown prostrate. The ingenious author of the last Oxford
+                translation, who certainly knew more about English than Greek, has got
+                through this chorus, indeed through the whole play, without the slightest
+                perception of the corruptions of the original, re-writing the play in
+                English, not rendering the Greek.</span></div>
+<div class="line" id="note-212.3"><a class="note-ref" data-note="212.3">212.3</a> <span class="text">3 Hermann reads <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">έλπιδων,</blockquote> and so Dindorf and Paley.</span></div>
+<div class="line" id="note-212.4"><a class="note-ref" data-note="212.4">212.4</a> <span class="text">4 But see Paley, whose edition is indispensable to any one who attempts to
+                read the <i xmlns="http://www.tei-c.org/ns/1.0">Supplices</i>.</span></div>
+<div class="line" id="note-212.5"><a class="note-ref" data-note="212.5">212.5</a> <span class="text">5 I read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τεθαλὼς</blockquote> with Bothe, Dindorf, and Paley.</span></div>
+<div class="line" id="note-212.6"><a class="note-ref" data-note="212.6">212.6</a> <span class="text">6 So <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-212.7"><a class="note-ref" data-note="212.7">212.7</a> <span class="text">7 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τιμω̃.</blockquote> See <strong xmlns="http://www.tei-c.org/ns/1.0">Dindorf</strong>.</span></div>
+<div class="line" id="note-212.8"><a class="note-ref" data-note="212.8">212.8</a> <span class="text">8 See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-212.9"><a class="note-ref" data-note="212.9">212.9</a> <span class="text">9 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δόμος, έορὸς</blockquote> trabis fabrica, pro navis, ut Hor. trabe Cypria. Paley.</span></div>
+<div class="line" id="note-213.1"><a class="note-ref" data-note="213.1">213.1</a> <span class="text">1 Dindorf follows the emendation of Burges.</span></div>
+<div class="line" id="note-213.2"><a class="note-ref" data-note="213.2">213.2</a> <span class="text">2 Such should be the sense. But neither that, nor any other meaning can be
+                elicited from the words as they stand. Heath reads <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οσθένει.</blockquote> Paley,
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σθένουσ' ίωχμῳ̃'Ασφαέως άδμη̃τος,</blockquote> with much ingenuity. See his note.
+                Perhaps, however, the fault lies in the verses being wrongly distinguished,
+                and the true reading is simply <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">άσφαλὲς, Παντί τὲ σθένει. Διγμοισι δ'
+                άσφαλέως, κτλ.</blockquote> But in such passages, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">hariolari licet, at nil prœterea.</blockquote></span></div>
+<div class="line" id="note-213.3"><a class="note-ref" data-note="213.3">213.3</a> <span class="text">3 I follow Wellauer&#x27;s <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ήλιόκτυπον</blockquote> with Dindorf and Paley. The conjunction
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ή</blockquote> could not possibly stand.</span></div>
+<div class="line" id="note-213.4"><a class="note-ref" data-note="213.4">213.4</a> <span class="text">4 This is Blomfield&#x27;s splendid emendation, learnedly supported by Burges,
+                Gaisford, and Paley. Wellauer&#x27;s <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸν γάίον</blockquote> is preferred by Dindorf.
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">του̃γγαιον</blockquote> must be corrected.</span></div>
+<div class="line" id="note-213.5"><a class="note-ref" data-note="213.5">213.5</a> <span class="text">5 I read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">α Ζην, 'Ιου̃ς ιὼ</blockquote> with Bamberger. See <strong xmlns="http://www.tei-c.org/ns/1.0">Dindorf</strong>.</span></div>
+<div class="line" id="note-213.6"><a class="note-ref" data-note="213.6">213.6</a> <span class="text">6 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λαβὼν,</blockquote> Wordsworth., with the approbation of Dindorf and Paley.</span></div>
+<div class="line" id="note-214.1"><a class="note-ref" data-note="214.1">214.1</a> <span class="text">1 There is much uncertainty about the reading. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τεθηγμνος,</blockquote> Pearson. Burges,
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τεθηγμνος,</blockquote> Abresch. Dindorf, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τεθηγμνος,</blockquote> Steph. Turn. Paley.</span></div>
+<div class="line" id="note-214.2"><a class="note-ref" data-note="214.2">214.2</a> <span class="text">2 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εύωνύμων,</blockquote> Pearson, Dind. Paley.</span></div>
+<div class="line" id="note-214.3"><a class="note-ref" data-note="214.3">214.3</a> <span class="text">3 In Rob. the dramatis personæ are differently arranged. See Burges and
+                Paley.</span></div>
+<div class="line" id="note-214.4"><a class="note-ref" data-note="214.4">214.4</a> <span class="text">4 Burges and Scholefield rightly place v. 210 after 206. See the notes of
+                Paley. The whole passage, as it now stands, in fact, the whole play is a
+                mass of hopeless absurdity.</span></div>
+<div class="line" id="note-215.1"><a class="note-ref" data-note="215.1">215.1</a> <span class="text">1 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ω̋στε έλευθέρους ήμα̃ς γίγνεσθαι</blockquote> Wellauer.</span></div>
+<div class="line" id="note-215.2"><a class="note-ref" data-note="215.2">215.2</a> <span class="text">2 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἃκοντος πατρός,</blockquote> Burges, Dind.</span></div>
+<div class="line" id="note-215.3"><a class="note-ref" data-note="215.3">215.3</a> <span class="text">3 See <strong xmlns="http://www.tei-c.org/ns/1.0">Dindorf</strong>. Burges is extremely ingenious in reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ρ̀ητὸν Ερμου̃ κλα̃ρον
+                η̋ πόλεωςάγόν;</blockquote> i. e. herald or ruler.</span></div>
+<div class="line" id="note-216.1"><a class="note-ref" data-note="216.1">216.1</a> <span class="text">1 See the learned notes of Stanley and Paley.</span></div>
+<div class="line" id="note-217.1"><a class="note-ref" data-note="217.1">217.1</a> <span class="text">1 This verse is condemned as spurious.</span></div>
+<div class="line" id="note-217.2"><a class="note-ref" data-note="217.2">217.2</a> <span class="text">2 Read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πανσόφου .... τούτου</blockquote> with Tyrwhitt. But even then, the lilt seems
+                absurd, unless we read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ πα̃ν σαφὲς</blockquote> with Fr. Port.</span></div>
+<div class="line" id="note-218.1"><a class="note-ref" data-note="218.1">218.1</a> <span class="text">1 But <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ώνητο</blockquote> is probably the true reading. See Dind. Paley.</span></div>
+<div class="line" id="note-218.2"><a class="note-ref" data-note="218.2">218.2</a> <span class="text">2 Burges, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λυκοδέρκτων,</blockquote> elegantly. Hermann, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λυκοδιώκτον,</blockquote> which Dindorf
+                prefers.</span></div>
+<div class="line" id="note-218.3"><a class="note-ref" data-note="218.3">218.3</a> <span class="text">3 See Paley, whose explanation I have followed.</span></div>
+<div class="line" id="note-218.4"><a class="note-ref" data-note="218.4">218.4</a> <span class="text">4 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γεραιόφρων</blockquote> is Burges' emendation.</span></div>
+<div class="line" id="note-218.5"><a class="note-ref" data-note="218.5">218.5</a> <span class="text">5 Hermann has elicited <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ου πενει</blockquote> from the scholiast.</span></div>
+<div class="line" id="note-219.1"><a class="note-ref" data-note="219.1">219.1</a> <span class="text">1 See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>. I have still no doubt that Dindorf is right in reading
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀστοι̃ς—τω̃νδε</blockquote> with Stanley.</span></div>
+<div class="line" id="note-219.2"><a class="note-ref" data-note="219.2">219.2</a> <span class="text">2 See Abresch.</span></div>
+<div class="line" id="note-219.3"><a class="note-ref" data-note="219.3">219.3</a> <span class="text">3 &quot;<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">Sensus est: secundum merita (εἰκότως) malos puniens, justos bene
+                faciens.</blockquote>"-Paley.</span></div>
+<div class="line" id="note-219.4"><a class="note-ref" data-note="219.4">219.4</a> <span class="text">4 I have followed <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-220.1"><a class="note-ref" data-note="220.1">220.1</a> <span class="text">1 i. e. the suppliants.</span></div>
+<div class="line" id="note-222.1"><a class="note-ref" data-note="222.1">222.1</a> <span class="text">1 Read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φόνου</blockquote> with Pauw, Haupt, and Paley. I myself should prefer
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φθόνον.</blockquote></span></div>
+<div class="line" id="note-222.2"><a class="note-ref" data-note="222.2">222.2</a> <span class="text">2 I should read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φρενας,</blockquote> with Bothe, in ed. 1.</span></div>
+<div class="line" id="note-222.3"><a class="note-ref" data-note="222.3">222.3</a> <span class="text">3 See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-222.4"><a class="note-ref" data-note="222.4">222.4</a> <span class="text">4 i. e. the ship containing their suitors.</span></div>
+<div class="line" id="note-223.1"><a class="note-ref" data-note="223.1">223.1</a> <span class="text">1 The play upon the name of Epaphus is kept up.</span></div>
+<div class="line" id="note-223.2"><a class="note-ref" data-note="223.2">223.2</a> <span class="text">2 Or &quot; plied.&quot;</span></div>
+<div class="line" id="note-223.3"><a class="note-ref" data-note="223.3">223.3</a> <span class="text">3 See Paley</span></div>
+<div class="line" id="note-224.1"><a class="note-ref" data-note="224.1">224.1</a> <span class="text">1 &quot;<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">No sooner said than done.</blockquote>"-Paley.</span></div>
+<div class="line" id="note-224.2"><a class="note-ref" data-note="224.2">224.2</a> <span class="text">2 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βουλιῶς.</blockquote> Stanl. Dind.</span></div>
+<div class="line" id="note-224.3"><a class="note-ref" data-note="224.3">224.3</a> <span class="text">3 See Paley&#x27;s clever note.</span></div>
+<div class="line" id="note-225.1"><a class="note-ref" data-note="225.1">225.1</a> <span class="text">1 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">στάσις</blockquote> is supplied by Paley: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔρις</blockquote> by Heath.</span></div>
+<div class="line" id="note-226.1"><a class="note-ref" data-note="226.1">226.1</a> <span class="text">1 See <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-226.2"><a class="note-ref" data-note="226.2">226.2</a> <span class="text">2 Dindorf reads <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ίσως γὰρ ἂν</blockquote> with Burges, condemning the attempts to defend the
+                common reading without <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἂν.</blockquote> Paley differs, but unsatisfactorily.</span></div>
+<div class="line" id="note-226.3"><a class="note-ref" data-note="226.3">226.3</a> <span class="text">3 But see <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>. As the verses now stand, there is no clear sense.</span></div>
+<div class="line" id="note-227.1"><a class="note-ref" data-note="227.1">227.1</a> <span class="text">1 For the sense of the whole passage, see <strong xmlns="http://www.tei-c.org/ns/1.0">Paley</strong>.</span></div>
+<div class="line" id="note-227.2"><a class="note-ref" data-note="227.2">227.2</a> <span class="text">2 There seems an evident want of the adversative particle. Perhaps we should
+                read, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νυκτὸς (i. e. nocte) δ' ἀποστείχοντος ήλιου.</blockquote> But perhaps the words <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἰς νύκτ'</blockquote>
+                are a gloss, and have obliterated the genuine reading. The apodosis <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ούτω
+                γένοιτο</blockquote> would best answer to some such form as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἷον δ' ἀποστείχοντος, κ. τ. λ.</blockquote>
+                Bothe's <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐνάς τ' ἀποστείχοντος</blockquote> is ingenious, and seems confirmed by Soph.
+                <i xmlns="http://www.tei-c.org/ns/1.0">Trach.</i> 94, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νὺξ τίκτει κατευνάζει τε φλογιζόμενον "Αλλον,</blockquote> and Horace's "<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">Solis
+                ab Hesperio cubili.</blockquote>"</span></div>
+<div class="line" id="note-228.1"><a class="note-ref" data-note="228.1">228.1</a> <span class="text">1 I am ill satisfied with the repetition <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κέαρ .... καρδία</i>.</span></div>
+<div class="line" id="note-228.2"><a class="note-ref" data-note="228.2">228.2</a> <span class="text">2 The sense requires this. Paley simply reads <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τάδε.</blockquote> Dindorf <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τόδε χριμφθὲν
+                χροΐ,</blockquote> ingeniously. I prefer Paley's emendation, removing the stop after
+                <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χεροι̃ν,</blockquote> and placing it after <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χριμφθη̃ναι</blockquote> (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">έγχρ.</blockquote> being against the metre).</span></div>
+<div class="line" id="note-228.3"><a class="note-ref" data-note="228.3">228.3</a> <span class="text">3 See Paley&#x27;s note.</span></div>
+<div class="line" id="note-228.4"><a class="note-ref" data-note="228.4">228.4</a> <span class="text">4 I prefer Burges&#x27; <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπρόστειπτος</i>, but do not admire his subsequent
+            alterations. Pauw's <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἰόπο̹ων</i> is frigidity itself.</span></div>
+<div class="line" id="note-228.5"><a class="note-ref" data-note="228.5">228.5</a> <span class="text">5 This is all corrupt.</span></div>
+<div class="line" id="note-228.6"><a class="note-ref" data-note="228.6">228.6</a> <span class="text">6 See Dindorf&#x27;s note.</span></div>
+<div class="line" id="note-228.7"><a class="note-ref" data-note="228.7">228.7</a> <span class="text">7 See <strong xmlns="http://www.tei-c.org/ns/1.0">Linwood's Lex.</strong>. I myself believe that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νᾶϊος, υἷος</blockquote> is the true reading.</span></div>
+<div class="line" id="note-228.8"><a class="note-ref" data-note="228.8">228.8</a> <span class="text">8 As Dindorf and Paley have completely given up this passage, the reader will
+                not be surprised at my translation. Burges has dealt very ingeniously with
+                the whole, but I am unwilling to believe that such passages are within the
+                reach of certain criticism.</span></div>
+<div class="line" id="note-229.1"><a class="note-ref" data-note="229.1">229.1</a> <span class="text">1 For a just criticism on this mass of barbarism and absurdity, see Paley on v.
+                815, sqq.</span></div>
+<div class="line" id="note-229.2"><a class="note-ref" data-note="229.2">229.2</a> <span class="text">2 See Donaldson, <i xmlns="http://www.tei-c.org/ns/1.0">New Cratylus</i>, p. 580, and Paley. I shall obelize the
+                passages that are quite hopeless, to show that the translation is only guess-work. To re-write the author by implication is not the business of the
+                translator.</span></div>
+<div class="line" id="note-229.3"><a class="note-ref" data-note="229.3">229.3</a> <span class="text">3 I have followed Schutz&#x27;s, Stevens&#x27;, and Paley&#x27;s corrections, although I am
+                nearly as much in the dark as ever.</span></div>
+<div class="line" id="note-231.1"><a class="note-ref" data-note="231.1">231.1</a> <span class="text">1
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">Surely these verses should be allotted thus:
+<blockquote lang="grc">Βας. οὐ γὰρ .... τάδε.</blockquote> <blockquote lang="grc">Κηρ. ἀβουκ</blockquote>—<blockquote lang="grc">Βας. ἀλλ' ὡς</blockquote>—<blockquote lang="grc">Κηρ. Καὶ γὰρ</blockquote></blockquote>—I am partly, but differently anticipated by Burges. As the verses now stand, they are destitute of meaning. Paley reads <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἰδὼς ἐννἐπω</blockquote> with Aid. Rob. The necessity for transposition does not end here, as <strong xmlns="http://www.tei-c.org/ns/1.0">Burges</strong> alone has seen, but has carried it too far.</span></div>
+<div class="line" id="note-232.1"><a class="note-ref" data-note="232.1">232.1</a> <span class="text">1
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Correct to τυγχάνοντος.</blockquote></span></div>
+<div class="line" id="note-232.2"><a class="note-ref" data-note="232.2">232.2</a> <span class="text">2
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">See <strong>Paley</strong>. I am but half satisfied.</blockquote></span></div>
+<div class="line" id="note-232.3"><a class="note-ref" data-note="232.3">232.3</a> <span class="text">3
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">i. e. "to show what you really are."</blockquote></span></div>
+<div class="line" id="note-232.4"><a class="note-ref" data-note="232.4">232.4</a> <span class="text">4
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">But see <strong>Paley</strong>.</blockquote></span></div>
+<div class="line" id="note-232.5"><a class="note-ref" data-note="232.5">232.5</a> <span class="text">5
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">But read <blockquote lang="grc">οὕνεκ ἠρόθη</blockquote> with Heath, Dind. Paley.</blockquote></span></div>
+<div class="line" id="note-233.1"><a class="note-ref" data-note="233.1">233.1</a> <span class="text">1
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέλος</blockquote> Le Grand, Dind. Paley.</span></div>
+<div class="line" id="note-233.2"><a class="note-ref" data-note="233.2">233.2</a> <span class="text">2
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">i. e., nuptials, otherwise delightful, are in our case hateful.</blockquote></span></div>
+<div class="line" id="note-234.1"><a class="note-ref" data-note="234.1">234.1</a> <span class="text">1
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="eng">I scarcely think Paley's construing correct, and prefer Bothe's elegant emendation, <blockquote lang="grc">ἐμμανη̃ ϐου̃ν οἰκτίσα</blockquote></blockquote></span></div>
+<div class="line" id="note-234.2"><a class="note-ref" data-note="234.2">234.2</a> <span class="text">2
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δίμοιροι</blockquote></span></div></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Collapsible TOC Code ---
+            const tocContent = document.getElementById('toc-content');
+            if (tocContent) {
+                // 1. Mark items with children
+                tocContent.querySelectorAll('li > ul').forEach(ul => {
+                    ul.parentElement.classList.add('has-children');
+                });
+
+                // 2. Add click listener for toggling
+                tocContent.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link && link.parentElement.classList.contains('has-children')) {
+                        // Make sure the click wasn't on the main 'close' button
+                        if (event.target.id !== 'toc-toggle') {
+                             event.preventDefault(); // Stop the link from jumping
+                             link.parentElement.classList.toggle('open'); // Toggle open/closed
+                        }
+                    }
+                });
+            }
+            // --- End of Collapsible TOC Code ---
+
+
+            // --- Note-Linking Code ---
+            const container = document.querySelector('.container');
+            const englishContent = document.getElementById('english-content');
+            const footnoteContent = document.getElementById('footnote-content');
+            let lastHighlightedNoteElement = null;
+            let lastHighlightedLinkElements = []; // Can be multiple links
+
+            // Function to remove all highlights
+            function removeHighlights() {
+                if (lastHighlightedNoteElement) {
+                    lastHighlightedNoteElement.classList.remove('highlight');
+                }
+                lastHighlightedLinkElements.forEach(link => {
+                    link.classList.remove('highlight');
+                });
+                lastHighlightedNoteElement = null;
+                lastHighlightedLinkElements = [];
+            }
+
+            // Function to find, scroll, and highlight elements
+            function findScrollHighlight(targetNoteId, scrollTargetColumn) { // scrollTargetColumn is 'note' or 'link'
+                removeHighlights(); // Clear previous state
+
+                const noteElement = document.getElementById('note-' + targetNoteId);
+                const linkSelector = '.fn-link[data-note="' + targetNoteId + '"]';
+                const linkElements = englishContent.querySelectorAll(linkSelector);
+
+                // Highlight Note
+                if (noteElement) {
+                    noteElement.classList.add('highlight');
+                    lastHighlightedNoteElement = noteElement; // Store for removal
+                    // Scroll the note column if the link was clicked
+                    if (scrollTargetColumn === 'note') {
+                        // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        noteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                // Highlight ALL corresponding links and scroll the FIRST one
+                if (linkElements.length > 0) {
+                    linkElements.forEach(link => {
+                        link.classList.add('highlight'); // Highlight the link(s) in text
+                    });
+                    lastHighlightedLinkElements = Array.from(linkElements); // Store all for removal
+                    // Scroll the first link if the note was clicked
+                    if (scrollTargetColumn === 'link') {
+                         // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        linkElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+
+            // Add click listener using event delegation on the container
+            container.addEventListener('click', function(event) {
+                const linkTarget = event.target.closest('.fn-link');
+                const noteRefTarget = event.target.closest('.note-ref');
+
+                if (linkTarget && linkTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = linkTarget.dataset.note;
+                    console.log('Clicked text link for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'note'); // Scroll the note column
+
+                } else if (noteRefTarget && noteRefTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = noteRefTarget.dataset.note;
+                    console.log('Clicked footnote ref for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'link'); // Scroll the text column
+                }
+            });
+
+            // --- TOC Toggle (Show/Hide) Script ---
+            const tocToggle = document.getElementById('toc-toggle'); // Close button
+            const tocOpenButton = document.getElementById('toc-open-button'); // Open button
+            const body = document.body;
+
+            if (tocToggle && tocOpenButton) { // Only run if TOC elements exist
+                
+                // CLOSE Button (inside TOC)
+                tocToggle.addEventListener('click', function() {
+                    body.classList.add('toc-collapsed');
+                });
+                
+                // OPEN Button (outside TOC)
+                tocOpenButton.addEventListener('click', function() {
+                    body.classList.remove('toc-collapsed');
+                });
+            }
+            // --- END TOC Toggle Script ---
+            
+        });
+    </script>
+</body>
+</html>

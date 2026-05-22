@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Persians</title>
+    <style>
+    body { font-family: 'Georgia', serif; display: flex; flex-direction: column; height: 100vh; margin: 0; background-color: #fdfdfd; }
+        header { padding: 10px 20px; border-bottom: 2px solid #ddd; background-color: #fff; text-align: center; z-index: 10; }
+        h1 { margin: 0; font-size: 1.8em; color: #333; }
+        h2 { margin: 5px 0 0; font-size: 1.2em; color: #666; font-style: italic; font-weight: normal;}
+        .container {
+            display: grid;
+            /* Default: 2 columns */
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            flex-grow: 1;
+            padding: 10px;
+            overflow: hidden;
+        }
+                        /* --- Fix TOC scroll behavior --- */
+        .container {
+            min-height: 0; /* allow flex/grid children to shrink and scroll */
+        }
+
+        .toc-wrapper {
+            min-height: 0; /* same fix for nested flex/grid container */
+        }
+
+        /* *** 3-column layout when TOC is present *** */
+        .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; /* TOC wrapper, Text, Notes */
+        }
+        .column {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;  /* This is fine for .column */
+        }
+
+        /* *** Wrapper for TOC column + Open Button *** */
+        .toc-wrapper {
+            position: relative; /* Context for the close button */
+            width: 250px; /* Initial width */
+            transition: width 0.3s ease, min-width 0.3s ease;
+            min-width: 250px;
+            /* The wrapper itself is a column in the grid, so it will be flex */
+            display: flex;
+            flex-direction: column;
+            /* Use transparent background for the wrapper */
+            background-color: transparent;
+            border: none;
+        }
+
+        /* *** TOC Column Styles (THE FIX IS HERE) *** */
+        .toc-column {
+            width: 100%; /* Fill the wrapper */
+            flex-grow: 1;
+            border: 1px solid #e0e0e0; /* Border now on the column */
+            border-radius: 4px; /* Rounded corners */
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;   /* <-- FIX 1: This column scrolls */
+            min-height: 0;      /* <-- FIX 2: This column is allowed to shrink */
+        }
+        .toc-column h3 { /* TOC Title */
+            background-color: #e9ecef; 
+            position: sticky; top: 0; z-index: 6;
+            font-size: 0.9em !important; /* Make TOC header smaller */
+            padding: 12px 12px 12px 35px; /* Add padding for close button */
+            text-align: center; margin: 0;
+            border-bottom: 1px solid #e0e0e0; 
+            color: #444; text-transform: uppercase; letter-spacing: 0.5px;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        #toc-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* *** Styling for nested TOC lists *** */
+        #toc-content > ul {
+            padding: 10px 15px; /* Padding for the list */
+        }
+        #toc-content ul ul {
+            padding-left: 20px; /* Indent nested lists */
+            margin: 0;
+        }
+        #toc-content li a {
+            display: block;
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+            /* overflow: hidden;  Hide overflow */
+            white-space: normal;
+        }
+        #toc-content li a:hover {
+            background-color: #e9ecef;
+        }
+        /* *** Styling for nested TOC items *** */
+        #toc-content ul ul li a {
+            font-size: 0.85em; /* Make sub-items slightly smaller */
+            color: #333; /* Darken them slightly */
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-bottom: none; /* No border for sub-items */
+        }
+        #toc-content ul ul li a:hover {
+            background-color: #dde; /* Different hover for sub-items */
+        }
+/* --- New Collapsible TOC Styles --- */
+
+    /* Hide nested lists by default */
+    #toc-content li ul {
+        display: none;
+        /* Keep your existing padding-left for indentation */
+    }
+
+    /* Style for parent items that can be clicked */
+    #toc-content li.has-children > a {
+        cursor: pointer; /* Show it's clickable */
+        /* Add a small indicator */
+    }
+
+    /* Add a clickable triangle/plus sign */
+    #toc-content li.has-children > a::before {
+        content: '► '; /* Collapsed state indicator */
+        font-size: 0.8em;
+        margin-right: 3px;
+        color: #555;
+    }
+
+    /* When the .open class is added, show the list */
+    #toc-content li.has-children.open > ul {
+        display: block;
+    }
+
+    /* Change the triangle to its expanded state */
+    #toc-content li.has-children.open > a::before {
+        content: '▼ '; /* Expanded state indicator */
+    }               
+        /* CLOSE Button (inside TOC) */
+        #toc-toggle {
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            z-index: 7; /* Above TOC header */
+            background: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            line-height: 1;
+            border-radius: 3px;
+        }
+
+        /* OPEN Button (sits inside wrapper) */
+        #toc-open-button {
+             display: none; /* Hidden by default */
+             padding: 8px;
+             font-size: 1.2em;
+             cursor: pointer;
+             border: 1px solid #ccc;
+             background: #f8f9fa;
+             border-radius: 3px;
+             margin: 0 0 0 5px; /* Position it nicely in the top-left */
+             width: 38px; /* Fixed width */
+             height: 38px; /* Fixed height */
+             box-sizing: border-box; /* Include padding in size */
+        }
+
+        /* Styles for collapsed TOC */
+        body.toc-collapsed .toc-wrapper {
+            width: 45px; /* Width of the open button area */
+            min-width: 45px;
+        }
+        body.toc-collapsed .toc-column {
+             display: none; /* Hide whole column */
+        }
+        body.toc-collapsed #toc-open-button {
+            display: block; /* Show open button */
+        }
+        
+        /* Adjust main grid when collapsed (NO change needed) */
+        body.toc-collapsed .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; 
+        }
+
+
+/* --- Style for <add> tags --- */
+        .tei-add {
+            color: #006400; /* Dark green text */
+        }
+
+        .tei-del {
+            text-decoration: none; 
+            font-size: 0.9em; 
+            color: #777; 
+        }
+        .tei-add::before {
+            content: '<';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-right: 0.1em; /* Small space after bracket */
+        }
+        .tei-add::after {
+            content: '>';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-left: 0.1em; /* Small space before bracket */
+        }
+        /* --- Style for <gloss> tags --- */
+        .gloss {
+            border-bottom: 1px dotted #555; /* Subtle dotted underline */
+            cursor: help; /* Changes cursor to indicate potential tooltip */
+        }
+        /* --- Style for <unclear> tags --- */
+        .unclear {
+            opacity: 0.7;
+            font-style: italic;
+            color: #555;
+        }
+        .gloss[title] { 
+        }
+        .loc { color: #666; text-decoration: none; font-family: monospace; margin-right: 0.5em; }
+        .column > h3 {
+            text-align: center; margin: 0; padding: 12px;
+            border-bottom: 1px solid #e0e0e0; background-color: #f9f9ff;
+            color: #444; font-size: 1em; text-transform: uppercase; letter-spacing: 0.5px;
+            position: sticky; top: 0; z-index: 5;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        .content {
+            padding: 15px;
+            overflow-y: auto;
+            flex-grow: 1;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 0;      /* <-- FIX 3: Allows main/note columns to scroll */
+        }
+
+        /* Override for TOC content to allow parent to scroll */
+        #toc-content {
+            overflow-y: visible; /* <-- FIX 4: Let the parent (.toc-column) handle scrolling */
+            flex-grow: 0;       /* <-- FIX 5: Stop this from growing to fit its content */
+            padding: 0;         /* Padding is moved to the <ul> */
+            min-height: auto;   /* Override min-height from .content */
+        }
+
+        /* English Text Column Styles */
+        #english-content h2, #english-content h3 { scroll-margin-top: 10px; } /* Add margin for scrolling */
+        #english-content h2 { font-size: 1.4em; color: #000; font-style: normal; text-align: center; margin-bottom: 1em;}
+        /* Styling for div/head (book/chapter) */
+        #english-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            font-style: normal; 
+            text-align: left; 
+            margin-top: 1.5em; 
+            margin-bottom: 0.5em; 
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 5px;
+        }
+        /* More specific for index main titles */
+        #english-content h2.index-main {
+            font-size: 1.6em;
+            font-style: normal;
+            text-align: center;
+            margin: 1em 0;
+        }
+        #english-content h4 { font-size: 1.1em; text-align: center; margin: 1em 0 0.5em; text-transform: uppercase;}
+        #english-content ul { list-style-type: none; padding-left: 0; text-align: center; margin-bottom: 1em;}
+        #english-content li { margin-bottom: 0.3em; }
+
+/* New Cast List Styles */
+        #english-content .cast-list {
+            list-style-type: none;
+            text-align: left; /* Align text to the left */
+            margin: 1.5em 3em; /* Give it some horizontal margin */
+            padding: 1.5em; /* Add padding inside the box */
+            border: 1px solid #eee;
+            background: #fdfdfd;
+            border-radius: 4px;
+        }
+        #english-content .cast-list li {
+            margin-bottom: 0.6em; /* Space out the list items */
+        }
+        #english-content .cast-list .role {
+            font-weight: bold;
+            color: #800000; /* Match the speaker color */
+        }
+        #english-content .cast-list .role-desc {
+            color: #333;
+        }
+        
+        #english-content .speech { margin-bottom: 1em; }
+        #english-content .speaker { font-weight: bold; margin-right: 8px; color: #800000; display: block; margin-bottom: 0.2em; }
+        #english-content .pb-hr { border: none; border-top: 1px dashed #ccc; margin: 1em 0; } /* Style hr for pb */
+        #english-content .pb { display: block; text-align: center; color: #888; font-size: 0.9em; margin-bottom: 1em; }
+        
+        #english-content .stage {
+            display: inline-block; 
+            font-style: italic; 
+            color: #555;
+            background-color: #fafafa; 
+            padding: 5px 8px;      
+            margin: 5px;           
+            border: 1px solid #eee;  
+            border-radius: 3px;
+            line-height: 1.4;      
+        }   
+
+        /* Table Styles */
+        #english-content table {
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+        }
+        #english-content caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            caption-side: top;
+            margin-bottom: 0.5em;
+        }
+        /* Style for character names in introductory lists/paragraphs */
+        #english-content .persName { /* Adjust selector if you use a different class */
+            font-weight: bold;
+            color: #800000; /* Same color as .speaker */
+            /* Do NOT add display: block or margins here */
+        }
+        #english-content th, #english-content td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        #english-content thead tr {
+            background-color: #f2f2f2;
+        }
+        #english-content tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #english-content .fn-link {
+            vertical-align: super; font-size: 0.8em; text-decoration: none;
+            color: #007bff; font-weight: bold; padding: 0 2px;
+            line-height: 1;
+            border-radius: 2px;
+            cursor: pointer; /* Add cursor pointer */
+        }
+        #english-content .fn-link:hover, #english-content .fn-link.highlight {
+             text-decoration: underline; background-color: #fff9c4;
+             outline: 1px solid #fdd835;
+             outline-offset: 1px;
+        }
+        #english-content p { margin: 0.5em 0; }
+        #english-content .verse-line {
+          display: block; /* Add this line */
+          margin: 0.1em 0 0.1em 2em;
+          text-indent: -1em;
+        }
+
+        /* Footnote Column Styles */
+        .line { display: flex; align-items: baseline; padding: 5px; border-radius: 3px; border-bottom: 1px solid #f0f0f0; }
+        .line:last-child { border-bottom: none; }
+        .line.highlight {
+            background-color: #fff9c4;
+            outline: 1px solid #fdd835;
+            outline-offset: -1px; /* Inset outline slightly */
+        }
+        .note-ref {
+            flex-shrink: 0; width: auto; font-size: 0.8em; color: #555;
+            cursor: pointer; text-align: right; margin-right: 10px; font-family: monospace;
+            padding-top: 0.1em;
+        }
+        .note-ref:hover { color: #007bff; text-decoration: underline; }
+        .text { line-height: 1.5; font-size: 0.9em; flex-grow: 1; }
+
+/* This targets the <span> created from a <l> tag inside a <blockquote> */
+        /* --- New Poetry Formatting in Notes --- */
+        
+        /* Style the converted TEI tags within notes */
+        .text blockquote {
+            font-style: italic; color: #333;
+            border-left: 3px solid #ccc;
+            margin: 0.5em 0 0.5em 5px;
+            padding-left: 0.4em; /* ADD THIS LINE - Space between border and text */
+            display: block;
+            /* Apply hanging indent directly to the blockquote */
+            /* padding-left: 2.5em; */
+            /* text-indent: -2.5em;  */
+        }
+
+         /* Add this new rule */
+        .text blockquote .verse-line { /* Or use .text blockquote div or .text blockquote p */
+            padding-left: 2.5em;
+            text-indent: -1.5em;
+            display: block; /* Ensure it's treated as a block */
+            margin: 0; /* Reset any default margins if needed */
+            margin-bottom: 0.5em;
+        }
+         
+        .text i { font-style: italic; }
+        .text strong { font-weight: bold; }
+        .text br {
+             display: block; content: ""; margin-top: 0.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Persians</h1>
+        <h2>Aeschylus (Walter George Headlam, Clinton Edward Sowerby Headlam, trans.) (George Bell & Sons 1909)</h2>
+    </header>
+
+    <div class="container">
+
+        <div class="column">
+            <h3>English Translation</h3>
+            <div class="content" id="english-content"><h3>THE PERSIANS</h3>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-39">[Page 39]</span>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-40">[Page 40]</span>
+<h4>DRAMATIS PERSONÆ</h4>
+<ul class="cast-list">
+<li><span class="role">CHORUS OF PERSIAN ELDERS</span> <span class="role-desc">.</span></li>
+<li><span class="role">ATOSSA, the Queen-Mother</span> <span class="role-desc">.</span></li>
+<li><span class="role">XERXES</span> <span class="role-desc">.</span></li>
+<li><span class="role">GHOST OF DAREIOS</span> <span class="role-desc">.</span></li>
+<li><span class="role">A MESSENGER</span> <span class="role-desc">.</span></li>
+</ul>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-41">[Page 41]</span>
+<p><span class="stage"><p class="nested-p">Scene: The palace of Xerxes at Susa.</p><p class="nested-p">Time: The forenoon after the nocturnal vision of Atossa (v. 182 sqq.).</p><p class="nested-p">The Chorus, assembled in front of the palace (v. 144), give voice to their anxiety concerning the fate of the armada sent against Greece.</p></span></p>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1–161]</span><p class="nested-p">Behold in us the &#x27;Trusty&#x27; remnant—as our name declares—of the Persians who are gone to the land of Hellas, and guardians of the opulent palace rich in gold; whom king Xerxes, prince of Dareios&#x27; line, did himself select for our ripe years to watch over his country.</p><p class="nested-p">Now as to the return of our king and of his army rich in gold, my soul within me is at this present time disturbed, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="10"></span> presaging disaster. For all the strength of the Asian nation is gone abroad, and murmurs at having a new king,<a href="#note-41.1" class="fn-link" data-note="41.1">41.1</a> and neither any messenger nor any horseman arrives at the city of the Persians who left Susa and went forth, and Ecbatana, and the ancient Cissian stronghold, some on horseback, some on shipboard, or as infantry forming close ranks <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="20"></span> of war.</p><hr class="pb-hr"><span class="pb" id="pb-42">[Page 42]</span><p class="nested-p">Amistres, for instance, and Artaphrenes speed forth, and Megabates and Astaspes, Persian leaders; kings subject to the Great King, overseers of a mighty host, masters of the bow and steed, terrible to look on and deadly in combat, in full confidence of spirit.<a href="#note-42.1" class="fn-link" data-note="42.1">42.1</a> Artembares too, who delights in horsemanship, and Masistres, and doughty Imæus, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="30"></span> master of the bow, and Pharandakes, and Sosthanes driver of steeds. Others did the great and fertilising river Nile send forth; Susiskanes was there, Pegastagon of Egyptian family, and the prince of sacred Memphis, mighty Arsames, and Ariomardos, governor of ancient Thebes; and inhabitants of a marshy region-rowers of ships-skilful, and in <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="40"></span> multitude innumerable. And a crowd of soft-living Lydians, who keep in subjection a nation entirely land-faring, goes with them, whom Metrogathes and valiant Arcteus, ruling princes, and Sardis rich in gold send out, borne in many chariots, in two-shafted ranks and in three-shafted ranks, a sight terrible to see. Set too are the borderers on sacred Tmolus on casting the yoke of servitude about Hellas,— <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="50"></span> Mardon, Tharybis, anvils of the spear, and men of Mysia whose weapon is the javelin. Babylon too, the rich in gold, sends a mixed multitude in long array, some carried on ships, some trusting in their courage to draw the bow. And the scimitar-armed peoples of all Asia go with them, under the dread mandates of the king. So fair a flower of men of the Persian land is gone from it, in respect of whom <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="60"></span> all the country of Asia which reared them is constrained with vehement longing; and parents and wives, as they count the days, tremble at the lengthening out of time.</p><p class="nested-p">The army of the king, which makes havoc of cities, by now has passed to the neighbouring land beyond the narrow sea, having crossed the strait of Helle daughter of Athamas
+<hr class="pb-hr"><span class="pb" id="pb-43">[Page 43]</span>
+on a cable-fastened pontoon-bridge, by casting a riveted <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="70"></span> causeway as a yoke upon the neck of Ocean.</p><p class="nested-p">Against a whole continent does the fiery leader of populous Asia direct his wondrous flock of men, in two divisions, with land-forces and on sea, putting his trust in his stalwart sturdy commanders—a being like unto the gods, of a race sprung <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="80"></span> from gold.</p><p class="nested-p">And flashing from his eyes the dark glance of a deadly python, with many a warrior and many a sailor, and urging forward his Syrian chariot, he is bringing against a people famous for the spear a nation in arms whose pride is the bow.</p><p class="nested-p">There is no one of such proved puissance as to withstand the mighty torrent of men, and with secure defences <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="90"></span> keep back the resistless tide; for the Persian army cannot be faced, and stout-hearted are their people.</p><p class="nested-p">But the beguiling Illusion of a god what mortal man shall escape? Who is he that with agile foot is master of an easy leap [over the net]?</p><p class="nested-p">Aye, for fawning at first upon him, as though with kind intent,<a href="#note-43.1" class="fn-link" data-note="43.1">43.1</a> it leads a man astray into the toils of Calamity, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="100"></span> whence it is not possible for a mortal to escape and flee.</p><p class="nested-p">For by the gods&#x27; will since long ago Fate has been dominant, and has laid it upon the Persians to pursue wars that demolish towers, and shocks of cavalry in action, and destructions of cities.</p><p class="nested-p">Also they learned, putting trust in the slight structure of tackling and in contrivances for carrying men [over the waters], to look upon the ocean plain of the broad sea when it whitens beneath the furious blast.</p><p class="nested-p">Therefore my soul, shrouded in gloom, is racked with dread (Ah! Ah!) for this Persian expedition, fearing lest <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="110"></span>
+<hr class="pb-hr"><span class="pb" id="pb-44">[Page 44]</span>
+the state may learn that the great city of the Susian district is made desolate of men, and the Cissians&#x27; town, as a crowd of women utter this cry Ah! Ah!, may echo back the strain, and lest rending may fall on linen garments.</p><p class="nested-p">For all the host, driving steeds or tramping over the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="130"></span> plain, is gone forth, like bees in a swarm, together with the captain-general of the expedition; having crossed over the projecting arm of the sea,<a href="#note-44.1" class="fn-link" data-note="44.1">44.1</a> now bridged over, which is common to both continents.</p><p class="nested-p">And by reason of yearning for absent warriors couches are filled with weeping; and Persian wives, indulging their grief,<a href="#note-44.2" class="fn-link" data-note="44.2">44.2</a> each one of them, having sent away [to the war] her gallant armed consort, is left solitary.</p><p class="nested-p">But come, Persians, let us seat ourselves beneath the shade of this ancient palace and take good counsel from the depths of thought (and need there is for it), as to how haply fares Xerxes our king of Dareios&#x27; line, of the race of [Perseus] our common ancestor—whether it is the drawing of the bow that conquers, or has the power of the pointed <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="150"></span> spear the mastery? But here is hasting forth an effulgence like to the eyes of gods, the Mother of the King, my Queen; I prostrate myself before her. And fitting also is it that we all address her in words of salutation.</p><span class="stage">(Enter ATOSSA in a chariot, see v. 610.)</span><p class="nested-p">Queen supreme of Persia&#x27;s deep-girt women, venerable mother of Xerxes, wife to Dareios, hail! Consort wert thou of the Persian&#x27;s god; and mother art thou of a god—unless its ancient happy fortune is now departed from the host.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [162–175]</span><p class="nested-p">In just that fear did I leave the gold-appointed palace and the bridal-chamber which I shared with Dareios,
+<hr class="pb-hr"><span class="pb" id="pb-45">[Page 45]</span>
+and now come hither. My thoughts are racking my heart; and to you, my friends, will I tell my tale, being by no means without misgiving about myself, in dread lest great Good Fortune,<a href="#note-45.1" class="fn-link" data-note="45.1">45.1</a> raising over the earth the dust [of a military advance], shall have overturned with its foot the [fabric of] Prosperity which Dareios reared not unaided by some god. Therefore is there a twofold anxious thought, inexpressible, in my mind-not to honour with reverence a mass of riches lacking men; and again, that light shines not equal to their strength on men lacking wealth. Our wealth, indeed, is <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="170"></span> beyond cavil, but there is alarm concerning our eye—for I hold the master&#x27;s presence to be the eye of the palace— wherefore, Persians, since these things are so, lend me, ye aged Trusty ones, your counsel. For in my case all sound resolutions are dependent upon you.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [176–178]</span><p class="nested-p">Be well assured, Queen of this land, not twice hast thou to indicate either word or deed [to us] respecting matters in which Power is wont to lead the way; for loyal to thy interests are we whom thou summonest as counsellors in these affairs.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [179–217]</span><p class="nested-p">By many a dream in the night-time have I been haunted ever since my son, having fitted out an armada, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="180"></span> went hence with design to ravage the Ionians&#x27; land. But never saw I aught so clear as in the night just passed—and I will tell it to thee. There seemed to appear before me two women in fair attire, one apparelled in Persian raiment, the other in Dorian, the twain pre-eminent in stature beyond those living now, flawless in beauty, and sisters of the same family. The country they inhabited was in the case of one sister, Hellas—she having acquired it by lot—in the case of the other, barbarian soil. These twain, as I thought <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="190"></span>
+<hr class="pb-hr"><span class="pb" id="pb-46">[Page 46]</span>
+I perceived, were pursuing a quarrel one with the other; and my son, having become aware of it, was seeking to check and to pacify them, and yokes the pair to a chariot and places harness over their necks. And one of them towered loftily in these trappings, and kept her mouth tractable in the reins; but the other began to plunge, and with her hands tears in pieces the harness of the chariot, and drags it furiously along with her, heeding not the bit, and snaps the yoke asunder. Then falls my son, and his <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="200"></span> father Dareios stands beside commiserating him. And Xerxes, when he perceives him, rends his robes around his body.</p><p class="nested-p">These things I tell you I beheld in the night; but when I had arisen, and touched with my hands the fair waters of a spring, I took my station at an altar with incense in my hand, intending to offer a sacred mixture to the divinities who avert evil, for whom these ceremonies are proper. But I see an eagle fleeing for refuge to the altar of Phoebus, —and from terror I stood speechless, my friends,—and after that I see a hawk rushing with outstretched wings upon him, and with his talons plucking at his head; and <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="210"></span> the eagle did nothing but cower down and yield his body. This was terrifying for me to see, and so it is for you to hear. For know ye well that my son, should he be successful, would be regarded with awe, and supposing he should not be successful,—he<a href="#note-46.1" class="fn-link" data-note="46.1">46.1</a> cannot be called to account by the state, and if he escapes alive, he is, in any event, the ruler of this land.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [218–228]</span><p class="nested-p">We desire not, O Mother, either to alarm thee unduly by our words, or unduly to raise thy hopes; but if thou didst see anything sinister, thou shouldst supplicate <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="220"></span> the gods with prayer, and beseech diversion of these evils,
+<hr class="pb-hr"><span class="pb" id="pb-47">[Page 47]</span>
+and that all good things may be fulfilled for thyself and thy children and for the city and for all thy friends. And in the second place it is proper that thou pour a libation to the earth and to the dead; and in propitiatory wise do thou ask this boon of thy spouse Dareios, whom thou declarest thou didst see by night,—to send good things for thee and for thy son to the light of day from beneath the earth; and [ask that] the reverse of this, detained below the earth, may fade away in darkness. Thus I advise thee with kindly intent, guided only by the promptings of my mind. And our interpretation is that in all ways a good issue will be brought to pass for thee in this matter.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [229–234]</span><p class="nested-p">With kind intent, I know, to my son and to my house, didst thou, the first interpreter of these visions, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="230"></span> determine thus their import. May what is good come to pass. And all these things, as thou dost enjoin, will I perform for the gods and for those dear to me beneath the earth when I have gone into the palace. But now on the following points, my friends, I wish to be exactly informed;— In what part of the world do they say Athens is situated?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [235–235]</span><p class="nested-p">Far hence towards the west, where are the waning fires<a href="#note-47.1" class="fn-link" data-note="47.1">47.1</a> of our Lord the Sun.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [236–236]</span><p class="nested-p">Was then my son so eager to make this city his prey?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [237–237]</span><p class="nested-p">Yes, for thus would all Hellas become subject to the Great King.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [238–238]</span><p class="nested-p">Is theirs an army with so full a complement of men?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [239–239]</span><p class="nested-p">Aye, and an army of such quality as once wrought havoc on the Medes.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [240–240]</span><p class="nested-p">And what else have they besides? Is there sufficing wealth in their homes?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [241–241]</span><p class="nested-p">They have of silver, as one might say, a spring; a treasury in the earth.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-48">[Page 48]</span>
+<div class="speech"><span class="speaker">ATOSSA [242–242]</span><p class="nested-p">Is the arrow-point drawn by the bow to be seen in their hands?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [243–243]</span><p class="nested-p">Not at all. They have spears for close fighting, and harness for the shield.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [244–244]</span><p class="nested-p">Who is over them as master, and dominates the host?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [245–245]</span><p class="nested-p">To no man are they reckoned slaves or in subjection.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [246–246]</span><p class="nested-p">How then shall they abide the coming of a foe?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [247–247]</span><p class="nested-p">So [stoutly] that they destroyed a large and goodly army of Dareios.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [248–248]</span><p class="nested-p">Terrible, truly, are thy words for the parents of those who have gone forth to reflect upon.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [249–251]</span><p class="nested-p">Stay, thou wilt soon, as I think, know all for certain; for the [fashion of] running of this man coming is plain to recognise as Persian; and he brings clear tidings of something, be it good or ill.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter MESSENGER.)</span>
+<div class="speech"><span class="speaker">MESSENGER [252–258]</span><p class="nested-p">O ye cities of all Asia! O land of Persia, and mighty haven of wealth, how at a single stroke is all your great prosperity destroyed, and the flower of the Persians fallen and gone! Alas! a thankless office it is to be the first to bring tidings of disaster; yet needs must I unfold all that has happened to the Persians. The whole barbarian host has perished.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [259–262]</span><p class="nested-p">Grievous, grievous disaster, all unexpected, and <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="260"></span> miserable! Alas, Persians, bathe your eyes in tears, now that of this disaster ye hear.</p></div>
+<div class="speech"><span class="speaker">MESSENGER [263–264]</span><p class="nested-p">Yes, [hearing] that all with them is quite destroyed, and that I myself behold the day of my return beyond my expectation.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [265–268]</span><p class="nested-p">Too long indeed, as I may say, life doth now
+<hr class="pb-hr"><span class="pb" id="pb-49">[Page 49]</span>
+appear to us old men, that we should hear of this unexpected calamity.</p></div>
+<div class="speech"><span class="speaker">MESSENGER [269–270]</span><p class="nested-p">And, look you, Persians, I being present then can tell you, not from hearing others&#x27; talk, what evil fate was dealt out.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [271–274]</span><p class="nested-p">Woe is me! In vain did the mingled multitude <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="270"></span> of shafts go from the land of Asia against an enemy&#x27;s country—the land of Hellas.</p></div>
+<div class="speech"><span class="speaker">MESSENGER [275–276]</span><p class="nested-p">The shores of Salamis, and every neighbouring place, are full of dead, who perished in evil case.<a href="#note-49.1" class="fn-link" data-note="49.1">49.1</a></p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [277–280]</span><p class="nested-p">Woe is me! Thy words imply that the bodies of those dear to us are drifting, lifeless, sea-beaten, water-logged, on the tides as they ebb and flow.<a href="#note-49.2" class="fn-link" data-note="49.2">49.2</a></p></div>
+<div class="speech"><span class="speaker">MESSENGER [281–282]</span><p class="nested-p">Yes, for our bows availed nought, and our <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="280"></span> whole host has perished, beaten down by charges amidships of [the enemy&#x27;s] vessels.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [283–286]</span><p class="nested-p">Wail aloud for the luckless Persians a cry of woe with mournful sound, for their utter misfortune. Alas for the destruction of the host!</p></div>
+<div class="speech"><span class="speaker">MESSENGER [287–288]</span><p class="nested-p">O name of Salamis, most hateful to our ears! Alas! how I groan when I remember Athens!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [289–292]</span><p class="nested-p">Aye, hateful is Athens to her foes. Well may <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="290"></span> you call to mind how many Persian women she made widows and husbandless, with nought for us to set down as gain.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [293–301]</span><p class="nested-p">Long have I kept silence in my misery, shocked at the ills which have befallen us; for this sad event is too great for me to speak of, or inquire the details. Nevertheless mortals must endure afflictions when the gods award them. Do thou compose thyself, and, unfolding all that happened, even though thou groanest at the evil of it, speak out. Who is there that is not dead? Whom, of the leaders of the host, are we to bewail as having been appointed to
+<hr class="pb-hr"><span class="pb" id="pb-50">[Page 50]</span>
+bear the baton of command and leaving by his death a <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="300"></span> rank forlorn without its chief?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [302–302]</span><p class="nested-p">Xerxes himself is alive and beholds the light.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [303–304]</span><p class="nested-p">A great light to my house, and a brightly dawning day after black night, are in these words of thine!</p></div>
+<div class="speech"><span class="speaker">MESSENGER [305–333]</span><p class="nested-p">But Artembares, leader of a myriad horse, is being dashed against the rocky shores of Sileniæ. And the chiliarch Dadakes beneath the shock of a spear leapt with a light spring overboard. Tenagon, too, the true-born chieftain of the Bactrians, is moving to and fro about the surf-beaten isle of Aias. Lilaios and Arsames and, thirdly, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="310"></span> Argéstes, around the dove-breeding island keep butting, these three, helplessly against the unyielding shore. Arcteus too, whose dwelling is nigh unto the waters of Egyptian Nile, Adeues, and, thirdly, †Phreseues,† Pharnuchos, these fell from one vessel. Matallos of Chrysa, commander of ten thousand, leader of thirty thousand black cavalry, soaked in death his thick and bushy auburn beard, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="320"></span> changing its colour with a staining of dark purple. And Magian Arabos perished there, and Artabes the Bactrian, a settler now in a rugged land. Amistris, and Amphistreus wielder of an active spear, and gallant Ariomardos—a cause of grief [by his death] to Sardis—and Sisames the Mysian, and Tharybis of Lyrnaian race, commander of five times fifty ships, a warrior of goodly presence, lies dead, unhappy man, in sorely wretched case. And a Syennesis, foremost in courage, governor of the Cilicians, fell gloriously, after giving more trouble to the foe than any other one man. Of such among our leaders have I now made mention. I <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="330"></span> report but a few out of the many misfortunes which I have in mind.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [334–339]</span><p class="nested-p">Alas! I hear in this the very height of disaster—a disgrace to the Persians, and [a cause for] shrill lamentations. But turn thou back again, and tell me this, How great was
+<hr class="pb-hr"><span class="pb" id="pb-51">[Page 51]</span>
+the number of the Greek vessels that they ventured to join battle with the Persian armament by charging with their ships&#x27;-beaks upon it?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [340–350]</span><p class="nested-p">As to numbers, be well assured that the bar-<span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="340"></span>barians<a href="#note-51.1" class="fn-link" data-note="51.1">51.1</a> had the advantage in ships; for on the Greek side the whole numbers came to three divisions of thirty vessels, and there was besides these a select division of ten. But Xerxes had, for I know, a thousand in number of which he was commander, and those [besides] of superior class in speed were two hundred and seven; this is the tale of them. You do not think us the inferior force in this engagement? No, it was some divinity that destroyed the host, having depressed the scales of fortune with a weight against our side. The gods keep safe the city of their goddess Pallas.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [351–351]</span><p class="nested-p">Then is Athens still unravaged?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [352–352]</span><p class="nested-p">Yes, for whilst her warriors live she has a sure <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="350"></span> protection.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [353–355]</span><p class="nested-p">Now tell me what was the beginning of the naval encounter. Who were they who made the first move in the fight? The Greeks? Or my son, from a sense of exultation at the number of his ships?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [356–435]</span><p class="nested-p">Some fiend it was, O mistress, or evil spirit that appeared from somewhere, who began all the mischief. A Greek, who came from the Athenian host, told thy son Xerxes that if the darkness of black night should come the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="360"></span> Greeks would not stand fast, but, leaping on to the thwarts of their vessels, would, each taking his own direction, endeavour to save their lives by stealthy flight. And he, as soon as he heard this, not realising the wile of the Greek nor the jealousy of the gods, publishes to all the captains the following order—when the sun should have ceased to illumine the earth with his rays and darkness should have laid hold on the temple of the sky, then to draw up vessels
+<hr class="pb-hr"><span class="pb" id="pb-52">[Page 52]</span>
+in close order arranged in three lines to guard the sea-exits <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="370"></span> and the murmuring straits; and [to station] other vessels in a circle round about the isle of Aias; understanding that, if the Greeks shall escape an evil fate by finding some means of escape for their ships, without being discovered, it has been decreed that they shall all be deprived of their heads. Such were his words, prompted by much confidence of mind, since he knew not what was appointed by the gods to come to pass. And the Persian troops in orderly fashion and disciplined spirit set about preparing an evening meal, and each seaman saw to the lashing of his oar about the nicely fitted thole-pin. Then, when the light of the sun <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="380"></span> had waned and night was coming on, every master of an oar went to his ship, and every master of weapons. And one line of warships kept cheering on another line and [the Persians] make sail even as each man had orders, and the livelong night ship-captains kept all the crews working their vessels backwards and forwards. But though night began to draw off, yet the Greek host made nowhere any kind of attempt at a stealthy escape. When, however, day with its white steeds, radiant to behold, had occupied all the earth, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="390"></span> first of all a cheer from the Greeks rang loudly like a chant of triumph, and shrill and clear from the island crags Echo returned the cry. And fear was in the hearts of all the barbarians, finding themselves mistaken; for the Greeks were then chanting a solemn pæan not as seeking to escape, but as advancing to battle with daring courage. Next a bugle with its call fired all their line to action, and at once with foaming dash of oars in unison they smote, to the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="400"></span> word of command, the resounding brine. And rapidly the whole of them came plain into view. The right wing in good order led on foremost, and after that their whole armament was coming on against us, and at the same time a mighty shout could be heard, &quot;Sons of the Greeks,
+<hr class="pb-hr"><span class="pb" id="pb-53">[Page 53]</span>
+advance! Deliver your country, deliver your children and your wives, the temples of your fathers&#x27; gods, the tombs of your ancestors. Now is the contest which decides all!&quot;</p><p class="nested-p">And then a confused noise of Persian tongues met them from our line, and no longer was it a time for inaction, but <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="410"></span> forthwith ship against ship struck its armoured prow. A Greek vessel commenced the charge, and breaks off the whole stern part of a Phoenician ship, and each [captain] then steered his bark against some other vessel. At first indeed the torrent of the Persian armament held its own. But since the multitude of our ships was crowded in the narrows, and they could give no assistance the one to the other but [on the contrary] were rammed by the brazen-pointed beaks of their friends, they splintered their whole equipment of oars,—the Greek ships, too, all around them <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="420"></span> noting their opportunity, kept charging them on every side, —and the hulls of our vessels began to be capsized nor was the sea any longer visible, so choked was it with wrecks and slaughtered men; and the shores and the reefs were full of them. Then in rout and confusion every ship, as many as there were of the barbarian armament, sought to row away. But the Greeks kept striking and hewing, as though we were tunnies or some draught of fish, with fragments of broken oars and splinters of wreckage; and cries of anguish filled the open sea with shrieks, until the appearance <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="430"></span> of dark night broke off [the combat]. Now the total of our misfortunes, not even were I to recite the list of them for ten days, could I complete for thee; for be well assured that never on a single day died so great a number of men.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [436–437]</span><p class="nested-p">Alas! in very truth a mighty sea of troubles has burst over the Persians and all the barbarian race.</p></div>
+<div class="speech"><span class="speaker">MESSENGER [438–440]</span><p class="nested-p">Know well that their trouble reaches not yet the half. Such an visitation of sufferings came upon them <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="440"></span>
+<hr class="pb-hr"><span class="pb" id="pb-54">[Page 54]</span>
+as by balance to draw, even twice over, an equal weight with these [which I have pictured].</p></div>
+<div class="speech"><span class="speaker">ATOSSA [441–443]</span><p class="nested-p">What turn of fortune could be yet more hateful than this? Say what the event is which thou declarest came to the host, inclining the scale far on the side of evil.</p></div>
+<div class="speech"><span class="speaker">MESSENGER [444–447]</span><p class="nested-p">As many of the Persians as were in the very flower of life and most valiant in spirit and distinguished by noble birth, and were ever amongst the foremost in loyalty to the monarch himself, are dead in shameful plight by a most inglorious doom.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [448–449]</span><p class="nested-p">Ah! grieved am I, my friends, at a grievous event. But by what nature of doom sayest thou they are lost to us?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [450–474]</span><p class="nested-p">An island there is, lying off Salamis—in- <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="450"></span> significant in size, a dangerous anchorage for ships—which Pan who loves the dance doth ofttimes visit, haunting the sea-beach thereof. Thither Xerxes sends these [chosen warriors] in order that, whenever their foes wrecked from out their ships should attempt to win safe to the island, they might make an easy prey of the Greek soldiery and slay them; and help their own comrades to safety from out the sea-way—sadly at fault in his opinion of the future: for when some god had given the glory of [victory in] the sea-fight to the Greeks, that same day having secured their bodies with brazen armour they set to leaping out of their ships and forming a circle round about the entire island, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="460"></span> so that [the Persian band] were at a loss whither to turn. For oft they were struck by stones thrown by hand and arrows from the bow-string fell upon and destroyed them; and at last [the Greeks] charging upon them with a simultaneous cheer strike them down, and hack in pieces the limbs of the unhappy men, till they had utterly destroyed the life in all of them. And Xerxes groaned aloud when he saw the depth of his calamities, for he had a seat in full
+<hr class="pb-hr"><span class="pb" id="pb-55">[Page 55]</span>
+view of all the army—a high knoll close to the ocean brine; <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="470"></span> and, having rent his garments and uttered a shrill cry of wailing and issued orders rapidly to the land-force, he dismisses them in flight all disorderly.</p><p class="nested-p">Such is the event which, in addition to the afore-mentioned, thou hast to bewail.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [475–482]</span><p class="nested-p">O hateful divinity, how hast thou cheated the Persians of their expectations! Bitter<a href="#note-55.1" class="fn-link" data-note="55.1">55.1</a> to himself did my son find his [intended<a href="#note-55.2" class="fn-link" data-note="55.2">55.2</a>] punishment of Athens; and those of the barbarians whom aforetime Marathon destroyed were not enough [to satisfy thee], but my son—thinking to exact atonement for them—drew down upon himself all this mass of woe.</p><p class="nested-p">But as to the ships which have escaped destruction, tell <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="480"></span> me where thou didst leave them. Hast thou skill to indicate it clearly?</p></div>
+<div class="speech"><span class="speaker">MESSENGER [483–517]</span><p class="nested-p">The commanders of the ships which yet remained to us take to straggling flight before the wind precipitately. But the rest of the host came near destruction in Bœotia, some around the refreshment of a spring, while harassed by thirst; but others, panting and exhausted, make their way through to the land of the Phocians and the Dorian country, and the Melian bay where the Spercheios waters the plain with his kindly stream. And <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="490"></span> thence the soil of the Achæan land received us sore in need of food, and the towns of Thessaly: where indeed very many perished by thirst and hunger, for both of these were our lot. And we come to the Magnesian territory and the land of the Macedonians, to the ford of Axios and the reedy fens of Bolbe, and to Mount Pangaios—Edonian country. But in that night Heaven called up winter weather out of season, and freezes all the stream of sacred <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="500"></span>
+<hr class="pb-hr"><span class="pb" id="pb-56">[Page 56]</span>
+Strymon: and [many a] one<a href="#note-56.1" class="fn-link" data-note="56.1">56.1</a> who before that reckoned the gods of no account did then pray to them with supplications, doing lowly reverence to earth and heaven.</p><p class="nested-p">But when the army had made an end of invocations, it essays to pass across the ice-bound stream.<a href="#note-56.2" class="fn-link" data-note="56.2">56.2</a> And whosoever of us started to do so before the rays of the sun-god were shed abroad, is now in safety; for the sun&#x27;s orb, blazing brightly with its rays, by the heat of its flame penetrated [the ice of] the middle of the passage; and, one upon another, our men fell in, and fortunate indeed was he who soonest lost his breath and died.</p><p class="nested-p">And such as survived and won to safety, after having <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="510"></span> with difficulty made their way in much tribulation to Thrace, have now accomplished their escape and reached the land of their homes—in scanty numbers; so that the city of the Persians may well vent her grief in regret for the best-beloved youth of our nation.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [518–519]</span><p class="nested-p">O divinity hard to strive against, how with thy feet didst thou leap over-heavily upon the whole Persian race!</p></div>
+<div class="speech"><span class="speaker">ATOSSA [520–534]</span><p class="nested-p">Woe is me, in grief for the army so completely destroyed! O clear dream-vision, how all too plainly didst <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="520"></span> thou signify misfortune to me! And ye, all too lightly did ye interpret it! Still, since your warning voice determines thus, I am minded to make prayer to the gods; then will I return, after fetching from my palace a sacred mixture, as a gift to the earth and to the departed—over things I well know cannot be undone, but with a view to the future, if haply something better may come to us. Your part is now to communicate trusty counsel to Trusty comrades concerning what has come to pass; and, as for my son, if he <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="530"></span>
+    
+
+<hr class="pb-hr"><span class="pb" id="pb-57">[Page 57]</span>
+come hither before me, do ye console him and escort him to the palace, lest to our misfortunes a yet further misfortune be added.</p><span class="stage">[Exit ATOSSA.]</span></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [535–600]</span><p class="nested-p">O sovereign Zeus, now indeed hast thou destroyed the armament of the high-vaunting and populous Persian nation, and shrouded in the gloom of mourning the cities of Susa and Agbatana. And many [women] rending their veils <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="540"></span> with delicate hands are now bedewing their swelling robes with floods of tears, partaking in our sorrow. And the Persian wives, indulging their grief, through longing to behold their lately wedded lords, abandon the soft coverings of their couches—the delight of their delicate youth—and mourn with insatiate lamentations. And I too in good sooth do now raise high my song of mourning for the fate of those who are gone.</p><p class="nested-p">(Kommos.) Now indeed does the whole land of Asia <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="550"></span> groan, made desolate of her men. Xerxes led them forth, alack! and Xerxes lost them, alackaday! and Xerxes managed everything foolishly with his<a href="#note-57.1" class="fn-link" data-note="57.1">57.1</a> ocean galleys. Why was not Dareios, who [proved so] scatheless a captain of archers to his citizens, a leader dear to Susa, then in command?</p><p class="nested-p">Land-forces and sea-forces our ships, with dark-painted <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="560"></span> eyes, and a line of oars on either side like an outstretched wing,<a href="#note-57.2" class="fn-link" data-note="57.2">57.2</a> did carry forth, alack! and our ships let them perish, alackaday! under destructive charges of the foe; and through the hands of the Ionians the King himself but narrowly slipped away over the chilly tracks which traverse the plains of Thrace.</p><p class="nested-p">And some there were, the first to meet their doom, alas! <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="570"></span>
+<hr class="pb-hr"><span class="pb" id="pb-58">[Page 58]</span>
+who, left perforce, ah me! around the shores of Cychreia, ah! ah! <span class="tei-add">are tossing on the waves</span>. Weep aloud, and gnash the teeth, and utter a deep note of woe for sorrows which reach from earth to sky, ah! ah! and prolong the sad murmuring sound, the voice of misery.</p><p class="nested-p">And gnawed in darkness<a href="#note-58.1" class="fn-link" data-note="58.1">58.1</a> they are torn by dumb children of the One whom none should pollute,<a href="#note-58.2" class="fn-link" data-note="58.2">58.2</a> alas! and the home <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="580"></span> mourns for its lord, deprived of his presence. Parents too, left childless<a href="#note-58.3" class="fn-link" data-note="58.3">58.3</a> (ah! ah!), mourning in their old age these heaven-sent woes, are an utter grief to those who listen.</p><p class="nested-p">And for some time now up and down the coast of Asia the [settlers] no longer own the Persian sway, nor bring tribute any more under the constraint imposed by their suzerain, nor bowing themselves to earth do they show their <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="590"></span> awe; since now the power of our monarchy is utterly perished.</p><p class="nested-p">Nor even are the tongues of men kept under guard; for the populace are set free to speak their minds, now that the yoke of strength has been loosed. And, showing on its soil the stains of blood, the sea-washed isle of Aias holds all [that once was] Persian.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Re-enter ATOSSA.)</span>
+<div class="speech"><span class="speaker">ATOSSA [601–625]</span><p class="nested-p">Friends, whosoever has had dealings in mis-fortune knows that, when a surge of troubles comes upon mortals, a man gets to be afraid of everything—(though whenever the Divinity of Fortune runs smoothly for him, he is confident that it will in this same fashion<a href="#note-58.4" class="fn-link" data-note="58.4">58.4</a> continue to
+<hr class="pb-hr"><span class="pb" id="pb-59">[Page 59]</span>
+waft him onwards),—and so for me everything is full of terror: before my eyes appear the visitations<a href="#note-59.1" class="fn-link" data-note="59.1">59.1</a> of the gods and in my ears a din, not of triumph, is ringing. Such is the amazement from evil tidings which scares away my wits.</p><p class="nested-p">Therefore have I come this way from my palace a second time, without either car or pomp as before, bringing for <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="610"></span> my son&#x27;s father propitiatory libations, such as render the dead gracious to us; white milk sweet to drink from a sacred cow, and transparent honey, the distillation from blossoms of the busy bee, together with lustrations of water from a virgin spring; and this pure liquor from a mother of the open field—the refreshing juice of an ancient vine. And here too is the fragrant fruit of the pale-green <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="620"></span> olive, which ever puts forth a luxuriant growth in foliage; and wreaths of flowers, children of earth the mother of all.</p><span class="stage">(Addressing them in the character of Persian <i lang="grc">Μάγοι</i>.)</span><p class="nested-p">Come now, my friends, chant solemn verses as the libations to the dead are poured, and call up [the shade of] Dareios; and I will lead the procession of these drink-offerings made to earth in honour of the gods below.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [626–682]</span><p class="nested-p">Royal lady, venerable majesty of the Persians, do thou convey libations to the chambers under ground, and we in solemn chant will implore the conductors of the dead to be favourable [to our request].</p><span class="stage">[As the libations are poured, they chant in solemn tones an incantation couched in mystic language, abounding in obscure terms outlandish to Greek ears.]</span><p class="nested-p">Come, ye holy divinities of the under-world, Earth, and <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="630"></span> Hermes, and thou, Monarch of the dead, send the spirit from beneath to the light of day; for if he knows any
+<hr class="pb-hr"><span class="pb" id="pb-60">[Page 60]</span>
+remedy for our woes beyond [our efforts by prayer], he alone of mortals can tell us how to bring it to effect.</p><p class="nested-p">Does then the god-like King of blessed memory hear me as I utter my manifold plaintive doleful cries, in barbaric <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="640"></span> language hard to understand,<a href="#note-60.1" class="fn-link" data-note="60.1">60.1</a>—is it for me to shout aloud our grievous sorrows?<a href="#note-60.2" class="fn-link" data-note="60.2">60.2</a>—does he from beneath the earth give ear to me?</p><p class="nested-p">Come, O Earth and ye other Rulers of the lower world, suffer the illustrious spirit, the god of the Persians born at Susa, to pass from his abiding-place; and send to upper air him like to none yet whom the Persian soil hath covered.</p><p class="nested-p">Dear indeed was he, and dear is his sepulchral mound; <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="650"></span> for dear are the qualities which now lie hidden. May&#x27;st thou, O Aidoneus who dost send shades to the world above, permit Dareios to arise, such a king, ah me! as †Dareios was!</p><p class="nested-p">Aye, for as at no time did he lose men by fatal defeats in war, so was he named an inspired counsellor to the Persians; and an inspired counsellor he was, for well did he conduct his army, ah me!</p><p class="nested-p">Lord, ancient Lord, come forth, draw nigh! Come thou <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="660"></span> upon the topmost point of the mound—lifting thy saffron-dyed sandal, displaying the cheek-coverings of thy royal tiara. Come forth, O father Dareios, author of no ill, Ho!</p><p class="nested-p">To hear of new and unexpected sorrows, Lord of our <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="670"></span> Lord, appear! for a Stygian-like gloom overshadows us,
+<hr class="pb-hr"><span class="pb" id="pb-61">[Page 61]</span>
+since the youth of our nation is now all destroyed. Come forth, O father Dareios, author of no ill, Ho!</p><p class="nested-p">Alas, alas! O thou who diedst so deeply grieved for by thy friends, wherefore did these redoubled penalties of mistaken judgment <span class="tei-add">happen</span> as a twofold disaster to thy <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="680"></span> country? All the three-banked ships are now ships no more, ships no more.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(GHOST OF DAREIOS rises.)</span>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [683–695]</span><p class="nested-p">O Trusty band of Trusty ones, compeers of my youth, aged Persians, with what trouble is our city troubled? The plain groans, and is cleft<a href="#note-61.1" class="fn-link" data-note="61.1">61.1</a> and scarred. And seeing here my spouse hard by the grave I am in anxious dread, and I accept her libations with gracious mind. And ye are wailing as ye stand near my grave and, raising your voices in mournful cries that call up spirits, do piteously summon me; though &#x27;tis no easy matter to issue [from the tomb], especially as the gods of the under-world are altogether <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="690"></span> better at receiving than at letting us go. Nevertheless I, having rule amongst them, am come. Despatch with speed, that I may be free of blame for the time [of my absence]. What heavy unexpected sorrow have the Persians?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [696–698]</span><p class="nested-p">I shrink from looking upon thee, and I shrink from speaking in thy presence, by reason of my old-accustomed dread of thee.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [699–701]</span><p class="nested-p">Nay, but since I have come from beneath in compliance with thy piteous moan, do thou, telling a tale not <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="700"></span> tedious but concise, speak out and complete the whole matter, laying aside thine ancient awe of me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [702–704]</span><p class="nested-p">I fear to do thy pleasure, I fear to speak
+<hr class="pb-hr"><span class="pb" id="pb-62">[Page 62]</span>
+in thy presence with a tale of unwelcome news to those dear to me.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [705–710]</span><p class="nested-p">Well, since the old-time dread in thy mind stands in thy way, do thou, my venerable wedded consort, high-born lady, cease from these wailings and cries of woe, and tell me a clear tale. Human calamities, thou knowest, must befall mankind. For many ills by sea and many by land happen to mortals, if their life be extended to its full span.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [711–716]</span><p class="nested-p">O thou who in prosperity didst excel all men by <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="710"></span> thy fortunate destiny, how much—even as during the time thou didst behold the rays of the sun, envied of all thou didst continue like a god to lead a life of happy days for the Persians—do I now envy thee for dying before beholding the depth of our present misfortunes. For all the tale thereof, Dareios, thou shalt hear in a moment&#x27;s space. The fortunes of the Persians are ruined, almost utterly.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [717–717]</span><p class="nested-p">In what way? Came there any stroke of pestilence to our city, or civil strife?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [718–718]</span><p class="nested-p">By no means. But the whole host has been destroyed round about Athens.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [719–719]</span><p class="nested-p">Which of my sons led an expedition there? tell me.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [720–720]</span><p class="nested-p">Hot-headed Xerxes, after draining [of men] the surface of all the continent of Asia.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [721–721]</span><p class="nested-p">By land or by sea did the luckless one make this <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="720"></span> rash attempt?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [722–722]</span><p class="nested-p">Both. A combined front there was of two armaments.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [723–723]</span><p class="nested-p">But how was it that so large a land-force accomplished a passage [over sea]?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [724–724]</span><p class="nested-p">With appliances he contrived a bridge over the strait of Helle, so as to have a way across.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [725–725]</span><p class="nested-p">And did he carry this so far into effect as to close the mighty Bosporus?</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-63">[Page 63]</span>
+<div class="speech"><span class="speaker">ATOSSA [726–726]</span><p class="nested-p">The fact is so. But some divinity, I trow, had a share in his decision.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [727–727]</span><p class="nested-p">Alas, some divinity came in might upon him, so that his judgment was at fault.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [728–728]</span><p class="nested-p">True: we can see now how evil was the accomplishment which he achieved.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [729–729]</span><p class="nested-p">And over what result to the troops art thou lamenting thus?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [730–730]</span><p class="nested-p">The naval armament by its overthrow involved in ruin the force on land.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [731–731]</span><p class="nested-p">And is the whole nation thus destroyed by the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="730"></span> spear?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [732–732]</span><p class="nested-p">Aye, therefore does all the town of Susa groan aloud at its desolation—</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [733–733]</span><p class="nested-p">Alas for the good help and aid of the host!</p></div>
+<div class="speech"><span class="speaker">ATOSSA [734–734]</span><p class="nested-p">—and the whole Bactrian people is perished and gone: not only some aged folk.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [735–735]</span><p class="nested-p">Unhappy man! how much of the youth of our allied peoples did he lose?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [736–736]</span><p class="nested-p">They say that Xerxes, by himself and destitute, with but a few followers—</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [737–737]</span><p class="nested-p">Ended how and where? Is there any [assurance of his] safety?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [738–738]</span><p class="nested-p">—was glad to reach the bridge contrived to link two continents—</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [739–739]</span><p class="nested-p">—and that he reached this continent in safety, is that beyond a doubt?</p></div>
+<div class="speech"><span class="speaker">ATOSSA [740–740]</span><p class="nested-p">Yes. The account proves that distinctly, and there is no contradiction in it.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [741–754]</span><p class="nested-p">Alas, right soon has come fulfilment of the oracles, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="740"></span> and upon my son Zeus has inflicted the doom declared by heaven. I for a long time past felt assured that the gods would in some way bring it to accomplishment, but when a man is of himself hurrying [to the doom appointed] the
+<hr class="pb-hr"><span class="pb" id="pb-64">[Page 64]</span>
+gods too lend a helping hand. A fountain of misfortune for all those dear to me seems now to have been discovered: and my son, not knowing their full meaning, brought these things to pass by his youthful rashness—inasmuch as he thought to hold from its course the sacred Hellespont, the divine stream of Bosporus, by shackles as it were a slave; and sought to rule the Strait in harmony [with his will]. Having encompassed it with hammer-wrought fetters, he <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="750"></span> completed a huge road for his huge army, and thought mistakenly that, mortal though he was, he would master even the god Poseidon. Surely in this a distemper of mind possessed my son? I fear lest my great hard-won wealth may become a prey to the first comer.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [755–760]</span><p class="nested-p">These notions impetuous Xerxes learns by consorting with misguided men. They tell him how that thou didst win great wealth for thy children by help of the spear-point, whilst he, from lack of manhood, keeps his spear at home and increases not at all the wealth he inherited. Hearing again and again such taunts as these from misguided men, he planned this expedition and armada against Hellas.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [761–788]</span><p class="nested-p">Therefore by him has a deed been brought to <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="760"></span> its accomplishment, exceeding great, never to be forgotten, such as never before fell upon and made desolate this city of Susa since first sovereign Zeus assigned to a man this dignity, that he alone should be the ruler of Asia with its flocks and herds,<a href="#note-64.1" class="fn-link" data-note="64.1">64.1</a> holding a sceptre of supreme command.</p><p class="nested-p">For [Astyages] a Median was the first who was leader of a great host, and his son [Cyaxares], another Median, completed the work—since good sense guided his mind. And, third from him, Cyrus, a fortunate man, when he <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="770"></span> came to the throne established peace for all his own people, and gained over the Lydian and Phrygian nations and
+<hr class="pb-hr"><span class="pb" id="pb-65">[Page 65]</span>
+subdued by force of arms all Ionia; for the gods hated him not, inasmuch he was of moderate temper. And, fourth in succession, [Cambyses] son of Cyrus was ruler of the host. Then, fifthly, Mardos came to power, a disgrace to his country and the ancient throne; but him by stratagem valiant Artaphrenes, with the aid of friends whose part this was, slew in the palace. And sixth was Maraphis, and seventh Artaphrenes. And I attained the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="780"></span> lot which I desired, and went on a foreign expedition attended by a mighty host, but did not bring such a great disaster as this upon the state. But my son Xerxes, being still youthful, has a young man&#x27;s thoughts, and does not bear in mind my injunctions. Of this be well assured, ye compeers of my age,—the whole number of us who obtained the empire could not be shown to have done it so much harm.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [789–791]</span><p class="nested-p">What then, my lord Dareios? Pointing to what end dost thou bring to a close thy speech? In what way <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="790"></span> can we, the Persian people, after what has happened, find best fortune?</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [792–794]</span><p class="nested-p">If we make no expedition against the Grecian territory—not even though the Median force be superior in numbers; for to them the very earth is an ally.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [795–795]</span><p class="nested-p">In what sense meanest thou that? In what way does it fight on their side?</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [796–796]</span><p class="nested-p">By slaying through famine such as are over-many in number.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [797–797]</span><p class="nested-p">Well, in that case, we will muster a picked mobile force.</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [798–799]</span><p class="nested-p">Nay, not even the troops that have remained now in Greek territory shall attain a safe return.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [800–801]</span><p class="nested-p">How sayest thou? Does not the whole barbarian army succeed in crossing from Europe over Helle&#x27;s <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="800"></span> strait?</p></div>
+<div class="speech"><span class="speaker">GHOST OF DAREIOS [802–844]</span><p class="nested-p">Only a few out of all the number—if, looking at what has happened, one is to put faith in the declarations of heaven; for they are coming true, not partly only [but in every particular].</p><p class="nested-p">No, their abiding-place is where Asopus waters the plain with his streams—a kindly nourishment for the Bœotians&#x27; land: where the height of disaster is in store for them to suffer as retribution for their pride and impious spirit, in that when they came to Hellas they made no scruple to <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="810"></span> despoil the statues of the gods, nor to burn temples. Altars have been demolished, and shrines of divinities are overthrown from their foundations in heaps of ruin. Therefore, for the evil they did, an equal measure do they endure, and more will they in the future, nor yet is the bottom reached of [their fountain of] misfortunes,<a href="#note-66.1" class="fn-link" data-note="66.1">66.1</a> but it still is gushing forth. For so great shall be the mass of clotted gore in the Platæans&#x27; land beneath the Dorian spear, that heaps of dead shall bear witness even to the third generation that one who is mortal should not entertain <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="820"></span> thoughts too high for him: for Presumption when it blossoms forth bears as fruit a crop of Calamity, whence it reaps a harvest of tears.</p><p class="nested-p">Seeing then that of such a sort are the wages of these things, forget not Athens and Hellas; and let none of you, in contempt of his present fortune, from desire of what he has not, cast away great prosperity. Zeus, thou knowest, is one who chastises an over-arrogant spirit, a heavy-handed corrector. Therefore do ye, being now counselled to be <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="830"></span> prudent by divine warnings, instruct my son with the admonitions of reason to cease from seeking in over-arrogant daring to hinder the gods from their will. And
+<hr class="pb-hr"><span class="pb" id="pb-67">[Page 67]</span>
+do thou, belovèd venerable mother of Xerxes, go into the palace, and bringing forth vesture, such as is seemly, make ready to meet thy son; for all about his body by reason of his grief tatters of his embroidered robes are hanging in shreds. But do thou affectionately comfort him with thy words, for to thee alone, I know, will he endure to listen. <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="840"></span> I will depart to the darkness beneath the earth. Ye aged men, fare ye well, giving to your souls such pleasure as ye may day by day, seeing that to the dead wealth is of no use at all.</p><span class="stage">[Descends.]</span></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [845–846]</span><p class="nested-p">I felt pain when I heard of the many woes which are, and shall yet be, the lot of the barbarians.</p></div>
+<div class="speech"><span class="speaker">ATOSSA [847–853]</span><p class="nested-p">O Fortune, how many bitter griefs are coming down upon me! Most of all does this thing wound me— to hear of the misused robes about the body of my son, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="850"></span> which envelope him. But I will go, and fetching fair apparel from the palace will try to meet my son; for we will not desert our dearest in his misfortune.</p><span class="stage">[She goes into the palace.]</span></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [854–910]</span><p class="nested-p">Ah me! Goodly, indeed, and happy was the life we enjoyed under civil government so long as the aged monarch, author of no ill, a king who sought not war, god-like Dareios ruled the land.</p><p class="nested-p">In the first place, we paraded a glorious army, and a system of laws, steadfast as towers, kept all things under control. And our returns from war brought us <span class="tei-add">back to</span><a href="#note-67.1" class="fn-link" data-note="67.1">67.1</a> <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="860"></span> happy homes, without suffering distress or defeat.</p><p class="nested-p">And all the cities that he took!—without crossing the ford of the river Halys, and without stirring forth from his own hearth: such, for instance, as the Acheloian cities <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="870"></span> of the Strymonic gulf, established near the Thracian dwellings;
+<hr class="pb-hr"><span class="pb" id="pb-68">[Page 68]</span>
+And, outside the estuary, the cities on the mainland fortified round about by towers owned him as king, and the cities, too, which are proud [to be] round about the strait of Helle; and embayed Propontis, and the [Thracian] outlet of Pontus;</p><p class="nested-p">The sea-washed islands, too, off the projecting arm of <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="880"></span> the sea, lying near this land: Lesbos, for instance, and olive-growing Samos, Chios and Paros, Naxos, Myconos, and Andros, adjoining Tenedos as a near neighbour;</p><p class="nested-p">And of the sea-girt islands mid-way between the con-tinents was he lord, Lemnos, and the settlement of Icaros, and Rhodes, and Cnidos; and Aphrodite&#x27;s cities Paphos <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="890"></span> and Soli; and Salamis, whose mother-city is the cause of our present moans.</p><p class="nested-p">Also the wealthy populous cities in the Ionian district <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="900"></span> did he control by his prudent mind. And there was a tireless strength of armed warriors and of allies from every nation ready at hand. But now, on the contrary, in no doubtful fashion, we are enduring these inflictions from the gods, defeated signally in battle through disasters on the sea.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter XERXES.)</span>
+<div class="speech"><span class="speaker">XERXES [911–919]</span><p class="nested-p">O wretched am I in having encountered this <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="910"></span> grievous doom, most baffling to my judgment! How savagely did Fortune assail the Persian race! What is there for me yet to endure in my misery? The strength of my limbs is relaxed when I behold the age of my citizens to be what I see here before me. Would that me also, O Zeus, the doom of death had hidden from sight along with the warriors who have perished!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [920–933]</span><p class="nested-p">Alack, my sovereign, for the goodly army and <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="920"></span> the great prestige of the Persian empire, and the fair array of men whom Fortune hath shorn away! The land
+<hr class="pb-hr"><span class="pb" id="pb-69">[Page 69]</span>
+bewails her native youth, slaughtered all for Xerxes, the plenisher of Hades with Persians; for many men of Agdabata are destroyed—the flower of the land, masters of the bow, a body of warriors exceeding dense in number. Alas, alas for our trusty strength! And the land of Asia, <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="930"></span> O monarch of the country, is pitiably pitiably bowed to her knees.</p></div>
+<div class="speech"><span class="speaker">XERXES [934–936]</span><p class="nested-p">Here am I before you, ah me! a man to grieve over, and in misery, who was born, it seems, a curse to his race and his country.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [937–942]</span><p class="nested-p">In salutation of thy return I will utter a cry boding ill, the voice of a Mariandynian mourner busied <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="940"></span> with woe, a tearful wail.</p></div>
+<div class="speech"><span class="speaker">XERXES [943–945]</span><p class="nested-p">Pour forth a plaintive piteous cry of sorrow; for Fortune, as ye see, has turned against me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [946–951]</span><p class="nested-p">I will utter a cry piteous indeed, in recognition of heavy sorrows for wave-tossed corpses, and †sufferings of the people† which are [now the portion] of the city mourning for her sons, and will again cry aloud a tearful <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="950"></span> lamentation.</p></div>
+<div class="speech"><span class="speaker">XERXES [952–956]</span><p class="nested-p">Aye, for at the hands of the Ionians, the Ionians, did our embattled array of ships, yielding the victory to the foe, obtain a harvest of woe; after having had the dark surface of the sea reaped close, and the fatal shore.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [957–964]</span><p class="nested-p">Alas! cry aloud, and inquire all that happened.— Where is the rest of the multitude of thy friends? Where are they who stood by thy side; such, for instance, as <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="960"></span> Pharandakes was, Susas, Pelagon, and Dotamas, and Agabates, Psammis, and Susiskanes, who came from Ecbatana?</p></div>
+<div class="speech"><span class="speaker">XERXES [965–969]</span><p class="nested-p">Fallen in wretched plight from a Tyrian ship I left them, by the shores of Salamis, dashing against a stubborn beach.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [970–977]</span><p class="nested-p">Alas! and what of thy Pharnuchos, and the <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="970"></span>
+<hr class="pb-hr"><span class="pb" id="pb-70">[Page 70]</span>
+brave Ariomardos? Where is prince Seualkes, or Lilaios of noble lineage, Memphis, Tharybis, and Masistras, and Artembares, and Hystaichmes? These things I ask of thee.</p></div>
+<div class="speech"><span class="speaker">XERXES [978–981]</span><p class="nested-p">Woe, woe is me! after having beheld ancient Athens, hateful city, all, by one shock of battle, ah! poor <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="980"></span> wretches, lie gasping upon the ground.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [982–990]</span><p class="nested-p">Didst thou in very truth leave there him of the Persians who was thine Eye, faithful in all things, who numbered thy tens upon tens of thousands, goodliest of men, son of Batanochus the son of Sesames the son of Megabates; Parthos, too; and the mighty Oebares? Alas for the hapless ones! Evils beyond evils to noble Persians thou dost relate to us.</p></div>
+<div class="speech"><span class="speaker">XERXES [991–994]</span><p class="nested-p">Regrets indeed for my brave comrades dost thou <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="990"></span> call to my mind, speaking of baleful baleful hateful evils beyond evils. My heart within me moans aloud, moans for the luckless ones.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [995–1004]</span><p class="nested-p">Aye, and there are others whom we long to see again, Xanthes, captain of ten thousand Mardian warriors, and martial Anchares, and Diaixis, and Arsakes, leaders of cavalry, and Kegdadates, and Lythimnes, and Tolmos, who <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1000"></span> had never enough of battle. I am dismayed, astonied, that they follow<a href="#note-70.1" class="fn-link" data-note="70.1">70.1</a> not in thy train screened by tents borne on wheels.</p></div>
+<div class="speech"><span class="speaker">XERXES [1005–1005]</span><p class="nested-p">[Vain thy longing,] for they who were the leaders<a href="#note-70.2" class="fn-link" data-note="70.2">70.2</a> of the army are gone.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1006–1006]</span><p class="nested-p">Gone! alas, ingloriously.</p></div>
+<div class="speech"><span class="speaker">XERXES [1007–1007]</span><p class="nested-p">Ah me! ah me!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1008–1010]</span><p class="nested-p">Alas, alas, Divinities, ye caused us an unlooked-for disaster, that makes clear to all men how watchful is the eye of Calamity.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-71">[Page 71]</span>
+<div class="speech"><span class="speaker">XERXES [1011–1011]</span><p class="nested-p">We are struck down. What turns of fortune are there in<a href="#note-71.1" class="fn-link" data-note="71.1">71.1</a> life!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1012–1012]</span><p class="nested-p">We are struck down, &#x27;tis clearly so,</p></div>
+<div class="speech"><span class="speaker">XERXES [1013–1013]</span><p class="nested-p">Unlooked-for sorrows, unlooked-for sorrows!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1014–1016]</span><p class="nested-p">—having encountered Ionian seamen in an evil hour. Unfortunate indeed in war are the Persian nation.</p></div>
+<div class="speech"><span class="speaker">XERXES [1017–1018]</span><p class="nested-p">Surely so. Unhappy man, I am struck down in the matter of all my huge army.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1019–1019]</span><p class="nested-p">What is there then of the Persians, O thou of great ill-fortune, that is not destroyed?</p></div>
+<div class="speech"><span class="speaker">XERXES [1020–1020]</span><p class="nested-p">See&#x27;st thou what is left of my vesture (pointing <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1020"></span> to it)—</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1021–1021]</span><p class="nested-p">I see, I see.</p></div>
+<div class="speech"><span class="speaker">XERXES [1022–1022]</span><p class="nested-p">—and this quiver,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1023–1023]</span><p class="nested-p">What is it thou sayest is saved?</p></div>
+<div class="speech"><span class="speaker">XERXES [1024–1024]</span><p class="nested-p">—a receptacle for shafts?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1025–1025]</span><p class="nested-p">Little enough out of so much.</p></div>
+<div class="speech"><span class="speaker">XERXES [1026–1026]</span><p class="nested-p">We are in lack of supporters.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1027–1027]</span><p class="nested-p">The Ionian people shrinks not from the fray.</p></div>
+<div class="speech"><span class="speaker">XERXES [1028–1029]</span><p class="nested-p">Heroic are they. I was witness of an unlooked-for calamity.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1030–1030]</span><p class="nested-p">Is it of the lines of thy naval host turned to flight that thou wilt speak?</p></div>
+<div class="speech"><span class="speaker">XERXES [1031–1031]</span><p class="nested-p">Aye, and I rent my robes at the advent of <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1030"></span> disaster.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1032–1032]</span><p class="nested-p">Alas, alas!</p></div>
+<div class="speech"><span class="speaker">XERXES [1033–1033]</span><p class="nested-p">Aye,—and more than alas!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1034–1034]</span><p class="nested-p">True, for twofold are our woes, and threefold.</p></div>
+<div class="speech"><span class="speaker">XERXES [1035–1035]</span><p class="nested-p">Grievous woes; but a joy to our enemies.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1036–1036]</span><p class="nested-p">And our strength has been maimed,</p></div>
+<div class="speech"><span class="speaker">XERXES [1037–1037]</span><p class="nested-p">I am stripped of my escort.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1038–1038]</span><p class="nested-p">—by the disaster at sea of thy friends.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-72">[Page 72]</span>
+<div class="speech"><span class="speaker">XERXES [1039–1039]</span><p class="nested-p">Shed tears, tears for the calamity; and go towards thy home.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1040–1040]</span><p class="nested-p">Alas, alas! Grief, grief!</p></div>
+<div class="speech"><span class="speaker">XERXES [1041–1041]</span><p class="nested-p">Cry aloud now in response to me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1042–1042]</span><p class="nested-p">A wretched offering to a wretched man from <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1040"></span> wretched men!</p></div>
+<div class="speech"><span class="speaker">XERXES [1043–1043]</span><p class="nested-p">Wail aloud, making the sound in unison.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1044–1046]</span><p class="nested-p">Alack, alack! Here is another heavy blow. Alas! much indeed do I grieve over this.</p></div>
+<div class="speech"><span class="speaker">XERXES [1047–1047]</span><p class="nested-p">Beat, beat on [thy head], and groan aloud for my sake.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1048–1048]</span><p class="nested-p">I shed tears in lamentation.</p></div>
+<div class="speech"><span class="speaker">XERXES [1049–1049]</span><p class="nested-p">Cry aloud now in response to me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1050–1050]</span><p class="nested-p">&#x27;Tis my concern, O master.</p></div>
+<div class="speech"><span class="speaker">XERXES [1051–1051]</span><p class="nested-p">Raise thy voice now with wailing.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1052–1054]</span><p class="nested-p">Alack, alack! Again shall fall confusedly blows <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1050"></span> that bruise and call forth shrieks of pain.</p></div>
+<div class="speech"><span class="speaker">XERXES [1055–1055]</span><p class="nested-p">Beat thy breast too, and cry aloud the Mysian lament,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1056–1056]</span><p class="nested-p">Grievous, grievous fate!</p></div>
+<div class="speech"><span class="speaker">XERXES [1057–1057]</span><p class="nested-p">—and make havoc, I bid you, of the white hair of thy beard,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1058–1058]</span><p class="nested-p">With clutching hands [I do so] &#x27;mid cries of anguish.</p></div>
+<div class="speech"><span class="speaker">XERXES [1059–1059]</span><p class="nested-p">—and utter a shrill note,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1060–1060]</span><p class="nested-p">This too will I do.</p></div>
+<div class="speech"><span class="speaker">XERXES [1061–1061]</span><p class="nested-p">—and with thy fingers rend thy robes about thy <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1060"></span> breast,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1062–1062]</span><p class="nested-p">Grievous, grievous fate!</p></div>
+<div class="speech"><span class="speaker">XERXES [1063–1063]</span><p class="nested-p">—and pluck thy hair, and lament over the army.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1064–1064]</span><p class="nested-p">With clutching hands [I do so] &#x27;mid cries of anguish.</p></div>
+<div class="speech"><span class="speaker">XERXES [1065–1065]</span><p class="nested-p">Let thine eyes grow moist.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-73">[Page 73]</span>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1066–1066]</span><p class="nested-p">I am bathed in tears.</p></div>
+<div class="speech"><span class="speaker">XERXES [1067–1067]</span><p class="nested-p">Cry aloud now in response to me.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1068–1068]</span><p class="nested-p">Ah me! Ah me!</p></div>
+<div class="speech"><span class="speaker">XERXES [1069–1069]</span><p class="nested-p">Go towards your homes with sounds of mourning,</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1070–1070]</span><p class="nested-p">Alas, Persian land, so sad now to tread!</p></div>
+<div class="speech"><span class="speaker">XERXES [1071–1071]</span><p class="nested-p">crying Alas! through the city.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1072–1072]</span><p class="nested-p">Alas indeed! yea, yea.</p></div>
+<div class="speech"><span class="speaker">XERXES [1073–1073]</span><p class="nested-p">Utter aloud your lament, as ye step delicately <span class="tei-unknown-milestone" data-tei-unit="marginlnum" data-tei-n="1070"></span> onward.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1074–1074]</span><p class="nested-p">Alas, Persian land, now so sad to tread!</p></div>
+<div class="speech"><span class="speaker">XERXES [1075–1076]</span><p class="nested-p">Ah me! ah me! in three-banked galleys (ah me!) all perished . . . !</p></div>
+<div class="speech"><span class="speaker">CHORUS OF PERSIAN ELDERS [1077–1077]</span><p class="nested-p">I will escort thee with mournful sounds of woe.</p></div></div>
+        </div>
+
+        <div class="column">
+            <h3>Footnotes</h3>
+            <div class="content" id="footnote-content"><div class="line" id="note-41.1"><a class="note-ref" data-note="41.1">41.1</a> <span class="text">1 v. 784. Cf. also vv. 746 and 854 sqq.</span></div>
+<div class="line" id="note-42.1"><a class="note-ref" data-note="42.1">42.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐτλήμονι</i> (which some MSS. have). Cf. <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Simonides ep. 40</strong><blockquote lang="grc">εὐτόλμῳ ψυχῆς λήματι πειθόμενοι</blockquote></cit>.</span></div>
+<div class="line" id="note-43.1"><a class="note-ref" data-note="43.1">43.1</a> <span class="text">1 Cf. <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Agam.</i> 726 and 1227</strong>. So <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Plutarch <i>Them.</i> 29</strong><blockquote lang="grc">οὐ μὴν ἀλλὰ . . . προσειπὼν φιλοφρόνως</blockquote></cit> ('with an appearance of cordiality').</span></div>
+<div class="line" id="note-44.1"><a class="note-ref" data-note="44.1">44.1</a> <span class="text">1 The Hellespont; see v. 882. Compare <strong xmlns="http://www.tei-c.org/ns/1.0">Eur. <i>Iph. Aul.</i> 120</strong>.</span></div>
+<div class="line" id="note-44.2"><a class="note-ref" data-note="44.2">44.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἁβροπενθεῖς</i> restored by Paley. Cf. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἁβρόγοοι</i> v. 544.</span></div>
+<div class="line" id="note-45.1"><a class="note-ref" data-note="45.1">45.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δαίμων</i> Heimsoeth; see v. 727. Cf. <strong xmlns="http://www.tei-c.org/ns/1.0"><i>Agam.</i> 392-5, and 993</strong> (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πότμος</i>). The active verb in this image is used on the same principle as v. 828 (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὄλβον ἐκχέῃ</i>), 510 (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπέρρηξεν</i>), 320 (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀμείβων</i>).</span></div>
+<div class="line" id="note-46.1"><a class="note-ref" data-note="46.1">46.1</a> <span class="text">1 She alters the conclusion of her sentence, wishing to dispel in advance ideas which might be suggested by <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κακῶς δὲ πράξας</i>.</span></div>
+<div class="line" id="note-47.1"><a class="note-ref" data-note="47.1">47.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φθινάσμασιν</i> Pauw.</span></div>
+<div class="line" id="note-49.1"><a class="note-ref" data-note="49.1">49.1</a> <span class="text">1 I.e. without burial, cf. v. 328 (Paley).</span></div>
+<div class="line" id="note-49.2"><a class="note-ref" data-note="49.2">49.2</a> <span class="text">2 Or, &#x27;on floating ship-timber.&#x27;</span></div>
+<div class="line" id="note-51.1"><a class="note-ref" data-note="51.1">51.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βαρβάρους</i> Turnebus.</span></div>
+<div class="line" id="note-55.1"><a class="note-ref" data-note="55.1">55.1</a> <span class="text">1 For this predicative use of <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πικρὸς</i> see <strong xmlns="http://www.tei-c.org/ns/1.0">Euripides <i>Medea</i> 399</strong>.</span></div>
+<div class="line" id="note-55.2"><a class="note-ref" data-note="55.2">55.2</a> <span class="text">2 Cf. <strong xmlns="http://www.tei-c.org/ns/1.0">Herodotus vii. 8</strong>.</span></div>
+<div class="line" id="note-56.1"><a class="note-ref" data-note="56.1">56.1</a> <span class="text">1 So <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Ovid</strong>, <blockquote lang="lat">atque aliquis pendens in cruce vota facit.</blockquote></cit></span></div>
+<div class="line" id="note-56.2"><a class="note-ref" data-note="56.2">56.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κρυσταλλοπῆγα διὰ πόρον περᾷ στρατός.</i> Hartung after Porson (<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">στρατὸς περᾷ</i>).</span></div>
+<div class="line" id="note-57.1"><a class="note-ref" data-note="57.1">57.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βαρίδεσσι ποντίαις</i> with some MSS. [<i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βαρίδες τε ποντίαι</i> M. cum accentu dativi.]</span></div>
+<div class="line" id="note-57.2"><a class="note-ref" data-note="57.2">57.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">διδυμόπτεροι</i> Walter Headlam. Cf. <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Plutarch <i>Ant.</i> 63</strong><blockquote lang="grc">τοὺς ταρσοὺς τῶν νεῶν ἐγείρας καὶ πτερώσας ἑκατέρωθεν.</blockquote></cit></span></div>
+<div class="line" id="note-58.1"><a class="note-ref" data-note="58.1">58.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀιδνὰ</i> Walter Headlam.</span></div>
+<div class="line" id="note-58.2"><a class="note-ref" data-note="58.2">58.2</a> <span class="text">2 I.e. water. Respect for the purity of the Elements was a doctrine taught by the Persian <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Μάγοι</i>. See <strong xmlns="http://www.tei-c.org/ns/1.0">Herodotus i. 38</strong>.</span></div>
+<div class="line" id="note-58.3"><a class="note-ref" data-note="58.3">58.3</a> <span class="text">3 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄπαιδες δαιμόνι’ ἄχη</i> Porson.</span></div>
+<div class="line" id="note-58.4"><a class="note-ref" data-note="58.4">58.4</a> <span class="text">4 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸν αὐτὸν ἀεὶ τοῦτον</i> Walter Headlam. (So in Carcinos fr. 8, in the unmetrical line <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λυπεῖ γὰρ αὐτὸ τὸ κτῆμα τοὺς κεκτημένους</i>, should be read <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὐτὸ τοῦτο</i>, taking up <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φθόνος</i> in the preceding verse.)</span></div>
+<div class="line" id="note-59.1"><a class="note-ref" data-note="59.1">59.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τἀνταῖα</i> i.e. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσβολαί, ξυναλλαγαὶ θεῶν</i>.</span></div>
+<div class="line" id="note-60.1"><a class="note-ref" data-note="60.1">60.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βάρβαρ’ ἀσαφηνῆ</i> Walter Headlam. Cf. <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Lucian i. 40</strong> (<i lang="grc">ὁ μάγος</i>) <blockquote lang="grc">παραμιγνὺς ἅμα καὶ βαρβαρικά τινα καὶ ἄσημα ὀνόματα</blockquote></cit>.</span></div>
+<div class="line" id="note-60.2"><a class="note-ref" data-note="60.2">60.2</a> <span class="text">2 Dindorf is probably right in reading here <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βάγματ', ἢ</i>. “Or must I pierce the earth with yet more agonising cries?” Cf. <strong xmlns="http://www.tei-c.org/ns/1.0">Lucan vi. 744</strong>. So <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Statius <i>Theb.</i> iv. 500</strong> (Teiresias) <blockquote lang="lat">fassusne sacerdos Audior? an rabido iubeat si Thessala cantu Ibitis? et, Scythicis quotiens armata venenis Colchis aget, trepido pallebunt Tartara motu?</blockquote></cit></span></div>
+<div class="line" id="note-61.1"><a class="note-ref" data-note="61.1">61.1</a> <span class="text">1 This probably refers to the effect of the <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ψυχαγωγοὶ γόοι</i>. Cf. <cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Tibullus i. 2. 45</strong><blockquote lang="lat">haec cantu finditque solum manesque sepulcris Elicit.</blockquote></cit> <strong xmlns="http://www.tei-c.org/ns/1.0">Seneca <i>Œdipus</i> 567</strong>.</span></div>
+<div class="line" id="note-64.1"><a class="note-ref" data-note="64.1">64.1</a> <span class="text">1 The old Ionic epithet of Asia.</span></div>
+<div class="line" id="note-66.1"><a class="note-ref" data-note="66.1">66.1</a> <span class="text">1 Cf. v. 745 above. But the verb <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὕπεστιν</i> seems impossible with <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κρηπὶς</i>, unless the latter has its usual sense, 'foundation.' Mr Housman ingeniously suggests <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κρηνὶς ἀπέσβηκ'.</i></span></div>
+<div class="line" id="note-67.1"><a class="note-ref" data-note="67.1">67.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὖθις</i> (Blaydes) <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐς</i> (Walter Headlam). <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἰκία εὖ πράττουσα</i> was a common phrase.</span></div>
+<div class="line" id="note-70.1"><a class="note-ref" data-note="70.1">70.1</a> <span class="text">1 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἑπομένους</i> restored by Hartung. <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἑπόμενοι</i> was an alteration made (as the scholiast's note shows) because <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔταφον</i> was taken as <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐτάφησαν</i>.</span></div>
+<div class="line" id="note-70.2"><a class="note-ref" data-note="70.2">70.2</a> <span class="text">2 <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀγρέται</i> Toup. (<cit xmlns="http://www.tei-c.org/ns/1.0"><strong>Hesychius</strong><blockquote lang="grc">ἀγρέταν: βασιλέα, θεόν</blockquote></cit>).</span></div>
+<div class="line" id="note-71.1"><a class="note-ref" data-note="71.1">71.1</a> <span class="text">1 But <i xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δι’ αἰῶνος</i> can hardly be right in this place.</span></div></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Collapsible TOC Code ---
+            const tocContent = document.getElementById('toc-content');
+            if (tocContent) {
+                // 1. Mark items with children
+                tocContent.querySelectorAll('li > ul').forEach(ul => {
+                    ul.parentElement.classList.add('has-children');
+                });
+
+                // 2. Add click listener for toggling
+                tocContent.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link && link.parentElement.classList.contains('has-children')) {
+                        // Make sure the click wasn't on the main 'close' button
+                        if (event.target.id !== 'toc-toggle') {
+                             event.preventDefault(); // Stop the link from jumping
+                             link.parentElement.classList.toggle('open'); // Toggle open/closed
+                        }
+                    }
+                });
+            }
+            // --- End of Collapsible TOC Code ---
+
+
+            // --- Note-Linking Code ---
+            const container = document.querySelector('.container');
+            const englishContent = document.getElementById('english-content');
+            const footnoteContent = document.getElementById('footnote-content');
+            let lastHighlightedNoteElement = null;
+            let lastHighlightedLinkElements = []; // Can be multiple links
+
+            // Function to remove all highlights
+            function removeHighlights() {
+                if (lastHighlightedNoteElement) {
+                    lastHighlightedNoteElement.classList.remove('highlight');
+                }
+                lastHighlightedLinkElements.forEach(link => {
+                    link.classList.remove('highlight');
+                });
+                lastHighlightedNoteElement = null;
+                lastHighlightedLinkElements = [];
+            }
+
+            // Function to find, scroll, and highlight elements
+            function findScrollHighlight(targetNoteId, scrollTargetColumn) { // scrollTargetColumn is 'note' or 'link'
+                removeHighlights(); // Clear previous state
+
+                const noteElement = document.getElementById('note-' + targetNoteId);
+                const linkSelector = '.fn-link[data-note="' + targetNoteId + '"]';
+                const linkElements = englishContent.querySelectorAll(linkSelector);
+
+                // Highlight Note
+                if (noteElement) {
+                    noteElement.classList.add('highlight');
+                    lastHighlightedNoteElement = noteElement; // Store for removal
+                    // Scroll the note column if the link was clicked
+                    if (scrollTargetColumn === 'note') {
+                        // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        noteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                // Highlight ALL corresponding links and scroll the FIRST one
+                if (linkElements.length > 0) {
+                    linkElements.forEach(link => {
+                        link.classList.add('highlight'); // Highlight the link(s) in text
+                    });
+                    lastHighlightedLinkElements = Array.from(linkElements); // Store all for removal
+                    // Scroll the first link if the note was clicked
+                    if (scrollTargetColumn === 'link') {
+                         // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        linkElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+
+            // Add click listener using event delegation on the container
+            container.addEventListener('click', function(event) {
+                const linkTarget = event.target.closest('.fn-link');
+                const noteRefTarget = event.target.closest('.note-ref');
+
+                if (linkTarget && linkTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = linkTarget.dataset.note;
+                    console.log('Clicked text link for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'note'); // Scroll the note column
+
+                } else if (noteRefTarget && noteRefTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = noteRefTarget.dataset.note;
+                    console.log('Clicked footnote ref for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'link'); // Scroll the text column
+                }
+            });
+
+            // --- TOC Toggle (Show/Hide) Script ---
+            const tocToggle = document.getElementById('toc-toggle'); // Close button
+            const tocOpenButton = document.getElementById('toc-open-button'); // Open button
+            const body = document.body;
+
+            if (tocToggle && tocOpenButton) { // Only run if TOC elements exist
+                
+                // CLOSE Button (inside TOC)
+                tocToggle.addEventListener('click', function() {
+                    body.classList.add('toc-collapsed');
+                });
+                
+                // OPEN Button (outside TOC)
+                tocOpenButton.addEventListener('click', function() {
+                    body.classList.remove('toc-collapsed');
+                });
+            }
+            // --- END TOC Toggle Script ---
+            
+        });
+    </script>
+</body>
+</html>

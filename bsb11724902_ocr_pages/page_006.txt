@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>bsb11724902_00006</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="ocr-capabilities"
+          content="ocr_line ocr_page ocr_par ocrp_lang ocrx_block ocrx_word x_source x_wconf"/>
+  </head>
+  <body>
+<div class="ocr_page" title="x_source bsb11724902_00006; ppageno 6; bbox 0 0 1968 2928" lang="la">
+ <div class="ocrx_block" title="bbox 767 2480 1289 2513">
+  <p class="ocr_par" title="bbox 767 2480 1289 2513">
+   <span class="ocr_line" title="bbox 767 2480 1289 2513"><span class="ocrx_word" title="bbox 767 2481 886 2513">LIPSIAE</span><span class="ocrx_word" title="bbox 892 2482 897 2512">:</span> <span class="ocrx_word" title="bbox 927 2481 1014 2512">TYPIS</span> <span class="ocrx_word" title="bbox 1035 2481 1060 2511">B.</span> <span class="ocrx_word" title="bbox 1081 2481 1108 2511">G.</span> <span class="ocrx_word" title="bbox 1129 2480 1286 2511">TEUBNERÃ</span><span class="ocrx_word" title="bbox 1282 2480 1289 2510">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 862 1500 897 1563">
+  <p class="ocr_par" title="bbox 862 1500 897 1563">
+   <span class="ocr_line" title="bbox 862 1500 897 1563"><span class="ocrx_word" title="bbox 862 1500 897 1563">GE</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 854 1375 1082 1509">
+  <p class="ocr_par" title="bbox 854 1375 1082 1509">
+   <span class="ocr_line" title="bbox 861 1384 1074 1507"><span class="ocrx_word" title="bbox 861 1384 1004 1507">NSIS</span><span class="ocrx_word" title="bbox 996 1394 1032 1424">&amp;</span><span class="ocrx_word" title="bbox 1034 1396 1074 1433">B</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1027 1385 1154 1498">
+  <p class="ocr_par" title="bbox 1027 1385 1154 1498">
+   <span class="ocr_line" title="bbox 1027 1385 1154 1498"><span class="ocrx_word" title="bbox 1027 1385 1154 1498">BILL</span></span>
+</p>
+</div>
+</div>
+  </body>
+</html>

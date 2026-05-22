@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Parallel Text</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            padding: 2em;
+            max-width: 900px;
+            margin: auto;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+        h1 {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            color: #444;
+        }
+        .sentence-pair {
+            margin-bottom: 1em;
+            padding: 1.5em;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+        }
+        .sentence-container {
+            margin-bottom: 2.5em;
+        }
+        .sentence-pair h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 600;
+        }
+        .sentence-pair p {
+            font-size: 1.2em;
+            margin-bottom: 0;
+        }
+        .greek-text {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.3em;
+        }
+        /* Highlighting class */
+        .highlight {
+            background-color: #ffecb3; /* A soft, pleasant yellow */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border-radius: 3px;
+        }
+        span[class^="chunk"] {
+            transition: background-color 0.2s ease-in-out;
+        }
+    </style>
+    <script>
+        // Function to add the 'highlight' class to all elements of a given chunk
+        function highlight(chunkClass) {
+            const elements = document.querySelectorAll('.' + chunkClass);
+            elements.forEach(el => {
+                el.classList.add('highlight');
+            });
+        }
+
+        // Function to remove the 'highlight' class from all elements of a given chunk
+        function unhighlight(chunkClass) {
+            const elements = document.querySelectorAll('.' + chunkClass);
+            elements.forEach(el => {
+                el.classList.remove('highlight');
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Interactive Translation Alignment</h1>
+    <p>Mouse over a phrase in either Greek or English to see its corresponding part highlighted in the other language.</p>
+    
+    <div class="sentence-container">
+        <div class="sentence-pair">
+            <h2>Greek</h2>
+            <p class="greek-text"><span class="s1-chunk1" onmouseover="highlight('s1-chunk1')" onmouseout="unhighlight('s1-chunk1')">ἔφη δὲ δεῖν ,</span> <span class="s1-chunk2" onmouseover="highlight('s1-chunk2')" onmouseout="unhighlight('s1-chunk2')">ἃ μὲν μαθόντας ποιεῖν ἔδωκαν οἱ θεοί ,</span> <span class="s1-chunk3" onmouseover="highlight('s1-chunk3')" onmouseout="unhighlight('s1-chunk3')">μανθάνειν ,</span> <span class="s1-chunk4" onmouseover="highlight('s1-chunk4')" onmouseout="unhighlight('s1-chunk4')">ἃ δὲ μὴ δῆλα τοῖς ἀνθρώποις ἐστί ,</span> <span class="s1-chunk5" onmouseover="highlight('s1-chunk5')" onmouseout="unhighlight('s1-chunk5')">πειρᾶσθαι</span> <span class="s1-chunk6" onmouseover="highlight('s1-chunk6')" onmouseout="unhighlight('s1-chunk6')">διὰ μαντικῆς</span> <span class="s1-chunk7" onmouseover="highlight('s1-chunk7')" onmouseout="unhighlight('s1-chunk7')">παρὰ τῶν θεῶν</span> <span class="s1-chunk8" onmouseover="highlight('s1-chunk8')" onmouseout="unhighlight('s1-chunk8')">πυνθάνεσθαι ·</span></p>
+        </div>
+        <div class="sentence-pair">
+            <h2>English</h2>
+            <p><span class="s1-chunk1" onmouseover="highlight('s1-chunk1')" onmouseout="unhighlight('s1-chunk1')">He said that it was the duty of men</span> <span class="s1-chunk2" onmouseover="highlight('s1-chunk2')" onmouseout="unhighlight('s1-chunk2')">whatever the gods had enabled them to do by learning,</span> <span class="s1-chunk3" onmouseover="highlight('s1-chunk3')" onmouseout="unhighlight('s1-chunk3')">to learn</span> <span class="s1-chunk4" onmouseover="highlight('s1-chunk4')" onmouseout="unhighlight('s1-chunk4')">whatever was obscure to men ;</span> <span class="s1-chunk5" onmouseover="highlight('s1-chunk5')" onmouseout="unhighlight('s1-chunk5')">and to try</span> <span class="s1-chunk6" onmouseover="highlight('s1-chunk6')" onmouseout="unhighlight('s1-chunk6')">by augury</span> <span class="s1-chunk7" onmouseover="highlight('s1-chunk7')" onmouseout="unhighlight('s1-chunk7')">from the gods</span> <span class="s1-chunk8" onmouseover="highlight('s1-chunk8')" onmouseout="unhighlight('s1-chunk8')">to ascertain</span></p>
+        </div>
+    </div>
+
+    <div class="sentence-container">
+        <div class="sentence-pair">
+            <h2>Greek</h2>
+            <p class="greek-text"><span class="s2-chunk1" onmouseover="highlight('s2-chunk1')" onmouseout="unhighlight('s2-chunk1')">τοὺς θεοὺς γὰρ</span> <span class="s2-chunk2" onmouseover="highlight('s2-chunk2')" onmouseout="unhighlight('s2-chunk2')">οἷς ἂν ὦσιν ἵλεῳ</span> <span class="s2-chunk3" onmouseover="highlight('s2-chunk3')" onmouseout="unhighlight('s2-chunk3')">σημαίνειν .</span></p>
+        </div>
+        <div class="sentence-pair">
+            <h2>English</h2>
+            <p><span class="s2-chunk1" onmouseover="highlight('s2-chunk1')" onmouseout="unhighlight('s2-chunk1')">as the gods always</span> <span class="s2-chunk2" onmouseover="highlight('s2-chunk2')" onmouseout="unhighlight('s2-chunk2')">to those to whom they are rendered propitious.</span> <span class="s2-chunk3" onmouseover="highlight('s2-chunk3')" onmouseout="unhighlight('s2-chunk3')">afford information</span></p>
+        </div>
+    </div>
+
+    <div class="sentence-container">
+        <div class="sentence-pair">
+            <h2>Greek</h2>
+            <p class="greek-text"><span class="s3-chunk1" onmouseover="highlight('s3-chunk1')" onmouseout="unhighlight('s3-chunk1')">ἀλλὰ μὴν ἐκεῖνός γε</span> <span class="s3-chunk2" onmouseover="highlight('s3-chunk2')" onmouseout="unhighlight('s3-chunk2')">ἀεὶ μὲν ἦν</span> <span class="s3-chunk3" onmouseover="highlight('s3-chunk3')" onmouseout="unhighlight('s3-chunk3')">ἐν τῷ φανερῷ ·</span></p>
+        </div>
+        <div class="sentence-pair">
+            <h2>English</h2>
+            <p><span class="s3-chunk1" onmouseover="highlight('s3-chunk1')" onmouseout="unhighlight('s3-chunk1')">He was</span> <span class="s3-chunk2" onmouseover="highlight('s3-chunk2')" onmouseout="unhighlight('s3-chunk2')">constantly</span> <span class="s3-chunk3" onmouseover="highlight('s3-chunk3')" onmouseout="unhighlight('s3-chunk3')">in public, ;</span></p>
+        </div>
+    </div>
+
+</body>
+</html>

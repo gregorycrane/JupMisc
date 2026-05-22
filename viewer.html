@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEI XML Viewer (Local)</title>
+    <link rel="stylesheet" href="tei-styles.css"> <style>
+        body { font-family: sans-serif; margin: 20px; }
+        #file-input-label {
+            display: inline-block; /* Allows padding */
+            padding: 8px 15px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #file-input-label:hover {
+            background-color: #ddd;
+        }
+        #xml-file-input {
+            display: none; /* Hide the default ugly input */
+        }
+        #file-name {
+            margin-left: 10px;
+            font-style: italic;
+            color: #555;
+        }
+        #xml-content {
+            border: 1px solid #ccc;
+            padding: 15px;
+            min-height: 400px;
+            white-space: pre-wrap; /* Preserve whitespace might not be needed with CSS */
+        }
+        /* Add basic loading/error message styles */
+        .message { color: grey; font-style: italic; }
+        .error { color: red; font-weight: bold;}
+    </style>
+</head>
+<body>
+
+    <h1>TEI XML Viewer (Local File)</h1>
+
+    <label for="xml-file-input" id="file-input-label">Choose XML File</label>
+    <input type="file" id="xml-file-input" accept=".xml, text/xml">
+    <span id="file-name">No file selected</span>
+
+    <div id="xml-content">
+        <p class="message">Please choose an XML file to view.</p>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('xml-file-input');
+        const fileNameSpan = document.getElementById('file-name');
+        const contentDiv = document.getElementById('xml-content');
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0]; // Get the selected file
+
+            if (!file) {
+                fileNameSpan.textContent = 'No file selected';
+                contentDiv.innerHTML = '<p class="message">Please choose an XML file to view.</p>';
+                return;
+            }
+
+            // Display file name
+            fileNameSpan.textContent = file.name;
+            contentDiv.innerHTML = '<p class="message">Loading...</p>';
+
+            // --- Read File Content ---
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const xmlString = e.target.result;
+
+                try {
+                    // --- Parse and Inject XML ---
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+                    // Check for parsing errors (important!)
+                    const parseError = xmlDoc.querySelector('parsererror');
+                    if (parseError) {
+                       console.error('XML Parsing Error:', parseError.textContent);
+                       // Display a more user-friendly error
+                       const errorDetails = parseError.textContent.split('\n')[0]; // Get first line
+                       throw new Error(`Failed to parse XML file. Error: ${errorDetails}`);
+                    }
+
+                    // Find the TEI body element (or text, or root if body not found)
+                    // Look for <body> first, then <text>, then fall back to the root element
+                    const bodyElement = xmlDoc.querySelector('body')
+                                       || xmlDoc.querySelector('text')
+                                       || xmlDoc.documentElement;
+
+                    if (!bodyElement) {
+                        throw new Error('Could not find main content element (body or text) in the XML.');
+                    }
+
+
+                    // Clear the content div
+                    contentDiv.innerHTML = '';
+
+                    // Clone the node to avoid modifying the original parsed document
+                    // and append it directly. Styling relies on CSS selectors matching TEI tags.
+                    contentDiv.appendChild(bodyElement.cloneNode(true));
+
+                } catch (error) {
+                    console.error('Error processing XML:', error);
+                    contentDiv.innerHTML = `<p class="message error">Error loading ${file.name}: ${error.message}</p>`;
+                }
+            };
+
+            reader.onerror = function(e) {
+                console.error('Error reading file:', e);
+                contentDiv.innerHTML = `<p class="message error">Error reading file ${file.name}.</p>`;
+            };
+
+            // Read the file as text
+            reader.readAsText(file);
+        });
+    </script>
+
+</body>
+</html>

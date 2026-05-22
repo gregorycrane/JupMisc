@@ -1,0 +1,353 @@
+Received: from SA3PR05MB9621.namprd05.prod.outlook.com (2603:10b6:806:31e::22)
+ by BYAPR05MB6022.namprd05.prod.outlook.com with HTTPS; Fri, 20 Mar 2026
+ 16:17:57 +0000
+Received: from CH3PR05MB10313.namprd05.prod.outlook.com
+ (2603:10b6:610:1a2::16) by SA3PR05MB9621.namprd05.prod.outlook.com
+ (2603:10b6:806:31e::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9723.23; Fri, 20 Mar
+ 2026 16:17:56 +0000
+Received: from CH3PR05MB10313.namprd05.prod.outlook.com
+ ([fe80::b475:b1da:44be:31cd]) by CH3PR05MB10313.namprd05.prod.outlook.com
+ ([fe80::b475:b1da:44be:31cd%5]) with mapi id 15.20.9723.019; Fri, 20 Mar 2026
+ 16:17:55 +0000
+From: "Crane, Gregory" <Gregory.Crane@tufts.edu>
+To: "Gelzinis, Elizabeth" <Elizabeth.Gelzinis@tufts.edu>
+CC: "Strobino, Riccardo" <Riccardo.Strobino@tufts.edu>
+Subject: Re: federal and non-federal summer salary
+Thread-Topic: federal and non-federal summer salary
+Thread-Index: AQHcuHusrmq7nvafHEinNNZcH7q9zLW3iF5EgAAGFxCAAAquXQ==
+Date: Fri, 20 Mar 2026 16:17:55 +0000
+Message-ID:
+	<CH3PR05MB1031362DF29CA420285B92A0EE64CA@CH3PR05MB10313.namprd05.prod.outlook.com>
+References:
+	<CH3PR05MB103132DA63E925550AD1D8277E64CA@CH3PR05MB10313.namprd05.prod.outlook.com>
+ <CH3PR05MB10313CA4BC37ED3C59E7EB25FE64CA@CH3PR05MB10313.namprd05.prod.outlook.com>
+ <BYAPR05MB60222259A2A8BBCD56F78993874CA@BYAPR05MB6022.namprd05.prod.outlook.com>
+In-Reply-To:
+	<BYAPR05MB60222259A2A8BBCD56F78993874CA@BYAPR05MB6022.namprd05.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource:
+	CH3PR05MB10313.namprd05.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	6ceed062-93a8-4081-cc4e-08de869c3e8f
+X-MS-Exchange-Organization-SCL: 1
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=tufts.edu;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6ceed062-93a8-4081-cc4e-08de869c3e8f
+x-ms-traffictypediagnostic:
+	CH3PR05MB10313:EE_|SA3PR05MB9621:EE_|BYAPR05MB6022:EE_
+x-microsoft-antispam:
+	BCL:0;ARA:13230040|366016|7053199007|18002099003|56012099003|22082099003|8096899003|41050700001;
+x-forefront-antispam-report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH3PR05MB10313.namprd05.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(7053199007)(18002099003)(56012099003)(22082099003)(8096899003)(41050700001);DIR:INT;
+x-ms-exchange-crosstenant-authas: Internal
+x-ms-exchange-crosstenant-authsource: CH3PR05MB10313.namprd05.prod.outlook.com
+x-ms-exchange-crosstenant-network-message-id:
+	6ceed062-93a8-4081-cc4e-08de869c3e8f
+x-ms-exchange-crosstenant-originalarrivaltime: 20 Mar 2026 16:17:55.4819 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Hosted
+x-ms-exchange-crosstenant-id: fbbf6c60-0344-4c29-9459-725685739b19
+x-ms-exchange-crosstenant-mailboxtype: HOSTED
+x-ms-exchange-crosstenant-userprincipalname:
+	Mwz1kwltdB1wwIimhfVULFEfGqwdp7xJ4rCNEJtq0Sl2JATsjgVw/SH97S2SRpveTAC5jxzcWpquytiARA/LZw==
+x-ms-exchange-transport-crosstenantheadersstamped: SA3PR05MB9621
+x-ms-exchange-transport-endtoendlatency: 00:00:01.8725718
+x-ms-exchange-processed-by-bccfoldering: 15.20.9723.008
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(425001)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	R+uKruySPaiteQaYRl03H2WmcOQQaP1uCFUBGJERdINJzEzlu6m+Iy/U65TX8sT6Asvyfevft+KcW9zqUxl2fkWziy7CY1cP4oOe6dzwEDUahHs3KdgVIN2yuF2RKI55TWeHzrXNzwFyAp+x8j8FDhLppbCUvVLtQQOJ3wfvioZmUtIu7Zhi7O7sdHCknzxgrO5rzOypUSxNk0kshHZISbhOqp7wsoLIuA+EXc5cmcoAerylgBC7N+Ed8gINDmEyN372tWvvJoabz3BIW7zAR9okEFE1sac/Nqarjt4BaZksrucGXtp1PzxIy4Hs5dPoQfBZMTnWbKUbFt6fOAVvi5oujWnqKW8UlMA2TPDeEGhauMr26/eBk8ThfHaO65nj+t1v/YiCoA1sT0UD7zMQrSuBbh7QuOuUAyP8Gncr2lxmHqNz4srP3el8a5ZvTfpGdFtTCZDGWoHnqXHvzZuiHErLjYwcplbctw+psFpvk5pTjZ/KVpBeKW/yh85+0wja3P7PPstfYMDO1ZQXc4hw3c3LJAIea5D56pLaf+xpPVhRiyNhWN6ChOsmuQ6CCjxLyCa9uPw2kxgO7mVGAcFjC/hyn/MHd2yY9yZUSnEXHnCGndJrTOVR7gJFZkv+L6R5W3kfR2mk1wp7v806T6+/qPLpAbRB8t+2j5Q68MOeVNCrDq/MSKbeDP9E00SMl2LBjoM3euBtUzI/4uM/6n+MOruksmVksmqqSV6jwxMwCymhSzgsQJPOAdr8z2hIjleC6v8A75Y7DhmLo2vI0nR8xgNcglVqetk9zWqzTJn6nn/Id68IAGVatrMW8MtQke7p5qRlQyTUdxsYh/+LbmbsCWkSiwkDmDE9lBj6dS0TqrQ=
+Content-Type: multipart/alternative;
+	boundary="_000_CH3PR05MB1031362DF29CA420285B92A0EE64CACH3PR05MB10313na_"
+MIME-Version: 1.0
+
+--_000_CH3PR05MB1031362DF29CA420285B92A0EE64CACH3PR05MB10313na_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Well, Riccardo =97 that is money for two or three nights in a good hotel ex=
+tra.
+________________________________
+From: Gelzinis, Elizabeth <Elizabeth.Gelzinis@tufts.edu>
+Sent: Friday, March 20, 2026 11:43 AM
+To: Crane, Gregory <Gregory.Crane@tufts.edu>
+Cc: Strobino, Riccardo <Riccardo.Strobino@tufts.edu>
+Subject: RE: federal and non-federal summer salary
+
+
+Hi Greg
+
+
+
+If you=92d like to rebudget $5k plus fringe into travel, then your new trav=
+el budget would be $5,790.
+
+
+
+Regarding the 2-month summer salary rule, NSF is the only funder that has t=
+his restriction.  Riccardo could take 6 weeks from NEH and 6 weeks from Sch=
+midt if he wanted to.
+
+
+
+Please let me know if you have any other questions.
+
+Thanks!
+
+Beth
+
+
+
+From: Crane, Gregory <Gregory.Crane@tufts.edu>
+Sent: Friday, March 20, 2026 11:19 AM
+To: Gelzinis, Elizabeth <Elizabeth.Gelzinis@tufts.edu>
+Cc: Strobino, Riccardo <Riccardo.Strobino@tufts.edu>
+Subject: Re: federal and non-federal summer salary
+
+
+
+Hi Beth,
+
+
+
+Second question: If Riccardo transferred $5K from his summer salary to trav=
+el, wouldn't that free up something like $6K in travel? I.e., to pay Riccar=
+do $5K we have to pay $5K + summer benefits.
+
+
+
+Can you tell us if that is the case?
+
+
+
+Sorry for all the questions =97 and thank you as always!
+
+________________________________
+
+From: Crane, Gregory <Gregory.Crane@tufts.edu<mailto:Gregory.Crane@tufts.ed=
+u>>
+Sent: Friday, March 20, 2026 11:13 AM
+To: Gelzinis, Elizabeth <Elizabeth.Gelzinis@tufts.edu<mailto:Elizabeth.Gelz=
+inis@tufts.edu>>
+Cc: Strobino, Riccardo <Riccardo.Strobino@tufts.edu<mailto:Riccardo.Strobin=
+o@tufts.edu>>
+Subject: federal and non-federal summer salary
+
+
+
+Hi Beth,
+
+
+
+My recollection is that NSF has a cap of 2 months summer salary and I thoug=
+ht that might be the limit for all federal summer salary (e.g., you could g=
+et 1 month from NSF and 1 month from NEH).
+
+
+
+In the past, my recollection is that non-federal funding could go beyond th=
+at, i.e., Mellon money could pay for part of all of a third month. Schmid S=
+ciences would fit into this category.
+
+
+
+The point is to verify that there is no reason (other than burnout) that Ri=
+ccardo could not take the full 6 weeks of NEH and 6 weeks of Schmidt Scienc=
+es funding.
+
+
+
+Best,
+
+Greg
+
+--_000_CH3PR05MB1031362DF29CA420285B92A0EE64CACH3PR05MB10313na_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Well, Riccardo =97 that is money for two or three nights in a good hotel ex=
+tra.</div>
+<div id=3D"appendonsend"></div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> Gelzinis, Elizabeth &=
+lt;Elizabeth.Gelzinis@tufts.edu&gt;<br>
+<b>Sent:</b> Friday, March 20, 2026 11:43 AM<br>
+<b>To:</b> Crane, Gregory &lt;Gregory.Crane@tufts.edu&gt;<br>
+<b>Cc:</b> Strobino, Riccardo &lt;Riccardo.Strobino@tufts.edu&gt;<br>
+<b>Subject:</b> RE: federal and non-federal summer salary</font>
+<div>&nbsp;</div>
+</div>
+<style>
+<!--
+@font-face
+	{font-family:"Cambria Math"}
+@font-face
+	{font-family:Calibri}
+@font-face
+	{font-family:Aptos}
+p.x_MsoNormal, li.x_MsoNormal, div.x_MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+a:link, span.x_MsoHyperlink
+	{color:#467886;
+	text-decoration:underline}
+span.x_EmailStyle20
+	{font-family:"Aptos",sans-serif;
+	color:windowtext}
+.x_MsoChpDefault
+	{font-size:10.0pt}
+@page WordSection1
+	{margin:1.0in 1.0in 1.0in 1.0in}
+div.x_WordSection1
+	{}
+-->
+</style>
+<div lang=3D"EN-US" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:b=
+reak-word">
+<div class=3D"x_WordSection1">
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">Hi Greg</span></p=
+>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">If you=92d like t=
+o rebudget $5k plus fringe into travel, then your new travel budget would b=
+e $5,790.</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">Regarding the 2-m=
+onth summer salary rule, NSF is the only funder that has this restriction.&=
+nbsp; Riccardo could take 6 weeks from NEH and 6 weeks from Schmidt if he w=
+anted to.&nbsp;
+</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">Please let me kno=
+w if you have any other questions.</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">Thanks!</span></p=
+>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">Beth</span></p>
+<p class=3D"x_MsoNormal"><span style=3D"font-size:11.0pt">&nbsp;</span></p>
+<div>
+<div style=3D"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0i=
+n 0in 0in">
+<p class=3D"x_MsoNormal"><b><span style=3D"font-size:11.0pt; font-family:&q=
+uot;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0=
+pt; font-family:&quot;Calibri&quot;,sans-serif"> Crane, Gregory &lt;Gregory=
+.Crane@tufts.edu&gt;
+<br>
+<b>Sent:</b> Friday, March 20, 2026 11:19 AM<br>
+<b>To:</b> Gelzinis, Elizabeth &lt;Elizabeth.Gelzinis@tufts.edu&gt;<br>
+<b>Cc:</b> Strobino, Riccardo &lt;Riccardo.Strobino@tufts.edu&gt;<br>
+<b>Subject:</b> Re: federal and non-federal summer salary</span></p>
+</div>
+</div>
+<p class=3D"x_MsoNormal">&nbsp;</p>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Hi Beth,</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Second question: If Ri=
+ccardo transferred $5K from his summer salary to travel, wouldn't that free=
+ up something like $6K in travel? I.e., to pay Riccardo $5K we have to pay =
+$5K + summer benefits.</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Can you tell us if tha=
+t is the case?</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Sorry for all the ques=
+tions =97 and thank you as always!</span></p>
+</div>
+<div class=3D"x_MsoNormal" align=3D"center" style=3D"text-align:center">
+<hr size=3D"2" width=3D"98%" align=3D"center">
+</div>
+<div id=3D"x_divRplyFwdMsg">
+<p class=3D"x_MsoNormal"><b><span style=3D"font-size:11.0pt; font-family:&q=
+uot;Calibri&quot;,sans-serif; color:black">From:</span></b><span style=3D"f=
+ont-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif; color:black"> =
+Crane, Gregory &lt;<a href=3D"mailto:Gregory.Crane@tufts.edu">Gregory.Crane=
+@tufts.edu</a>&gt;<br>
+<b>Sent:</b> Friday, March 20, 2026 11:13 AM<br>
+<b>To:</b> Gelzinis, Elizabeth &lt;<a href=3D"mailto:Elizabeth.Gelzinis@tuf=
+ts.edu">Elizabeth.Gelzinis@tufts.edu</a>&gt;<br>
+<b>Cc:</b> Strobino, Riccardo &lt;<a href=3D"mailto:Riccardo.Strobino@tufts=
+.edu">Riccardo.Strobino@tufts.edu</a>&gt;<br>
+<b>Subject:</b> federal and non-federal summer salary</span> </p>
+<div>
+<p class=3D"x_MsoNormal">&nbsp;</p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Hi Beth,</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">My recollection is tha=
+t NSF has a cap of 2 months summer salary and I thought that might be the l=
+imit for all federal summer salary (e.g., you could get 1 month from NSF an=
+d 1 month from NEH).</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">In the past, my recoll=
+ection is that non-federal funding could go beyond that, i.e., Mellon money=
+ could pay for part of all of a third month. Schmid Sciences would fit into=
+ this category.</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">The point is to verify=
+ that there is no reason (other than burnout) that Riccardo could not take =
+the full 6 weeks of NEH and 6 weeks of Schmidt Sciences funding.</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">&nbsp;</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Best,</span></p>
+</div>
+<div>
+<p class=3D"x_MsoNormal"><span style=3D"color:black">Greg</span></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CH3PR05MB1031362DF29CA420285B92A0EE64CACH3PR05MB10313na_--

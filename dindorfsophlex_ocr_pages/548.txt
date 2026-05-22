@@ -1,0 +1,534 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>bsb11263667_00548</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="ocr-capabilities"
+          content="ocr_line ocr_page ocr_par ocrp_lang ocrx_block ocrx_word x_source x_wconf"/>
+  </head>
+  <body>
+<div class="ocr_page" title="x_source bsb11263667_00548; ppageno 548; bbox 0 0 1898 2883" lang="la">
+ <div class="ocrx_block" title="bbox 402 352 1396 559">
+  <p class="ocr_par" title="bbox 402 352 1121 390">
+   <span class="ocr_line" title="bbox 402 352 1121 390"><span class="ocrx_word" title="bbox 402 352 565 390">Platonis</span> <span class="ocrx_word" title="bbox 588 352 695 390">opera</span> <span class="ocrx_word" title="bbox 714 352 828 390">omnia</span> <span class="ocrx_word" title="bbox 847 352 884 390">ed</span><span class="ocrx_word" title="bbox 885 352 892 390">.</span> <span class="ocrx_word" title="bbox 909 352 946 390">G.</span> <span class="ocrx_word" title="bbox 956 352 1115 390">Stallbaum</span><span class="ocrx_word" title="bbox 1114 352 1121 390">.</span></span>
+</p>
+  <p class="ocr_par" title="bbox 525 385 1149 415">
+   <span class="ocr_line" title="bbox 525 385 1149 415"><span class="ocrx_word" title="bbox 525 385 639 415">Phaedo</span><span class="ocrx_word" title="bbox 643 385 648 415">.</span> <span class="ocrx_word" title="bbox 681 385 727 415">Ed</span><span class="ocrx_word" title="bbox 728 385 735 415">.</span> <span class="ocrx_word" title="bbox 750 385 804 415">IIII</span><span class="ocrx_word" title="bbox 807 385 814 415">.</span> <span class="ocrx_word" title="bbox 831 385 882 415">cur</span><span class="ocrx_word" title="bbox 881 385 889 415">.</span> <span class="ocrx_word" title="bbox 910 385 1038 415">Wohlrab</span><span class="ocrx_word" title="bbox 1042 385 1048 415">.</span> <span class="ocrx_word" title="bbox 1083 385 1149 415">1866</span></span>
+</p>
+  <p class="ocr_par" title="bbox 523 420 1074 458">
+   <span class="ocr_line" title="bbox 523 420 1074 458"><span class="ocrx_word" title="bbox 523 420 705 458">Symposium</span> <span class="ocrx_word" title="bbox 721 420 738 458">c</span><span class="ocrx_word" title="bbox 738 420 744 458">.</span> <span class="ocrx_word" title="bbox 761 420 813 458">ind</span><span class="ocrx_word" title="bbox 814 420 821 458">.</span> <span class="ocrx_word" title="bbox 853 420 898 458">Ed</span><span class="ocrx_word" title="bbox 898 420 905 458">.</span> <span class="ocrx_word" title="bbox 921 420 964 458">III</span><span class="ocrx_word" title="bbox 963 420 970 458">.</span> <span class="ocrx_word" title="bbox 1003 420 1074 458">1852</span></span>
+</p>
+  <p class="ocr_par" title="bbox 521 453 907 488">
+   <span class="ocr_line" title="bbox 521 453 907 488"><span class="ocrx_word" title="bbox 521 453 647 488">Gorgias</span><span class="ocrx_word" title="bbox 648 453 653 488">.</span> <span class="ocrx_word" title="bbox 687 453 732 488">Ed</span><span class="ocrx_word" title="bbox 731 453 738 488">.</span> <span class="ocrx_word" title="bbox 756 453 799 488">III</span><span class="ocrx_word" title="bbox 799 453 805 488">.</span> <span class="ocrx_word" title="bbox 841 453 907 488">1861</span></span>
+</p>
+  <p class="ocr_par" title="bbox 521 485 1284 524">
+   <span class="ocr_line" title="bbox 521 486 1284 523"><span class="ocrx_word" title="bbox 521 486 695 523">Protagoras</span> <span class="ocrx_word" title="bbox 711 486 728 523">c</span><span class="ocrx_word" title="bbox 729 486 737 523">.</span> <span class="ocrx_word" title="bbox 752 486 803 523">ind</span><span class="ocrx_word" title="bbox 804 486 810 523">.</span> <span class="ocrx_word" title="bbox 844 486 887 523">Ed</span><span class="ocrx_word" title="bbox 889 486 895 523">.</span> <span class="ocrx_word" title="bbox 912 486 954 523">III</span><span class="ocrx_word" title="bbox 955 486 961 523">.</span> <span class="ocrx_word" title="bbox 979 486 1015 523">ed</span><span class="ocrx_word" title="bbox 1017 486 1023 523">.</span> <span class="ocrx_word" title="bbox 1038 486 1175 523">Kroschel</span><span class="ocrx_word" title="bbox 1176 486 1181 523">.</span> <span class="ocrx_word" title="bbox 1215 486 1284 523">1865</span></span>
+</p>
+  <p class="ocr_par" title="bbox 523 520 1396 559">
+   <span class="ocr_line" title="bbox 523 521 1396 558"><span class="ocrx_word" title="bbox 523 521 631 558">Politia</span> <span class="ocrx_word" title="bbox 645 521 706 558">sive</span> <span class="ocrx_word" title="bbox 721 521 760 558">de</span> <span class="ocrx_word" title="bbox 775 521 923 558">republica</span> <span class="ocrx_word" title="bbox 937 521 1005 558">libri</span> <span class="ocrx_word" title="bbox 1019 521 1120 558">decem</span><span class="ocrx_word" title="bbox 1121 521 1130 558">.</span> <span class="ocrx_word" title="bbox 1161 521 1180 558">2</span> <span class="ocrx_word" title="bbox 1196 521 1259 558">voll</span><span class="ocrx_word" title="bbox 1256 521 1263 558">.</span> <span class="ocrx_word" title="bbox 1297 521 1344 558">Ed</span><span class="ocrx_word" title="bbox 1343 521 1349 558">.</span> <span class="ocrx_word" title="bbox 1366 521 1396 558">II</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 555 566 667 586">
+  <p class="ocr_par" title="bbox 555 566 667 586">
+   <span class="ocr_line" title="bbox 555 566 667 586"><span class="ocrx_word" title="bbox 555 566 661 586">Einzeln</span><span class="ocrx_word" title="bbox 659 566 667 586">:</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 392 1597 412">
+  <p class="ocr_par" title="bbox 1558 392 1597 412">
+   <span class="ocr_line" title="bbox 1558 392 1597 412"><span class="ocrx_word" title="bbox 1558 392 1597 412">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1561 422 1630 457">
+  <p class="ocr_par" title="bbox 1561 422 1630 457">
+   <span class="ocr_line" title="bbox 1561 422 1630 457"><span class="ocrx_word" title="bbox 1561 422 1630 457">222</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 460 1600 480">
+  <p class="ocr_par" title="bbox 1558 460 1600 480">
+   <span class="ocr_line" title="bbox 1558 460 1600 480"><span class="ocrx_word" title="bbox 1558 460 1600 480">24</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 493 1601 515">
+  <p class="ocr_par" title="bbox 1560 493 1601 515">
+   <span class="ocr_line" title="bbox 1560 493 1601 515"><span class="ocrx_word" title="bbox 1560 493 1601 515">18</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 527 1600 550">
+  <p class="ocr_par" title="bbox 1527 527 1600 550">
+   <span class="ocr_line" title="bbox 1527 527 1600 550"><span class="ocrx_word" title="bbox 1527 527 1552 550">2</span> <span class="ocrx_word" title="bbox 1557 527 1600 550">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 643 589 1082 619">
+  <p class="ocr_par" title="bbox 643 589 1082 619">
+   <span class="ocr_line" title="bbox 643 589 1082 618"><span class="ocrx_word" title="bbox 643 589 699 618">Vol</span><span class="ocrx_word" title="bbox 701 589 707 618">.</span> <span class="ocrx_word" title="bbox 729 589 751 618">I.</span> <span class="ocrx_word" title="bbox 784 589 827 618">lib</span><span class="ocrx_word" title="bbox 829 589 836 618">.</span> <span class="ocrx_word" title="bbox 869 589 924 618">I-</span> <span class="ocrx_word" title="bbox 927 589 963 618">V.</span> <span class="ocrx_word" title="bbox 997 589 1067 618">1858</span><span class="ocrx_word" title="bbox 1077 589 1082 618">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 642 622 962 653">
+  <p class="ocr_par" title="bbox 642 622 962 653">
+   <span class="ocr_line" title="bbox 642 622 962 653"><span class="ocrx_word" title="bbox 642 622 698 653">Vol</span><span class="ocrx_word" title="bbox 702 622 707 653">.</span> <span class="ocrx_word" title="bbox 716 622 744 653">II</span><span class="ocrx_word" title="bbox 745 622 750 653">.</span> <span class="ocrx_word" title="bbox 782 622 826 653">lib</span><span class="ocrx_word" title="bbox 829 622 835 653">.</span> <span class="ocrx_word" title="bbox 846 622 886 653">VI</span><span class="ocrx_word" title="bbox 888 622 923 653">-</span><span class="ocrx_word" title="bbox 927 622 953 653">X</span><span class="ocrx_word" title="bbox 956 622 962 653">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 996 622 1080 653">
+  <p class="ocr_par" title="bbox 996 622 1080 653">
+   <span class="ocr_line" title="bbox 996 622 1080 653"><span class="ocrx_word" title="bbox 996 622 1065 653">1859</span><span class="ocrx_word" title="bbox 1076 622 1080 653">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 657 949 687">
+  <p class="ocr_par" title="bbox 526 657 949 687">
+   <span class="ocr_line" title="bbox 526 657 949 687"><span class="ocrx_word" title="bbox 526 657 670 687">Phaedrus</span><span class="ocrx_word" title="bbox 673 657 678 687">.</span> <span class="ocrx_word" title="bbox 712 657 757 687">Ed</span><span class="ocrx_word" title="bbox 759 657 765 687">.</span> <span class="ocrx_word" title="bbox 781 657 809 687">II</span><span class="ocrx_word" title="bbox 810 657 816 687">.</span> <span class="ocrx_word" title="bbox 851 657 921 687">1857</span><span class="ocrx_word" title="bbox 943 657 949 687">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1528 594 1599 617">
+  <p class="ocr_par" title="bbox 1528 594 1599 617">
+   <span class="ocr_line" title="bbox 1528 594 1599 617"><span class="ocrx_word" title="bbox 1528 595 1557 617">1</span> <span class="ocrx_word" title="bbox 1560 594 1599 616">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 628 1601 652">
+  <p class="ocr_par" title="bbox 1527 628 1601 652">
+   <span class="ocr_line" title="bbox 1527 628 1601 652"><span class="ocrx_word" title="bbox 1527 628 1601 652">13</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 663 1602 683">
+  <p class="ocr_par" title="bbox 1559 663 1602 683">
+   <span class="ocr_line" title="bbox 1559 663 1602 683"><span class="ocrx_word" title="bbox 1559 663 1602 683">24</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 524 690 1405 762">
+  <p class="ocr_par" title="bbox 524 690 1405 729">
+   <span class="ocr_line" title="bbox 524 691 1405 729"><span class="ocrx_word" title="bbox 524 691 697 728">Menexenus</span><span class="ocrx_word" title="bbox 704 691 711 728">,</span> <span class="ocrx_word" title="bbox 727 691 809 728">Lysis</span><span class="ocrx_word" title="bbox 815 691 822 728">,</span> <span class="ocrx_word" title="bbox 837 691 957 728">Hippias</span> <span class="ocrx_word" title="bbox 975 691 1095 728">uterque</span><span class="ocrx_word" title="bbox 1099 691 1107 728">,</span> <span class="ocrx_word" title="bbox 1123 691 1154 728">Io</span><span class="ocrx_word" title="bbox 1156 691 1162 728">.</span> <span class="ocrx_word" title="bbox 1197 691 1242 728">Ed</span><span class="ocrx_word" title="bbox 1242 691 1248 728">.</span> <span class="ocrx_word" title="bbox 1265 691 1295 728">II</span><span class="ocrx_word" title="bbox 1295 691 1300 728">.</span> <span class="ocrx_word" title="bbox 1335 691 1405 729">1857</span></span>
+</p>
+  <p class="ocr_par" title="bbox 525 723 1351 762">
+   <span class="ocr_line" title="bbox 525 724 1351 761"><span class="ocrx_word" title="bbox 525 724 631 761">Laches</span><span class="ocrx_word" title="bbox 638 724 646 761">,</span> <span class="ocrx_word" title="bbox 665 724 827 761">Charmides</span><span class="ocrx_word" title="bbox 834 724 843 761">,</span> <span class="ocrx_word" title="bbox 859 724 1021 761">Alcibiades</span> <span class="ocrx_word" title="bbox 1036 724 1059 761">I.</span> <span class="ocrx_word" title="bbox 1077 724 1104 761">II</span><span class="ocrx_word" title="bbox 1106 724 1112 761">.</span> <span class="ocrx_word" title="bbox 1145 724 1191 761">Ed</span><span class="ocrx_word" title="bbox 1190 724 1196 761">.</span> <span class="ocrx_word" title="bbox 1213 724 1242 761">II</span><span class="ocrx_word" title="bbox 1242 724 1248 761">.</span> <span class="ocrx_word" title="bbox 1284 724 1351 761">1857</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 521 760 927 829">
+  <p class="ocr_par" title="bbox 525 760 927 796">
+   <span class="ocr_line" title="bbox 525 760 927 796"><span class="ocrx_word" title="bbox 525 760 659 796">Cratylus</span> <span class="ocrx_word" title="bbox 674 760 739 796">cum</span><span class="ocrx_word" title="bbox 739 760 746 796">.</span> <span class="ocrx_word" title="bbox 763 760 813 796">ind</span><span class="ocrx_word" title="bbox 816 760 822 796">.</span> <span class="ocrx_word" title="bbox 856 760 927 796">1835</span></span>
+</p>
+  <p class="ocr_par" title="bbox 521 793 839 829">
+   <span class="ocr_line" title="bbox 521 793 839 829"><span class="ocrx_word" title="bbox 521 793 717 829">Euthydemus</span><span class="ocrx_word" title="bbox 720 793 726 829">.</span> <span class="ocrx_word" title="bbox 761 793 829 829">1836</span><span class="ocrx_word" title="bbox 833 793 839 829">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 697 1597 718">
+  <p class="ocr_par" title="bbox 1559 697 1597 718">
+   <span class="ocr_line" title="bbox 1559 697 1597 718"><span class="ocrx_word" title="bbox 1559 697 1597 718">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 731 1599 752">
+  <p class="ocr_par" title="bbox 1558 731 1599 752">
+   <span class="ocr_line" title="bbox 1558 731 1599 752"><span class="ocrx_word" title="bbox 1558 731 1599 752">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 766 1599 786">
+  <p class="ocr_par" title="bbox 1558 766 1599 786">
+   <span class="ocr_line" title="bbox 1558 766 1599 786"><span class="ocrx_word" title="bbox 1558 766 1599 786">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 800 1601 819">
+  <p class="ocr_par" title="bbox 1560 800 1601 819">
+   <span class="ocr_line" title="bbox 1560 800 1601 819"><span class="ocrx_word" title="bbox 1560 800 1601 819">21</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 520 826 1494 865">
+  <p class="ocr_par" title="bbox 520 826 1494 865">
+   <span class="ocr_line" title="bbox 520 827 1494 864"><span class="ocrx_word" title="bbox 520 827 609 864">Meno</span> <span class="ocrx_word" title="bbox 618 827 647 864">et</span> <span class="ocrx_word" title="bbox 650 827 817 864">Euthyphro</span> <span class="ocrx_word" title="bbox 825 827 952 864">itemque</span> <span class="ocrx_word" title="bbox 960 827 1061 864">incerti</span> <span class="ocrx_word" title="bbox 1070 827 1210 864">scriptoris</span> <span class="ocrx_word" title="bbox 1217 827 1345 864">Theages</span><span class="ocrx_word" title="bbox 1346 827 1354 864">,</span> <span class="ocrx_word" title="bbox 1366 827 1484 864">Erastae</span><span class="ocrx_word" title="bbox 1488 827 1494 864">,</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 520 861 814 897">
+  <p class="ocr_par" title="bbox 520 861 814 897">
+   <span class="ocr_line" title="bbox 520 861 814 897"><span class="ocrx_word" title="bbox 520 861 703 897">Hipparchus</span><span class="ocrx_word" title="bbox 705 861 711 897">.</span> <span class="ocrx_word" title="bbox 747 861 814 897">1836</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1446 875 1460 889">
+  <p class="ocr_par" title="bbox 1446 875 1460 889">
+   <span class="ocr_line" title="bbox 1446 875 1460 889"><span class="ocrx_word" title="bbox 1446 875 1460 889">:</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1526 867 1599 888">
+  <p class="ocr_par" title="bbox 1526 867 1599 888">
+   <span class="ocr_line" title="bbox 1526 867 1599 888"><span class="ocrx_word" title="bbox 1526 867 1555 888">1</span> <span class="ocrx_word" title="bbox 1560 867 1599 888">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 523 895 945 925">
+  <p class="ocr_par" title="bbox 523 895 945 925">
+   <span class="ocr_line" title="bbox 523 895 945 925"><span class="ocrx_word" title="bbox 523 895 658 925">Timaeus</span> <span class="ocrx_word" title="bbox 669 895 705 925">et</span> <span class="ocrx_word" title="bbox 721 895 824 925">Critias</span><span class="ocrx_word" title="bbox 825 895 832 925">.</span> <span class="ocrx_word" title="bbox 866 895 934 925">1838</span><span class="ocrx_word" title="bbox 941 895 945 925">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1524 900 1600 924">
+  <p class="ocr_par" title="bbox 1524 900 1600 924">
+   <span class="ocr_line" title="bbox 1524 900 1600 924"><span class="ocrx_word" title="bbox 1524 901 1561 924">1</span> <span class="ocrx_word" title="bbox 1556 900 1600 923">24</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 525 929 1199 960">
+  <p class="ocr_par" title="bbox 525 929 1199 960">
+   <span class="ocr_line" title="bbox 525 929 1199 959"><span class="ocrx_word" title="bbox 525 929 696 959">Theaetetus</span><span class="ocrx_word" title="bbox 699 929 705 959">.</span> <span class="ocrx_word" title="bbox 739 929 784 959">Ea</span><span class="ocrx_word" title="bbox 785 929 790 959">.</span> <span class="ocrx_word" title="bbox 809 929 837 959">II</span><span class="ocrx_word" title="bbox 837 929 843 959">.</span> <span class="ocrx_word" title="bbox 879 930 925 959">rec</span><span class="ocrx_word" title="bbox 927 930 932 959">.</span> <span class="ocrx_word" title="bbox 954 930 1087 959">Wohlrab</span><span class="ocrx_word" title="bbox 1090 930 1095 959">.</span> <span class="ocrx_word" title="bbox 1132 930 1199 959">1869</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 938 1549 956">
+  <p class="ocr_par" title="bbox 1527 938 1549 956">
+   <span class="ocr_line" title="bbox 1527 938 1549 956"><span class="ocrx_word" title="bbox 1527 938 1549 956">1</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 525 964 770 997">
+  <p class="ocr_par" title="bbox 525 964 770 997">
+   <span class="ocr_line" title="bbox 525 964 770 997"><span class="ocrx_word" title="bbox 525 964 660 997">Sophista</span><span class="ocrx_word" title="bbox 661 964 666 997">.</span> <span class="ocrx_word" title="bbox 701 964 770 997">1840</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1557 968 1598 990">
+  <p class="ocr_par" title="bbox 1557 968 1598 990">
+   <span class="ocr_line" title="bbox 1557 968 1598 990"><span class="ocrx_word" title="bbox 1557 968 1598 990">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 523 992 1183 1027">
+  <p class="ocr_par" title="bbox 523 992 1183 1027">
+   <span class="ocr_line" title="bbox 523 993 1183 1026"><span class="ocrx_word" title="bbox 523 993 662 1026">Politicus</span> <span class="ocrx_word" title="bbox 678 993 709 1026">et</span> <span class="ocrx_word" title="bbox 724 993 826 1026">incerti</span> <span class="ocrx_word" title="bbox 843 993 965 1026">auctoris</span> <span class="ocrx_word" title="bbox 982 993 1073 1026">Minos</span><span class="ocrx_word" title="bbox 1074 993 1082 1026">.</span> <span class="ocrx_word" title="bbox 1116 993 1183 1026">1841</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 1002 1597 1023">
+  <p class="ocr_par" title="bbox 1559 1002 1597 1023">
+   <span class="ocr_line" title="bbox 1559 1002 1597 1023"><span class="ocrx_word" title="bbox 1559 1002 1597 1023">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 1031 770 1059">
+  <p class="ocr_par" title="bbox 526 1031 770 1059">
+   <span class="ocr_line" title="bbox 526 1031 770 1059"><span class="ocrx_word" title="bbox 526 1031 659 1059">Philebus</span><span class="ocrx_word" title="bbox 662 1031 667 1059">.</span> <span class="ocrx_word" title="bbox 703 1031 770 1059">1842</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 1037 1598 1056">
+  <p class="ocr_par" title="bbox 1559 1037 1598 1056">
+   <span class="ocr_line" title="bbox 1559 1037 1598 1056"><span class="ocrx_word" title="bbox 1559 1037 1598 1056">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 1062 1101 1101">
+  <p class="ocr_par" title="bbox 526 1062 1101 1101">
+   <span class="ocr_line" title="bbox 526 1062 1101 1101"><span class="ocrx_word" title="bbox 526 1062 618 1101">Leges</span><span class="ocrx_word" title="bbox 619 1062 625 1101">.</span> <span class="ocrx_word" title="bbox 650 1062 706 1101">Vol</span><span class="ocrx_word" title="bbox 708 1062 714 1101">.</span> <span class="ocrx_word" title="bbox 746 1062 767 1101">I.</span> <span class="ocrx_word" title="bbox 801 1062 844 1101">lib</span><span class="ocrx_word" title="bbox 844 1062 851 1101">.</span> <span class="ocrx_word" title="bbox 892 1062 912 1101">I</span><span class="ocrx_word" title="bbox 912 1062 943 1101">-</span><span class="ocrx_word" title="bbox 949 1062 992 1101">IV</span><span class="ocrx_word" title="bbox 990 1062 998 1101">.</span> <span class="ocrx_word" title="bbox 1034 1062 1101 1101">1858</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 1070 1600 1092">
+  <p class="ocr_par" title="bbox 1527 1070 1600 1092">
+   <span class="ocr_line" title="bbox 1527 1070 1600 1092"><span class="ocrx_word" title="bbox 1527 1070 1600 1092">16</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 651 1099 1100 1129">
+  <p class="ocr_par" title="bbox 651 1099 1100 1129">
+   <span class="ocr_line" title="bbox 651 1099 1100 1129"><span class="ocrx_word" title="bbox 651 1099 707 1129">Vol</span><span class="ocrx_word" title="bbox 710 1099 716 1129">.</span> <span class="ocrx_word" title="bbox 733 1099 759 1129">II</span><span class="ocrx_word" title="bbox 761 1099 766 1129">.</span> <span class="ocrx_word" title="bbox 800 1099 840 1129">lib</span><span class="ocrx_word" title="bbox 845 1099 851 1129">.</span> <span class="ocrx_word" title="bbox 863 1099 890 1129">V</span><span class="ocrx_word" title="bbox 891 1099 921 1129">-</span><span class="ocrx_word" title="bbox 924 1099 990 1129">VIII</span><span class="ocrx_word" title="bbox 991 1099 998 1129">.</span> <span class="ocrx_word" title="bbox 1033 1099 1100 1129">1859</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 1105 1600 1126">
+  <p class="ocr_par" title="bbox 1527 1105 1600 1126">
+   <span class="ocr_line" title="bbox 1527 1105 1600 1126"><span class="ocrx_word" title="bbox 1527 1105 1600 1126">16</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 409 1152 1497 1208">
+  <p class="ocr_par" title="bbox 409 1152 1497 1208">
+   <span class="ocr_line" title="bbox 409 1153 1497 1207"><span class="ocrx_word" title="bbox 409 1153 572 1206">Sophoclis</span> <span class="ocrx_word" title="bbox 589 1153 755 1206">tragoediae</span><span class="ocrx_word" title="bbox 759 1153 771 1206">,</span> <span class="ocrx_word" title="bbox 784 1153 835 1206">rec</span><span class="ocrx_word" title="bbox 832 1153 844 1206">.</span> <span class="ocrx_word" title="bbox 851 1153 883 1206">et</span> <span class="ocrx_word" title="bbox 891 1153 999 1206">explan</span><span class="ocrx_word" title="bbox 991 1153 1001 1206">.</span> <span class="ocrx_word" title="bbox 1016 1153 1057 1206">E.</span> <span class="ocrx_word" title="bbox 1069 1153 1233 1207">Wunderus</span><span class="ocrx_word" title="bbox 1234 1154 1247 1207">.</span> <span class="ocrx_word" title="bbox 1267 1154 1292 1207">2</span> <span class="ocrx_word" title="bbox 1294 1154 1358 1207">voll</span><span class="ocrx_word" title="bbox 1356 1154 1365 1207">.</span> <span class="ocrx_word" title="bbox 1389 1154 1420 1207">8.</span> <span class="ocrx_word" title="bbox 1427 1154 1490 1207">mai</span><span class="ocrx_word" title="bbox 1488 1154 1497 1207">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 650 1131 1323 1169">
+  <p class="ocr_par" title="bbox 650 1131 1323 1169">
+   <span class="ocr_line" title="bbox 650 1132 1323 1168"><span class="ocrx_word" title="bbox 650 1132 707 1168">Vol</span><span class="ocrx_word" title="bbox 710 1132 715 1168">.</span> <span class="ocrx_word" title="bbox 721 1132 762 1168">III</span><span class="ocrx_word" title="bbox 762 1132 767 1168">.</span> <span class="ocrx_word" title="bbox 804 1132 843 1168">lib</span><span class="ocrx_word" title="bbox 847 1132 853 1168">.</span> <span class="ocrx_word" title="bbox 860 1132 899 1168">IX</span><span class="ocrx_word" title="bbox 903 1132 937 1168">-</span><span class="ocrx_word" title="bbox 941 1132 995 1168">XII</span><span class="ocrx_word" title="bbox 997 1132 1003 1168">.</span> <span class="ocrx_word" title="bbox 1022 1132 1054 1168">et</span> <span class="ocrx_word" title="bbox 1068 1132 1211 1168">Epinomis</span><span class="ocrx_word" title="bbox 1215 1132 1220 1168">.</span> <span class="ocrx_word" title="bbox 1256 1132 1323 1168">1860</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1528 1139 1599 1159">
+  <p class="ocr_par" title="bbox 1528 1139 1599 1159">
+   <span class="ocr_line" title="bbox 1528 1139 1599 1159"><span class="ocrx_word" title="bbox 1528 1139 1599 1159">16</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1528 1206 1546 1229">
+  <p class="ocr_par" title="bbox 1528 1206 1546 1229">
+   <span class="ocr_line" title="bbox 1528 1206 1546 1229"><span class="ocrx_word" title="bbox 1528 1206 1546 1229">3</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1571 1216 1592 1221">
+  <p class="ocr_par" title="bbox 1571 1216 1592 1221">
+   <span class="ocr_line" title="bbox 1571 1216 1592 1221"><span class="ocrx_word" title="bbox 1571 1216 1592 1221">-</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 473 1203 656 1229">
+  <p class="ocr_par" title="bbox 473 1203 656 1229">
+   <span class="ocr_line" title="bbox 473 1203 656 1229"><span class="ocrx_word" title="bbox 473 1203 656 1229">1847-1857</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 557 1245 670 1265">
+  <p class="ocr_par" title="bbox 557 1245 670 1265">
+   <span class="ocr_line" title="bbox 557 1245 670 1265"><span class="ocrx_word" title="bbox 557 1245 663 1265">Einzeln</span><span class="ocrx_word" title="bbox 660 1245 670 1265">:</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 1269 852 1297">
+  <p class="ocr_par" title="bbox 527 1269 852 1297">
+   <span class="ocr_line" title="bbox 527 1269 852 1297"><span class="ocrx_word" title="bbox 527 1269 699 1297">Philoctetes</span><span class="ocrx_word" title="bbox 703 1269 708 1297">.</span> <span class="ocrx_word" title="bbox 742 1269 786 1297">Ed</span><span class="ocrx_word" title="bbox 788 1269 794 1297">.</span> <span class="ocrx_word" title="bbox 810 1269 852 1297">III</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 1303 960 1339">
+  <p class="ocr_par" title="bbox 527 1303 960 1339">
+   <span class="ocr_line" title="bbox 527 1303 960 1339"><span class="ocrx_word" title="bbox 527 1303 655 1339">Oedipus</span> <span class="ocrx_word" title="bbox 671 1303 805 1339">tyrannus</span><span class="ocrx_word" title="bbox 807 1303 813 1339">.</span> <span class="ocrx_word" title="bbox 847 1303 892 1339">Ed</span><span class="ocrx_word" title="bbox 894 1303 900 1339">.</span> <span class="ocrx_word" title="bbox 917 1303 960 1339">IV</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 525 1335 958 1373">
+  <p class="ocr_par" title="bbox 525 1335 958 1373">
+   <span class="ocr_line" title="bbox 525 1335 958 1373"><span class="ocrx_word" title="bbox 525 1335 652 1373">Oedipus</span> <span class="ocrx_word" title="bbox 670 1335 809 1372">Coloneus</span><span class="ocrx_word" title="bbox 811 1335 817 1372">.</span> <span class="ocrx_word" title="bbox 853 1335 897 1372">Ed</span><span class="ocrx_word" title="bbox 898 1335 904 1372">.</span> <span class="ocrx_word" title="bbox 916 1335 958 1372">III</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 524 1371 826 1406">
+  <p class="ocr_par" title="bbox 524 1371 826 1406">
+   <span class="ocr_line" title="bbox 524 1371 826 1406"><span class="ocrx_word" title="bbox 524 1371 674 1406">Antigona</span><span class="ocrx_word" title="bbox 673 1371 679 1406">.</span> <span class="ocrx_word" title="bbox 714 1371 759 1406">Ed</span><span class="ocrx_word" title="bbox 760 1371 766 1406">.</span> <span class="ocrx_word" title="bbox 784 1371 826 1406">IV</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 1405 814 1435">
+  <p class="ocr_par" title="bbox 526 1405 814 1435">
+   <span class="ocr_line" title="bbox 526 1405 814 1435"><span class="ocrx_word" title="bbox 526 1405 642 1435">Electra</span><span class="ocrx_word" title="bbox 643 1405 648 1435">.</span> <span class="ocrx_word" title="bbox 683 1405 727 1435">Ed</span><span class="ocrx_word" title="bbox 729 1405 735 1435">.</span> <span class="ocrx_word" title="bbox 753 1405 795 1435">III</span><span class="ocrx_word" title="bbox 809 1405 814 1435">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 1438 781 1468">
+  <p class="ocr_par" title="bbox 527 1438 781 1468">
+   <span class="ocr_line" title="bbox 527 1438 781 1468"><span class="ocrx_word" title="bbox 527 1438 603 1468">Aiax</span><span class="ocrx_word" title="bbox 605 1438 609 1468">.</span> <span class="ocrx_word" title="bbox 645 1438 688 1468">Ed</span><span class="ocrx_word" title="bbox 691 1438 696 1468">.</span> <span class="ocrx_word" title="bbox 714 1438 757 1468">III</span><span class="ocrx_word" title="bbox 773 1438 781 1468">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 528 1471 846 1502">
+  <p class="ocr_par" title="bbox 528 1471 846 1502">
+   <span class="ocr_line" title="bbox 528 1471 846 1502"><span class="ocrx_word" title="bbox 528 1471 694 1502">Trachiniae</span><span class="ocrx_word" title="bbox 697 1471 702 1502">.</span> <span class="ocrx_word" title="bbox 736 1471 782 1502">Ed</span><span class="ocrx_word" title="bbox 782 1471 788 1502">.</span> <span class="ocrx_word" title="bbox 807 1471 836 1502">II</span><span class="ocrx_word" title="bbox 841 1471 846 1502">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 410 1503 1494 1547">
+  <p class="ocr_par" title="bbox 410 1503 1494 1547">
+   <span class="ocr_line" title="bbox 410 1504 1494 1546"><span class="ocrx_word" title="bbox 410 1504 595 1544">Thucydidis</span> <span class="ocrx_word" title="bbox 607 1504 645 1544">de</span> <span class="ocrx_word" title="bbox 659 1504 739 1544">bello</span> <span class="ocrx_word" title="bbox 747 1504 989 1546">Peloponnesiaco</span> <span class="ocrx_word" title="bbox 1003 1505 1071 1545">libri</span> <span class="ocrx_word" title="bbox 1081 1505 1150 1545">VIII</span><span class="ocrx_word" title="bbox 1150 1505 1158 1545">,</span> <span class="ocrx_word" title="bbox 1169 1505 1274 1546">explan</span><span class="ocrx_word" title="bbox 1276 1506 1282 1546">.</span> <span class="ocrx_word" title="bbox 1292 1506 1331 1546">E.</span> <span class="ocrx_word" title="bbox 1337 1506 1377 1546">F.</span> <span class="ocrx_word" title="bbox 1384 1506 1487 1546">Poppo</span><span class="ocrx_word" title="bbox 1488 1506 1494 1546">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 473 1541 722 1570">
+  <p class="ocr_par" title="bbox 473 1541 722 1570">
+   <span class="ocr_line" title="bbox 473 1541 722 1570"><span class="ocrx_word" title="bbox 473 1541 503 1570">4</span> <span class="ocrx_word" title="bbox 509 1541 574 1570">voll</span><span class="ocrx_word" title="bbox 572 1541 579 1570">.</span> <span class="ocrx_word" title="bbox 611 1541 638 1570">8.</span> <span class="ocrx_word" title="bbox 658 1541 716 1570">mai</span><span class="ocrx_word" title="bbox 716 1541 722 1570">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 756 1541 948 1570">
+  <p class="ocr_par" title="bbox 756 1541 948 1570">
+   <span class="ocr_line" title="bbox 756 1541 948 1570"><span class="ocrx_word" title="bbox 756 1541 937 1570">1843-1866</span><span class="ocrx_word" title="bbox 944 1541 948 1570">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 554 1585 670 1605">
+  <p class="ocr_par" title="bbox 554 1585 670 1605">
+   <span class="ocr_line" title="bbox 554 1585 670 1605"><span class="ocrx_word" title="bbox 554 1585 663 1605">Einzeln</span><span class="ocrx_word" title="bbox 657 1585 670 1605">:</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 525 1608 808 1635">
+  <p class="ocr_par" title="bbox 525 1608 808 1635">
+   <span class="ocr_line" title="bbox 525 1608 808 1635"><span class="ocrx_word" title="bbox 525 1610 579 1635">Lib</span><span class="ocrx_word" title="bbox 583 1610 588 1635">.</span> <span class="ocrx_word" title="bbox 641 1608 664 1635">I.</span> <span class="ocrx_word" title="bbox 698 1608 746 1634">Ed</span><span class="ocrx_word" title="bbox 745 1608 752 1634">.</span> <span class="ocrx_word" title="bbox 768 1608 798 1634">II</span><span class="ocrx_word" title="bbox 802 1608 808 1634">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 1641 810 1671">
+  <p class="ocr_par" title="bbox 527 1641 810 1671">
+   <span class="ocr_line" title="bbox 527 1641 810 1671"><span class="ocrx_word" title="bbox 527 1641 579 1671">Lib</span><span class="ocrx_word" title="bbox 582 1641 589 1671">.</span> <span class="ocrx_word" title="bbox 632 1641 659 1671">II</span><span class="ocrx_word" title="bbox 661 1641 667 1671">.</span> <span class="ocrx_word" title="bbox 701 1641 746 1671">Ed</span><span class="ocrx_word" title="bbox 748 1641 754 1671">.</span> <span class="ocrx_word" title="bbox 770 1641 800 1671">II</span><span class="ocrx_word" title="bbox 805 1641 810 1671">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 1677 679 1705">
+  <p class="ocr_par" title="bbox 526 1677 679 1705">
+   <span class="ocr_line" title="bbox 526 1677 679 1705"><span class="ocrx_word" title="bbox 526 1677 579 1705">Lib</span><span class="ocrx_word" title="bbox 582 1677 590 1705">.</span> <span class="ocrx_word" title="bbox 626 1677 668 1705">III</span><span class="ocrx_word" title="bbox 674 1677 679 1705">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 1710 675 1740">
+  <p class="ocr_par" title="bbox 527 1710 675 1740">
+   <span class="ocr_line" title="bbox 527 1710 675 1740"><span class="ocrx_word" title="bbox 527 1710 581 1740">Lib</span><span class="ocrx_word" title="bbox 582 1710 589 1740">.</span> <span class="ocrx_word" title="bbox 624 1710 664 1740">IV</span><span class="ocrx_word" title="bbox 670 1710 675 1740">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 524 1744 674 1774">
+  <p class="ocr_par" title="bbox 524 1744 674 1774">
+   <span class="ocr_line" title="bbox 524 1744 674 1774"><span class="ocrx_word" title="bbox 524 1744 579 1774">Lib</span><span class="ocrx_word" title="bbox 582 1744 588 1774">.</span> <span class="ocrx_word" title="bbox 635 1744 674 1774">V.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 525 1778 679 1807">
+  <p class="ocr_par" title="bbox 525 1778 679 1807">
+   <span class="ocr_line" title="bbox 525 1778 679 1807"><span class="ocrx_word" title="bbox 525 1778 581 1807">Lib</span><span class="ocrx_word" title="bbox 581 1778 590 1807">.</span> <span class="ocrx_word" title="bbox 625 1778 670 1807">VI</span><span class="ocrx_word" title="bbox 672 1778 679 1807">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 528 1812 674 1841">
+  <p class="ocr_par" title="bbox 528 1812 674 1841">
+   <span class="ocr_line" title="bbox 528 1812 674 1841"><span class="ocrx_word" title="bbox 528 1812 579 1841">Lib</span><span class="ocrx_word" title="bbox 581 1812 587 1840">.</span> <span class="ocrx_word" title="bbox 608 1812 664 1840">VII</span><span class="ocrx_word" title="bbox 669 1812 674 1840">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 526 1848 679 1874">
+  <p class="ocr_par" title="bbox 526 1848 679 1874">
+   <span class="ocr_line" title="bbox 526 1848 679 1874"><span class="ocrx_word" title="bbox 526 1848 578 1874">Lib</span><span class="ocrx_word" title="bbox 583 1848 589 1874">.</span> <span class="ocrx_word" title="bbox 599 1848 668 1874">VIII</span><span class="ocrx_word" title="bbox 674 1848 679 1874">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 404 1880 1499 1952">
+  <p class="ocr_par" title="bbox 404 1880 1499 1952">
+   <span class="ocr_line" title="bbox 404 1880 1499 1918"><span class="ocrx_word" title="bbox 404 1880 626 1918">Xenophontis</span> <span class="ocrx_word" title="bbox 631 1880 811 1918">Cyropaedia</span><span class="ocrx_word" title="bbox 809 1880 817 1918">,</span> <span class="ocrx_word" title="bbox 822 1880 967 1918">comment</span><span class="ocrx_word" title="bbox 965 1880 972 1918">.</span> <span class="ocrx_word" title="bbox 977 1880 1049 1918">instr</span><span class="ocrx_word" title="bbox 1049 1880 1056 1918">.</span> <span class="ocrx_word" title="bbox 1058 1880 1316 1918">F.A.Bornemann</span><span class="ocrx_word" title="bbox 1318 1880 1325 1918">.</span> <span class="ocrx_word" title="bbox 1329 1880 1353 1918">8.</span> <span class="ocrx_word" title="bbox 1357 1880 1415 1918">mai</span><span class="ocrx_word" title="bbox 1417 1880 1424 1918">.</span> <span class="ocrx_word" title="bbox 1430 1880 1499 1918">1838</span></span>
+   <span class="ocr_line" title="bbox 522 1913 1493 1952"><span class="ocrx_word" title="bbox 522 1913 725 1952">Memorabilia</span> <span class="ocrx_word" title="bbox 734 1913 750 1951">(</span><span class="ocrx_word" title="bbox 748 1913 951 1951">Commentarii</span><span class="ocrx_word" title="bbox 948 1913 960 1951">)</span><span class="ocrx_word" title="bbox 960 1913 971 1951">,</span> <span class="ocrx_word" title="bbox 984 1913 1078 1951">illustr</span><span class="ocrx_word" title="bbox 1078 1913 1085 1951">.</span> <span class="ocrx_word" title="bbox 1092 1913 1133 1951">R.</span> <span class="ocrx_word" title="bbox 1140 1913 1262 1951">KÃ¼hner</span><span class="ocrx_word" title="bbox 1261 1913 1268 1951">.</span> <span class="ocrx_word" title="bbox 1291 1913 1317 1951">8.</span> <span class="ocrx_word" title="bbox 1328 1913 1388 1951">mai</span><span class="ocrx_word" title="bbox 1390 1913 1396 1951">.</span> <span class="ocrx_word" title="bbox 1418 1913 1485 1951">1858</span><span class="ocrx_word" title="bbox 1488 1913 1493 1951">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1274 1600 1295">
+  <p class="ocr_par" title="bbox 1560 1274 1600 1295">
+   <span class="ocr_line" title="bbox 1560 1274 1600 1295"><span class="ocrx_word" title="bbox 1560 1274 1600 1295">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1561 1308 1601 1330">
+  <p class="ocr_par" title="bbox 1561 1308 1601 1330">
+   <span class="ocr_line" title="bbox 1561 1308 1601 1330"><span class="ocrx_word" title="bbox 1561 1308 1601 1330">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1561 1341 1602 1364">
+  <p class="ocr_par" title="bbox 1561 1341 1602 1364">
+   <span class="ocr_line" title="bbox 1561 1341 1602 1364"><span class="ocrx_word" title="bbox 1561 1341 1602 1364">18</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1514 1388 1526 1391">
+  <p class="ocr_par" title="bbox 1514 1388 1526 1391">
+   <span class="ocr_line" title="bbox 1514 1388 1526 1391"><span class="ocrx_word" title="bbox 1514 1388 1526 1391">-</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1376 1601 1396">
+  <p class="ocr_par" title="bbox 1560 1376 1601 1396">
+   <span class="ocr_line" title="bbox 1560 1376 1601 1396"><span class="ocrx_word" title="bbox 1560 1376 1601 1396">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1409 1601 1431">
+  <p class="ocr_par" title="bbox 1560 1409 1601 1431">
+   <span class="ocr_line" title="bbox 1560 1409 1601 1431"><span class="ocrx_word" title="bbox 1560 1409 1601 1431">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1443 1601 1464">
+  <p class="ocr_par" title="bbox 1560 1443 1601 1464">
+   <span class="ocr_line" title="bbox 1560 1443 1601 1464"><span class="ocrx_word" title="bbox 1560 1443 1601 1464">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1561 1477 1601 1498">
+  <p class="ocr_par" title="bbox 1561 1477 1601 1498">
+   <span class="ocr_line" title="bbox 1561 1477 1601 1498"><span class="ocrx_word" title="bbox 1561 1477 1601 1498">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1524 1547 1553 1567">
+  <p class="ocr_par" title="bbox 1524 1547 1553 1567">
+   <span class="ocr_line" title="bbox 1524 1547 1553 1567"><span class="ocrx_word" title="bbox 1524 1547 1553 1567">4</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1527 1614 1550 1634">
+  <p class="ocr_par" title="bbox 1527 1614 1550 1634">
+   <span class="ocr_line" title="bbox 1527 1614 1550 1634"><span class="ocrx_word" title="bbox 1527 1614 1550 1634">1</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 1644 1633 1677">
+  <p class="ocr_par" title="bbox 1558 1644 1633 1677">
+   <span class="ocr_line" title="bbox 1558 1644 1633 1677"><span class="ocrx_word" title="bbox 1558 1644 1633 1677">222</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1679 1601 1703">
+  <p class="ocr_par" title="bbox 1560 1679 1601 1703">
+   <span class="ocr_line" title="bbox 1560 1679 1601 1703"><span class="ocrx_word" title="bbox 1560 1679 1601 1703">18</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 1713 1602 1738">
+  <p class="ocr_par" title="bbox 1559 1713 1602 1738">
+   <span class="ocr_line" title="bbox 1559 1713 1602 1738"><span class="ocrx_word" title="bbox 1559 1713 1602 1738">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 1747 1602 1773">
+  <p class="ocr_par" title="bbox 1559 1747 1602 1773">
+   <span class="ocr_line" title="bbox 1559 1747 1602 1773"><span class="ocrx_word" title="bbox 1559 1747 1602 1773">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 1780 1601 1805">
+  <p class="ocr_par" title="bbox 1559 1780 1601 1805">
+   <span class="ocr_line" title="bbox 1559 1780 1601 1805"><span class="ocrx_word" title="bbox 1559 1780 1601 1805">18</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1815 1601 1839">
+  <p class="ocr_par" title="bbox 1560 1815 1601 1839">
+   <span class="ocr_line" title="bbox 1560 1815 1601 1839"><span class="ocrx_word" title="bbox 1560 1815 1601 1839">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1848 1601 1873">
+  <p class="ocr_par" title="bbox 1560 1848 1601 1873">
+   <span class="ocr_line" title="bbox 1560 1848 1601 1873"><span class="ocrx_word" title="bbox 1560 1848 1601 1873">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1560 1884 1601 1907">
+  <p class="ocr_par" title="bbox 1560 1884 1601 1907">
+   <span class="ocr_line" title="bbox 1560 1884 1601 1907"><span class="ocrx_word" title="bbox 1560 1884 1601 1907">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1557 1953 1598 1974">
+  <p class="ocr_par" title="bbox 1557 1953 1598 1974">
+   <span class="ocr_line" title="bbox 1557 1953 1598 1974"><span class="ocrx_word" title="bbox 1557 1953 1598 1974">27</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1525 1986 1600 2009">
+  <p class="ocr_par" title="bbox 1525 1986 1600 2009">
+   <span class="ocr_line" title="bbox 1525 1986 1600 2009"><span class="ocrx_word" title="bbox 1525 1986 1600 2009">16</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 474 1952 573 1977">
+  <p class="ocr_par" title="bbox 474 1952 573 1977">
+   <span class="ocr_line" title="bbox 474 1952 573 1977"><span class="ocrx_word" title="bbox 474 1952 522 1977">Ed</span><span class="ocrx_word" title="bbox 523 1952 529 1977">.</span> <span class="ocrx_word" title="bbox 546 1952 573 1977">II</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 521 1976 1456 2020">
+  <p class="ocr_par" title="bbox 521 1976 1456 2020">
+   <span class="ocr_line" title="bbox 521 1977 1456 2020"><span class="ocrx_word" title="bbox 521 1977 667 2020">Anabasis</span> <span class="ocrx_word" title="bbox 682 1977 695 2019">(</span><span class="ocrx_word" title="bbox 694 1977 840 2019">expeditio</span> <span class="ocrx_word" title="bbox 855 1977 923 2019">Cyri</span> <span class="ocrx_word" title="bbox 938 1977 999 2019">min</span><span class="ocrx_word" title="bbox 1000 1977 1007 2019">.</span><span class="ocrx_word" title="bbox 1005 1977 1018 2019">)</span><span class="ocrx_word" title="bbox 1018 1977 1029 2019">,</span> <span class="ocrx_word" title="bbox 1042 1977 1138 2019">illustr</span><span class="ocrx_word" title="bbox 1137 1977 1145 2019">.</span> <span class="ocrx_word" title="bbox 1156 1977 1196 2019">R.</span> <span class="ocrx_word" title="bbox 1206 1977 1331 2019">KÃ¼hner</span><span class="ocrx_word" title="bbox 1328 1977 1335 2019">.</span> <span class="ocrx_word" title="bbox 1372 1977 1440 2019">1852</span><span class="ocrx_word" title="bbox 1449 1977 1456 2019">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 556 2024 803 2050">
+  <p class="ocr_par" title="bbox 556 2024 803 2050">
+   <span class="ocr_line" title="bbox 556 2024 803 2050"><span class="ocrx_word" title="bbox 556 2024 663 2050">Einzeln</span> <span class="ocrx_word" title="bbox 673 2024 691 2049">Ã </span> <span class="ocrx_word" title="bbox 696 2024 729 2049">18</span> <span class="ocrx_word" title="bbox 737 2024 792 2049">Apr</span><span class="ocrx_word" title="bbox 782 2024 803 2049">.:</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 2048 861 2081">
+  <p class="ocr_par" title="bbox 527 2048 861 2081">
+   <span class="ocr_line" title="bbox 527 2048 861 2081"><span class="ocrx_word" title="bbox 527 2048 595 2081">Sect</span><span class="ocrx_word" title="bbox 594 2048 600 2080">.</span> <span class="ocrx_word" title="bbox 622 2048 644 2080">I.</span> <span class="ocrx_word" title="bbox 678 2048 722 2080">lib</span><span class="ocrx_word" title="bbox 722 2048 730 2080">.</span> <span class="ocrx_word" title="bbox 764 2048 785 2080">I</span><span class="ocrx_word" title="bbox 783 2048 817 2080">-</span><span class="ocrx_word" title="bbox 816 2048 857 2080">IV</span><span class="ocrx_word" title="bbox 855 2048 861 2080">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 528 2082 870 2115">
+  <p class="ocr_par" title="bbox 528 2082 870 2115">
+   <span class="ocr_line" title="bbox 528 2082 870 2115"><span class="ocrx_word" title="bbox 528 2082 597 2115">Sect</span><span class="ocrx_word" title="bbox 593 2082 600 2114">.</span> <span class="ocrx_word" title="bbox 611 2082 639 2114">II</span><span class="ocrx_word" title="bbox 640 2082 646 2114">.</span> <span class="ocrx_word" title="bbox 680 2082 723 2114">lib</span><span class="ocrx_word" title="bbox 723 2082 731 2114">.</span> <span class="ocrx_word" title="bbox 736 2082 763 2114">V</span><span class="ocrx_word" title="bbox 760 2082 797 2114">-</span><span class="ocrx_word" title="bbox 796 2082 863 2114">VIII</span><span class="ocrx_word" title="bbox 866 2082 870 2114">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 2116 1494 2154">
+  <p class="ocr_par" title="bbox 527 2116 1494 2154">
+   <span class="ocr_line" title="bbox 527 2116 1494 2154"><span class="ocrx_word" title="bbox 527 2116 728 2154">Oeconomicus</span><span class="ocrx_word" title="bbox 733 2116 743 2153">,</span> <span class="ocrx_word" title="bbox 756 2116 808 2153">rec</span><span class="ocrx_word" title="bbox 806 2116 817 2153">.</span> <span class="ocrx_word" title="bbox 831 2116 864 2153">et</span> <span class="ocrx_word" title="bbox 877 2116 985 2153">explan</span><span class="ocrx_word" title="bbox 984 2116 991 2153">.</span> <span class="ocrx_word" title="bbox 1008 2116 1044 2153">L.</span> <span class="ocrx_word" title="bbox 1056 2116 1240 2153">Breitenbach</span><span class="ocrx_word" title="bbox 1242 2116 1248 2153">.</span> <span class="ocrx_word" title="bbox 1281 2116 1309 2153">8.</span> <span class="ocrx_word" title="bbox 1326 2116 1385 2153">mai</span><span class="ocrx_word" title="bbox 1385 2116 1392 2153">.</span> <span class="ocrx_word" title="bbox 1426 2116 1494 2153">1841</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1559 2121 1600 2145">
+  <p class="ocr_par" title="bbox 1559 2121 1600 2145">
+   <span class="ocr_line" title="bbox 1559 2121 1600 2145"><span class="ocrx_word" title="bbox 1559 2121 1600 2145">15</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 521 2151 1177 2191">
+  <p class="ocr_par" title="bbox 521 2151 1177 2191">
+   <span class="ocr_line" title="bbox 521 2151 1177 2191"><span class="ocrx_word" title="bbox 521 2151 679 2191">Agesilaus</span> <span class="ocrx_word" title="bbox 693 2151 733 2190">ex</span> <span class="ocrx_word" title="bbox 745 2151 804 2190">ead</span><span class="ocrx_word" title="bbox 803 2151 812 2190">.</span> <span class="ocrx_word" title="bbox 824 2151 924 2190">recens</span><span class="ocrx_word" title="bbox 922 2151 930 2190">.</span> <span class="ocrx_word" title="bbox 964 2151 994 2190">8.</span> <span class="ocrx_word" title="bbox 1007 2151 1068 2190">mai</span><span class="ocrx_word" title="bbox 1068 2151 1075 2190">.</span> <span class="ocrx_word" title="bbox 1107 2151 1177 2190">1843</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 2158 1598 2177">
+  <p class="ocr_par" title="bbox 1558 2158 1598 2177">
+   <span class="ocr_line" title="bbox 1558 2158 1598 2177"><span class="ocrx_word" title="bbox 1558 2158 1598 2177">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 523 2186 1082 2217">
+  <p class="ocr_par" title="bbox 523 2186 1082 2217">
+   <span class="ocr_line" title="bbox 523 2186 1082 2217"><span class="ocrx_word" title="bbox 523 2186 616 2217">Hiero</span> <span class="ocrx_word" title="bbox 631 2186 669 2216">ex</span> <span class="ocrx_word" title="bbox 683 2186 739 2216">ead</span><span class="ocrx_word" title="bbox 741 2186 748 2216">.</span> <span class="ocrx_word" title="bbox 765 2186 814 2216">rec</span><span class="ocrx_word" title="bbox 814 2186 821 2216">.</span> <span class="ocrx_word" title="bbox 854 2186 880 2216">8.</span> <span class="ocrx_word" title="bbox 900 2186 958 2216">mai</span><span class="ocrx_word" title="bbox 957 2186 963 2216">.</span> <span class="ocrx_word" title="bbox 998 2186 1067 2216">1844</span><span class="ocrx_word" title="bbox 1077 2186 1082 2216">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1577 2194 1599 2211">
+  <p class="ocr_par" title="bbox 1577 2194 1599 2211">
+   <span class="ocr_line" title="bbox 1577 2194 1599 2211"><span class="ocrx_word" title="bbox 1577 2194 1599 2211">7</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 527 2220 1455 2256">
+  <p class="ocr_par" title="bbox 527 2220 1455 2256">
+   <span class="ocr_line" title="bbox 527 2220 1455 2256"><span class="ocrx_word" title="bbox 527 2220 675 2256">Hellenica</span><span class="ocrx_word" title="bbox 681 2220 687 2256">,</span> <span class="ocrx_word" title="bbox 705 2220 771 2256">Sect</span><span class="ocrx_word" title="bbox 771 2220 778 2256">.</span> <span class="ocrx_word" title="bbox 793 2220 816 2256">I.</span> <span class="ocrx_word" title="bbox 832 2220 845 2256">(</span><span class="ocrx_word" title="bbox 844 2220 886 2256">lib</span><span class="ocrx_word" title="bbox 890 2220 896 2256">.</span> <span class="ocrx_word" title="bbox 907 2220 931 2256">I.</span> <span class="ocrx_word" title="bbox 942 2220 972 2256">II</span><span class="ocrx_word" title="bbox 972 2220 978 2256">.</span><span class="ocrx_word" title="bbox 976 2220 989 2256">)</span><span class="ocrx_word" title="bbox 991 2220 999 2256">,</span> <span class="ocrx_word" title="bbox 1016 2220 1055 2256">ex</span> <span class="ocrx_word" title="bbox 1069 2220 1125 2256">ead</span><span class="ocrx_word" title="bbox 1127 2220 1134 2256">.</span> <span class="ocrx_word" title="bbox 1148 2220 1200 2256">rec</span><span class="ocrx_word" title="bbox 1199 2220 1206 2256">.</span> <span class="ocrx_word" title="bbox 1231 2220 1259 2256">8.</span> <span class="ocrx_word" title="bbox 1277 2220 1334 2256">mai</span><span class="ocrx_word" title="bbox 1336 2220 1344 2256">.</span> <span class="ocrx_word" title="bbox 1374 2220 1445 2256">1853</span><span class="ocrx_word" title="bbox 1451 2220 1455 2256">.</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 1558 2225 1600 2245">
+  <p class="ocr_par" title="bbox 1558 2225 1600 2245">
+   <span class="ocr_line" title="bbox 1558 2225 1600 2245"><span class="ocrx_word" title="bbox 1558 2225 1600 2245">12</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 646 2251 1597 2292">
+  <p class="ocr_par" title="bbox 646 2251 1597 2292">
+   <span class="ocr_line" title="bbox 646 2251 1597 2292"><span class="ocrx_word" title="bbox 646 2251 713 2292">Sect</span><span class="ocrx_word" title="bbox 714 2251 720 2291">.</span> <span class="ocrx_word" title="bbox 738 2251 766 2291">II</span><span class="ocrx_word" title="bbox 765 2251 770 2291">.</span> <span class="ocrx_word" title="bbox 793 2251 806 2291">(</span><span class="ocrx_word" title="bbox 805 2251 846 2291">lib</span><span class="ocrx_word" title="bbox 847 2251 852 2291">.</span> <span class="ocrx_word" title="bbox 871 2251 913 2291">III</span><span class="ocrx_word" title="bbox 916 2251 949 2291">-</span><span class="ocrx_word" title="bbox 949 2251 1004 2291">VII</span><span class="ocrx_word" title="bbox 1005 2251 1012 2291">.</span><span class="ocrx_word" title="bbox 1013 2251 1026 2291">)</span><span class="ocrx_word" title="bbox 1026 2251 1035 2291">,</span> <span class="ocrx_word" title="bbox 1054 2251 1093 2291">ex</span> <span class="ocrx_word" title="bbox 1110 2251 1169 2291">ead</span><span class="ocrx_word" title="bbox 1167 2251 1176 2291">.</span> <span class="ocrx_word" title="bbox 1193 2251 1245 2291">rec</span><span class="ocrx_word" title="bbox 1244 2251 1254 2291">.</span> <span class="ocrx_word" title="bbox 1282 2251 1311 2291">8.</span> <span class="ocrx_word" title="bbox 1324 2251 1386 2291">mai</span><span class="ocrx_word" title="bbox 1384 2251 1391 2291">.</span> <span class="ocrx_word" title="bbox 1425 2251 1496 2291">1863</span> <span class="ocrx_word" title="bbox 1528 2251 1545 2291">1</span> <span class="ocrx_word" title="bbox 1560 2251 1597 2291">18</span></span>
+</p>
+</div>
+ <div class="ocrx_block" title="bbox 834 2516 1190 2535">
+  <p class="ocr_par" title="bbox 834 2516 1190 2535">
+   <span class="ocr_line" title="bbox 834 2516 1190 2535"><span class="ocrx_word" title="bbox 834 2516 898 2535">Druck</span> <span class="ocrx_word" title="bbox 905 2516 943 2535">von</span> <span class="ocrx_word" title="bbox 947 2516 969 2535">B.</span> <span class="ocrx_word" title="bbox 974 2516 998 2535">G.</span> <span class="ocrx_word" title="bbox 1002 2516 1083 2535">Teubner</span> <span class="ocrx_word" title="bbox 1091 2516 1111 2535">in</span> <span class="ocrx_word" title="bbox 1115 2516 1185 2535">Leipzig</span><span class="ocrx_word" title="bbox 1182 2516 1190 2535">.</span></span>
+</p>
+</div>
+</div>
+  </body>
+</html>

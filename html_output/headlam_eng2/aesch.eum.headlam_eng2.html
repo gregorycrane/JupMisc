@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eumenides</title>
+    <style>
+    body { font-family: 'Georgia', serif; display: flex; flex-direction: column; height: 100vh; margin: 0; background-color: #fdfdfd; }
+        header { padding: 10px 20px; border-bottom: 2px solid #ddd; background-color: #fff; text-align: center; z-index: 10; }
+        h1 { margin: 0; font-size: 1.8em; color: #333; }
+        h2 { margin: 5px 0 0; font-size: 1.2em; color: #666; font-style: italic; font-weight: normal;}
+        .container {
+            display: grid;
+            /* Default: 2 columns */
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            flex-grow: 1;
+            padding: 10px;
+            overflow: hidden;
+        }
+                        /* --- Fix TOC scroll behavior --- */
+        .container {
+            min-height: 0; /* allow flex/grid children to shrink and scroll */
+        }
+
+        .toc-wrapper {
+            min-height: 0; /* same fix for nested flex/grid container */
+        }
+
+        /* *** 3-column layout when TOC is present *** */
+        .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; /* TOC wrapper, Text, Notes */
+        }
+        .column {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;  /* This is fine for .column */
+        }
+
+        /* *** Wrapper for TOC column + Open Button *** */
+        .toc-wrapper {
+            position: relative; /* Context for the close button */
+            width: 250px; /* Initial width */
+            transition: width 0.3s ease, min-width 0.3s ease;
+            min-width: 250px;
+            /* The wrapper itself is a column in the grid, so it will be flex */
+            display: flex;
+            flex-direction: column;
+            /* Use transparent background for the wrapper */
+            background-color: transparent;
+            border: none;
+        }
+
+        /* *** TOC Column Styles (THE FIX IS HERE) *** */
+        .toc-column {
+            width: 100%; /* Fill the wrapper */
+            flex-grow: 1;
+            border: 1px solid #e0e0e0; /* Border now on the column */
+            border-radius: 4px; /* Rounded corners */
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;   /* <-- FIX 1: This column scrolls */
+            min-height: 0;      /* <-- FIX 2: This column is allowed to shrink */
+        }
+        .toc-column h3 { /* TOC Title */
+            background-color: #e9ecef; 
+            position: sticky; top: 0; z-index: 6;
+            font-size: 0.9em !important; /* Make TOC header smaller */
+            padding: 12px 12px 12px 35px; /* Add padding for close button */
+            text-align: center; margin: 0;
+            border-bottom: 1px solid #e0e0e0; 
+            color: #444; text-transform: uppercase; letter-spacing: 0.5px;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        #toc-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* *** Styling for nested TOC lists *** */
+        #toc-content > ul {
+            padding: 10px 15px; /* Padding for the list */
+        }
+        #toc-content ul ul {
+            padding-left: 20px; /* Indent nested lists */
+            margin: 0;
+        }
+        #toc-content li a {
+            display: block;
+            padding: 6px 10px;
+            text-decoration: none;
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9em;
+            /* overflow: hidden;  Hide overflow */
+            white-space: normal;
+        }
+        #toc-content li a:hover {
+            background-color: #e9ecef;
+        }
+        /* *** Styling for nested TOC items *** */
+        #toc-content ul ul li a {
+            font-size: 0.85em; /* Make sub-items slightly smaller */
+            color: #333; /* Darken them slightly */
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-bottom: none; /* No border for sub-items */
+        }
+        #toc-content ul ul li a:hover {
+            background-color: #dde; /* Different hover for sub-items */
+        }
+/* --- New Collapsible TOC Styles --- */
+
+    /* Hide nested lists by default */
+    #toc-content li ul {
+        display: none;
+        /* Keep your existing padding-left for indentation */
+    }
+
+    /* Style for parent items that can be clicked */
+    #toc-content li.has-children > a {
+        cursor: pointer; /* Show it's clickable */
+        /* Add a small indicator */
+    }
+
+    /* Add a clickable triangle/plus sign */
+    #toc-content li.has-children > a::before {
+        content: '► '; /* Collapsed state indicator */
+        font-size: 0.8em;
+        margin-right: 3px;
+        color: #555;
+    }
+
+    /* When the .open class is added, show the list */
+    #toc-content li.has-children.open > ul {
+        display: block;
+    }
+
+    /* Change the triangle to its expanded state */
+    #toc-content li.has-children.open > a::before {
+        content: '▼ '; /* Expanded state indicator */
+    }               
+        /* CLOSE Button (inside TOC) */
+        #toc-toggle {
+            position: absolute; 
+            top: 8px; 
+            left: 8px; 
+            z-index: 7; /* Above TOC header */
+            background: #f8f9fa;
+            border: 1px solid #ccc;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            line-height: 1;
+            border-radius: 3px;
+        }
+
+        /* OPEN Button (sits inside wrapper) */
+        #toc-open-button {
+             display: none; /* Hidden by default */
+             padding: 8px;
+             font-size: 1.2em;
+             cursor: pointer;
+             border: 1px solid #ccc;
+             background: #f8f9fa;
+             border-radius: 3px;
+             margin: 0 0 0 5px; /* Position it nicely in the top-left */
+             width: 38px; /* Fixed width */
+             height: 38px; /* Fixed height */
+             box-sizing: border-box; /* Include padding in size */
+        }
+
+        /* Styles for collapsed TOC */
+        body.toc-collapsed .toc-wrapper {
+            width: 45px; /* Width of the open button area */
+            min-width: 45px;
+        }
+        body.toc-collapsed .toc-column {
+             display: none; /* Hide whole column */
+        }
+        body.toc-collapsed #toc-open-button {
+            display: block; /* Show open button */
+        }
+        
+        /* Adjust main grid when collapsed (NO change needed) */
+        body.toc-collapsed .container.has-toc {
+            grid-template-columns: auto 2fr 1fr; 
+        }
+
+
+/* --- Style for <add> tags --- */
+        .tei-add {
+            color: #006400; /* Dark green text */
+        }
+
+        .tei-del {
+            text-decoration: none; 
+            font-size: 0.9em; 
+            color: #777; 
+        }
+        .tei-add::before {
+            content: '<';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-right: 0.1em; /* Small space after bracket */
+        }
+        .tei-add::after {
+            content: '>';
+            font-weight: bold;
+            color: #006400; /* Match text color */
+            margin-left: 0.1em; /* Small space before bracket */
+        }
+        /* --- Style for <gloss> tags --- */
+        .gloss {
+            border-bottom: 1px dotted #555; /* Subtle dotted underline */
+            cursor: help; /* Changes cursor to indicate potential tooltip */
+        }
+        /* --- Style for <unclear> tags --- */
+        .unclear {
+            opacity: 0.7;
+            font-style: italic;
+            color: #555;
+        }
+        .gloss[title] { 
+        }
+        .loc { color: #666; text-decoration: none; font-family: monospace; margin-right: 0.5em; }
+        .column > h3 {
+            text-align: center; margin: 0; padding: 12px;
+            border-bottom: 1px solid #e0e0e0; background-color: #f9f9ff;
+            color: #444; font-size: 1em; text-transform: uppercase; letter-spacing: 0.5px;
+            position: sticky; top: 0; z-index: 5;
+            border-top-left-radius: 4px; /* Match parent */
+            border-top-right-radius: 4px; /* Match parent */
+        }
+        .content {
+            padding: 15px;
+            overflow-y: auto;
+            flex-grow: 1;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            min-height: 0;      /* <-- FIX 3: Allows main/note columns to scroll */
+        }
+
+        /* Override for TOC content to allow parent to scroll */
+        #toc-content {
+            overflow-y: visible; /* <-- FIX 4: Let the parent (.toc-column) handle scrolling */
+            flex-grow: 0;       /* <-- FIX 5: Stop this from growing to fit its content */
+            padding: 0;         /* Padding is moved to the <ul> */
+            min-height: auto;   /* Override min-height from .content */
+        }
+
+        /* English Text Column Styles */
+        #english-content h2, #english-content h3 { scroll-margin-top: 10px; } /* Add margin for scrolling */
+        #english-content h2 { font-size: 1.4em; color: #000; font-style: normal; text-align: center; margin-bottom: 1em;}
+        /* Styling for div/head (book/chapter) */
+        #english-content h3 { 
+            font-size: 1.2em; 
+            color: #333; 
+            font-style: normal; 
+            text-align: left; 
+            margin-top: 1.5em; 
+            margin-bottom: 0.5em; 
+            border-bottom: 1px solid #ccc; 
+            padding-bottom: 5px;
+        }
+        /* More specific for index main titles */
+        #english-content h2.index-main {
+            font-size: 1.6em;
+            font-style: normal;
+            text-align: center;
+            margin: 1em 0;
+        }
+        #english-content h4 { font-size: 1.1em; text-align: center; margin: 1em 0 0.5em; text-transform: uppercase;}
+        #english-content ul { list-style-type: none; padding-left: 0; text-align: center; margin-bottom: 1em;}
+        #english-content li { margin-bottom: 0.3em; }
+
+/* New Cast List Styles */
+        #english-content .cast-list {
+            list-style-type: none;
+            text-align: left; /* Align text to the left */
+            margin: 1.5em 3em; /* Give it some horizontal margin */
+            padding: 1.5em; /* Add padding inside the box */
+            border: 1px solid #eee;
+            background: #fdfdfd;
+            border-radius: 4px;
+        }
+        #english-content .cast-list li {
+            margin-bottom: 0.6em; /* Space out the list items */
+        }
+        #english-content .cast-list .role {
+            font-weight: bold;
+            color: #800000; /* Match the speaker color */
+        }
+        #english-content .cast-list .role-desc {
+            color: #333;
+        }
+        
+        #english-content .speech { margin-bottom: 1em; }
+        #english-content .speaker { font-weight: bold; margin-right: 8px; color: #800000; display: block; margin-bottom: 0.2em; }
+        #english-content .pb-hr { border: none; border-top: 1px dashed #ccc; margin: 1em 0; } /* Style hr for pb */
+        #english-content .pb { display: block; text-align: center; color: #888; font-size: 0.9em; margin-bottom: 1em; }
+        
+        #english-content .stage {
+            display: inline-block; 
+            font-style: italic; 
+            color: #555;
+            background-color: #fafafa; 
+            padding: 5px 8px;      
+            margin: 5px;           
+            border: 1px solid #eee;  
+            border-radius: 3px;
+            line-height: 1.4;      
+        }   
+
+        /* Table Styles */
+        #english-content table {
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #ccc;
+        }
+        #english-content caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            caption-side: top;
+            margin-bottom: 0.5em;
+        }
+        /* Style for character names in introductory lists/paragraphs */
+        #english-content .persName { /* Adjust selector if you use a different class */
+            font-weight: bold;
+            color: #800000; /* Same color as .speaker */
+            /* Do NOT add display: block or margins here */
+        }
+        #english-content th, #english-content td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        #english-content thead tr {
+            background-color: #f2f2f2;
+        }
+        #english-content tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        #english-content .fn-link {
+            vertical-align: super; font-size: 0.8em; text-decoration: none;
+            color: #007bff; font-weight: bold; padding: 0 2px;
+            line-height: 1;
+            border-radius: 2px;
+            cursor: pointer; /* Add cursor pointer */
+        }
+        #english-content .fn-link:hover, #english-content .fn-link.highlight {
+             text-decoration: underline; background-color: #fff9c4;
+             outline: 1px solid #fdd835;
+             outline-offset: 1px;
+        }
+        #english-content p { margin: 0.5em 0; }
+        #english-content .verse-line {
+          display: block; /* Add this line */
+          margin: 0.1em 0 0.1em 2em;
+          text-indent: -1em;
+        }
+
+        /* Footnote Column Styles */
+        .line { display: flex; align-items: baseline; padding: 5px; border-radius: 3px; border-bottom: 1px solid #f0f0f0; }
+        .line:last-child { border-bottom: none; }
+        .line.highlight {
+            background-color: #fff9c4;
+            outline: 1px solid #fdd835;
+            outline-offset: -1px; /* Inset outline slightly */
+        }
+        .note-ref {
+            flex-shrink: 0; width: auto; font-size: 0.8em; color: #555;
+            cursor: pointer; text-align: right; margin-right: 10px; font-family: monospace;
+            padding-top: 0.1em;
+        }
+        .note-ref:hover { color: #007bff; text-decoration: underline; }
+        .text { line-height: 1.5; font-size: 0.9em; flex-grow: 1; }
+
+/* This targets the <span> created from a <l> tag inside a <blockquote> */
+        /* --- New Poetry Formatting in Notes --- */
+        
+        /* Style the converted TEI tags within notes */
+        .text blockquote {
+            font-style: italic; color: #333;
+            border-left: 3px solid #ccc;
+            margin: 0.5em 0 0.5em 5px;
+            padding-left: 0.4em; /* ADD THIS LINE - Space between border and text */
+            display: block;
+            /* Apply hanging indent directly to the blockquote */
+            /* padding-left: 2.5em; */
+            /* text-indent: -2.5em;  */
+        }
+
+         /* Add this new rule */
+        .text blockquote .verse-line { /* Or use .text blockquote div or .text blockquote p */
+            padding-left: 2.5em;
+            text-indent: -1.5em;
+            display: block; /* Ensure it's treated as a block */
+            margin: 0; /* Reset any default margins if needed */
+            margin-bottom: 0.5em;
+        }
+         
+        .text i { font-style: italic; }
+        .text strong { font-weight: bold; }
+        .text br {
+             display: block; content: ""; margin-top: 0.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Eumenides</h1>
+        <h2>Aeschylus (Walter George Headlam, Clinton Edward Sowerby Headlam, trans.) (George Bell & Sons 1909)</h2>
+    </header>
+
+    <div class="container">
+
+        <div class="column">
+            <h3>English Translation</h3>
+            <div class="content" id="english-content"><h2 class='index-main'><i type="main">EUMENIDES</i></h2>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-273">[Page 273]</span>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-274">[Page 274]</span>
+<h4>DRAMATIS PERSONÆ</h4>
+<ul class="cast-list">
+<li><span class="role">THE PYTHIAN PROPHETESS</span> <span class="role-desc">.</span></li>
+<li><span class="role">APOLLO</span> <span class="role-desc">.</span></li>
+<li><span class="role">ORESTES</span> <span class="role-desc">.</span></li>
+<li><span class="role">HERMES</span> <span class="role-desc">(silent), conducting Orestes.</span></li>
+<li><span class="role">GHOST OF CLYTEMNESTRA</span> <span class="role-desc">.</span></li>
+<li><span class="role">CHORUS OF THE FURIES</span> <span class="role-desc">.</span></li>
+<li><span class="role">ATHENA</span> <span class="role-desc">.</span></li>
+<li><span class="role">JURY OF AREOPAGITES</span> <span class="role-desc">.</span></li>
+<li><span class="role">ESCORT OF ATHENIANS</span> <span class="role-desc">who conduct the Furies to their cavern in procession, with a chorus.</span></li>
+</ul>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-275">[Page 275]</span>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">Delphi, before the temple of Apollo.</span>
+<div class="speech"><span class="speaker">PROPHETESS [1–33]</span><p class="nested-p">First among the Gods I name with chiefest honour in this prayer the first diviner Gaea (Earth); and after her Themis (Law); for she, as a tradition telleth, took her seat here second upon that which was her mother&#x27;s place of oracle; and third in succession, with the good-will and consent of Themis and with no force done to any, another Titaness and child of Earth took seat here, Phoebe; she bestowed it as a birthday gift on Phoebus, and he bears the name of Phoebe borrowed from her.<a href="#note-275.1" class="fn-link" data-note="275.1">275.1</a> He, coming from the lake and ridge of Delos, landed at the havening shores of Pallas, and came thence to this country and his seat upon Parnassus. He was brought upon his way with solemn worship by the sons of Hephaestus, the road-makers, taming the wildness of the untamed land. And on his coming he was most highly honoured by the people and by Delphos the sovereign ruler of this country. Zeus caused
+
+<hr class="pb-hr"><span class="pb" id="pb-276">[Page 276]</span>
+his mind to be inspired with the diviner&#x27;s art, and seated him as the fourth prophet on this throne; and Loxias is the interpreter of Zeus his father.</p><p class="nested-p">These are the Gods I worship in my opening prayer. And Pallas of the Precinct hath honourable mention also; and I adore the Nymphs, that habit where is the Corycian cavern, hollow, beloved of birds, the haunt of deities.— Bromius hath possessed the region—I am not forgetful— since the time when in his deity he led an army of the Bacchanals, designing death for Pentheus like a hunted hare. And with a call upon the springs of Pleistus, and Poseidon&#x27;s power, and on the Most High Zeus of Consummation, I then take my seat as prophetess:—and may they grant me that my entrance now may be more successful far than any heretofore. And if there be any Hellenes present, let them come in order of the lot, as is the usage; for I give responses as the God dictates.</p><span class="stage">(The PRIESTESS enters the temple, and presently comes out again, half fainting.)</span><p class="nested-p">O horror, horror, horror to relate and to behold, hath sent me forth again from the house of Loxias, that I have no strength left in me nor agile step; my running is rather with my hands than nimbleness of legs; for an aged woman in alarm is nought—nay, even as a child.</p><p class="nested-p">I was on my way towards the laurelled cell, when on the Navel-stone I saw a man polluted before heaven in the session of a suppliant, his hands dripping with blood, and holding a drawn sword and a high-grown branch of olive, wreathed in humble fashion with the largest wool—a silvery fleece, for on that point I will speak with certainty.</p><p class="nested-p">And before this man there sleeps a wondrous troop of women seated upon thrones—no, not women, Gorgons:—
+<hr class="pb-hr"><span class="pb" id="pb-277">[Page 277]</span>
+no, nor yet Gorgons either can I compare them to:—I have seen some in a picture before now carrying off the feast of Phineus—but these are wingless, and black, and abominable altogether. And they snore with blasts one cannot venture near, and from their eyes there drips a loathsome rheum. And their attire is such as is not fit to bring near statues of the Gods, nor into homes of men. My eyes have never seen the tribe these visitants belong to, and I know not the land that can boast to breed this generation without harm, and not repent her pains.</p><p class="nested-p">The sequel now must be his care who is the master of this house, the mighty Loxias himself: he is both Medicining-Seer and Portent-reader, and to those others purifier of their houses.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">The interior of the temple. ORESTES seated at the Centre-stone, the FURIES surrounding him, asleep; HERMES in the background.</span>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter APOLLO.)</span>
+<div class="speech"><span class="speaker">APOLLO [65–85]</span><p class="nested-p">I will not fail! Through to the end I will be thy protector close by thy side—aye, and though far removed, —and will not show me gentle to thine enemies. So now thou seest here these raveners overcome by sleep: there lying sunken the abominable Maids, these hoary, ancient Children, with whom never mateth God or man or any beast<a href="#note-277.1" class="fn-link" data-note="277.1">277.1</a>—nay, evil was the very cause of their creation,<a href="#note-277.2" class="fn-link" data-note="277.2">277.2</a> for
+
+
+<hr class="pb-hr"><span class="pb" id="pb-278">[Page 278]</span>
+it is the evil darkness of the Pit that they inhabit under the earth, things abhorred by human kind and by the Gods of Heaven. Nevertheless thou must still fly and grow not faint; for they will chase thee right across the long mainland, footing it ever over the trodden earth<a href="#note-278.1" class="fn-link" data-note="278.1">278.1</a> and beyond sea and island colonies. And let not thy spirit fail through too much dwelling on the toil of it, but go unto the town of Pallas, and take session, clasping her ancient image in thine arms. And there, with judges of the case and speech of soothing charm, we will discover means to free thee wholly from this trouble; for it was at my persuasion thou didst take thy mother&#x27;s life.</p></div>
+<div class="speech"><span class="speaker">ORESTES [86–88]</span><p class="nested-p">Lord Apollo, thou well knowest what is righteousness, and being perfect in that lore, add only to be not forgetful of it; thy <em>strength</em> to do good act is fully competent.</p></div>
+<div class="speech"><span class="speaker">APOLLO [89–94]</span><p class="nested-p">Remember, let not fear dismay thy spirit.—And thou (to HERMES), my very brother, of one Father&#x27;s blood, Hermes, do thou protect him; prove full well thy title and be Guide, in shepherding this man, my suppliant. It is a thing sacred in the eyes of Zeus, this sanctity of outlaws, when sped forth upon their journey with auspicious escort.<a href="#note-278.2" class="fn-link" data-note="278.2">278.2</a></p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">[APOLLO leaves the temple, and ORESTES starts upon his journey in the charge of HERMES.</span>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-279">[Page 279]</span>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter the GHOST of CLYTEMNESTRA.)</span>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [95–117]</span><p class="nested-p">Oh, ah, sleep on, would ye! and what good are ye asleep? While I, thus slighted in contempt by you, with the other dead there for my killing the reproach among the perished is still fresh and vivid,<a href="#note-279.1" class="fn-link" data-note="279.1">279.1</a> and I wander in disgrace abroad:—I tell you, I am most grievously accused by them—and yet, though used so shamefully by nearest kin, there is not one Spirit that shows wrath on my account, slaughtered as I was with hands of matricide!—Behold the wounds here with thine inward consciousness.<a href="#note-279.2" class="fn-link" data-note="279.2">279.2</a></p><p class="nested-p">Oh and yet plenty of my provisions have ye lapped —wineless drink-offerings, sober soothing-draughts, and banquets in the solemn night upon the burning brazier would I sacrifice, a season shared with you by none in Heaven. And all this I behold now trod like dirt beneath your feet, and he is gone, escaped even as a fawn; ay, and that lightly from the very meshes hath he sprung, making great mouths at you! Give ear, because my plea is for my very life! Be conscious, O ye Goddesses of earth below! &#x27;Tis in a dream now Clytemnestra calls to you.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(A sound of muttering or mewing (<quote xml:lang="grc">μὺ μῦ</quote> Ar. Eq. 10) is heard from the FURIES.)</span>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-280">[Page 280]</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [117–117]</span><p class="nested-p">Mew, mew!</p></div>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [118–119]</span><p class="nested-p">but the man is gone and far in flight. For he hath friends far different from mine!<a href="#note-280.1" class="fn-link" data-note="280.1">280.1</a></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [120–120]</span><p class="nested-p">Mew, mew!</p></div>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [121–122]</span><p class="nested-p">Mew, mew! Thou art too drowsy, thou hast no compassion for my case; meanwhile Orestes, murderer of his mother here, is gone!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [123–123]</span><p class="nested-p">O, O!</p></div>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [124–125]</span><p class="nested-p">&#x27;O, O,&#x27; and slumbering! Come, arise at once. What deed hast thou accomplished except working mischief?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [126–126]</span><p class="nested-p">O, O!</p></div>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [127–128]</span><p class="nested-p">Slumber and weariness, empowered conspirators, have drawn the venom of the dreadful dragoness!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [129–130]</span><p class="nested-p">(With redoubled whimperings.) To him, to him, to him, to him, mark there!</p></div>
+<div class="speech"><span class="speaker">GHOST OF CLYTEMNESTRA [131–139]</span><p class="nested-p">&#x27;Tis but in dream thou art hunting and giving tongue, like a hound whose eager keenness never ceases. What is thy doing?<a href="#note-280.2" class="fn-link" data-note="280.2">280.2</a> Up! let not fatigue subdue thee; be not made so soft with sleep as to forget the sense of hurt. Let thy liver feel the sting of merited reproaches; for to the right-minded they are as a goad.<a href="#note-280.3" class="fn-link" data-note="280.3">280.3</a>—And thou, waft thy
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-281">[Page 281]</span>
+blood-hot breath upon the man, wither him with the hot blast of thy belly&#x27;s fire; follow with a fresh pursuit and wear him down.
+<span class="stage">[Exit.</span></p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(The FURIES awake.)</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [140–178]</span><p class="nested-p">Rouse, arouse her there, as I rouse thee! Art sleeping? Come, arise and kick sleep off, and in this prelude let us see if there be anything at fault.</p><p class="nested-p">Out upon it! Fie! O sisters, we have suffered—</p><p class="nested-p">Suffered much and wantonly have I!</p><p class="nested-p">Suffered bitter anguish, O alack!</p><p class="nested-p">A fearful blow!</p><p class="nested-p">The game hath slipped from the meshes and is gone—</p><p class="nested-p">Overcome by sleep I lost my prey!</p><p class="nested-p">Aha, thou son of Zeus, thou art a thievish knave—</p><p class="nested-p">Thy youth has ridden trampling over aged Deities—</p><p class="nested-p">To respect thy suppliant, a godless man and cruel to his parents—</p><p class="nested-p">The mother-slayer thou hast filched away, and thou a God!</p><p class="nested-p">What is there here that any can call right?</p><p class="nested-p">And to me in dreams there came rebuke, that smote me as a chariot-driver with mid-grasped goad—</p><p class="nested-p">Under the ribs, under the lobe—</p><p class="nested-p">Sore I can feel it, sore exceedingly, a chill from the fell common scourger&#x27;s lash!<a href="#note-281.1" class="fn-link" data-note="281.1">281.1</a></p><p class="nested-p">This is what these Younger Powers do,</p><p class="nested-p">Usurping everything beyond their rights—</p><p class="nested-p">A dripping curd of gore<a href="#note-281.2" class="fn-link" data-note="281.2">281.2</a></p><p class="nested-p">About the foot, about the head—the eye may see the
+
+
+<hr class="pb-hr"><span class="pb" id="pb-282">[Page 282]</span>
+Navel-stone of Earth possessed of a huge stain of blood upon it.<a href="#note-282.1" class="fn-link" data-note="282.1">282.1</a></p><p class="nested-p">A Prophet, he hath brought defilement on his holy cell with home-pollution, self-invited and self-urged; transgressing the Gods&#x27; law, he hath regarded human things, and the ancient Apportionings<a href="#note-282.2" class="fn-link" data-note="282.2">282.2</a> he hath destroyed.</p><p class="nested-p">To me too is he grievous, and the man&#x27;s deliverance he shall not compass; though he fly below the earth, there is no freedom for him evermore; a man with guilt upon him unabsolved, he shall get upon his head another to pollute him there.<a href="#note-282.3" class="fn-link" data-note="282.3">282.3</a></p><span class="stage">(Enter APOLLO.)</span></div>
+<div class="speech"><span class="speaker">APOLLO [179–197]</span><p class="nested-p">Out, I command you! get you from this house forthwith, begone from my prophetic cell! for fear you get a winged glistering serpent speeding from the golden string, and with the pain disgorge the red froth drawn from human creatures, vomiting the clotted blood that you have sucked! These are not houses you are fit to come unto; your place is where are punishments of lopping heads and digging eyes and cutting throats, where by destruction of the seed boys&#x27; youthful vigour is impaired, and mutilation of extremities,<a href="#note-282.4" class="fn-link" data-note="282.4">282.4</a>
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-283">[Page 283]</span>
+and stoning, and where men moan long and piteously, impaled beneath the spine!—Do ye hear the sort of feast ye have a liking for, that makes you loathed of Heaven? And all the fashion of your form suggests it. A blood-lapping lion&#x27;s den is where such as you should habit, not in this wealthy<a href="#note-283.1" class="fn-link" data-note="283.1">283.1</a> place of oracle, infecting with contagion. Begone ye in a herd unshepherded! No God in heaven hath any love for such a flock as you.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [198–200]</span><p class="nested-p">Lord Apollo, listen now to our reply:—Thou thyself art answerable for this, not in part, but all; &#x27;tis thy sole doing, and thou art answerable wholly.</p></div>
+<div class="speech"><span class="speaker">APOLLO [201–201]</span><p class="nested-p">How so? Extend thy speech so far.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [202–202]</span><p class="nested-p">Thou gavest injunction that the man here should do matricide.</p></div>
+<div class="speech"><span class="speaker">APOLLO [203–203]</span><p class="nested-p">I gave injunction to exact<a href="#note-283.2" class="fn-link" data-note="283.2">283.2</a> vengeance for his father.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [204–204]</span><p class="nested-p">And then engaged thyself to be acceptor of the blood.</p></div>
+<div class="speech"><span class="speaker">APOLLO [205–205]</span><p class="nested-p">And bade him turn for absolution to this temple.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [206–206]</span><p class="nested-p">And then revilest his conductors hither?</p></div>
+<div class="speech"><span class="speaker">APOLLO [207–207]</span><p class="nested-p">Ay, they are not fit<a href="#note-283.3" class="fn-link" data-note="283.3">283.3</a> to come near such a house as this.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [208–208]</span><p class="nested-p">But this is a part appointed us.</p></div>
+<div class="speech"><span class="speaker">APOLLO [209–209]</span><p class="nested-p">What is this proud office? Let us hear the noble privilege!
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-284">[Page 284]</span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [210–210]</span><p class="nested-p">We drive out mother-slayers from their homes.</p></div>
+<div class="speech"><span class="speaker">APOLLO [211–211]</span><p class="nested-p">And women<a href="#note-284.1" class="fn-link" data-note="284.1">284.1</a>—how with a woman that destroys her husband?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [212–212]</span><p class="nested-p">That would not be a killing of same blood and kindred.</p></div>
+<div class="speech"><span class="speaker">APOLLO [213–224]</span><p class="nested-p">O quite then dishonoured and of no account you make<a href="#note-284.2" class="fn-link" data-note="284.2">284.2</a> the troth-plight between Zeus and Hera of Completion! And Queen Cypris too is cast into dishonour by this argument, from whom come to men their nearest<a href="#note-284.3" class="fn-link" data-note="284.3">284.3</a> and their dearest joys. For the Fate-sealed marriage-bed of man and wife is mightier than the pledge of any oath.<a href="#note-284.4" class="fn-link" data-note="284.4">284.4</a> If then you are so lenient to them that slay each other as not to punish or to visit them with wrath,<a href="#note-284.5" class="fn-link" data-note="284.5">284.5</a> I say it is not justice of you to pursue Orestes: for in one case I observe you taking sharpest cognisance, and in another manifestly acting more remissly.—But the Goddess Pallas will review the justice of this case by trial.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [225–225]</span><p class="nested-p">That man I never, never will let go!</p></div>
+<div class="speech"><span class="speaker">APOLLO [226–226]</span><p class="nested-p">Keep on pursuing then, and give thyself more trouble!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [227–227]</span><p class="nested-p">Seek not to abridge my rights by argument.</p></div>
+<div class="speech"><span class="speaker">APOLLO [228–228]</span><p class="nested-p">I would not have them at a gift, thy rights.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [229–231]</span><p class="nested-p">No, thou art of great account in any case beside the throne of Zeus. But I, because a mother&#x27;s bloodshed draws me on, will pursue this man for vengeance, and thus set about my hounding quest.
+<span class="stage">[Exeunt.</span></p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-285">[Page 285]</span>
+<div class="speech"><span class="speaker">APOLLO [232–234]</span><p class="nested-p">And I—will aid my suppliant, and rescue him! A fearful thing with men and Gods alike is the Appealer&#x27;s wrath, should I forsake him wilfully.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">An interval of at least a year is imagined to elapse (<quote xml:lang="grc">ἀπενιαυτισμός</quote>). The scene is now transferred to Athens, at the shrine and ancient image of Athena.<a href="#note-285.1" class="fn-link" data-note="285.1">285.1</a></span>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter ORESTES, accompanied by HERMES.)</span>
+<div class="speech"><span class="speaker">ORESTES [235–243]</span><p class="nested-p">Queen Athena, by the commands of Loxias am I come; receive an outcast wanderer with clemency—a suppliant not in need of absolution, but with edge abated and worn off upon men&#x27;s habitations<a href="#note-285.2" class="fn-link" data-note="285.2">285.2</a> elsewhere and on travelled ways, in course of journeying over dry land and sea, preserving the injunctions of Apollo&#x27;s oracle, I come now to thy dwelling and thine image, Goddess, here still keeping at my post I will abide the settlement of trial.<a href="#note-285.3" class="fn-link" data-note="285.3">285.3</a></p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(The FURIES enter dispersedly, questing on the trail by scent.)</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [244–275]</span><p class="nested-p">Aha, good! here are the man&#x27;s traces manifest:—come follow by the dumb informer&#x27;s evidence,—for as a hound pursues a wounded fawn, we track him by the (scent of) blood and droppings of it. And with the long ex-hausting
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-286">[Page 286]</span>
+toil my inwards blow,—for every quarter of the earth has been grazed over by our flock, and over the sea too in wingless flight I came pursuing, no whit slower than a ship. So now he must be crouching somewhere here;— the smell of human blood smiles sweetly on me.<a href="#note-286.1" class="fn-link" data-note="286.1">286.1</a></p><p class="nested-p">Look out, look out again! scan everywhere around, for fear the matricide escape in flight scot-free.</p><p class="nested-p">Yes,<a href="#note-286.2" class="fn-link" data-note="286.2">286.2</a> here he is again! in sanctuary, with arms entwined about the image of an immortal Goddess, he would fain submit to trial for his handiwork.</p><p class="nested-p">But it may not be:—a mother&#x27;s blood upon the ground is ill to gather up again, O foul, liquid spilt upon the ground is lost and gone!</p><p class="nested-p">Nay, thou must render from thy living self the rich red liquor from thy limbs to swill; from thee would I get<a href="#note-286.3" class="fn-link" data-note="286.3">286.3</a> feeding of that evil draught.</p><p class="nested-p">While yet alive I&#x27;ll wither thee away and drag thee down below, that thou mayst pay the quittance for thy cruel matricide.
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-287">[Page 287]</span>
+And thou shalt see there whosoever else among mankind hath done iniquity, by sin against a God or a stranger or his own dear parents, suffering each the due reward of justice. For Hades is a great corrector of mankind below the earth, and taketh note of everything with mind that writeth it as in a book.</p></div>
+<div class="speech"><span class="speaker">ORESTES [276–298]</span><p class="nested-p">Taught in the school of sorrow, I am deeply read in purifying lore; I know when it is right to speak, and likewise to keep silence; but in this present matter I was charged to speak, by a most wise instructor: for the blood upon my hand is slumbering now and fading—the matricidal pollution is washed out; for while yet fresh it was expelled at the bright God Apollo&#x27;s hearth with purges of slain swine: and it would make a long tale to recount from the beginning all those that I have visited with harmless intercourse.<a href="#note-287.1" class="fn-link" data-note="287.1">287.1</a> So likewise now it is with pure lips innocently that I call upon this country&#x27;s Queen, Athena, to come hither to my aid: without spear lifted, she shall win both me and my country and the Argive people in true honest friendship and alliance absolutely. O whether then it be in Libyan regions of the earth, about her natal stream of Trito&#x27;s flood that she be planting an erect or covered foot,<a href="#note-287.2" class="fn-link" data-note="287.2">287.2</a>
+
+
+<hr class="pb-hr"><span class="pb" id="pb-288">[Page 288]</span>
+succouring her friends,—or whether like a man that is a marshal bold she be surveying the Phlegraean Plain, O may she come—a God can hear though he be far away—to be my deliverer from this affliction.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [299–399]</span><p class="nested-p">Never shall Apollo or Athena&#x27;s might deliver thee, but thou shalt be abandoned utterly and lost, finding the place of gladness in thy heart no more.<a href="#note-288.1" class="fn-link" data-note="288.1">288.1</a></p><p class="nested-p">Dost thou not even answer, but contemn my words, a victim fatted up for me and consecrated? While yet living thou shalt make me banquet, and not slain beside the altar; and thou shalt hear now a spelling hymn to bind thee to us.</p><p class="nested-p">Come now, let us join hands in the dance, for we are purposed to show forth a dismal minstrelsy and to expound our functions, how this band of ours administers the affairs of men. Just and upright we consider that we are;<a href="#note-288.2" class="fn-link" data-note="288.2">288.2</a> when a man displayeth openly clean hands and pure, no wrath from us proceeds against him, and he passes through the course of life unscathed; but when he hath committed sin as this man hath, and privily concealeth hands defiled with blood, then do we arise to lend an upright witness to the dead, and to exact the price of bloodshed thoroughly.</p><p class="nested-p">Mother who didst give me birth, O Mother Night, to be a Punishment to them that are in dark, to them that are in
+
+
+<hr class="pb-hr"><span class="pb" id="pb-289">[Page 289]</span>
+day, give ear! Because the son of Leto seeketh to deprive me of my rights, by taking from my grasp this cowering hare, the rightful expiation for a mother&#x27;s blood.</p><p class="nested-p">Over the victim is chanted this ditty, to madden the brain, distract the sense, and blight the mind, a hymn that from the Furies comes, fettering the will, untuned with harp, and withering men away.</p><p class="nested-p">For this is what the thread of Fate throughout all time continuing assigned to be our office in perpetual possession —those among Mankind that have incurred the wanton act of kindred bloodshed,<a href="#note-289.1" class="fn-link" data-note="289.1">289.1</a> upon such to wait until he pass below the earth,—and after death he is not over-free.</p><p class="nested-p">Over the victim is chanted this ditty, to madden the brain, distract the sense, and blight the mind, a hymn that from the Furies comes, fettering the will, untuned with harp, and withering men away.</p><p class="nested-p">These offices were sealed by Fate upon us at our birth:— but from the Gods Immortal to refrain our hands: there is none that shares the banquet with us, and in pure-white raiment I have neither part nor lot: for my province is the wrecking of a house, when war domestic hath destroyed a kinsman.</p><p class="nested-p">Even so are we now setting upon him,<a href="#note-289.2" class="fn-link" data-note="289.2">289.2</a> and lusty though he be, yet do we make him faint and dim at last.<a href="#note-289.3" class="fn-link" data-note="289.3">289.3</a></p><hr class="pb-hr"><span class="pb" id="pb-290">[Page 290]</span><p class="nested-p">And while I am eagerly seeking to relieve another of this troublesome office,<a href="#note-290.1" class="fn-link" data-note="290.1">290.1</a> and upon concerns of mine to seal the Heavenly Gods&#x27; exemption, without coming to inquiry<a href="#note-290.2" class="fn-link" data-note="290.2">290.2</a>— Zeus hath rejected from his conversation this &#x27;gory and abominable tribe&#x27;</p><p class="nested-p"><span class="tei-add">Wrecking of a house, when war domestic hath destroyed a kinsman:</span></p><p class="nested-p"><span class="tei-add">Even so are we now setting upon him, and lusty though he be, yet do we make him faint and dim at last.</span></p><p class="nested-p">Glories of men,<a href="#note-290.3" class="fn-link" data-note="290.3">290.3</a> for all their grandeur in the light of day, waste again beneath the earth and dwindle in dishonour,
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-291">[Page 291]</span>
+before the onset of our sable raiment and the malignant dancing of our feet.<a href="#note-291.1" class="fn-link" data-note="291.1">291.1</a></p><p class="nested-p">For with vigorous leap high from aloft down I alight with nimble foot, ah, heavy the fall! with legs that, though the runner be swift, trip him to his dire confusion.</p><p class="nested-p">And while he falleth, yet doth a man know it not,<a href="#note-291.2" class="fn-link" data-note="291.2">291.2</a> from the disease of folly; so thick the gloom in which pollution hovers over him; a cloud of darkness hanging as it were above his house becomes the theme of many a sighing tale.</p><p class="nested-p">For it abideth.<a href="#note-291.3" class="fn-link" data-note="291.3">291.3</a> Able are we to contrive and to effect, and with long memories for evil, Awful Ones and inexorable to men, administering a chosen province though rejected with dishonour<a href="#note-291.4" class="fn-link" data-note="291.4">291.4</a> by the Gods Above and separated from
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-292">[Page 292]</span>
+them by the sunless mould—a province of rough travelling for the seeing and the dim of sight alike.</p><p class="nested-p">Where then is the mortal that boweth not in awe and terror of these things, when he heareth from my lips that Ordinance that was conferred upon me by the Gods beneath the seal of Fate with fullest powers? I have a grant of antique privilege, nor do I meet with any lack of honour, though my place appointed is below the earth and in the sun-forsaken gloom.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">(Enter ATHENA.)</span>
+<div class="speech"><span class="speaker">ATHENA [400–417]</span><p class="nested-p">Far off I heard the cry of an appeal to me, the distance of Scamander, while making occupation of the land which, be it known, the chiefs and captains of the Achaeans, being a great portion of the captured spoil, assigned unto me entire in perpetuity, as a chosen gift unto the sons of Theseus. Thence came I speeding with unwearied foot,<a href="#note-292.1" class="fn-link" data-note="292.1">292.1</a> without wings, only with my bosoming Aegis whirring in the air—this was the car my strong young steeds were yoked to.<a href="#note-292.2" class="fn-link" data-note="292.2">292.2</a></p><p class="nested-p">Beholding here a strange new company of visitants—I feel not any fear at all, but wonder is before mine eyes,— what can ye be? I speak to all in common—both to this
+
+
+<hr class="pb-hr"><span class="pb" id="pb-293">[Page 293]</span>
+person seated at my image, and of you, that are like to no begotten seed,<a href="#note-293.1" class="fn-link" data-note="293.1">293.1</a> that are not beheld by Gods among the Goddesses, nor yet resemble any shapes of human kind:— but to speak ill of one&#x27;s neighbour when with no ground of complaint<a href="#note-293.2" class="fn-link" data-note="293.2">293.2</a> transgresses equity, and Justice holds aloof from it.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [418–420]</span><p class="nested-p">Thou shalt hear all in brief, Daughter of Zeus:— we are the drear children of dark Night, and in our homes below the earth our name is Curses.<a href="#note-293.3" class="fn-link" data-note="293.3">293.3</a></p></div>
+<div class="speech"><span class="speaker">ATHENA [421–421]</span><p class="nested-p">I am informed of your generation and the titles ye are called by.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [422–422]</span><p class="nested-p">Yes, and thou shalt presently hear my rights and honours!</p></div>
+<div class="speech"><span class="speaker">ATHENA [423–423]</span><p class="nested-p">I shall know them, if plainly informed.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [424–424]</span><p class="nested-p">We drive out homicides<a href="#note-293.4" class="fn-link" data-note="293.4">293.4</a> from their homes.</p></div>
+<div class="speech"><span class="speaker">ATHENA [425–425]</span><p class="nested-p">And where does the slayer find his flying end?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [426–426]</span><p class="nested-p">Where joy and gladness are quite out of vogue.
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-294">[Page 294]</span></p></div>
+<div class="speech"><span class="speaker">ATHENA [427–427]</span><p class="nested-p">Is that the sort of flight that you are noising<a href="#note-294.1" class="fn-link" data-note="294.1">294.1</a> upon this man?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [428–428]</span><p class="nested-p">Yes, for he thought fit to be his mother&#x27;s murderer.</p></div>
+<div class="speech"><span class="speaker">ATHENA [429–429]</span><p class="nested-p">Was there no other force whose wrath he stood in fear of?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [430–430]</span><p class="nested-p">Why where could there be such incentive<a href="#note-294.2" class="fn-link" data-note="294.2">294.2</a> as to matricide?</p></div>
+<div class="speech"><span class="speaker">ATHENA [431–431]</span><p class="nested-p">There are two parties here, and half the argument.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [432–432]</span><p class="nested-p">But wager of oath he will neither take nor tender!</p></div>
+<div class="speech"><span class="speaker">ATHENA [433–433]</span><p class="nested-p">You care more for the name of &#x27;just&#x27; than for the act.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [434–434]</span><p class="nested-p">How so? instruct me, for thou art not poor in subtilty.</p></div>
+<div class="speech"><span class="speaker">ATHENA [435–435]</span><p class="nested-p">I say you must not win by oaths an unjust cause.<a href="#note-294.3" class="fn-link" data-note="294.3">294.3</a></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [436–436]</span><p class="nested-p">Well try then and examine, and judge righteous judgment.</p></div>
+<div class="speech"><span class="speaker">ATHENA [437–437]</span><p class="nested-p">Will ye indeed commit the settlement of the cause to me?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [438–438]</span><p class="nested-p">Most surely, with respect for thee as worthy and of worthy parentage.<a href="#note-294.4" class="fn-link" data-note="294.4">294.4</a></p></div>
+<div class="speech"><span class="speaker">ATHENA [439–445]</span><p class="nested-p">Sir, what answer would you return to this? First tell your country and your birth and your misfortunes, and then repel this charge—if it be with confidence in justice that you sit here keeping your station at this image by my hearth, a sacred suppliant after the manner of Ixion:—give me a clear reply to all these questions.
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-295">[Page 295]</span></p></div>
+<div class="speech"><span class="speaker">ORESTES [446–472]</span><p class="nested-p">Queen Athena, I will begin with thy last words and relieve thee of a great anxiety. I am not in need of purification, nor had I pollution on my hand when I took session at thine image. And I will show thee a strong testimony:—it is the law that the guilty suppliant should keep silence until at purifying hands he hath been blooded by the slaughter of a sucking swine. Long since have we performed this absolution upon other houses and on other ways by land and water.<a href="#note-295.1" class="fn-link" data-note="295.1">295.1</a></p><p class="nested-p">So much for that scruple, which I thus remove. And for my birth, the case with that thou shalt hear forthwith. I am an Argive, and of my father it is well that thou enquirest—Agamemnon, marshaller of men in ships, with whom in concert thou didst make the city of Ilium to be no more a city.<a href="#note-295.2" class="fn-link" data-note="295.2">295.2</a> This man perished in a way that was not well, on his returning home, for he was slain by my black-hearted mother, who enveloped him in cunning trammels, which bare witness to his murder in the bath.</p><p class="nested-p">And I, returning,—having been before that time in exile, —slew my mother, I will not deny it, in blood-requital for my dearest father. And for this work Apollo Loxias is jointly answerable, who, to goad my heart, forewarned me of dire pains, if I refused to act thus on the guilty. Now determine thou by judgment, whether I did righteously or
+
+
+<hr class="pb-hr"><span class="pb" id="pb-296">[Page 296]</span>
+no; for before thee, whatever may be my fate, I will accept it.</p></div>
+<div class="speech"><span class="speaker">ATHENA [473–492]</span><p class="nested-p">The matter is too grave, if any mortal man presume to judge it; nor is it lawful for me either to decide a case of murder done in keen resentment:<a href="#note-296.1" class="fn-link" data-note="296.1">296.1</a> especially since thou, in spite of all, art come here as a suppliant subdued and humble,<a href="#note-296.2" class="fn-link" data-note="296.2">296.2</a> purified and harmless to my house, and I have respect to thee as being, after all, offenceless towards my City;<a href="#note-296.3" class="fn-link" data-note="296.3">296.3</a> whereas the character that belongs to these is far from gentle,<a href="#note-296.4" class="fn-link" data-note="296.4">296.4</a> and if they fail to win their case successfully, the land is threatened with poison from their fierce stomachs, which falling on the ground will be a fearful devastating blight.</p><p class="nested-p">So then the matter stands,—in either case—their abiding or their dismissal,—a source of grievous and perplexing hurt to me. However, since the matter hath alighted in this quarter,<a href="#note-296.5" class="fn-link" data-note="296.5">296.5</a> I will appoint judges of homicide, reverencing<a href="#note-296.6" class="fn-link" data-note="296.6">296.6</a>
+
+
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-297">[Page 297]</span>
+the ... of oaths, to be a Court, which I will establish for all time. You must call witnesses and evidence, the sworn supports of Justice; and when I have chosen the best out of my citizens, I will return, to judge this matter well and truly.<a href="#note-297.1" class="fn-link" data-note="297.1">297.1</a>
+<span class="stage">[Exit ATHENA.</span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [493–568]</span><p class="nested-p">Now will there be subversion of old ordinances, if the cause and injury of this matricide is to prevail! All men now will be reconciled by this action to unscrupulousness, and many another suffering of their very child&#x27;s inflicting is in store for parents in the course of time to come.<a href="#note-297.2" class="fn-link" data-note="297.2">297.2</a></p><p class="nested-p">For from us mortal-watching Maenads<a href="#note-297.3" class="fn-link" data-note="297.3">297.3</a> wrath for men&#x27;s
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-298">[Page 298]</span>
+misdoings shall no more proceed; I will give free scope to deeds of death: and one man from another, warning of his neighbour&#x27;s evil case, shall seek to learn cessation or abatement of the trouble; and uncertain remedies, poor man, he recommends in vain.</p><p class="nested-p">No man hereafter, when smitten by calamity, need appeal in wailing phrase, &#x27;O avenging Justice, O ye thrones of the Erinyes&#x27; Therefore a father, it may be, or mother newly-stricken may make piteous complaint, because the House of Justice is now falling.<a href="#note-298.1" class="fn-link" data-note="298.1">298.1</a></p><p class="nested-p">There are times when Fear is well, and it should remain still seated as a warder of the mind; it is a good thing to preserve wise-mindedness<a href="#note-298.2" class="fn-link" data-note="298.2">298.2</a> beneath constraint: and who that fostereth in his heart no sense of awe<a href="#note-298.3" class="fn-link" data-note="298.3">298.3</a>—
+
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-299">[Page 299]</span>
+whether man or city equally—would still keep reverence for Justice?</p><p class="nested-p">Neither an ungoverned life approve thou, nor a despot-ridden; God hath everywhere assigned superiority to the Mean, though the ways of his administration vary.</p><p class="nested-p">And I speak a word proportionate: the child of Irreligiousness is Pride, in very truth; but from Healthiness of mind there cometh that good Weal that all men love and pray for.</p><p class="nested-p">And in general I say, Revere the Altar of Righteousness, and beware lest at the sight of gain thou spurn and trample it with godless foot; for punishment shall surely follow; the appointed end abides in store. Therefore let each man be one that duly holdeth his parents in high worship and hath reverence for that freedom of his house<a href="#note-299.1" class="fn-link" data-note="299.1">299.1</a> by which he doeth honour to the stranger.</p><p class="nested-p">The man that of his own free will is righteous, and without compulsion, shall not be unblest; and utterly destroyed can never be: but the bold reckless man that in defiance carrieth aboard much freight in a great mass confused without regard to Right perforce in time I tell you shall haul down his sail,<a href="#note-299.2" class="fn-link" data-note="299.2">299.2</a>
+
+
+<hr class="pb-hr"><span class="pb" id="pb-300">[Page 300]</span>
+when trouble comes upon it and his yard is shattering.</p><p class="nested-p">Behold, in the midst of the wild waters that he cannot stem he calls upon the name of them that will not hear: his Fortune-Spirit laughs at the hot-headed man, to see the fool, that boasted he should never come to this, brought low with his distresses and not weathering the point: dashing his one-time wealth upon the shoal of Justice, he is lost eternally, unwept, unseen.</p></div>
+<span xmlns="http://www.tei-c.org/ns/1.0" class="stage">The Areopagus.</span>
+<div class="speech"><span class="speaker">ATHENA [569–576]</span><p class="nested-p">Herald, perform thine office and control the people, and let the piercing Tyrrhene<a href="#note-300.1" class="fn-link" data-note="300.1">300.1</a> trumpet, filled with human breath, declare his intense utterance to the throng: for while this council-chamber is filling, it is expedient to keep silence
+
+<hr class="pb-hr"><span class="pb" id="pb-301">[Page 301]</span>
+and that my ordinances should be learnt by all the city for time everlasting and by these parties,<a href="#note-301.1" class="fn-link" data-note="301.1">301.1</a> to the end that justice may be well determined.</p><span class="stage">(Enter APOLLO.)</span></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [577–578]</span><p class="nested-p">Lord Apollo, keep to thine own province! what business hast thou in this matter, tell us?</p></div>
+<div class="speech"><span class="speaker">APOLLO [579–584]</span><p class="nested-p">I come both to give testimony—for the accused here is a suppliant at my house and at my sanctuary, and I am the purifier of this bloodshed—and myself to share the trial; I am answerable for his mother&#x27;s killing. (To ATHENA.) Open thou the case.</p></div>
+<div class="speech"><span class="speaker">ATHENA [585–587]</span><p class="nested-p">(to the FURIES). The word is with you—I am opening the case; for the pursuer to begin by speaking first will be the right way to inform us of the matter.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [588–590]</span><p class="nested-p">We are many, but we will speak concisely. (To ORESTES.) Reply, sentence by sentence, to our questions. First tell us, didst thou slay thy mother?</p></div>
+<div class="speech"><span class="speaker">ORESTES [591–591]</span><p class="nested-p">I did so; of that<a href="#note-301.2" class="fn-link" data-note="301.2">301.2</a> there is no denial.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [592–592]</span><p class="nested-p">Here is one of the three bouts already!</p></div>
+<div class="speech"><span class="speaker">ORESTES [593–593]</span><p class="nested-p">I am not down yet; you boast too soon.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [594–594]</span><p class="nested-p">Well, but you must tell us how it was you slew her.</p></div>
+<div class="speech"><span class="speaker">ORESTES [595–595]</span><p class="nested-p">I tell you, with a drawn sword stabbing her in the throat.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [596–596]</span><p class="nested-p">But under what influence and by whose advice?</p></div>
+<div class="speech"><span class="speaker">ORESTES [597–597]</span><p class="nested-p">By this God&#x27;s oracles; he bears me witness.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [598–598]</span><p class="nested-p">The Prophet gave thee instruction to do matricide!</p></div>
+<div class="speech"><span class="speaker">ORESTES [599–599]</span><p class="nested-p">Ay, and to this hour I am not sorry for it.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-302">[Page 302]</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [600–600]</span><p class="nested-p">Ah but if the verdict grips thee thou wilt tell another tale!</p></div>
+<div class="speech"><span class="speaker">ORESTES [601–601]</span><p class="nested-p">I have trust; my father will send succour from the grave.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [602–602]</span><p class="nested-p">Put trust now in the dead, after murdering thy mother!</p></div>
+<div class="speech"><span class="speaker">ORESTES [603–603]</span><p class="nested-p">Because she lay under the attaint of two pollutions.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [604–604]</span><p class="nested-p">How so? Instruct the court.</p></div>
+<div class="speech"><span class="speaker">ORESTES [605–605]</span><p class="nested-p">She was her husband&#x27;s murderess, and killed my father.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [606–606]</span><p class="nested-p">Very well,—she is quit by suffering death, while you are living.</p></div>
+<div class="speech"><span class="speaker">ORESTES [607–607]</span><p class="nested-p">And why did you not drive her in chase when living?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [608–608]</span><p class="nested-p">She was not blood-relation of the man she killed.</p></div>
+<div class="speech"><span class="speaker">ORESTES [609–609]</span><p class="nested-p">And am I in blood-relation to my mother?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [610–611]</span><p class="nested-p">Why how else bred she thee, thou bloody man, within her girdle? Dost thou disown the nearest tie of mother&#x27;s blood?</p></div>
+<div class="speech"><span class="speaker">ORESTES [612–616]</span><p class="nested-p">Now for thy witness, O Apollo! Give thy pronouncement, whether I was justified in killing her—for that I did it, as I said before,<a href="#note-302.1" class="fn-link" data-note="302.1">302.1</a> I do not deny,—but whether it was justly done or not, this act of blood, in thy opinion, give thy judgment, that I may inform the court.</p></div>
+<div class="speech"><span class="speaker">APOLLO [617–624]</span><p class="nested-p">I will declare it before you, this great tribunal of Athena—justly: and I am a prophet and my words are truth. Never upon my seat of oracle did I yet speak aught, whether it were concerning man or woman or people, that had not been commanded me by Zeus the Father of the Heavenly Gods. How weighty is the force that this plea carries I would have you understand, and charge you be obedient to my Father&#x27;s will; for Oath has not more potency than Zeus!</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-303">[Page 303]</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [625–627]</span><p class="nested-p">Zeus, sayest thou, delivered thee this oracle for thee to tell Orestes here, that he should revenge his father&#x27;s death regardless wholly of his duty to his mother?</p></div>
+<div class="speech"><span class="speaker">APOLLO [628–642]</span><p class="nested-p">Ay! for it is a very different thing, the killing of a noble man, exalted with the sceptre of God-given royalty,— and that too by a woman&#x27;s hand—not with the gallant far-shot arrow like an Amazon&#x27;s, but in the manner ye shall hear, thou, Pallas, and ye judges here in session to decide about this matter with your vote. On his returning from the field, with the balance of advantage for the most part to the good, she gave him welcome first with words of kindness; and then, as he was performing his ablutions in the bath, and at the end of them, she cloaked a garment like a tent about his head,<a href="#note-303.1" class="fn-link" data-note="303.1">303.1</a> entangled him in the cunning endless robe, and hewed him down. That is the story of the Man&#x27;s destruction, that all-venerated ruler, that great admiral; and the woman I have described in such a character<a href="#note-303.2" class="fn-link" data-note="303.2">303.2</a> that the people may be stirred to indignation that have been appointed to decide this trial.
+
+
+<hr class="pb-hr"><span class="pb" id="pb-304">[Page 304]</span></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [643–646]</span><p class="nested-p">Zeus, as you argue, holds a father&#x27;s killing of the more account; yet he himself cast his old father Cronos into prison: is there not a contradiction there?—I call upon you judges to take note.</p></div>
+<div class="speech"><span class="speaker">APOLLO [647–654]</span><p class="nested-p">O ye most loathsome monsters, Heaven&#x27;s abhorrence! fetters he might undo, there is a remedy for that, and many a means of deliverance again; but when a man is once dead and the dust hath swallowed up his blood, there is no more rising again then: for that my Father Zeus hath made no healing charm, though all things else he re-disposes and turns upside down without his labour costing him a breath.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [655–659]</span><p class="nested-p">See now what thy plea for his acquittal means:— shall he spill upon the ground his mother&#x27;s blood and then inhabit his father&#x27;s house in Argos? What altars of the public shall he use? What holy water of religious Brethren shall admit him?</p></div>
+<div class="speech"><span class="speaker">APOLLO [660–676]</span><p class="nested-p">That too I will declare, and mark how rightly. The mother is not the engenderer of her so-called &#x27;generation&#x27; (child), but the nurse only of the sown conception.<a href="#note-304.1" class="fn-link" data-note="304.1">304.1</a> It is the male engenders; she doth but receive, as from a stranger, harbouring as a host, and keeps the young plant
+
+<hr class="pb-hr"><span class="pb" id="pb-305">[Page 305]</span>
+safe, unless God blight it.<a href="#note-305.1" class="fn-link" data-note="305.1">305.1</a> And I will show thee a great proof of this: there may be a father without aid of mother, —here at hand is a witness, in a Child of Zeus, <span class="tei-add">neither begotten in wedlock</span><a href="#note-305.2" class="fn-link" data-note="305.2">305.2</a> nor yet nurtured in the darkness of the womb, but such a plant as no goddess could give birth to.<a href="#note-305.3" class="fn-link" data-note="305.3">305.3</a></p><p class="nested-p">Pallas, as always it shall be my aim to make thy city and thy people great, so with this man, it was to that end that I sent him to seek sanctuary in thy house, that he might be a faithful friend eternally, and that thou, Goddess, mightest gain thee an ally in him and his successors, and that it should be established everlastingly, the posterity of this people to uphold their covenant.</p></div>
+<div class="speech"><span class="speaker">ATHENA [677–678]</span><p class="nested-p">Has enough now been said, and may I now command these judges to give an honest vote, of their true conscience?<a href="#note-305.4" class="fn-link" data-note="305.4">305.4</a></p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [679–680]</span><p class="nested-p">For our part, our every bolt is shot; I only wait to hear how the trial is to be decided.</p></div>
+<div class="speech"><span class="speaker">ATHENA [681–681]</span><p class="nested-p">(to APOLLO and ORESTES). And you? how shall I dispose so as to have no complaint from you?</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-306">[Page 306]</span>
+<div class="speech"><span class="speaker">APOLLO [682–683]</span><p class="nested-p">Sirs, ye have heard what ye have heard, and in giving your vote let there be reverence in your conscience for your oath.</p></div>
+<div class="speech"><span class="speaker">ATHENA [684–713]</span><p class="nested-p">Hear now my Ordinance, ye people of Athens, judging here the first trial for shed blood: and for the future too it shall remain unto the people of Aegeus as a Judges&#x27; Court for ever. And this Hill of Ares,<a href="#note-306.1" class="fn-link" data-note="306.1">306.1</a>—once the camping-ground of the Amazons, when they came, out of jealousy towards Theseus, with an army, and they built here then a new walled city as a counterwork to his, and sacrificed to Ares—from which cause the rock and hill of Ares take their name of Ares&#x27; Hill.<a href="#note-306.2" class="fn-link" data-note="306.2">306.2</a> And upon it Reverence in my Burghers, and its kinsman Fear, shall restrain from wrong-doing both by day and night alike:-so long as my citizens themselves shall make no innovation in the laws; with foul adulterate streams and muddy clay polluting fair bright water thou wilt never find it drinkable.</p><p class="nested-p">The mean between the ungoverned and the despot-ridden is what I counsel my citizens to preserve and venerate, and not to banish from the city all restraint of fear,—for what man that hath no fear of aught is righteous? With such a venerated object of your righteous dread, ye will possess a bulwark of preservation for your land and polity such as none hath elsewhere in the world, either among the Scythians or in the region of Pelops.<a href="#note-306.3" class="fn-link" data-note="306.3">306.3</a> Herewith do I establish a Tribunal free from touch of lucre, reverend, quick to anger, a protection still awake and vigilant on behalf of them that sleep.</p><p class="nested-p">This at such length I have spoken as an exhortation to
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-307">[Page 307]</span>
+my citizens for time to come:—you must now rise, take each of you his ballot, and decide the cause with reverence for your oath.—My words are ended.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [714–715]</span><p class="nested-p">Well, I advise you to remember how dangerous these visitants are, and by no means to slight them.</p></div>
+<div class="speech"><span class="speaker">APOLLO [716–717]</span><p class="nested-p">And I charge you also—to remember the oracles— which are not from me only but from Zeus, to stand in awe of them, and not make them barren of effect.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [718–719]</span><p class="nested-p">But thou art showing regard for blood-matters which are not thine office,<a href="#note-307.1" class="fn-link" data-note="307.1">307.1</a> and the shrines will be no longer pure where thou shalt give thine oracles.</p></div>
+<div class="speech"><span class="speaker">APOLLO [720–721]</span><p class="nested-p">And are my Father&#x27;s counsels, then, mistaken in Ixion&#x27;s case, the first suppliant appeal for homicide?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [722–723]</span><p class="nested-p">You talk:—but if I fail to win the cause, my visitation shall be grievous to this land thereafter.</p></div>
+<div class="speech"><span class="speaker">APOLLO [724–725]</span><p class="nested-p">Nay, you are honourless among the younger and the older Gods alike, and I shall win.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [726–727]</span><p class="nested-p">This is just the way you acted in the house of Pheres,—you induced the Fates to make mortal men immortal!</p></div>
+<div class="speech"><span class="speaker">APOLLO [728–729]</span><p class="nested-p">Well, is it not right at all times to befriend a worshipper, and the more especially in his time of need?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [730–731]</span><p class="nested-p">Thou, thou didst quite destroy the ancient Dispensations<a href="#note-307.2" class="fn-link" data-note="307.2">307.2</a> and beguile the antique Goddesses with wine.</p></div>
+<div class="speech"><span class="speaker">APOLLO [732–733]</span><p class="nested-p">Thou, thou wilt presently fail to obtain the verdict, and then spit thy poison—which will do thy enemies no harm.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [734–736]</span><p class="nested-p">Since thou, my junior, art trampling upon my antiquity, I wait to hear the verdict of this trial.</p></div>
+<div class="speech"><span class="speaker">ATHENA [737–746]</span><p class="nested-p">It is now my duty, to give judgment in conclusion; and I shall add this ballot in favour of Orestes: for there is
+
+
+<hr class="pb-hr"><span class="pb" id="pb-308">[Page 308]</span>
+no mother that gave birth to me, and I am for the male in everything—except for marrying—with all my heart, and am most thoroughly the father&#x27;s child. Accordingly I shall not hold of more account the killing of a woman wed that slew her wedded man, the master of the house; Orestes is the winner of the cause, even though he be judged equal in the voting.</p><p class="nested-p">Turn out the ballots from the urns, ye judges that have been assigned that office.</p></div>
+<div class="speech"><span class="speaker">ORESTES [747–747]</span><p class="nested-p">O bright God, Apollo, how will the trial be decided?</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [748–748]</span><p class="nested-p">O Night, our Mother dark, dost thou behold?</p></div>
+<div class="speech"><span class="speaker">ORESTES [749–749]</span><p class="nested-p">Now it will be for me the light of day still, or a halter.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [750–750]</span><p class="nested-p">Ay, for us, using privileges still, or ruin.</p></div>
+<div class="speech"><span class="speaker">ATHENA [751–756]</span><p class="nested-p">Sirs, count up well the cast-out ballots, observing honesty in the division of them. If judgment be absent, there is great harm done, and the cast of a single vote ere now hath lifted up a house.</p><p class="nested-p">The accused man is acquitted on the charge of blood, for the number of the lots is equal.</p></div>
+<div class="speech"><span class="speaker">ORESTES [757–780]</span><p class="nested-p">O Pallas, O thou Saviour of my House! I was bereft of fatherland, and thou hast given me a home: and now in Greece it shall be said, &#x27;The man is again an Argive, with a habitation in his father&#x27;s heritage, by the grace of Pallas and of Loxias and of Him who sealeth all things, the Preserver&#x27;:—He hath had regard unto my father&#x27;s killing, and preserveth me, beholding these my mother&#x27;s advocates.</p><p class="nested-p">To all this country now and to thy people I, for the utmost fulness of all time to come, before departing to my home, will pledge an oath: No captain of the Argive land shall ever bring the well-appointed army to invade her: for we ourselves, out of the grave where we shall then be lying
+<hr class="pb-hr"><span class="pb" id="pb-309">[Page 309]</span>
+—we, for them that shall transgress these pledges of mine now, will so contrive with hopeless difficulties—by causing them disheartened journeys and cross-omened marches<a href="#note-309.1" class="fn-link" data-note="309.1">309.1</a>—that they shall repent their pains. But if all be kept, and they still honour this city of Pallas with their allied arms, we promise then to be benignant rather to them.</p><p class="nested-p">And so farewell; may thou and the people of thy city still maintain the wrestling-grip resistless by thine adversaries, to ensure her safety and her victory in arms!</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [781–796]</span><p class="nested-p">Oho, ye younger Gods, ye have ridden down the Ancient Laws and reft out of my grasp<a href="#note-309.2" class="fn-link" data-note="309.2">309.2</a> ... And I, unhappy wretch, dishonoured, promise deadly wrath, upon this land ah! venting from my bosom poison, poison in revenge that they shall rue, droppings of sterile power to the soil! And from it shall come mildew, killing leaf and killing birth—O vengeance of justice!—that shall sweep over the land and cast upon the country foul infectious plagues of human death!</p><p class="nested-p">Bewail? How act? Be fearful to this people—O fie, Daughters of Night, in deep affliction, mourning for the loss of honour!</p></div>
+<div class="speech"><span class="speaker">ATHENA [797–810]</span><p class="nested-p">Let me persuade you not to take it so tragically. Ye are not defeated: the trial resulted honestly in equal votes, to no dishonouring of thee! No, it was from Zeus there came most signal testimony, and its deliverer himself bare witness, that Orestes if he did this should not suffer any harm. Ye, therefore, be not passionate, shoot no
+
+
+<hr class="pb-hr"><span class="pb" id="pb-310">[Page 310]</span>
+deadly wrath upon this land, nor cause her barrenness, by discharging droppings ...<a href="#note-310.1" class="fn-link" data-note="310.1">310.1</a> sharp cankers to destroy her cultivated seed. For I do promise you in all sincerity that ye shall have a place of cavern in the righteous land, where at your braziers ye shall sit on splendid thrones, worshipped with honour by my citizens.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [811–826]</span><p class="nested-p">Oho, ye younger Gods, ye have ridden down the Ancient Laws and reft out of my grasp ... And I, unhappy wretch, dishonoured, promise deadly wrath, upon this land ah! venting from my bosom poison, poison in revenge that they shall rue, droppings of sterile power to the soil! And from it shall come mildew, killing leaf, and killing birth—O vengeance of justice!—that shall sweep over the land and cast upon the country foul infectious plagues of human death!</p><p class="nested-p">Bewail? How act? Be fearful to this people—O fie, Daughters of Night, in deep affliction, mourning for the loss of honour!</p></div>
+<div class="speech"><span class="speaker">ATHENA [827–839]</span><p class="nested-p">Ye are not dishonoured! and do not therefore in exceeding wrath, being divine powers, make a land of mortal men distempered.<a href="#note-310.2" class="fn-link" data-note="310.2">310.2</a> I too put my trust in Zeus—I
+
+
+<hr class="pb-hr"><span class="pb" id="pb-311">[Page 311]</span>
+need not say it—and I alone among the Powers of Heaven know the keys of the store-chamber in which the Thunderbolt is sealed up:—but there is no need of that;<a href="#note-311.1" class="fn-link" data-note="311.1">311.1</a> thou wilt yield, I pray, to my persuasion, and not cast forth over the land from an unbridled tongue (the curse) that all things bearing fruit should fail to prosper.<a href="#note-311.2" class="fn-link" data-note="311.2">311.2</a> Calm the fierce bitterness of the dark swelling wave,<a href="#note-311.3" class="fn-link" data-note="311.3">311.3</a> as being held in honour and veneration, and partaker in abode with me. Enjoying for evermore the first-fruits of this broad domain, as offerings for the sake of children and the marriage-rite, you shall yet applaud my saying.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [840–849]</span><p class="nested-p">Me to be treated thus! me with the wisdom of antiquity! and to have my habitation in the land, a dishonoured thing, forsooth, and foul! My spirit is full of fury and utter wrath. What pang is this that enters my
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-312">[Page 312]</span>
+side? Hear thou my passioning, O Mother Night! I have been reft of my time-honoured privileges by the knavish tricks of Gods Above and swept contemptuously away!</p></div>
+<div class="speech"><span class="speaker">ATHENA [850–872]</span><p class="nested-p">I will indulge thy humours, because thou art my senior:—at the same time, though thy wisdom is, no doubt, far more than mine, still to me also Zeus hath granted no mean understanding.<a href="#note-312.1" class="fn-link" data-note="312.1">312.1</a> And I warn you, if you go to any foreign country, you will only fall in love with this; for time in his succeeding stream shall flow with larger honour for my citizens; and thou, with an honourable seat against the temple of Erechtheus, shalt receive from companies of men and women more than thou wouldst ever get from any others in the world. So do not, I pray you, cast upon my territories any blood-incentives, to hurt the stomachs of the young, maddening them with fury as with wine; nor yet extract as it were the heart of fighting-cocks and plant in my citizens a spirit of war intestine and rash daring against one another. Let their warfare be abroad—it shall be found in plenty for the man in whose heart there shall be a strong desire for glory—but fight of the domestic fowl I will not have.</p><p class="nested-p">This then is my offer at your choice—to do well, be well done by, honoured well, and have a share in this most God-beloved land.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [873–882]</span><p class="nested-p">Me to be treated thus! me with the wisdom of antiquity! and to have my habitation under ground, a dis-
+
+
+<hr class="pb-hr"><span class="pb" id="pb-313">[Page 313]</span>
+honoured thing, forsooth, and foul! My spirit is full of fury and utter wrath. What pang is this that enters my side? Hear thou my passioning, O Mother Night! I have been reft of my time-honoured privileges by the knavish tricks of Gods Above and swept contemptuously away!</p></div>
+<div class="speech"><span class="speaker">ATHENA [883–893]</span><p class="nested-p">I will not be weary of speaking blessings on you, that you shall never say how you, an elder Goddess, were cast out from this land by me, thy junior, and my mortal citizens with inhospitable scorn. No, if Persuasion is a thing aught sacred in thine eyes—the soothing charm and magic influence of my tongue<a href="#note-313.1" class="fn-link" data-note="313.1">313.1</a>—why then, remain here; but if you will not, then it would surely be unfair of you to launch upon this city any indignation or fierce anger or injury to her folk. For it is open to you to be a landholder in this country with fair treatment and full privileges absolutely.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [894–894]</span><p class="nested-p">Queen Athena, what is the abode you promise me?</p></div>
+<div class="speech"><span class="speaker">ATHENA [895–895]</span><p class="nested-p">One free from any touch of sorrow; you were best accept it.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [896–896]</span><p class="nested-p">Say that I accept:—what privilege is there designed for me?</p></div>
+<div class="speech"><span class="speaker">ATHENA [897–897]</span><p class="nested-p">That without thy good will no house shall flourish.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [898–898]</span><p class="nested-p">Wilt thou secure for me possession of such power?</p></div>
+<div class="speech"><span class="speaker">ATHENA [899–899]</span><p class="nested-p">Yes, for I will prosper the fortunes of thy worshippers.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [900–900]</span><p class="nested-p">And wilt thou pledge me a warrant for all time?</p></div>
+<div class="speech"><span class="speaker">ATHENA [901–901]</span><p class="nested-p">I need not promise what I will not perform.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [902–902]</span><p class="nested-p">I feel thy charm begin to work:—my wrath abates.</p></div>
+<div class="speech"><span class="speaker">ATHENA [903–903]</span><p class="nested-p">Well then, abide here in the land and thou shalt win thee friends.</p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-314">[Page 314]</span>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [904–904]</span><p class="nested-p">What strain then wouldst thou have me chant upon the land?</p></div>
+<div class="speech"><span class="speaker">ATHENA [905–917]</span><p class="nested-p">Terms that reflect on victory without a flaw! Call blessings from the earth and from the ocean-dew, and from the heaven; pray that the blowing winds may pass over the land with sunny breath,<a href="#note-314.1" class="fn-link" data-note="314.1">314.1</a> that increase of the earth and cattle may not faint with time but flow on ever for my citizens in streaming plenty, and that seed of human-kind may be preserved.</p><p class="nested-p">But may your fruitfulness be rather shown in the righteous;<a href="#note-314.2" class="fn-link" data-note="314.2">314.2</a> for, like a shepherder of herbs, I love the unrepented sort of these just men here present.<a href="#note-314.3" class="fn-link" data-note="314.3">314.3</a></p><p class="nested-p">These blessings are for thee to give, and in the glorious tournaments of war my heart shall never rest content but I will make this city famous in the world as a victorious town.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [918–928]</span><p class="nested-p">I will accept the Union of home with Pallas, and will not reject a City which even Zeus Omnipotent and Ares hold as a strong fortress of the Gods, the precious jewel that protects the altars of Hellenic Deities. For her I make my prayer, with all benignant auspices, that life&#x27;s enjoyments
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-315">[Page 315]</span>
+may be made to teem forth for her from the Earth in bounteous plenty by the beaming radiance of the Sun.<a href="#note-315.1" class="fn-link" data-note="315.1">315.1</a></p></div>
+<div class="speech"><span class="speaker">ATHENA [929–939]</span><p class="nested-p">It is in kindness to my Citizens that I am acting thus, in planting here among them Spirits so powerful and so ill-appeased; for to their lot hath fallen the disposal of all things touching Man; but he that meets with them in angry mood<a href="#note-315.2" class="fn-link" data-note="315.2">315.2</a> knows not from what quarter come the blows that strike his life: it is the offences of his forefathers that arrest and hale him before these, and Destruction silently, for all his vaunt, with deadly anger crumbles him to dust.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [940–950]</span><p class="nested-p">May breath of evil never blow to hurt her trees— &#x27;tis by my grace—and may the scorching heat that nips the budding eyes of plants refrain from trespassing beyond the boundaries of its region;<a href="#note-315.3" class="fn-link" data-note="315.3">315.3</a> may no drear disease of sterile blight proceed against her; may Pan make her flocks to thrive at the appointed season<a href="#note-315.4" class="fn-link" data-note="315.4">315.4</a> with twinned increase, and may there be rich offspring of the boon Earth&#x27;s wealth to pay reward for Spirits&#x27; gift of Treasure-trove.<a href="#note-315.5" class="fn-link" data-note="315.5">315.5</a></p></div>
+<div class="speech"><span class="speaker">ATHENA [951–957]</span><p class="nested-p">O hear, ye Warders of my City, how great blessings she doth seal you surely—for the Queen Erinys hath great power both with the Immortals and with those of Earth below, and in the affairs of Man most manifestly their dispose
+
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-316">[Page 316]</span>
+is absolute, to some affording songs of gladness, and to others life that is a blur of tears.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [958–969]</span><p class="nested-p">To all untimely sudden deaths I cry Avaunt! and may the lives of her young lovely maidens win a husband —grant that, Ye whose proper power it is,<a href="#note-316.1" class="fn-link" data-note="316.1">316.1</a> and Ye, O Heavenly Fates, our Sisters by one Mother,<a href="#note-316.2" class="fn-link" data-note="316.2">316.2</a> Spirits whose dispense is pure, participants in every home, at every season weighty with most righteous presence, everywhere most honoured among Gods of Heaven.</p></div>
+<div class="speech"><span class="speaker">ATHENA [970–977]</span><p class="nested-p">My heart is glad to hear them seal these blessings on my land so zealously; and I am grateful to Persuasion&#x27;s eyes for looking with their favourable guidance on my tongue when pleading with these Powers that were so wrathfully averted from me: nay, but Zeus of Eloquence prevailed, and our contention for the good is crowned with triumph absolutely.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [978–989]</span><p class="nested-p">May Faction, that insatiable source of evil, never rage within this city; never may the dust drink up the purple blood of citizens in anger<a href="#note-316.3" class="fn-link" data-note="316.3">316.3</a> and for revenge seize greedily upon retaliating deaths of civic blood: may their exchanges rather be of joy for joy with sentiments of love in common, and dislike with one consent; therein lies the cure for many human ills.</p></div>
+<div class="speech"><span class="speaker">ATHENA [990–997]</span><p class="nested-p">O have they not the judgment to find out the path of speaking fair?<a href="#note-316.4" class="fn-link" data-note="316.4">316.4</a> From these Shapes of Terror I foresee great gain in store<a href="#note-316.5" class="fn-link" data-note="316.5">316.5</a> for you, my Citizens: for if ye keep
+
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-317">[Page 317]</span>
+good feeling between them and you, and hold them in high honour, ye shall surely shine conspicuous in the world for guiding land and city in the path of upright justice.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [998–1004]</span><p class="nested-p">Joy I wish you, joy in due apportionment of wealth, joy, O ye people of the City, blest with friendship of the Virgin who is seated near to Zeus,<a href="#note-317.1" class="fn-link" data-note="317.1">317.1</a> learners of wise-mindedness in time; and shelterers beneath the wings of Pallas, ye are viewed as sacred by the Father.</p></div>
+<div class="speech"><span class="speaker">ATHENA [1005–1015]</span><p class="nested-p">Joy to you also! But I must now go before you to point out your chambers by the sacred light of these your Escort:<a href="#note-317.2" class="fn-link" data-note="317.2">317.2</a> come ye now, and with these solemn sacrifices being sped below the earth, what is harmful to the country keep down there suppressed,<a href="#note-317.3" class="fn-link" data-note="317.3">317.3</a> and what is profitable send aloft to make my city triumph!—Lead on now, ye Sons of Cranaus that possess this City, lead these Denizens upon
+
+
+
+
+<hr class="pb-hr"><span class="pb" id="pb-318">[Page 318]</span>
+their way, and in the hearts of the Citizens may there be good will for good received.</p></div>
+<div class="speech"><span class="speaker">CHORUS OF THE FURIES [1016–1022]</span><p class="nested-p">Joy to you, again I say it, joy, all ye dwellers in the City, mortal and immortal both. While ye possess the City of Pallas and keep my Denizenship sacred, your life&#x27;s fortunes shall give you nothing to complain of.<a href="#note-318.1" class="fn-link" data-note="318.1">318.1</a></p></div>
+<div class="speech"><span class="speaker">ATHENA [1023–1033]</span><p class="nested-p">I thank you for the terms of these your benedictions, and will now conduct you with the light of blazing torches to that nether subterranean House, with ministers that are the guards of mine own image; and with right; for it should be the eye of all the land of Theseus that shall arrive, a noble troop of maidens, wives, and aged dames.<a href="#note-318.2" class="fn-link" data-note="318.2">318.2</a></p><p class="nested-p">Deck them with scarlet over-cloaks of honour, and let the blazing light move on; that so the good will of these new dwellers in the land may be shown henceforth in blessings of fine Manhood.<a href="#note-318.3" class="fn-link" data-note="318.3">318.3</a></p></div>
+<hr xmlns="http://www.tei-c.org/ns/1.0" class="pb-hr">
+<span xmlns="http://www.tei-c.org/ns/1.0" class="pb" id="pb-319">[Page 319]</span>
+<div class="speech"><span class="speaker">CHORUS OF THE ESCORT [1034–1049]</span><p class="nested-p">Pass on your way, O ye mighty ones, jealous of honour,<a href="#note-319.1" class="fn-link" data-note="319.1">319.1</a> Children ... of Night, in glad-hearted procession——</p><p class="nested-p">Hush ye, good words, all ye people!</p><p class="nested-p">There in primeval mysterious caves of the Earth ... worship of honour and sacrifice</p><p class="nested-p">Hush, all ye people, good words!</p><p class="nested-p">Gracious and loyal-hearted to the land, come hither, O ye Worshipful, pleased with flame-devouring torch upon your way</p><p class="nested-p">Cry aloud now with jubilee in chorus!</p><p class="nested-p">the citizens of Pallas: Zeus the all-seeing and Fate have conspired to this end.</p><p class="nested-p">Cry aloud now with jubilee in chorus!</p></div></div>
+        </div>
+
+        <div class="column">
+            <h3>Footnotes</h3>
+            <div class="content" id="footnote-content"><div class="line" id="note-275.1"><a class="note-ref" data-note="275.1">275.1</a> <span class="text">The purpose of this opening passage is to prepare for the harmonious reconciliation at the close between the Powers of Earth and Darkness and the Powers of Heaven and Light.</span></div>
+<div class="line" id="note-277.1"><a class="note-ref" data-note="277.1">277.1</a> <span class="text">The relative clause, by a studied carelessness, usurps the place of the main sentence: Class. Rev. 1904, p. 242. There is another example at v. 688.</span></div>
+<div class="line" id="note-277.2"><a class="note-ref" data-note="277.2">277.2</a> <span class="text"><strong xmlns="http://www.tei-c.org/ns/1.0">Paradise Lost, i. 622</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" rend="blockquote">A universe of death, which God by curse<br>Created evil, for evil only good,<br>Where all life dies, death lives.<br></blockquote></span></div>
+<div class="line" id="note-278.1"><a class="note-ref" data-note="278.1">278.1</a> <span class="text">v. 76 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βιβῶντ᾽ ἀν᾽ αἰεὶ τὴν πλανοστιβῆ χθόνα</blockquote>.</span></div>
+<div class="line" id="note-278.2"><a class="note-ref" data-note="278.2">278.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">σέβει τοι Ζεὺς τόδ᾽ ἐκνόμων σέβας,<br>ὁρμώμενον βροτοῖσιν εὐπόμπῳ τύχῃ.<br></blockquote>
+Aeschylus might have written <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁρμωμένων</blockquote>, but <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σέβει τόδ' ἐκνόμων σέβας</blockquote> is an idiomatic way of saying <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σέβει τούσδε ἐκνόμους</blockquote>, as, for example, v. 548 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τοκέων σέβας εὖ προτίων</blockquote>, and v. 886 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀλλ᾽ εἰ μὲν ἁγνόν ἐστι σοι Πειθοῦς σέβας</blockquote>: so that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τόδ᾽ ἐκνόμων σέβας ὁρμώμενον</blockquote> is equivalent to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τούσδε ἐκνόμους ὁρμωμένους</blockquote>, while <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βροτοῖσιν</blockquote> here, as often, merely means 'with men,' 'on earth.' The sentence has been sometimes misinterpreted, as though <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁρμώμενον</blockquote> meant 'sent to men.'</span></div>
+<div class="line" id="note-279.1"><a class="note-ref" data-note="279.1">279.1</a> <span class="text">Clytemnestra&#x27;s passion makes her incoherent.</span></div>
+<div class="line" id="note-279.2"><a class="note-ref" data-note="279.2">279.2</a> <span class="text">v. 103 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὅρα δὲ πληγὰς τάσδε καρδίᾳ σέθεν</blockquote>. Her wound was at the throat, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρὸς δέρην</blockquote> v. 595, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔσω δέρας</blockquote> Eur. El. 1219. After this line the MS. gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" rend="blockquote">εὕδουσα γὰρ φρὴν ὄμμασιν λαμπρύνεται,<br>ἐν ἡμέρᾳ δὲ μοῖρ᾽ ἀπρόσκοπος βροτῶν,<br></blockquote>
+'for when asleep the mind is lit with eyes, but in the daytime mortal man hath no endowment of prevision.' But the Furies are not mortal men, nor do they need foresight to see what is present; nor is Clytemnestra in a mood for such reflections. I believe with Schuetz that they are an illustration quoted from some other play of Aeschylus.</span></div>
+<div class="line" id="note-280.1"><a class="note-ref" data-note="280.1">280.1</a> <span class="text">Reading (with Weil) <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φίλοι γάρ εἰσιν, οὐκ ἐμοῖς προσεικότες</blockquote>. Hermann's reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φίλοις γάρ εἰσιν, οὐκ ἐμοί, προσίκτορες</blockquote> (which takes <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσίκτορες</blockquote> like <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ζεὺς ἀφίκτωρ</blockquote> in Supp. 1) would mean 'for it is my kin, not I, that have petitionary Gods': what one looks for rather is 'but I have none,' that is, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐμοὶ δ' οὔ</blockquote>, as in <strong xmlns="http://www.tei-c.org/ns/1.0">Eur. Or. 576</strong>, where Orestes says:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἢ μητρὶ μὲν πάρεισι σύμμαχοι θεοί,<br>τῷ δ᾽ οὐ πάρεισι, μᾶλλον ἠδικημένῳ.<br></blockquote></span></div>
+<div class="line" id="note-280.2"><a class="note-ref" data-note="280.2">280.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τί δρᾷς;</blockquote> as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τί σοι πέπρακται πρᾶγμα</blockquote> in v. 125.</span></div>
+<div class="line" id="note-280.3"><a class="note-ref" data-note="280.3">280.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">135</strong>. The vengeance of the dead, of which the Furies are embodiments, was conceived as being stirred up by reproaches, taunts, of the indignities and shames that they had suffered; see Cho. 374 (with my note), 493, Eur. Or. 1239, Soph. El. 1069; and reproaches were described in many metaphorical words (as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θείνειν</blockquote> Theb. 369, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μαστικτήρ</blockquote> Supp. 475, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καθικνεῖσθαι</blockquote>) as stinging blows, as from a scourge or goad. In v. 155 we see these taunts at work.</span></div>
+<div class="line" id="note-281.1"><a class="note-ref" data-note="281.1">281.1</a> <span class="text">See v. 135 with the note. As the Furies are embodied in a concrete form, the taunts of Clytemnestra take effect in that way. In v. <strong xmlns="http://www.tei-c.org/ns/1.0">161</strong> read with Schuetz <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βαρύ τι, περίβαρυ, κρύος ἔχειν</blockquote>: cf. Theb. 819.</span></div>
+<div class="line" id="note-281.2"><a class="note-ref" data-note="281.2">281.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">164</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θρόμβον</blockquote> Wakefield.</span></div>
+<div class="line" id="note-282.1"><a class="note-ref" data-note="282.1">282.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">169</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἐφεστίῳ δὲ μάντις ὢν μιάσματι<br>μυχὸν ἐχράνατ᾽ αὐτόσσυτος, αὐτόκλητος.<br></blockquote>
+One could hardly find a better example of the middle voice.</span></div>
+<div class="line" id="note-282.2"><a class="note-ref" data-note="282.2">282.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παλαιγενεῖς δὲ Μοίρας φθίσας</blockquote>, more or less personified: v. 730 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παλαιὰς διανομὰς καταφθίσας</blockquote> is the same thing.</span></div>
+<div class="line" id="note-282.3"><a class="note-ref" data-note="282.3">282.3</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἕτερον ἐν κάρᾳ<br>μιάστορ᾽ ἐκείνου πάσεται MS.<br></blockquote>
+In place of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκείνου</blockquote> metre requires — ‿ —.</span></div>
+<div class="line" id="note-282.4"><a class="note-ref" data-note="282.4">282.4</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">185</strong>. On this passage see <strong xmlns="http://www.tei-c.org/ns/1.0">Class. Rev. 1905, p. 397</strong>. The alternation of substantives (with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἰσίν</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γίγνονται</blockquote> understood) and verbs is quite natural in Greek, e.g. <strong xmlns="http://www.tei-c.org/ns/1.0">Aesch. frag. 158</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">Βερέκυντα χῶρον, ἔνθ᾽ Ἀδραστείας ἕδος,<br>Ἴδης τε μυκηθμοῖσι καὶ βρυχήμασιν<br>ἕρπουσι μήλων πᾶν ὀρεχθεύει πέδον<br></blockquote>
+(Class. Rev. 1902, p. 435), <strong xmlns="http://www.tei-c.org/ns/1.0">Eur. Cycl. 164-170</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0">Philostr. Apoll. v. 26</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔνθα οἰμωγή τε καὶ ὕβρις ὀλλύντων τε καὶ ὀλλυμένων, ῥέει δ' αἵματι γαῖα</blockquote>.</span></div>
+<div class="line" id="note-283.1"><a class="note-ref" data-note="283.1">283.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">195</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πλουσίοισι</blockquote>: a frequent epithet of temples, especially of Delphi with its rich offerings and its treasuries. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πλησίοισι</blockquote> of the MS. could not mean anything except 'in this neighbouring place,' and neighbouring to what? It has no meaning. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πλουσίοισι</blockquote> is Pauw's emendation; the words are confused elsewhere, as Eur. Med. 956, Max. Tyr. xxxv. 3, Schol. P. V. 832 (v.l.), Stob. Flor. 22. 3.</span></div>
+<div class="line" id="note-283.2"><a class="note-ref" data-note="283.2">283.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">203</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρᾶξαι</blockquote>. Wecklein's <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κλέψαι</blockquote> would be true (Soph. El. 35), but seems less fitting here.</span></div>
+<div class="line" id="note-283.3"><a class="note-ref" data-note="283.3">283.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">207</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρόσφοροι</blockquote>.</span></div>
+<div class="line" id="note-284.1"><a class="note-ref" data-note="284.1">284.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">211</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τί γὰρ γυναῖκας</blockquote> (Paley).</span></div>
+<div class="line" id="note-284.2"><a class="note-ref" data-note="284.2">284.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">213</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἦ κάρτ᾽ ἄτιμα καὶ παρ᾽ οὐδὲν ἠρκέσω</blockquote> MS. Perhaps <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἠνύσω</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἤνυσας</blockquote>: what one expects is <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἴχεται</blockquote>.</span></div>
+<div class="line" id="note-284.3"><a class="note-ref" data-note="284.3">284.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">216</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰ φίλτατα</blockquote> includes both senses (100, 611), and 'closest tie' is necessary for the argument.</span></div>
+<div class="line" id="note-284.4"><a class="note-ref" data-note="284.4">284.4</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">218</strong>. Oath being a <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πίστωμα</blockquote>.</span></div>
+<div class="line" id="note-284.5"><a class="note-ref" data-note="284.5">284.5</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">220</strong>. Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ μὴ τίνεσθαι μηδ' ἐποπτεύειν κότῳ</blockquote> with Meineke: cf. Hom. Γ 278, T 259, Eur. Or. 315, Theognis 204. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ μὴ μέλεσθαι</blockquote> (Auratus) would do well—'as not to care or visit them,' or 'as not to care even to visit them.'</span></div>
+<div class="line" id="note-285.1"><a class="note-ref" data-note="285.1">285.1</a> <span class="text">Professor Ridgeway thinks the scene is not the image of Athena Polias on the Acropolis, but another sanctuary of Pallas to the south-east of it, outside the wall, where was held the ancient court known as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ ἐπὶ Παλλαδίῳ</blockquote>. His arguments are given in the Classical Review, October 1907.</span></div>
+<div class="line" id="note-285.2"><a class="note-ref" data-note="285.2">285.2</a> <span class="text">See v. <strong xmlns="http://www.tei-c.org/ns/1.0">455</strong>, <strong xmlns="http://www.tei-c.org/ns/1.0">Eur. Or. 423-4</strong>.</span></div>
+<div class="line" id="note-285.3"><a class="note-ref" data-note="285.3">285.3</a> <span class="text">The text, I think, is complete, only the sentence develops irregularly as it goes on—a thing which Aeschylus does often for dramatic purposes (vv. 112, 905 are other examples): <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βρέτας τὸ σόν</blockquote> must be governed by <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">φυλάσσων</blockquote> (v. 442 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βρέτας τόδε ἦσαι φυλάσσων</blockquote>) as well as by <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρόσειμι</blockquote>. But in v. 239 we should probably read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀλλ᾽ ἀμβλὺς ἤδη προστετριμμένος τε πρός</blockquote> with Prien.</span></div>
+<div class="line" id="note-286.1"><a class="note-ref" data-note="286.1">286.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">253</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀσμὴ βροτείων αἱμάτων με προσγελᾷ</blockquote>: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσγελᾷ</blockquote>, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">arridet</blockquote>, is a synonym of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσσαίνει</blockquote>, which (as Jebb well says on Soph. Ant. 1214) could be used of that which appeals for recognition by vividly striking the senses. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἰκάλλει</blockquote> was sometimes used instead. 'Smells wooingly, flatteringly, gives a welcome to my sense, gives me sweet warrant.'</span></div>
+<div class="line" id="note-286.2"><a class="note-ref" data-note="286.2">286.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">258</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ὅδ᾽ αὖτέ γ' ἀλκὰν ἔχων<br>περὶ βρέτει πλεχθεὶς<br>θεᾶς ἀμβρότου.<br></blockquote>
+The MS. gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ὅδ᾽ αὖτε γοῦν ἀλκὰν ἔχων περὶ βρέτει<br></blockquote>
+which was meant for an iambic trimeter; whenever scribes can make what they consider an iambic line, they do so, often by inserting <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γε</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὖν</blockquote> and so on. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὖν</blockquote> was ejected here by Hermann. If the <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γε</blockquote> is sound, it must mean 'Yes.'</span></div>
+<div class="line" id="note-286.3"><a class="note-ref" data-note="286.3">286.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">266</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βοσκὰν φεροίμαν</blockquote> MS., doubtful.</span></div>
+<div class="line" id="note-287.1"><a class="note-ref" data-note="287.1">287.1</a> <span class="text">Here in the MS. follows a proverbial line from elsewhere, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χρόνος καθαιρεῖ πάντα γηράσκων ὁμοῦ</blockquote>, 'Time in his ageing course destroyeth all.'</span></div>
+<div class="line" id="note-287.2"><a class="note-ref" data-note="287.2">287.2</a> <span class="text">v. 294 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τίθησιν ὀρθὸν ἢ κατηρεφῆ πόδα</blockquote>. This is the literal translation of the words, but what precisely they imply it is not easy to be certain. Some (as Paley, Liddell and Scott s.v. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀρθός</blockquote>, Verrall) take <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀρθόν</blockquote> to mean 'advanced beyond the skirt.' There are these difficulties —that the antithesis to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κατηρεφῆ</blockquote> one would expect rather to be <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γυμνόν</blockquote>, and that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀρθῷ ποδί</blockquote> elsewhere (so far as I can find) means always <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">recto talo</blockquote>, upright in standing or walking as opposed to lying down or sitting. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μὴ κατηρεφῆ</blockquote> 'not covered,' would be easier. I cannot help suspecting that in any case there is an allusion of some kind to Homer Z 92, where a <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέπλος</blockquote> (as at the Panathenaea) is to be offered to Athena:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">θεῖναι Ἀθηναίης ἐπὶ γούνασιν ἠϋκόμοιο:<br></blockquote>
+here the reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπὶ γούνασιν</blockquote> gave rise to a debated question whether the Palladium was a standing or a seated figure: see Strabo 600, Libanius iv. 1115-6.</span></div>
+<div class="line" id="note-288.1"><a class="note-ref" data-note="288.1">288.1</a> <span class="text">After this line the MS. gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἀναίματον βόσκημα δαιμόνων σκιά·<br></blockquote>
+'the bloodless meat of Spirits below, a shadow.' If it belongs to this passage at all, it would come best after v. 305 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐδὲ πρὸς βωμῷ σφαγείς</blockquote>, 'and not slain at altar'; but I suspect that it was quoted in the margin as a parallel.</span></div>
+<div class="line" id="note-288.2"><a class="note-ref" data-note="288.2">288.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">εὐθυδίκαιοι δ᾽ οἰόμεθ᾽ εἶναι·<br></blockquote>
+cf. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἰόμεθα</blockquote> in Thuc. v. 105, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νομίζομεν</blockquote> in i. 70.</span></div>
+<div class="line" id="note-289.1"><a class="note-ref" data-note="289.1">289.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">θνατῶν τοῖσιν αὐτουργίαι<br>ξυμπέσωσιν μάταιοι<br></blockquote>
+(Turnebus) seems to be the right correction of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θνατῶν τοῖσιν αὐτουργίαις ξύμπασωσιν μάταιοι</blockquote>.—<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ξυμπέσωσιν</blockquote> is used euphemistically (like <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ξυμφορά</blockquote>) with irony.</span></div>
+<div class="line" id="note-289.2"><a class="note-ref" data-note="289.2">289.2</a> <span class="text">Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπὶ τὸν ὧδ᾽ ἱέμεναι</blockquote> with E. Ahrens.</span></div>
+<div class="line" id="note-289.3"><a class="note-ref" data-note="289.3">289.3</a> <span class="text">This is the main sense clearly; the MS. gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἐπὶ τὸν ὦ διόμεναι<br>κρατερὸν ὄνθ᾽ ὁμοίως<br>μαυροῦμεν ὑφ' αἵματος νέου<br></blockquote>
+of which the last part is a paraphrase of the original.</span></div>
+<div class="line" id="note-290.1"><a class="note-ref" data-note="290.1">290.1</a> <span class="text">Xen. Cyr. vii. I. 44 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ μὲν ἐπὶ Κροῖσον συστρατεύειν ἀφελεῖν σφίσιν ἐδεήθησαν</blockquote>.</span></div>
+<div class="line" id="note-290.2"><a class="note-ref" data-note="290.2">290.2</a> <span class="text"><p xmlns="http://www.tei-c.org/ns/1.0">This passage, in a text which cannot be relied upon, is extremely difficult to deal with, and the version given here is only tentative. The MS. has:
+<blockquote lang="grc" rend="blockquote">σπευδομενα (altered to σπευδόμεναι) δ᾽ ἀφελεῖν τινα τάσδε μερίμνας<br>θεῶν δ᾽ ἀτέλειαν ἐμαῖσι λιταῖς ἐπικραίνειν<br>μηδ᾽ εἰς ἄγκρισιν ἐλθεῖν.<br></blockquote>
+With <blockquote lang="grc">ἀτέλειαν</blockquote> and <blockquote lang="grc">εἰς ἄγκρισιν ἐλθεῖν</blockquote>, it looks as though we had allusion to the Liturgies or Public Duties at Athens, and the legal right, which any citizen charged with such a liturgy possessed, of calling on some other person to perform it, as being better able to support the burden. The dispute between the rival claimants to immunity (<blockquote lang="grc">ἀτέλεια</blockquote>) was adjudicated by the magistrates (<blockquote lang="grc">διαδικασία</blockquote>). As the text stands, therefore, the Erinyes appear to say: 'We are not only willing, but anxious, to relieve the Celestials of this Liturgy, and to undertake the charge ourselves, without waiting for them to challenge us before a magistrate.'</p><p xmlns="http://www.tei-c.org/ns/1.0">The comparison of the Gods' concern for human affairs to a Liturgy is made by Lucian ii. 760: <blockquote lang="grc">εἶτα καὶ προνοεῖν τῶν καθ᾿ ἡμᾶς πραγμάτων οὐ πᾶσιν ἐδόκουν οἱ θεοί, ἀλλ᾽ ἦσάν τινες οἱ τῆς συμπάσης ἐπιμελείας αὐτοὺς ἀφιέντες, ὥσπερ ἡμεῖς εἰώθαμεν ἀπολύειν τῶν λειτουργιῶν τοὺς παρηβηκότας</blockquote>.</p><p xmlns="http://www.tei-c.org/ns/1.0"><blockquote lang="grc">ἐμαῖς μελέταις</blockquote> was conjectured by H. Voss: and there ought, I think, to be a caesura after <blockquote lang="grc">ἐμαῖς</blockquote>.</p></span></div>
+<div class="line" id="note-290.3"><a class="note-ref" data-note="290.3">290.3</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δόξαι, τ᾽ ἀνδρῶν</blockquote>, 'seemings' or 'conceits,' appearances or reputations.</span></div>
+<div class="line" id="note-291.1"><a class="note-ref" data-note="291.1">291.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀρχησμοῖς τ' ἐπιφθόνοις ποδός</blockquote>: the following passage is in the measure of the Cretic hyporcheme and was danced to it: cf. Athenaeus 631c <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἡ δ᾽ ὑπορχηματική ἐστιν ἐν ᾗ ᾄδων ὁ χορὸς ὀρχεῖται</blockquote>, Soph. Aj. 700 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Κνώσι' ὀρχήματα</blockquote>, and Hesychius <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Κνώσια κῶλα: τὰ ὀρχηματικά</blockquote> (so read for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁρμητικά</blockquote>).</span></div>
+<div class="line" id="note-291.2"><a class="note-ref" data-note="291.2">291.2</a> <span class="text">In the blindness caused by <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἄτη</blockquote>: Soph. Ant. 583.</span></div>
+<div class="line" id="note-291.3"><a class="note-ref" data-note="291.3">291.3</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μένει</blockquote> MS. I consider Dobree's <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέλει γάρ</blockquote> very probable,—'we see to it,' make it our care, our business: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέλειν, μέλεσθαι, μελέτωρ</blockquote> were almost technical terms in this connection.</span></div>
+<div class="line" id="note-291.4"><a class="note-ref" data-note="291.4">291.4</a> <span class="text">v. 388:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἄτιμ᾽ ἀτίεται διόμεναι<br>λάχη θεῶν διχοστατοῦντ᾽<br>ἀνηλίωι λάμπαι.<br></blockquote>
+There is apparently an iambus or a trochee more than there should be. I am inclined to eject <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λάχη</blockquote>: then (with Weil's reading in 388) we get:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἄτιμα τίομεν ἀτίεται<br>θεῶν διχοστατοῦντ᾽ ἀνηλίῳ λάπᾳ.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λάμπαι</blockquote> was corrected by Wieseler to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λάπᾳ</blockquote> on account of metre. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λάμπη</blockquote> and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λαμπώδης</blockquote> were the forms in later use, but <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λάπη</blockquote> (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">pituita</blockquote>) is preserved in nine places by the MSS. of Hippocrates and by the MSS. of Athenaeus 132 E in a line of Diphilus:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">πάντες βλιχανώδεις εἰσὶ καὶ μεστοὶ λάπης.<br></blockquote>
+I cannot tell why editors should have been so chary of accepting the correction here, or why Mr Sidgwick should call the word a very late one, and 'the strain of meaning very harsh, and the word in the last degree unlikely.' It meant a viscid, mucous slime, such as gathers on the top of stagnant or fermented liquids, like the 'mother' (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γραῦς, ἐπίπαγος</blockquote>) on boiled milk or vinegar, or the scum on Shakespeare's 'filthy-mantled pool': and in descriptions of Hell, or places that resembled Hell, this was a characteristic detail; e.g. Hom. h. Dem. 432 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὑπὸ ζόφῳ εὐρώεντι</blockquote>, Verg. Aen. vi. 462 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="lat">loca senta situ</blockquote>.</span></div>
+<div class="line" id="note-292.1"><a class="note-ref" data-note="292.1">292.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄτρυτον πόδα</blockquote> is an allusion to her title <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἀτρυτώνη</blockquote>. She was called <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄτρυτος ἐν μάχῃ</blockquote> in a fragment quoted by Hesychius.</span></div>
+<div class="line" id="note-292.2"><a class="note-ref" data-note="292.2">292.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πώλοις ἀκμαίοις τόνδ᾽ ἐπιζεύξασ᾽ ὄχον</blockquote>, 'No other car, no other steeds have I' (Drake). The 'deictic' <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τόνδε</blockquote> is equivalent to a 'limiting' epithet.</span></div>
+<div class="line" id="note-293.1"><a class="note-ref" data-note="293.1">293.1</a> <span class="text">v. 413 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σπαρτῶν</blockquote>, cf. Soph. O. C. 1534; here it includes both the classes specified by <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὔτε—οὔτε</blockquote>: had it meant some different kind it would have been followed by <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐδέ</blockquote>.</span></div>
+<div class="line" id="note-293.2"><a class="note-ref" data-note="293.2">293.2</a> <span class="text">v. 416 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄμομφον ὄντα</blockquote> Robort. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄμορφον ὄντα</blockquote> of the MS. with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸν πέλας</blockquote> (Auratus) would of course be applicable, but the error <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μορφ</blockquote>- for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μόμφ</blockquote>- is very common, and here <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μορφώμασιν</blockquote> has just preceded. Perhaps <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄμομφον</blockquote> was the text before the scholiast, and his note should run: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄμομφος οὖσα, οὐ δυνήσῃ με ἐφ᾽ οἷς εἶπον ἀντιψέξαι</blockquote>, 'Being unreproached, you will not be able to fling back reproach at me for what I have said.'</span></div>
+<div class="line" id="note-293.3"><a class="note-ref" data-note="293.3">293.3</a> <span class="text">&#x27;<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἀραί</blockquote>', Harms invoked by imprecation.</span></div>
+<div class="line" id="note-293.4"><a class="note-ref" data-note="293.4">293.4</a> <span class="text">v. 424 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βροτοκτονοῦντας</blockquote>: a stricter definition of their office would be <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὐτοκτονοῦντας</blockquote>, and Davies thought that this is what Aeschylus wrote, and that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βροτοκτονοῦντας</blockquote> was substituted by a scribe who did not understand it. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὐτοκτονεῖν</blockquote>, however, was in use by scholiasts themselves, as Supp. 271, Theb. 679 (where read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἰς τὸ αὐτοκτονεῖν</blockquote>). In v. 210 their definition is <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τοὺς μητραλοίας ἐκ δόμων ἐλαύνομεν</blockquote>, and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μητροκτονοῦντας</blockquote> might be mistaken for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βροτοκτονοῦντας</blockquote>, but I do not feel that it was necessary to be so specific.</span></div>
+<div class="line" id="note-294.1"><a class="note-ref" data-note="294.1">294.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπιρροθεῖν</blockquote> is a hunting term, used of hallooing hounds on, like <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπιθωύσσειν, ἐπισίζειν</blockquote>.</span></div>
+<div class="line" id="note-294.2"><a class="note-ref" data-note="294.2">294.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κέντρον</blockquote>, 'goad'; see v. <strong xmlns="http://www.tei-c.org/ns/1.0">469</strong>.</span></div>
+<div class="line" id="note-294.3"><a class="note-ref" data-note="294.3">294.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">435</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰ μὴ δίκαια</blockquote> is the object, not the subject, of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νικᾶν</blockquote>: Eur. frag. 1034:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">φεῦ φεῦ τὸ νικᾶν τἄνδιχ᾽ ὡς καλὸν γέρας<br>τὰ μὴ δίκαια δ᾽ ὡς ἁπανταχοῦ κακόν.<br></blockquote></span></div>
+<div class="line" id="note-294.4"><a class="note-ref" data-note="294.4">294.4</a> <span class="text">Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πῶς δ᾽ οὔ; σέβουσαί γ᾽ ἀξίαν κἀπ᾽ ἀξίων</blockquote>, though other readings would give sense enough.</span></div>
+<div class="line" id="note-295.1"><a class="note-ref" data-note="295.1">295.1</a> <span class="text">v. 454:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">πάλαι πρὸς ἄλλοις ταῦτ᾽ ἀφιερώμεθα<br>οἴκοισι καὶ βατοῖσι καὶ ῥυτοῖς πόροις.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βατοῖσι</blockquote> is Weil's emendation for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βοτοῖσι</blockquote>. This is what Orestes said before in v. <strong xmlns="http://www.tei-c.org/ns/1.0">238</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἀλλ᾽ ἀμβλὺς ἤδη προστετριμμένος τε πρὸς<br>ἄλλοισιν οἴκοις καὶ πορεύμασιν βροτῶν,<br>ὅμοια χέρσον καὶ θάλασσαν ἐκπερῶν.<br></blockquote></span></div>
+<div class="line" id="note-295.2"><a class="note-ref" data-note="295.2">295.2</a> <span class="text">v. 460 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σὺν ᾧ σὺ Τροίαν ἄπολιν Ἰλίου πόλιν ἔθηκας</blockquote>. The sentence would run much better without <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Τροίαν</blockquote>, which is not only superfluous but awkward in its place. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Τρώων</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Τρωσίν</blockquote> would be easier. Meineke conjectured <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρῴαν</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πρώην</blockquote>, 'lately.'</span></div>
+<div class="line" id="note-296.1"><a class="note-ref" data-note="296.1">296.1</a> <span class="text">v. 475. Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὀξυμηνίτου</blockquote>.</span></div>
+<div class="line" id="note-296.2"><a class="note-ref" data-note="296.2">296.2</a> <span class="text">v. 476 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κατηρτυκώς</blockquote> (which the editors do not appear to have understood) is a synonym of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σεσωφρονηκώς</blockquote> (cf. v. 44).
+'At your age
+The hey-day in the blood is tame, it's humble,
+And waits upon the judgment.'</span></div>
+<div class="line" id="note-296.3"><a class="note-ref" data-note="296.3">296.3</a> <span class="text">v. 478 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἰδοῦμαι</blockquote> (Hermann for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἱροῦμαι</blockquote>) was the proper term for respecting the petition of a suppliant.</span></div>
+<div class="line" id="note-296.4"><a class="note-ref" data-note="296.4">296.4</a> <span class="text">v. 479 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὗται δ' ἔχουσι μοῖραν οὐκ εὐπέμπελον</blockquote>: from <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέμπειν</blockquote> in 484 and Agam. 1189 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κώμος, δύσπεμπτος ἔξω, συγγόνων Ἐρινύων</blockquote> it would seem that the adjective had been applied to the Erinyes before Aeschylus, and that he was inclined to connect it with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέμπειν</blockquote>. But the uses of the adjective <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέμπελος</blockquote>, and the proper name <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Πέμπελος</blockquote>, forbid. It was formed, as I have pointed out, from the root <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέπ</blockquote>-, and is a synonym of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πέπων</blockquote>,—ripe, mellow, mild, soft, flaccid, over-ripe: these cover all the senses of the adjective.</span></div>
+<div class="line" id="note-296.5"><a class="note-ref" data-note="296.5">296.5</a> <span class="text">v. 485 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπεὶ δὲ πρᾶγμα δεῦρ᾽ ἐπέσκηψεν τόδε</blockquote>: or 'come to this point,' as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δεῦρο δ᾽ ἐξοκέλλεται</blockquote> in Supp. 447.</span></div>
+<div class="line" id="note-296.6"><a class="note-ref" data-note="296.6">296.6</a> <span class="text">v. 486 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἰδουμένους</blockquote> Prien for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἱρουμένους</blockquote>. With this alteration the MS gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">φόνων δικαστάς, ὁρκίων αἰδουμένους<br>θεσμόν, τὸν εἰς ἅπαντ᾽ ἐγὼ θήσω χρόνον,<br></blockquote>
+which, as it stands, appears incredibly elliptic. It seems likely that something has dropped out either before or after <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θεσμόν</blockquote>.</span></div>
+<div class="line" id="note-297.1"><a class="note-ref" data-note="297.1">297.1</a> <span class="text">This must be the last line of the speech. The line which follows it in Cod. M was probably a fragmentary illustration of v. 486.</span></div>
+<div class="line" id="note-297.2"><a class="note-ref" data-note="297.2">297.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">499</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">πολλὰ δ᾽ ἐτυμοπαιδότρωτα<br>πάθεα προσμένει τοκεῦσιν μεταῦθις ἐν χρόνῳ.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐτυμοπαιδότρωτα</blockquote> is my emendation. In the MS. the novel compound word is broken up, as unfamiliar compounds usually were, into separate pieces, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔτυμα παιδότρωτα</blockquote>. There is no sense here in <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔτυμα</blockquote>: it could only mean 'real, genuine sufferings,' as when Oppian Hal. v. 305 says, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τότε δή μιν ἐτήτυμος ὦρσεν ὄλεθρος λοίσθιος</blockquote>. But <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἔτυμος, ἐτήτυμος, ἐτεός</blockquote> were commonly applied to children in the sense true-born, e.g. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἐτεοβουτάδαι</blockquote> (as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἐτεοκρήτες</blockquote>), Ep. Kaibel 852 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Βουταδέων ἐτύμων</blockquote>, Philostr. Apoll. vi. 40 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπὶ τῷ ἔτυμα καὶ ξυγγενῆ τίκτειν</blockquote>, Dio Chrys. II. 408 Heracles <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὁ τοῦ Διὸς ἐτεὸς υἱός</blockquote>, Soph. Trach. 1064:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ὦ παῖ, γενοῦ μοι παῖς ἐτήτυμος γεγώς,<br>καὶ μὴ τὸ μητρὸς αἷμα πρεσβεύσῃς πλέον.<br></blockquote></span></div>
+<div class="line" id="note-297.3"><a class="note-ref" data-note="297.3">297.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">506</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">πεύσεται δ᾽ ἄλλος ἄλλοθεν, προφωνῶν<br>τὰ τῶν πέλας κακά,<br>λῆξιν ὑπόδοσίν τε μόχθων<br>ἄκεά τ᾽ οὐ βέβαια τλάμων<br>μάταν παρηγορεί.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λῆξιν</blockquote> is from the vocabulary of medicine, which spoke of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ληξιπύρετος</blockquote>: Maximus περὶ καταρχῶν 254 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μειότερον τελέσειε πόνον λῆξίν τ᾽ ὀδυνάων</blockquote>. Hesychius <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λωφησέων : ληξέων, ἀναπαυσέων</blockquote>. Liban. Epist. 1434 B <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νῦν μὲν οὖν ἐντεῦθεν προσκυνῶ τὸν Ἀπόλλωνος υἱόν· τοῦ φθινοπώρου δέ, εἰ διδοίη, τήν τε λῆξιν αὐτοῦ</blockquote> (on the spot) <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καὶ αὐτὸν ὀψόμεθα, κομίζοντες ᾆσμα μικρὸν ὑπὲρ μεγάλων</blockquote>.</span></div>
+<div class="line" id="note-298.1"><a class="note-ref" data-note="298.1">298.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">μηδέ τις κικλησκέτω<br>ξυμφορᾷ τετυμμένος<br>· ἰὼ Δίκα, ἰὼ θρόνοι τ' Ἐρινύων’ —<br>ταῦτά τις τάχ᾽ ἂν πατὴρ<br>ἢ τεκοῦσα νεοπαθὴς<br>οἶκτον οἰκτίσαιτ' ἐπειδὴ<br>πίτνει δόμος Δίκας.<br></blockquote>
+It is tempting to make <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπειδή</blockquote> depend directly on <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μηδέ τις κικλησκέτω</blockquote> and take <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ταῦτα—οἰκτίσαιτ'</blockquote> as a parenthesis, 'in such terms as these a parent might make piteous complaint—,' but though <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τάδε</blockquote> is used so in Agam. 456, 1334, Cho. 313, we must surely have had <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τόνδε</blockquote> if <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἶκτον</blockquote> is sound.</span></div>
+<div class="line" id="note-298.2"><a class="note-ref" data-note="298.2">298.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">σωφρονεῖν</blockquote> is synonymous with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γνῶναι σεαυτόν</blockquote>, to know your place in relation to the Gods and to your fellow-men.</span></div>
+<div class="line" id="note-298.3"><a class="note-ref" data-note="298.3">298.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">525</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">τίς δὲ μηδὲν ἐν φάει<br>καρδίαν ἀνατρέφων.<br></blockquote>
+The true reading is uncertain, but the sense is clear; v. 702 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τίς γὰρ δεδοικὼς μηδὲν ἔνδικος βροτῶν</blockquote> ? and Soph. Aj. 1073-6, 1084.</span></div>
+<div class="line" id="note-299.1"><a class="note-ref" data-note="299.1">299.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">550</strong>. This is the meaning of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δωμάτων ἐπιστροφάς</blockquote>, 'the run of the house'; Theb. 635, Agam. 963.</span></div>
+<div class="line" id="note-299.2"><a class="note-ref" data-note="299.2">299.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">τὸν ἀντίτολμον δὲ φαμὶ παρβάδαν<br>τὰ πόλλ᾽ ἄγοντα παντόφυρτ᾽ ἄνευ δίκας<br>βιαίως ξὺν χρόνῳ καθήσειν.<br></blockquote><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἄγοντα</blockquote> was supplied by Pauw, but has been strangely misinterpreted by many critics—'acting in most instances,' 'wresting most things away from justice,' 'bringing,' 'dragging.' It means (in the metaphor) 'with a cargo of possessions in which all distinctions of right and wrong are confounded.' <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βιαίως</blockquote> would go as well with this clause as with the other; cf. Hesiod Op. 220, Pindar frag. 169 in Plat. Gorg. 484 B. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰ πολλά</blockquote> is idiomatic in this sense, e.g. Callim. h. Apoll. 108: Pers. 272.
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">Ἀσσυρίου ποταμοῖο μέγας ῥόος, ἀλλὰ τὰ πολλὰ<br>λύματα γῆς καὶ πολλὸν ἐφ᾽ ὕδατι συρφετὸν ἕλκει,<br></blockquote></span></div>
+<div class="line" id="note-300.1"><a class="note-ref" data-note="300.1">300.1</a> <span class="text">This line is mutilated in the MS.:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">"H'<br>ἐιτ᾽ οὖν διάτορος Τυρσηνικὴ<br>σάλπιγξ.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">βροτείου πνεύματος</blockquote> which follows seems to require something heavenly or divine as an antithesis; and the general view is plausible, that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὖν</blockquote> is a corruption of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐρανός</blockquote> (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐνος</blockquote>); but it is not likely that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">διάτορος</blockquote> should govern a genitive <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐρανοῦ</blockquote>, and an objection to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἰς οὐρανὸν δέ</blockquote> is that we miss then the article, which in this place sounds so good at the beginning of the line. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐρανεία</blockquote> is not inconceivable, or some compound adjective.—Dr Verrall has conjectured <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἑρμοῦνίου δέ</blockquote>, 'the Tyrrhene trump of Hermes,' but this, I fear, would be attributing to Hermes a new theft. To Hermes were ascribed the invention of the single reed-pipe and (by some) of the lyre; but with the trumpet, even of the six kinds known to the grammarians, I cannot find that he had anything to do. The brazen trumpet, which was among the products of Tyrrhenian and Argive bronze-work, was Athena's own. At Argos she was worshipped as <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Ἀθηνᾶ Σάλπιγξ</blockquote>, and when trumpeters make a dedication of the instrument, it is to her: Anth. Pal. vi. 151, 159, 194, 195. She might therefore have said <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καὶ τοὐμὸν εὕρημ', ἡ τορὸς Τυρσηνικὴ σάλπιγξ</blockquote>.</span></div>
+<div class="line" id="note-301.1"><a class="note-ref" data-note="301.1">301.1</a> <span class="text">Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καὶ τούσδ'</blockquote>.</span></div>
+<div class="line" id="note-301.2"><a class="note-ref" data-note="301.2">301.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τοῦδέ γ' οὔτις ἄρνησις πέλει</blockquote> Nauck.</span></div>
+<div class="line" id="note-302.1"><a class="note-ref" data-note="302.1">302.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">614</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δρᾶσαι γάρ, ὥσπερ εἶπον, οὐκ ἀρνούμεθα</blockquote>· He had said this twice already, vv. 466–471, 591. The MS. gives <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὥσπερ ἐστίν</blockquote>, which means nothing. It was Greek to say <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δρᾶσαι γάρ, ὥσπερ ἔδρασα</blockquote>, or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἶναι γάρ, ὥσπερ ἔστιν</blockquote>, but not <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δρᾶσαι γάρ, ὥσπερ ἐστίν</blockquote>. Davies restored <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εἶπον</blockquote>, but the editors have disregarded it.</span></div>
+<div class="line" id="note-303.1"><a class="note-ref" data-note="303.1">303.1</a> <span class="text">v. 634:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἀπὸ στρατείας γάρ νιν, ἠμποληκότα<br>τὰ πλεῖστ᾽ ἄμεινον, εὔφροσιν δεδεγμένη<br>δροίτῃ περῶντι λουτρὰ κἀπὶ τέρματι<br>φάρος περεσκήνωσε.<br></blockquote>
+There is certainly a lacuna here of one line, if not more. The missing passage must have contained <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μύθοις</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">λόγοις</blockquote> to agree with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὔφροσιν</blockquote>, and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὖ</blockquote> to govern <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δροίτῃ</blockquote>: it may have contained a description of Clytemnestra and another finite verb: see Class. Rev. 1903, p. 290. —<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κατεσκήνωσε</blockquote> is possible.</span></div>
+<div class="line" id="note-303.2"><a class="note-ref" data-note="303.2">303.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ταύτην τοιαύτην εἶπον</blockquote> MS. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δέ</blockquote> is necessary, but as Clytemnestra is not present, we cannot merely read <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ταύτην τοιαύτην δ'</blockquote>: either we must have <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὴν δ᾽ αὖ τοιαύτην εἶπον</blockquote> (Weil), or, more probably, a line has fallen out, e.g.:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">τὴν δ᾽ αὖ γυναῖκα τὴν κατάπτυστον θεοῖς<br>ταύτην τοιαύτην εἶπον.<br></blockquote></span></div>
+<div class="line" id="note-304.1"><a class="note-ref" data-note="304.1">304.1</a> <span class="text">v. 661:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">οὐκ ἔστι μήτηρ ἡ κεκλημένου τέκνου<br>τοκεύς, τροφὸς δὲ κύματος νεοσπόρου.<br>τίκτει δ' ὁ θρώσκων.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τοῦ κεκλημένου τέκνου</blockquote> would be intelligible, and may be the true reading. The doctrine was Egyptian, according to Diodorus i. 80: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νόθον δ' οὐδένα τῶν γεννηθέντων νομίζουσιν, οὐδ᾽ ἂν ἐξ ἀργυρωνήτου μητρὸς γεννηθῇ· καθόλου γὰρ ὑπειλήφασι τὸν πατέρα μόνον αἴτιον εἶναι τῆς γενέσεως, τὴν δὲ μητέρα τροφὴν καὶ χώραν μόνον παρέχεσθαι τῷ βρέφει καὶ τῶν δένδρων ἀῤῥενα μὲν καλοῦσι τὰ καρποφόρα, θηλέα δὲ τὰ μὴ φέροντα τοὺς καρπούς, ἐναντίως τοῖς Ἕλλησι</blockquote>. It was also Pythagorean, Stob. Flor. i. 64.</span></div>
+<div class="line" id="note-305.1"><a class="note-ref" data-note="305.1">305.1</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οἷσι μὴ βλάψῃ θεός</blockquote>, keeps it safe for those in whose case God prevents not.</span></div>
+<div class="line" id="note-305.2"><a class="note-ref" data-note="305.2">305.2</a> <span class="text">A line beginning with <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐ</blockquote> has fallen out:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">πέλας<br>μάρτυς πάρεστι παῖς Ὀλυμπίου Διός,<br>&lt; οὐ<br>οὐδ᾽ ἐν σκότοισι νηδύος τεθραμμένη,<br></blockquote>
+as Coluthus 18o, of Athena, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἣν γάμος οὐκ ἔσπειρε καὶ οὐ μαιώσατο μήτηρ</blockquote>. Without it, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐδὲ</blockquote> could only mean 'not even.'</span></div>
+<div class="line" id="note-305.3"><a class="note-ref" data-note="305.3">305.3</a> <span class="text">Athena was born out of the head of Zeus.</span></div>
+<div class="line" id="note-305.4"><a class="note-ref" data-note="305.4">305.4</a> <span class="text">As the passage stands, it seems that this speech of Athena&#x27;s must be taken as a question; but in the Greek it reads more like a declaration: &#x27;Enough has now been said; I now command these judges to give an honest vote, of their true conscience.&#x27; One may suspect that this was the original form, and that the passage has been subjected to some re-fashioning. See Wecklein&#x27;s note in his text, p. 449.</span></div>
+<div class="line" id="note-306.1"><a class="note-ref" data-note="306.1">306.1</a> <span class="text">Prof. Ridgeway would translate ‘yon Hill of Ares,&#x27; holding that the scene of the trial is not the Areopagus: see note on v. <strong xmlns="http://www.tei-c.org/ns/1.0">235</strong>.</span></div>
+<div class="line" id="note-306.2"><a class="note-ref" data-note="306.2">306.2</a> <span class="text">The construction is never completed, but is allowed to lapse forgotten after parenthetic. clauses introduced by relatives; see note on v. 68.</span></div>
+<div class="line" id="note-306.3"><a class="note-ref" data-note="306.3">306.3</a> <span class="text">The rival Dorians; cf. Soph. O. C. 695.</span></div>
+<div class="line" id="note-307.1"><a class="note-ref" data-note="307.1">307.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">718</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">οὐ λαχών</blockquote>: Ar. Plut. 972, Plato Com. frag. 167 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀτὰρ οὐ λαχὼν ὅμως ἔλαχες</blockquote>.</span></div>
+<div class="line" id="note-307.2"><a class="note-ref" data-note="307.2">307.2</a> <span class="text">See v. <strong xmlns="http://www.tei-c.org/ns/1.0">173</strong>.</span></div>
+<div class="line" id="note-309.1"><a class="note-ref" data-note="309.1">309.1</a> <span class="text">v. 773:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">παρόρνιθας πόρους<br>τιθέντες.<br></blockquote>
+Pind. Nem. ix. 18 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αἰσιᾶν οὐ κατ᾽ ὀρνίχων ὁδόν κτἑ</blockquote>.</span></div>
+<div class="line" id="note-309.2"><a class="note-ref" data-note="309.2">309.2</a> <span class="text">v. 782 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κἀκ χερῶν εἵλεσθέ μου</blockquote>: Abresch thought that there was a line missing here: cf. 150 seqq., 325, Homer I 344 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νῦν δ' ἐπεὶ ἐκ χειρῶν γέρας εἵλετο καί μ᾽ ἀπάτησεν</blockquote>.</span></div>
+<div class="line" id="note-310.1"><a class="note-ref" data-note="310.1">310.1</a> <span class="text">Reading:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ὑμεῖς δὲ μὴ θυμοῦσθε, μὴ βαρὺν κότον<br>ἐν τῇδε γῇ σκήψητε, μηδ᾽ ἀκαρπίαν<br>τεύξητ', ἀφεῖσαι [δαιμόνων] σταλάγματα.<br></blockquote></span></div>
+<div class="line" id="note-310.2"><a class="note-ref" data-note="310.2">310.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">827</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">μηδ᾽ ὑπερθύμως ἄγαν<br>θεαὶ βροτῶν κτίσητε δύσκηλον χθόνα.<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κτίσητε</blockquote> (Linwood's correction of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">στήσητε</blockquote>) is a synonym of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θῆτε</blockquote> or <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ποιήσητε</blockquote>, and a favourite use with Aeschylus. The precise sense that he attached to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δύσκηλον</blockquote> cannot be determined, but I feel sure the word is genuine, for this reason:—there were several Epic words in <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κηλ-</blockquote> whose meaning was a matter of debate,—<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κῆλον</blockquote> and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">περίκηλος</blockquote>, and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀεκήλια</blockquote> in Σ 77 (though that, no doubt, was. merely an Epic license for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀεικέλια</blockquote>, like <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπερείσια</blockquote> for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπειρέσια</blockquote>). Aeschylus therefore was at liberty to charge the word with various suggestions, including the <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κηλῖδας</blockquote> of v. 820,—stained, scorched, withered (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">αὐονά</blockquote> v. 334), plagued, enchanted. His admirer Ion (Nauck, Trag. Frag. p. 571) used <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὔκηλος</blockquote> of a tree, as an equivalent of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐκέατος</blockquote> (which was interpreted easy to burn, or easy to split), and Hesychius records the use of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κηλός</blockquote> in the sense of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κήλεος</blockquote>.</span></div>
+<div class="line" id="note-311.1"><a class="note-ref" data-note="311.1">311.1</a> <span class="text">A delightful touch of humour, &#x27;—but of course we shall not want that.&#x27;</span></div>
+<div class="line" id="note-311.2"><a class="note-ref" data-note="311.2">311.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">γλώσσης ματαίας μὴ 'κβάλῃς ἐπὶ χθόνα<br>καρπὸν φέροντα πάντα μὴ πράσσειν καλῶς.<br></blockquote><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καρπόν</blockquote> cannot belong, as many critics have constructed it, to <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γλώσσης</blockquote>, 'the fruit of a rash tongue, bearing the fruit that everything should fail to prosper'; fruit does not bear, but is borne: <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τιθέντα</blockquote>, 'causing,' would be Greek, but the participle would still be out of order at the beginning of the clause in the emphatic place. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καρπὸν φέροντα πάντα</blockquote> must mean <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάντα τὰ καρποφόρα</blockquote>: that is the way in which the curse of the Erinyes will take effect. But the sentence now seems too elliptic. Prof. Ellis has conjectured that <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπὶ χθόνα</blockquote> is a mistake for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπίφθονα</blockquote>, 'malignant utterance' (cf. v. 373). I only hesitate to substitute this for <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐπὶ χθόνα</blockquote> because I think it not unlikely that a line has fallen out.</span></div>
+<div class="line" id="note-311.3"><a class="note-ref" data-note="311.3">311.3</a> <span class="text">v. 835 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κελαινοῦ κύματος πικρὸν μένος</blockquote>, i.e. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κλυδώνιον χολῆς</blockquote> Cho. 182.</span></div>
+<div class="line" id="note-312.1"><a class="note-ref" data-note="312.1">312.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">850</strong>:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">καίτοι σὺ μέν που κάρτ᾽ ἐμοῦ σοφωτέρα,<br>φρονεῖν δὲ κἀμοὶ Ζεὺς ἔδωκεν οὐ κακῶς.<br></blockquote>
+I have corrected this in Class. Rev. 1902, p. 246: the MS. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καίτοι μὲν σὺ κάρτ' ἐμοῦ σοφωτέρα</blockquote> is one among countless cases of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέν</blockquote> being shifted by a scribe to the beginning of a clause. The sentiment is that of Job xii. 2: No doubt but ye are the people, and wisdom shall die with you: but I have wisdom as well as you; and of Haemon in Soph. Ant. 683-7.</span></div>
+<div class="line" id="note-313.1"><a class="note-ref" data-note="313.1">313.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">887</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">γλώσσης ἐμῆς μείλιγμα καὶ θελκτήριον</blockquote>. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θελκτήριον</blockquote> is a substantive, as in Nicand. Ther. 365, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">παυστήριον</blockquote> ib. 746, <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κηλητήριον</blockquote> Trachin. 575. Cf. Eur. I. T. 235 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θεῷ φίλον πρόσφαγμα καὶ θυτήριον</blockquote>.</span></div>
+<div class="line" id="note-314.1"><a class="note-ref" data-note="314.1">314.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">907</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐηλίως</blockquote>: see note on v. 927.—The construction alternates between the accusative and the accusative with infinitive; see my note on Cho. 277.</span></div>
+<div class="line" id="note-314.2"><a class="note-ref" data-note="314.2">314.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">911</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τῶν εὐσεβούντων δ' ἐκφορωτέρα πέλοις</blockquote>· <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκφορωτέρα</blockquote> is <i xmlns="http://www.tei-c.org/ns/1.0" lang="lat">feracior</i>, governing the genitive, 'more fertile in,' 'more productive of'; <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκφέρειν καρπόν</blockquote> was the regular word for producing crops. This gives its proper sense to the comparative. The editors generally have retained <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τῶν δυσσεβούντων δ'</blockquote> of the MS. and sought (with Schuetz) to make it mean 'more ready to weed out (<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐκκαθαίρειν, ἀποκαθαίρειν</blockquote>), or cart away, the wicked,' like a gardener or a husbandman: but the comparative is inappropriate then; and they have forgotten that the gardener is Athena; the part of the Eumenides, as Earth-Powers, is to permit produce of all seed.</span></div>
+<div class="line" id="note-314.3"><a class="note-ref" data-note="314.3">314.3</a> <span class="text">The Areopagites, representing the Athenians. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἀπένθητον</blockquote>, the sort that brings no sorrow, causes no regret; cf. 58.</span></div>
+<div class="line" id="note-315.1"><a class="note-ref" data-note="315.1">315.1</a> <span class="text">The Sun conspiring with the Earth implies the reconciliation of the Furies with Apollo.</span></div>
+<div class="line" id="note-315.2"><a class="note-ref" data-note="315.2">315.2</a> <span class="text">Reading <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ὅ γε μὴν κύρσας βαρέων τούτων</blockquote>. It is possible that something has been lost, to the same effect as v. 313.</span></div>
+<div class="line" id="note-315.3"><a class="note-ref" data-note="315.3">315.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">942</strong>: or 'from trespassing upon this region.'</span></div>
+<div class="line" id="note-315.4"><a class="note-ref" data-note="315.4">315.4</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χρόνῳ τεταγμένῳ</blockquote>, without fail at the due season, and with no untimely birth; Ovid Fasti iv. 647:
+et pecus ante diem partus edebat acerbos,
+agnaque nascendo saepe necabat ouem.</span></div>
+<div class="line" id="note-315.5"><a class="note-ref" data-note="315.5">315.5</a> <span class="text">For the turn of the sentence compare Ovid Fasti iv. 931, where Robigo, Mildew, is addressed:
+at tu ne uiola Cererem, semperque colonus
+absenti possit soluere uota tibi.</span></div>
+<div class="line" id="note-316.1"><a class="note-ref" data-note="316.1">316.1</a> <span class="text">Zeus and Hera.</span></div>
+<div class="line" id="note-316.2"><a class="note-ref" data-note="316.2">316.2</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ματροκασιγνῆται</blockquote>. This and the reiterated <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">θεαί, θεῶν</blockquote> marks the harmonised agreement between the Upper and the Nether Gods.</span></div>
+<div class="line" id="note-316.3"><a class="note-ref" data-note="316.3">316.3</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">δι' ὀργάν</blockquote> might go with either clause.</span></div>
+<div class="line" id="note-316.4"><a class="note-ref" data-note="316.4">316.4</a> <span class="text">v. 989:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἆρα φρονοῦσι γλώσσης ἀγαθῆς<br>ὁδὸν εὑρίσκειν;<br></blockquote></span></div>
+<div class="line" id="note-316.5"><a class="note-ref" data-note="316.5">316.5</a> <span class="text">v. 991:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">ἐκ τῶν φοβερῶν τῶνδε προσέρπον<br>μέγα κέρδος ὁρῶ τοῖσδε πολίταις·<br></blockquote>
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσέρπον</blockquote> is my reading for the MS. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσώπων</blockquote>; see Journal of Hellenic
+
+Studies, 1906, p. 276, note 11. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἕρπειν</blockquote> is to be upon the road, and <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">προσέρπειν, ἐφέρπειν</blockquote> were used especially of time's oncoming, and what it promises or threatens in its course: P. V. 129, 288, Soph. Aj. 228, 1255 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">καὶ σοὶ προσέρπον τοῦτ᾽ ἐγὼ τὸ φάρμακον ὁρῶ</blockquote>, O.T. 540, Pind. Pyth. i. 57, Nem. iv. 44, vii. 68, Ol. vi. 97, frag. 131, Theocr. v. 83, xxii. 15, Eur. frag. 441.</span></div>
+<div class="line" id="note-317.1"><a class="note-ref" data-note="317.1">317.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">998</strong>. Reading with Bothe:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">χαίρετ' ἀστικὸς λεώς,<br>ἴκταρ ἡμένας Διὸς<br>Παρθένου φίλας φίλοι.<br></blockquote>
+For the reasons, see the note on my verse translation of this scene in A Book of Greek Verse, p. 286.</span></div>
+<div class="line" id="note-317.2"><a class="note-ref" data-note="317.2">317.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">1006</strong>. This may be taken with the following line.</span></div>
+<div class="line" id="note-317.3"><a class="note-ref" data-note="317.3">317.3</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">1008</strong>. Cf. Soph. O. C. 92. The MS. gives:
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ μὲν ἀτηρ[ι]ον
+χώρας</blockquote>
+as though it meant 'the harmful part of the country': we may read (with Paley) <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὸ μὲν ἀτηρὸν χώρᾳ</blockquote>, 'what is harmful to the country,' or with Linwood <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">χωρὶς κατέχειν</blockquote> (cf. Theocr. vii. 127 <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">τὰ μὴ καλὰ νόσφιν ἐρύκοι</blockquote>). <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κατέχειν</blockquote> and the adjective <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">κάτοχος</blockquote> were technical in this connexion: Persae 226, C.I.A. Boeckh I. pp. 486-7.</span></div>
+<div class="line" id="note-318.1"><a class="note-ref" data-note="318.1">318.1</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">1015</strong>. Punctuate :
+<blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">χαίρετε . . ..<br>πάντες οἱ κατὰ πτόλιν<br>δαίμονές τε καὶ βροτοί·<br>Παλλάδος πόλιν νέμον-<br>τες, μετοικίαν δ᾽ ἐμὴν<br>εὖ σέβοντες, οὔ τι μέμψεσθε συμφορὰς βίου.<br></blockquote>
+Compare Supp. 81 and Cho. 792 in my translation. The accepted punctuation at <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">νέμοντες</blockquote> is tautology.</span></div>
+<div class="line" id="note-318.2"><a class="note-ref" data-note="318.2">318.2</a> <span class="text">v. <strong xmlns="http://www.tei-c.org/ns/1.0">1027</strong> <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">ἐξίκοιτ' ἄν</blockquote>: for the optative, cf. Soph. O.C. 647, 861, Eur. Or. 109, Plato Protag. 310 B.</span></div>
+<div class="line" id="note-318.3"><a class="note-ref" data-note="318.3">318.3</a> <span class="text"><blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc" rend="blockquote">φοινικοβάπτοις ἐνδυτοῖς ἐσθήμασι<br>τιμᾶτε, καὶ τὸ φέγγος ὁρμάσθω πυρός,<br>ὅπως ἂν εὔφρων ἥδ᾽ ὁμιλία χθονὸς<br>τὸ λοιπὸν εὐάνδροισι συμφοραῖς πρέπῃ.<br></blockquote>
+There are three allusions in this passage to the Panathenaic Festival: on that occasion the <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέτοικοι</blockquote>, Resident Aliens or Denizens, were permitted to take part in the procession as being of good will (Hesychius s.v. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Σκαφηφόροι</blockquote>), and for special honour were arrayed in scarlet cloaks (Photius s.v. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Σκάφας</blockquote>). The Furies (now <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">Εὐμενίδες</blockquote>, Benign Ones) are to be treated as the <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">μέτοικοι</blockquote> were at the Panathenaea, and the whole of this procession is designed as a reflection of the great procession at that feast. And <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐάνδροισι</blockquote> is an allusion to the contest of <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">εὐανδρία</blockquote> on that occasion. See my paper on 'The Last Scene of the Eumenides' in the Journal of Hellenic Studies, 1906, p. 268. It is still possible that, as Hermann thought, a passage may have fallen out before this. <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πυρός</blockquote> should perhaps be <blockquote xmlns="http://www.tei-c.org/ns/1.0" lang="grc">πάρος</blockquote>.</span></div>
+<div class="line" id="note-319.1"><a class="note-ref" data-note="319.1">319.1</a> <span class="text"><p xmlns="http://www.tei-c.org/ns/1.0"><blockquote lang="grc">βᾶθ’ ὁδόν, ὦ μεγάλαι φιλότιμοι</blockquote> is my emendation. Being written (as was often done) without elision, <blockquote lang="grc">βατεοδονω</blockquote> was mistaken for <blockquote lang="grc">βατ’ ἐν δόμῳ</blockquote>. Many have been content to read <blockquote lang="grc">βᾶτε δόμῳ</blockquote>, but the utmost that could mean is 'step upon the house.' The sentence seems to call for <blockquote lang="grc">ὦ</blockquote>, and in starting the procession to Athena at the <blockquote lang="grc">Χαλκεῖα</blockquote> Sophocles frag. 760 uses the phrase <blockquote lang="grc">βᾶτ’ εἰς ὁδὸν δή, πᾶς ὁ χειρῶναξ λεώς</blockquote>.</p><p xmlns="http://www.tei-c.org/ns/1.0">This is a Paean of gladness, in dactylic metre, like those in Bergk Poetae Lyrici III p. 676 and in Eur. Phaethon 773. 66 seqq., and corresponds to that which was chanted at the Panathenaea: J.H.S. 1906, p. 274. </p></span></div></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Collapsible TOC Code ---
+            const tocContent = document.getElementById('toc-content');
+            if (tocContent) {
+                // 1. Mark items with children
+                tocContent.querySelectorAll('li > ul').forEach(ul => {
+                    ul.parentElement.classList.add('has-children');
+                });
+
+                // 2. Add click listener for toggling
+                tocContent.addEventListener('click', function(event) {
+                    const link = event.target.closest('a');
+                    if (link && link.parentElement.classList.contains('has-children')) {
+                        // Make sure the click wasn't on the main 'close' button
+                        if (event.target.id !== 'toc-toggle') {
+                             event.preventDefault(); // Stop the link from jumping
+                             link.parentElement.classList.toggle('open'); // Toggle open/closed
+                        }
+                    }
+                });
+            }
+            // --- End of Collapsible TOC Code ---
+
+
+            // --- Note-Linking Code ---
+            const container = document.querySelector('.container');
+            const englishContent = document.getElementById('english-content');
+            const footnoteContent = document.getElementById('footnote-content');
+            let lastHighlightedNoteElement = null;
+            let lastHighlightedLinkElements = []; // Can be multiple links
+
+            // Function to remove all highlights
+            function removeHighlights() {
+                if (lastHighlightedNoteElement) {
+                    lastHighlightedNoteElement.classList.remove('highlight');
+                }
+                lastHighlightedLinkElements.forEach(link => {
+                    link.classList.remove('highlight');
+                });
+                lastHighlightedNoteElement = null;
+                lastHighlightedLinkElements = [];
+            }
+
+            // Function to find, scroll, and highlight elements
+            function findScrollHighlight(targetNoteId, scrollTargetColumn) { // scrollTargetColumn is 'note' or 'link'
+                removeHighlights(); // Clear previous state
+
+                const noteElement = document.getElementById('note-' + targetNoteId);
+                const linkSelector = '.fn-link[data-note="' + targetNoteId + '"]';
+                const linkElements = englishContent.querySelectorAll(linkSelector);
+
+                // Highlight Note
+                if (noteElement) {
+                    noteElement.classList.add('highlight');
+                    lastHighlightedNoteElement = noteElement; // Store for removal
+                    // Scroll the note column if the link was clicked
+                    if (scrollTargetColumn === 'note') {
+                        // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        noteElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                // Highlight ALL corresponding links and scroll the FIRST one
+                if (linkElements.length > 0) {
+                    linkElements.forEach(link => {
+                        link.classList.add('highlight'); // Highlight the link(s) in text
+                    });
+                    lastHighlightedLinkElements = Array.from(linkElements); // Store all for removal
+                    // Scroll the first link if the note was clicked
+                    if (scrollTargetColumn === 'link') {
+                         // ***** FIX HERE: Escaped {...} for JS object literal *****
+                        linkElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            }
+
+            // Add click listener using event delegation on the container
+            container.addEventListener('click', function(event) {
+                const linkTarget = event.target.closest('.fn-link');
+                const noteRefTarget = event.target.closest('.note-ref');
+
+                if (linkTarget && linkTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = linkTarget.dataset.note;
+                    console.log('Clicked text link for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'note'); // Scroll the note column
+
+                } else if (noteRefTarget && noteRefTarget.dataset.note) {
+                    event.preventDefault(); // Prevent default anchor jump behavior
+                    const noteId = noteRefTarget.dataset.note;
+                    console.log('Clicked footnote ref for note: ' + noteId); // Debug
+                    findScrollHighlight(noteId, 'link'); // Scroll the text column
+                }
+            });
+
+            // --- TOC Toggle (Show/Hide) Script ---
+            const tocToggle = document.getElementById('toc-toggle'); // Close button
+            const tocOpenButton = document.getElementById('toc-open-button'); // Open button
+            const body = document.body;
+
+            if (tocToggle && tocOpenButton) { // Only run if TOC elements exist
+                
+                // CLOSE Button (inside TOC)
+                tocToggle.addEventListener('click', function() {
+                    body.classList.add('toc-collapsed');
+                });
+                
+                // OPEN Button (outside TOC)
+                tocOpenButton.addEventListener('click', function() {
+                    body.classList.remove('toc-collapsed');
+                });
+            }
+            // --- END TOC Toggle Script ---
+            
+        });
+    </script>
+</body>
+</html>

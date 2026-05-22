@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>bsb11263667_00008</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="ocr-capabilities"
+          content="ocr_line ocr_page ocr_par ocrp_lang ocrx_block ocrx_word x_source x_wconf"/>
+  </head>
+  <body>
+<div class="ocr_page" title="x_source bsb11263667_00008; ppageno 8; bbox 0 0 1936 2888" lang="la">
+ <div class="ocrx_block" title="bbox 753 2545 1237 2569">
+  <p class="ocr_par" title="bbox 753 2545 1237 2569">
+   <span class="ocr_line" title="bbox 753 2545 1237 2569"><span class="ocrx_word" title="bbox 753 2545 875 2569">LIPSIAE</span><span class="ocrx_word" title="bbox 878 2545 886 2568">:</span> <span class="ocrx_word" title="bbox 908 2545 994 2568">TYPIS</span> <span class="ocrx_word" title="bbox 1007 2545 1030 2568">B.</span> <span class="ocrx_word" title="bbox 1040 2545 1065 2568">G.</span> <span class="ocrx_word" title="bbox 1077 2545 1232 2568">TEUBNERI</span><span class="ocrx_word" title="bbox 1233 2545 1237 2568">.</span></span>
+</p>
+</div>
+</div>
+  </body>
+</html>
